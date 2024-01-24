@@ -1,0 +1,14 @@
+project:
+  title: "Benchmark sets"
+
+format:
+  html:
+    theme: lumen
+    toc: true
+
+number-sections: true
+number-depth: 2
+
+editor:
+  render-on-save: true
+

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sara Di Bartolomeo">
+<meta name="author" content="Cody Dunne">
+
+<title>Benchmark Datasets for Graph Layout Algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link active" data-scroll-target="#introduction-1"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="header-section-number">2</span> Background</a></li>
+  <li><a href="#data-collection-methodology" id="toc-data-collection-methodology" class="nav-link" data-scroll-target="#data-collection-methodology"><span class="header-section-number">3</span> Data collection methodology</a></li>
+  <li><a href="#sample-of-an-evaluation" id="toc-sample-of-an-evaluation" class="nav-link" data-scroll-target="#sample-of-an-evaluation"><span class="header-section-number">4</span> Sample of an evaluation</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">5</span> Examples</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Benchmark Datasets for Graph Layout Algorithms</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Sara Di Bartolomeo <a href="https://orcid.org/0000-0001-9446-0419" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Konstanz
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Cody Dunne <a href="https://orcid.org/0000-0001-9446-0419" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Northeastern University
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- 
+This template is intended for the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
+
+This template describes how to set up the [Quarto](https://quarto.org/) environment for writing a JoVI article, provides instructions and templates for content that should be included in every JoVI article (such as the structured abstract and authorship metadata), and gives brief examples of some useful functionality for writing papers (such as how to include figures and citations).
+
+If you have not setup [Quarto](https://quarto.org/) or the JoVI template yet, skip to the [Setup](#setup) section below. -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Abstract
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<!-- We highly recommend all JoVI articles use a structured abstract. Structured abstracts provide a succinct overview of an article using a common set of sections. Which sections are used depends on the type of research and its goals. For example, articles with empirical methods should have a data collection section, while articles that do not analyze data to support a conclusion do not need such a section.
+
+Your paper may fall into multiple types of work. We provide some example sections you may want to include in your structured abstract below, depending on the type of work. You can use the example sections to fill in the subsections that apply to your paper, then delete these first two paragraphs and the subsections that do not apply to your paper. Please add, merge, rename, or re-order sections if you feel that would improve clarity. We have some (partial) examples of structured abstracts [here](https://www.journalovi.org/structured-abstract-examples.html). -->
+<section id="introduction" class="level6">
+<h6 class="anchored" data-anchor-id="introduction">Introduction</h6>
+<p>Graph layout algorithms are important algorithms used to assign coordinates in space to nodes in a graph. To test the effectiveness of a graph layout algorithm, often a benchmark is run, evaluating several characteristics often including the quality of the results (according to established readability criteria) and the performance of the algorithm in terms of, for instance, running time on a series of different graphs.</p>
+<!-- ## Motivation + Background
+
+## General discussion on datasets and methodology
+
+## The website
+
+-\> have a section on long-term preservation and replicability -\> methodology and what is within the scope -\> possible contribution: how we classified the datasets ---\> describe the iterative methodology of the survey collection, how many authors made passes through it, how we progressively collected the features -\> what is an assorted collection etc etc -\> how to use the website -\> extracting everything and putting it in a consistent format (multiple consistent formats) -\> code for the datasets was released -\> the historical archeology type-stuff we had to do to get the datasets (e.g. emails for permission to host, any clarifications) -\> collection of all the descriptions by hand -\> concerns about lost collections, maintainability of this one -\> movie plots dataset
+
+###### Theory/model
+
+*For theories or models*: A description of the theory or model, its key organizing principle, or new insights that might be gained from it
+
+###### Data Collection or Source
+
+*For empirical research, reanalysis, or meta-analysis*: An overview of experiment and/or data collection procedures. Mention if the collection was prespecified (via preregistration) or exploratory. For reanalyses or meta-analyses, citations of the original sources are sufficient. This section does not apply to articles that only use datasets for demonstrations.
+
+###### Data Analysis
+
+*For empirical research, reanalysis, or meta-analysis*: An overview of analysis approaches used as evidence for conclusions. This section does not apply to articles that only use datasets for demonstrations.
+
+###### Analysis Results
+
+*For empirical research, reanalysis, or meta-analysis*: A summary of the analysis findings
+
+###### Implementation
+
+*For systems or techniques*: How was the application or system implemented?
+
+###### Demonstration
+
+*For systems or techniques*: A description of any demonstrations or functionality that exemplify the utility of the system
+
+###### Conclusion
+
+An interpretation of results, lessons learned, etc. in the context of the research question and its implications. *Avoid overgeneralizing*, and *avoid broad behavioral claims without strong evidence.*
+
+###### Materials
+
+Link to repositories containing raw data, open source code or (pre-)registration number/links. -->
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Materials, Authorship, License, Conflicts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="research-materials" class="level6">
+<h6 class="anchored" data-anchor-id="research-materials">Research materials</h6>
+<!-- See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#research-material-statements). -->
+</section>
+<section id="authorship" class="level6">
+<h6 class="anchored" data-anchor-id="authorship">Authorship</h6>
+<!-- See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#authorship). -->
+</section>
+<section id="license" class="level6">
+<h6 class="anchored" data-anchor-id="license">License</h6>
+<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</section>
+<section id="conflicts-of-interest" class="level6">
+<h6 class="anchored" data-anchor-id="conflicts-of-interest">Conflicts of interest</h6>
+<p>See <a href="https://www.journalovi.org/author-guide.html#conflicts-of-interest">the corresponding section in the author guide</a>.</p>
+</section>
+</div>
+</div>
+</div>
+<section id="introduction-1" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">1</span> Introduction</h2>
+<p>Benchmarking is a crucial aspect of computer science, as it allows researchers, developers, and engineers to compare the performance of various systems, algorithms, or hardware. A benchmark is a standardized test or set of tests used to measure and compare the performance of hardware, software, or systems under specific conditions. Benchmarking aims to provide objective and consistent metrics that allow for fair comparisons and informed decision-making. Benchmarks are widely used in various fields, including computer hardware evaluation, software optimization, and system performance analysis. In all these fields, benchmarking provides a standardized and objective way to compare and assess the performance of different systems, algorithms, or software implementations. It aids in making informed decisions about which solution best suits a specific use case or requirement.</p>
+<p>The same is true for the field of graph drawing, and in particular, for studying the performance and results of graph layout algorithms. Benchmark datasets can provide a standardized set of graphs with known properties and characteristics. These graphs can vary in size, density, connectivity, and structure. Researchers can objectively compare their performance or the quality of their results by applying various graph layout algorithms to the same benchmark dataset.</p>
+<p>Because of our own challenges in finding appropriate benchmark sets to evaluate layout algorithms that we developed, we built a collection of benchmark datasets used in previous graph layout algorithm papers and a website to peruse the collection we put together.</p>
+<p>The key objective of the work we are doing with benchmark datasets is not only aimed at improving the discoverability of these datasets and easing the running of benchmarks for graph layout algorithms of a vast amount of types and categories, but we also want to place a strong emphasis on the replicability of the experiments that are run. Indeed, reliable access to datasets is fundamental for replicability.</p>
+<ul>
+<li>we catalog datasets commonly used in Research</li>
+<li>we provide a website to browse and search the datasets</li>
+<li>all of this is super important for replicability and reproducibility of results</li>
+</ul>
+</section>
+<section id="background" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="background"><span class="header-section-number">2</span> Background</h2>
+<p>A number of efforts at cataloguing datasets have been done in the past. Outstanding instances, that most researchers working with data have probably encountered in their paths, are works such as the SNAP dataset catalog <span class="citation" data-cites="leskovec2016snap">(<a href="#ref-leskovec2016snap" role="doc-biblioref">Leskovec and Sosič 2016</a>)</span> and the Koblenz Network Collection <span class="citation" data-cites="konect">(<a href="#ref-konect" role="doc-biblioref">Kunegis 2013</a>)</span>. These works have been instrumental in the development of the field of network science, however, they are not without limitations.</p>
+</section>
+<section id="data-collection-methodology" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-collection-methodology"><span class="header-section-number">3</span> Data collection methodology</h2>
+<p>The information we collected is a by-product of a larger systematic review we conducted related to graph layout algorithms, which included 206 papers—the core of them being the last 7 years of Graph Drawing proceedings, filtering out the papers with no computational evaluations. We further expanded our collection of graph layout algorithm papers through IEEE search, and the ACM and Wiley digital libraries, to include papers from TVCG and CGF. For every paper, we collected which features were handled by the graph layout algorithm presented, and what dataset was used in the evaluation. In order to find the datasets, we first tried looking for the paper’s supplemental material, then tried Googling the name of the dataset or the name of the paper, and if we had not been able to find anything yet, we resorted to emailing the authors. When in doubt about the artifact replication policy, we emailed the owners or authors to ask about it. In cases where it was explicitly mentioned that approval should be received prior to redistribution, we did not redistribute the datasets. However, when we did not receive an answer or where it was not explicitly stated, we did collect and store the dataset on our own storage solution to preserve it. If any owner or author of a dataset discovers their own work linked in our collection and disagrees with this choice, we kindly request them to contact us, and we will promptly remove the entry. Furthermore, we want to emphasize that we do not assert any ownership rights over the datasets listed.</p>
+<ul>
+<li>talk about how the graph feature labels were collected</li>
+<li>facilitating comparisons and replication of results &lt;- justification for what we did</li>
+<li>linking to specific papers that use that dataset - not seen in other network repositories!</li>
+</ul>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="658" height="619"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-5-output-1.png" width="570" height="619"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>Total papers:  198</code></pre>
+</div>
+</div>
+</section>
+<section id="sample-of-an-evaluation" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sample-of-an-evaluation"><span class="header-section-number">4</span> Sample of an evaluation</h2>
+</section>
+<section id="examples" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="examples"><span class="header-section-number">5</span> Examples</h2>
+<p>Let’s take a look at the AT&amp;T dataset:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>atnt_set <span class="op">=</span> benchmark_data[benchmark_data[<span class="st">"Name"</span>] <span class="op">==</span> <span class="st">"AT&amp;T"</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># display the field page id</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>atnt_set.iloc[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>Name                                                                                                          AT&amp;T
+Origin Notes                                                     Originally collected by Stephen North at AT&amp;T ...
+Origin Paper                                                     Drawing Directed Acyclic Graphs: An Experiment...
+Originally found at                                                          http://www.graphdrawing.org/data.html
+Size                                                                  1277 graphs, 10 to 100 nodes, 9 to 241 edges
+Note                                                                                 Same as North DAG collection.
+Appeared in years                                                          2004,2005,2016,2018,2019,2011,1996,2017
+Child collections                                                North DAGs (Benchmark%20datasets%2064e0439269f...
+link works?                                                                                                    Yes
+In repo?                                                                                                       Yes
+Graph features in papers                                         generic,large,directed edges,layered graphs,n-...
+graph features handled                                                                     acyclic, directed edges
+Related to Literature - Algorithm (Dataset tag relations) 1      Drawing Large Graphs with a Potential-Field-Ba...
+is it stored properly?                                                                                          No
+Type of Collection                                                                               Uniform Benchmark
+must be analyzed                                                                                               Yes
+Reviewed                                                                                                       NaN
+format                                                                                                     GraphML
+Number of Graphs                                                                                            1277.0
+cleaned format?                                                                                                Yes
+duplicate?                                                                                                      No
+Origin paper plaintext                                           Drawing Directed Acyclic Graphs: An Experiment...
+Page id                                                                           e86f130c42344169a9d75a61abc7e487
+Related to Literature - Algorithm (1) (Dataset tag relations)    Drawing Large Graphs with a Potential-Field-Ba...
+Added in paper                                                                                                 Yes
+Cleaned ALL data                                                                                                No
+OSF link json                                                    https://files.osf.io/v1/resources/j7ucv/provid...
+first look                                                                                                      No
+sparkline data                                                   {'min': 10, 'max': 100, 'step_size': 5, 'num_b...
+unavailable/skip                                                                                                No
+OSF link gexf                                                    https://files.osf.io/v1/resources/j7ucv/provid...
+OSF link gml                                                     https://files.osf.io/v1/resources/j7ucv/provid...
+OSF link graphml                                                 https://files.osf.io/v1/resources/j7ucv/provid...
+Name: 4, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>atnt_set <span class="op">=</span> benchmark_data[benchmark_data[<span class="st">"Name"</span>] <span class="op">==</span> <span class="st">"AT&amp;T"</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># display the field page id</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>atnt_set.iloc[<span class="dv">0</span>][<span class="st">"Related to Literature - Algorithm (1) (Dataset tag relations)"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>'Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm (https://www.notion.so/Drawing-Large-Graphs-with-a-Potential-Field-Based-Multilevel-Algorithm-27a6b266bb2c4c92976ed04d2afe9bed?pvs=21), Simple and Efficient Bilayer Cross Counting (https://www.notion.so/Simple-and-Efficient-Bilayer-Cross-Counting-6f978d8b0ceb4a6eb7df52ed82999861?pvs=21), Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm (https://www.notion.so/Drawing-Large-Graphs-with-a-Potential-Field-Based-Multilevel-Algorithm-a4fe70c68ad64ed3849c47d95afc8798?pvs=21), An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs (https://www.notion.so/An-Experimental-Comparison-of-Fast-Algorithms-for-Drawing-General-Large-Graphs-bbb7bb7d51d84d109030dee3c06d895d?pvs=21), A Natural Quadratic Approach to the Generalized Graph Layering Problem (https://www.notion.so/A-Natural-Quadratic-Approach-to-the-Generalized-Graph-Layering-Problem-bc71a4b3349649668c28d843a3e69037?pvs=21), Advances in the Planarization Method: Effective Multiple Edge Insertions (https://www.notion.so/Advances-in-the-Planarization-Method-Effective-Multiple-Edge-Insertions-c518ce875daa4fe7b003ad506eb9a347?pvs=21), Large-Graph Layout with the Fast Multipole Multilevel Method (https://www.notion.so/Large-Graph-Layout-with-the-Fast-Multipole-Multilevel-Method-def1fdc467f441abb94868eccd8a5a34?pvs=21), A Flow Formulation for Horizontal Coordinate Assignment with Prescribed Width (https://www.notion.so/A-Flow-Formulation-for-Horizontal-Coordinate-Assignment-with-Prescribed-Width-e1369233a80f4ae8a1ffbedd48c05be2?pvs=21), Compact Layered Drawings of General Directed Graphs (https://www.notion.so/Compact-Layered-Drawings-of-General-Directed-Graphs-f985ab75f9cb40d382f62f61eeff25c7?pvs=21)'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>atnt_set <span class="op">=</span> benchmark_data[benchmark_data[<span class="st">"Name"</span>] <span class="op">==</span> <span class="st">"AT&amp;T"</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># display the field page id</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>atnt_set.iloc[<span class="dv">0</span>][<span class="st">"Graph features in papers"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>'generic,large,directed edges,layered graphs,n-layers,DAG,hierarchical,layered graphs,n-layers,layered graphs,n-layers,generic,bipartite,layered graphs'</code></pre>
+</div>
+</div>
+<!-- ## Setting up and writing a JoVI article {#setup}
+
+Articles on the JoVI experimental track are written in Quarto, which is a simple markdown-based text format. This template outlines some of the features that are most useful for writing academic articles in Quarto; for more visit <https://quarto.org>.
+
+You can find the source for this article in the [journalovi/jovi-template-quarto](https://github.com/journalovi/jovi-template-quarto) repository on Github. To create a new JoVI article, we recommend following these steps:
+
+1.  Install Quarto by following [these instructions](https://quarto.org/docs/getting-started/installation.html).
+
+2.  Create a new git repository to hold your article by [forking our template repository](https://github.com/journalovi/jovi-template-quarto).
+
+You can then edit `index.qmd` in your new repository to write your paper. There are several options for editing and rendering the paper:
+
+1.  You can execute `quarto serve` from the commandline to render the paper to `index.html` and preview it in the browser.
+
+2.  You can edit the paper in RStudio and render it by clicking on the *Render* button:
+
+    ![](images/rstudio-render-button.png){style="width: 382.5px" fig.alt="Click Render in the Rstudio toolbar to render a Quarto document."}
+
+**If you plan to use RStudio,** read more about RStudio and Quarto [here](https://quarto.org/docs/computations/using-rstudio.html). In particular, you should install RStudio \> version 1.5. If you do, you can also enable the visual editor:
+
+![](images/rstudio-visual-editor.png){style="width: 554.5px" fig.alt="Click the Settings button and then Use Visual Editor in the Rstudio toolbar to enable the visual editor."}
+
+## Citations and footnotes
+
+Citations can be inserted using `[@simkin2002read]`, which is rendered as: [@simkin2002read]. You can also format the citation just as the year with `[-@simkin2002read]`, though then we recommending including author names in the sentence; e.g. `Simkin and Roychowdhury [-@simkin2002read] said blah blah blah`: Simkin and Roychowdhury [-@simkin2002read] said blah blah blah. Citations for this paper are kept in `bibliography.bib` in BibTeX format.
+
+You can also insert footnotes.[^1] Note that some traditional uses of footnotes (e.g. to include URLs) are unnecessary in JoVI, as you can (and should) instead simply link directly to the URL you want to refer to with an [inline link](https://www.markdownguide.org/basic-syntax/#links).
+
+[^1]: Like this one!
+
+For more on footnotes and citations see [this Quarto documentation page](https://quarto.org/docs/authoring/footnotes-and-citations.html).
+
+## Figures and images
+
+Images can be included and for accessibility purposes **should always** have alt text. Alt text of visualizations should provide meaningful descriptions of the visualization.
+
+``` markdown
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal
+payoff for 10 conditions, showing an increase over time in most
+conditions, with dot50 having the highest value of
+approximately 97% of optimal."}
+```
+
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal payoff for 10 conditions, showing an increase over time in most conditions, with dot50 having the highest value of approximately 97% of optimal."}
+
+You can also add captions and figure references using a `:::` block combined with an id prefixed with `#fig-`:
+
+``` markdown
+::: {#fig-teaser}
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal
+payoff for 10 conditions, showing an increase over time in most
+conditions, with dot50 having the highest value of
+approximately 97% of optimal."}
+
+Mean expected payoff / optimal payoff for 10 conditions.
+:::
+```
+
+::: {#fig-teaser}
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal payoff for 10 conditions, showing an increase over time in most conditions, with dot50 having the highest value of approximately 97% of optimal."}
+
+Mean expected payoff / optimal payoff for 10 conditions.
+:::
+
+Then you can refer to the above figure in text using `@fig-teaser`; for example:
+
+Refer to @fig-teaser. For more on cross-references, see the [Quarto page on cross-references](https://quarto.org/docs/authoring/cross-references.html).
+
+For the highest-quality output, we recommend using SVG figures if possible.
+
+Quarto also contains classes for more complex figure layouts and subfigures, which we recommend using in most cases if you need more complex layouts; see [the Quarto page on figures](https://quarto.org/docs/authoring/figures-and-layout.html). That said, we encourage exploration of what is possible with online article formats, and you should feel free to experiment so long as the result is archivable, accessible, and readable.
+
+## Body text
+
+The basic body text, header formatting, and basic tags such as links, emphasis, etc should be left as-is except in rare cases (for which you should be able to demonstrate the value of your modifications). That said, we do encourage experimentation with what is possible in this format; some possibilities that just scrath the surface include: using color or other formatting to link text content semantically with figures; using inline figures; experimenting with interactive widgets in text and figures. So long as content retains archivability, accessibility, and readability, we welcome experimentation with the format.
+
+## Code
+
+Quarto supports R and python code; for example:
+
+## Equations
+
+Equations can be included using LaTeX syntax:
+
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+
+For more on equations, see [the corresponding section in the Quarto documentation](). -->
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-konect" class="csl-entry" role="listitem">
+Kunegis, Jérôme. 2013. <span>“<span>KONECT</span> – <span>The</span> <span>Koblenz</span> <span>Network</span> <span>Collection</span>.”</span> In <em>Proc. Int. Conf. On World Wide Web Companion</em>, 1343–50. <a href="http://dl.acm.org/citation.cfm?id=2488173">http://dl.acm.org/citation.cfm?id=2488173</a>.
+</div>
+<div id="ref-leskovec2016snap" class="csl-entry" role="listitem">
+Leskovec, Jure, and Rok Sosič. 2016. <span>“SNAP: A General-Purpose Network Analysis and Graph-Mining Library.”</span> <em>ACM Transactions on Intelligent Systems and Technology (TIST)</em>, 1. <a href="https://doi.org/10.1145/2898361">https://doi.org/10.1145/2898361</a>.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../Projects/Benchmark_set"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502
+	}
+}

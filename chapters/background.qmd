@@ -1,0 +1,3 @@
+## Background
+
+A number of efforts at cataloguing datasets have been done in the past. Outstanding instances, that most researchers working with data have probably encountered in their paths, are works such as the SNAP dataset catalog [@leskovec2016snap] and the Koblenz Network Collection [@konect]. These works have been instrumental in the development of the field of network science, however, they are not without limitations.
