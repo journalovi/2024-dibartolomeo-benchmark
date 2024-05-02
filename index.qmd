@@ -2,22 +2,51 @@
 title: "Benchmark Datasets for Graph Layout Algorithms"
 author: 
   - name: Sara Di Bartolomeo
-    orcid: 0000-0001-9446-0419
-    email: mjskay@northwestern.edu
+    orcid: 0000-0001-9517-3526
+    email: sara.di-bartolomeo@uni-konstanz.de
     affiliations:
       - name: University of Konstanz
         city: Konstanz
-        state: IL
         country: Germany
-  - name: Cody Dunne
-    orcid: 0000-0001-9446-0419
-    email: mjskay@northwestern.edu
+  - name: Connor Wilson
+    orcid: 0000-0002-6936-4078
+    email:
     affiliations:
       - name: Northeastern University
         city: Boston
         state: MA
         country: USA
+  - name: Eduardo Puerta
+    orcid: 0000-0003-4664-4365
+    email:
+    affiliations:
+      - name: Northeastern University
+        city: Boston
+        state: MA
+        country: USA
+  - name: Tarik Crnovrsanin
+    orcid: 0000-0002-4397-5532
+    email:
+    affiliations:
+      - name: Northeastern University
+        city: Boston
+        state: MA
+        country: USA
+  - name: Cody Dunne
+    orcid: 0000-0002-1609-9776
+    email: c.dunne@northeastern.edu
+    affiliations:
+      - name: Northeastern University
+        city: Boston
+        state: MA
+        country: USA
+    
 bibliography: bibliography.bib
+# * **Sara Di Bartolomeo** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0001-9517-3526](https://orcid.org/0000-0001-9517-3526): Conceptualization, Data Collection & Categorization, Writing Original Draft + Review & Editing, Visualization, Validation.
+# * **Eduardo Puerta** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0003-4664-4365](https://orcid.org/0000-0003-4664-4365): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
+# * **Connor Wilson** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-6936-4078](https://orcid.org/0000-0002-6936-4078): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
+# * **Tarik Crnovrsanin** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-4397-5532](https://orcid.org/0000-0002-4397-5532): Data Collection & Categorization, Writing Original Drafr + Review & Editing, Validation.
+# * **Cody Dunne** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-1609-9776](https://orcid.org/0000-0002-1609-9776): Supervision, Writing Original Draft + Review & Editing, Validation, Funding Acquisition.
 ---
 <!-- 
 This template is intended for the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
@@ -33,9 +62,29 @@ If you have not setup [Quarto](https://quarto.org/) or the JoVI template yet, sk
 
 Your paper may fall into multiple types of work. We provide some example sections you may want to include in your structured abstract below, depending on the type of work. You can use the example sections to fill in the subsections that apply to your paper, then delete these first two paragraphs and the subsections that do not apply to your paper. Please add, merge, rename, or re-order sections if you feel that would improve clarity. We have some (partial) examples of structured abstracts [here](https://www.journalovi.org/structured-abstract-examples.html). -->
 
-###### Introduction
+### Introduction
 
-Graph layout algorithms are important algorithms used to assign coordinates in space to nodes in a graph. To test the effectiveness of a graph layout algorithm, often a benchmark is run, evaluating several characteristics often including the quality of the results (according to established readability criteria) and the performance of the algorithm in terms of, for instance, running time on a series of different graphs.
+Computational evaluations are crucial for standardized and objective evaluation of graph layout algorithms. Standard benchmark datasets facilitate comparison with prior work, and reliable access to datasets is fundamental for replicability. However, there is no comprehensive repository of benchmark datasets for Graph Drawing, and many datasets have been lost.
+
+### Data collection
+
+We collected 196 papers from Graph Drawing, IEEE venues, and Eurographics venues that include computational evaluations of graph layout algorithms. We searched for the datasets used.
+
+### Data analysis
+
+We archived datasets we found and re-created ones that were lost but had sufficient replication instructions. We classified graphs by their features and statistics. We also found text and images from papers using those graphs.
+
+### Implementation
+
+We implemented graph creation, data analysis, and website code.
+
+### Materials 	
+
+We provide a [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website; a [repository](https://github.com/visdunneright/gd_benchmark_sets/) with code for the website and metadata on the benchmark datasets; a [long-term archive](https://osf.io/j7ucv/) of this repository and the benchmark datasets.
+
+### Conclusion
+
+We provide a resource for the Graph Drawing and visualization communities to use to find datasets for computational evaluations of graph layout algorithms. Our organization by features and statistics supports rapid identification of relevant graphs. We have re-created and archived graphs used in research for their long-term preservation.
 
 <!-- ## Motivation + Background
 
@@ -100,7 +149,7 @@ See [the corresponding section in the author guide](https://www.journalovi.org/a
 
 ## Introduction
 
-```{python}
+<!-- ```{python}
 #| output: false
 #| echo: false
 import matplotlib.pyplot as plt
@@ -111,54 +160,77 @@ import seaborn as sns
 
 benchmark_data = pd.read_csv("data/Benchmark datasets.csv")
 literature_data = pd.read_csv("data/Literature.csv")
-```
+``` -->
+
+<!-- # Introduction -->
+
+# Introduction
 
 Benchmarking is a crucial aspect of computer science, as it allows researchers, developers, and engineers to compare the performance of various systems, algorithms, or hardware. A benchmark is a standardized test or set of tests used to measure and compare the performance of hardware, software, or systems under specific conditions. Benchmarking aims to provide objective and consistent metrics that allow for fair comparisons and informed decision-making. Benchmarks are widely used in various fields, including computer hardware evaluation, software optimization, and system performance analysis.
 In all these fields, benchmarking provides a standardized and objective way to compare and assess the performance of different systems, algorithms, or software implementations. It aids in making informed decisions about which solution best suits a specific use case or requirement.
 
-The same is true for the field of graph drawing, and in particular, for studying the performance and results of graph layout algorithms. 
+The same is true for graph drawing, particularly for studying the performance and results of graph layout algorithms **IMPORTANT: TODO cite CGF**. 
 Benchmark datasets can provide a standardized set of graphs with known properties and characteristics.
 These graphs can vary in size, density, connectivity, and structure.
 Researchers can objectively compare their performance or the quality of their results by applying various graph layout algorithms to the same benchmark dataset. 
 
-Because of our own challenges in finding appropriate benchmark sets to evaluate layout algorithms that we developed, we built a collection of benchmark datasets used in previous graph layout algorithm papers and a website to peruse the collection we put together. 
+In our own work, we have faced challenges in determining which benchmark datasets to use for evaluating the layout algorithms we developed. This led us to build a collection of benchmark datasets used in previous graph layout algorithm papers and a [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website for perusing the collection. We collected 196 papers from Graph Drawing, IEEE venues, and Eurographics venues that include computational evaluations of graph layout algorithms. We then searched for the datasets used for the benchmarks. We collected the data we could find and had permission to archive and re-created datasets that were lost but had sufficient replication instructions. We classified graphs by their features and statistics. We also found text and images from papers using those graphs. 
 
-The key objective of the work we are doing with benchmark datasets is not only aimed at improving the discoverability of these datasets and easing the running of benchmarks for graph layout algorithms of a vast amount of types and categories, but we also want to place a strong emphasis on the replicability of the experiments that are run. Indeed, reliable access to datasets is fundamental for replicability.
+This paper aims to present this graph drawing benchmark sets resource to the Graph Drawing and visualization communities so that other authors may benefit from our archiving and organization efforts. We hope this resource will encourage the discoverability of these datasets and the ease of running benchmarks for graph layout algorithms. Moreover, as reliable access to datasets is fundamental for replicability, we aim to preserve these datasets in perpetuity. Beyond collecting available datasets and re-creating lost ones, we archived all our materials [on OSF](https://osf.io/j7ucv/) for long-term availability. This included saving each graph in multiple common file formats to avoid translation issues for individual authors. We believe our work will lead to more reproducible and replicable Graph Drawing research by providing a long-term and open archive of the data we use in our computational evaluations.
 
-- we catalog datasets commonly used in Research 
-- we provide a website to browse and search the datasets
-- all of this is super important for replicability and reproducibility of results
-- list lost datasets, how big of a pity is it that we lost some of them
+Specifically, we contribute:
 
-{{< include chapters/background.qmd >}}
+- A collection of benchmark datasets used for graph layout algorithm evaluations, including:
+  - Re-creating lost datasets based on paper descriptions and a list of unavailable data,
+  - A classification of these datasets by graph features and statistics to aid in identifying appropriate evaluation candidates,
+  - Exemplar text and images from papers that use these datasets,
+  - A website for perusing this collection, and
+  - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
+
+Please see [Research Material Statements](#cell-501) **todo: Fix this when the quarto is finished** below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
+
+
+<!-- {{< include chapters/background.qmd >}}
 
 {{< include chapters/methodology.qmd >}}
+
+## Interesting questions to answer
+
+Has the type of benchmark dataset used changed through the years?
+
+Do papers include supplemental material more frequently compared to previous years?
+
+-> Include a navigable analysis of the contents of the Datasets
+
+-> Include a table with dataset -> paper, split by graph feature
+
+-> Classification of the datasets
 
 {{< include chapters/example_evaluation.qmd >}}
 
 ## Examples
 
-Let's take a look at the AT&T dataset:
-```{python}
+Let's take a look at the AT&T dataset: -->
+<!-- ```{python}
 atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
 
 # display the field page id
 atnt_set.iloc[0]
-```
+``` -->
 
-```{python}
+<!-- ```{python}
 atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
 
 # display the field page id
 atnt_set.iloc[0]["Related to Literature - Algorithm (1) (Dataset tag relations)"]
-```
+``` -->
 
-```{python}
+<!-- ```{python}
 atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
 
 # display the field page id
 atnt_set.iloc[0]["Graph features in papers"]
-```
+``` -->
 
 <!-- ## Setting up and writing a JoVI article {#setup}
 

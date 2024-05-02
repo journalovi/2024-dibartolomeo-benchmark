@@ -1,4 +1,4 @@
-## Data collection methodology
+<!-- ## Data collection methodology
 
 The information we collected is a by-product of a larger systematic review we conducted related to graph layout algorithms, which included 206 papers---the core of them being the last 7 years of Graph Drawing proceedings, filtering out the papers with no computational evaluations.
 We further expanded our collection of graph layout algorithm papers through IEEE search, and the ACM and Wiley digital libraries, to include papers from TVCG and CGF.
@@ -98,4 +98,4 @@ plt.gca().tick_params(axis='y', colors='gray')
 # count the total Papers
 total_papers = literature_data['Conference'].count()
 print("Total papers: ", total_papers)
-```
+``` -->
