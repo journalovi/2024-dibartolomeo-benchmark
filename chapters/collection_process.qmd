@@ -1,0 +1,101 @@
+# Collection process
+
+The information we collected is a by-product of a larger systematic review we conducted related to graph layout algorithms, which included 196 papers The following figure shows the original data collection process (from [@dibartolomeo2024evaluating]):
+
+![The sources used for the collection of papers. We started from the last 7 years of graph drawing, then integrated with the results from IEEE and Eurographics search, and then we also included all the most cited papers in Graph Drawing. The final result was 196 papers containing layout algorithm evaluations.](images/sources3(1).svg){fig.alt="The sources used for the collection of papers. We started from the last 7 years of graph drawing, then integrated with the results from IEEE and Eurographics search, and then we also included all the most cited papers in Graph Drawing. The final result was 196 papers containing layout algorithm evaluations."} 
+
+The core of our data collection was the last seven years of Graph Drawing proceedings (264 papers in total), filtering out papers without computational evaluations.
+We further expanded our graph layout algorithm papers collection by searching IEEE Xplore and Wiley digital libraries to include papers from TVCG and CGF. Then, we checked all the citations in the papers we collected from Graph Drawing, and added to our collection all the papers that were cited more than 4 times in the last 6 years of graph drawing --- to make sure we included algorithm papers that were important, but not published at GD, on IEEE Xplore or on the Wiley digital library.
+For each paper, we collected which features were handled by the graph layout algorithm presented, and what dataset was used in the evaluation. When collecting features, we always prioritized the authors' own wording and description of the features. The tagging of the papers was done by two people at the same time, over two different passes for sanity-checking purposes. 
+Following this process, we tried to track down the datasets used in computational evaluations: (1) we first looked for official or linked supplemental material, (2) we next Googled the dataset or paper name, (3) finally, we emailed the authors. 
+When in doubt about the artifact replication policy, we asked the owners or authors by email.
+In cases where it was explicitly mentioned that approval should be received before redistribution, we did not redistribute the datasets. However, if we received approval or did not receive an answer and found no explicit policy preventing redistirbution, we collected and stored the dataset to preserve it for future researchers. 
+If any dataset owner or author discovers their own work in our collection and would like it removed, we kindly request that they contact us (see @sec-authorship below), and we will promptly remove it. Furthermore, we want to emphasize that we do not assert any ownership rights over the datasets listed.
+
+The chart below shows the distribution of papers across different venues:
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Conference"].split(",").map(d => d.trim())).flat().map(a => {
+    if (a == "EuroVis") return "Computer Graphics Forum"
+    else return a;
+  }))].filter(a => a != "")
+
+  for (let dataset of allbenchmarkdatasets){
+    let literature_entries_with_this_dataset = literature.filter(l => l["Conference"].includes(dataset))
+
+    if (literature_entries_with_this_dataset.length < 2) continue;
+
+    d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
+  }
+  
+  return Plot.plot({
+    
+    color: {
+      range: ["steelblue"]
+    },
+    y: {},
+    marks: [
+      Plot.barX(d, {x: "count", y: "dataset", fill: "dataset",inset: 2, sort: {y: "x", reverse: true}}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150, marginTop: 20}),
+      Plot.text(['Venues where the papers where published'], {frameAnchor: "Top",dy: -10})
+    ]
+  })
+}
+```
+
+The following one, instead, shows the distribution of collected papers' publication date:
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  let year_range = [1980, 2023]
+  for (let year = year_range[0]; year < year_range[1]; year++){
+    let literature_entries_with_this_year = literature.filter(l => parseInt(l["Year"]) == year);
+
+    d.push({"year": year, "count": literature_entries_with_this_year.length})
+  }
+  
+  return Plot.plot({
+    color: {
+      range: ["steelblue"]
+    },
+    y: {},
+    height: 500,
+    marks: [
+      Plot.barX(d, {x: "count", y: "year", fill: "steelblue", inset: 2}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150, marginTop: 20}),
+      Plot.text(['Year of publication of the papers included in the survey'], {frameAnchor: "Top",dy: -10})
+    ]
+  })
+}
+```
+
+After collecting the datasets, we looked more in-depth into their contents, running analysis on a number of statistics associated with the graphs contained in them. 
+
+We finally ended up collecting 46 datasets, listed below:
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  
+  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split(",").map(a => a.split("(")[0].trim())).flat())].filter(a => a != "")
+
+  console.log(allbenchmarkdatasets.filter(b => !b.includes("Custom").length))
+  console.log(allbenchmarkdatasets.filter(b => b.includes("Custom").length))
+  
+    // return a little html div for every Dataset
+    return allbenchmarkdatasets.map(dataset => {
+        return `<div style="border: 1px solid black; padding: 10px; margin: 10px;">
+            <h3>${dataset}</h3>
+            <p>Some description of the dataset</p>
+        </div>`
+    }).join("")  
+}
+```
+
+The purpose of our collection effort is to facilitate comparisons and replication of results, and to provide a resource for researchers to find datasets that are used in the literature. We also provide links to the specific papers that use each dataset, so that they can be used as examples and sources of information. 

@@ -1,0 +1,191 @@
+# Datasets in use
+
+The following chart shows how many times we found a dataset being used in the papers we collected. It excludes custom edits to the datasets, which are discussed later in this document.
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  
+  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split(",").map(a => a.split("(")[0].trim())).flat())].filter(a => a != "")
+  
+  allbenchmarkdatasets = allbenchmarkdatasets.filter(b => !b.includes("Custom"))
+  allbenchmarkdatasets = allbenchmarkdatasets.slice(0, 20)
+
+  for (let dataset of allbenchmarkdatasets){
+    let literature_entries_with_this_dataset = literature.filter(l => l["Dataset tag relations"].includes(dataset))
+
+    d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
+  }
+  
+  return Plot.plot({
+    color: {
+      // legend: true,
+      // type: "categorical",
+      // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
+      range: ["steelblue"],
+      // scheme: "Tableau10" // use the "accent" scheme
+    },
+    y: {
+      // tickFormat: "s"
+    },
+    marks: [
+      Plot.barX(d, {x: "count", y: "dataset", fill: "dataset", inset: 2, sort: {y: "x", reverse: true}}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
+    ]
+  })
+}
+```
+
+In the data we collected, the most used dataset is Rome-Lib, followed by assorted collaboration networks (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from C.Walshaw - it is important to note that the Walshaw dataset is available as part of other collections - for instance, its graphs are found in SNAP. However, during the collection process, we preferred giving precedence to how the authors reported their own information. Thus, if the authors claimed the data was from the Walshaw collection, we reported it as such.
+
+We deem the popularity of Rome-Lib to be due to its simplicity, versatility, and most importantly the fact that it is linked on graphdrawing.org and offered as a benchmark dataset there. This is also true for the North DAGs.
+
+### Classification of the Datasets
+
+We classified the datasets in different categories, based on their origins or amount of graphs contained in them:
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]);
+
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed it") continue;
+    let count = collection_type.filter(a => a == c).length;
+    if (c.includes("No report")) c = "Established Network Repository";
+    d.push({"collection_type": c, "count": count})
+  }
+  
+  return Plot.plot({
+    color: {
+      // legend: true,
+      // type: "categorical",
+      // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
+      scheme: "Tableau10" // use the "accent" scheme
+    },
+    y: {
+      // tickFormat: "s"
+    },
+    marks: [
+      Plot.barX(d, {x: "count", y: "collection_type", fill: "collection_type", inset: 2, sort: {y: "x", reverse: true}}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
+    ]
+  })
+}
+```
+
+**Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
+
+```{ojs}
+//| echo: false
+make_dataset_name_and_title_list("Uniform Benchmark")
+```
+
+**((((Missing chart))))**
+
+A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs.
+
+**((((Missing chart))))**
+
+A number of papers used individual, **Single Graphs** for their experiments instead of a collection:
+
+**((((Missing chart))))**
+
+Many papers used graphs from specific domains that contain particular characteristics (e.g., geographical coordinates are often found in airline data). Instead of collecting each one of these individual, contextual datasets, we aggregated them in further subcategories, and called them **Aggregate collections**. Individual information about about each aggregate collection can be found in the papers that contain them.
+
+**((((Missing chart))))**
+
+Finally, we collected some datasets that we noticed being subsets of existing collections. This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the Walshaw dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be found as part of many other larger collections, such as SNAP. We classified these datasets as **Subsets**.
+
+**((((Missing chart))))**
+
+Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
+
+**((((Missing chart))))**
+
+### Custom-made datasets
+In the data we collected, we also found several instances of custom-made datasets. We consider custom-made datasets either edits to pre-existing datasets, where the authors found it necessary to either split or modify the dataset in a particular way, or datasets completely made up from scratch using random generators or custom-made code. This can happen in cases where the authors of a paper needed a dataset containing particular characteristics which was not easy to find in the wild, so a new dataset was crafted.
+
+For instance, consider the case where the authors of a paper develop an algorithm that works on hypergraphs. They want to test that the algorithm works, and test its performance on hypergraphs of various sizes, but datasets containing hypergraphs are difficult to find. For this reason, the authors craft one dataset synthetically, or take a pre-existing dataset and edit it so that it now contains hyperedges. 
+
+We split custom-made datasets in three categories, with their occurrences in the corpus of papers illustrated below:
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  
+  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag clean"].split(",").map(d => d.trim())).flat())].filter(a => a != "")
+
+  for (let dataset of allbenchmarkdatasets){
+    if (!dataset.includes("Custom")) continue;
+    let literature_entries_with_this_dataset = literature.filter(l => l["Dataset tag clean"].includes(dataset))
+
+    d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
+  }
+  
+  return Plot.plot({
+    color: {
+      // legend: true,
+      type: "categorical",
+      // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
+      scheme: "Tableau10" // use the "accent" scheme
+    },
+    y: {
+      // tickFormat: "s"
+    },
+    marks: [
+      Plot.barX(d, {x: "count", y: "dataset", fill: "dataset",inset: 2, sort: {y: "x", reverse: true}}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
+    ]
+  })
+}
+```
+
+**Replicable** datasets indicate cases where the authors have given enough information so that the experiment can be replicated exactly as it was run by the authors of a paper, or closely enough that the results obtained reflect the published ones very closely. This includes cases where either the authors published the entire dataset they used, they published the code they used to generate the dataset, or include an exact description of the steps they took to generate it.
+
+**Reproducible** datasets are cases where the authors described the steps they took to generate and/or edit their datasets, but not in-depth enough so that the exact same graphs can be reproduced, and did not redistribute it. Results can still be reproduces somewhat closely if the authors took care to report enough information about their graphs.
+
+For **non-replicable** datasets, we indicate cases where the authors did not distribute their datasets and did not include enough information in the paper so that their results could be replicated. 
+
+This information is closely tied to the distribution of supplemental material in papers, that is shown in the chart below:
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  
+  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Supplemental material (Multi-select)"].split(",").map(d => d.trim())).flat())].filter(a => a != "")
+
+  for (let dataset of allbenchmarkdatasets){
+    let literature_entries_with_this_dataset = literature.filter(l => l["Supplemental material (Multi-select)"].includes(dataset))
+
+    d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
+  }
+  
+  return Plot.plot({
+    color: {
+      // legend: true,
+      type: "categorical",
+      // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
+      scheme: "Tableau10" // use the "accent" scheme
+    },
+    y: {
+      // tickFormat: "s"
+    },
+    marks: [
+      Plot.barX(d, {x: "count", y: "dataset", fill: "dataset",inset: 2, sort: {y: "x", reverse: true}}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
+    ]
+  })
+}
+```
+
+This discussion is part of a larger discourse on research replicability, that is gaining traction in the scientific community. The ACM, for instance, has a policy on artifact review and badging, where authors are encouraged to submit their artifacts for review, and if they pass, they receive a badge that indicates the artifact is available for review. This is a step towards making research more replicable and reproducible, and we hope that our work will contribute to this effort. 
+
+See, e.g., ACM's definitions: https://www.acm.org/publications/policies/artifact-review-and-badging-current
+
+**((((Missing chart))))**

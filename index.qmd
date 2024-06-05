@@ -1,5 +1,7 @@
 ---
 title: "Benchmark Datasets for Graph Layout Algorithms"
+number-sections: true
+self-contained: true
 author: 
   - name: Sara Di Bartolomeo
     orcid: 0000-0001-9517-3526
@@ -8,6 +10,14 @@ author:
       - name: University of Konstanz
         city: Konstanz
         country: Germany
+  - name: Tarik Crnovrsanin
+    orcid: 0000-0002-4397-5532
+    email:
+    affiliations:
+      - name: Northeastern University
+        city: Boston
+        state: MA
+        country: USA
   - name: Connor Wilson
     orcid: 0000-0002-6936-4078
     email:
@@ -24,14 +34,6 @@ author:
         city: Boston
         state: MA
         country: USA
-  - name: Tarik Crnovrsanin
-    orcid: 0000-0002-4397-5532
-    email:
-    affiliations:
-      - name: Northeastern University
-        city: Boston
-        state: MA
-        country: USA
   - name: Cody Dunne
     orcid: 0000-0002-1609-9776
     email: c.dunne@northeastern.edu
@@ -42,11 +44,7 @@ author:
         country: USA
     
 bibliography: bibliography.bib
-# * **Sara Di Bartolomeo** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0001-9517-3526](https://orcid.org/0000-0001-9517-3526): Conceptualization, Data Collection & Categorization, Writing Original Draft + Review & Editing, Visualization, Validation.
-# * **Eduardo Puerta** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0003-4664-4365](https://orcid.org/0000-0003-4664-4365): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-# * **Connor Wilson** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-6936-4078](https://orcid.org/0000-0002-6936-4078): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-# * **Tarik Crnovrsanin** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-4397-5532](https://orcid.org/0000-0002-4397-5532): Data Collection & Categorization, Writing Original Drafr + Review & Editing, Validation.
-# * **Cody Dunne** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-1609-9776](https://orcid.org/0000-0002-1609-9776): Supervision, Writing Original Draft + Review & Editing, Validation, Funding Acquisition.
+
 ---
 <!-- 
 This template is intended for the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
@@ -147,21 +145,6 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#conflicts-of-interest).
 :::
 
-## Introduction
-
-<!-- ```{python}
-#| output: false
-#| echo: false
-import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.ticker import MaxNLocator
-import pandas as pd
-import seaborn as sns
-
-benchmark_data = pd.read_csv("data/Benchmark datasets.csv")
-literature_data = pd.read_csv("data/Literature.csv")
-``` -->
-
 <!-- # Introduction -->
 
 # Introduction
@@ -169,7 +152,7 @@ literature_data = pd.read_csv("data/Literature.csv")
 Benchmarking is a crucial aspect of computer science, as it allows researchers, developers, and engineers to compare the performance of various systems, algorithms, or hardware. A benchmark is a standardized test or set of tests used to measure and compare the performance of hardware, software, or systems under specific conditions. Benchmarking aims to provide objective and consistent metrics that allow for fair comparisons and informed decision-making. Benchmarks are widely used in various fields, including computer hardware evaluation, software optimization, and system performance analysis.
 In all these fields, benchmarking provides a standardized and objective way to compare and assess the performance of different systems, algorithms, or software implementations. It aids in making informed decisions about which solution best suits a specific use case or requirement.
 
-The same is true for graph drawing, particularly for studying the performance and results of graph layout algorithms **IMPORTANT: TODO cite CGF**. 
+The same is true for graph drawing, particularly for studying the performance and results of graph layout algorithms [@dibartolomeo2024evaluating]. 
 Benchmark datasets can provide a standardized set of graphs with known properties and characteristics.
 These graphs can vary in size, density, connectivity, and structure.
 Researchers can objectively compare their performance or the quality of their results by applying various graph layout algorithms to the same benchmark dataset. 
@@ -187,12 +170,496 @@ Specifically, we contribute:
   - A website for perusing this collection, and
   - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
 
-Please see [Research Material Statements](#cell-501) **todo: Fix this when the quarto is finished** below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
+Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
+<!-- 
+```{python}
+import pandas as pd
+benchmark_data = pd.read_csv("data/Benchmark_datasets.csv")
+literature_data = pd.read_csv("data/Literature.csv")
+ojs_define(literature_pre = literature_data)
+``` 
+-->
 
+```{ojs}
+//| echo: false
+literature_pre = await FileAttachment("data/Literature.csv").csv()
+benchmark_datasets_pre = await FileAttachment("data/Benchmark_datasets.csv").csv()
+literature = literature_pre.filter(d => !d.Name.includes("EXCLUDE") && !d.Name == "")
+benchmark_datasets = benchmark_datasets_pre.filter(l => l.Name != "")
+paper_sources_pre = await FileAttachment("data/Paper Sources.csv").csv()
+paper_source = paper_sources_pre.filter(l => l.Name != "")
+```
 
-<!-- {{< include chapters/background.qmd >}}
+{{< include chapters/collection_process.qmd >}} 
 
-{{< include chapters/methodology.qmd >}}
+{{< include chapters/datasets_in_use.qmd >}} 
+
+## Details of the datasets
+
+For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. The following section defaults to illustrating the contents of Rome-Lib, but the reader can easily change the dataset in focus by modifying the value of the dropdown menu below:
+
+## Random generation
+
+We discussed above that in a few cases, authors have generated their own datasets to test their algorithms. We call these generated datasets _synthetic_ or _custom_, as opposed to datasets found in the wild.
+Generating a synthetic dataset can be essential for several reasons, particularly in the context of algorithm development and validation:
+
+- **Privacy and Publication Constraints:** Imagine you've created an innovative algorithm using a dataset that, due to privacy concerns, cannot be shared publicly. To validate and share your work without compromising data confidentiality, creating a synthetic dataset that mirrors the essential features of the original data allows you to showcase your algorithm's effectiveness while adhering to privacy restrictions.
+- **Benchmarking and Comparative Analysis:** Suppose you have access to a single dataset that can be shared and wish to prove your algorithm's robustness across various scenarios. Generating synthetic datasets with _comparable_ characteristics provides a controlled environment to conduct benchmark studies. This approach enables scientists to demonstrate that your algorithm performs consistently well across datasets with analogous features, thereby reinforcing its applicability and reliability.
+- **Addressing Data Availability Issues:** In certain situations, you might design an algorithm to process graphs with specific attributes only to discover the absence of publicly available datasets showcasing these features. Synthetic datasets become invaluable here, allowing you to create tailored data that incorporates the necessary characteristics. This approach not only facilitates the testing of your algorithm in a relevant context but also helps in illustrating its potential in hypothetical yet plausible scenarios.
+
+We use the word _synthetic_ too in cases where the dataset has been altered, sliced, or other modifications have been applied to it.
+
+The following is a practical example of a case where you would need to edit a network:
+
+Imagine you are building a visualization to deal with the entirety of the [Enron Corpus](https://en.wikipedia.org/wiki/Enron_Corpus) dataset , which has hundreds of thousands of nodes and edges. Because of its size, you decide to _slice up_ the large dataset in many smaller files, so you can run tests. This particular dataset, in addition to being a challenging problem because of its size, also has an interesting distribution of connection densities: some nodes are extremely well connected, while others are much less connected. Indeed, the dataset is comprised of a collection of emails sent by Enron executives - between themselves or between other employees of the company. Because of how the dataset is constructed - where only the emails from the executives are taken into account - it has a distinctive skew in the connectedness of the data: 158 nodes are extremely well connected, while the rest of the nodes are much less connected. Because of this, there's uncountable mistakes that can be done through slicing this graph: for instance, slicing it so that the subset includes a less dense section of the entire graph will fail to provide a representative section. 
+
+While the creation of a synthetic dataset is a perfectly viable way to produce a benchmark set, in addition to replicability criteria (as discussed above), we also have to pay particular attention to a number of statistics related to the structure of graphs --- both when generating new datasets, and when slicing up existing datasets to reduce their size, or to create more graphs from a single, larger graph.
+
+The list of features to take into account to claim that a synthetic graph is _comparable_ to another one would be long, and perhaps out of the scope of this publication. These are just a few examples of what could be relevant:
+
+- **Size (nodes, edges):** The total number of nodes and edges in the graph, indicating its overall scale.
+- **Diameter:** The longest shortest path between any two nodes, showing the graph's maximum extent.
+- **Density:** The ratio of existing edges to possible edges, reflecting how closely knit the graph is.
+- **Motifs:** Recurring, significant subgraphs; identify which motifs occur more or less frequently than expected.
+- **Connectedness:** Evaluates both the number and sizes of graph components, along with detailed analysis per component.
+- **Centrality Measures (betweenness, closeness, degree):** Quantify the importance of nodes based on their position and connections within the graph.
+- **Special Cases:**
+  - **Layers:** Characteristics like number of layers, nodes per layer, and inter-layer connections.
+  - **Disjoint Groups:** The count and size distribution of separate clusters, plus an analysis of each group's properties.
+  - **Overlapping Sets:** Number and size distribution of intersecting groups, along with detailed features.
+  - **Additional Node/Edge Data:** Information such as timestamps, attributes, or weights that add context to nodes/edges.
+  - **Dynamic:** Describes changes in the graph over time, including the nature and frequency of node/edge modifications.
+
+The generation of random graphs that accurately mimic specific features presents a complex challenge, that has been explored abundantly in the past, but has found no universal solution yet. Two examples of popular models used to generate synthetic datasets are the Erdős-Rényi (ER) and the Barabási-Albert (BA) models, each one with their distinct focus and limitations:
+
+The ER model excels in creating graphs with uniform edge distribution, ideal for testing an algorithm's ability to evenly space nodes and reduce edge crossings. However, it falls short in replicating the complex, non-uniform connections seen in real-world networks, limiting its applicability to scenarios requiring simplicity and randomness.
+Conversely, the BA model produces scale-free networks with a few highly connected nodes, reflecting the hierarchical structure of many natural and human-made systems. It challenges layout algorithms to effectively display these hubs without cluttering. The limitation here is its focus on growth and preferential attachment, which might not suit all types of networks, particularly those without clear hub structures.
+
+As there is no universal solution for random graph generation, _our recommendation_ is to try as much as possible to pay attention to research replicability criteria, such as redistributing the generated dataset as supplemental material in the paper.
+
+<style>
+  .container {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 0.75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: 50rem;
+    display:flex;
+
+  }
+  .btn {
+    --bs-btn-padding-y: .15rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: .7rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    padding-top: 0.05rem;
+    font-size: var(--bs-btn-font-size);
+    border-radius: .25rem;
+    padding-bottom: 0.05rem;
+  }
+  
+  .btn-secondary {
+    background-color:#6c757d;
+    color:#fff !important;
+  }
+  .btn-secondary:hover{
+    background-color:#565e64;
+    
+  }
+  .a {
+    color:rgb(13, 110, 253);
+  }
+  .a:hover{
+    color:#0a58ca;
+  }
+
+  .card {
+  }
+  .card-body {
+  }
+  .row {
+    display:flex;
+  }
+  .col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .small-text{
+    font-size:small;
+  } 
+  .rounded-pill {
+    border-radius: var(--bs-badge-border-radius) !important;
+  }
+  .badge {
+    display: inline-block;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    color: var(--bs-badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+</style>
+
+```{ojs}
+viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Name), {value: "Rome-Lib", label: "Dataset to visualize"})
+```
+
+```{ojs}
+{
+  let b = benchmark_datasets.find(l => l.Name == dataset_to_be_visualized)["sparkline data"].replaceAll("'", '"')
+  try {
+    b = JSON.parse(b)
+    return Plot.plot({
+    color: {
+      range: ["steelblue"]
+    },
+    y: {nice:true},
+    x: {nice:true},
+    height: 400,
+    marks: [
+      Plot.line(b.num_nodes.map((d, i) => [i*5, d]), {marginTop: 30}),
+      Plot.text(['Distribution of graph sizes by number of nodes in ' + dataset_to_be_visualized], {frameAnchor: "Top",dy: -20})
+    ]
+  })
+  } catch { return "No sparkline information to show" }
+}
+```
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<div id="named-list" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+```{ojs}
+{
+  let named_list_dom = d3.select("#named-list");
+  named_list_dom.selectAll("*").remove()
+  let entry =  benchmark_datasets.find(l => l.Name == dataset_to_be_visualized);
+  const paper_data = literature
+  const origin_paper_data = paper_source
+  add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders)
+}
+```
+
+```{ojs}
+function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders){
+
+    if (entry["graph features handled"] != "" && entry["graph features handled"] != undefined){
+        let tags = entry["graph features handled"].split(",")
+        for (let j = 0; j < tags.length; j++){
+            if (tags[j].charAt(0) == ' '){
+                tags[j] = tags[j].substring(1).toLowerCase()
+            }
+            if (!graph_feature_tags.includes(tags[j])){
+                graph_feature_tags.push(tags[j])
+            }
+        }
+    }
+
+    for (let element of paper_data){
+        let features = (element["Graph feature"]).split(",")
+        for (let feature of features){
+            feature = feature.trim().toLowerCase()
+            if (!graph_feature_tags.includes(feature)){
+                graph_feature_tags.push(feature)
+            }
+        }
+    }
+  let infocontainer = named_list_dom.append("div")
+            .attr("class", "container")
+            .attr("id", "inforow_" + name_cleanup(entry["Name"]))
+            .style("padding", "2%")
+
+        let inforow = infocontainer.append("div")
+            .append("div")
+            .attr("class", "card card-body")
+            .append("div")
+            .attr("class", "col small-text")
+
+        add_simple_field(entry, "Originally found at", inforow)
+
+  //add buttons
+        add_download_field(entry, inforow);
+        add_simple_field(entry, "Note", inforow)
+        add_simple_field(entry, "Number of Files", inforow)
+        add_simple_field(entry, "Size", inforow)
+        add_simple_field(entry, "Origin Notes", inforow)
+  
+        inforow.append("div").html("<b>Origin paper: </b>")
+        for (let e of entry["Origin paper plaintext"].split(",")){
+            e = e.trim();
+            if (e == "") continue;
+            let origindoi = (paper_data.find(a => a.Name == e) || {}).DOI
+            let cited_paper = origin_paper_data.find(o => o.Name == e)
+            let cite_index = origin_paper_data.indexOf(cited_paper)
+            if (origindoi != undefined && origindoi != ""){
+                inforow.append("div").html('<a href="' + doify(origindoi) + '">' + "[link]" + '</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(' + cite_index + ')">' + "[citation]" + '</a> &nbsp;' + e)
+            } else inforow.append("div").html(e)
+        }
+
+        inforow.append("div").html("<b>Usage examples: </b>")
+
+        for (let i in entry["Related to Literature - Algorithm (Dataset tag relations) 1"].split(",")){
+            let e = entry["Related to Literature - Algorithm (Dataset tag relations) 1"].split(",")[i].split("(")[0].trim()
+            let entryrow = inforow.append("div").attr("class", "row")
+
+            if (e != "") {
+                let doi = (paper_data.find(a => a.Name == e) || {}).DOI
+                let link;
+                if (doi != undefined && doi != "") link = '<a href="' + doify(doi) + '">[link]</a>'
+                else link = ""
+
+                entryrow.append("div")
+                    .attr("class", "col-8")
+                    .html(link + " &nbsp; " + urlify(e))
+
+                let tagrow = entryrow.append("div").attr("class", "col-4")
+
+                if (paper_data.find(a => a.Name == e)){
+                    let feature_collection = (paper_data.find(a => a.Name == e) || {})["Graph feature"].split(",")
+                    
+                    for (let graph_feature of feature_collection){
+                        graph_feature = graph_feature.trim().toLowerCase()
+                        tagrow.append("div")
+                            .attr("class", "rounded-pill badge")
+                            .style("margin", "2px")
+                            .style("background-color", graph_feature_tags_colors[graph_feature_tags.indexOf(graph_feature)%graph_feature_tags_colors.length])
+                            .text(graph_feature)
+                    }
+                }
+            }
+        }
+
+        inforow.append("br")
+
+        // DRAW REST OF THE PAGE: uncomment when moving over
+  
+        let otherinfo = ""
+        try{
+            // TODO:Sara replace this for quarterly
+            // let otherinfo = await fetch("notion_data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md")
+            const location = entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md";
+            let otherinfo = notionFolders[location];
+            // otherinfo = await otherinfo.text() //TODO:Sara you need to get the text
+            var converter = new showdown.Converter();
+            
+            otherinfo = getTextAfterBody(otherinfo);
+            
+            for (let line of otherinfo.split("\n")){
+                if (line[0] == "!") {
+                    // get everything after the first (, concat the rest
+                    let img = line.split("(")
+                    // concat all the entries after the first
+                    for (let i = 2; i < img.length; i++){
+                        img[1] += "(" + img[i]
+                    }
+                    // remove the last )
+                    img[1] = img[1].substring(0, img[1].length - 1)
+                    img = img[1]
+
+                    inforow.append("div")
+                        .style("text-align", "center")
+                        .append("img")
+                        .attr("src", "notion_data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img)
+                        .attr("width", "80%")
+                } else if (line.includes("STOP RENDERING")){
+                     break;
+                } else inforow.append("div").html(converter.makeHtml(line))
+                
+            }
+
+        } catch (e){
+            console.log(e)
+        }
+
+}
+```
+
+```{ojs}
+notionFolders = Object()
+graph_feature_tags = []
+graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
+```
+
+```{ojs}
+function name_cleanup(name){
+  return name.replace("(", "").replace(")", "").replace(" ", "_").replace(".", "").replace("'", "").replace("&", "").replaceAll(" ", "")
+}
+```
+
+```{ojs}
+function doify(text){
+        if (text == "" || text == undefined) return text;
+        if (text.includes("https")) return (text);
+        else return ("https://doi.org/" + text);
+    }
+```
+
+```{ojs}
+function add_simple_field(entry, field_name, div, name = ""){
+        if (entry[field_name] != "" && entry[field_name] != undefined){
+            let title = name === "" ? field_name : name;
+            div.append("div").html("<b>" + title + ": </b>" + urlify(entry[field_name]))
+        }
+    }
+```
+
+```{ojs}
+function add_download_field(entry, div){
+        let divSection = div.append("div").html("<b>" + "Download formatted data: " + "</b>");
+        const list = ['OSF link gexf', 'OSF link gml', 'OSF link graphml', 'OSF link json']
+
+        list.forEach((item)=>{
+            if(entry[item] != "" && entry[item] != undefined){
+                divSection.append("a")
+                // .attr('type', 'button')
+                .attr('href', entry[item])
+                .attr('class', 'btn btn-secondary btn-sm skinny-button')
+                .text(item.split("OSF link").pop().toUpperCase())
+            }   
+        })
+    }
+```
+
+```{ojs}
+function urlify(text) {
+        var urlRegex = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
+        return text.replace(urlRegex, function(url) {
+            return '<a href="' + url + '">' + url + '</a>';
+        })
+    }
+```
+
+```{ojs}
+showdown = require('https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js')
+```
+
+```{ojs}
+function getTextAfterBody(input) {
+        const lines = input.split('\n');
+        let emptyLineCount = 0;
+        let text = '';
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim();
+            
+            if (line === '# Body') {
+                text = lines.slice(i + 1).join('\n');
+                // MathJax.typeset();
+            } 
+        }
+        
+        return text;
+    }
+```
+
+```{ojs}
+//| echo: false
+function make_dataset_name_and_title_list(chosen_collection_type){ 
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
+  let y_distance = 20;
+  let svgwidth = 1000;
+
+  const svg = d3.create('svg')
+    .attr('width', svgwidth)
+    .attr('height', y_distance * collection_type.length + 60);
+
+  svg.append("text")
+    .attr("x", svgwidth/2)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .style("font-weight", "bold")
+    .text("List of datasets tagged as " + chosen_collection_type + " and their sources")
+
+  svg.append("text")
+      .attr("x", 300)
+      .attr("y", 45)
+      .style("text-anchor", "end")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Name")
+
+  svg.append("text")
+      .attr("x", 340)
+      .attr("y", 45)
+      .style("text-anchor", "middle")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("#Graphs")
+
+  svg.append("text")
+      .attr("x", 420)
+      .attr("y", 45)
+      .style("text-anchor", "middle")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Original link")
+
+  svg.append("text")
+      .attr("x", 470)
+      .attr("y", 45)
+      .style("text-anchor", "start")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Origin paper / website")
+
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed It") continue;
+    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
+    if (c.includes("No report")) c = "Established Network Repository";
+
+    for (let i in instances){
+      svg.append("text")
+        .attr("x", 300)
+        .attr("y", 65 + i * y_distance)
+        .style("text-anchor", "end")
+        .style("font-size", "small")
+        .text(instances[i]["Name"] + " ")
+
+      svg.append("text")
+        .attr("x", 340)
+        .attr("y", 65 + i * y_distance)
+        .style("text-anchor", "middle")
+        .style("font-size", "small")
+        .text(instances[i]["Number of Graphs"] + " ")
+
+      if (instances[i]["Originally found at"] != "" && instances[i]["Originally found at"] != undefined) 
+        svg.append("a")
+        .attr("href", instances[i]["Originally found at"])
+        .attr("transform", "translate(410, " + (y_distance * i + 65) + ")")
+        .attr("target", "_blank")
+        .append("text")
+        .text("[link]")
+        .style("fill", "#88d")
+        .style("font-size", "small")
+
+      svg.append("a")
+        .attr("href", instances[i]["Originally found at"])
+        .attr("transform", "translate(470, " + (y_distance * i + 65) + ")")
+        .attr("target", "_blank")
+        .append("text")
+        .text(instances[i]["Origin paper plaintext"].split("(")[0])
+        .style("fill", "#aaa")
+        .style("font-size", "small")
+    }
+  }
+
+  return svg.node();
+}
+```
+
+{{< include chapters/conclusion.qmd >}} 
+
+<!--
 
 ## Interesting questions to answer
 
@@ -205,8 +672,6 @@ Do papers include supplemental material more frequently compared to previous yea
 -> Include a table with dataset -> paper, split by graph feature
 
 -> Classification of the datasets
-
-{{< include chapters/example_evaluation.qmd >}}
 
 ## Examples
 
