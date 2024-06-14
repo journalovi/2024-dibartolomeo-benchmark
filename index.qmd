@@ -311,10 +311,12 @@ As there is no universal solution for random graph generation, _our recommendati
 </style>
 
 ```{ojs}
+//| echo: false
 viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Name), {value: "Rome-Lib", label: "Dataset to visualize"})
 ```
 
 ```{ojs}
+//| echo: false
 {
   let b = benchmark_datasets.find(l => l.Name == dataset_to_be_visualized)["sparkline data"].replaceAll("'", '"')
   try {
@@ -340,6 +342,7 @@ viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Na
 <div id="named-list" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ```{ojs}
+//| echo: false
 {
   let named_list_dom = d3.select("#named-list");
   named_list_dom.selectAll("*").remove()
@@ -351,6 +354,7 @@ viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Na
 ```
 
 ```{ojs}
+//| echo: false
 function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders){
 
     if (entry["graph features handled"] != "" && entry["graph features handled"] != undefined){
@@ -485,18 +489,21 @@ function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, not
 ```
 
 ```{ojs}
+//| echo: false
 notionFolders = Object()
 graph_feature_tags = []
 graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
 ```
 
 ```{ojs}
+//| echo: false
 function name_cleanup(name){
   return name.replace("(", "").replace(")", "").replace(" ", "_").replace(".", "").replace("'", "").replace("&", "").replaceAll(" ", "")
 }
 ```
 
 ```{ojs}
+//| echo: false
 function doify(text){
         if (text == "" || text == undefined) return text;
         if (text.includes("https")) return (text);
@@ -505,6 +512,7 @@ function doify(text){
 ```
 
 ```{ojs}
+//| echo: false
 function add_simple_field(entry, field_name, div, name = ""){
         if (entry[field_name] != "" && entry[field_name] != undefined){
             let title = name === "" ? field_name : name;
@@ -514,6 +522,7 @@ function add_simple_field(entry, field_name, div, name = ""){
 ```
 
 ```{ojs}
+//| echo: false
 function add_download_field(entry, div){
         let divSection = div.append("div").html("<b>" + "Download formatted data: " + "</b>");
         const list = ['OSF link gexf', 'OSF link gml', 'OSF link graphml', 'OSF link json']
@@ -531,6 +540,7 @@ function add_download_field(entry, div){
 ```
 
 ```{ojs}
+//| echo: false
 function urlify(text) {
         var urlRegex = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
         return text.replace(urlRegex, function(url) {
@@ -540,10 +550,12 @@ function urlify(text) {
 ```
 
 ```{ojs}
+//| echo: false
 showdown = require('https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js')
 ```
 
 ```{ojs}
+//| echo: false
 function getTextAfterBody(input) {
         const lines = input.split('\n');
         let emptyLineCount = 0;
@@ -564,96 +576,15 @@ function getTextAfterBody(input) {
 
 ```{ojs}
 //| echo: false
-function make_dataset_name_and_title_list(chosen_collection_type){ 
-  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
-  let y_distance = 20;
-  let svgwidth = 1000;
-
-  const svg = d3.create('svg')
-    .attr('width', svgwidth)
-    .attr('height', y_distance * collection_type.length + 60);
-
-  svg.append("text")
-    .attr("x", svgwidth/2)
-    .attr("y", 20)
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .text("List of datasets tagged as " + chosen_collection_type + " and their sources")
-
-  svg.append("text")
-      .attr("x", 300)
-      .attr("y", 45)
-      .style("text-anchor", "end")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Name")
-
-  svg.append("text")
-      .attr("x", 340)
-      .attr("y", 45)
-      .style("text-anchor", "middle")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("#Graphs")
-
-  svg.append("text")
-      .attr("x", 420)
-      .attr("y", 45)
-      .style("text-anchor", "middle")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Original link")
-
-  svg.append("text")
-      .attr("x", 470)
-      .attr("y", 45)
-      .style("text-anchor", "start")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Origin paper / website")
-
-  for (let c of [... new Set(collection_type)]){
-    if (c == "Skip" || c == "Missed It") continue;
-    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
-    if (c.includes("No report")) c = "Established Network Repository";
-
-    for (let i in instances){
-      svg.append("text")
-        .attr("x", 300)
-        .attr("y", 65 + i * y_distance)
-        .style("text-anchor", "end")
-        .style("font-size", "small")
-        .text(instances[i]["Name"] + " ")
-
-      svg.append("text")
-        .attr("x", 340)
-        .attr("y", 65 + i * y_distance)
-        .style("text-anchor", "middle")
-        .style("font-size", "small")
-        .text(instances[i]["Number of Graphs"] + " ")
-
-      if (instances[i]["Originally found at"] != "" && instances[i]["Originally found at"] != undefined) 
-        svg.append("a")
-        .attr("href", instances[i]["Originally found at"])
-        .attr("transform", "translate(410, " + (y_distance * i + 65) + ")")
-        .attr("target", "_blank")
-        .append("text")
-        .text("[link]")
-        .style("fill", "#88d")
-        .style("font-size", "small")
-
-      svg.append("a")
-        .attr("href", instances[i]["Originally found at"])
-        .attr("transform", "translate(470, " + (y_distance * i + 65) + ")")
-        .attr("target", "_blank")
-        .append("text")
-        .text(instances[i]["Origin paper plaintext"].split("(")[0])
-        .style("fill", "#aaa")
-        .style("font-size", "small")
-    }
+dict_of_graph_features_to_colors = {
+  let all_graph_features = [... new Set(benchmark_datasets.map(a => a["graph features handled"].split(",").map(a => a.trim())).flat().filter(a => a != ""))]
+  let d = {}
+  let colorscheme = d3.interpolateRainbow;
+  let count = 0;
+  for (let f in all_graph_features){
+    d[all_graph_features[f]] = d3.color(colorscheme(count++/all_graph_features.length)).darker(0.7)
   }
-
-  return svg.node();
+  return d;
 }
 ```
 

@@ -84,27 +84,205 @@ We classified the datasets in different categories, based on their origins or am
 make_dataset_name_and_title_list("Uniform Benchmark")
 ```
 
-**((((Missing chart))))**
+```{ojs}
+//| echo: false
+{ 
+  let chosen_collection_type = "Uniform Benchmark"
+  
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
+  let y_distance = 20;
+  let svgwidth = 1000;
+
+  const svg = d3.create('svg')
+    .attr('width', svgwidth)
+    .attr('height', y_distance * collection_type.length + 60);
+
+  svg.append("text")
+    .attr("x", svgwidth/2)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .style("font-weight", "bold")
+    .text("What graph features do these datasets contain?")
+
+  svg.append("text")
+      .attr("x", 300)
+      .attr("y", 45)
+      .style("text-anchor", "end")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Name")
+
+  svg.append("text")
+      .attr("x", 350)
+      .attr("y", 45)
+      .style("text-anchor", "start")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Features")
+
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed It") continue;
+    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
+
+    for (let i in instances){
+      svg.append("text")
+        .attr("x", 300)
+        .attr("y", 65 + i * y_distance)
+        .style("text-anchor", "end")
+        .style("font-size", "small")
+        .text(instances[i]["Name"] + " ")
+
+    let features = instances[i]["graph features handled"].split(",").map(a => a.trim())
+
+    let cur_x = 0;
+    for (let f of features){
+      let t = svg.append("text")
+        .attr("x", 340 + cur_x)
+        .attr("y", 65 + i * y_distance)
+        .style("text-anchor", "start")
+        .style("font-size", "small")
+        .style("fill", dict_of_graph_features_to_colors[f])
+        .text(f)
+      //   let t = svg.append("div")
+      //     .attr("class", "rounded-pill badge")
+      //     .style("margin", "2px")
+      //     .style("background-color",dict_of_graph_features_to_colors[f])
+      // .text(f)
+          
+      cur_x += f.length * 8.5;
+      }
+    }
+     // tagrow.append("div")
+     //  .attr("class", "rounded-pill badge")
+     //  .style("margin", "2px")
+     //  .style("background-color", graph_feature_tags_colors[graph_feature_tags.indexOf(graph_feature)%graph_feature_tags_colors.length])
+     //  .text(graph_feature)
+  }
+
+  return svg.node();
+}
+```
 
 A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs.
 
-**((((Missing chart))))**
+```{ojs}
+//| echo: false
+make_dataset_name_and_title_list("Established Network Repo (No report)")
+```
 
 A number of papers used individual, **Single Graphs** for their experiments instead of a collection:
 
-**((((Missing chart))))**
+```{ojs}
+//| echo: false
+make_dataset_name_and_title_list("Single Graph")
+```
 
 Many papers used graphs from specific domains that contain particular characteristics (e.g., geographical coordinates are often found in airline data). Instead of collecting each one of these individual, contextual datasets, we aggregated them in further subcategories, and called them **Aggregate collections**. Individual information about about each aggregate collection can be found in the papers that contain them.
 
-**((((Missing chart))))**
+```{ojs} 
+//| echo: false
+{ 
+  let dom  = d3.select("body").append("div")
+  dom.selectAll("*").remove()
+  let chosen_collection_type = "Aggregate collection"
+  
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
+
+  dom.append("text")
+    .attr("text-anchor", "middle")
+    .style("font-weight", "bold")
+    .text("List of datasets tagged as " + chosen_collection_type)
+
+  const div = dom.append("div").attr("class","grid")
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed It") continue;
+    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
+    if (c.includes("No report")) c = "Established Network Repository";
+   
+    for (let i in instances){
+      div.append("p")
+        .style("text-anchor", "end")
+        .attr("class", "item-left")
+        .style("font-size", "small")
+        .text(instances[i]["Name"] + " ")
+      const related = instances[i]['Related to Literature - Algorithm (Dataset tag relations) 1']
+      const relatedList = related.split(",")
+      const content = div.append("div")
+                         .attr("class", "item-right") 
+      let res = []
+      relatedList.forEach((item)=>{
+        const name = item.split("(http")[0]
+        const paper = (literature.find(a => name.includes(a.Name)) || {})
+        if(paper.DOI){
+          content.append("a")
+            .attr('href',paper.DOI)
+            .style("font-size", "small")
+            .attr("class","paper-names").text(name)
+        } else {
+          content.append("span").style("font-size", "small").attr("class","paper-names").text(name)
+        }
+      });
+    }
+  }
+
+  return dom
+}
+```
 
 Finally, we collected some datasets that we noticed being subsets of existing collections. This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the Walshaw dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be found as part of many other larger collections, such as SNAP. We classified these datasets as **Subsets**.
 
-**((((Missing chart))))**
+```{ojs}
+//| echo: false
+{ 
+  let chosen_collection_type = "Subset of other collection"
+  
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
+  let y_distance = 20;
+  let svgwidth = 1000;
+
+  const svg = d3.create('svg')
+    .attr('width', svgwidth)
+    .attr('height', y_distance * collection_type.length + 40);
+
+  svg.append("text")
+    .attr("x", svgwidth/2)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .style("font-weight", "bold")
+    .text("List of datasets tagged as " + chosen_collection_type + " and their sources")
+
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed It") continue;
+    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
+    if (c.includes("No report")) c = "Established Network Repository";
+
+    for (let i in instances){
+      svg.append("text")
+        .attr("x", 300)
+        .attr("y", 45 + i * y_distance)
+        .style("text-anchor", "end")
+        .text(instances[i]["Name"] + " ")
+
+      svg.append("a")
+        .attr("href", "https://www.google.com")
+        .attr("transform", "translate(310, " + (y_distance * i + 45) + ")")
+        .attr("target", "_blank")
+        .append("text")
+        .text(instances[i]["Origin Paper"].split("(")[0])
+        .style("fill", "#aaa")
+    }
+  }
+
+  return svg.node();
+}
+```
 
 Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
 
-**((((Missing chart))))**
+```{ojs}
+//| echo: false
+make_dataset_name_and_title_list("Lost/Unavailable")
+```
 
 ### Custom-made datasets
 In the data we collected, we also found several instances of custom-made datasets. We consider custom-made datasets either edits to pre-existing datasets, where the authors found it necessary to either split or modify the dataset in a particular way, or datasets completely made up from scratch using random generators or custom-made code. This can happen in cases where the authors of a paper needed a dataset containing particular characteristics which was not easy to find in the wild, so a new dataset was crafted.
@@ -189,3 +367,143 @@ This discussion is part of a larger discourse on research replicability, that is
 See, e.g., ACM's definitions: https://www.acm.org/publications/policies/artifact-review-and-badging-current
 
 **((((Missing chart))))**
+
+```{ojs}
+//| echo: false
+function make_dataset_name_and_title_list(chosen_collection_type, include_num_graphs){ 
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
+  let y_distance = 20;
+  let svgwidth = 700;
+  let numgraphs_offset = 40;
+
+  const svg = d3.create('svg')
+    .attr('width', svgwidth)
+    .attr('height', y_distance * collection_type.length + 60);
+
+  svg.append("text")
+    .attr("x", svgwidth/2)
+    .attr("y", 20)
+    .attr("text-anchor", "middle")
+    .style("font-weight", "bold")
+    .text("List of datasets tagged as " + chosen_collection_type + " and their sources")
+
+  svg.append("text")
+      .attr("x", 200)
+      .attr("y", 45)
+      .style("text-anchor", "end")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Name")
+
+  if (include_num_graphs) {
+    svg.append("text")
+        .attr("x", 240)
+        .attr("y", 45)
+        .style("text-anchor", "middle")
+        .style("font-size", "small")
+        .style("fill", "#aaa")
+        .text("#Graphs")
+  }
+
+  svg.append("text")
+      .attr("x", 320 - (include_num_graphs ? 0 : numgraphs_offset))
+      .attr("y", 45)
+      .style("text-anchor", "middle")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Original link")
+
+  svg.append("text")
+      .attr("x", 370 - (include_num_graphs ? 0 : numgraphs_offset))
+      .attr("y", 45)
+      .style("text-anchor", "start")
+      .style("font-size", "small")
+      .style("fill", "#aaa")
+      .text("Origin paper / website")
+
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed It") continue;
+    console.log(c)
+    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
+    if (c.includes("No report")) c = "Established Network Repository";
+
+    for (let i in instances){
+      svg.append("text")
+        .attr("x", 200)
+        .attr("y", 65 + i * y_distance)
+        .style("text-anchor", "end")
+        .style("font-size", "small")
+        .text(instances[i]["Name"] + " ")
+
+      if (include_num_graphs){
+        svg.append("text")
+          .attr("x", 240)
+          .attr("y", 65 + i * y_distance)
+          .style("text-anchor", "middle")
+          .style("font-size", "small")
+          .text(instances[i]["Number of Graphs"] + " ")
+      }
+      
+      if (instances[i]["Originally found at"] != "" && instances[i]["Originally found at"] != undefined) {
+        const xPosOff = (include_num_graphs ? 0 : numgraphs_offset);
+        const yPos = (y_distance * i + 65);
+        svg.append("a")
+        .attr("href", instances[i]["Originally found at"])
+        .attr("transform", "translate("+ (310 - xPosOff) +", " + yPos + ")")
+        .attr("target", "_blank")
+        .append("text")
+        .text("[link]")
+        .style("fill", "#88d")
+        .style("font-size", "small")
+        
+        const paper = (paper_source.find(a => a.Name == instances[i]["Origin paper plaintext"]) || {})
+        let link = ""
+        if('bib' in paper){
+          const res = extractDOIUrl(paper.bib)
+          if (res) link = res;
+        }
+        
+        if(link != ""){
+          link = extractDOIUrl(paper.bib)
+          svg.append("a")
+          .attr("href", link)
+          .attr("transform", "translate("+ (370 - xPosOff)+", " + yPos + ")")
+          .attr("target", "_blank")
+          .append("text")
+          .text(instances[i]["Origin paper plaintext"].split("(")[0])
+          // .style("fill", "rgb(136, 136, 221)")
+          .style("fill","#1565c0")
+          .style("font-size", "small")
+        } else {
+          // What do we do here
+          svg.append("text")
+          .attr("transform", "translate("+ (370 - xPosOff)+", " + yPos + ")")
+          .text(instances[i]["Origin paper plaintext"].split("(")[0])
+          .style("fill", "#616161")
+          .style("font-size", "small")
+        }
+        
+      }
+    }
+  }
+
+  return svg.node();
+}
+
+function extractDOIUrl(bibtex) {
+    // Regular expression to find the DOI within the BibTeX entry
+    const doiRegex = /doi\s*=\s*{([^}]+)}/i;
+    
+    // Try to match the DOI in the BibTeX entry
+    const match = bibtex.match(doiRegex);
+    
+    // Check if a DOI was found
+    if (match) {
+        // Return the DOI as a full URL
+        return `https://doi.org/${match[1].trim()}`;
+    } else {
+        // Return null or an appropriate message if DOI is not found
+        return null;
+    }
+}
+```
