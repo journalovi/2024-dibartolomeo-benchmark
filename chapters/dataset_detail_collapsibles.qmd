@@ -1,0 +1,676 @@
+::: {.callout-note title="Airlines, Migrations, and Air Traffic" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Airlines,_Migrations,andAirTraffic")
+```
+
+<div id="named-list-Airlines,_Migrations,andAirTraffic" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Amazon" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Amazon")
+```
+
+<div id="named-list-Amazon" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Assorted Collaboration Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Assorted_CollaborationNetwork")
+```
+
+<div id="named-list-Assorted_CollaborationNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Assorted Fiscal Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Assorted_FiscalNetwork")
+```
+
+<div id="named-list-Assorted_FiscalNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="AT&T" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("ATT")
+```
+
+<div id="named-list-ATT" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Autonomous System Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Autonomous_SystemNetwork")
+```
+
+<div id="named-list-Autonomous_SystemNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Biological Pathways (KEGG)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Biological_PathwaysKEGG")
+```
+
+<div id="named-list-Biological_PathwaysKEGG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Blogposts, Tweets, and Forums" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Blogposts,_Tweets,andForums")
+```
+
+<div id="named-list-Blogposts,_Tweets,andForums" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Business Processes" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Business_Processes")
+```
+
+<div id="named-list-Business_Processes" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="California" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("California")
+```
+
+<div id="named-list-California" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Car Features" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Car_Features")
+```
+
+<div id="named-list-Car_Features" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Chess Games" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Chess_Games")
+```
+
+<div id="named-list-Chess_Games" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="World Greenhouse Gas Emissions" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("World_GreenhouseGasEmissions")
+```
+
+<div id="named-list-World_GreenhouseGasEmissions" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Co-Phylogenetic Trees" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Co-Phylogenetic_Trees")
+```
+
+<div id="named-list-Co-Phylogenetic_Trees" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Code Dependency Graphs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Code_DependencyGraphs")
+```
+
+<div id="named-list-Code_DependencyGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Complete Graphs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Complete_Graphs")
+```
+
+<div id="named-list-Complete_Graphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="World Maps" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("World_Maps")
+```
+
+<div id="named-list-World_Maps" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Control Flow Graphs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Control_FlowGraphs")
+```
+
+<div id="named-list-Control_FlowGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Debates" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Debates")
+```
+
+<div id="named-list-Debates" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Enron" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Enron")
+```
+
+<div id="named-list-Enron" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="FM3" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("FM3")
+```
+
+<div id="named-list-FM3" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="GION" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("GION")
+```
+
+<div id="named-list-GION" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Graphviz Examples" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Graphviz_Examples")
+```
+
+<div id="named-list-Graphviz_Examples" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Internet Mapping Project" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Internet_MappingProject")
+```
+
+<div id="named-list-Internet_MappingProject" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Investment Interdependence" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Investment_Interdependence")
+```
+
+<div id="named-list-Investment_Interdependence" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="KnownCR" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("KnownCR")
+```
+
+<div id="named-list-KnownCR" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Mathematics Genealogy" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Mathematics_Genealogy")
+```
+
+<div id="named-list-Mathematics_Genealogy" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Matrix Market" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Matrix_Market")
+```
+
+<div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Medical Patient Records" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Medical_PatientRecords")
+```
+
+<div id="named-list-Medical_PatientRecords" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Militarized_InterstateDisputesMID")
+```
+
+<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Network Repository" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Network_Repository")
+```
+
+<div id="named-list-Network_Repository" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Neural Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Neural_Network")
+```
+
+<div id="named-list-Neural_Network" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="North DAGs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("North_DAGs")
+```
+
+<div id="named-list-North_DAGs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Padia Stories" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Padia_Stories")
+```
+
+<div id="named-list-Padia_Stories" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Pajek" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Pajek")
+```
+
+<div id="named-list-Pajek" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Pert_DAG")
+```
+
+<div id="named-list-Pert_DAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Protein Interactions (Publications)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Protein_InteractionsPublications")
+```
+
+<div id="named-list-Protein_InteractionsPublications" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="RandDAG" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("RandDAG")
+```
+
+<div id="named-list-RandDAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Rome-Lib" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Rome-Lib")
+```
+
+<div id="named-list-Rome-Lib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Scotch Graph Collection" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Scotch_GraphCollection")
+```
+
+<div id="named-list-Scotch_GraphCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("SNAP_StanfordNetworkAnalysisPlatform")
+```
+
+<div id="named-list-SNAP_StanfordNetworkAnalysisPlatform" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Social Networks" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Social_Networks")
+```
+
+<div id="named-list-Social_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Stanford GraphBase" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Stanford_GraphBase")
+```
+
+<div id="named-list-Stanford_GraphBase" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="SteinLib" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("SteinLib")
+```
+
+<div id="named-list-SteinLib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Storylines (Movie Plots)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Storylines_MoviePlots")
+```
+
+<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="SuiteSparse Matrix Collection" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("SuiteSparse_MatrixCollection")
+```
+
+<div id="named-list-SuiteSparse_MatrixCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Tobler's Flow Mapper" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Toblers_FlowMapper")
+```
+
+<div id="named-list-Toblers_FlowMapper" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Transportation Networks" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Transportation_Networks")
+```
+
+<div id="named-list-Transportation_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Tree of Life" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Tree_ofLife")
+```
+
+<div id="named-list-Tree_ofLife" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Walshaw" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Walshaw")
+```
+
+<div id="named-list-Walshaw" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="WebCompute" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("WebCompute")
+```
+
+<div id="named-list-WebCompute" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="World Bank Trade Data" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("World_BankTradeData")
+```
+
+<div id="named-list-World_BankTradeData" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+

@@ -13,16 +13,15 @@ The supplemental material for this publication includes:
 
 # Acknowledgements
 
-This work was supported in part by the U.S. National Science Foundation (NSF) under award number CAREER IIS-1762268.
-**_TODO (CD 2024-03-13) Anything to add Sara?_**
+This work was supported in part by the U.S. National Science Foundation (NSF) under award number CAREER IIS-1762268 and the Austrian Science Fund (FWF) [ESP 513-N].
 
 # Authorship {#sec-authorship}
 
-* **Sara Di Bartolomeo** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0001-9517-3526](https://orcid.org/0000-0001-9517-3526): Conceptualization, Data Collection & Categorization, Writing Original Draft + Review & Editing, Visualization, Validation.
-* **Eduardo Puerta** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0003-4664-4365](https://orcid.org/0000-0003-4664-4365): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-* **Connor Wilson** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-6936-4078](https://orcid.org/0000-0002-6936-4078): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-* **Tarik Crnovrsanin** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-4397-5532](https://orcid.org/0000-0002-4397-5532): Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-* **Cody Dunne** [![orcid_16x16@2.gif](${await FileAttachment("orcid_16x16@2.gif").url()}) https://orcid.org/0000-0002-1609-9776](https://orcid.org/0000-0002-1609-9776): Supervision, Writing Original Draft + Review & Editing, Validation, Funding Acquisition.
+* **Sara Di Bartolomeo** <a href="https://orcid.org/0000-0001-9517-3526"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Conceptualization, Data Collection & Categorization, Writing Original Draft + Review & Editing, Visualization, Validation.
+* **Eduardo Puerta** <a href="https://orcid.org/0000-0003-4664-4365"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
+* **Connor Wilson** <a href="https://orcid.org/0000-0002-6936-4078"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
+* **Tarik Crnovrsanin** <a href="https://orcid.org/0000-0002-4397-5532"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
+* **Cody Dunne** <a href="https://orcid.org/0000-0002-1609-9776"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Supervision, Writing Original Draft + Review & Editing, Validation, Funding Acquisition.
 
 # License 
 

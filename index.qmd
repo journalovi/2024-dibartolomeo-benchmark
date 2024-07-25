@@ -198,45 +198,6 @@ paper_source = paper_sources_pre.filter(l => l.Name != "")
 
 For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. The following section defaults to illustrating the contents of Rome-Lib, but the reader can easily change the dataset in focus by modifying the value of the dropdown menu below:
 
-## Random generation
-
-We discussed above that in a few cases, authors have generated their own datasets to test their algorithms. We call these generated datasets _synthetic_ or _custom_, as opposed to datasets found in the wild.
-Generating a synthetic dataset can be essential for several reasons, particularly in the context of algorithm development and validation:
-
-- **Privacy and Publication Constraints:** Imagine you've created an innovative algorithm using a dataset that, due to privacy concerns, cannot be shared publicly. To validate and share your work without compromising data confidentiality, creating a synthetic dataset that mirrors the essential features of the original data allows you to showcase your algorithm's effectiveness while adhering to privacy restrictions.
-- **Benchmarking and Comparative Analysis:** Suppose you have access to a single dataset that can be shared and wish to prove your algorithm's robustness across various scenarios. Generating synthetic datasets with _comparable_ characteristics provides a controlled environment to conduct benchmark studies. This approach enables scientists to demonstrate that your algorithm performs consistently well across datasets with analogous features, thereby reinforcing its applicability and reliability.
-- **Addressing Data Availability Issues:** In certain situations, you might design an algorithm to process graphs with specific attributes only to discover the absence of publicly available datasets showcasing these features. Synthetic datasets become invaluable here, allowing you to create tailored data that incorporates the necessary characteristics. This approach not only facilitates the testing of your algorithm in a relevant context but also helps in illustrating its potential in hypothetical yet plausible scenarios.
-
-We use the word _synthetic_ too in cases where the dataset has been altered, sliced, or other modifications have been applied to it.
-
-The following is a practical example of a case where you would need to edit a network:
-
-Imagine you are building a visualization to deal with the entirety of the [Enron Corpus](https://en.wikipedia.org/wiki/Enron_Corpus) dataset , which has hundreds of thousands of nodes and edges. Because of its size, you decide to _slice up_ the large dataset in many smaller files, so you can run tests. This particular dataset, in addition to being a challenging problem because of its size, also has an interesting distribution of connection densities: some nodes are extremely well connected, while others are much less connected. Indeed, the dataset is comprised of a collection of emails sent by Enron executives - between themselves or between other employees of the company. Because of how the dataset is constructed - where only the emails from the executives are taken into account - it has a distinctive skew in the connectedness of the data: 158 nodes are extremely well connected, while the rest of the nodes are much less connected. Because of this, there's uncountable mistakes that can be done through slicing this graph: for instance, slicing it so that the subset includes a less dense section of the entire graph will fail to provide a representative section. 
-
-While the creation of a synthetic dataset is a perfectly viable way to produce a benchmark set, in addition to replicability criteria (as discussed above), we also have to pay particular attention to a number of statistics related to the structure of graphs --- both when generating new datasets, and when slicing up existing datasets to reduce their size, or to create more graphs from a single, larger graph.
-
-The list of features to take into account to claim that a synthetic graph is _comparable_ to another one would be long, and perhaps out of the scope of this publication. These are just a few examples of what could be relevant:
-
-- **Size (nodes, edges):** The total number of nodes and edges in the graph, indicating its overall scale.
-- **Diameter:** The longest shortest path between any two nodes, showing the graph's maximum extent.
-- **Density:** The ratio of existing edges to possible edges, reflecting how closely knit the graph is.
-- **Motifs:** Recurring, significant subgraphs; identify which motifs occur more or less frequently than expected.
-- **Connectedness:** Evaluates both the number and sizes of graph components, along with detailed analysis per component.
-- **Centrality Measures (betweenness, closeness, degree):** Quantify the importance of nodes based on their position and connections within the graph.
-- **Special Cases:**
-  - **Layers:** Characteristics like number of layers, nodes per layer, and inter-layer connections.
-  - **Disjoint Groups:** The count and size distribution of separate clusters, plus an analysis of each group's properties.
-  - **Overlapping Sets:** Number and size distribution of intersecting groups, along with detailed features.
-  - **Additional Node/Edge Data:** Information such as timestamps, attributes, or weights that add context to nodes/edges.
-  - **Dynamic:** Describes changes in the graph over time, including the nature and frequency of node/edge modifications.
-
-The generation of random graphs that accurately mimic specific features presents a complex challenge, that has been explored abundantly in the past, but has found no universal solution yet. Two examples of popular models used to generate synthetic datasets are the Erdős-Rényi (ER) and the Barabási-Albert (BA) models, each one with their distinct focus and limitations:
-
-The ER model excels in creating graphs with uniform edge distribution, ideal for testing an algorithm's ability to evenly space nodes and reduce edge crossings. However, it falls short in replicating the complex, non-uniform connections seen in real-world networks, limiting its applicability to scenarios requiring simplicity and randomness.
-Conversely, the BA model produces scale-free networks with a few highly connected nodes, reflecting the hierarchical structure of many natural and human-made systems. It challenges layout algorithms to effectively display these hubs without cluttering. The limitation here is its focus on growth and preferential attachment, which might not suit all types of networks, particularly those without clear hub structures.
-
-As there is no universal solution for random graph generation, _our recommendation_ is to try as much as possible to pay attention to research replicability criteria, such as redistributing the generated dataset as supplemental material in the paper.
-
 <style>
   .container {
     --bs-badge-padding-x: 0.65em;
@@ -312,13 +273,34 @@ As there is no universal solution for random graph generation, _our recommendati
 
 ```{ojs}
 //| echo: false
+//| output: false
+{
+  let s = ""
+  for (let dataset_to_be_visualized of benchmark_datasets.map(d => d.Name)){
+    s += `::: {.callout-note title="` + dataset_to_be_visualized + `" collapse=true appearance="minimal"}` + "\n\n"
+    s += "```{ojs}\n"
+    s += `//| echo: false\n
+make_sparkline("` + name_cleanup(dataset_to_be_visualized) + `")\n`
+    s += "```\n\n"
+    s += `<div id="named-list-` + name_cleanup(dataset_to_be_visualized) + `" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>\n\n`
+    s += "::: \n\n\n"
+  }
+  console.log(s);
+}
+```
+
+{{< include chapters/dataset_detail_collapsibles.qmd >}} 
+
+```{ojs}
+//| echo: false
+//| output: false
 viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Name), {value: "Rome-Lib", label: "Dataset to visualize"})
 ```
 
 ```{ojs}
 //| echo: false
-{
-  let b = benchmark_datasets.find(l => l.Name == dataset_to_be_visualized)["sparkline data"].replaceAll("'", '"')
+function make_sparkline(bname){
+  let b = benchmark_datasets.find(l => name_cleanup(l.Name) == bname)["sparkline data"].replaceAll("'", '"')
   try {
     b = JSON.parse(b)
     return Plot.plot({
@@ -330,32 +312,37 @@ viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Na
     height: 400,
     marks: [
       Plot.line(b.num_nodes.map((d, i) => [i*5, d]), {marginTop: 30}),
-      Plot.text(['Distribution of graph sizes by number of nodes in ' + dataset_to_be_visualized], {frameAnchor: "Top",dy: -20})
+      Plot.text(['Distribution of graph sizes by number of nodes in ' + bname], {frameAnchor: "Top",dy: -20})
     ]
   })
   } catch { return "No sparkline information to show" }
 }
 ```
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<div id="named-list" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ```{ojs}
 //| echo: false
+//| output: false
 {
-  let named_list_dom = d3.select("#named-list");
-  named_list_dom.selectAll("*").remove()
-  let entry =  benchmark_datasets.find(l => l.Name == dataset_to_be_visualized);
-  const paper_data = literature
-  const origin_paper_data = paper_source
-  add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders)
+  for (let benchmark_dataset of benchmark_datasets.map(d => d.Name)){
+    let bname = name_cleanup(benchmark_dataset)
+
+    let named_list_dom = d3.select("#named-list-" + bname);
+    named_list_dom.selectAll("*").remove()
+    let entry =  benchmark_datasets.find(l => name_cleanup(l.Name) == bname);
+    const paper_data = literature
+    const origin_paper_data = paper_source
+    add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders)
+
+  }
 }
 ```
 
 ```{ojs}
 //| echo: false
-function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders){
+async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders){
 
     if (entry["graph features handled"] != "" && entry["graph features handled"] != undefined){
         let tags = entry["graph features handled"].split(",")
@@ -406,7 +393,7 @@ function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, not
             let cited_paper = origin_paper_data.find(o => o.Name == e)
             let cite_index = origin_paper_data.indexOf(cited_paper)
             if (origindoi != undefined && origindoi != ""){
-                inforow.append("div").html('<a href="' + doify(origindoi) + '">' + "[link]" + '</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(' + cite_index + ')">' + "[citation]" + '</a> &nbsp;' + e)
+                inforow.append("div").html('<a href="' + doify(origindoi) + '">' + "[link]" + '</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(' + cite_index + ')">' + "" + '</a> &nbsp;' + e)
             } else inforow.append("div").html(e)
         }
 
@@ -449,17 +436,17 @@ function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, not
   
         let otherinfo = ""
         try{
-            // TODO:Sara replace this for quarterly
-            // let otherinfo = await fetch("notion_data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md")
-            const location = entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md";
-            let otherinfo = notionFolders[location];
-            // otherinfo = await otherinfo.text() //TODO:Sara you need to get the text
+            let otherinfo = await fetch("data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md")
+               
+            otherinfo = await otherinfo.text() 
+            
             var converter = new showdown.Converter();
             
             otherinfo = getTextAfterBody(otherinfo);
             
             for (let line of otherinfo.split("\n")){
-                if (line[0] == "!") {
+                if (line == ">" || line == "> ") continue;
+                else if (line[0] == "!") {
                     // get everything after the first (, concat the rest
                     let img = line.split("(")
                     // concat all the entries after the first
@@ -473,7 +460,7 @@ function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, not
                     inforow.append("div")
                         .style("text-align", "center")
                         .append("img")
-                        .attr("src", "notion_data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img)
+                        .attr("src", "data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img)
                         .attr("width", "80%")
                 } else if (line.includes("STOP RENDERING")){
                      break;
@@ -484,12 +471,12 @@ function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, not
         } catch (e){
             console.log(e)
         }
-
 }
 ```
 
 ```{ojs}
 //| echo: false
+//| output: false
 notionFolders = Object()
 graph_feature_tags = []
 graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
@@ -551,6 +538,7 @@ function urlify(text) {
 
 ```{ojs}
 //| echo: false
+//| output: false
 showdown = require('https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js')
 ```
 
@@ -576,6 +564,7 @@ function getTextAfterBody(input) {
 
 ```{ojs}
 //| echo: false
+//| output: false
 dict_of_graph_features_to_colors = {
   let all_graph_features = [... new Set(benchmark_datasets.map(a => a["graph features handled"].split(",").map(a => a.trim())).flat().filter(a => a != ""))]
   let d = {}
@@ -587,6 +576,8 @@ dict_of_graph_features_to_colors = {
   return d;
 }
 ```
+
+{{< include chapters/random_generation.qmd >}} 
 
 {{< include chapters/conclusion.qmd >}} 
 
