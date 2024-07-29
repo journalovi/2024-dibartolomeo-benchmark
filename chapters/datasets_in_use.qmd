@@ -39,9 +39,13 @@ The following chart shows how many times we found a dataset being used in the pa
 
 In the data we collected, the most used dataset is Rome-Lib, followed by assorted collaboration networks (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from C.Walshaw - it is important to note that the Walshaw dataset is available as part of other collections - for instance, its graphs are found in SNAP. However, during the collection process, we preferred giving precedence to how the authors reported their own information. Thus, if the authors claimed the data was from the Walshaw collection, we reported it as such.
 
-We deem the popularity of Rome-Lib to be due to its simplicity, versatility, and most importantly the fact that it is linked on graphdrawing.org and offered as a benchmark dataset there. This is also true for the North DAGs.
+<!-- We deem the popularity of Rome-Lib to be due to its simplicity, versatility, and most importantly the fact that it is linked on graphdrawing.org and offered as a benchmark dataset there. This is also true for the North DAGs. -->
 
-### Classification of the Datasets
+In the following sections, the reader will find details about the classifications and datasets in detail. Each dataset gets a dedicated, collapsible section, that contains the following information:
+- A **sparkline** visualization is shown in case the dataset contains multiple graphs, illustrating the distribution of graph sizes (in nodes) in the graphs in the dataset.
+
+
+## Classification of the Datasets
 
 We classified the datasets in different categories, based on their origins or amount of graphs contained in them:
 
@@ -77,7 +81,227 @@ We classified the datasets in different categories, based on their origins or am
 }
 ```
 
+### Uniform Benchmark datasets
+
 **Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
+
+The first of these collapsible sections is shown already expanded, to give an example of the content that can be found in each of them. The content is generated dynamically based on the data we collected. 
+
+Rome-Lib is, as previously discussed, the most common benchmark dataset, due to its already established popularity, its ease of use and access, and the many properties that are already known about it. 
+It was first introduced in [@DiBattista1997b] and presented in their paper ”An experimental comparison of four graph drawing algorithms”. Mostly “real” networks such as software companies, government, software engineering books, database design, and journal articles on visualization. Originally sent as an extended abstract to Computational Geometry in 1995 [@DiBattista1995]. 
+It contains exclusively <span class="pill-tag" style="background-color: rgb(217, 115, 13)">generic</span> graphs (e.g., undirected, non-layered, without pre-established clusters...), although some of the research that uses it enhances with additional attributes (such as performing a rank assignment step). 
+<!-- [http://graphdrawing.org describes it as: “Test suites of directed and undirected graphs from the http://www.dia.uniroma3.it/~gdt/ homepage (also known as the Rome Graphs)”.  -->
+
+<!-- ,  and it is used in a large number of papers: [@Buchheim2008] [@chimani2010] [@chimani2006] [@diBartolomeo2022b] [@Clancy2019] [@DiBattista1997b] [@chimani2016b] [@Chimani2008] [@Bekos2018] [@Demel2018] [@Heinsohn2018] [@Kindermann2018] [@chimani2016] [@Chimani2012] [@Gansner2006] [@Gutwenger2004] [@klammler2018] [@Niedermann2020] [@Giovannangeli2021] [@Chimani2021]. -->
+
+::: {.callout-note title="Rome-Lib" collapse=false appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Rome-Lib")
+```
+
+<div id="named-list-Rome-Lib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+Another widely used collection is the AT&T collection, or North DAG graphs. They are the same collection, but for the sake of consistency, we kept them separate based on how they were referred to in the papers we analyzed. AT&T is used in [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] (and referred as AT&T), while the papers that use it but refer to it as North DAGs are [@chimani2010] [@chimani2016b] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022].
+
+::: {.callout-note title="AT&T" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("ATT")
+```
+
+<div id="named-list-ATT" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="North DAGs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("North_DAGs")
+```
+
+<div id="named-list-North_DAGs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+The randDAG collection concludes the collections that can be easily accessed from graphdrawing.org. http://graphdrawing.org highlights the DAGmar graph generator, and provides a benchmark set of randomly generated directed acyclic graphs. While not explicit, it is implied this benchmark comes from the DAGmar generator. The collection is uniformly sampled from set of level graphs with certain graph parameters, such as number of nodes and number of edges. These graphs have no particular features, thus they are classified as <span class="pill-tag" style="background-color: rgb(217, 115, 13)">generic</span>.
+
+::: {.callout-note title="RandDAG" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("RandDAG")
+```
+
+<div id="named-list-RandDAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+The graphs have various origins, most of which are described on the Graphviz https://www.graphviz.org/gallery/. Example graphs used to generate images with the https://www.graphviz.org for their https://www.graphviz.org/gallery/. These graphs are picked as graphviz examples because they are diverse in types of features they contain: together with generic graphs, there are also graphs with <span class="pill-tag" style="background-color: rgb(217, 115, 13)">clusters</span>, <span class="pill-tag" style="background-color: rgb(217, 115, 13)">layers</span>, <span class="pill-tag" style="background-color: rgb(217, 115, 13)">directed edges</span> and <span class="pill-tag" style="background-color: rgb(217, 115, 13)">labeled nodes</span>.
+
+::: {.callout-note title="Graphviz Examples" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Graphviz_Examples")
+```
+
+<div id="named-list-Graphviz_Examples" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+The storylines dataset is particularly useful for <span class="pill-tag" style="background-color: rgb(217, 115, 13)">temporal event sequence</span> visualization because of its <span class="pill-tag" style="background-color: rgb(217, 115, 13)">dynamic</span> aspect and <span class="pill-tag" style="background-color: rgb(217, 115, 13)">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
+This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis which was lost. Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
+
+::: {.callout-note title="Storylines (Movie Plots)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Storylines_MoviePlots")
+```
+
+<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+**Complete graphs** refers to a generic collection of graphs that are fully connected, i.e., each node is connected to every other node, up to any number of nodes that are needed for the purpose of the experiment. 
+The linked dataset includes both the complete graphs $K_n$ for $5≤n≤50$ and the complete bipartite graphs $K_{n_1,n_2}$ for $5≤n1,n2≤40$. Crossing number is conjectured for most of these, and while not proven, we found these used in papers to validate minimum crossing numbers. We also note that the papers in our literature review did not provide example figures.
+
+::: {.callout-note title="Complete Graphs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Complete_Graphs")
+```
+
+<div id="named-list-Complete_Graphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+**KnownCR** is a collection of graphs with known crossing numbers, and it is used to test the performance of algorithms that approximate the crossing number of a graph. The dataset is used in papers that aim to approximate the crossing number of a graph, and it is used to compare the results of the approximation algorithms to the known crossing numbers of the graphs.
+A good resource for this is also the survey provided by [@Clancy2019ASO].
+The method by which they can be created is fully described in https://eldorado.tu-dortmund.de/handle/2003/27430?mode=full.
+
+::: {.callout-note title="KnownCR" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("KnownCR")
+```
+
+<div id="named-list-KnownCR" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+The dataset is comprised of instances of graphs uploaded to Crossing Number WebCompute, attributed to M. Chimani, T. Wiedera. http://crossings.uos.de/cr-proof-system-paper.
+Their website also features proofs of the crossing numbers of many of the Rome-Lib graphs. Newest version of database specifies non-planar graphs, but older versions do have some planar graphs.
+
+::: {.callout-note title="WebCompute" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("WebCompute")
+```
+
+<div id="named-list-WebCompute" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+Collection consisting of graphs from various sources including topological meshes, meshes related to physical problems (fluid dynamics, structural mechanics, combinatorial optimization), and interprocess communication graphs for a parallel computing implementation of a factorization solver.
+The https://gitlab.inria.fr/scotch/scotch is produced by the https://www.labri.fr/perso/pelegrin/scotch/ whose goal is to study static mapping by the means of graph theory, using “divide and conquer'' graph bipartitioning heuristics. The original link to the data http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph is broken.
+
+::: {.callout-note title="Scotch Graph Collection" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Scotch_GraphCollection")
+```
+
+<div id="named-list-Scotch_GraphCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+Datasets contain various attributes for a few locations and their geographical adjacency, namely neighboring states, countries, and municipalities.
+World Bank country information transformed into a weight-vectors dataset. Some of the incomplete data was filled from disparate sources mentioned in the paper’s supplemental materials: https://doi.org/10.48550/arXiv.1908.07291.
+
+::: {.callout-note title="World Maps" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("World_Maps")
+```
+
+<div id="named-list-World_Maps" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+**SteinLib** is a collection of Steiner tree problems in graphs and variants. Their https://steinlib.zib.de/steinlib.php has additional information about each problem in the dataset, including whether or not it has been solved. We omit two sets, https://steinlib.zib.de/showset.php?Relay and https://steinlib.zib.de/showset.php?EFST, from our provided data due to size constraints.
+
+::: {.callout-note title="SteinLib" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("SteinLib")
+```
+
+<div id="named-list-SteinLib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+
+::: {.callout-note title="Biological Pathways (KEGG)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Biological_PathwaysKEGG")
+```
+
+<div id="named-list-Biological_PathwaysKEGG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Militarized_InterstateDisputesMID")
+```
+
+<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Co-Phylogenetic Trees" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Co-Phylogenetic_Trees")
+```
+
+<div id="named-list-Co-Phylogenetic_Trees" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
 
 ```{ojs}
 //| echo: false
@@ -143,32 +367,98 @@ make_dataset_name_and_title_list("Uniform Benchmark")
         .style("font-size", "small")
         .style("fill", dict_of_graph_features_to_colors[f])
         .text(f)
-      //   let t = svg.append("div")
-      //     .attr("class", "rounded-pill badge")
-      //     .style("margin", "2px")
-      //     .style("background-color",dict_of_graph_features_to_colors[f])
-      // .text(f)
           
       cur_x += f.length * 8.5;
       }
     }
-     // tagrow.append("div")
-     //  .attr("class", "rounded-pill badge")
-     //  .style("margin", "2px")
-     //  .style("background-color", graph_feature_tags_colors[graph_feature_tags.indexOf(graph_feature)%graph_feature_tags_colors.length])
-     //  .text(graph_feature)
   }
 
   return svg.node();
 }
 ```
 
+### Established Network Repositories
+
 A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs.
+
+::: {.callout-note title="Matrix Market" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Matrix_Market")
+```
+
+<div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Network Repository" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Network_Repository")
+```
+
+<div id="named-list-Network_Repository" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Pajek" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Pajek")
+```
+
+<div id="named-list-Pajek" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("SNAP_StanfordNetworkAnalysisPlatform")
+```
+
+<div id="named-list-SNAP_StanfordNetworkAnalysisPlatform" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Stanford GraphBase" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Stanford_GraphBase")
+```
+
+<div id="named-list-Stanford_GraphBase" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="SuiteSparse Matrix Collection" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("SuiteSparse_MatrixCollection")
+```
+
+<div id="named-list-SuiteSparse_MatrixCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
 
 ```{ojs}
 //| echo: false
 make_dataset_name_and_title_list("Established Network Repo (No report)")
 ```
+
+### Single Graphs
 
 A number of papers used individual, **Single Graphs** for their experiments instead of a collection:
 
@@ -177,59 +467,241 @@ A number of papers used individual, **Single Graphs** for their experiments inst
 make_dataset_name_and_title_list("Single Graph")
 ```
 
-Many papers used graphs from specific domains that contain particular characteristics (e.g., geographical coordinates are often found in airline data). Instead of collecting each one of these individual, contextual datasets, we aggregated them in further subcategories, and called them **Aggregate collections**. Individual information about about each aggregate collection can be found in the papers that contain them.
+::: {.callout-note title="Enron" collapse=true appearance="minimal"}
 
-```{ojs} 
+```{ojs}
 //| echo: false
-{ 
-  let dom  = d3.select("body").append("div")
-  dom.selectAll("*").remove()
-  let chosen_collection_type = "Aggregate collection"
-  
-  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
 
-  dom.append("text")
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .text("List of datasets tagged as " + chosen_collection_type)
-
-  const div = dom.append("div").attr("class","grid")
-  for (let c of [... new Set(collection_type)]){
-    if (c == "Skip" || c == "Missed It") continue;
-    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
-    if (c.includes("No report")) c = "Established Network Repository";
-   
-    for (let i in instances){
-      div.append("p")
-        .style("text-anchor", "end")
-        .attr("class", "item-left")
-        .style("font-size", "small")
-        .text(instances[i]["Name"] + " ")
-      const related = instances[i]['Related to Literature - Algorithm (Dataset tag relations) 1']
-      const relatedList = related.split(",")
-      const content = div.append("div")
-                         .attr("class", "item-right") 
-      let res = []
-      relatedList.forEach((item)=>{
-        const name = item.split("(http")[0]
-        const paper = (literature.find(a => name.includes(a.Name)) || {})
-        if(paper.DOI){
-          content.append("a")
-            .attr('href',paper.DOI)
-            .style("font-size", "small")
-            .attr("class","paper-names").text(name)
-        } else {
-          content.append("span").style("font-size", "small").attr("class","paper-names").text(name)
-        }
-      });
-    }
-  }
-
-  return dom
-}
+make_sparkline("Enron")
 ```
 
+<div id="named-list-Enron" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="California" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("California")
+```
+
+<div id="named-list-California" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="World Greenhouse Gas Emissions" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("World_GreenhouseGasEmissions")
+```
+
+<div id="named-list-World_GreenhouseGasEmissions" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Chess Games" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Chess_Games")
+```
+
+<div id="named-list-Chess_Games" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Tree of Life" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Tree_ofLife")
+```
+
+<div id="named-list-Tree_ofLife" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="World Bank Trade Data" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("World_BankTradeData")
+```
+
+<div id="named-list-World_BankTradeData" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Investment Interdependence" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Investment_Interdependence")
+```
+
+<div id="named-list-Investment_Interdependence" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Protein Interactions" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Protein_InteractionsPublications")
+```
+
+<div id="named-list-Protein_InteractionsPublications" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+### Aggregate Collections
+
+Many papers used graphs from specific domains that contain particular characteristics (e.g., geographical coordinates are often found in airline data). Instead of collecting each one of these individual, contextual datasets, we aggregated them in further subcategories, and called them **Aggregate collections**. Individual information about about each aggregate collection can be found in the papers that contain them.
+
+::: {.callout-note title="Assorted Collaboration Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Assorted_CollaborationNetwork")
+```
+
+<div id="named-list-Assorted_CollaborationNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Airlines, Migrations, and Air Traffic" collapse=true appearance="minimal"}
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Airlines_MigrationsandAirTraffic")
+``` -->
+
+<div id="named-list-Airlines_MigrationsandAirTraffic" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Code Dependency Graphs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Code_DependencyGraphs")
+```
+
+<div id="named-list-Code_DependencyGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Blogposts, Tweets, and Forums" collapse=true appearance="minimal"}
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Blogposts_TweetsandForums")
+``` -->
+
+<div id="named-list-Blogposts_TweetsandForums" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Social Networks" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Social_Networks")
+```
+
+<div id="named-list-Social_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Transportation Networks" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Transportation_Networks")
+```
+
+<div id="named-list-Transportation_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+### Subsets of other collections
+
 Finally, we collected some datasets that we noticed being subsets of existing collections. This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the Walshaw dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be found as part of many other larger collections, such as SNAP. We classified these datasets as **Subsets**.
+
+::: {.callout-note title="Walshaw" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Walshaw")
+```
+
+<div id="named-list-Walshaw" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Pert_DAG")
+```
+
+<div id="named-list-Pert_DAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Amazon" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Amazon")
+```
+
+<div id="named-list-Amazon" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Autonomous System Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Autonomous_SystemNetwork")
+```
+
+<div id="named-list-Autonomous_SystemNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Control Flow Graphs" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Control_FlowGraphs")
+```
+
+<div id="named-list-Control_FlowGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
 
 ```{ojs}
 //| echo: false
@@ -277,7 +749,129 @@ Finally, we collected some datasets that we noticed being subsets of existing co
 }
 ```
 
+### Lost and unavailable datasets
+
 Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
+
+::: {.callout-note title="GION" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("GION")
+```
+
+<div id="named-list-GION" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="FM3" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("FM3")
+```
+
+<div id="named-list-FM3" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Padia Stories" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Padia_Stories")
+```
+
+<div id="named-list-Padia_Stories" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Internet Mapping Project" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Internet_MappingProject")
+```
+
+<div id="named-list-Internet_MappingProject" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Mathematics Genealogy" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Mathematics_Genealogy")
+```
+
+<div id="named-list-Mathematics_Genealogy" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Medical Patient Records" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Medical_PatientRecords")
+```
+
+<div id="named-list-Medical_PatientRecords" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Assorted Fiscal Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Assorted_FiscalNetwork")
+```
+
+<div id="named-list-Assorted_FiscalNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Debates" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Debates")
+```
+
+<div id="named-list-Debates" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Car Features" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Car_Features")
+```
+
+<div id="named-list-Car_Features" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+::: {.callout-note title="Business Processes" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Business_Processes")
+```
+
+<div id="named-list-Business_Processes" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
 
 ```{ojs}
 //| echo: false
@@ -364,9 +958,7 @@ This information is closely tied to the distribution of supplemental material in
 
 This discussion is part of a larger discourse on research replicability, that is gaining traction in the scientific community. The ACM, for instance, has a policy on artifact review and badging, where authors are encouraged to submit their artifacts for review, and if they pass, they receive a badge that indicates the artifact is available for review. This is a step towards making research more replicable and reproducible, and we hope that our work will contribute to this effort. 
 
-See, e.g., ACM's definitions: https://www.acm.org/publications/policies/artifact-review-and-badging-current
-
-**((((Missing chart))))**
+See, e.g., ACM's definitions at [https://www.acm.org/publications/policies/artifact-review-and-badging-current](https://www.acm.org/publications/policies/artifact-review-and-badging-current).
 
 ```{ojs}
 //| echo: false
@@ -423,7 +1015,7 @@ function make_dataset_name_and_title_list(chosen_collection_type, include_num_gr
 
   for (let c of [... new Set(collection_type)]){
     if (c == "Skip" || c == "Missed It") continue;
-    console.log(c)
+    // console.log(c)
     let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
     if (c.includes("No report")) c = "Established Network Repository";
 

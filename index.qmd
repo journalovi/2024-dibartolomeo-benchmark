@@ -269,8 +269,22 @@ For each of the datasets collected as part of our process, we conducted a brief 
     white-space: nowrap;
     vertical-align: baseline;
   }
+
+  .pill-tag {
+    background-color: #ddd;
+    border: none;
+    color: white;
+    padding: 0px 8px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0px 0px;
+    border-radius: 20px;
+    transform: scale(0.8);
+  }
 </style>
 
+<!-- code to generate the collapsible dataset info things -->
 ```{ojs}
 //| echo: false
 //| output: false
@@ -285,7 +299,7 @@ make_sparkline("` + name_cleanup(dataset_to_be_visualized) + `")\n`
     s += `<div id="named-list-` + name_cleanup(dataset_to_be_visualized) + `" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>\n\n`
     s += "::: \n\n\n"
   }
-  console.log(s);
+  // console.log(s);
 }
 ```
 
@@ -377,14 +391,17 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
             .attr("class", "col small-text")
 
         add_simple_field(entry, "Originally found at", inforow)
-
-  //add buttons
+        inforow.append("br")
         add_download_field(entry, inforow);
+        inforow.append("br")
         add_simple_field(entry, "Note", inforow)
-        add_simple_field(entry, "Number of Files", inforow)
+        // inforow.append("br")
+        // add_simple_field(entry, "Number of Files", inforow)
+        inforow.append("br")
         add_simple_field(entry, "Size", inforow)
+        inforow.append("br")
         add_simple_field(entry, "Origin Notes", inforow)
-  
+        inforow.append("br")
         inforow.append("div").html("<b>Origin paper: </b>")
         for (let e of entry["Origin paper plaintext"].split(",")){
             e = e.trim();
@@ -397,6 +414,7 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
             } else inforow.append("div").html(e)
         }
 
+        inforow.append("br")
         inforow.append("div").html("<b>Usage examples: </b>")
 
         for (let i in entry["Related to Literature - Algorithm (Dataset tag relations) 1"].split(",")){
@@ -405,9 +423,15 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
 
             if (e != "") {
                 let doi = (paper_data.find(a => a.Name == e) || {}).DOI
-                let link;
-                if (doi != undefined && doi != "") link = '<a href="' + doify(doi) + '">[link]</a>'
-                else link = ""
+                let citation_name = (paper_data.find(a => a.Name == e) || {})["Citation name"]
+                let link = "";
+                // if (doi != undefined && doi != "") link = '<a href="' + doify(doi) + '">[link]</a>'
+                if (doi != undefined && doi != "" && citation_name != undefined) {
+                  link += '<span class="citation" data-cites="' + citation_name + '">'
+                  link += '<a href="#ref-' + citation_name + '" role="doc-biblioref" aria-expanded="false">[link]</a>'
+                  link += '</span>'
+                  // link += "[@" + citation_name + "]"
+                } else link = ""
 
                 entryrow.append("div")
                     .attr("class", "col-8")
@@ -485,7 +509,7 @@ graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6
 ```{ojs}
 //| echo: false
 function name_cleanup(name){
-  return name.replace("(", "").replace(")", "").replace(" ", "_").replace(".", "").replace("'", "").replace("&", "").replaceAll(" ", "")
+  return name.replace("(", "").replace(")", "").replace(" ", "_").replace(".", "").replace("'", "").replace("&", "").replaceAll(" ", "").replaceAll(",", "")
 }
 ```
 
