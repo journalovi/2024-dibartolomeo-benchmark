@@ -114,7 +114,7 @@ We finally ended up collecting 46 datasets, listed below:
 }
 ```
 
-| Dataset Name | Papers using this dataset | 
+<!-- | Dataset Name | Papers using this dataset | 
 | --- | --- | 
 | Assorted Collaboration Network | [@saket2016] [@Ogawa2010] [@minghim2006] [@gove2019] [@mizuno2019] [@Qu2022] [@Henry2007] [@burch2011] [@Bach2014] [@Zhao2021] [@Gansner2013] [@Lin2010] [@diBartolomeo2022] [@Dang2016] [@Grabowicz2014] [@Simonetto2018] [@Angori2019] [@DiGiacomo2020] [@arleo2022] | 
 | Code Dependency Graphs | [@devkota2018] [@Tanahashi2015] [@Holten2006] [@burch2011] | 
@@ -128,7 +128,7 @@ We finally ended up collecting 46 datasets, listed below:
 | Migrations | [@wang2020] [@Wallinger2022] [@WeiweiCui2008] [@vonLandesberger2016] [@Ersoy2011] [@Holten2009] [@Wu2018] [@Perri2020] [@wallinger2023] | 
 | and Air Traffic | [@wang2020] [@Wallinger2022] [@WeiweiCui2008] [@vonLandesberger2016] [@Ersoy2011] [@Holten2009] [@Wu2018] [@Perri2020] [@wallinger2023] | 
 | Rome-Lib | [@Buchheim2008] [@chimani2010] [@chimani2006] [@diBartolomeo2022b] [@Clancy2019] [@DiBattista1997b] [@chimani2016b] [@Chimani2008] [@Bekos2018] [@Demel2018] [@Heinsohn2018] [@Kindermann2018] [@chimani2016] [@Chimani2012] [@Gansner2006] [@Gutwenger2004] [@klammler2018] [@Niedermann2020] [@Giovannangeli2021] [@Chimani2021] | 
-<!-- | North DAGs | [@chimani2010] [@chimani2016b] [@DIBATTISTA2000] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022] |  -->
+| North DAGs | [@chimani2010] [@chimani2016b] [@DIBATTISTA2000] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022] | 
 | Stanford GraphBase | [@gove2019] [@barth2002] [@junger1997] [@kruiger2017] [@Raj2018] [@Gronemann2016b] | 
 | Walshaw | [@gove2019] [@Frishman2008] [@Gansner2005b] [@KOREN20051867] [@hu2005efficient] [@Eades2018] [@Hachul2006] [@Hachul2005] [@Hong2019] [@civril2006] [@brandes2006] [@hacul2005] [@koren2002] [@frishman2007] [@walshaw2001] [@meidiana2020] | 
 | Storylines | [@diBartolomeo2022b] [@Tanahashi2015] [@ShixiaLiu2013] [@Tanahashi2012] [@Bartolomeo2021] [@vanDijk2018] [@Gronemann2016b] | 
@@ -137,7 +137,7 @@ We finally ended up collecting 46 datasets, listed below:
 | Blogposts | [@Frishman2008] [@Dang2016] [@Grabowicz2014] [@Purchase2020] [@arleo2022] | 
 | Tweets | [@Frishman2008] [@Dang2016] [@Grabowicz2014] [@Purchase2020] [@arleo2022] | 
 | and Forums | [@Frishman2008] [@Dang2016] [@Grabowicz2014] [@Purchase2020] [@arleo2022] | 
-<!-- | AT&T | [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] |  -->
+| AT&T | [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] | 
 | KnownCR | [@Clancy2019] [@Chimani2012] [@Chimani2021] | 
 | World Bank Trade Data | [@nocaj2015] [@noack2004] | 
 | Pajek | [@noack2004] [@Meidiana2019] | 
@@ -147,6 +147,6 @@ We finally ended up collecting 46 datasets, listed below:
 | GION | [@Eades2018] [@Marner2014] | 
 | Network Repository | [@Eades2018] [@Arleo2019] | 
 | Graphviz Examples | [@Nachmanson2017] [@Gange2011] [@giovannangeli2023] | 
-| Scotch Graph Collection | [@koren2002] [@harel2001] | 
+| Scotch Graph Collection | [@koren2002] [@harel2001] |  -->
 
 The purpose of our collection effort is to facilitate comparisons and replication of results, and to provide a resource for researchers to find datasets that are used in the literature. We also provide links to the specific papers that use each dataset, so that they can be used as examples and sources of information. 

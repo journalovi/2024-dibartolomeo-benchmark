@@ -87,26 +87,90 @@ We classified the datasets in different categories, based on their origins or am
 
 The first of these collapsible sections is shown already expanded, to give an example of the content that can be found in each of them. The content is generated dynamically based on the data we collected. 
 
-Rome-Lib is, as previously discussed, the most common benchmark dataset, due to its already established popularity, its ease of use and access, and the many properties that are already known about it. 
-It was first introduced in [@DiBattista1997b] and presented in their paper ”An experimental comparison of four graph drawing algorithms”. Mostly “real” networks such as software companies, government, software engineering books, database design, and journal articles on visualization. Originally sent as an extended abstract to Computational Geometry in 1995 [@DiBattista1995]. 
-It contains exclusively <span class="pill-tag" style="background-color: rgb(217, 115, 13)">generic</span> graphs (e.g., undirected, non-layered, without pre-established clusters...), although some of the research that uses it enhances with additional attributes (such as performing a rank assignment step). 
+
 <!-- [http://graphdrawing.org describes it as: “Test suites of directed and undirected graphs from the http://www.dia.uniroma3.it/~gdt/ homepage (also known as the Rome Graphs)”.  -->
 
 <!-- ,  and it is used in a large number of papers: [@Buchheim2008] [@chimani2010] [@chimani2006] [@diBartolomeo2022b] [@Clancy2019] [@DiBattista1997b] [@chimani2016b] [@Chimani2008] [@Bekos2018] [@Demel2018] [@Heinsohn2018] [@Kindermann2018] [@chimani2016] [@Chimani2012] [@Gansner2006] [@Gutwenger2004] [@klammler2018] [@Niedermann2020] [@Giovannangeli2021] [@Chimani2021]. -->
 
+<a name="Rome-Lib"></a>
+
 ::: {.callout-note title="Rome-Lib" collapse=false appearance="minimal"}
 
-```{ojs}
+Rome-Lib is, as previously discussed, the most common benchmark dataset, due to its already established popularity, its ease of use and access, and the many properties that are already known about it. 
+It was first introduced in [@DiBattista1997b] and presented in their paper ”An experimental comparison of four graph drawing algorithms”. Mostly “real” networks such as software companies, government, software engineering books, database design, and journal articles on visualization. Originally sent as an extended abstract to Computational Geometry in 1995 [@DiBattista1995]. 
+It contains exclusively <span class="pill-tag" style="background-color: rgb(217, 115, 13)">generic</span> graphs (e.g., undirected, non-layered, without pre-established clusters...), although some of the research that uses it enhances with additional attributes (such as performing a rank assignment step). 
+Information about optimal crossings can be found as part of [WebCompute](#WebCompute).
+
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Rome-Lib")
 ```
 
-<div id="named-list-Rome-Lib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Rome-Lib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d947f91101aa0dc66a0c4d" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96db0803e0c0cb7558c0f" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971aa4cf748115a055897" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ec4803e0c0b00558bc1" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>11534 graphs, 10 to 100 nodes, 9 to 158 edges </div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@DiBattista1997b]</div><div class="col-8">An experimental comparison of four graph drawing algorithms</div></div><div class="row"><div class="col-4">[@DiBattista1995]</div><div class="col-8">An experimental comparison of three graph drawing algorithms (extended abstract)</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Buchheim2008]</div><div class="col-4">A branch-and-cut approach to the crossing number problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@chimani2010]</div><div class="col-4">Layer-Free Upward Crossing Minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@chimani2006]</div><div class="col-4">Experiments on Exact Crossing Minimization Using Column Generation</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@diBartolomeo2022b]</div><div class="col-4">Stratisfimal Layout: A modular optimization model for laying out layered node-link network visualizations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">compound graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@klammler2018]</div><div class="col-4">Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Chimani2008]</div><div class="col-4">A New Approach to Exact Crossing
+Minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Gansner2006]</div><div class="col-4">Improved circular layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">circular</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Deep Neural Network for DrawiNg
+Networks</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@Gutwenger2004]</div><div class="col-4">An Experimental Study of Crossing
+Minimization Heuristics</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@DiBattista1997b]</div><div class="col-4">An experimental comparison of four graph drawing algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@chimani2016]</div><div class="col-4">A Note on the Practicality of Maximal Planar Subgraph Algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">planar</div></div></div><div class="row"><div class="col-4">[@Kindermann2018]</div><div class="col-4">Experimental Analysis of the Accessibility of Drawings with Few Segments</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">sparse</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">trees</div></div></div><div class="row"><div class="col-4">[@Heinsohn2018]</div><div class="col-4">An Interactive Tool to Explore and Improve the Ply Number of Drawings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Demel2018]</div><div class="col-4">A Greedy Heuristic for Crossing-Angle Maximization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Bekos2018]</div><div class="col-4">A Heuristic Approach Towards Drawings of Graphs with High Crossing Resolution</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Niedermann2020]</div><div class="col-4">An Integer-Linear Program
+for Bend-Minimization in Ortho-Radial
+Drawings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">ortho</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">ortho-radial</div></div></div><div class="row"><div class="col-4">[@Chimani2021]</div><div class="col-4">Star-Struck by Fixed Embeddings:
+Modern Crossing Number Heuristics</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Clancy2019]</div><div class="col-4">An effective crossing minimisation heuristic based on star insertion</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Chimani2012]</div><div class="col-4">Advances in the Planarization Method: Effective Multiple Edge Insertions</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@chimani2016b]</div><div class="col-4">An ILP-based Proof System for the Crossing
+Number Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Rome-Lib%20c2f20984de724f4c89764b0bc494e99e/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[A branch-and-cut approach to the crossing number problem](https://doi.org/10.1016/j.disopt.2007.05.006)”:
+
+> To test the performance of our new algorithm, we used a benchmark set of graphs of the University of Rome III, introduced in [11]. The set contains 11 389 graphs that consist of 10 to 100 nodes and 9 to 158 edges. These graphs were generated from a core set of 112 “real life” graphs used in database design and software engineering applications. Most of the graphs are sparse, which is a common property in most application areas of automatic graph drawing. The average ratio between the number of edges and the number of nodes of the graphs from the benchmark set is about 1.35.
+
+From “[Layer-free upward crossing minimization](https://doi.org/10.1145/1671970.1671975)”:
+
+> The Rome graphs [Di Battista et al. 1997] are a widely used benchmark set in graph drawing, obtained from a basic set of 112 real-world graphs. It contains 11,528 instances with 10 through 100 nodes and 9 through 158 edges. Although the graphs are originally undirected, they have been used as directed graphs—by artificially directing the edges according to the node order given in the input files—for showing the performance of the mixed-upward planarization approach [Eiglsperger et al. 2003]. In this case, all edges are directed and the graphs are acyclic; hence, the mixed-upward planarization approach turns into an upward planarization method.
+
+From “[A New Approach to Exact Crossing Minimization](https://doi.org/10.1007/978-3-540-87744-8_24)”:
+
+> We say graphs are trivial, if they are planar or if the heuristic achieves a planarization with only one crossing, as in these cases we need not prove optimality. The Rome library contains 7172 non-trivial graphs.
+
+From “[An Experimental Comparison of Four Graph Drawing Algorithms](https://doi.org/10.1016/s0925-7721(96)00005-3)”
+
+> Our test graph generation strategy is as follows. First, we have focused on the important application area of database and software visualization, where Entity-Relationship diagrams and Data-Flow diagrams are usually displayed with orthogonal drawings. Second, we have collected 112 "real life" graphs with number of vertices between 10 and 100, from now on called core graphs, from the following sources:
+
+> • 54% of the graphs have been obtained from major Italian software companies (especially from Database Informatica) and large government organization (including the Italian Internal Revenue Service and the Italian National Advisory Council for Computer Applications in the Government (Autorita’ per l'Informatica nella Pubblica Amministrazione));
+• 33% of the graphs were taken from well-known reference books in software engineering [18] and database design [1], and from journal articles on software visualization in the recent issues of Information Systems and the IEEE Transactions on Software Engineering;
+• 13% of the graphs were extracted from theses in software and database visualization written by students at the University of Rome "La Sapienza".
+
+> Our approach is based on the following scheme. We defined several primitive operations for updating graphs, which correspond to the typical operations performed by designers of Entity-Relationship and Data-Flow Diagrams, and attributed a certain probability to each of them. More specifically, the updating primitives we have used are the following: InsertEdge, which inserts a new edge between two existing vertices; DeleteEdge, which deletes an existing edge; InsertVertex, which splits an existing edge into two edges by inserting a new vertex; DeleteVertex, which deletes a vertex and all its incident edges; and MakeVertex, which creates a new vertex and connects it to a subset of vertices. The test graphs were then generated in several iterations starting from the core graphs by applying random sequences of operations with a "genetic" mechanism. Namely, at each iteration a new set of test graphs was obtained by applying a random sequence of operations to the current test set. Each new graph was then evaluated for "suitability", and those found not suitable were discarded. The probability of each primitive operation was varied at the end of each iteration. The evaluation of the suitability of the generated graphs was conducted using both objective and subjective analyses. The objective analysis consisted of determining whether the new graph had similar structural properties with respect to the core graph it was derived from. We have taken into account parameters like the average ratio between number of vertices and number of edges and the average number of biconnected components. The subjective analysis consisted in a visual inspection of the new graph and an assessment by expert users of Entity-Relationship and Data-Flow diagrams of its similarity to a "real-life" diagram. For obvious reasons, the subjective analysis has been done on a randomly selected subset of the graphs.
+
+### Example Figures
+
+From ”[An Experimental Comparison of Four Graph Drawing Algorithms](https://doi.org/10.1016/s0925-7721(96)00005-3)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Rome-Lib%20c2f20984de724f4c89764b0bc494e99e/Untitled.png' width='80%'></div>
+
+From “[Experimental Analysis of the Accessibility of Drawings with Few Segments](https://doi.org/10.1007/978-3-319-73915-1_5)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Rome-Lib%20c2f20984de724f4c89764b0bc494e99e/Untitled%201.png' width='80%'></div>
+
+From: [Deep Neural Network for DrawiNg Networks, (DNN)2](https://link.springer.com/chapter/10.1007/978-3-030-92931-2_27):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Rome-Lib%20c2f20984de724f4c89764b0bc494e99e/Untitled%202.png' width='80%'></div>
+
+**Fig 5.**  Layout examples for (DNN)^2, (DNN)^2, tsNET∗ and S_GD^2.
 
 ::: 
 
-Another widely used collection is the AT&T collection, or North DAG graphs. They are the same collection, but for the sake of consistency, we kept them separate based on how they were referred to in the papers we analyzed. AT&T is used in [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] (and referred as AT&T), while the papers that use it but refer to it as North DAGs are [@chimani2010] [@chimani2016b] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022].
+Another widely used collection is the AT&T collection, or North DAG graphs. They are the same collection, but for the sake of consistency, we kept them separate based on how they were referred to in the papers we analyzed. 
+<!-- AT&T is used in [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] (and referred as AT&T), while the papers that use it but refer to it as North DAGs are [@chimani2010] [@chimani2016b] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022]. -->
 
 ::: {.callout-note title="AT&T" collapse=true appearance="minimal"}
 
@@ -117,6 +181,14 @@ make_sparkline("ATT")
 ```
 
 <div id="named-list-ATT" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+ <div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d949574cf748107605564e" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e3b1101aa0ea66a0c45" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970d31101aa0ea36a0cb0" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e87803e0c0b04558c1f" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Note: </b>Same as North DAG collection.</div><br>
+<div><b>Size: </b>1277 graphs, 10 to 100 nodes, 9 to 241 edges</div><br>
+<div><b>Origin Notes: </b>Originally collected by Stephen North at AT&amp;T Bell Labs. The original link from 1995 is broken: <a href="ftp://ftp.research.att.com/dist/drawdag. ">ftp://ftp.research.att.com/dist/drawdag. </a>Di Battista et al. modified the dataset by removing isomorphic graphs, connecting disconnected graphs, and removing cycles.</div><br>
+<div><b>Origin paper: </b></div><div><a href="https://doi.org/10.1142/S0218195900000358">[link]</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(8)"></a> &nbsp;Drawing Directed Acyclic Graphs: An Experimental Study</div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Hachul2005]</div><div class="col-4">Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2006]</div><div class="col-4">An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Large-Graph Layout with the Fast Multipole Multilevel Method</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Jabrayilov2016]</div><div class="col-4">Compact Layered Drawings of General Directed Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Jnger2018]</div><div class="col-4">A Flow Formulation for Horizontal Coordinate Assignment with Prescribed Width</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">dag</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">hierarchical</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Mallach2019]</div><div class="col-4">A Natural Quadratic Approach to the Generalized Graph Layering Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Chimani2012]</div><div class="col-4">Advances in the Planarization Method: Effective Multiple Edge Insertions</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@barth2002]</div><div class="col-4">Simple and Efficient Bilayer Cross Counting</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">bipartite</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div></div></div><div class="row"><div class="col-4">[@DIBATTISTA2000]</div><div class="col-4">Drawing Directed Acyclic Graphs: An Experimental Study</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@welch2017]</div><div class="col-4">Measuring Symmetry in Drawings of Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
 
 ::: 
 
@@ -265,6 +337,7 @@ make_sparkline("SteinLib")
 
 ::: 
 
+According to [kegg.jp](https://www.kegg.jp/kegg-bin/show_pathway?map01100), “the KEGG PATHWAY database is a collection of manually drawn graphical diagrams, called KEGG pathway maps, for metabolic pathways, signaling pathways, pathways involved in various cellular processes and organismal systems, and perturbed pathways associated with human diseases.”
 
 ::: {.callout-note title="Biological Pathways (KEGG)" collapse=true appearance="minimal"}
 
@@ -278,6 +351,8 @@ make_sparkline("Biological_PathwaysKEGG")
 
 ::: 
 
+Collected as part of the [correlatesofwar.org](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag" style="background-color: rgb(217, 115, 13)">temporal event sequences</span>.
+
 ::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
 
 ```{ojs}
@@ -289,6 +364,8 @@ make_sparkline("Militarized_InterstateDisputesMID")
 <div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ::: 
+
+Collected by the authors of “https://almob.biomedcentral.com/articles/10.1186/s13015-014-0031-3. Each element of the data set is two binary co-phylogentic trees. “Caryophyllaceae & Microbotryum” and “Stinkbugs & Bacteria” are missing but our dataset includes all other files from “https://doi.org/10.1007/978-3-319-73915-1_27”. An additional dataset from “https://almob.biomedcentral.com/articles/10.1186/s13015-014-0031-3”, called “Wolbachia”, is included.
 
 ::: {.callout-note title="Co-Phylogenetic Trees" collapse=true appearance="minimal"}
 
@@ -302,170 +379,266 @@ make_sparkline("Co-Phylogenetic_Trees")
 
 ::: 
 
-
-```{ojs}
-//| echo: false
-make_dataset_name_and_title_list("Uniform Benchmark")
-```
-
-```{ojs}
-//| echo: false
-{ 
-  let chosen_collection_type = "Uniform Benchmark"
-  
-  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
-  let y_distance = 20;
-  let svgwidth = 1000;
-
-  const svg = d3.create('svg')
-    .attr('width', svgwidth)
-    .attr('height', y_distance * collection_type.length + 60);
-
-  svg.append("text")
-    .attr("x", svgwidth/2)
-    .attr("y", 20)
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .text("What graph features do these datasets contain?")
-
-  svg.append("text")
-      .attr("x", 300)
-      .attr("y", 45)
-      .style("text-anchor", "end")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Name")
-
-  svg.append("text")
-      .attr("x", 350)
-      .attr("y", 45)
-      .style("text-anchor", "start")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Features")
-
-  for (let c of [... new Set(collection_type)]){
-    if (c == "Skip" || c == "Missed It") continue;
-    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
-
-    for (let i in instances){
-      svg.append("text")
-        .attr("x", 300)
-        .attr("y", 65 + i * y_distance)
-        .style("text-anchor", "end")
-        .style("font-size", "small")
-        .text(instances[i]["Name"] + " ")
-
-    let features = instances[i]["graph features handled"].split(",").map(a => a.trim())
-
-    let cur_x = 0;
-    for (let f of features){
-      let t = svg.append("text")
-        .attr("x", 340 + cur_x)
-        .attr("y", 65 + i * y_distance)
-        .style("text-anchor", "start")
-        .style("font-size", "small")
-        .style("fill", dict_of_graph_features_to_colors[f])
-        .text(f)
-          
-      cur_x += f.length * 8.5;
-      }
-    }
-  }
-
-  return svg.node();
-}
-```
-
 ### Established Network Repositories
 
-A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs.
+A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs. Because their hosts are already dedicated to the maintaining and reporting of information on these collections, we do not include here any storage of the data (which would be redundant) or report statistics on them. Rather, our analysis here is focused on highlighting their properties, origins, and ways in which they have been used. 
+
+Compiled by the [Mathematical and Computational Sciences Division](https://math.nist.gov/mcsd/) of the [Information Technology Laboratory](http://www.itl.nist.gov/) of the [National Institute of Standards and Technology](http://www.nist.gov/), the **Matrix Market** is a repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services. It has been used for experiments with <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-large">large</span> graphs, and graphs with <span class="pill-tag pill-tag-weighted-edges">weighted edges</span>. Each matrix entry is accompanied by metadata that includes the matrix name and identifier, dimensions (number of rows and columns), number of non-zero elements, symmetry type (symmetric, skew-symmetric, or general) and data type (real, complex, integer, or pattern). The website also provides visualizations of the matrices, helping users understand their structure and distribution of non-zero elements. Downloads are also provided in a variety of formats, including their own Matrix Market Exchange (MME) format, Harwell-Boeing, and MATLAB.
 
 ::: {.callout-note title="Matrix Market" collapse=true appearance="minimal"}
 
-```{ojs}
-//| echo: false
+<!-- <div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
-make_sparkline("Matrix_Market")
-```
-
-<div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div class="col small-text"><div><b>Originally found at: </b><a href="https://math.nist.gov/MatrixMarket/index.html">https://math.nist.gov/MatrixMarket/index.html</a></div><br><div><b>Download formatted data: </b></div><br><div><b>Note: </b>A repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services.</div><br><br><div><b>Origin Notes: </b>Compiled by the <a href="https://math.nist.gov/mcsd/&nbsp;">https://math.nist.gov/mcsd/&nbsp;</a>of the&nbsp;<a href="http://www.itl.nist.gov/&nbsp;">http://www.itl.nist.gov/&nbsp;</a>of the&nbsp;<a href="http://www.nist.gov/">http://www.nist.gov/</a></div><br><div><b>Origin paper: </b></div><div>Matrix Market: a web resource for test matrix collections</div><br><div><b>Usage examples: </b></div><div class="row"><div class="col-8"><span class="citation" data-cites="klammler2018"><a href="#ref-klammler2018" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="KOREN20051867"><a href="#ref-KOREN20051867" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Drawing graphs by eigenvectors: theory and practice</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="brandes2006"><a href="#ref-brandes2006" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Eigensolver methods for progressive multidimensional scaling of large data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="Gansner2005"><a href="#ref-Gansner2005" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Graph Drawing by Stress Majorization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="meidiana2020"><a href="#ref-meidiana2020" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Sublinear Time Force Computation for Big Complex Network Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br><div></div><div><h3 id="descriptionsfromliterature">Descriptions from Literature</h3></div><div></div><div><p>From “<a href="https://doi.org/10.1007/978-3-540-31843-9_25">Graph Drawing by Stress Majorization</a>”:</p></div><div></div><div><blockquote>
+  <p>The first example is the 1138Bus graph (|V|=1138, |E|=1458) from the Matrix Market repository [1]. This graph models a network of high-voltage power distribution lines. Figure 4 shows two layouts of this graph.</p>
+</blockquote></div><div></div><div><h3 id="examplefigures">Example Figures</h3></div><div></div><div><p>From “<a href="https://doi.org/10.1016/j.camwa.2004.08.015">Drawing graphs by eigenvectors: theory and practice</a>” (top two layouts are a Matrix Market graph):</p></div><div></div><div style="text-align: center;"><img src="data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Matrix%20Market%2080bd4320417342458aefa031cf65db1f/Screen_Shot_2023-08-17_at_9.59.19_AM.png" width="80%"></div><div></div><div><p>From “<a href="https://doi.org/10.1007/978-3-540-31843-9_25">Graph Drawing by Stress Majorization</a>”:</p></div><div></div><div style="text-align: center;"><img src="data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Matrix%20Market%2080bd4320417342458aefa031cf65db1f/Screen_Shot_2023-08-17_at_11.13.32_AM.png" width="80%"></div></div>
 
 ::: 
 
+<a name="Network_Repository"></a>
+
+The **Network Repository** was proposed in 2015 by Rossi and Ahmed of Purdue University as a visually interactive real world graph tool and database. Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.
+
 ::: {.callout-note title="Network Repository" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Network_Repository")
 ```
 
-<div id="named-list-Network_Repository" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Network_Repository" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://networkrepository.com/">https://networkrepository.com/</a></div><br>
+<!-- <div><b>Note: </b>Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.</div><br>
+<br>
+<div><b>Origin Notes: </b>This repository was proposed in 2015 by Rossi and Ahmed of Purdue University as a visually interactive real world graph tool and database.</div><br> -->
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@nr]</div><div class="col-8">The Network Data Repository with Interactive Graph Analytics and Visualization</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Eades2018]</div><div class="col-4">Drawing Big Graphs Using Spectral
+Sparsification</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Arleo2019]</div><div class="col-4">A Distributed Multilevel Force-Directed Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[A Distributed Multilevel Force-Directed Algorithm](https://doi.org/10.1109/TPDS.2018.2869805)”:
+
+> To evaluate the running time of MULTI-GILA, we used the REALGRAPHS and BIGGRAPHS benchmarks, which contain larger graphs extracted from both real-world applications and synthetic generators; see Table 4. The REALGRAPHS set includes the 5 largest real-world graphs (mainly scale-free graphs) used in the experimental study of GILA [5]. These graphs are taken from the Stanford Large Networks Dataset Collection [3] and from the **Network Data Repository** [46], and their number of edges is between 121523 and 1541514.
+
+From “[Drawing Big Graphs Using Spectral Sparsification](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_22)”:
+
+> We used three data sets. The first set of graphs is taken from “defacto-benchmark” graphs, including the Hachul library, Walshaw’s Graph Partitioning Archive, the sparse matrices collection [[6](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_22#ref-CR6)] and the network repository [[24](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_22#ref-CR24)]. These include two types of graphs that have been extensively studied in graph drawing research: grid-like graphs and scale-free graphs.
 
 ::: 
 
+<a name="Pajek"></a>
+
+The **Pajek** Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleagues. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection. As a curiosity, pajek means spider in Slovenian. Many of Pajek graphs have been included as part of the [SuiteSparse Matrix Collection](#SuiteSparse_MatrixCollection).
+
 ::: {.callout-note title="Pajek" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Pajek")
 ```
 
-<div id="named-list-Pajek" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Pajek" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="http://vlado.fmf.uni-lj.si/pub/networks/data/">http://vlado.fmf.uni-lj.si/pub/networks/data/</a></div><br>
+<!-- <div><b>Download formatted data: </b></div><br> -->
+<!-- <div><b>Note: </b>Pajek means spider in Slovenian.</div><br>
+<br>
+<div><b>Origin Notes: </b>The Pajek Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleges. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection.</div><br> -->
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@pajek]</div><div class="col-8">Pajek datasets</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@noack2004]</div><div class="col-4">Energy Models for Graph Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Meidiana2019]</div><div class="col-4">A Quality Metric for Visualization of Clusters in Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
+
+> **Airline Routing (Figure 5):** The nodes of this graph represent US airports, and the (unweighted) edges represent direct flights. The probability that two airports are connected by a direct flight is strongly related to their geographical distance: Most direct flights are relatively short, and only few large hub airports are connected by direct long-range flights.
+The distances in the edge-repulsion LinLog layout resemble the relative geographical distances of the airports remarkably closely, given that the graph does not contain any explicit information about geographical distances.
+
+> **Dictionary (Figure 7):** The nodes represent terms in the Online Dictionary of Library and Information Science (ODLIS), and the edges represent hyperlinks. A hyperlink between two terms exists if one term is used to describe the meaning of the other term, and thus connects semantically related terms.
+The edge-repulsion LinLog layout indeed groups semantically related terms, which is better reflected in the VRML file on the supplementary web page than in Figure 7(c). Such a grouping is useful, for example, for discovering the global topic areas (like publishing, printing, information technology, etc.), for identifying entry points for the exploration of topics, or for finding semantically
+related terms even if they are not explicitly linked.
+
+From “[A Quality Metric for Visualization of Clusters in Graphs](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10)”:
+
+> We re-used some datasets from the validation experiments and created some new ones, listed in Table [2](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#Tab2). We also selected real world graph datasets with existing vertex categorization, which are listed under the double line in Table [2](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#Tab2). The datasets were taken from Pajek [[2](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#ref-CR2)] and Stanford Network Analysis Project’s (SNAP) repository [[23](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#ref-CR23), [40](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#ref-CR40)].
+
+### Example Figures
+
+From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Pajek%20e323e05a735d4151a0bccfec08aa3bd6/Screen_Shot_2023-08-17_at_4.05.25_PM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Pajek%20e323e05a735d4151a0bccfec08aa3bd6/Screen_Shot_2023-08-17_at_4.06.19_PM.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+[http://vlado.fmf.uni-lj.si/pub/networks/data/](http://vlado.fmf.uni-lj.si/pub/networks/data/)
+
+Direct flights between US airports (332 nodes, 2126 edges). Some
+
+distant airports in Alaska and the South Sea (e.g. Guam) are omitted to improve
+
+readability.
+
+[](http://vlado.fmf.uni-lj.si/pub/networks/doc/)
+
+Collection of other dataset that might not be linked into paper
+
+There is another link to data not mentioned in their repo. (Also part of SuiteSpase Matrix Collection) -->
 
 ::: 
 
+<a name="SNAP"></a>
+
+The **SNAP** repository is a collection of datasets assembled as part of the Stanford Network Analysis Platform, which started in 2004 and launched their website in 2009.
+Well-known, widely used graph repository.
+<!-- There also exists BioSNAP, which consists of similar datasets for medical applications under the same umbrella project. While BioSNAP was not as relevant in the literature, it may still prove useful for future researchers.  -->
+A number of graphs that became relevant individually are included in SNAP, such as [Enron](#enron), [Amazon](#amazon), [Protein Interactions](#protein-interaction) datasets and various [Social Network](#social-network) graphs. SNAP contains <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-directed">directed</span> and <span class="pill-tag pill-tag-undirected">undirected</span> graphs, <span class="pill-tag pill-tag-dynamic">dynamic</span> graphs and more. Graphs are presented with name and descriptions and a few statistics such as a general description, numbers of nodes and edges, source and reference information.
+
 ::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("SNAP_StanfordNetworkAnalysisPlatform")
 ```
 
-<div id="named-list-SNAP_StanfordNetworkAnalysisPlatform" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-SNAP_StanfordNetworkAnalysisPlatform" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="http://snap.stanford.edu/data/index.html">http://snap.stanford.edu/data/index.html</a></div><br>
+<!-- <div><b>Note: </b>Well-known, widely used graph repository.
+Note that BioSNAP, which consists of similar datasets for medical applications, exists under the same umbrella project. While BioSNAP was not as relevant in the literature, it may still prove useful for future researchers.</div><br> -->
+<div><b>Size: </b>1008 unique graphs (excluding graph classification tasks consisting of 352,536 graphs)</div><br>
+<!-- <div><b>Origin Notes: </b>The SNAP library is the collection of datasets assembled as part of the Stanford Network Analysis Platform, which started in 2004 and launched their website in 2009. The group attributes the dataset preparation to Ana Pavlisic. </div><br> -->
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@snapnets]</div><div class="col-8">SNAP Datasets: Stanford Large Network Dataset Collection</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Arleo2019]</div><div class="col-4">A Distributed Multilevel Force-Directed Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Meidiana2019]</div><div class="col-4">A Quality Metric for Visualization of Clusters in Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">ForceAtlas2</div><div class="col-4"></div></div><div class="row"><div class="col-4"></div><div class="col-4">a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software</div><div class="col-4"></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@zhong2023]</div><div class="col-4">Force-Directed Graph Layouts Revisited: A New Force Based on the T-Distribution</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@meidiana2023]</div><div class="col-4">Shape-Faithful Graph Drawings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">almost proximity drawable graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">mesh graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">scale-free graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">strong proximity drawable graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">weak proximity drawable graphs</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software](https://doi.org/10.1371/journal.pone.0098679)”:
+
+> We benchmarked our algorithm with a dataset of 68 networks from 5 to 23,133 nodes. We tried to gather varied networks corresponding to the actual use of Gephi (a lot of social networks, and scale-free networks in general). Most of these networks are from the Stanford Large Network Dataset Collection ([http://snap](http://snap/). [stanford.edu/data/](http://stanford.edu/data/)) and include social networks (Facebook and Twitter ego-networks), collaboration networks (from Arxiv) and autonomous systems (peering information inferred from Oregon route-views).
+
+### Example Figures
+
+From “[ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software](https://doi.org/10.1371/journal.pone.0098679)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SNAP%20(Stanford%20Network%20Analysis%20Platform)%201cd77eaee57147ce8263b2f9eaa2589c/Screen_Shot_2023-08-02_at_11.20.12_AM.png' width='80%'></div>
 
 ::: 
 
+<a name="Stanford_GraphBase"></a>
+
+Compiled by Donald Knuth, the **Stanford Graphbase** consists of programs and datasets for network analysis. The datasets accompany a textbook, “The Stanford GraphBase: A Platform for Combinatorial Computing”.
+
 ::: {.callout-note title="Stanford GraphBase" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Stanford_GraphBase")
 ```
 
-<div id="named-list-Stanford_GraphBase" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Stanford_GraphBase" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://www-cs-faculty.stanford.edu/~knuth/sgb.html">https://www-cs-faculty.stanford.edu/~knuth/sgb.html</a></div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Knuth_2009]</div><div class="col-8">The Stanford GraphBase: A Platform for Combinatorial Computing</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@kruiger2017]</div><div class="col-4">Graph Layouts by t-SNE</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">planar</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@Raj2018]</div><div class="col-4">Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@Gronemann2016b]</div><div class="col-4">Crossing Minimization in Storyline Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@junger1997]</div><div class="col-4">2-Layer Straightline Crossing Minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">bipartite</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div></div></div><div class="row"><div class="col-4">[@barth2002]</div><div class="col-4">Simple and Efficient Bilayer Cross Counting</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">bipartite</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><br>
+
+
+### Descriptions from Literature
+
+From “[Crossing Minimization in Storyline Visualizations](https://doi.org/10.1007/978-3-319-50106-2_29)”:
+
+> Since the instances “Anna Karenina” and “Les Miserables” are very big, we have split them into chapters and sequences of chapters. The resulting test-bed is made of eight chapters, seven pairs of chapters, six triples of chapters and five quadruples of chapters from “Anna Karenina”, and five chapters, four pairs of chapters and three triples of chapters from “Les Mis ́erables”, plus the entire “Adventures of Huckleberry Finn”, “Inception-sf”, “Inception”, “Star Wars”, “The Matrix-sf”, and “The Matrix”.
+
+From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs](https://doi.org/10.1007/978-3-319-73915-1_28)”:
+
+> The third dataset is a graph of character associations in the famous French novel Les Miserables (Fig. 5) [18]. This graph consists of 77 nodes, each representing a character in the novel, and 254 weighted edges where the weights represent the number of chapters that feature both characters associated with an edge.
+We see the that the main protagonist Valjean (marked in red) is placed prominently in all three visualizations (Fig. 5). However, other key characters in the plot such as Inspector Javert (blue) and Cosett (orange), who do not appear often with characters other than the protagonist (and thus have low betweenness centrality) are treated differently. While the radial layout relegates them to the periphery (far from Valjean) (Fig. 5b), MDS (Fig. 5a) paints a conflicting picture with regard to their centrality, e.g., Cosett’s node almost overlaps with Valjean despite its low centrality. In contrast, the proposed ARL (Fig.5c) is able to coherently convey the low centrality of the Inspector Javert and Cosett, as well as, their closeness to Valjean. The above issue of distance distortion appears to be a frequent occurrence in the radial layout due to many characters who have a low centrality value causing them to end up being packed in the outer periphery. A case of contrast is that of the character Bishop Myriel (green) who despite being associated with several characters, is only seen with Valjean once.
+
+### Example Figures
+
+From “[Crossing Minimization in Storyline Visualizations](https://doi.org/10.1007/978-3-319-50106-2_29)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Stanford%20GraphBase%20effff4b40e9d4a79b6f33825ccca7401/Screen_Shot_2023-08-17_at_4.29.43_PM.png' width='80%'></div>
+
+From “[Graph Layouts by t-SNE](https://doi.org/10.1111/cgf.13187)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Stanford%20GraphBase%20effff4b40e9d4a79b6f33825ccca7401/Screen_Shot_2023-08-17_at_4.21.24_PM.png' width='80%'></div>
+
+lesmis is the GraphBase Les Miserables graph
+
+From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs](https://doi.org/10.1007/978-3-319-73915-1_28)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Stanford%20GraphBase%20effff4b40e9d4a79b6f33825ccca7401/Screen_Shot_2023-08-17_at_4.23.56_PM.png' width='80%'></div>
 
 ::: 
+
+<a name="SuiteSparse_MatrixCollection"></a>
+
+The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuitSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
 
 ::: {.callout-note title="SuiteSparse Matrix Collection" collapse=true appearance="minimal"}
+<!-- 
+<div id="named-list-SuiteSparse_MatrixCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
-```{ojs}
-//| echo: false
+<div><b>Originally found at: </b><a href="https://sparse.tamu.edu/">https://sparse.tamu.edu/</a></div><br>
+<div><b>Size: </b>2893</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@davis2011]</div><div class="col-8">The University of Florida Sparse Matrix Collection</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Gansner2013]</div><div class="col-4">A Maxent-Stress Model for Graph Layout</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Ortmann2017]</div><div class="col-4">A Sparse Stress Model</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@Eades2018]</div><div class="col-4">Drawing Big Graphs Using Spectral
+Sparsification</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hong2019]</div><div class="col-4">Multi-level Graph Drawing Using Infomap Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">multilevel</div></div></div><div class="row"><div class="col-4">[@Brsig2020]</div><div class="col-4">Stochastic Gradient Descent Works Really Well for Stress Minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@kruiger2017]</div><div class="col-4">Graph Layouts by t-SNE</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">planar</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@zheng2019]</div><div class="col-4">Graph Drawing by Stochastic Gradient Descent</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@DRGraph21]</div><div class="col-4">DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@zhong2023]</div><div class="col-4">Force-Directed Graph Layouts Revisited: A New Force Based on the T-Distribution</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@miller2023]</div><div class="col-4">Spherical Graph Drawing by&nbsp;Multi-dimensional Scaling</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@meidiana2023]</div><div class="col-4">Shape-Faithful Graph Drawings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">almost proximity drawable graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">mesh graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">scale-free graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">strong proximity drawable graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">weak proximity drawable graphs</div></div></div><br>
 
-make_sparkline("SuiteSparse_MatrixCollection")
-```
 
-<div id="named-list-SuiteSparse_MatrixCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+### Descriptions From Literature
+
+From “[A Sparse Stress Model](https://dx.doi.org/10.7155/jgaa.00440)”:
+
+> We conducted our experiments on a series of different graphs, see Tab. 1, most of them taken from the sparse matrix collection [9]. We selected these graphs as they differ in their structure and size, and are large enough to compare the results of different techniques. Two of the graphs, LeHavre and commanche, have predefined edge lengths that were derived from the node coordinates. We did not modify the graphs in any way, except for those that were disconnected, in which case we only kept the largest component.
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SuiteSparse%20Matrix%20Collection%20b8772d6a2cbb456894b4673e32c6f956/Untitled.png' width='80%'></div>
+
+From “[A Maxent-Stress Model for Graph Layout](https://doi.org/10.1109/TVCG.2012.299)”:
+
+> With the exception of graph gd, which is an author collaboration graph of the International Symposium on Graph Drawing between 1994 and 2007, the graphs used are from the University of Florida Sparse Matrix Collection [9]. Our selection covers a range of graph sizes, and includes mesh-like and other nonmesh graphs, and graphs from Brandes and Pich's experimental study of distance scaling [5].
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SuiteSparse%20Matrix%20Collection%20b8772d6a2cbb456894b4673e32c6f956/Untitled%201.png' width='80%'></div>
+
+**Table 2.** Test Graphs
+
+From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction](https://doi.org/10.1109/TVCG.2020.3030447)”:
+
+> We perform experiments on a broad range of datasets selected from the University of Florida Sparse Matrix Collection [10] and tsNET [34] (Table 1).
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SuiteSparse%20Matrix%20Collection%20b8772d6a2cbb456894b4673e32c6f956/Untitled%202.png' width='80%'></div>
+
+**Table 1.** Test Datasets
+
+### Example Figures
+
+From “[The university of Florida sparse matrix collection](https://doi.org/10.1145/2049662.2049663)**”:**
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SuiteSparse%20Matrix%20Collection%20b8772d6a2cbb456894b4673e32c6f956/Untitled%203.png' width='80%'></div>
+
+**Fig. 13.** A sample of matrices from the Collection, for the purpose of illustrating the complexity and diversity of matrices arising in real applications
+
+From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction](https://doi.org/10.1109/TVCG.2020.3030447)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SuiteSparse%20Matrix%20Collection%20b8772d6a2cbb456894b4673e32c6f956/Untitled%204.png' width='80%'></div>
+
+**Fig. 8.** Visualizations of selected graph datasets using FR, KK, S.M., FM3, SFDP, PMDS, tsNET and DRGraph.
 
 ::: 
-
-```{ojs}
-//| echo: false
-make_dataset_name_and_title_list("Established Network Repo (No report)")
-```
 
 ### Single Graphs
 
 A number of papers used individual, **Single Graphs** for their experiments instead of a collection:
 
-```{ojs}
-//| echo: false
-make_dataset_name_and_title_list("Single Graph")
-```
+<a name="enron"></a>
 
 ::: {.callout-note title="Enron" collapse=true appearance="minimal"}
 
@@ -667,7 +840,9 @@ make_sparkline("Pert_DAG")
 
 ::: 
 
-::: {.callout-note title="Amazon" collapse=true appearance="minimal"}
+<a name="amazon"></a>
+
+::: {.callout-note title="Amazon" collapse=true appearance="minimal"} 
 
 ```{ojs}
 //| echo: false
@@ -702,52 +877,6 @@ make_sparkline("Control_FlowGraphs")
 <div id="named-list-Control_FlowGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ::: 
-
-```{ojs}
-//| echo: false
-{ 
-  let chosen_collection_type = "Subset of other collection"
-  
-  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
-  let y_distance = 20;
-  let svgwidth = 1000;
-
-  const svg = d3.create('svg')
-    .attr('width', svgwidth)
-    .attr('height', y_distance * collection_type.length + 40);
-
-  svg.append("text")
-    .attr("x", svgwidth/2)
-    .attr("y", 20)
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .text("List of datasets tagged as " + chosen_collection_type + " and their sources")
-
-  for (let c of [... new Set(collection_type)]){
-    if (c == "Skip" || c == "Missed It") continue;
-    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
-    if (c.includes("No report")) c = "Established Network Repository";
-
-    for (let i in instances){
-      svg.append("text")
-        .attr("x", 300)
-        .attr("y", 45 + i * y_distance)
-        .style("text-anchor", "end")
-        .text(instances[i]["Name"] + " ")
-
-      svg.append("a")
-        .attr("href", "https://www.google.com")
-        .attr("transform", "translate(310, " + (y_distance * i + 45) + ")")
-        .attr("target", "_blank")
-        .append("text")
-        .text(instances[i]["Origin Paper"].split("(")[0])
-        .style("fill", "#aaa")
-    }
-  }
-
-  return svg.node();
-}
-```
 
 ### Lost and unavailable datasets
 
@@ -872,11 +1001,6 @@ make_sparkline("Business_Processes")
 <div id="named-list-Business_Processes" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ::: 
-
-```{ojs}
-//| echo: false
-make_dataset_name_and_title_list("Lost/Unavailable")
-```
 
 ### Custom-made datasets
 In the data we collected, we also found several instances of custom-made datasets. We consider custom-made datasets either edits to pre-existing datasets, where the authors found it necessary to either split or modify the dataset in a particular way, or datasets completely made up from scratch using random generators or custom-made code. This can happen in cases where the authors of a paper needed a dataset containing particular characteristics which was not easy to find in the wild, so a new dataset was crafted.

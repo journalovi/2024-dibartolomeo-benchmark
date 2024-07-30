@@ -278,9 +278,21 @@ For each of the datasets collected as part of our process, we conducted a brief 
     text-align: center;
     font-weight: bold;
     display: inline-block;
-    margin: 0px 0px;
+    margin: 0px -5px;
     border-radius: 20px;
     transform: scale(0.8);
+  }
+
+  .pill-tag-generic {
+    background-color: rgb(217, 115, 13);
+  }
+
+  .pill-tag-large {
+    background-color: rgb(224, 62, 62);
+  }
+
+  .pill-tag-weighted-edges {
+    background-color: rgb(223, 171, 1)
   }
 </style>
 
@@ -379,7 +391,8 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
             }
         }
     }
-  let infocontainer = named_list_dom.append("div")
+        
+        let infocontainer = named_list_dom.append("div")
             .attr("class", "container")
             .attr("id", "inforow_" + name_cleanup(entry["Name"]))
             .style("padding", "2%")
@@ -409,9 +422,9 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
             let origindoi = (paper_data.find(a => a.Name == e) || {}).DOI
             let cited_paper = origin_paper_data.find(o => o.Name == e)
             let cite_index = origin_paper_data.indexOf(cited_paper)
-            if (origindoi != undefined && origindoi != ""){
-                inforow.append("div").html('<a href="' + doify(origindoi) + '">' + "[link]" + '</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(' + cite_index + ')">' + "" + '</a> &nbsp;' + e)
-            } else inforow.append("div").html(e)
+            // if (origindoi != undefined && origindoi != ""){
+                inforow.append("div").attr("class", "row").html('<div class="col-4">[link]</div><div class="col-8">' + e + '</div>')
+            // } else inforow.append("div").html(e)
         }
 
         inforow.append("br")
@@ -427,15 +440,19 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
                 let link = "";
                 // if (doi != undefined && doi != "") link = '<a href="' + doify(doi) + '">[link]</a>'
                 if (doi != undefined && doi != "" && citation_name != undefined) {
-                  link += '<span class="citation" data-cites="' + citation_name + '">'
-                  link += '<a href="#ref-' + citation_name + '" role="doc-biblioref" aria-expanded="false">[link]</a>'
-                  link += '</span>'
-                  // link += "[@" + citation_name + "]"
+                  // link += '<span class="citation" data-cites="' + citation_name + '">'
+                  // link += '<a href="#ref-' + citation_name + '" role="doc-biblioref" aria-expanded="false">[link]</a>'
+                  // link += '</span>'
+                  link += "[@" + citation_name + "]"
                 } else link = ""
 
                 entryrow.append("div")
-                    .attr("class", "col-8")
-                    .html(link + " &nbsp; " + urlify(e))
+                    .attr("class", "col-4")
+                    .html(link)
+
+                entryrow.append("div")
+                    .attr("class", "col-4")
+                    .html(e)
 
                 let tagrow = entryrow.append("div").attr("class", "col-4")
 
@@ -467,6 +484,10 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
             var converter = new showdown.Converter();
             
             otherinfo = getTextAfterBody(otherinfo);
+            // let otherinfo2 = otherinfo.replace(/\!\[(.*?)\]\((.*?)\)/g, "![$1](data/Benchmark datasets 64e0439269f9497799025562a4087ce1/$2)");
+            // console.log(otherinfo2);
+
+            let string_to_print = ""
             
             for (let line of otherinfo.split("\n")){
                 if (line == ">" || line == "> ") continue;
@@ -481,20 +502,26 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
                     img[1] = img[1].substring(0, img[1].length - 1)
                     img = img[1]
 
-                    inforow.append("div")
-                        .style("text-align", "center")
-                        .append("img")
-                        .attr("src", "data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img)
-                        .attr("width", "80%")
-                } else if (line.includes("STOP RENDERING")){
-                     break;
-                } else inforow.append("div").html(converter.makeHtml(line))
+                    // inforow.append("div")
+                    //     .style("text-align", "center")
+                    //     .append("img")
+                    //     .attr("src", "data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img)
+                    //     .attr("width", "80%")
+
+                    string_to_print += "<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img + "' width='80%'></div>\n"
+                // } else if (line.includes("STOP RENDERING")){
+                //      break;
+                } else string_to_print += line + "\n"
                 
             }
+
+            console.log(string_to_print)
 
         } catch (e){
             console.log(e)
         }
+
+        console.log(entry, inforow.node().innerHTML.replaceAll("<br>", "<br>\n"))
 }
 ```
 
