@@ -581,7 +581,7 @@ From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in G
 
 <a name="SuiteSparse_MatrixCollection"></a>
 
-The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuitSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
+The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuiteSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
 
 ::: {.callout-note title="SuiteSparse Matrix Collection" collapse=true appearance="minimal"}
 <!-- 
@@ -636,103 +636,429 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 ### Single Graphs
 
-A number of papers used individual, **Single Graphs** for their experiments instead of a collection:
+A number of papers used individual, **Single Graphs** for their experiments instead of a collection. These graphs have become popular because of their properties as individual graphs - see, for example, the [Enron](@Enron) dataset below, a huge individual graph that has a large variance in node degree distribution. Many of these graphs are also available in other repositories - their locations are noted wherever known.
 
-<a name="enron"></a>
+<a name="Enron"></a>
 
 ::: {.callout-note title="Enron" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Enron")
 ```
 
-<div id="named-list-Enron" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Enron" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Data made public by the Federal Energy Regulatory Commission when investigating Enron. It has had a few changes over time documented in the link provided as its source. The data is currently hosted by William W. Cohen from CMU on a webiste, and it is also hosted on SNAP. SNAP asks to cite the paper linked in Origin paper. Very high variance in node degrees. Data can be considered threaded and directed, although [SNAP](http://snap.stanford.edu/data/email-Enron.html) provides a version of the network that is explicitly undirected. This dataset proves useful for evaluating algorithms that work on very large graphs, due to its very large size.
+
+<div><b>Originally found at: </b><a href="https://www.cs.cmu.edu/~enron/">https://www.cs.cmu.edu/~enron/</a></div><br>
+<div><b>Size: </b>The data consists of 150 Enron executives, who sent 500,000 messages between themselves.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Klimt2004IntroducingTE]</div><div class="col-8">Introducing the Enron Corpus</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Tanahashi2015]</div><div class="col-4">An Efficient Framework for Generating Storyline Visualizations from Streaming Data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@vandenElzen2013]</div><div class="col-4">Reordering massive sequence views: Enabling temporal and structural analysis of dynamic networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+
+### Descriptions from Literature
+
+From “[Reordering massive sequence views: Enabling temporal and structural analysis of dynamic networks](https://doi.org/10.1109/PacificVis.2013.6596125)”:
+
+> We cleaned the data set by removing duplicates, spam and only to contain internal communication between Enron employees annotated with employee function leaving us with 151 nodes (employees) and 21374 edges (emails). Visualization using a node-link diagram enables the identification of stronger connections (see Figure 9(a)). However, temporal patterns and the evolution of the network cannot be analysed. From the standard MSV (Figure 9(b)) it becomes somewhat clear that transaction density increases over time and we can distinguish between different phases. We cannot, however, see features and identify communities due to visual clutter
+
+### Example Figures
+
+From “[An Efficient Framework for Generating Storyline Visualizations from Streaming Data](https://doi.org/10.1109/TVCG.2015.2392771)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled.png' width='80%'></div>
+
+From “[Reordering massive sequence views: Enabling temporal and structural analysis of dynamic networks](https://doi.org/10.1109/PacificVis.2013.6596125)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled%201.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+[https://www.cs.cmu.edu/~enron/](https://www.cs.cmu.edu/~enron/)
+
+150 enron executives (users), 500k messages - many more employees
+
+some have attachments
+
+case nodes are users: could be a very connected dataset (perhaps too few nodes) - very high variance in node degree
+
+case nodes are messages: could be a sparsely connected graph
+
+there’s dates → can be layered
+
+This dataset was collected and prepared by the
+
+[CALO Project](http://www.ai.sri.com/project/CALO)
+
+(A Cognitive Assistant that Learns and Organizes). It contains data from about 150 users, mostly senior management of Enron, organized into folders. The corpus contains a total of about 0.5M messages. This data was originally
+
+[made public, and posted to the web](http://www.salon.com/news/feature/2003/10/14/enron/index_np.html)
+
+, by the
+
+[Federal Energy Regulatory Commission](http://www.ferc.gov/)
+
+during its investigation.
+
+The email dataset was later purchased by [Leslie Kaelbling](http://www.ai.mit.edu/people/lpk/lpk.html) at MIT, and turned out to have a number of integrity problems. A number of folks at SRI, notably [Melinda Gervasio](http://www.ai.sri.com/people/gervasio), worked hard to correct these problems, and it is thanks to them (not me) that the dataset is available. The dataset here does not include attachments, and some messages have been deleted "as part of a redaction effort due to requests from affected employees". Invalid email addresses were converted to something of the form user@enron.com whenever possible (i.e., recipient is specified in some parse-able format like "Doe, John" or "Mary K. Smith") and to no_address@enron.com when no recipient was specified.
+
+Visualizations from [https://www.kaggle.com/jamestollefson/enron-network-analysis](https://www.kaggle.com/jamestollefson/enron-network-analysis):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled%202.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled%203.png' width='80%'></div>
+
+This paper definitely uses this as a layered, categorical graph - could even be a hypergraph
+
+
+→ unclear. Layered? -->
 
 ::: 
 
+<a name="California"></a>
+
 ::: {.callout-note title="California" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("California")
 ```
 
-<div id="named-list-California" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-California" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Data contains links related to an online search of the word “California” as nodes - the edges are links between webpages. We found this dataset on the webpage of a 2002 computer science course at Cornell, instructed by Jon Kleinberg. The original name was Pages that match the word “California”. They mention how the data was queried from a search engine, and that many of the original links are broken. It is not clear whether Kleinberg collected the data, or compiled it for the course.
+
+<div><b>Originally found at: </b><a href="https://www.cs.cornell.edu/courses/cs685/2002fa/data/gr0.California">https://www.cs.cornell.edu/courses/cs685/2002fa/data/gr0.California</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9492e803e0c0c0f558b9d" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94da70c2b4d0ea138634b" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9700094a6be112912e9a5" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e48803e0c0b00558baa" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>4772 nodes, 8965 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Kleinberg_2002]</div><div class="col-8">The Structure of Information Networks</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@muelder2008b]</div><div class="col-4">A Treemap Based Method for Rapid Layout of Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@muelder2008]</div><div class="col-4">Rapid Graph Layout Using Space Filling Curves</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/California%20e0a841bc57c045b5a8514110cfe85635/degree_distr.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From [“A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
+
+> This particular graph is a non-weighted graph of links between search results for the word “California” (also in Figures 6, 8, and 9, |V|=6107,|E|=15160).
+
+From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.org/document/4658143)”:
+
+> The “california” dataset (shown in Figures 5 and 8) consists of the links between the webpages found from a search for the word 'California' [4].
+
+### Example Figures
+
+From [“A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/California%20e0a841bc57c045b5a8514110cfe85635/Untitled.png' width='80%'></div>
+
+**Fig. 1.** *A graph laid out using our treemap based approach*. This graph portrays the links between websites that came from a search on the word “California” [7]. Nodes are clustered into a hierarchy, and laid out by applying a treemap to this hierarchy. Levels of the hierarchy below a threshold are clustered together into larger nodes. It can very easily be seen that there are three primary groups of websites that link to each other, and a plethora of others that are not as tightly linked.
+
+From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.org/document/4658143)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/California%20e0a841bc57c045b5a8514110cfe85635/Untitled%201.png' width='80%'></div>
+
+**Fig. 5** *Separating clusters.* By adjusting the spacing between nodes according to the clustering information, clusters can be separated.
+
+<!-- == STOP RENDERING ==
+
+[https://www.cs.cornell.edu/courses/cs685/2002fa/data/gr0.California](https://www.cs.cornell.edu/courses/cs685/2002fa/data/gr0.California) -->
 
 ::: 
 
 ::: {.callout-note title="World Greenhouse Gas Emissions" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("World_GreenhouseGasEmissions")
 ```
 
-<div id="named-list-World_GreenhouseGasEmissions" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-World_GreenhouseGasEmissions" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Data collected by the [WRI](https://www.wri.org/). Linked data is from a different year than the data used by [Optimal Sankey Diagrams Via Integer Programming](https://doi.org/10.1109/PacificVis.2018.00025), for which data could not be found. Contains <span class="pill-tag pill-tag-weighted-edges">weighted edges</span>, <span class="pill-tag pill-tag-weighted-nodes">weighted nodes</span>, <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>, and <span class="pill-tag pill-tag-layers">layers</span>. 
+
+<div><b>Originally found at: </b><a href="https://www.wri.org/data/world-greenhouse-gas-emissions-2005
+">https://www.wri.org/data/world-greenhouse-gas-emissions-2005
+</a><a href="https://www.wri.org/search?keys=world%20greenhouse%20gas%20emissions&amp;f%5B0%5D=content_type%3Adata
+">https://www.wri.org/search?keys=world%20greenhouse%20gas%20emissions&amp;f%5B0%5D=content_type%3Adata
+</a><a href="https://github.com/lhc70000/sankey/tree/master">https://github.com/lhc70000/sankey/tree/master</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9493c803e0c0c0c558ba6" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94d8b803e0c0c1f558cb4" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971484cf748115a055875" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90eb2803e0c0b03558c69" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>40 nodes, 85 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@navigating_numbers]</div><div class="col-8">Navigating the Numbers: Greenhouse Gas Data and International Climate Policy</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@zarate2018]</div><div class="col-4">Optimal Sankey Diagrams via Integer Programming</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Greenhouse%20Gas%20Emissions%20859aab42a55e43ac9dad1eae1a91a534/degree_distr.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+> We have tested our method on the “World Greenhouse Gas Emissions” data from the World Resources Institute [8]. After transforming the “long” edges of the graph into “short” edges and adding the corresponding dummy nodes, as described in Section 3, this example has 4 layers, 55 nodes and 100 edges. The node ordering in the layout of the Sankey diagram shown in Figure 1 has been computed using Sugiyama’s heuristic method [13].
+
+### Example Figures
+
+From [Optimal Sankey Diagrams via Integer Linear Programming](https://doi.org/10.1109/PacificVis.2018.00025):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Greenhouse%20Gas%20Emissions%20859aab42a55e43ac9dad1eae1a91a534/Screen_Shot_2023-08-09_at_11.13.23_AM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Greenhouse%20Gas%20Emissions%20859aab42a55e43ac9dad1eae1a91a534/Screen_Shot_2023-01-21_at_2.59.58_PM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Greenhouse%20Gas%20Emissions%20859aab42a55e43ac9dad1eae1a91a534/Screen_Shot_2023-01-21_at_3.00.19_PM.png' width='80%'></div>
+127.0.0.1:5501:150:21
 
 ::: 
 
 ::: {.callout-note title="Chess Games" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Chess_Games")
 ```
 
-<div id="named-list-Chess_Games" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Chess_Games" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+20,058 chess openings from games in a database of played online chess games. The authors of “Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes” collected the dataset online from the data science platform kaggle. The dataset was collected by user Mitchell J. and collects data from the chess website Lichess.org. The data used in the literature focuses on the 200 most common openings. These are all sequences of 6 moves and are topologically equivalent. It is a layered graph with <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span> and <span class="pill-tag pill-tag-layers">layers</span>, and can be seen as a <span class="pill-tag pill-tag-temporal">temporal event sequence</span>.
+
+<div><b>Originally found at: </b><a href="https://www.kaggle.com/datasets/datasnaek/chess?resource=download
+">https://www.kaggle.com/datasets/datasnaek/chess?resource=download
+</a><br><a href="https://github.com/VisDunneRight/sequence_braiding/blob/master/data/chess.json">https://github.com/VisDunneRight/sequence_braiding/blob/master/data/chess.json</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948ae4cf74810580556b8" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e1b0c2b4d0f65386312" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9705494a6be112912e9d0" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90eed4cf7480eef055740" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>The data consists of 20058 sequences, which result in a disconnected graph of 118164 nodes, and  98106 edges.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Jolly_2017]</div><div class="col-8">Chess Game Dataset (Lichess)</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Bartolomeo2021]</div><div class="col-4">Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes](https://doi.org/10.1109/TVCG.2020.3030442)”:
+
+> 200 Chess openings displayed with Sequence Braiding. Each line represents a sequence of moves of the white player, each group is a chess piece type. Most openings start with a pawn, and very little with the knight.
+
+### Example Figures
+
+From “[Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes](https://doi.org/10.1109/TVCG.2020.3030442)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Chess%20Games%20023a47d6ae914567a05132ac1dfbe972/Screen_Shot_2023-01-21_at_2.15.02_PM.png' width='80%'></div>
+
+**Fig. 7.** 200 Chess openings displayed with Sequence Braiding. Each line represents a sequence of moves of the white player, each group is a chess piece type. Most openings start with a pawn, and very little with the knight. After moving a pawn, it is common to move a knight or a pawn, it is a little less common to move a bishop, and only a little number of openings move the queen on the second move.
 
 ::: 
 
+<a name="Tree_ofLife"></a>
+
 ::: {.callout-note title="Tree of Life" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Tree_ofLife")
 ```
 
-<div id="named-list-Tree_ofLife" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Tree_ofLife" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Part of the <a href="http://tolweb.org/tree/to ">http://tolweb.org/tree/to </a>characterize information about biodiversity and their evolutionary genealogy. It is a tree <span class="pill-tag pill-tag-tree">tree</span> with <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>.
+
+<div><b>Originally found at: </b><a href="https://www.kaggle.com/datasets/konivat/tree-of-life?resource=download">https://www.kaggle.com/datasets/konivat/tree-of-life?resource=download</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9492294a6be103312e71d" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dfb4cf748115a0556b0" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971350c2b4d0f65386558" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e404cf7480eec0555fd" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>35,960 nodes, 35,959 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@gkab301]</div><div class="col-8">Interactive Tree Of Life (iTOL) v5: an online tool for phylogenetic tree display and annotation</div></div><div class="row"><div class="col-4">[@maddison2007]</div><div class="col-8">The Tree of Life Web Project</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@gray2023]</div><div class="col-4">Visualizing Evolving Trees</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
+
+> **The Tree of Life:** captures the evolutionary progression of life on Earth [[37](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23#ref-CR37)]. The underlying data is a tree structure with a natural time component. As a new species evolves, a new node in the tree is added. The edges give the parent-child relation of the nodes, where the parent is the original species, and the child is the new species. We use a subset of this graph with 500 nodes. The maximum node degree of this tree is 5, and the radius is 24
+
+### Example Figures
+
+From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Tree%20of%20Life%20cb0493d6b6da4a73a979f06225983011/Untitled.png' width='80%'></div>
+
+**Fig. 4.** Layouts obtained by the seven methods for the tree of life dataset.
+
+<!-- == STOP RENDERING ==
+
+From:
+
+[http://tolweb.org/tree/](http://tolweb.org/tree/) -->
 
 ::: 
 
+<a name="World_BankTradeData"></a>
+
 ::: {.callout-note title="World Bank Trade Data" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("World_BankTradeData")
 ```
 
-<div id="named-list-World_BankTradeData" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-World_BankTradeData" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Bilateral trade value in 1999 (total imports+exports), from [wits.worldbank.org](https://wits.worldbank.org/module/ALL/sub-module/ALL/reporter/ALL/year/ALL/tradeflow/ALL/pagesize/50/page/1). It is <span class="pill-tag pill-tag-dense">dense</span> and has <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>.
+
+<div><b>Originally found at: </b><a href="https://wits.worldbank.org/module/ALL/sub-module/ALL/reporter/ALL/year/ALL/tradeflow/ALL/pagesize/50/page/1">https://wits.worldbank.org/module/ALL/sub-module/ALL/reporter/ALL/year/ALL/tradeflow/ALL/pagesize/50/page/1</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d949494cf7481075055615" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96d610c2b4d0f6438622a" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970654cf748115a0557d4" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e390c2b4d0d2e386256" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<br>
+<div><b>Size: </b>194 nodes, 10080 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@SUBRAMANIAN2007151]</div><div class="col-8">The WTO promotes trade strongly but unevenly</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@noack2004]</div><div class="col-4">Energy Models for Graph Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@nocaj2015]</div><div class="col-4">Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br> 
+
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Bank%20Trade%20Data%20e6e54a00bc574c639cfa165458c71232/degree_distr.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
+
+> The difference between conventional energy models, node-repulsion LinLog, and edge-repulsion LinLog can be illustrated with a model of the trade between ten North American and European countries. The nodes of the graph correspond to the countries, and the edge weights specify the trade volume between each pair of countries. Because of geographical closeness and free trade agreements, countries on the same continent trade more intensively than countries on different continents. Figure 1 shows the minimum energy layouts of the trade graph for the three force and energy models. The layout of the widely used Fruchterman-Reingold model [20] does not show any clear groups at all. The layout of the node-repulsion LinLog energy model groups the countries (nodes) primarily according to their total trade volume (degree). Only the layout of the edge-repulsion LinLog energy model shows the expected grouping according to continents.
+
+### Example Figures
+
+From “[Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks](https://doi.org/10.7155/jgaa.00370)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Bank%20Trade%20Data%20e6e54a00bc574c639cfa165458c71232/Screen_Shot_2023-08-17_at_5.17.54_PM.png' width='80%'></div>
+
+From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Bank%20Trade%20Data%20e6e54a00bc574c639cfa165458c71232/Screen_Shot_2023-08-17_at_5.13.41_PM.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+world bank: [www.worldbank.org](http://www.worldbank.org/) -->
 
 ::: 
 
+<a name="Investment_Interdependence"></a>
+
 ::: {.callout-note title="Investment Interdependence" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Investment_Interdependence")
 ```
 
-<div id="named-list-Investment_Interdependence" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Investment_Interdependence" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Data collected in a survey of Ohio State University students by D. W. Malone. Students were presented with two potential obstacles to investment in Columbus, Ohio’s business district and asked, “does obstacle A aggravate or intensify obstacle B?”. Contains <span class="pill-tag pill-tag-directed">directed edges</span> and is <span class="pill-tag pill-tag-hierarchical">hierarchical</span>.
+
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d949164cf7481076055631" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e4d803e0c0caf558b9f" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d97042803e0c0cb3558c35" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e6794a6be0ebd12e705" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>25 nodes, 30 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@malone1975]</div><div class="col-8">An introduction to the application of interpretive structural modeling</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Sugiyama1981]</div><div class="col-4">Methods for Visual Understanding of Hierarchical System Structures</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">hierarchical</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Investment%20Interdependence%20141028dac1c34b6dbb69710ea5c7ee10/two_in_one.svg' width='80%'></div>
+
+### Description from Literature
+
+From [Methods for Visual Understanding of Hierarchical System Structures](https://ieeexplore.ieee.org/document/4308636):
+
+> Presented in Fig. 5 are drawings of the nine-level hierarchy which appeared in Malone [11] and represent the interdependence of obstacles to investment in the Columbus, Ohio, central business district.
+
+### Example Figures
+
+From [Methods for Visual Understanding of Hierarchical System Structures](https://ieeexplore.ieee.org/document/4308636):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Investment%20Interdependence%20141028dac1c34b6dbb69710ea5c7ee10/Untitled.png' width='80%'></div>
+
+**Fig. 5. (cropped):** Maps of the nine-level hierarchy [11]. (a) Initial. (b) BC + QP
+methods (c = 1.0). (c) BC + QP methods (cL= 0.5). (d) BC + QP methods
+(c = 0.05). (e) BC + PR methods.
 
 ::: 
 
+<a name="Protein_Interactions"></a>
+
 ::: {.callout-note title="Protein Interactions" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Protein_InteractionsPublications")
 ```
 
-<div id="named-list-Protein_InteractionsPublications" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Protein_InteractionsPublications" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Protein Interaction Publications were collected from the [Biological Pathway Commons Database](http://www.pathwaycommons.org/).
+Various types of protein interaction graphs are recorded in other network collections. We highlight two of them from the surveyed papers. First, we have the temporal Protein Interaction Publications, showing the history of how protein interactions were described in the literature. Second, the Protein Homology graph was provided by the Large Graph Layout project, their links are now broken and the dataset lost.  Nonetheless, [SNAP](@SNAP) and [Konect](http://konect.cc/networks/) both also have various dataset of human/other species protein interactions. 
+
+<div><b>Originally found at: </b><a href="https://github.com/CreativeCodingLab/TimeArcs/tree/master/IndexCards">https://github.com/CreativeCodingLab/TimeArcs/tree/master/IndexCards
+</a><a href="https://lgl.sourceforge.net/ ">https://lgl.sourceforge.net/ </a>(download link broken)</div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9487494a6be101c12e7a5" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96cd4803e0c0ca9558d2b" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971704cf748115a055882" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94abc0c2b4d0e8d38629c" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>2961 nodes, 5267 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@ADAI2004179]</div><div class="col-8">LGL: Creating a Map of Protein Function with an Algorithm for Visualizing Very Large Biological Networks</div></div>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@muelder2008]</div><div class="col-4">Rapid Graph Layout Using Space Filling Curves</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Dang2016]</div><div class="col-4">TimeArcs: Visualizing Fluctuations in Dynamic Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+## Protein Interaction Publications
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Protein%20Interactions%20(Publications)%20fb5bc3bb0c5d40468da36d279a114a78/degree_distr.svg' width='80%'></div>
+
+### Description from the Literature
+
+From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882):
+
+> The data contains the publication information (such as publication year, author, and textual evidence) of interactions between pairs of proteins, as well as their specific interaction type.
+
+> When there are multiple arcs connecting two proteins, it falls into one of the two circumstances. If they have the same color, these arcs indicate that there are supporting evidences in different publications which *confirm* the interaction between two elements. On the other hand, if they have the different colors, the more recent appearance provides either more detailed knowledge about the interaction or shows a *conflict* between different articles regarding the way in which these proteins interact.
+
+### Example Figures
+
+From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Protein%20Interactions%20(Publications)%20fb5bc3bb0c5d40468da36d279a114a78/Untitled.png' width='80%'></div>
+
+**Fig. 10**: TimeArcs visualization for interactions around PCAF protein. (1), (2), and (3) in the figure are supporting evidences in literature of “PCAF binds MAML”. 
+
+## Protein Homology (Lost)
+
+### Description from the Literature
+
+From [Rapid Graph Layout Using Space Filling Curves:](https://ieeexplore.ieee.org/document/4658143\)
+
+> The “pgraph” dataset (shown in Figures 2 and 6) is a protein homology graph, which is relatively dense [7].
+
+Consists of 28, 854 vertices and 1,180, 816 edges, found in Table 1 of paper above. 
+
+### Example Figures
+
+From [Rapid Graph Layout Using Space Filling Curves:](https://ieeexplore.ieee.org/document/4658143)
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Protein%20Interactions%20(Publications)%20fb5bc3bb0c5d40468da36d279a114a78/Untitled%201.png' width='80%'></div>
+
+**Fig. 2.** *A protein homology graph laid out with our space filling curve based approach.* Color corresponds to depth in the clustering hierarchy. |*V*| = 28, 854,|*E*| = 1, 180, 816
+
+From [LGL: Creating a Map of Protein Function with an Algorithm for Visualizing Very Large Biological Networks](https://www.sciencedirect.com/science/article/pii/S0022283604004851)
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Protein%20Interactions%20(Publications)%20fb5bc3bb0c5d40468da36d279a114a78/Untitled%202.png' width='80%'></div>
+
+**Fig. 3.** The complete protein homology map. A layout of the entire protein homology map; a total of 11,516 connected sets containing 111,604 proteins (vertices) with 1,912,684 edges. The largest connected set is shown more clearly in the inset and is enlarged further in [Figure 4](https://www.sciencedirect.com/science/article/pii/S0022283604004851?via%3Dihub#FIG4).
+
+<!-- == STOP RENDERING ==
+broken link referenced in [**Rapid Graph Layout Using Space Filling Curves**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Rapid%20Graph%20Layout%20Using%20Space%20Filling%20Curves%2010601cd6078a4ea18b17c7d40eda0041.md) : 
+
+Same link referenced in original paper, 
+
+I also found [https://lgl.sourceforge.net/](https://lgl.sourceforge.net/) which contains the link to supposedly download the dataset but it is also broken
+
+Reached out to author - Alex Adai 
+
+[](http://www.marcottelab.org/index.php/OldBioinformaticsServerlgl/) -->
 
 ::: 
 
