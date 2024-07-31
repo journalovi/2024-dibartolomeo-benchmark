@@ -1,2 +1,9 @@
 /.quarto/
-/.vscode
+.Rproj.user
+.Rhistory
+.RData
+.DS_Store
+env/
+venv/
+env-home/
+env-work/
