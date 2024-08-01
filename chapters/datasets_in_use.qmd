@@ -632,13 +632,17 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 **Fig. 8.** Visualizations of selected graph datasets using FR, KK, S.M., FM3, SFDP, PMDS, tsNET and DRGraph.
 
-::: 
+:::
 
 ### Single Graphs
 
-A number of papers used individual, **Single Graphs** for their experiments instead of a collection. These graphs have become popular because of their properties as individual graphs - see, for example, the [Enron](@Enron) dataset below, a huge individual graph that has a large variance in node degree distribution. Many of these graphs are also available in other repositories - their locations are noted wherever known.
+A number of papers used individual, **Single Graphs** for their experiments instead of a collection. These graphs have
+become popular because of their properties as individual graphs - see, for example,
+the <a href="#enron" class="dataset-link">Enron</a> dataset below, a
+huge individual graph that has a large variance in node degree distribution. Many of these graphs are also available in
+other repositories - their locations are noted wherever known.
 
-<a name="Enron"></a>
+<a name="enron"></a>
 
 ::: {.callout-note title="Enron" collapse=true appearance="minimal"}
 

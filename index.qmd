@@ -345,6 +345,61 @@ function make_sparkline(bname){
 }
 ```
 
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('a.dataset-link').forEach(item => {
+        item.addEventListener('click', function (e) {
+            // jumping is done by default with these links, we just need to get the collapsible to open up
+            let str = this.getAttribute('href')
+            //console.log('Link to ' + str + ' was clicked!');
+            // Link to #enron was clicked!
+
+            // Prepare the identifier
+            // Remove the first character and get the second character (now the first)
+            const withoutFirst = str.slice(1);
+            // Capitalize the new first character and add the rest of the string
+            let ident = withoutFirst.charAt(0).toUpperCase() + withoutFirst.slice(1);
+            
+            // TODO: handle idents where there are spaces and commas etc, just use a map from the link to the title 
+            // name of the dataset, like: { link_name: title_name
+                  "enron": "Enron", 
+                  "chess_games": "Chess Games", 
+                  "airlines_migrations_airtraffic": "Airlines, Migrations, and Air Traffic"
+               }
+
+            var foundDiv = document.querySelector(`div[title='${ident}']`);
+
+            if (foundDiv) {
+                //console.log('Found div:', foundDiv);
+            
+                // Accessing the children of foundDiv
+                const children = foundDiv.children;
+                if (children.length >= 2) {
+                    // Assume the first child is the header and the second is the content container
+                    const header = children[0];
+                    const content = children[1];
+
+                    // Set aria-expanded to true on the header, this rotates the arrow icon on the right
+                    header.setAttribute('aria-expanded', 'true');
+
+                    // Add the 'show' class to the content container, this enables the content to be shown
+                    content.classList.add('show');
+                } else {
+                  console.error('Expected at least two children in the div');
+                }
+            } else {
+              console.error('Div not found');
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+
+
 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
