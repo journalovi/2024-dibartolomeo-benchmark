@@ -169,7 +169,7 @@ From: [Deep Neural Network for DrawiNg Networks, (DNN)2](https://link.springer.c
 
 ::: 
 
-Another widely used collection is the AT&T collection, or North DAG graphs. They are the same collection, but for the sake of consistency, we kept them separate based on how they were referred to in the papers we analyzed. 
+The following collections, together with Rome-Lib, can be easily accessed from the homepage of the [Graph Drawing Conference](http://www.graphdrawing.org/data.html) website, and are therefore well known and widely used.
 <!-- AT&T is used in [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] (and referred as AT&T), while the papers that use it but refer to it as North DAGs are [@chimani2010] [@chimani2016b] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022]. -->
 
 <a name="ATT"></a>
@@ -184,7 +184,9 @@ make_sparkline("ATT")
 
 <div id="named-list-ATT" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
-Originally collected by Stephen North at AT&amp;T Bell Labs. The original link from 1995 is broken: <a href="ftp://ftp.research.att.com/dist/drawdag. ">ftp://ftp.research.att.com/dist/drawdag. </a>Di Battista et al. modified the dataset by removing isomorphic graphs, connecting disconnected graphs, and removing cycles. Same as North DAG collection.
+Originally collected by Stephen North at AT&amp;T Bell Labs (see the descriptions from literature section below for more information). The original link from 1995 is broken: <a href="ftp://ftp.research.att.com/dist/drawdag. ">ftp://ftp.research.att.com/dist/drawdag.</a>
+Di Battista et al. modified the dataset by removing isomorphic graphs, connecting disconnected graphs, and removing cycles. Same as North DAG collection.
+It contains <span class="pill-tag pill-tag-directed" style="background-color: rgb(217, 115, 13)">directed</span> and <span class="pill-tag pill-tag-acyclic">acyclic graphs.
 
  <div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
 <div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d949574cf748107605564e" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e3b1101aa0ea66a0c45" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970d31101aa0ea36a0cb0" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e87803e0c0b04558c1f" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
@@ -192,62 +194,224 @@ Originally collected by Stephen North at AT&amp;T Bell Labs. The original link f
 <div><b>Origin paper: </b></div><div><a href="https://doi.org/10.1142/S0218195900000358">[@DIBATTISTA2000]</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(8)"></a> &nbsp;Drawing Directed Acyclic Graphs: An Experimental Study</div><br>
 <div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Hachul2005]</div><div class="col-4">Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2006]</div><div class="col-4">An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Large-Graph Layout with the Fast Multipole Multilevel Method</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Jabrayilov2016]</div><div class="col-4">Compact Layered Drawings of General Directed Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Jnger2018]</div><div class="col-4">A Flow Formulation for Horizontal Coordinate Assignment with Prescribed Width</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">dag</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">hierarchical</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Mallach2019]</div><div class="col-4">A Natural Quadratic Approach to the Generalized Graph Layering Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Chimani2012]</div><div class="col-4">Advances in the Planarization Method: Effective Multiple Edge Insertions</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@barth2002]</div><div class="col-4">Simple and Efficient Bilayer Cross Counting</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">bipartite</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div></div></div><div class="row"><div class="col-4">[@DIBATTISTA2000]</div><div class="col-4">Drawing Directed Acyclic Graphs: An Experimental Study</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@welch2017]</div><div class="col-4">Measuring Symmetry in Drawings of Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
 
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/AT&T%20e86f130c42344169a9d75a61abc7e487/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[Drawing Directed Acyclic Graphs: An Experimental Study](https://doi.org/10.1142/s0218195900000358)”:
+
+> The experimental study was performed on two different sets of DAGs, both with a strong connection to "real-life" applications. We considered two typical contexts where DAGs play a fundamental role, namely software engineering and project planning.
+
+> The first set of test DAGs are what we call the North DAGs. They are obtained from a collection of directed graphs [28], that North collected at AT\&T Bell Labs by running for two years *Draw DAG*, an e-mail graph drawing service that accepts directed graphs formatted as e-mail messages and returns messages with the corresponding drawings [27].
+
+> Originally, the North DAGs consisted of 5114 directed graphs, whose number of vertices varied in the range *1 … 7602*. However, the density of the directed graphs with a number of vertices that did not fall in the range *10 … 100* was very low (see also the statistics in [28]); since such directed graphs represent a very sparse statistical population we decided to discard them. Then we noted that many directed graphs were isomorphic; since the vertices of the directed graphs have labels associated with them, the problem is tractable. For each isomorphism class, we kept only one representative directed graph. Also, we deleted the directed graphs where subgraphs were specified as clusters, to be drawn in their own distinct rectangular region of the layout, because constrained algorithms are beyond the scope of this study. This filtering left us with 1277 directed graphs.
+
+> Still, 491 directed graphs were not connected and this was a problem for running algorithms implemented in *G D W* (they assume input directed graphs to be connected). Instead of discarding the directed graphs, we followed a more practical approach, by randomly adding a minimum set of directed edges that makes each directed graph connected. Finally, we made the directed graph acyclic, where necessary, by applying some heuristics for inverting the direction of a small subset of edges.
+
+> We then ran a first set of experiments and produced the statistics by grouping the DAGs by number of vertices. Although the comparison among the algorithms looked consistent (the produced plots never oddly overlapped), each single plot was not satisfactory, because it showed peaks and valleys. We went back to study the test suite and observed that grouping them by number of vertices was not the best approach. In fact, the North DAGs come from very heterogeneous sources, mainly representing different phases of various software engineering projects; as a result, directed graphs with more or less the same number of vertices may be either very dense or very sparse.
+
+> Since most of the analyzed quality measures strongly depend on the number of edges of the DAG (e.g. area, number of bends, and number of crossings), we decided that a better approach was to group the DAGs by number of edges. After some tests, we clustered the DAGs into nine groups, each with at least 40 DAGs, so that the number of edges in the DAGs belonging to group *i, 1 ≤ i ≤ 9*, is in the range *10 i … 10 i+9* (see Fig. 3). The resulting test suite consists of 1158 DAGs, each with edges in the range *10 … 99*.
+
+From “[Layer-Free Upward Crossing Minimization](https://doi.org/10.1145/1671970.1671975)”:
+
+> *North DAGs.* The North DAGs have been introduced in an experimental comparison of algorithms for drawing DAGs [Di Battista et al. 2000]. The benchmark set contains 1,158 DAGs collected by Stephen North, which were slightly modified by Di Battista et al. The graphs are grouped into nine sets, where set *i* contains graphs with *10 i* to *10 i+9* arcs for *i=1, …, 9*.
+
+### Example Figures
+
+From “[Drawing Directed Acyclic Graphs: An Experimental Study](https://doi.org/10.1142/s0218195900000358)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/AT&T%20e86f130c42344169a9d75a61abc7e487/Untitled.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/AT&T%20e86f130c42344169a9d75a61abc7e487/Untitled%201.png' width='80%'></div>
+
+From “[A Natural Quadratic Approach to the Generalized Graph Layering Problem](https://doi.org/10.1007/978-3-030-35802-0_40)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/AT&T%20e86f130c42344169a9d75a61abc7e487/Screen_Shot_2023-08-09_at_4.26.57_PM.png' width='80%'></div>
+
+From “[A Flow Formulation for Horizontal Coordinate Assignment with Prescribed Width](https://doi.org/10.1007/978-3-030-04414-5_13)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/AT&T%20e86f130c42344169a9d75a61abc7e487/Screen_Shot_2023-08-09_at_4.24.19_PM.png' width='80%'></div>
+
 ::: 
 
 <a name="North_DAGs"></a>
 
-::: {.callout-note title="North DAGs" collapse=true appearance="minimal"}
+::: {.callout-note title="North DAGs" collapse-id="North_DAGs" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("North_DAGs")
 ```
 
-<div id="named-list-North_DAGs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-North_DAGs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+This is the same collection as AT&amp;T, but referred to as North DAGs in the papers we analyzed. We kept the two collections separate, based on how they are referred to in the papers we collected.
+
+<div><b>Originally found at: </b>See AT&amp;T</div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d949574cf748107605564e" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e3b1101aa0ea66a0c45" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970d31101aa0ea36a0cb0" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e87803e0c0b04558c1f" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>See AT&amp;T</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@DIBATTISTA2000]</div><div class="col-8">Drawing Directed Acyclic Graphs: An Experimental Study</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@chimani2010]</div><div class="col-4">Layer-Free Upward Crossing Minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@chimani2016]</div><div class="col-4">A Note on the Practicality of Maximal Planar Subgraph Algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">planar</div></div></div><div class="row"><div class="col-4">[@Regg2016]</div><div class="col-4">A Generalization of the Directed Graph Layering Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Demel2018]</div><div class="col-4">A Greedy Heuristic for Crossing-Angle Maximization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Chimani2021]</div><div class="col-4">Star-Struck by Fixed Embeddings:
+Modern Crossing Number Heuristics</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@chimani2016b]</div><div class="col-4">An ILP-based Proof System for the Crossing
+Number Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@DIBATTISTA2000]</div><div class="col-4">Drawing Directed Acyclic Graphs: An Experimental Study</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Binucci2016]</div><div class="col-4">Placing Arrows in Directed Graph Drawings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div></div></div><div class="row"><div class="col-4">[@klammler2018]</div><div class="col-4">Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@binucci2022]</div><div class="col-4">Placing Arrows in Directed Graph Layouts: Algorithms and Experiments</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div></div></div><br>
+
+
+### Descriptions from Literature
+
+From “[Layer-Free Upward Crossing Minimization](https://doi.org/10.1145/1671970.1671975)”:
+
+**North DAGs.** The North DAGs have been introduced in an experimental comparison of algorithms for drawing DAGs [Di Battista et al. 2000]. The benchmark set contains 1,158 DAGs collected by Stephen North, which were slightly modified by Di Battista et al. The graphs are grouped into nine sets, where set $i$ contains graphs with $10 i$ to $10 i+9$ arcs for $i=1, \ldots, 9$.
+
+<!-- === STOP RENDERING ===
+
+is this the AT&T collection? [http://www.graphdrawing.org/data/](http://www.graphdrawing.org/data/)
+
+from [Drawing Directed Acyclic Graphs: An Experimental Study](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Directed%20Acyclic%20Graphs%20An%20Experimental%20St%201677531652194663b7fdf25025c61cc6.md) 
+
+ 
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/North%20DAGs%20a58f7143ef524c8a8c737df90162d3fb/Untitled.png' width='80%'></div>
+
+from [Layer-Free Upward Crossing Minimization](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Layer-Free%20Upward%20Crossing%20Minimization%20676f8a507ff343b5ae83c34446796fb5.md) 
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/North%20DAGs%20a58f7143ef524c8a8c737df90162d3fb/Untitled%201.png' width='80%'></div> -->
 
 ::: 
 
-The randDAG collection concludes the collections that can be easily accessed from graphdrawing.org. http://graphdrawing.org highlights the DAGmar graph generator, and provides a benchmark set of randomly generated directed acyclic graphs. While not explicit, it is implied this benchmark comes from the DAGmar generator. The collection is uniformly sampled from set of level graphs with certain graph parameters, such as number of nodes and number of edges. These graphs have no particular features, thus they are classified as <span class="pill-tag" style="background-color: rgb(217, 115, 13)">generic</span>.
+::: {.callout-note title="RandDAG or DAGMar" collapse=true collapse-id="RandDAG" appearance="minimal"}
 
-::: {.callout-note title="RandDAG" collapse=true appearance="minimal"}
+The randDAG collection concludes the collections that can be easily accessed from graphdrawing.org. http://[graphdrawing.org](http://graphdrawing.org) highlights the DAGmar graph generator, and provides a benchmark set of randomly generated directed acyclic graphs. While not explicit, it is implied this benchmark comes from the DAGmar generator. The collection is uniformly sampled from set of level graphs with certain graph parameters, such as number of nodes and number of edges. These graphs have no particular features, thus they are classified as <span class="pill-tag" style="background-color: rgb(217, 115, 13)">generic</span>.
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("RandDAG")
 ```
 
-<div id="named-list-RandDAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-RandDAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948061101aa0dc66a0c55" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dec94a6be112512e706" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d97088803e0c0cb6558d7e" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90eff803e0c0b04558ca3" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>10-100 nodes, 15-167 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Bachmaier_Gleißner_Hofmeier_2012]</div><div class="col-8">DAGmar: Library for DAGs</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@klammler2018]</div><div class="col-4">Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/RandDAG%2054b6ed8fdecb4256b2cca6298f09965e/four_in_one.svg' width='80%'></div>
+
+### Descriptions from the Literature
+
+From “[Aesthetic Discrimination of Graph Layouts](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_12)”:
+
+> We have assembled such a dataset using two types of sources. First, we used the collections of the well-known graph archives ROME, NORTH and RANDDAG which are published on [graphdrawing.org](http://www.graphdrawing.org/) as well as the NIST’s “Matrix Market” [[2](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_12#ref-CR2)].
+
+### Example Figures
+
+From “[Aesthetic Discrimination of Graph Layouts](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_12) ([Appendix](https://arxiv.org/abs/1809.01017))”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/RandDAG%2054b6ed8fdecb4256b2cca6298f09965e/Untitled.png' width='80%'></div>
+
+**Fig. 5.** (cropped)… All graphs are visualized using the $FM^3$ algorithm. 
+
+<!-- === STOP RENDERING ===
+
+Might be same as DAGmar graphs? looked at internet archive to see what the GD data website looked like in 2018 and there is no mention of RAndDAG as a thing, but there are the randomly generated DAGs which makes sense tto believe it is those. -->
 
 ::: 
 
-The graphs have various origins, most of which are described on the Graphviz https://www.graphviz.org/gallery/. Example graphs used to generate images with the https://www.graphviz.org for their https://www.graphviz.org/gallery/. These graphs are picked as graphviz examples because they are diverse in types of features they contain: together with generic graphs, there are also graphs with <span class="pill-tag" style="background-color: rgb(217, 115, 13)">clusters</span>, <span class="pill-tag" style="background-color: rgb(217, 115, 13)">layers</span>, <span class="pill-tag" style="background-color: rgb(217, 115, 13)">directed edges</span> and <span class="pill-tag" style="background-color: rgb(217, 115, 13)">labeled nodes</span>.
+The following collection is particularly varied in features: 
+
+<a name="Graphviz_Examples"></a>
 
 ::: {.callout-note title="Graphviz Examples" collapse=true appearance="minimal"}
 
-```{ojs}
+While graphviz is a graph visualization software, its example gallery has proven useful to many researchers as a source of benchmark datasets.
+The graphs have various origins, most of which are described on the Graphviz https://www.graphviz.org/gallery/. Example graphs used to generate images with the https://www.graphviz.org for their https://www.graphviz.org/gallery/. These graphs are picked as graphviz examples because they are diverse in types of features they contain: together with generic graphs, there are also graphs with <span class="pill-tag pill-tag-clusters">clusters</span>, <span class="pill-tag pill-tag-layered">layers</span>, <span class="pill-tag pill-tag-directed">directed edges</span> and <span class="pill-tag pill-tag-labeled-nodes">labeled nodes</span>.
+
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Graphviz_Examples")
 ```
 
-<div id="named-list-Graphviz_Examples" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Graphviz_Examples" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://gitlab.com/graphviz/graphviz/-/tree/main/tests/graphs">https://gitlab.com/graphviz/graphviz/-/tree/main/tests/graphs</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948d60c2b4d0e8d38620a" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96ce394a6be111712e991" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970e60c2b4d0f65386519" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ea91101aa0c9e6a0c97" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>1-1464 nodes, 0-5806 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@gansner2000]</div><div class="col-8">An open graph visualization system and its applications to software engineering</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Gange2011]</div><div class="col-4">Optimal k-level planarization and crossing minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@giovannangeli2023]</div><div class="col-4">FORBID: Fast Overlap Removal by&nbsp;Stochastic GradIent Descent for&nbsp;Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
+
+> Our data includes the same set of graphs that was used by the authors of PRISM to compare it with other algorithms [6]. The dataset is available in the Graphviz open source package.
+
+From “[Optimal k-level planarization and crossing minimization](https://doi.org/10.1007/978-3-642-18469-7_22)”:
+
+> The first set of graphs are all the hierarchical network diagrams appearing in the GraphViz gallery [3]… Table 1 shows the results of minimizing edge crossings and maximizing planar subgraphs with MIP and SAT solvers, as well as the crossings resulting in the Graphviz heuristic layout for graphs from the GraphViz gallery.
+
+### Example Figures
+
+From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.44.08_PM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.44.43_PM.png' width='80%'></div>
+
+From “[FORBID: Fast Overlap Removal by Stochastic GradIent Descent for Graph Drawing](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_6)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.50.39_PM.png' width='80%'></div>
+
+From “[Optimal k-level planarization and crossing minimization](https://doi.org/10.1007/978-3-642-18469-7_22)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.35.58_PM.png' width='80%'></div>
 
 ::: 
 
-The storylines dataset is particularly useful for <span class="pill-tag" style="background-color: rgb(217, 115, 13)">temporal event sequence</span> visualization because of its <span class="pill-tag" style="background-color: rgb(217, 115, 13)">dynamic</span> aspect and <span class="pill-tag" style="background-color: rgb(217, 115, 13)">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
-This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis which was lost. Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
+The following two collections are particularly relevant for the display of temporal event sequences:
+
+<a name="Storylines_MoviePlots"></a>
 
 ::: {.callout-note title="Storylines (Movie Plots)" collapse=true appearance="minimal"}
+
+The storylines dataset is particularly useful for <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequence</span> visualization because of its <span class="pill-tag pill-tag-dynamic">dynamic</span> aspect and <span class="pill-tag pill-tag-clusters">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
+This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis which was lost. Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Storylines_MoviePlots")
+``` -->
+
+<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+<a name="Storylines_MoviePlots"></a>
+
+::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
+
+Collected as part of the [correlatesofwar.org](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag" style="background-color: rgb(217, 115, 13)">temporal event sequences</span>.
 
 ```{ojs}
 //| echo: false
 
-make_sparkline("Storylines_MoviePlots")
+make_sparkline("Militarized_InterstateDisputesMID")
 ```
 
-<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ::: 
 
@@ -352,20 +516,6 @@ make_sparkline("Biological_PathwaysKEGG")
 ```
 
 <div id="named-list-Biological_PathwaysKEGG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-Collected as part of the [correlatesofwar.org](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag" style="background-color: rgb(217, 115, 13)">temporal event sequences</span>.
-
-::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
-
-```{ojs}
-//| echo: false
-
-make_sparkline("Militarized_InterstateDisputesMID")
-```
-
-<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ::: 
 

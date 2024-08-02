@@ -1,0 +1,109 @@
+<style>
+  .container {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 0.75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: 50rem;
+    display:flex;
+
+  }
+  .btn {
+    --bs-btn-padding-y: .15rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: .7rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    padding-top: 0.05rem;
+    font-size: var(--bs-btn-font-size);
+    border-radius: .25rem;
+    padding-bottom: 0.05rem;
+  }
+  
+  .btn-secondary {
+    background-color:#6c757d;
+    color:#fff !important;
+  }
+  .btn-secondary:hover{
+    background-color:#565e64;
+    
+  }
+  .a {
+    color:rgb(13, 110, 253);
+  }
+  .a:hover{
+    color:#0a58ca;
+  }
+
+  .card {
+  }
+  .card-body {
+  }
+  .row {
+    display:flex;
+  }
+  .col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .small-text{
+    font-size:small;
+  } 
+  .rounded-pill {
+    border-radius: var(--bs-badge-border-radius) !important;
+  }
+  .badge {
+    display: inline-block;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    color: var(--bs-badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+
+  .pill-tag {
+    background-color: #ddd;
+    border: none;
+    color: white;
+    padding: 0px 8px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0px -5px;
+    border-radius: 20px;
+    transform: scale(0.8);
+  }
+
+  .pill-tag-generic {
+    background-color: rgb(217, 115, 13);
+  }
+
+  .pill-tag-large {
+    background-color: rgb(224, 62, 62);
+  }
+
+  .pill-tag-weighted-edges {
+    background-color: rgb(223, 171, 1)
+  }
+
+  .pill-tag-directed {
+    background-color: rgb(100, 71, 58)
+  }
+
+  .pill-tag-acyclic {
+    background-color: rgb(0, 128, 0)
+  }
+
+  .pill-tag-layered {
+    background-color: rgb(105, 64, 165)
+  }
+</style>

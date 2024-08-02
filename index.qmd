@@ -34,6 +34,13 @@ author:
         city: Boston
         state: MA
         country: USA
+  - name: Alexander Frings
+    orcid: 0009-0009-1718-2967
+    email: alexander.frings@uni-konstanz.de
+    affiliations:
+      - name: University of Konstanz
+        city: Konstanz
+        country: Germany
   - name: Cody Dunne
     orcid: 0000-0002-1609-9776
     email: c.dunne@northeastern.edu
@@ -59,6 +66,8 @@ If you have not setup [Quarto](https://quarto.org/) or the JoVI template yet, sk
 <!-- We highly recommend all JoVI articles use a structured abstract. Structured abstracts provide a succinct overview of an article using a common set of sections. Which sections are used depends on the type of research and its goals. For example, articles with empirical methods should have a data collection section, while articles that do not analyze data to support a conclusion do not need such a section.
 
 Your paper may fall into multiple types of work. We provide some example sections you may want to include in your structured abstract below, depending on the type of work. You can use the example sections to fill in the subsections that apply to your paper, then delete these first two paragraphs and the subsections that do not apply to your paper. Please add, merge, rename, or re-order sections if you feel that would improve clarity. We have some (partial) examples of structured abstracts [here](https://www.journalovi.org/structured-abstract-examples.html). -->
+
+<link rel="stylesheet" href="style.css">
 
 ### Introduction
 
@@ -197,104 +206,6 @@ paper_source = paper_sources_pre.filter(l => l.Name != "")
 ## Details of the datasets
 
 For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. The following section defaults to illustrating the contents of Rome-Lib, but the reader can easily change the dataset in focus by modifying the value of the dropdown menu below:
-
-<style>
-  .container {
-    --bs-badge-padding-x: 0.65em;
-    --bs-badge-padding-y: 0.35em;
-    --bs-badge-font-size: 0.75em;
-    --bs-badge-font-weight: 700;
-    --bs-badge-color: #fff;
-    --bs-badge-border-radius: 50rem;
-    display:flex;
-
-  }
-  .btn {
-    --bs-btn-padding-y: .15rem;
-    --bs-btn-padding-x: 0.5rem;
-    --bs-btn-font-size: .7rem;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
-    padding-top: 0.05rem;
-    font-size: var(--bs-btn-font-size);
-    border-radius: .25rem;
-    padding-bottom: 0.05rem;
-  }
-  
-  .btn-secondary {
-    background-color:#6c757d;
-    color:#fff !important;
-  }
-  .btn-secondary:hover{
-    background-color:#565e64;
-    
-  }
-  .a {
-    color:rgb(13, 110, 253);
-  }
-  .a:hover{
-    color:#0a58ca;
-  }
-
-  .card {
-  }
-  .card-body {
-  }
-  .row {
-    display:flex;
-  }
-  .col-8 {
-    flex: 0 0 auto;
-    width: 66.66666667%;
-  }
-  .col-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
-  .small-text{
-    font-size:small;
-  } 
-  .rounded-pill {
-    border-radius: var(--bs-badge-border-radius) !important;
-  }
-  .badge {
-    display: inline-block;
-    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
-    font-size: var(--bs-badge-font-size);
-    font-weight: var(--bs-badge-font-weight);
-    line-height: 1;
-    color: var(--bs-badge-color);
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-  }
-
-  .pill-tag {
-    background-color: #ddd;
-    border: none;
-    color: white;
-    padding: 0px 8px;
-    text-align: center;
-    font-weight: bold;
-    display: inline-block;
-    margin: 0px -5px;
-    border-radius: 20px;
-    transform: scale(0.8);
-  }
-
-  .pill-tag-generic {
-    background-color: rgb(217, 115, 13);
-  }
-
-  .pill-tag-large {
-    background-color: rgb(224, 62, 62);
-  }
-
-  .pill-tag-weighted-edges {
-    background-color: rgb(223, 171, 1)
-  }
-</style>
 
 <!-- code to generate the collapsible dataset info things -->
 ```{ojs}
