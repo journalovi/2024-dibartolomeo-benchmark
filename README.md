@@ -70,3 +70,15 @@ Papers for this track are written in [Quarto](https://quarto.org/) which is an o
 ## Run instructions
 
 Follow the instructions at <https://quarto.org/docs/get-started/hello/>. If you are using the VSCode Quarto extension and WSL, ensure you start VSCode from the repository directory by running `code .` at the WSL terminal.
+
+For example, to preview the website run
+
+```bash
+quarto preview --no-browser --no-watch-inputs
+```
+
+and to publish it to GitHub pages use
+
+```bash
+quarto publish gh-pages
+```

@@ -15,6 +15,3 @@ number-depth: 2
 
 editor:
   render-on-save: true
-
-execute:
-  freeze: auto

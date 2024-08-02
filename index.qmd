@@ -73,6 +73,8 @@ Your paper may fall into multiple types of work. We provide some example section
 <link rel="stylesheet" href="style.css">
 
 ```{ojs}
+//| echo: false
+//| output: false
 Plot = import("https://esm.run/@observablehq/plot")
 ```
 
