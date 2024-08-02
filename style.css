@@ -1,4 +1,4 @@
-<style>
+
   .container {
     --bs-badge-padding-x: 0.65em;
     --bs-badge-padding-y: 0.35em;
@@ -106,4 +106,31 @@
   .pill-tag-layered {
     background-color: rgb(105, 64, 165)
   }
-</style>
+
+  .pill-tag-clusters {
+    background-color: rgb(223, 171, 1)
+  }
+
+  .pill-tag-labeled-nodes {
+    background-color: rgb(0, 128, 0)
+  }
+
+  .pill-tag-temporal-event-sequence {
+    background-color: rgb(137, 44, 111)
+  }
+
+  .pill-tag-dynamic {
+    background-color: rgb(217, 115, 13)
+  }
+
+  .pill-tag-categorical-nodes{
+    background-color: rgb(0, 128, 0)
+  }
+
+  .pill-tag-spatial {
+    background-color: rgb(223, 171, 1);
+  }
+
+  .pill-tag-weighted-nodes {
+    background-color: rgb(224, 62, 62);
+  }

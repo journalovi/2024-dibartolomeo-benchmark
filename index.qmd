@@ -10,9 +10,12 @@ author:
       - name: University of Konstanz
         city: Konstanz
         country: Germany
+      - name: TU Wien
+        city: Vienna
+        country: Austria
   - name: Tarik Crnovrsanin
     orcid: 0000-0002-4397-5532
-    email:
+    email: t.crnovrsanin@northeastern.edu
     affiliations:
       - name: Northeastern University
         city: Boston
@@ -20,7 +23,7 @@ author:
         country: USA
   - name: Connor Wilson
     orcid: 0000-0002-6936-4078
-    email:
+    email: wilson.conn@northeastern.edu
     affiliations:
       - name: Northeastern University
         city: Boston
@@ -28,7 +31,7 @@ author:
         country: USA
   - name: Eduardo Puerta
     orcid: 0000-0003-4664-4365
-    email:
+    email: eduardo puerta.e@northeastern.edu 
     affiliations:
       - name: Northeastern University
         city: Boston
