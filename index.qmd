@@ -348,14 +348,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 {
   for (let benchmark_dataset of benchmark_datasets.map(d => d.Name)){
     let bname = name_cleanup(benchmark_dataset)
-
+    console.log("bname", bname)
     let named_list_dom = d3.select("#named-list-" + bname);
     named_list_dom.selectAll("*").remove()
     let entry =  benchmark_datasets.find(l => name_cleanup(l.Name) == bname);
     const paper_data = literature
     const origin_paper_data = paper_source
-    add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders)
-
+    if (named_list_dom != undefined) add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders)
+    else console.log("bname")
   }
 }
 ```
