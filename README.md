@@ -14,13 +14,10 @@ Papers for this track are written in [Quarto](https://quarto.org/) which is an o
 
 ## Setup instructions
 
-We highly recommend you use macOS, Linux, or Windows Subsystem for Linux to run these commands. 
-
-```diff
-! Current limitation: The paths in the data directory are too long for Windows to handle. This prevents cloning to windows.
-```
-
 1. Clone the repo.
+
+   * On Windows, we currently have paths in the data directory that are too long for git to handle. This prevents cloning. To avoid this problem, run `git config --system core.longpaths true` with administrator rights.
+
 2. `CD` to the repo directory. Create and activate a virtual environment for this project. You may need to modify the code you use depending on what Python you have installed and how your machine is configured.
 3. Run the setup commands below.
 
