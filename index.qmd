@@ -351,26 +351,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
         item.addEventListener('click', function (e) {
             // jumping is done by default with these links, we just need to get the collapsible to open up
             let str = this.getAttribute('href')
-            //console.log('Link to ' + str + ' was clicked!');
+            // console.log('Link to ' + str + ' was clicked!');
             // Link to #enron was clicked!
 
             // Prepare the identifier
             // Remove the first character and get the second character (now the first)
-            const withoutFirst = str.slice(1);
+            const ident = str.slice(1);
             // Capitalize the new first character and add the rest of the string
-            let ident = withoutFirst.charAt(0).toUpperCase() + withoutFirst.slice(1);
+            // let ident = withoutFirst.charAt(0).toUpperCase() + withoutFirst.slice(1);
             
             // TODO: handle idents where there are spaces and commas etc, just use a map from the link to the title 
             // name of the dataset, like: { link_name: title_name
-                  "enron": "Enron", 
-                  "chess_games": "Chess Games", 
-                  "airlines_migrations_airtraffic": "Airlines, Migrations, and Air Traffic"
-               }
+            //      "enron": "Enron", 
+            //      "chess_games": "Chess Games", 
+            //      "airlines_migrations_airtraffic": "Airlines, Migrations, and Air Traffic"
+            //   }
 
-            var foundDiv = document.querySelector(`div[title='${ident}']`);
+            // find all the divs classed callout-titled and close them
+            document.querySelectorAll('.callout-titled').forEach(item => {
+                item.children[0].setAttribute('aria-expanded', 'false');
+                item.children[1].classList.remove('show');
+            });
+
+            // find a div where the result of the function name_cleanup on its title attribute is equal to ident
+            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d => 
+              typeof d.getAttribute('title') === 'string' 
+              && (
+                name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
+                )
+              );
 
             if (foundDiv) {
-                //console.log('Found div:', foundDiv);
+                console.log('Found div:', foundDiv);
             
                 // Accessing the children of foundDiv
                 const children = foundDiv.children;
@@ -393,6 +405,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
+
 </script>
 
 
@@ -588,12 +601,11 @@ graph_feature_tags = []
 graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
 ```
 
-```{ojs}
-//| echo: false
+<script>
 function name_cleanup(name){
-  return name.replace("(", "").replace(")", "").replace(" ", "_").replace(".", "").replace("'", "").replace("&", "").replaceAll(" ", "").replaceAll(",", "")
+  return name.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "_").replaceAll(".", "").replaceAll("'", "").replaceAll("&", "").replaceAll(" ", "").replaceAll(",", "")
 }
-```
+</script>
 
 ```{ojs}
 //| echo: false

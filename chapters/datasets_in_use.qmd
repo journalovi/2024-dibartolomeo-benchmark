@@ -172,25 +172,29 @@ From: [Deep Neural Network for DrawiNg Networks, (DNN)2](https://link.springer.c
 Another widely used collection is the AT&T collection, or North DAG graphs. They are the same collection, but for the sake of consistency, we kept them separate based on how they were referred to in the papers we analyzed. 
 <!-- AT&T is used in [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] (and referred as AT&T), while the papers that use it but refer to it as North DAGs are [@chimani2010] [@chimani2016b] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022]. -->
 
+<a name="ATT"></a>
+
 ::: {.callout-note title="AT&T" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("ATT")
 ```
 
-<div id="named-list-ATT" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-ATT" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Originally collected by Stephen North at AT&amp;T Bell Labs. The original link from 1995 is broken: <a href="ftp://ftp.research.att.com/dist/drawdag. ">ftp://ftp.research.att.com/dist/drawdag. </a>Di Battista et al. modified the dataset by removing isomorphic graphs, connecting disconnected graphs, and removing cycles. Same as North DAG collection.
 
  <div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
 <div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d949574cf748107605564e" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e3b1101aa0ea66a0c45" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970d31101aa0ea36a0cb0" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e87803e0c0b04558c1f" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
-<div><b>Note: </b>Same as North DAG collection.</div><br>
 <div><b>Size: </b>1277 graphs, 10 to 100 nodes, 9 to 241 edges</div><br>
-<div><b>Origin Notes: </b>Originally collected by Stephen North at AT&amp;T Bell Labs. The original link from 1995 is broken: <a href="ftp://ftp.research.att.com/dist/drawdag. ">ftp://ftp.research.att.com/dist/drawdag. </a>Di Battista et al. modified the dataset by removing isomorphic graphs, connecting disconnected graphs, and removing cycles.</div><br>
-<div><b>Origin paper: </b></div><div><a href="https://doi.org/10.1142/S0218195900000358">[link]</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(8)"></a> &nbsp;Drawing Directed Acyclic Graphs: An Experimental Study</div><br>
+<div><b>Origin paper: </b></div><div><a href="https://doi.org/10.1142/S0218195900000358">[@DIBATTISTA2000]</a> &nbsp; <a style="cursor: pointer; text-decoration: underline; color: rgba(var(--bs-link-color-rgb)" onclick="citation(8)"></a> &nbsp;Drawing Directed Acyclic Graphs: An Experimental Study</div><br>
 <div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Hachul2005]</div><div class="col-4">Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2006]</div><div class="col-4">An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Large-Graph Layout with the Fast Multipole Multilevel Method</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Jabrayilov2016]</div><div class="col-4">Compact Layered Drawings of General Directed Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Jnger2018]</div><div class="col-4">A Flow Formulation for Horizontal Coordinate Assignment with Prescribed Width</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">dag</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">hierarchical</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Mallach2019]</div><div class="col-4">A Natural Quadratic Approach to the Generalized Graph Layering Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Chimani2012]</div><div class="col-4">Advances in the Planarization Method: Effective Multiple Edge Insertions</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@barth2002]</div><div class="col-4">Simple and Efficient Bilayer Cross Counting</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">bipartite</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div></div></div><div class="row"><div class="col-4">[@DIBATTISTA2000]</div><div class="col-4">Drawing Directed Acyclic Graphs: An Experimental Study</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@welch2017]</div><div class="col-4">Measuring Symmetry in Drawings of Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
 
 ::: 
+
+<a name="North_DAGs"></a>
 
 ::: {.callout-note title="North DAGs" collapse=true appearance="minimal"}
 
@@ -497,9 +501,9 @@ There is another link to data not mentioned in their repo. (Also part of SuiteSp
 The **SNAP** repository is a collection of datasets assembled as part of the Stanford Network Analysis Platform, which started in 2004 and launched their website in 2009.
 Well-known, widely used graph repository.
 <!-- There also exists BioSNAP, which consists of similar datasets for medical applications under the same umbrella project. While BioSNAP was not as relevant in the literature, it may still prove useful for future researchers.  -->
-A number of graphs that became relevant individually are included in SNAP, such as [Enron](#enron), [Amazon](#amazon), [Protein Interactions](#protein-interaction) datasets and various [Social Network](#social-network) graphs. SNAP contains <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-directed">directed</span> and <span class="pill-tag pill-tag-undirected">undirected</span> graphs, <span class="pill-tag pill-tag-dynamic">dynamic</span> graphs and more. Graphs are presented with name and descriptions and a few statistics such as a general description, numbers of nodes and edges, source and reference information.
+A number of graphs that became relevant individually are included in SNAP, such as <a href="#Enron" class="dataset-link">Enron</a>, [Amazon](#amazon), [Protein Interactions](#protein-interaction) datasets and various [Social Network](#social-network) graphs. SNAP contains <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-directed">directed</span> and <span class="pill-tag pill-tag-undirected">undirected</span> graphs, <span class="pill-tag pill-tag-dynamic">dynamic</span> graphs and more. Graphs are presented with name and descriptions and a few statistics such as a general description, numbers of nodes and edges, source and reference information.
 
-::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse=true appearance="minimal"}
+::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse-id="SNAP" collapse=true appearance="minimal"}
 
 <!-- ```{ojs}
 //| echo: false
@@ -632,17 +636,13 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 **Fig. 8.** Visualizations of selected graph datasets using FR, KK, S.M., FM3, SFDP, PMDS, tsNET and DRGraph.
 
-:::
+::: 
 
 ### Single Graphs
 
-A number of papers used individual, **Single Graphs** for their experiments instead of a collection. These graphs have
-become popular because of their properties as individual graphs - see, for example,
-the <a href="#enron" class="dataset-link">Enron</a> dataset below, a
-huge individual graph that has a large variance in node degree distribution. Many of these graphs are also available in
-other repositories - their locations are noted wherever known.
+A number of papers used individual, **Single Graphs** for their experiments instead of a collection. These graphs have become popular because of their properties as individual graphs - see, for example, the <a href="#Enron" class="dataset-link">Enron</a> dataset below, a huge individual graph that has a large variance in node degree distribution. Many of these graphs are also available in other repositories - their locations are noted wherever known.
 
-<a name="enron"></a>
+<a name="Enron"></a>
 
 ::: {.callout-note title="Enron" collapse=true appearance="minimal"}
 
@@ -654,7 +654,7 @@ make_sparkline("Enron")
 
 <div id="named-list-Enron" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
-Data made public by the Federal Energy Regulatory Commission when investigating Enron. It has had a few changes over time documented in the link provided as its source. The data is currently hosted by William W. Cohen from CMU on a webiste, and it is also hosted on SNAP. SNAP asks to cite the paper linked in Origin paper. Very high variance in node degrees. Data can be considered threaded and directed, although [SNAP](http://snap.stanford.edu/data/email-Enron.html) provides a version of the network that is explicitly undirected. This dataset proves useful for evaluating algorithms that work on very large graphs, due to its very large size.
+Data made public by the Federal Energy Regulatory Commission when investigating Enron. It has had a few changes over time documented in the link provided as its source. The data is currently hosted by William W. Cohen from CMU on a webiste, and it is also hosted on SNAP. SNAP asks to cite the paper linked in Origin paper. Very high variance in node degrees. Data can be considered threaded and directed, although <a href="#SNAP" class="dataset-link">SNAP</a> provides a version of the network that is explicitly undirected. This dataset proves useful for evaluating algorithms that work on very large graphs, due to its very large size.
 
 <div><b>Originally found at: </b><a href="https://www.cs.cmu.edu/~enron/">https://www.cs.cmu.edu/~enron/</a></div><br>
 <div><b>Size: </b>The data consists of 150 Enron executives, who sent 500,000 messages between themselves.</div><br>
