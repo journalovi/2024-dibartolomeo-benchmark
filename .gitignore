@@ -7,3 +7,6 @@ env/
 venv/
 env-home/
 env-work/
+/.vscode/
+/_site/
+*.html
