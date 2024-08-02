@@ -324,156 +324,6 @@ Might be same as DAGmar graphs? looked at internet archive to see what the GD da
 
 ::: 
 
-The following collections are particularly varied in features:
-
-<a name="Graphviz_Examples"></a>
-
-::: {.callout-note title="Graphviz Examples" collapse=true appearance="minimal"}
-
-While graphviz is a graph visualization software, its example gallery has proven useful to many researchers as a source of benchmark datasets.
-The graphs have various origins, most of which are described on the Graphviz https://www.graphviz.org/gallery/. Example graphs used to generate images with the https://www.graphviz.org for their https://www.graphviz.org/gallery/. These graphs are picked as graphviz examples because they are diverse in types of features they contain: together with generic graphs, there are also graphs with <span class="pill-tag pill-tag-clusters">clusters</span>, <span class="pill-tag pill-tag-layered">layers</span>, <span class="pill-tag pill-tag-directed">directed edges</span> and <span class="pill-tag pill-tag-labeled-nodes">labeled nodes</span>.
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("Graphviz_Examples")
-```
-
-<div id="named-list-Graphviz_Examples" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
-
-<div><b>Originally found at: </b><a href="https://gitlab.com/graphviz/graphviz/-/tree/main/tests/graphs">https://gitlab.com/graphviz/graphviz/-/tree/main/tests/graphs</a></div><br>
-<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948d60c2b4d0e8d38620a" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96ce394a6be111712e991" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970e60c2b4d0f65386519" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ea91101aa0c9e6a0c97" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
-<div><b>Size: </b>1-1464 nodes, 0-5806 edges</div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@gansner2000]</div><div class="col-8">An open graph visualization system and its applications to software engineering</div></div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Gange2011]</div><div class="col-4">Optimal k-level planarization and crossing minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@giovannangeli2023]</div><div class="col-4">FORBID: Fast Overlap Removal by&nbsp;Stochastic GradIent Descent for&nbsp;Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
-
-
-### Statistics
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/four_in_one.svg' width='80%'></div>
-
-### Descriptions from Literature
-
-From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
-
-> Our data includes the same set of graphs that was used by the authors of PRISM to compare it with other algorithms [6]. The dataset is available in the Graphviz open source package.
-
-From “[Optimal k-level planarization and crossing minimization](https://doi.org/10.1007/978-3-642-18469-7_22)”:
-
-> The first set of graphs are all the hierarchical network diagrams appearing in the GraphViz gallery [3]… Table 1 shows the results of minimizing edge crossings and maximizing planar subgraphs with MIP and SAT solvers, as well as the crossings resulting in the Graphviz heuristic layout for graphs from the GraphViz gallery.
-
-### Example Figures
-
-From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.44.08_PM.png' width='80%'></div>
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.44.43_PM.png' width='80%'></div>
-
-From “[FORBID: Fast Overlap Removal by Stochastic GradIent Descent for Graph Drawing](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_6)”:
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.50.39_PM.png' width='80%'></div>
-
-From “[Optimal k-level planarization and crossing minimization](https://doi.org/10.1007/978-3-642-18469-7_22)”:
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.35.58_PM.png' width='80%'></div>
-
-::: 
-
-<a name="Scotch_GraphCollection"></a>
-
-::: {.callout-note title="Scotch Graph Collection" callout-id="Scotch_GraphCollection" collapse=true appearance="minimal"}
-
-Collection consisting of graphs from various sources including topological meshes, meshes related to physical problems (fluid dynamics, structural mechanics, combinatorial optimization), and interprocess communication graphs for a parallel computing implementation of a factorization solver.
-The https://gitlab.inria.fr/scotch/scotch is produced by the https://www.labri.fr/perso/pelegrin/scotch/ whose goal is to study static mapping by the means of graph theory, using “divide and conquer'' graph bipartitioning heuristics. The original link to the data http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph is broken.
-
-```{ojs}
-//| echo: false
-
-make_sparkline("Scotch_GraphCollection")
-```
-
-<div id="named-list-Scotch_GraphCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-The following two collections are particularly relevant for the display of temporal event sequences:
-
-<a name="Storylines_MoviePlots"></a>
-
-::: {.callout-note title="Storylines (Movie Plots)" collapse=true appearance="minimal"}
-
-The storylines dataset is particularly useful for <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequence</span> visualization because of its <span class="pill-tag pill-tag-dynamic">dynamic</span> aspect and <span class="pill-tag pill-tag-clusters">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
-This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis which was lost. Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("Storylines_MoviePlots")
-``` -->
-
-<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-<a name="Storylines_MoviePlots"></a>
-
-::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
-
-Collected as part of the [correlatesofwar.org](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequences</span>.
-
-```{ojs}
-//| echo: false
-
-make_sparkline("Militarized_InterstateDisputesMID")
-```
-
-<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-<a name="Complete_Graphs"></a>
-
-::: {.callout-note title="Complete Graphs" callout-id="Complete_Graphs" collapse=true appearance="minimal"}
-
-**Complete graphs** refers to a generic collection of graphs that are fully connected, i.e., each node is connected to every other node, up to any number of nodes that are needed for the purpose of the experiment. 
-The linked dataset includes both the complete graphs $K_n$ for $5≤n≤50$ and the complete bipartite graphs $K_{n_1,n_2}$ for $5≤n1,n2≤40$. Crossing number is conjectured for most of these, and while not proven, we found these used in papers to validate minimum crossing numbers. We also note that the papers in our literature review did not provide example figures.
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("Complete_Graphs")
-```
-
-<div id="named-list-Complete_Graphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
-
-<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94965803e0c0c10558bc8" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94db50c2b4d0ea1386352" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d972030c2b4d0f5d3862dc" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href=" https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ebb94a6be0ec012e7e6" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
-<div><b>Size: </b>5-80 nodes, 10-1600 edges</div><br>
-<div><b>Number of Graphs: </b>1342</div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Clancy2019]</div><div class="col-4">An effective crossing minimisation heuristic based on star insertion</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
-
-### Statistics
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Complete%20Graphs%20202f26621cf34604935433a41b130f10/four_in_one.svg' width='80%'></div>
-
-### Descriptions from Literature
-
-From “[An effective crossing minimisation heuristic based on star insertion](https://doi.org/10.7155/jgaa.00487)”:
-
-> **Complete graphs** - Although the crossing number of the complete graph $K_n$ is not known for for $n ≥ 13$, the value is conjectured, and typically assumed to be correct. We compare the nine combinations of schemes to see how close to the conjectured value each of them is able to get, for various sizes of complete graphs up to $n = 50$. We indicate how many crossings are obtained after the initial embedding, as well as at the conclusion of the heuristic. We also provide the runtimes, again separated into time spent producing the initial embedding, and time spent in the main loop of the heuristic.
-
-> **Complete bipartite graphs** - Much like the complete graphs, the crossing number of the complete bipartite graph $K_{n1,n2}$ is only known in general for $n_1 ≤ 6$, but the value is conjectured and typically assumed to be correct. Again, we compare the nine combinations of schemes to see how close to the conjectured value they can get for values up to $n_1,n_2 = 40$, and report the same data as for the Complete graphs.
-
-> The crossing number of the complete graph $K_n$ is conjectured (e.g. see Guy [25]) to be equal to
-$H(n) := 1/4 \left\lfloor n/2\right\rfloor \left\lfloor (n − 1)/2\right\rfloor \left\lfloor(n − 2)/2\right\rfloor \left\lfloor (n − 3)/2\right\rfloor$.
-Although this conjecture is widely believed to be correct, it has only been confirmed for $n ≤ 12$ despite considerable effort to extend the results further [30]. We ran the graphs $K_n$ for $5 ≤ n ≤ 50$. Each graph was run with 100 random permutations and the minimum found solution was compared to $H(n)$ by computing the percent relative deviation from $H(n)$…
-For these graphs, we observe that when $n$ was odd, every scheme combination was able to obtain a drawing with $H(n)$ crossings. However, when $n$ was even, each scheme reached a value which was usually very close but not equal to $H(n)$.
-
-> The crossing number of the complete bipartite graph $K_{n_1,n_2}$ is conjectured (e.g. see Zarankiewicz [35]) to be equal to $Z(n_1, n_2) := \left\lfloor n_1/2\right\rfloor \left\lfloor (n_1 − 1)/2\right\rfloor \left\lfloor n_2/2\right\rfloor \left\lfloor (n_2 − 1)/2\right\rfloor$.
-We ran the graphs $K_{n_1,n_2}$ for $5 ≤ n1 ≤ n2 ≤ 40$. Each graph was run with 100 random permutations and the minimum found solution was compared to $Z(n_1,n_2)$… As can be seen in Table 6, QuickCross was successful in obtaining the conjectured optimum in all cases and for all scheme combinations, except $K_{30,30}$ and $K_{40,40}$
-
-::: 
-
 The datasets listed below are particularly useful when researchers are interested in testing for **crossing numbers**. Indeed, they both deal with graphs that have a known crossing numbers.
 
 <a name="KnownCR"></a>
@@ -586,6 +436,156 @@ Paper attached to his dataset provides no visuliaztion of the graph, [https://ar
 
 ::: 
 
+<a name="Complete_Graphs"></a>
+
+::: {.callout-note title="Complete Graphs" callout-id="Complete_Graphs" collapse=true appearance="minimal"}
+
+**Complete graphs** refers to a generic collection of graphs that are fully connected, i.e., each node is connected to every other node, up to any number of nodes that are needed for the purpose of the experiment. 
+The linked dataset includes both the complete graphs $K_n$ for $5≤n≤50$ and the complete bipartite graphs $K_{n_1,n_2}$ for $5≤n1,n2≤40$. Crossing number is conjectured for most of these, and while not proven, we found these used in papers to validate minimum crossing numbers. We also note that the papers in our literature review did not provide example figures.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Complete_Graphs")
+```
+
+<div id="named-list-Complete_Graphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94965803e0c0c10558bc8" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94db50c2b4d0ea1386352" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d972030c2b4d0f5d3862dc" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href=" https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ebb94a6be0ec012e7e6" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>5-80 nodes, 10-1600 edges</div><br>
+<div><b>Number of Graphs: </b>1342</div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Clancy2019]</div><div class="col-4">An effective crossing minimisation heuristic based on star insertion</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Complete%20Graphs%20202f26621cf34604935433a41b130f10/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[An effective crossing minimisation heuristic based on star insertion](https://doi.org/10.7155/jgaa.00487)”:
+
+> **Complete graphs** - Although the crossing number of the complete graph $K_n$ is not known for for $n ≥ 13$, the value is conjectured, and typically assumed to be correct. We compare the nine combinations of schemes to see how close to the conjectured value each of them is able to get, for various sizes of complete graphs up to $n = 50$. We indicate how many crossings are obtained after the initial embedding, as well as at the conclusion of the heuristic. We also provide the runtimes, again separated into time spent producing the initial embedding, and time spent in the main loop of the heuristic.
+
+> **Complete bipartite graphs** - Much like the complete graphs, the crossing number of the complete bipartite graph $K_{n1,n2}$ is only known in general for $n_1 ≤ 6$, but the value is conjectured and typically assumed to be correct. Again, we compare the nine combinations of schemes to see how close to the conjectured value they can get for values up to $n_1,n_2 = 40$, and report the same data as for the Complete graphs.
+
+> The crossing number of the complete graph $K_n$ is conjectured (e.g. see Guy [25]) to be equal to
+$H(n) := 1/4 \left\lfloor n/2\right\rfloor \left\lfloor (n − 1)/2\right\rfloor \left\lfloor(n − 2)/2\right\rfloor \left\lfloor (n − 3)/2\right\rfloor$.
+Although this conjecture is widely believed to be correct, it has only been confirmed for $n ≤ 12$ despite considerable effort to extend the results further [30]. We ran the graphs $K_n$ for $5 ≤ n ≤ 50$. Each graph was run with 100 random permutations and the minimum found solution was compared to $H(n)$ by computing the percent relative deviation from $H(n)$…
+For these graphs, we observe that when $n$ was odd, every scheme combination was able to obtain a drawing with $H(n)$ crossings. However, when $n$ was even, each scheme reached a value which was usually very close but not equal to $H(n)$.
+
+> The crossing number of the complete bipartite graph $K_{n_1,n_2}$ is conjectured (e.g. see Zarankiewicz [35]) to be equal to $Z(n_1, n_2) := \left\lfloor n_1/2\right\rfloor \left\lfloor (n_1 − 1)/2\right\rfloor \left\lfloor n_2/2\right\rfloor \left\lfloor (n_2 − 1)/2\right\rfloor$.
+We ran the graphs $K_{n_1,n_2}$ for $5 ≤ n1 ≤ n2 ≤ 40$. Each graph was run with 100 random permutations and the minimum found solution was compared to $Z(n_1,n_2)$… As can be seen in Table 6, QuickCross was successful in obtaining the conjectured optimum in all cases and for all scheme combinations, except $K_{30,30}$ and $K_{40,40}$
+
+::: 
+
+The collections presented here are particularly varied in features:
+
+<a name="Graphviz_Examples"></a>
+
+::: {.callout-note title="Graphviz Examples" collapse=true appearance="minimal"}
+
+While graphviz is a graph visualization software, its example gallery has proven useful to many researchers as a source of benchmark datasets.
+The graphs have various origins, most of which are described on the Graphviz https://www.graphviz.org/gallery/. Example graphs used to generate images with the https://www.graphviz.org for their https://www.graphviz.org/gallery/. These graphs are picked as graphviz examples because they are diverse in types of features they contain: together with generic graphs, there are also graphs with <span class="pill-tag pill-tag-clusters">clusters</span>, <span class="pill-tag pill-tag-layered">layers</span>, <span class="pill-tag pill-tag-directed">directed edges</span> and <span class="pill-tag pill-tag-labeled-nodes">labeled nodes</span>.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Graphviz_Examples")
+```
+
+<div id="named-list-Graphviz_Examples" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://gitlab.com/graphviz/graphviz/-/tree/main/tests/graphs">https://gitlab.com/graphviz/graphviz/-/tree/main/tests/graphs</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948d60c2b4d0e8d38620a" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96ce394a6be111712e991" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970e60c2b4d0f65386519" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ea91101aa0c9e6a0c97" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>1-1464 nodes, 0-5806 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@gansner2000]</div><div class="col-8">An open graph visualization system and its applications to software engineering</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Gange2011]</div><div class="col-4">Optimal k-level planarization and crossing minimization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@giovannangeli2023]</div><div class="col-4">FORBID: Fast Overlap Removal by&nbsp;Stochastic GradIent Descent for&nbsp;Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
+
+> Our data includes the same set of graphs that was used by the authors of PRISM to compare it with other algorithms [6]. The dataset is available in the Graphviz open source package.
+
+From “[Optimal k-level planarization and crossing minimization](https://doi.org/10.1007/978-3-642-18469-7_22)”:
+
+> The first set of graphs are all the hierarchical network diagrams appearing in the GraphViz gallery [3]… Table 1 shows the results of minimizing edge crossings and maximizing planar subgraphs with MIP and SAT solvers, as well as the crossings resulting in the Graphviz heuristic layout for graphs from the GraphViz gallery.
+
+### Example Figures
+
+From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.44.08_PM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.44.43_PM.png' width='80%'></div>
+
+From “[FORBID: Fast Overlap Removal by Stochastic GradIent Descent for Graph Drawing](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_6)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.50.39_PM.png' width='80%'></div>
+
+From “[Optimal k-level planarization and crossing minimization](https://doi.org/10.1007/978-3-642-18469-7_22)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/Screen_Shot_2023-08-16_at_3.35.58_PM.png' width='80%'></div>
+
+::: 
+
+<a name="Scotch_GraphCollection"></a>
+
+::: {.callout-note title="Scotch Graph Collection" callout-id="Scotch_GraphCollection" collapse=true appearance="minimal"}
+
+Collection consisting of graphs from various sources including topological meshes, meshes related to physical problems (fluid dynamics, structural mechanics, combinatorial optimization), and interprocess communication graphs for a parallel computing implementation of a factorization solver.
+The https://gitlab.inria.fr/scotch/scotch is produced by the https://www.labri.fr/perso/pelegrin/scotch/ whose goal is to study static mapping by the means of graph theory, using “divide and conquer'' graph bipartitioning heuristics. The original link to the data http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph is broken.
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Scotch_GraphCollection")
+```
+
+<div id="named-list-Scotch_GraphCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+The following two collections are particularly relevant for the display of temporal event sequences:
+
+<a name="Storylines_MoviePlots"></a>
+
+::: {.callout-note title="Storylines (Movie Plots)" collapse=true appearance="minimal"}
+
+The storylines dataset is particularly useful for <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequence</span> visualization because of its <span class="pill-tag pill-tag-dynamic">dynamic</span> aspect and <span class="pill-tag pill-tag-clusters">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
+This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis which was lost. Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Storylines_MoviePlots")
+``` -->
+
+<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
+<a name="Storylines_MoviePlots"></a>
+
+::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
+
+Collected as part of the [correlatesofwar.org](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequences</span>.
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Militarized_InterstateDisputesMID")
+```
+
+<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+::: 
+
 Collections of graphs that focus on one specific attribute can also be useful in case the attribute relates to geographical data:
 
 <a name="World_Maps"></a>
@@ -657,50 +657,7 @@ html -->
 
 ::: 
 
-And finally, a collection of graph problems:
-
-<a name="SteinLib"></a> 
-
-::: {.callout-note title="SteinLib" collapse-id="SteinLib" collapse=true appearance="minimal"}
-
-**SteinLib** is a collection of Steiner tree problems in graphs and variants. Their [website](https://steinlib.zib.de/steinlib.php) has additional information about each problem in the dataset, including whether or not it has been solved. We omit two sets, [Relay](https://steinlib.zib.de/showset.php?Relay) and [EFST](https://steinlib.zib.de/showset.php?EFST), from our provided data due to size constraints.
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("SteinLib")
-```
-
-<div id="named-list-SteinLib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
-
-<div><b>Originally found at: </b><a href="https://steinlib.zib.de/steinlib.php">https://steinlib.zib.de/steinlib.php</a></div><br>
-<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948684cf74810580556ac" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://osf.io/download/zbrf5/" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href=" https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970300c2b4d0f61386324" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e5e1101aa0c9f6a0c0f" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
-<div><b>Size: </b>6-38,418 nodes, 9-221,445 edges</div><br>
-<div><b>Number of Graphs: </b>1207</div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@koch2001]</div><div class="col-8">SteinLib: An Updated Library on Steiner Tree Problems in Graphs</div></div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@chimani2016]</div><div class="col-4">A Note on the Practicality of Maximal Planar Subgraph Algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">planar</div></div></div><br>
-
-### Statistics
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SteinLib%204b766ffe22de40ecaa9307671862ea96/four_in_one.svg' width='80%'></div>
-
-### Descriptions from Literature
-
-From [A Note on the Practicality of Maximal Planar Subgraph Algorithms](https://doi.org/10.1007/978-3-319-50106-2_28):
-
-> We use the non-planar graphs of the established benchmark sets North [12] (423 instances), Rome [11] (8249), and **SteinLib** [16] (586), all of which include real-world instances. In our plots, we group instances according to |V| rounded to the nearest multiple of 10; for Rome we only consider graph with ≥ 25 vertices.
-
-### Example Figures
-
-From [SteinLib: An Updated Library on Steiner Tree Problems in Graphs](https://doi.org/10.1007/978-1-4613-0255-1_9):
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SteinLib%204b766ffe22de40ecaa9307671862ea96/Screen_Shot_2023-08-09_at_4.09.50_PM.png' width='80%'></div>
-
-<!-- === STOP RENDERING ===
-
-Is it lost? -->
-
-::: 
+Otherwise, one might decide to focus on a particular domain:
 
 ::: {.callout-note title="Biological Pathways (KEGG)" collapse=true appearance="minimal"}
 
@@ -715,8 +672,6 @@ make_sparkline("Biological_PathwaysKEGG")
 <div id="named-list-Biological_PathwaysKEGG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
 ::: 
-
-
 
 <a name="Co-Phylogenetic_Trees"></a>
 
@@ -774,6 +729,51 @@ Figure below: An HP-drawing of a reconciliation of Gopher & Lice drawn by Search
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Co-Phylogenetic%20Trees%202440f3927d254148abd93168c1399b43/Untitled.png' width='80%'></div>
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Co-Phylogenetic%20Trees%202440f3927d254148abd93168c1399b43/evolu.png' width='80%'></div> -->
+
+::: 
+
+And finally, a collection of graph problems:
+
+<a name="SteinLib"></a> 
+
+::: {.callout-note title="SteinLib" collapse-id="SteinLib" collapse=true appearance="minimal"}
+
+**SteinLib** is a collection of Steiner tree problems in graphs and variants. Their [website](https://steinlib.zib.de/steinlib.php) has additional information about each problem in the dataset, including whether or not it has been solved. We omit two sets, [Relay](https://steinlib.zib.de/showset.php?Relay) and [EFST](https://steinlib.zib.de/showset.php?EFST), from our provided data due to size constraints.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("SteinLib")
+```
+
+<div id="named-list-SteinLib" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://steinlib.zib.de/steinlib.php">https://steinlib.zib.de/steinlib.php</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948684cf74810580556ac" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://osf.io/download/zbrf5/" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href=" https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970300c2b4d0f61386324" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e5e1101aa0c9f6a0c0f" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>6-38,418 nodes, 9-221,445 edges</div><br>
+<div><b>Number of Graphs: </b>1207</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Koch2001]</div><div class="col-8">SteinLib: An Updated Library on Steiner Tree Problems in Graphs</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@chimani2016]</div><div class="col-4">A Note on the Practicality of Maximal Planar Subgraph Algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">planar</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SteinLib%204b766ffe22de40ecaa9307671862ea96/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From [A Note on the Practicality of Maximal Planar Subgraph Algorithms](https://doi.org/10.1007/978-3-319-50106-2_28):
+
+> We use the non-planar graphs of the established benchmark sets North [12] (423 instances), Rome [11] (8249), and **SteinLib** [16] (586), all of which include real-world instances. In our plots, we group instances according to |V| rounded to the nearest multiple of 10; for Rome we only consider graph with ≥ 25 vertices.
+
+### Example Figures
+
+From [SteinLib: An Updated Library on Steiner Tree Problems in Graphs](https://doi.org/10.1007/978-1-4613-0255-1_9):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SteinLib%204b766ffe22de40ecaa9307671862ea96/Screen_Shot_2023-08-09_at_4.09.50_PM.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+Is it lost? -->
 
 ::: 
 
