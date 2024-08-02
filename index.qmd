@@ -72,6 +72,10 @@ Your paper may fall into multiple types of work. We provide some example section
 
 <link rel="stylesheet" href="style.css">
 
+```{ojs}
+Plot = import("https://esm.run/@observablehq/plot")
+```
+
 ### Introduction
 
 Computational evaluations are crucial for standardized and objective evaluation of graph layout algorithms. Standard benchmark datasets facilitate comparison with prior work, and reliable access to datasets is fundamental for replicability. However, there is no comprehensive repository of benchmark datasets for Graph Drawing, and many datasets have been lost.
