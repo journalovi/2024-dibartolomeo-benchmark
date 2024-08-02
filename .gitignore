@@ -14,3 +14,5 @@ chapters/collection_process_files/
 chapters/datasets_in_use_files/
 /site_libs/
 data/*/*_files/
+index_files
+README_files
