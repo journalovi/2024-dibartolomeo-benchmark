@@ -80,5 +80,5 @@ quarto preview --no-browser --no-watch-inputs
 and to publish it to GitHub pages use
 
 ```bash
-quarto publish gh-pages
+quarto publish --no-prompt gh-pages
 ```
