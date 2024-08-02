@@ -297,6 +297,7 @@ make_sparkline("RandDAG")
 <div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
 <div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948061101aa0dc66a0c55" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dec94a6be112512e706" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d97088803e0c0cb6558d7e" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90eff803e0c0b04558ca3" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
 <div><b>Size: </b>10-100 nodes, 15-167 edges</div><br>
+<div><b>Number of Graphs: </b>909</div><br>
 <div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Bachmaier_Gleißner_Hofmeier_2012]</div><div class="col-8">DAGmar: Library for DAGs</div></div><br>
 <div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@klammler2018]</div><div class="col-4">Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
 
@@ -324,7 +325,8 @@ Might be same as DAGmar graphs? looked at internet archive to see what the GD da
 
 ::: 
 
-The datasets listed below are particularly useful when researchers are interested in testing for **crossing numbers**. Indeed, they both deal with graphs that have a known crossing numbers.
+A very common problem in graph drawing is approximating or computing the exact **crossing number** of a graph. 
+The datasets listed below are particularly useful when researchers are particularly useful for this task, as they contain graphs with known crossing numbers, so that other algorithms' results can be tested against them. 
 
 <a name="KnownCR"></a>
 
@@ -415,6 +417,7 @@ make_sparkline("WebCompute")
 <div><b>Originally found at: </b>https://tcs.uos.de/doku.php?id=research/cr</div><br>
 <div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94828803e0c0bf5558bab" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94d7d803e0c0c1f558c9c" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9709994a6be112912e9ec" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href=" https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90ea01101aa0c9e6a0c74" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
 <div><b>Size: </b>3-112 nodes, 3-366 edges</div><br>
+<div><b>Number of Graphs: </b>507</div><br>
 <div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@chimani2016b]</div><div class="col-8">An ILP-based Proof System for the Crossing Number Problem</div></div><br>
 <div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@chimani2016b]</div><div class="col-4">An ILP-based Proof System for the Crossing Number Problem</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
 
@@ -475,6 +478,207 @@ For these graphs, we observe that when $n$ was odd, every scheme combination was
 
 > The crossing number of the complete bipartite graph $K_{n_1,n_2}$ is conjectured (e.g. see Zarankiewicz [35]) to be equal to $Z(n_1, n_2) := \left\lfloor n_1/2\right\rfloor \left\lfloor (n_1 − 1)/2\right\rfloor \left\lfloor n_2/2\right\rfloor \left\lfloor (n_2 − 1)/2\right\rfloor$.
 We ran the graphs $K_{n_1,n_2}$ for $5 ≤ n1 ≤ n2 ≤ 40$. Each graph was run with 100 random permutations and the minimum found solution was compared to $Z(n_1,n_2)$… As can be seen in Table 6, QuickCross was successful in obtaining the conjectured optimum in all cases and for all scheme combinations, except $K_{30,30}$ and $K_{40,40}$
+
+::: 
+
+In some cases, authors of algorithms that deal with particular graph types might prefer to focus on collections with specific attributes, that might be attributes of the nodes, the edges or the entire graph. This is the case of <a href="#Storylines_Movie_Plots" class="dataset-link">Storylines (Movie_Plots)</a> and <a href="#Militarized_Interstate_Disputes_MID" class="dataset-link">Militarized Interstate_Disputes (MID)</a> for <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequences</span>, and <a href="#World_Maps" class="dataset-link">World Maps</a> for <span class="pill-tag pill-tag-spatial">geographical</span> data:
+
+<a name="Storylines_Movie_Plots"></a>
+
+::: {.callout-note title="Storylines (Movie Plots)" collapse-id="Storylines_Movie_Plots" collapse=true appearance="minimal"}
+
+The storylines dataset is particularly useful for <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequence</span> visualization because of its <span class="pill-tag pill-tag-dynamic">dynamic</span> aspect and <span class="pill-tag pill-tag-clusters">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
+This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis, which, unfortunately, got taken down after some time from its publication. This caused the dataset to be lost for a period of time, as none of the papers that used it provided a link to the dataset or stored it as part of their supplemental material. The experiments contained in such papers were then rendered non-reproducible because of the missing dataset. The effects of lost datasets are discussed more in depth in @sec-lost. 
+Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Storylines_Movie_Plots")
+```
+
+<div id="named-list-Storylines_Movie_Plots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b>UC Davis’ website, personal page which is now unavailable. Currently distributed here.</div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948c6803e0c0bf6558be7" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e0b1101aa0ea36a0bd4" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971960c2b4d0f64386417" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e9794a6be0ec012e7cb" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>698-24056 nodes, 357-23088 edges</div><br>
+<div><b>Number of Graphs: </b>6</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Tanahashi2012]</div><div class="col-8">Design Considerations for Optimizing Storyline Visualizations</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Tanahashi2015]</div><div class="col-4">An Efficient Framework for Generating Storyline Visualizations from Streaming Data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@ShixiaLiu2013]</div><div class="col-4">StoryFlow: Tracking the Evolution of Stories</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Tanahashi2012]</div><div class="col-4">Design Considerations for Optimizing Storyline Visualizations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Gronemann2016b]</div><div class="col-4">Crossing Minimization in Storyline Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@vanDijk2018]</div><div class="col-4">Computing Storyline Visualizations
+with Few Block Crossings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Bartolomeo2021]</div><div class="col-4">Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@diBartolomeo2022b]</div><div class="col-4">Stratisfimal Layout: A modular optimization model for laying out layered node-link network visualizations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">compound graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Storylines%20(Movie%20Plots)%205d9ea7cbfc2c4a6c88a7ca1bf32c67d7/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “An efficient Framework for Generating Storyline Visualizations from Streaming Data”:
+
+> The datasets we used for this study were the three movie datasets (Star Wars, The Matrix, and Inception) [25] which have been used in previous research as benchmark datasets for measuring layout legibilities. Star Wars consists of 14 entities and 200 time steps. The Matrix consists of 14 entities and 100 time steps. Inception consists of 8 entities and 490 time steps.
+
+From “Design Considerations for Optimizing Storyline Visualizations” (origin paper):
+
+> The basic form of the data applied in this visualization is simply a chronological list of interactions between various characters. These interactions between characters can be separated into a series of interaction sessions, each session representing the time span of a set of interacting characters.
+More precisely, we define an interaction session as a unit which holds three attributes:
+• initiation time,
+• duration, and
+• members.
+Initiation time corresponds to the time when the interaction session begins. Duration corresponds to the duration of the interaction session. Members corresponds to the set of characters involved in the interaction session. Each interaction session represents a time slot in the data where its members are interacting. Note that any change in the formation of members (e.g., a character leaving or joining) indicates a separate interaction session.
+
+### Example Figures
+
+From “[An Efficient Framework for Generating Storyline Visualizations from Streaming Data](https://doi.org/10.1109/TVCG.2015.2392771)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Storylines%20(Movie%20Plots)%205d9ea7cbfc2c4a6c88a7ca1bf32c67d7/Untitled.png' width='80%'></div>
+
+From “[StoryFlow: Tracking the Evolution of Stories](https://doi.org/10.1109/TVCG.2013.196)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Storylines%20(Movie%20Plots)%205d9ea7cbfc2c4a6c88a7ca1bf32c67d7/Untitled%201.png' width='80%'></div>
+
+From “[Crossing Minimization in Storyline Visualizations](https://doi.org/10.1007/978-3-319-50106-2_29)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Storylines%20(Movie%20Plots)%205d9ea7cbfc2c4a6c88a7ca1bf32c67d7/Untitled%202.png' width='80%'></div>
+
+::: 
+
+<a name="Militarized_Interstate_Disputes_MID"></a>
+
+::: {.callout-note title="Militarized Interstate Disputes (MID)" callout-id="Militarized_Interstate_Disputes_MID" collapse=true appearance="minimal"}
+
+Collected as part of the [Correlates Of War](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequences</span>.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("Militarized_Interstate_Disputes_MID")
+```
+
+<div id="named-list-Militarized_Interstate_Disputes_MID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://correlatesofwar.org/data-sets/MIDs/">https://correlatesofwar.org/data-sets/MIDs/</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9481e4cf7481059055704" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96e2a1101aa0e9f6a0bd5" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971de0c2b4d0f6438644d" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e8f0c2b4d0d2e38626d" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>The dataset consists of 2 disconnected temporal event sequence graphs, one with 11,766 nodes and 5,883 edges, and the other with 9,619 nodes and 8,017 edges.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@palmer2022]</div><div class="col-8">The MID5 Dataset, 2011–2014: Procedures, coding rules, and description.</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Tanahashi2012]</div><div class="col-4">Design Considerations for Optimizing Storyline Visualizations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@ShixiaLiu2013]</div><div class="col-4">StoryFlow: Tracking the Evolution of Stories</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+### Description From Literature
+
+From [Design Considerations for Optimizing Storyline Visualizations:](https://ieeexplore.ieee.org/document/6327274)
+
+> For the time-varying network, we use the Militarized Interstate Dispute (MID) network dataset [19].
+
+> For example, in the MID network dataset, which consists of 196 nations and 740 time steps, the genome length was reduced from 1714 to 432, allowing the algorithm to gain a considerable speedup.
+
+From [StoryFlow: Tracking the Evolution of Stories](https://ieeexplore.ieee.org/document/6634164):
+
+> We conducted the experiment based on three movie datasets and a network dataset: Star Wars, Inception, The Matrix, and the MID network dataset (from 1817 to 1947).
+
+### Example Figures
+
+From [Design Considerations for Optimizing Storyline Visualization](https://ieeexplore.ieee.org/document/6327274):
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Militarized%20Interstate%20Disputes%20(MID)%2027d9df7d11e44a9596267bb930bc6f03/Screen_Shot_2023-01-21_at_2.41.34_PM.png' width='80%'></div>
+
+<!-- == STOP RENDERING ==
+
+Earliest Citation on Website for version 2.1: [Jones, Daniel M., Stuart A. Bremer and J. David Singer. 1996 .”Militarized Interstate Disputes, 1816-1992: Rationale, Coding Rules, and Empirical Patterns.” *Conflict Management and Peace Science 15*
+:163-213](https://doi.org/10.1177/073889429601500203)
+
+Was originally here:
+
+[http://psfaculty.ucdavis.edu/zmaoz/dyadmid.html](http://psfaculty.ucdavis.edu/zmaoz/dyadmid.html)
+
+[**Design Considerations for Optimizing Storyline Visualizations**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Design%20Considerations%20for%20Optimizing%20Storyline%20Vis%200a518ed402154bdcb136759d50e09b1b.md) 
+
+Or here: [https://correlatesofwar.org/COW2 Data/MIDs/MID310.html](https://correlatesofwar.org/COW2%20Data/MIDs/MID310.html)
+from [**StoryFlow: Tracking the Evolution of Stories**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/StoryFlow%20Tracking%20the%20Evolution%20of%20Stories%2085d6352e70a54f3e8840adcfea70363a.md) 
+
+**Now it’s here**: [https://correlatesofwar.org/data-sets/MIDs/](https://correlatesofwar.org/data-sets/MIDs/)
+
+And linked to by Z. Maoz’s website: [https://zmaoz.faculty.ucdavis.edu/data-sets/](https://zmaoz.faculty.ucdavis.edu/data-sets/)
+
+StoryFlow: Tracking Evolution of Stories had no visualization-
+
+“We failed to generate the storyline layout of the MID
+data, so we used the results provided by Tanahashi.”
+
+Version 5 Bibliography entry:
+
+Palmer, Glenn, Roseanne W. McManus, Vito D’Orazio, Michael R. Kenwick, Mikaela Karstens, Chase Bloch, Nick Dietrich, Kayla Kahn, Kellan Ritter, Michael J. Soules. 2020. “The MID5 Dataset, 2011-2014: Procedures, Coding Rules, and Description.” *Conflict Management and Peace Science*
+, 39(4): 470-482. DOI: [https://journals.sagepub.com/doi/full/10.1177/0738894221995743](https://doi.org/10.1177/0738894221995743)
+
+Part of Storylines data -->
+
+::: 
+
+<a name="World_Maps"></a>
+
+::: {.callout-note title="World Maps" collapse=true collapse-id="World_Maps" appearance="minimal"}
+
+Datasets contain various attributes for a few locations and their geographical adjacency, namely neighboring states, countries, and municipalities.
+World Bank country information transformed into a weight-vectors dataset. Some of the incomplete data was filled from disparate sources mentioned in the paper’s supplemental materials: [https://doi.org/10.48550/arXiv.1908.07291](https://doi.org/10.48550/arXiv.1908.07291). The collection contains 14 graphs with <span class="pill-tag pill-tag-dynamic">dynamic</span> and <span class="pill-tag pill-tag-spatial">spatial</span> attributes, <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>, and <span class="pill-tag pill-tag-weighted-nodes">weighted nodes</span>.
+
+<!-- ```{ojs}
+//| echo: false
+
+make_sparkline("World_Maps")
+```
+
+<div id="named-list-World_Maps" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+<div><b>Originally found at: </b><a href="https://data.worldbank.org/indicator
+">https://data.worldbank.org/indicator
+</a><a href="https://github.com/loizuf/StableDemersLP/tree/main/code/StableDemers_TVCG/data">https://github.com/loizuf/StableDemersLP/tree/main/code/StableDemers_TVCG/data</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948f10c2b4d0e8d386217" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dde0c2b4d0f653862e3" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971f194a6be112a12eaaa" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94aca94a6be102f12e736" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>48-514 nodes, 205-2428 edges</div><br>
+<div><b>Number of Graphs: </b>14</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Nickel2019]</div><div class="col-8">Computing Stable Demers Cartograms</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Nickel2019]</div><div class="col-4">Computing Stable Demers Cartograms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
+
+> We run experiments on real-world datasets. For time-series data, we expect a gradual change and strong correlation between the different values. For weight-vectors data, we expect more erratic changes and less correlation. We use two maps with rather different geographic structures: the first (**World**) is a map of world countries, having mixed region (country) sizes in a rather unstructured manner; the second (**US**) is a map of the 48 contiguous US states, having relatively high structure in sizes of its states, with large states in the middle and along the west coast and many smaller states along the east coast.
+
+From Supplemental Materials, Appendix C of *[“Computing Stable Demers Cartograms*”:](https://doi.org/10.48550/arXiv.1908.07291)
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/Untitled.png' width='80%'></div>
+
+### Example Figures
+
+From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/Untitled%201.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+from [Computing Stable Demers Cartograms](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Computing%20Stable%20Demers%20Cartograms%20fb418899e13f45f4b6b3c6296e07a599.md) 
+
+World bank - bunch of references - all temporal datasets!
+
+Missing Data from the world bank was filled with following linked sources:
+
+https://en.wikipedia.org/wiki/Economy of North Korea#cite note-2
+
+https://tradingeconomics.com/kuwait/rural-population-wb-data.html
+
+http://www.efgs.info/wp-content/uploads/conferences/efgs/2016/S8-1
+presentationV1 IdrizShala EFGS2016.pdf
+
+https://tradingeconomics.com/eritrea/rural-population-wb-data.html
+
+https://tradingeconomics.com/kuwait/forest-area-percent-of-land-area-wb-data.
+html
+
+https://tradingeconomics.com/kosovo/forest-area-percent-of-land-area-wb-data.
+html -->
 
 ::: 
 
@@ -548,112 +752,6 @@ make_sparkline("Scotch_GraphCollection")
 ```
 
 <div id="named-list-Scotch_GraphCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-The following two collections are particularly relevant for the display of temporal event sequences:
-
-<a name="Storylines_MoviePlots"></a>
-
-::: {.callout-note title="Storylines (Movie Plots)" collapse=true appearance="minimal"}
-
-The storylines dataset is particularly useful for <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequence</span> visualization because of its <span class="pill-tag pill-tag-dynamic">dynamic</span> aspect and <span class="pill-tag pill-tag-clusters">clusters</span> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
-This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis which was lost. Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("Storylines_MoviePlots")
-``` -->
-
-<div id="named-list-Storylines_MoviePlots" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-<a name="Storylines_MoviePlots"></a>
-
-::: {.callout-note title="Militarized Interstate Disputes (MID)" collapse=true appearance="minimal"}
-
-Collected as part of the [correlatesofwar.org](https://correlatesofwar.org/data-sets/MIDs/) project, the dataset contains two disconnected <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequences</span>.
-
-```{ojs}
-//| echo: false
-
-make_sparkline("Militarized_InterstateDisputesMID")
-```
-
-<div id="named-list-Militarized_InterstateDisputesMID" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-::: 
-
-Collections of graphs that focus on one specific attribute can also be useful in case the attribute relates to geographical data:
-
-<a name="World_Maps"></a>
-
-::: {.callout-note title="World Maps" collapse=true collapse-id="World_Maps" appearance="minimal"}
-
-Datasets contain various attributes for a few locations and their geographical adjacency, namely neighboring states, countries, and municipalities.
-World Bank country information transformed into a weight-vectors dataset. Some of the incomplete data was filled from disparate sources mentioned in the paper’s supplemental materials: [https://doi.org/10.48550/arXiv.1908.07291](https://doi.org/10.48550/arXiv.1908.07291). The collection contains 14 graphs with <span class="pill-tag pill-tag-dynamic">dynamic</span> and <span class="pill-tag pill-tag-spatial">spatial</span> attributes, <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>, and <span class="pill-tag pill-tag-weighted-nodes">weighted nodes</span>.
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("World_Maps")
-```
-
-<div id="named-list-World_Maps" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
-
-<div><b>Originally found at: </b><a href="https://data.worldbank.org/indicator
-">https://data.worldbank.org/indicator
-</a><a href="https://github.com/loizuf/StableDemersLP/tree/main/code/StableDemers_TVCG/data">https://github.com/loizuf/StableDemersLP/tree/main/code/StableDemers_TVCG/data</a></div><br>
-<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948f10c2b4d0e8d386217" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dde0c2b4d0f653862e3" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971f194a6be112a12eaaa" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94aca94a6be102f12e736" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
-<div><b>Size: </b>48-514 nodes, 205-2428 edges</div><br>
-<div><b>Number of Graphs: </b>14</div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Nickel2019]</div><div class="col-8">Computing Stable Demers Cartograms</div></div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Nickel2019]</div><div class="col-4">Computing Stable Demers Cartograms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
-
-### Statistics
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/four_in_one.svg' width='80%'></div>
-
-### Descriptions from Literature
-
-From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
-
-> We run experiments on real-world datasets. For time-series data, we expect a gradual change and strong correlation between the different values. For weight-vectors data, we expect more erratic changes and less correlation. We use two maps with rather different geographic structures: the first (**World**) is a map of world countries, having mixed region (country) sizes in a rather unstructured manner; the second (**US**) is a map of the 48 contiguous US states, having relatively high structure in sizes of its states, with large states in the middle and along the west coast and many smaller states along the east coast.
-
-From Supplemental Materials, Appendix C of *[“Computing Stable Demers Cartograms*”:](https://doi.org/10.48550/arXiv.1908.07291)
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/Untitled.png' width='80%'></div>
-
-### Example Figures
-
-From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/Untitled%201.png' width='80%'></div>
-
-<!-- === STOP RENDERING ===
-
-from [Computing Stable Demers Cartograms](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Computing%20Stable%20Demers%20Cartograms%20fb418899e13f45f4b6b3c6296e07a599.md) 
-
-World bank - bunch of references - all temporal datasets!
-
-Missing Data from the world bank was filled with following linked sources:
-
-https://en.wikipedia.org/wiki/Economy of North Korea#cite note-2
-
-https://tradingeconomics.com/kuwait/rural-population-wb-data.html
-
-http://www.efgs.info/wp-content/uploads/conferences/efgs/2016/S8-1
-presentationV1 IdrizShala EFGS2016.pdf
-
-https://tradingeconomics.com/eritrea/rural-population-wb-data.html
-
-https://tradingeconomics.com/kuwait/forest-area-percent-of-land-area-wb-data.
-html
-
-https://tradingeconomics.com/kosovo/forest-area-percent-of-land-area-wb-data.
-html -->
 
 ::: 
 
@@ -1462,7 +1560,7 @@ Reached out to author - Alex Adai
 
 ### Aggregate Collections
 
-Many papers used graphs from specific domains that contain particular characteristics (e.g., geographical coordinates are often found in airline data). Instead of collecting each one of these individual, contextual datasets, we aggregated them in further subcategories, and called them **Aggregate collections**. Individual information about about each aggregate collection can be found in the papers that contain them.
+Many papers use graphs from specific domains that contain particular characteristics, such as geographical coordinates often found in airline data. Instead of collecting each of these individual, contextual datasets, we aggregated them into subcategories called **Aggregate collections**. These collections group together datasets from the same real-life context, which may have multiple sources. Real-life contexts are distinguishable by specific properties or requirements found in graphs from those sources; for instance, collaboration networks can be represented as hypergraphs, while air traffic routes have nodes (airports) with fixed spatial coordinates and numerous edges connecting the nodes, making them suitable for edge bundling algorithms. Individual information about each aggregate collection can be found in the papers that contain them.
 
 ::: {.callout-note title="Assorted Collaboration Network" collapse=true appearance="minimal"}
 
@@ -1700,7 +1798,7 @@ make_sparkline("Control_FlowGraphs")
 
 ::: 
 
-### Lost and unavailable datasets
+### Lost and unavailable datasets {#sec-lost}
 
 Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
 
