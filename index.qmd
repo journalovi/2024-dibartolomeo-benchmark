@@ -202,8 +202,14 @@ paper_sources_pre = await FileAttachment("data/Paper Sources.csv").csv()
 paper_source = paper_sources_pre.filter(l => l.Name != "")
 ```
 
+{{< include chapters/background.qmd >}}
+
+{{< include chapters/motivation.qmd >}} 
+
 {{< include chapters/collection_process.qmd >}} 
 
+{{< include chapters/additional_dataset_work.qmd >}} 
+ 
 {{< include chapters/datasets_in_use.qmd >}} 
 
 ## Details of the datasets
