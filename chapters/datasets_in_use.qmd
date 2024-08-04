@@ -81,6 +81,10 @@ We classified the datasets in different categories, based on their origins or am
 }
 ```
 
+### Tag-filtered Navigation
+
+{{< include /chapters/interactive_filtering.qmd >}}
+
 ### Uniform Benchmark datasets
 
 **Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.

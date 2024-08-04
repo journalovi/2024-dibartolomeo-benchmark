@@ -74,13 +74,13 @@
     background-color: #ddd;
     border: none;
     color: white;
-    padding: 0px 8px;
+    padding: 0 8px;
     text-align: center;
     font-weight: bold;
     display: inline-block;
-    margin: 0px -0.5em;
     border-radius: 20px;
-    transform: scale(0.8);
+    margin: 0 2px;
+    font-size: 0.85em; /* Reduce font size instead of scaling */
   }
 
   .pill-tag-generic {

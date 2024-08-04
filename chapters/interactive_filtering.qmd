@@ -1,0 +1,493 @@
+<div class="row">
+<div class="col-4 justify-content-center"><b>Tags</b></div>
+<div class="col-4 justify-content-center"><b>Datsets</b></div>
+<div class="col-4 justify-content-center"><b>Papers</b></div>
+</div>
+
+<div class="row" style="max-height: 600px">
+<div class="col-4" style="overflow-y:scroll;">
+<div id="checkbox-container" class="d-flex flex-column align-items-start"></div>
+</div>
+<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll;">
+<div id="datasetlinkslist-container">
+<div id="Airlines_Migrations_and_Air_Traffic-link"><a href="#Airlines_Migrations_and_Air_Traffic" class="dataset-link">Airlines, Migrations, and Air Traffic</a></div>
+<div id="Amazon-link"><a href="#Amazon" class="dataset-link">Amazon</a></div>
+<div id="Assorted_Collaboration_Network-link"><a href="#Assorted_Collaboration_Network" class="dataset-link">Assorted Collaboration Network</a></div>
+<div id="Assorted_Fiscal_Network-link"><a href="#Assorted_Fiscal_Network" class="dataset-link">Assorted Fiscal Network</a></div>
+<div id="ATT-link"><a href="#ATT" class="dataset-link">AT&amp;T</a></div>
+<div id="Autonomous_System_Network-link"><a href="#Autonomous_System_Network" class="dataset-link">Autonomous System Network</a></div>
+<div id="Biological_Pathways_KEGG-link"><a href="#Biological_Pathways_KEGG" class="dataset-link">Biological Pathways (KEGG)</a></div>
+<div id="Blogposts_Tweets_and_Forums-link"><a href="#Blogposts_Tweets_and_Forums" class="dataset-link">Blogposts, Tweets, and Forums</a></div>
+<div id="Business_Processes-link"><a href="#Business_Processes" class="dataset-link">Business Processes</a></div>
+<div id="California-link"><a href="#California" class="dataset-link">California</a></div>
+<div id="Car_Features-link"><a href="#Car_Features" class="dataset-link">Car Features</a></div>
+<div id="Chess_Games-link"><a href="#Chess_Games" class="dataset-link">Chess Games</a></div>
+<div id="World_Greenhouse_Gas_Emissions-link"><a href="#World_Greenhouse_Gas_Emissions" class="dataset-link">World Greenhouse Gas Emissions</a></div>
+<div id="Co-Phylogenetic_Trees-link"><a href="#Co-Phylogenetic_Trees" class="dataset-link">Co-Phylogenetic Trees</a></div>
+<div id="Code_Dependency_Graphs-link"><a href="#Code_Dependency_Graphs" class="dataset-link">Code Dependency Graphs</a></div>
+<div id="Complete_Graphs-link"><a href="#Complete_Graphs" class="dataset-link">Complete Graphs</a></div>
+<div id="World_Maps-link"><a href="#World_Maps" class="dataset-link">World Maps</a></div>
+<div id="Control_Flow_Graphs-link"><a href="#Control_Flow_Graphs" class="dataset-link">Control Flow Graphs</a></div>
+<div id="Debates-link"><a href="#Debates" class="dataset-link">Debates</a></div>
+<div id="Enron-link"><a href="#Enron" class="dataset-link">Enron</a></div>
+<div id="FM3-link"><a href="#FM3" class="dataset-link">FM3</a></div>
+<div id="GION-link"><a href="#GION" class="dataset-link">GION</a></div>
+<div id="Graphviz_Examples-link"><a href="#Graphviz_Examples" class="dataset-link">Graphviz Examples</a></div>
+<div id="Internet_Mapping_Project-link"><a href="#Internet_Mapping_Project" class="dataset-link">Internet Mapping Project</a></div>
+<div id="Investment_Interdependence-link"><a href="#Investment_Interdependence" class="dataset-link">Investment Interdependence</a></div>
+<div id="KnownCR-link"><a href="#KnownCR" class="dataset-link">KnownCR</a></div>
+<div id="Mathematics_Genealogy-link"><a href="#Mathematics_Genealogy" class="dataset-link">Mathematics Genealogy</a></div>
+<div id="Matrix_Market-link"><a href="#Matrix_Market" class="dataset-link">Matrix Market</a></div>
+<div id="Medical_Patient_Records-link"><a href="#Medical_Patient_Records" class="dataset-link">Medical Patient Records</a></div>
+<div id="Militarized_Interstate_Disputes_MID-link"><a href="#Militarized_Interstate_Disputes_MID" class="dataset-link">Militarized Interstate Disputes (MID)</a></div>
+<div id="Network_Repository-link"><a href="#Network_Repository" class="dataset-link">Network Repository</a></div>
+<div id="Neural_Network-link"><a href="#Neural_Network" class="dataset-link">Neural Network</a></div>
+<div id="North_DAGs-link"><a href="#North_DAGs" class="dataset-link">North DAGs</a></div>
+<div id="Padia_Stories-link"><a href="#Padia_Stories" class="dataset-link">Padia Stories</a></div>
+<div id="Pajek-link"><a href="#Pajek" class="dataset-link">Pajek</a></div>
+<div id="Pert_DAG-link"><a href="#Pert_DAG" class="dataset-link">Pert DAG</a></div>
+<div id="Protein_Interactions_Publications-link"><a href="#Protein_Interactions_Publications" class="dataset-link">Protein Interactions (Publications)</a></div>
+<div id="RandDAG-link"><a href="#RandDAG" class="dataset-link">RandDAG</a></div>
+<div id="Rome-Lib-link"><a href="#Rome-Lib" class="dataset-link">Rome-Lib</a></div>
+<div id="Scotch_Graph_Collection-link"><a href="#Scotch_Graph_Collection" class="dataset-link">Scotch Graph Collection</a></div>
+<div id="SNAP_Stanford_Network_Analysis_Platform-link"><a href="#SNAP_Stanford_Network_Analysis_Platform" class="dataset-link">SNAP (Stanford Network Analysis Platform)</a></div>
+<div id="Social_Networks-link"><a href="#Social_Networks" class="dataset-link">Social Networks</a></div>
+<div id="Stanford_GraphBase-link"><a href="#Stanford_GraphBase" class="dataset-link">Stanford GraphBase</a></div>
+<div id="SteinLib-link"><a href="#SteinLib" class="dataset-link">SteinLib</a></div>
+<div id="Storylines_Movie_Plots-link"><a href="#Storylines_Movie_Plots" class="dataset-link">Storylines (Movie Plots)</a></div>
+<div id="SuiteSparse_Matrix_Collection-link"><a href="#SuiteSparse_Matrix_Collection" class="dataset-link">SuiteSparse Matrix Collection</a></div>
+<div id="Toblers_Flow_Mapper-link"><a href="#Toblers_Flow_Mapper" class="dataset-link">Tobler's Flow Mapper</a></div>
+<div id="Transportation_Networks-link"><a href="#Transportation_Networks" class="dataset-link">Transportation Networks</a></div>
+<div id="Tree_of_Life-link"><a href="#Tree_of_Life" class="dataset-link">Tree of Life</a></div>
+<div id="Walshaw-link"><a href="#Walshaw" class="dataset-link">Walshaw</a></div>
+<div id="WebCompute-link"><a href="#WebCompute" class="dataset-link">WebCompute</a></div>
+<div id="World_Bank_Trade_Data-link"><a href="#World_Bank_Trade_Data" class="dataset-link">World Bank Trade Data</a></div>
+</div>
+</div>
+<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll;">
+<div id="paperlinkslist-container">
+<div id="Ahmed2020-link">[@Ahmed2020]</div>
+<div id="Alegra2021-link">[@Alegra2021]</div>
+<div id="Angori2019-link">[@Angori2019]</div>
+<div id="Arleo2019-link">[@Arleo2019]</div>
+<div id="Bach2014-link">[@Bach2014]</div>
+<div id="Ballweg2018-link">[@Ballweg2018]</div>
+<div id="Barnes1986-link">[@Barnes1986]</div>
+<div id="Bartolomeo2021-link">[@Bartolomeo2021]</div>
+<div id="Bekos2007-link">[@Bekos2007]</div>
+<div id="Bekos2018-link">[@Bekos2018]</div>
+<div id="Bertault2000-link">[@Bertault2000]</div>
+<div id="Bhatt1984-link">[@Bhatt1984]</div>
+<div id="Bhore2021-link">[@Bhore2021]</div>
+<div id="Biedl2018-link">[@Biedl2018]</div>
+<div id="Binucci2016-link">[@Binucci2016]</div>
+<div id="Binucci2021-link">[@Binucci2021]</div>
+<div id="Brsig2020-link">[@Brsig2020]</div>
+<div id="Buchheim2006-link">[@Buchheim2006]</div>
+<div id="Buchheim2008-link">[@Buchheim2008]</div>
+<div id="Buchin2011-link">[@Buchin2011]</div>
+<div id="Calamoneri2018-link">[@Calamoneri2018]</div>
+<div id="Castermans2018-link">[@Castermans2018]</div>
+<div id="Chen2019-link">[@Chen2019]</div>
+<div id="Chimani2008-link">[@Chimani2008]</div>
+<div id="Chimani2012-link">[@Chimani2012]</div>
+<div id="Chimani2021-link">[@Chimani2021]</div>
+<div id="Clancy2019-link">[@Clancy2019]</div>
+<div id="DIBATTISTA2000-link">[@DIBATTISTA2000]</div>
+<div id="DRGraph21-link">[@DRGraph21]</div>
+<div id="Dang2016-link">[@Dang2016]</div>
+<div id="Demel2018-link">[@Demel2018]</div>
+<div id="Devkota2019-link">[@Devkota2019]</div>
+<div id="DiBattista1997b-link">[@DiBattista1997b]</div>
+<div id="DiGiacomo2020-link">[@DiGiacomo2020]</div>
+<div id="Didimo2018-link">[@Didimo2018]</div>
+<div id="Didimo2019-link">[@Didimo2019]</div>
+<div id="Dwyer2013-link">[@Dwyer2013]</div>
+<div id="Eades2018-link">[@Eades2018]</div>
+<div id="Ersoy2011-link">[@Ersoy2011]</div>
+<div id="Firman2019-link">[@Firman2019]</div>
+<div id="Forster2002-link">[@Forster2002]</div>
+<div id="Forster2005-link">[@Forster2005]</div>
+<div id="Frishman2008-link">[@Frishman2008]</div>
+<div id="Frster2021-link">[@Frster2021]</div>
+<div id="Fruchterman1991-link">[@Fruchterman1991]</div>
+<div id="Fulek2018-link">[@Fulek2018]</div>
+<div id="Gange2011-link">[@Gange2011]</div>
+<div id="Gansner1993-link">[@Gansner1993]</div>
+<div id="Gansner2005-link">[@Gansner2005]</div>
+<div id="Gansner2005b-link">[@Gansner2005b]</div>
+<div id="Gansner2006-link">[@Gansner2006]</div>
+<div id="Gansner2013-link">[@Gansner2013]</div>
+<div id="Gibson2012-link">[@Gibson2012]</div>
+<div id="Giovannangeli2021-link">[@Giovannangeli2021]</div>
+<div id="Grabowicz2014-link">[@Grabowicz2014]</div>
+<div id="Gronemann2016-link">[@Gronemann2016]</div>
+<div id="Gronemann2016b-link">[@Gronemann2016b]</div>
+<div id="Gutwenger2004-link">[@Gutwenger2004]</div>
+<div id="Hachul2005-link">[@Hachul2005]</div>
+<div id="Hachul2006-link">[@Hachul2006]</div>
+<div id="Heinsohn2018-link">[@Heinsohn2018]</div>
+<div id="Henry2007-link">[@Henry2007]</div>
+<div id="Holten2006-link">[@Holten2006]</div>
+<div id="Holten2009-link">[@Holten2009]</div>
+<div id="Hong2019-link">[@Hong2019]</div>
+<div id="Huang2016-link">[@Huang2016]</div>
+<div id="Hummel2019-link">[@Hummel2019]</div>
+<div id="Jabrayilov2016-link">[@Jabrayilov2016]</div>
+<div id="Jacomy2014-link">[@Jacomy2014]</div>
+<div id="Jnger2018-link">[@Jnger2018]</div>
+<div id="KOREN20051867-link">[@KOREN20051867]</div>
+<div id="Kindermann2018-link">[@Kindermann2018]</div>
+<div id="Klawitter2018-link">[@Klawitter2018]</div>
+<div id="Klawitter2021-link">[@Klawitter2021]</div>
+<div id="Klemz2021-link">[@Klemz2021]</div>
+<div id="Lim2021-link">[@Lim2021]</div>
+<div id="Lin2010-link">[@Lin2010]</div>
+<div id="Liu2017-link">[@Liu2017]</div>
+<div id="Mallach2019-link">[@Mallach2019]</div>
+<div id="Marner2014-link">[@Marner2014]</div>
+<div id="Meidiana2019-link">[@Meidiana2019]</div>
+<div id="Meulemans2013-link">[@Meulemans2013]</div>
+<div id="Misue2019-link">[@Misue2019]</div>
+<div id="Nachmanson2017-link">[@Nachmanson2017]</div>
+<div id="NanCao2011-link">[@NanCao2011]</div>
+<div id="Ni2018-link">[@Ni2018]</div>
+<div id="Nickel2019-link">[@Nickel2019]</div>
+<div id="Niedermann2020-link">[@Niedermann2020]</div>
+<div id="Nllenburg2010-link">[@Nllenburg2010]</div>
+<div id="Nllenburg2021-link">[@Nllenburg2021]</div>
+<div id="Nollenburg2011-link">[@Nollenburg2011]</div>
+<div id="Ogawa2010-link">[@Ogawa2010]</div>
+<div id="Oikonomou2018-link">[@Oikonomou2018]</div>
+<div id="Olszewski2018-link">[@Olszewski2018]</div>
+<div id="Ortali2018-link">[@Ortali2018]</div>
+<div id="Ortmann2017-link">[@Ortmann2017]</div>
+<div id="Perri2020-link">[@Perri2020]</div>
+<div id="Purchase2020-link">[@Purchase2020]</div>
+<div id="Qu2022-link">[@Qu2022]</div>
+<div id="Raj2018-link">[@Raj2018]</div>
+<div id="Regg2016-link">[@Regg2016]</div>
+<div id="Sander1996-link">[@Sander1996]</div>
+<div id="ShixiaLiu2013-link">[@ShixiaLiu2013]</div>
+<div id="Simonetto2018-link">[@Simonetto2018]</div>
+<div id="Skambath2016-link">[@Skambath2016]</div>
+<div id="Sugiyama1981-link">[@Sugiyama1981]</div>
+<div id="Tanahashi2012-link">[@Tanahashi2012]</div>
+<div id="Tanahashi2015-link">[@Tanahashi2015]</div>
+<div id="Taurus2023-link">[@Taurus2023]</div>
+<div id="Wallinger2022-link">[@Wallinger2022]</div>
+<div id="Walter2020-link">[@Walter2020]</div>
+<div id="WeiweiCui2008-link">[@WeiweiCui2008]</div>
+<div id="Wongsuphasawat2018-link">[@Wongsuphasawat2018]</div>
+<div id="Wu2018-link">[@Wu2018]</div>
+<div id="Wu2020-link">[@Wu2020]</div>
+<div id="Zhang2010-link">[@Zhang2010]</div>
+<div id="Zhao2021-link">[@Zhao2021]</div>
+<div id="arleo2022-link">[@arleo2022]</div>
+<div id="barth2002-link">[@barth2002]</div>
+<div id="bast2020-link">[@bast2020]</div>
+<div id="batik2022-link">[@batik2022]</div>
+<div id="bekos2022-link">[@bekos2022]</div>
+<div id="binucci2022-link">[@binucci2022]</div>
+<div id="binucci2023-link">[@binucci2023]</div>
+<div id="brandes1998-link">[@brandes1998]</div>
+<div id="brandes2002-link">[@brandes2002]</div>
+<div id="brandes2006-link">[@brandes2006]</div>
+<div id="brandes2009-link">[@brandes2009]</div>
+<div id="burch2011-link">[@burch2011]</div>
+<div id="burch2017-link">[@burch2017]</div>
+<div id="chimani2006-link">[@chimani2006]</div>
+<div id="chimani2010-link">[@chimani2010]</div>
+<div id="chimani2016-link">[@chimani2016]</div>
+<div id="chimani2016b-link">[@chimani2016b]</div>
+<div id="civril2006-link">[@civril2006]</div>
+<div id="cohen1997-link">[@cohen1997]</div>
+<div id="cornel2016-link">[@cornel2016]</div>
+<div id="cypko2017-link">[@cypko2017]</div>
+<div id="davidson1996-link">[@davidson1996]</div>
+<div id="deCol2019-link">[@deCol2019]</div>
+<div id="devkota2018-link">[@devkota2018]</div>
+<div id="diBartolomeo2022-link">[@diBartolomeo2022]</div>
+<div id="diBartolomeo2022b-link">[@diBartolomeo2022b]</div>
+<div id="eades1984-link">[@eades1984]</div>
+<div id="elassady2017-link">[@elassady2017]</div>
+<div id="felice2019-link">[@felice2019]</div>
+<div id="fisheye2019-link">[@fisheye2019]</div>
+<div id="frick1995-link">[@frick1995]</div>
+<div id="frishman2004-link">[@frishman2004]</div>
+<div id="frishman2007-link">[@frishman2007]</div>
+<div id="giovannangeli2023-link">[@giovannangeli2023]</div>
+<div id="gove2019-link">[@gove2019]</div>
+<div id="gray2023-link">[@gray2023]</div>
+<div id="greilich2009-link">[@greilich2009]</div>
+<div id="hacul2005-link">[@hacul2005]</div>
+<div id="harel2001-link">[@harel2001]</div>
+<div id="hoffswell2018-link">[@hoffswell2018]</div>
+<div id="hofmann2017-link">[@hofmann2017]</div>
+<div id="hu2005efficient-link">[@hu2005efficient]</div>
+<div id="junger1997-link">[@junger1997]</div>
+<div id="kamada19897-link">[@kamada19897]</div>
+<div id="klammler2018-link">[@klammler2018]</div>
+<div id="koren2002-link">[@koren2002]</div>
+<div id="kruiger2017-link">[@kruiger2017]</div>
+<div id="lukasczyk2017-link">[@lukasczyk2017]</div>
+<div id="meidiana2020-link">[@meidiana2020]</div>
+<div id="meidiana2022-link">[@meidiana2022]</div>
+<div id="meidiana2023-link">[@meidiana2023]</div>
+<div id="mennens2019-link">[@mennens2019]</div>
+<div id="miller2023-link">[@miller2023]</div>
+<div id="minghim2006-link">[@minghim2006]</div>
+<div id="mizuno2019-link">[@mizuno2019]</div>
+<div id="muelder2008-link">[@muelder2008]</div>
+<div id="muelder2008b-link">[@muelder2008b]</div>
+<div id="noack2004-link">[@noack2004]</div>
+<div id="nocaj2015-link">[@nocaj2015]</div>
+<div id="padia2018-link">[@padia2018]</div>
+<div id="padia2019-link">[@padia2019]</div>
+<div id="pawel2000-link">[@pawel2000]</div>
+<div id="preiner2020-link">[@preiner2020]</div>
+<div id="saket2016-link">[@saket2016]</div>
+<div id="vanDijk2016-link">[@vanDijk2016]</div>
+<div id="vanDijk2018-link">[@vanDijk2018]</div>
+<div id="vandenElzen2013-link">[@vandenElzen2013]</div>
+<div id="vonLandesberger2016-link">[@vonLandesberger2016]</div>
+<div id="wallinger2023-link">[@wallinger2023]</div>
+<div id="walshaw2001-link">[@walshaw2001]</div>
+<div id="wang2018-link">[@wang2018]</div>
+<div id="wang2020-link">[@wang2020]</div>
+<div id="welch2017-link">[@welch2017]</div>
+<div id="zarate2018-link">[@zarate2018]</div>
+<div id="zeng2019-link">[@zeng2019]</div>
+<div id="zheng2019-link">[@zheng2019]</div>
+<div id="zhong2023-link">[@zhong2023]</div>
+</div>
+</div>
+</div>
+
+
+
+
+```{ojs}
+//| echo: false
+//| output: false
+{
+    console.log(benchmark_datasets)
+    var uniqueDataTagSet = new Set(); // set for the tags
+    var uniquePaperTagSet = new Set();
+    var dataSetNames = []; // list of names of datasets
+    var paperNames = []
+    var dataMap = {} // maps from the tags to the individual datasets
+    var paperMap = {} // maps from the tags to the individual papers
+    var nameMap = {} // maps from the cleaned name to the actual name containing potentially special characters
+
+    console.log(literature)
+    // "Citation name": "bekos2022"
+    // "Graph feature": "hypergraphs, spatial"
+
+
+    benchmark_datasets.forEach((entry) => {
+        let name = name_cleanup(entry.Name)
+        nameMap[name] = entry.Name
+        dataSetNames.push(name);
+        var parts = entry["graph features handled"].split(",").map(item => item.trim())
+        for (var part of parts) {
+            if (part !== "") {
+                uniqueDataTagSet.add(part);
+                if (!dataMap[part]) {
+                    dataMap[part] = new Set();
+                }
+                dataMap[part].add(name);
+            }
+        }
+    })
+  
+    literature.forEach((paper) => {
+
+      paperNames.push(paper["Citation name"]);
+      var parts = paper["Graph feature"].split(",").map(item => item.trim())
+      for (var part of parts) {
+        if (part !== "") {
+          uniquePaperTagSet.add(part);
+          if (!paperMap[part]) {
+            paperMap[part] = new Set();
+          }
+          paperMap[part].add(paper["Citation name"]);
+        }
+      }
+    })
+  
+    // Add keys not present in the paperTags ( TODO: Some tags are just a letter off, please check )
+    Object.keys(dataMap).forEach((key) => {
+      if (!paperMap[key]) {
+        paperMap[key] = new Set();
+      }
+    })
+  
+  
+    var uniqueDataTags = [...uniqueDataTagSet]
+    var uniquePaperTags = [...uniquePaperTagSet]  
+    //console.log(uniqueDataTags)
+    //console.log(uniquePaperTagSet)
+    //console.log(dataMap)
+    //console.log(paperMap)
+    //console.log(dataSetNames)
+    //console.log(paperNames)
+
+    // remove empty entries
+    paperNames = paperNames.filter(str => str.trim() !== "")
+    
+    
+
+    // TODO: reorder tags here if wished!
+
+
+    var checkBoxContainer = document.getElementById('checkbox-container');
+    var linksListContainer = document.getElementById('datasetlinkslist-container')
+    var paperLinksContainer = document.getElementById('paperlinkslist-container')
+    var checkboxStates = [];  // Array to keep track of checkbox states (booleans)
+
+    // needs to be in here since we access so many "global" variables
+    function displayDataSetLinksList() {
+        //console.log(checkboxStates); // current states to check which dataset links to display (index-based)
+
+        const filteredTags = uniqueDataTags.map((item, index) => checkboxStates[index] ? item : undefined)
+            .filter(item => item !== undefined);
+
+        //console.log(filteredTags)
+
+        var final_datasets = []
+        var final_data_inverse = []
+
+        var final_papers = []
+        var final_paper_inverse = []
+
+        if (filteredTags.length == 0) {
+            final_datasets = dataSetNames;
+            final_papers = paperNames;
+        } else {
+            // Retrieve an array of sets from the provided keys
+            const dataSets = filteredTags.map(key => dataMap[key]);
+            const paperSets = filteredTags.map(key => paperMap[key]);
+            
+            // Calculate the intersection of all sets
+            const dataIntersection = dataSets.reduce((acc, set) => new Set([...acc].filter(x => set.has(x))));
+            const paperIntersection = paperSets.reduce((acc, set) => new Set([...acc].filter(x => set.has(x))));
+            
+            final_datasets = [...dataIntersection] // white list
+            final_papers = [...paperIntersection]
+
+            // Now, compute the difference between dataSetNames and final_datasets
+            const dataDifference = new Set(dataSetNames.filter(x => !final_datasets.includes(x)));
+            const paperDifference = new Set(paperNames.filter(x => !final_papers.includes(x)));
+
+            final_data_inverse = [...dataDifference]; // black list
+            final_paper_inverse = [...paperDifference]
+        }
+
+        //console.log("show: " + final_datasets) // white list 
+        //console.log("show: " + final_papers)
+
+        final_datasets.forEach((name) => {
+            //console.log(name + '-link')
+            let currLinkDiv = document.getElementById(name + '-link')
+            currLinkDiv.style.display = 'block';  // Clear the display property to default ('block')
+        })
+
+        final_data_inverse.forEach((name) => {
+            //console.log(name + '-link')
+            let currLinkDiv = document.getElementById(name + '-link')
+            currLinkDiv.style.display = 'none';  // Hide the div
+        })
+
+        final_papers.forEach((name) => {
+            //console.log(name + '-link')
+            let currLinkDiv = document.getElementById(name + '-link')
+            currLinkDiv.style.display = 'block';  // Clear the display property to default ('block')
+        })
+
+        final_paper_inverse.forEach((name) => {
+            //console.log(name + '-link')
+            let currLinkDiv = document.getElementById(name + '-link')
+            currLinkDiv.style.display = 'none';  // Hide the div
+        })
+
+      /*
+      // this is how the it ran earlier and it was used to generate the static html links above this
+      
+      if (final_datasets.length == 0) {
+      // display message that no dataset contains all these tags
+      linksListContainer.innerHTML = '';
+      } else {
+      
+      linksListContainer.innerHTML = '';
+      
+      final_datasets.forEach((currDataName) => {
+      const anchor = document.createElement('a');
+      anchor.href = '#' + currDataName
+      anchor.classList.add('dataset-link')
+      anchor.textContent = nameMap[currDataName]
+      
+      const div = document.createElement('div');
+      div.id = currDataName + '-link'
+      div.appendChild(anchor);
+      
+      linksListContainer.appendChild(div);
+      })
+      }
+      
+      // and here for the paper names
+      paperNames = paperNames.filter(str => str.trim() !== "").sort();
+      paperNames.forEach((currPaperName) => {
+
+          const div = document.createElement('div');
+          div.id = currPaperName + '-link'
+          div.textContent = `[@${currPaperName}]`
+
+          paperLinksContainer.appendChild(div);
+      });*/
+      
+    }
+   
+  // Function to add a new checkbox with a styled span label
+  function addCheckbox(index, name) {
+      const newCheckbox = document.createElement('input');
+      newCheckbox.type = 'checkbox';
+      newCheckbox.id = 'checkbox' + index;
+      newCheckbox.className = 'form-check-input';
+
+      // Creating the span that will act as a label
+      const span = document.createElement('span');
+      span.className = 'pill-tag';
+      span.style.backgroundColor = graph_feature_tags_colors[index % graph_feature_tags_colors.length];  // Setting the background color
+      span.textContent = name;
+
+      const label = document.createElement('label');
+      label.className = 'd-flex align-items-center justify-content-start';
+      label.htmlFor = newCheckbox.id;
+      label.appendChild(newCheckbox);
+      label.appendChild(span);  // Append the span to the label
+
+      const div = document.createElement('div');
+      div.className = 'form-check d-flex align-items-center';  // Ensure the checkbox and label are aligned
+      div.appendChild(label);
+
+      checkBoxContainer.appendChild(div);
+
+      // Update state array and add event listener
+      checkboxStates.push(false);
+      newCheckbox.addEventListener('change', () => {
+          checkboxStates[index] = newCheckbox.checked;
+          displayDataSetLinksList()
+      });
+  }
+
+  // Automatically add checkboxes on load for each tag, we cannot reorder after this!
+  uniqueDataTags.forEach((entry, index) => {
+    addCheckbox(index, entry);
+  })
+
+  // initial call to display all datasets (now a bit redundant but adds the "display" style-attribute)
+  displayDataSetLinksList()
+
+}
+```
