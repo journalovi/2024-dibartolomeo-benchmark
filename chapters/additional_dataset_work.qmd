@@ -1,4 +1,4 @@
-# Data Processing
+# Data Processing {#sec-data-processing}
 
 Further complicating the replicability and reproducibility issues previously outlined is the problem of storing data in a consistent format. Datasets cited in different papers link to downloads for which the graph structure is very difficult to piece together---most commonly, paper authors write code to extract this structure for their specific needs, but this code is often tedious to recreate (if the authors went through the trouble of meticulously describing their process in the paper) or difficult and time-consuming to reappropriate (if it is contained in their supplemental materials, and they still exist on the web). In the worst case, both of these options are lost over time and the original graphs used become impossible to recreate. Hence, storing and organizing this data in multiple accessible formats is of great importance for the replicablility of these works and for further research in the field.
 

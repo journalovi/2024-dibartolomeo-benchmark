@@ -36,7 +36,7 @@ booktitle = {Graph Drawing}
 }
 
 @article{dibartolomeo2024evaluating,
-author = {Di Bartolomeo, Sara and Crnovrsanin, Tarik and Saffo, David and Puerta, Eduardo and Wilson, Connor and Dunne, Cody},
+author = {Di~Bartolomeo, Sara and Crnovrsanin, Tarik and Saffo, David and Puerta, Eduardo and Wilson, Connor and Dunne, Cody},
 title = {Evaluating Graph Layout Algorithms: A Systematic Review of Methods and Best Practices},
 journal = {Computer Graphics Forum},
 volume = {n/a},
@@ -147,9 +147,192 @@ abstract = {Abstract Evaluations—encompassing computational evaluations, bench
  url={osf.io/yftju},
  DOI={10.31219/osf.io/yftju},
  publisher={OSF Preprints},
- author={Di Bartolomeo, Sara and Puerta, Eduardo and Wilson, Connor and Crnovrsanin, Tarik and Dunne, Cody},
+ author={Di~Bartolomeo, Sara and Puerta, Eduardo and Wilson, Connor and Crnovrsanin, Tarik and Dunne, Cody},
  year={2023},
  month={Sep}
+}
+
+@InProceedings{Forster2002,
+author="Forster, Michael",
+editor="Goodrich, Michael T.
+and Kobourov, Stephen G.",
+title="Applying Crossing Reduction Strategies to Layered Compound Graphs",
+booktitle="Graph Drawing",
+year="2002",
+doi={10.1007/3-540-36151-0_26},
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="276--284",
+abstract="We present a new method for the application of 2-layer crossing reduction algorithms to layered compound graphs.It is based on an algorithm by Sander [9], [7], [8] and improves it with fewer crossings.Our method is optimal in the sense that it does not introduce unnecessary crossings by itself.If used with an optimal 2-layer crossing reduction algorithm, the crossing reduction for 2-layer compound graphs is optimal, too.",
+isbn="978-3-540-36151-0"
+}
+
+@article{bekos2022,
+author = {Bekos, M.A. and Dekker, D.J.C. and Frank, F. and Meulemans, W. and Rodgers, P. and Schulz, A. and Wessel, S.},
+title = {Computing Schematic Layouts for Spatial Hypergraphs on Concentric Circles and Grids},
+journal = {Computer Graphics Forum},
+volume = {41},
+number = {6},
+pages = {316-335},
+keywords = {information visualization, hypergraph drawing, visualization, computational geometry, modelling},
+doi = {https://doi.org/10.1111/cgf.14497},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14497},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.14497},
+abstract = {Abstract Set systems can be visualized in various ways. An important distinction between techniques is whether the elements have a spatial location that is to be used for the visualization; for example, the elements are cities on a map. Strictly adhering to such location may severely limit the visualization and force overlay, intersections and other forms of clutter. On the other hand, completely ignoring the spatial dimension omits information and may hide spatial patterns in the data. We study layouts for set systems (or hypergraphs) in which spatial locations are displaced onto concentric circles or a grid, to obtain schematic set visualizations. We investigate the tractability of the underlying algorithmic problems adopting different optimization criteria (e.g. crossings or bends) for the layout structure, also known as the support of the hypergraph. Furthermore, we describe a simulated-annealing approach to heuristically optimize a combination of such criteria. Using this method in computational experiments, we explore the trade-offs and dependencies between criteria for computing high-quality schematic set visualizations.},
+year = {2022}
+}
+
+@InProceedings{binucci2023,
+author="Binucci, Carla
+and Didimo, Walter
+and Patrignani, Maurizio",
+editor="Angelini, Patrizio
+and von Hanxleden, Reinhard",
+title="st-Orientations with Few Transitive Edges",
+booktitle="Graph Drawing and Network Visualization",
+year="2023",
+publisher="Springer International Publishing",
+address="Cham",
+pages="201--216",
+doi={10.1007/978-3-031-22203-0_15},
+abstract="The problem of orienting the edges of an undirected graph such that the resulting digraph is acyclic and has a single source s and a single sink t has a long tradition in graph theory and is central to many graph drawing algorithms. Such an orientation is called an st-orientation. We address the problem of computing st-orientations of undirected graphs with the minimum number of transitive edges. We prove that the problem is NP-hard in the general case. For planar graphs we describe an ILP model that is fast in practice. We experimentally show that optimum solutions dramatically reduce the number of transitive edges with respect to unconstrained st-orientations computed via classical st-numbering algorithms. Moreover, focusing on popular graph drawing algorithms that apply an st-orientation as a preliminary step, we show that reducing the number of transitive edges leads to drawings that are much more compact.",
+isbn="978-3-031-22203-0"
+}
+
+@article{burch2017,
+author = {Burch, M. and Hlawatsch, M. and Weiskopf, D.},
+title = {Visualizing a Sequence of a Thousand Graphs (or Even More)},
+journal = {Computer Graphics Forum},
+volume = {36},
+number = {3},
+pages = {261-271},
+keywords = {Categories and Subject Descriptors (according to ACM CCS), Data Structures E.1: Graphs and Networks—},
+doi = {https://doi.org/10.1111/cgf.13185},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13185},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13185},
+abstract = {Abstract The visualization of dynamic graphs demands visually encoding at least three major data dimensions: vertices, edges, and time steps. Many of the state-of-the-art techniques can show an overview of vertices and edges but lack a data-scalable visual representation of the time aspect. In this paper, we address the problem of displaying dynamic graphs with a thousand or more time steps. Our proposed interleaved parallel edge splatting technique uses a time-to-space mapping and shows the complete dynamic graph in a static visualization. It provides an overview of all data dimensions, allowing for visually detecting time-varying data patterns; hence, it serves as a starting point for further data exploration. By applying clustering and ordering techniques on the vertices, edge splatting on the links, and a dense time-to-space mapping, our approach becomes visually scalable in all three dynamic graph data dimensions. We illustrate the usefulness of our technique by applying it to call graphs and US domestic flight data with several hundred vertices, several thousand edges, and more than a thousand time steps.},
+year = {2017}
+}
+
+@article{eades1984,
+author="EADES, P.",
+title="A heuristic for graph drawing",
+journal="Congressus Numerantium",
+year="1984",
+volume="42",
+pages="149-160",
+URL={https://cir.nii.ac.jp/crid/1573387448853684864}
+}
+
+@InProceedings{felice2019,
+author="De Luca, Felice
+and Hossain, Md. Iqbal
+and Kobourov, Stephen",
+editor="Archambault, Daniel
+and T{\'o}th, Csaba D.",
+title="Symmetry Detection and Classification in Drawings of Graphs",
+booktitle="Graph Drawing and Network Visualization",
+year="2019",
+publisher="Springer International Publishing",
+address="Cham",
+pages="499--513",
+doi={10.1007/978-3-030-35802-0_38},
+abstract="Symmetry is a key feature observed in nature (from flowers and leaves, to butterflies and birds) and in human-made objects (from paintings and sculptures, to manufactured objects and architectural design). Rotational, translational, and especially reflectional symmetries, are also important in drawings of graphs. Detecting and classifying symmetries can be very useful in algorithms that aim to create symmetric graph drawings and in this paper we present a machine learning approach for these tasks. Specifically, we show that deep neural networks can be used to detect reflectional symmetries with 92{\%} accuracy. We also build a multi-class classifier to distinguish between reflectional horizontal, reflectional vertical, rotational, and translational symmetries. Finally, we make available a collection of images of graph drawings with specific symmetric features that can be used in machine learning systems for training, testing and validation purposes. Our datasets, best trained ML models, source code are available online.",
+isbn="978-3-030-35802-0"
+}
+
+@article{hofmann2017,
+author = {Hofmann, J. and Größler, M. and Rubio-Sánchez, M. and Pichler, P.-P. and Lehmann, D. J.},
+title = {Visual Exploration of Global Trade Networks with Time-Dependent and Weighted Hierarchical Edge Bundles on GPU},
+journal = {Computer Graphics Forum},
+volume = {36},
+number = {3},
+pages = {273-282},
+keywords = {Categories and Subject Descriptors (according to ACM CCS), I.3.3 Computer Graphics: Picture/Image Generation—Graphs and Networks, Hierarchy Data, Time Series Data, GPUs and Multi-core Architectures},
+doi = {https://doi.org/10.1111/cgf.13186},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13186},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13186},
+abstract = {Abstract The UN Comtrade database is the world's largest repository of bilateral trade data. Their complexity poses a challenge to visualization systems, leading to issues such as scalability and visual clutter. Thus, we propose a radial layout-based visual exploration system to enable the user to smoothly explore the change over time and to explore different commodity classes at once by using a novel edge bundling concept. We evaluated our system with the aid of a group of domain experts.},
+year = {2017}
+}
+
+@article{kamada19897,
+title = {An algorithm for drawing general undirected graphs},
+journal = {Information Processing Letters},
+volume = {31},
+number = {1},
+pages = {7-15},
+year = {1989},
+issn = {0020-0190},
+doi = {https://doi.org/10.1016/0020-0190(89)90102-6},
+url = {https://www.sciencedirect.com/science/article/pii/0020019089901026},
+author = {Tomihisa Kamada and Satoru Kawai},
+keywords = {Graph, network structure, layout, drawing algorithm}
+}
+
+@article{davidson1996,
+author = {Davidson, Ron and Harel, David},
+title = {Drawing Graphs Nicely Using Simulated Annealing},
+year = {1996},
+issue_date = {Oct. 1996},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {15},
+number = {4},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/234535.234538},
+doi = {10.1145/234535.234538},
+abstract = {The paradigm of simulated annealing is applied to the problem of drawing graphs “nicely.” Our algorithm deals with general undirected graphs with straight-line edges, and employs several simple criteria for the aesthetic quality of the result. The algorithm is flexible, in that the relative weights of the criteria can be changed. For graphs of modest size it produces good results, competitive with those produced by other methods, notably, the “spring method” and its variants.},
+journal = {ACM Trans. Graph.},
+month = {oct},
+pages = {301–331},
+numpages = {31},
+keywords = {graph drawing, aesthetics, simulated annealing}
+}
+
+@article{cypko2017,
+author = {Cypko, M.A. and Wojdziak, J. and Stoehr, M. and Kirchner, B. and Preim, B. and Dietz, A. and Lemke, H. U. and Oeltze-Jafra, S.},
+title = {Visual Verification of Cancer Staging for Therapy Decision Support},
+journal = {Computer Graphics Forum},
+volume = {36},
+number = {3},
+pages = {109-120},
+keywords = {Categories and Subject Descriptors (according to ACM CCS), I.3.8 Computer Graphics: Applications—Applications, J.3 Computer Applications: Life and Medical Sciences—Life and Medical Sciences},
+doi = {https://doi.org/10.1111/cgf.13172},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13172},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13172},
+abstract = {Abstract It is generally accepted practice that each cancer patient case should be discussed in a clinical expert meeting, the so-called tumor board. A central role in finding the best therapy options for patients with solid tumors plays the Tumor, lymph Node, and Metastasis staging (TNM staging). Correctness of TNM staging has a significant impact on the therapy choice and hence on the patient's post-therapeutic quality of life or even survival. If inconsistencies in the TNM staging occur, possible explanations and solutions must be found based on the complex patient records, which takes the costly time of (multiple) physicians. We propose a more efficient visual analysis component, which supports a physician in verifying the given TNM staging before forwarding it to the tumor board. Our component comprises a Bayesian network model of the TNM staging process. Using information from the patient records and Bayesian inference, the models computes a patient-specific TNM staging, which is then explored and compared to the given staging by means of a graph-based visualization. Our component is implemented in a research prototype that supports an understanding of the model computations, allows for a fast identification of important influencing factors, and facilitates a quick detection of differences between two TNM stagings. We evaluated our component with five physicians, each studying 20 cases of laryngeal cancer.},
+year = {2017}
+}
+
+@article{mennens2019,
+author = {Mennens, Robin J.P. and Scheepens, Roeland and Westenberg, Michel A.},
+title = {A stable graph layout algorithm for processes},
+journal = {Computer Graphics Forum},
+volume = {38},
+number = {3},
+pages = {725-737},
+keywords = {CCS Concepts, • Human-centered computing → Graph drawings, • Applied computing → Business process monitoring},
+doi = {https://doi.org/10.1111/cgf.13723},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13723},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13723},
+abstract = {Abstract Process mining enables organizations to analyze data about their (business) processes. Visualization is key to gaining insight into these processes and the associated data. Process visualization requires a high-quality graph layout that intuitively represents the semantics of the process. Process analysis additionally requires interactive filtering to explore the process data and process graph. The ideal process visualization therefore provides a high-quality, intuitive layout and preserves the mental map of the user during the visual exploration. The current industry standard used for process visualization does not satisfy either of these requirements. In this paper, we propose a novel layout algorithm for processes based on the Sugiyama framework. Our approach consists of novel ranking and order constraint algorithms and a novel crossing minimization algorithm. These algorithms make use of the process data to compute stable, high-quality layouts. In addition, we use phased animation to further improve mental map preservation. Quantitative and qualitative evaluations show that our approach computes layouts of higher quality and preserves the mental map better than the industry standard. Additionally, our approach is substantially faster, especially for graphs with more than 250 edges.},
+year = {2019}
+}
+
+@article{lukasczyk2017,
+author = {Lukasczyk, Jonas and Weber, Gunther and Maciejewski, Ross and Garth, Christoph and Leitte, Heike},
+title = {Nested Tracking Graphs},
+journal = {Computer Graphics Forum},
+volume = {36},
+number = {3},
+pages = {12-22},
+keywords = {Categories and Subject Descriptors (according to ACM CCS), Data Computer Graphics: Data Structures—Graphs and Networks},
+doi = {https://doi.org/10.1111/cgf.13164},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13164},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13164},
+abstract = {Abstract Tracking graphs are a well established tool in topological analysis to visualize the evolution of components and their properties over time, i.e., when components appear, disappear, merge, and split. However, tracking graphs are limited to a single level threshold and the graphs may vary substantially even under small changes to the threshold. To examine the evolution of features for varying levels, users have to compare multiple tracking graphs without a direct visual link between them. We propose a novel, interactive, nested graph visualization based on the fact that the tracked superlevel set components for different levels are related to each other through their nesting hierarchy. This approach allows us to set multiple tracking graphs in context to each other and enables users to effectively follow the evolution of components for different levels simultaneously. We demonstrate the effectiveness of our approach on datasets from finite pointset methods, computational fluid dynamics, and cosmology simulations.},
+year = {2017}
 }
 
 @article{filipov2023,
@@ -516,7 +699,7 @@ publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
 volume = {27},
 number = {2},
 pages = {1353--1363},
-author = {di~Bartolomeo, Sara and Yixuan Zhang and Fangfang Sheng and Cody Dunne},
+author = {Di~Bartolomeo, Sara and Yixuan Zhang and Fangfang Sheng and Cody Dunne},
 title = {{Sequence Braiding}: Visual Overviews of Temporal Event Sequences and Attributes},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }
@@ -570,6 +753,89 @@ author = {Shixia Liu and Yingcai Wu and Enxun Wei and Mengchen Liu and Yang Liu}
 title = {{StoryFlow}: Tracking the Evolution of Stories},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }
+
+@incollection{Klawitter2021,
+doi = {10.1007/978-3-030-92931-2_11},
+url = {https://doi.org/10.1007/978-3-030-92931-2_11},
+year = {2021},
+publisher = {Springer International Publishing},
+pages = {149--165},
+author = {Jonathan Klawitter and Johannes Zink},
+title = {Upward Planar Drawings with~Three and~More Slopes},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@incollection{Nllenburg2021,
+doi = {10.1007/978-3-030-92931-2_23},
+url = {https://doi.org/10.1007/978-3-030-92931-2_23},
+year = {2021},
+publisher = {Springer International Publishing},
+pages = {318--326},
+author = {Martin N\"{o}llenburg and Anaïs Villedieu and Jules Wulms},
+title = {Layered Area-Proportional Rectangle Contact Representations},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@incollection{Nllenburg2010,
+doi = {10.1007/978-3-642-11805-0_36},
+url = {https://doi.org/10.1007/978-3-642-11805-0_36},
+year = {2010},
+publisher = {Springer Berlin Heidelberg},
+pages = {381--392},
+author = {Martin N\"{o}llenburg},
+title = {An Improved Algorithm for the Metro-line Crossing Minimization Problem},
+booktitle = {Graph Drawing}
+}
+
+@incollection{Oikonomou2018,
+doi = {10.1007/978-3-030-04414-5_24},
+url = {https://doi.org/10.1007/978-3-030-04414-5_24},
+year = {2018},
+publisher = {Springer International Publishing},
+pages = {347--353},
+author = {Anargyros Oikonomou and Antonios Symvonis},
+title = {Monotone Drawings of k-Inner Planar Graphs},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@TECHREPORT{Sander1996,
+    author = {Georg Sander},
+    title = {Layout of Compound Directed Graphs},
+    institution = {FB INFORMATIK, UNIVERSITAT DES SAARLANDES},
+    year = {1996}
+}
+
+@incollection{Skambath2016,
+doi = {10.1007/978-3-319-50106-2_44},
+url = {https://doi.org/10.1007/978-3-319-50106-2_44},
+year = {2016},
+publisher = {Springer International Publishing},
+pages = {572--586},
+author = {Malte Skambath and Till Tantau},
+title = {Offline Drawing of Dynamic Trees: Algorithmics and Document Integration},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@incollection{vanDijk2016,
+doi = {10.1007/978-3-319-50106-2_30},
+url = {https://doi.org/10.1007/978-3-319-50106-2_30},
+year = {2016},
+publisher = {Springer International Publishing},
+pages = {382--398},
+author = {Thomas C. van Dijk and Martin Fink and Norbert Fischer and Fabian Lipp and Peter Markfelder and Alexander Ravsky and Subhash Suri and Alexander Wolff},
+title = {Block Crossings in Storyline Visualizations},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@ARTICLE{Taurus2023,
+author={Xue, Mingliang and Wang, Zhi and Zhong, Fahai and Wang, Yong and Xu, Mingliang and Deussen, Oliver and Wang, Yunhai},
+journal={IEEE Transactions on Visualization and Computer Graphics},
+title={Taurus: Towards a Unified Force Representation and Universal Solver for Graph Layout},
+year={2023},
+volume={29},
+number={1},
+pages={886-895},
+doi={10.1109/TVCG.2022.3209371}}
 
 @InProceedings{barth2002,
 author="Barth, Wilhelm
@@ -1519,6 +1785,149 @@ url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14440},
 eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.14440},
 abstract = {Abstract We study how to place arrow heads in directed graph drawings aiming at minimizing their overlaps and avoiding intersections between arrow heads and edges. The objective is to support users to correctly and quickly recognize edge orientations, i.e. to deduce unambiguously the edge orientations. Our contribution is two-fold: (i) We present exact and heuristic algorithms for this arrow placement problem, along with an extensive experimental analysis of these techniques; and (ii) we report on a user study aimed to understand the impact of different arrow placement strategies on performing global and local analysis tasks on directed graph layouts.},
 year = {2022}
+}
+
+@incollection{Alegra2021,
+doi = {10.1007/978-3-030-92931-2_12},
+url = {https://doi.org/10.1007/978-3-030-92931-2_12},
+year = {2021},
+publisher = {Springer International Publishing},
+pages = {166--183},
+author = {Carlos Alegr{\'{\i}}a and Manuel Borrazzo and Giordano Da Lozzo and Giuseppe Di Battista and Fabrizio Frati and Maurizio Patrignani},
+title = {Planar Straight-Line Realizations of~2-Trees with~Prescribed Edge Lengths},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@article{Barnes1986,
+doi = {10.1038/324446a0},
+url = {https://doi.org/10.1038/324446a0},
+year = {1986},
+month = dec,
+publisher = {Springer Science and Business Media {LLC}},
+volume = {324},
+number = {6096},
+pages = {446--449},
+author = {Josh Barnes and Piet Hut},
+title = {A hierarchical O(N log N) force-calculation algorithm},
+journal = {Nature}
+}
+
+@incollection{Bekos2007,
+doi = {10.1007/978-3-540-77537-9_24},
+url = {https://doi.org/10.1007/978-3-540-77537-9_24},
+publisher = {Springer Berlin Heidelberg},
+pages = {231--242},
+year = {2007},
+author = {Michael A. Bekos and Michael Kaufmann and Katerina Potika and Antonios Symvonis},
+title = {Line Crossing Minimization on Metro Maps},
+booktitle = {Graph Drawing}
+}
+
+@article{Bhatt1984,
+doi = {10.1016/0022-0000(84)90071-0},
+url = {https://doi.org/10.1016/0022-0000(84)90071-0},
+year = {1984},
+month = apr,
+publisher = {Elsevier {BV}},
+volume = {28},
+number = {2},
+pages = {300--343},
+author = {Sandeep N. Bhatt and Frank Thomson Leighton},
+title = {A framework for solving {VLSI} graph layout problems},
+journal = {Journal of Computer and System Sciences}
+}
+
+@incollection{Biedl2018,
+doi = {10.1007/978-3-319-73915-1_12},
+url = {https://doi.org/10.1007/978-3-319-73915-1_12},
+year = {2018},
+publisher = {Springer International Publishing},
+pages = {140--152},
+author = {Therese Biedl and Veronika Irvine},
+title = {Drawing Bobbin Lace Graphs, or, Fundamental Cycles for a Subclass of Periodic Graphs},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@incollection{Binucci2021,
+doi = {10.1007/978-3-030-92931-2_14},
+url = {https://doi.org/10.1007/978-3-030-92931-2_14},
+year = {2021},
+publisher = {Springer International Publishing},
+pages = {195--209},
+author = {Carla Binucci and Emilio Di Giacomo and Giuseppe Liotta and Alessandra Tappini},
+title = {Quasi-upward Planar Drawings with~Minimum Curve Complexity},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@incollection{Didimo2018,
+doi = {10.1007/978-3-030-04414-5_34},
+url = {https://doi.org/10.1007/978-3-030-04414-5_34},
+year = {2018},
+publisher = {Springer International Publishing},
+pages = {481--494},
+author = {Walter Didimo and Giuseppe Liotta and Maurizio Patrignani},
+title = {Bend-Minimum Orthogonal Drawings in Quadratic Time},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@incollection{Fulek2018,
+doi = {10.1007/978-3-030-04414-5_16},
+url = {https://doi.org/10.1007/978-3-030-04414-5_16},
+year = {2018},
+publisher = {Springer International Publishing},
+pages = {229--241},
+author = {Radoslav Fulek and Csaba D. T{\'{o}}th},
+title = {Crossing Minimization in Perturbed Drawings},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@ARTICLE{Gansner1993,
+  author={Gansner, E.R. and Koutsofios, E. and North, S.C. and Vo, K.-P.},
+  journal={IEEE Transactions on Software Engineering}, 
+  title={A technique for drawing directed graphs}, 
+  year={1993},
+  volume={19},
+  number={3},
+  pages={214-230},
+  doi={10.1109/32.221135}}
+
+@article{Gibson2012,
+doi = {10.1177/1473871612455749},
+url = {https://doi.org/10.1177/1473871612455749},
+year = {2012},
+month = sep,
+publisher = {{SAGE} Publications},
+volume = {12},
+number = {3-4},
+pages = {324--357},
+author = {Helen Gibson and Joe Faith and Paul Vickers},
+title = {A survey of two-dimensional graph layout techniques for information visualisation},
+journal = {Information Visualization}
+}
+
+@incollection{Gronemann2016,
+doi = {10.1007/978-3-319-50106-2_18},
+url = {https://doi.org/10.1007/978-3-319-50106-2_18},
+year = {2016},
+publisher = {Springer International Publishing},
+pages = {222--235},
+author = {Martin Gronemann},
+title = {Bitonic st-orderings for Upward Planar Graphs},
+booktitle = {Lecture Notes in Computer Science}
+}
+
+@article{Didimo2019,
+doi = {10.1145/3301281},
+url = {https://doi.org/10.1145/3301281},
+year = {2019},
+month = feb,
+publisher = {Association for Computing Machinery ({ACM})},
+volume = {52},
+number = {1},
+pages = {1--37},
+author = {Walter Didimo and Giuseppe Liotta and Fabrizio Montecchiani},
+title = {A Survey on Graph Drawing Beyond Planarity},
+journal = {{ACM} Computing Surveys}
 }
 
 @InProceedings{giovannangeli2023,

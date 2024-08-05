@@ -1,4 +1,4 @@
-# Collection process
+# Collection process {#sec-collection-process}
 
 The information we collected is a by-product of a larger systematic review we conducted related to graph layout algorithms, which included 196 papers The following figure shows the original data collection process (from [@dibartolomeo2024evaluating]):
 

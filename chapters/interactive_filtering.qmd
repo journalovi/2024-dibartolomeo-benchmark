@@ -1,3 +1,6 @@
+The following interactive filtering system is an initial overview over the contents of the paper, and can be used to navigate and identify datasets and papers easily. The left column contains all the properties used to tag graphs in the datasets (additional information about the nature of these tags can be found in @sec-collection-process and @sec-data-processing). Each tag has an associated checkbox: selecting a tag (or more than one) will filter the datasets and papers to only show those that contain the selected tags. The middle column contains the datasets, and the right column contains the papers. Clicking on a dataset or paper will scroll the page to the corresponding section in the paper. The datasets and papers are sorted alphabetically by name and citation name, respectively. The tags are sorted alphabetically as well. The tags, datasets, and papers are generated from the data in the repository, and are updated automatically when the data changes.
+
+<div style="font-size: 0.9em">
 <div class="row">
 <div class="col-4 justify-content-center"><b>Tags</b></div>
 <div class="col-4 justify-content-center"><b>Datsets</b></div>
@@ -5,10 +8,10 @@
 </div>
 
 <div class="row" style="max-height: 600px">
-<div class="col-4" style="overflow-y:scroll;">
+<div class="col-4" style="overflow-y:scroll; padding:2%">
 <div id="checkbox-container" class="d-flex flex-column align-items-start"></div>
 </div>
-<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll;">
+<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll; padding:2%">
 <div id="datasetlinkslist-container">
 <div id="Airlines_Migrations_and_Air_Traffic-link"><a href="#Airlines_Migrations_and_Air_Traffic" class="dataset-link">Airlines, Migrations, and Air Traffic</a></div>
 <div id="Amazon-link"><a href="#Amazon" class="dataset-link">Amazon</a></div>
@@ -64,7 +67,7 @@
 <div id="World_Bank_Trade_Data-link"><a href="#World_Bank_Trade_Data" class="dataset-link">World Bank Trade Data</a></div>
 </div>
 </div>
-<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll;">
+<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll; padding:2%">
 <div id="paperlinkslist-container">
 <div id="Ahmed2020-link">[@Ahmed2020]</div>
 <div id="Alegra2021-link">[@Alegra2021]</div>
@@ -263,7 +266,7 @@
 </div>
 </div>
 </div>
-
+</div>
 
 
 
@@ -327,7 +330,7 @@
     var uniqueDataTags = [...uniqueDataTagSet]
     var uniquePaperTags = [...uniquePaperTagSet]  
     //console.log(uniqueDataTags)
-    //console.log(uniquePaperTagSet)
+    console.log(uniquePaperTagSet)
     //console.log(dataMap)
     //console.log(paperMap)
     //console.log(dataSetNames)
