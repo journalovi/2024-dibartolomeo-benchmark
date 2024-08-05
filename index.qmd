@@ -277,7 +277,7 @@ function make_sparkline(bname){
 //| echo: false
 //| output: false
 {
-  for (let benchmark_dataset of benchmark_datasets.map(d => d.Name)){
+  for (let benchmark_dataset of benchmark_datasets.map(d => d.Name).filter(n => n.includes("Forums"))){
     let bname = name_cleanup(benchmark_dataset)
     //console.log("bname", bname)
     let named_list_dom = d3.select("#named-list-" + bname);
@@ -402,7 +402,7 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
   
         let otherinfo = ""
         try{
-            let otherinfo = await fetch("data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md")
+            let otherinfo = await fetch("../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + entry["Name"].replace(".", "") + " " + entry["Page id"] + ".md")
                
             otherinfo = await otherinfo.text() 
             
@@ -433,7 +433,7 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
                     //     .attr("src", "data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img)
                     //     .attr("width", "80%")
 
-                    string_to_print += "<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img + "' width='80%'></div>\n"
+                    string_to_print += "<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/" + img + "' width='80%'></div>\n"
                 // } else if (line.includes("STOP RENDERING")){
                 //      break;
                 } else string_to_print += line + "\n"

@@ -742,36 +742,135 @@ From “[Optimal k-level planarization and crossing minimization](https://doi.or
 
 ::: 
 
-<a name="Scotch_GraphCollection"></a>
+<a name="Scotch_Graph_Collection"></a>
 
 ::: {.callout-note title="Scotch Graph Collection" callout-id="Scotch_GraphCollection" collapse=true appearance="minimal"}
 
 Collection consisting of graphs from various sources including topological meshes, meshes related to physical problems (fluid dynamics, structural mechanics, combinatorial optimization), and interprocess communication graphs for a parallel computing implementation of a factorization solver.
-The https://gitlab.inria.fr/scotch/scotch is produced by the https://www.labri.fr/perso/pelegrin/scotch/ whose goal is to study static mapping by the means of graph theory, using “divide and conquer'' graph bipartitioning heuristics. The original link to the data http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph is broken.
+The [SCOTCH software package](https://gitlab.inria.fr/scotch/scotch) is produced by the [SCOTCH project](https://www.labri.fr/perso/pelegrin/scotch/) whose goal is to study static mapping by the means of graph theory, using “divide and conquer'' graph bipartitioning heuristics. The original link to the data (http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph) is broken.
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Scotch_GraphCollection")
+make_sparkline("Scotch_Graph_Collection")
 ```
 
-<div id="named-list-Scotch_GraphCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Scotch_Graph_Collection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+ <div><b>Originally found at: </b><a href="https://wotug.org/parallel/libraries/communication/scotch/Graphs/">https://wotug.org/parallel/libraries/communication/scotch/Graphs/</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94897803e0c0bfb558d06" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://osf.io/download/w37bv/" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971ca94a6be112a12ea97" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90eda803e0c0b00558bc8" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>The graphs range from 7 to 144649 nodes, and 10 to 1074393 edges.</div><br>
+<div><b>Origin Notes: </b>The <a href="https://gitlab.inria.fr/scotch/scotch ">https://gitlab.inria.fr/scotch/scotch </a>is produced by the <a href="https://www.labri.fr/perso/pelegrin/scotch/ ">https://www.labri.fr/perso/pelegrin/scotch/ </a>whose goal is to study static mapping by the means of graph theory, using “divide and conquer'' graph bipartitioning heuristics. The original link to the data <a href="http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph ">http://www.labri.u-bordeaux.fr/Equipe/PARADIS/Member/pelegrin/graph </a>is broken.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@pellegrini:hal-00770422]</div><div class="col-8">Scotch and PT-Scotch Graph Partitioning Software: An Overview</div></div><div class="row"><div class="col-4">[@chevalier:hal-00402893]</div><div class="col-8">PT-Scotch: A tool for efficient parallel graph ordering</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@harel2001]</div><div class="col-4">A Fast Multi-Scale Method for Drawing Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">large</div></div></div><div class="row"><div class="col-4">[@koren2002]</div><div class="col-4">ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">large</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs](https://doi.org/10.1109/INFVIS.2002.1173159)”:
+
+> Figure 10c, the 4elt graph, is yet another example of a graph with inherent diversity of distance scales.
+
+### Example Figures
+
+From “[A Fast Multi-Scale Method for Drawing Large Graphs](https://doi.org/10.1007/3-540-44541-2_18)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.14.10_AM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.14.29_AM.png' width='80%'></div>
+
+From “[ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs](https://doi.org/10.1109/INFVIS.2002.1173159)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.30.54_AM.png' width='80%'></div>
+
+<!-- ===  STOP RENDERING ===
+
+```
+
+			===========================
+
+			The SCOTCH graph collection
+
+			===========================
+
+The graphs that comprise this collection have been gathered from various
+sites and people (Steve Hammond, the Harwell-Boeing collection, Bruce
+Hendrickson, and Horst Simon). They are all stored in SCOTCH source graph
+format (.src), and are accompanied with their geometry file (.xyz) whenever
+available.
+
+This directory contains:
+
+ar_*		: Architecture graphs for classical topologies, mostly meshes.
+
+fe_*		: Triangular and quadrangular unstructured meshes related to
+		  fluid dynamics, structural mechanics, or combinatorial
+		  optimization problems.
+
+nd_*		: Valuated interprocess communication graphs issued from a
+		  parallel implementation of a sparse block Cholesky
+		  factorization solver, which represent partitions of the
+		  unknowns induced by a nested dissection method.
+		  The nd_ref0, nd_ref1, nd_ref2, nd_ref3, and nd_ref4 graphs
+		  are aliases for the nd_2047.7750, nd_2453.47659,
+		  nd_2815.84406, nd_3093.105713, and nd_3470.135148 graphs,
+		  respectively.
+```
+
+Author: Francois Pellegrini (*[pelegrin@labri.u-bordeaux.fr](mailto:pelegrin@labri.u-bordeaux.fr)*)
+_site:150:21 -->
 
 ::: 
 
 Otherwise, one might decide to focus on a particular domain:
 
+<a name="Biological_Pathways_KEGG"></a>
+
 ::: {.callout-note title="Biological Pathways (KEGG)" collapse=true appearance="minimal"}
 
-According to [kegg.jp](https://www.kegg.jp/kegg-bin/show_pathway?map01100), “the KEGG PATHWAY database is a collection of manually drawn graphical diagrams, called KEGG pathway maps, for metabolic pathways, signaling pathways, pathways involved in various cellular processes and organismal systems, and perturbed pathways associated with human diseases.”
+According to [kegg.jp](https://www.kegg.jp/kegg-bin/show_pathway?map01100), “the KEGG PATHWAY database is a collection of manually drawn graphical diagrams, called KEGG pathway maps, for metabolic pathways, signaling pathways, pathways involved in various cellular processes and organismal systems, and perturbed pathways associated with human diseases”. The pathway data is separated by module, but the individual modules can be combined into a large graph as visualized at <a href="https://www.kegg.jp/kegg-bin/show_pathway?map01100">https://www.kegg.jp/kegg-bin/show_pathway?map01100</a>
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Biological_PathwaysKEGG")
+make_sparkline("Biological_Pathways_KEGG")
 ```
 
-<div id="named-list-Biological_PathwaysKEGG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Biological_Pathways_KEGG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+ <div><b>Originally found at: </b><a href="https://www.kegg.jp/kegg/pathway.html#global">https://www.kegg.jp/kegg/pathway.html#global</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948fe803e0c0c0c558b95" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96d6e1101aa0ea76a0be4" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970ab4cf748115a055802" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e80803e0c0b04558c14" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>47-292 nodes, 41-327 edges</div><br>
+<div><b>Number of Graphs: </b>13</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@kegg]</div><div class="col-8">KEGG: Kyoto Encyclopedia of Genes and Genomes</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Wu2020]</div><div class="col-4">Multi-Level Area Balancing of Clustered Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">categorical nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109/TVCG.2020.3038154)”:
+
+> KEGG Overview Pathway. Fig. 6 is the result of reproducing the KEGG overview pathway map using our approach. The color coding of the category here is directly retrieved from the original KEGG database [43], as similarly incorporated in Metabopolis [64] (see figures in supplementary materials, available online). We also set the same threshold for specifying unimportant vertices as in Metabopolis, so that readers can refer to the paper for comparison (Fig. 6). The advantage of this technique allows us to arrange the vertexts in a balanced fashion by pushing vertexts away from each other. This initially gives users an idea of how big each category is, and explicitly shows which reaction is classified under which category. Users can also identify sub-components effectively since those components with identical topological structures are aligned as neighbors. This also helps users to comprehend which structures are associated with certain types of pathways, such as small chains, stars, etc.
+
+### Example Figures
+
+From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109/TVCG.2020.3038154)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.50.53_AM.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.52.55_AM.png' width='80%'></div>
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Untitled.png' width='80%'></div>
+_site:150:21 -->
+
 
 ::: 
 
@@ -889,7 +988,8 @@ Compiled by the [Mathematical and Computational Sciences Division](https://math.
 
 <!-- <div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
-<div class="col small-text"><div><b>Originally found at: </b><a href="https://math.nist.gov/MatrixMarket/index.html">https://math.nist.gov/MatrixMarket/index.html</a></div><br><div><b>Download formatted data: </b></div><br><div><b>Note: </b>A repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services.</div><br><br><div><b>Origin Notes: </b>Compiled by the <a href="https://math.nist.gov/mcsd/&nbsp;">https://math.nist.gov/mcsd/&nbsp;</a>of the&nbsp;<a href="http://www.itl.nist.gov/&nbsp;">http://www.itl.nist.gov/&nbsp;</a>of the&nbsp;<a href="http://www.nist.gov/">http://www.nist.gov/</a></div><br><div><b>Origin paper: </b></div><div>Matrix Market: a web resource for test matrix collections</div><br><div><b>Usage examples: </b></div><div class="row"><div class="col-8"><span class="citation" data-cites="klammler2018"><a href="#ref-klammler2018" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="KOREN20051867"><a href="#ref-KOREN20051867" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Drawing graphs by eigenvectors: theory and practice</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="brandes2006"><a href="#ref-brandes2006" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Eigensolver methods for progressive multidimensional scaling of large data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="Gansner2005"><a href="#ref-Gansner2005" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Graph Drawing by Stress Majorization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="meidiana2020"><a href="#ref-meidiana2020" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Sublinear Time Force Computation for Big Complex Network Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br><div></div><div><h3 id="descriptionsfromliterature">Descriptions from Literature</h3></div><div></div><div><p>From “<a href="https://doi.org/10.1007/978-3-540-31843-9_25">Graph Drawing by Stress Majorization</a>”:</p></div><div></div><div><blockquote>
+<div class="col"><div><b>Originally found at: </b><a href="https://math.nist.gov/MatrixMarket/index.html">https://math.nist.gov/MatrixMarket/index.html</a></div><br><div><b>Download formatted data: </b></div><br>
+<div><b>Note: </b>A repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services.</div><br><br><div><b>Origin Notes: </b>Compiled by the <a href="https://math.nist.gov/mcsd/&nbsp;">https://math.nist.gov/mcsd/&nbsp;</a>of the&nbsp;<a href="http://www.itl.nist.gov/&nbsp;">http://www.itl.nist.gov/&nbsp;</a>of the&nbsp;<a href="http://www.nist.gov/">http://www.nist.gov/</a></div><br><div><b>Origin paper: </b></div><div>Matrix Market: a web resource for test matrix collections</div><br><div><b>Usage examples: </b></div><div class="row"><div class="col-8"><span class="citation" data-cites="klammler2018"><a href="#ref-klammler2018" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="KOREN20051867"><a href="#ref-KOREN20051867" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Drawing graphs by eigenvectors: theory and practice</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="brandes2006"><a href="#ref-brandes2006" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Eigensolver methods for progressive multidimensional scaling of large data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="Gansner2005"><a href="#ref-Gansner2005" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Graph Drawing by Stress Majorization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-8"><span class="citation" data-cites="meidiana2020"><a href="#ref-meidiana2020" role="doc-biblioref" aria-expanded="false">[link]</a></span> &nbsp; Sublinear Time Force Computation for Big Complex Network Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br><div></div><div><h3 id="descriptionsfromliterature">Descriptions from Literature</h3></div><div></div><div><p>From “<a href="https://doi.org/10.1007/978-3-540-31843-9_25">Graph Drawing by Stress Majorization</a>”:</p></div><div></div><div><blockquote>
   <p>The first example is the 1138Bus graph (|V|=1138, |E|=1458) from the Matrix Market repository [1]. This graph models a network of high-voltage power distribution lines. Figure 4 shows two layouts of this graph.</p>
 </blockquote></div><div></div><div><h3 id="examplefigures">Example Figures</h3></div><div></div><div><p>From “<a href="https://doi.org/10.1016/j.camwa.2004.08.015">Drawing graphs by eigenvectors: theory and practice</a>” (top two layouts are a Matrix Market graph):</p></div><div></div><div style="text-align: center;"><img src="data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Matrix%20Market%2080bd4320417342458aefa031cf65db1f/Screen_Shot_2023-08-17_at_9.59.19_AM.png" width="80%"></div><div></div><div><p>From “<a href="https://doi.org/10.1007/978-3-540-31843-9_25">Graph Drawing by Stress Majorization</a>”:</p></div><div></div><div style="text-align: center;"><img src="data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Matrix%20Market%2080bd4320417342458aefa031cf65db1f/Screen_Shot_2023-08-17_at_11.13.32_AM.png" width="80%"></div></div>
 
@@ -931,7 +1031,7 @@ From “[Drawing Big Graphs Using Spectral Sparsification](https://link.springer
 
 <a name="Pajek"></a>
 
-The **Pajek** Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleagues. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection. As a curiosity, pajek means spider in Slovenian. Many of Pajek graphs have been included as part of the [SuiteSparse Matrix Collection](#SuiteSparse_MatrixCollection).
+The **Pajek** Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleagues. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection. As a curiosity, pajek means spider in Slovenian. Many of Pajek graphs have been included as part of the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
 
 ::: {.callout-note title="Pajek" collapse=true appearance="minimal"}
 
@@ -1079,7 +1179,7 @@ From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in G
 
 ::: 
 
-<a name="SuiteSparse_MatrixCollection"></a>
+<a name="SuiteSparse_Matrix_Collection"></a>
 
 The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuiteSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
 
@@ -1566,75 +1666,614 @@ Reached out to author - Alex Adai
 
 Many papers use graphs from specific domains that contain particular characteristics, such as geographical coordinates often found in airline data. Instead of collecting each of these individual, contextual datasets, we aggregated them into subcategories called **Aggregate collections**. These collections group together datasets from the same real-life context, which may have multiple sources. Real-life contexts are distinguishable by specific properties or requirements found in graphs from those sources; for instance, collaboration networks can be represented as hypergraphs, while air traffic routes have nodes (airports) with fixed spatial coordinates and numerous edges connecting the nodes, making them suitable for edge bundling algorithms. Individual information about each aggregate collection can be found in the papers that contain them.
 
+<a name="Assorted_Collaboration_Network"></a>
+
 ::: {.callout-note title="Assorted Collaboration Network" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Assorted_CollaborationNetwork")
+make_sparkline("Assorted_Collaboration_Network")
 ```
 
-<div id="named-list-Assorted_CollaborationNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Assorted_Collaboration_Network" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+Contains IEEEVis Publication Data, DBLP collaborations, and CPAN, which contains collaboration information among developers using Perl.
+The VIS publication data was found online in the following website: <a href="https://sites.google.com/site/vispubdata. ">https://sites.google.com/site/vispubdata. </a>However, we also downloaded the text file fromhttps://www.cc.gatech.edu/gvu/ii/citevis/, a tool/poster associated to the publication: http://vispubdata.org/: A Metadata Collection about IEEE Visualization (VIS) Publications. 
+
+Assorted collaboration networks contain <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>, <span class="pill-tag pill-tag-directed">directed</span> edges, and <span class="pill-tag pill-tag-dynamic">dynamic</span> graphs.
+ 
+<div><b>Originally found at: </b><a href="https://www.cc.gatech.edu/gvu/ii/citevis/
+">https://www.cc.gatech.edu/gvu/ii/citevis/
+</a><a href="https://sites.google.com/site/vispubdata/home?authuser=0
+">https://sites.google.com/site/vispubdata/home?authuser=0
+</a><a href="https://dblp.uni-trier.de/
+">https://dblp.uni-trier.de/
+</a><a href="https://github.com/csuvis/MCGS/tree/master/dataset">https://github.com/csuvis/MCGS/tree/master/dataset</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948ba94a6be101d12e880" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96d7d0c2b4d0f65386287" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971834cf748115b055998" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e6f4cf7480eef0556cd" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>3503-7102 nodes, 2112-25677 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Isenberg:2017:VMC]</div><div class="col-8">vispubdata.org: A Metadata Collection about IEEE Visualization VIS Publications</div></div><div class="row"><div class="col-4">[@heymanncpan2009]</div><div class="col-8">CPAN-explorer</div></div><div class="row"><div class="col-4">[link]</div><div class="col-8">an interactive exploration of the Perl Ecosystem</div></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-8">Preserving Minority Structures in Graph Sampling</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Angori2019]</div><div class="col-4">ChordLink: A New Hybrid Visualization Model0</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">categorical nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">high degree</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div></div></div><div class="row"><div class="col-4">[@minghim2006]</div><div class="col-4">Content-based text mapping using multi-dimensional projections for exploration of document collections</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Ogawa2010]</div><div class="col-4">Software evolution storylines</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Bach2014]</div><div class="col-4">GraphDiaries: Animated Transitions and Temporal Navigation for Dynamic Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div></div></div><div class="row"><div class="col-4">[@Simonetto2018]</div><div class="col-4">Drawing Dynamic Graphs Without Timeslices</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic (continuous)</div></div></div><div class="row"><div class="col-4">[@Henry2007]</div><div class="col-4">NodeTrix: a Hybrid Visualization of Social Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">high degree</div></div></div><div class="row"><div class="col-4">[@DiGiacomo2020]</div><div class="col-4">Storyline Visualizations with Ubiquitous Actors</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><div class="row"><div class="col-4">[@Dang2016]</div><div class="col-4">TimeArcs: Visualizing Fluctuations in Dynamic Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Qu2022]</div><div class="col-4">Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div></div></div><div class="row"><div class="col-4">[@diBartolomeo2022]</div><div class="col-4">Six methods for transforming layered hypergraphs to apply layered graph layout algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">hypergraphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@Gansner2013]</div><div class="col-4">A Maxent-Stress Model for Graph Layout</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-4">Preserving Minority Structures in Graph Sampling</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Grabowicz2014]</div><div class="col-4">Fast filtering and animation of large dynamic
+networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic (continuous)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@mizuno2019]</div><div class="col-4">Optimizing Stepwise Animation in Dynamic Set Diagrams</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@arleo2022]</div><div class="col-4">Event-based Dynamic Graph Drawing without the Agonizing Pain</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><div class="row"><div class="col-4">[@burch2011]</div><div class="col-4">Parallel Edge Splatting for Scalable Dynamic Graph Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@Lin2010]</div><div class="col-4">ContexTour: Contextual Contour Visual Analysis on Dynamic Multi-
+Relational Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic (continuous)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">tripartite</div></div></div><div class="row"><div class="col-4">[@saket2016]</div><div class="col-4">Comparing Node-Link and Node-Link-Group Visualizations From An Enjoyment Perspective</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/four_in_one.svg' width='80%'></div>
+
+### Description from papers
+
+From “[Drawing Dynamic Graphs Without Timeslices](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_31)”
+
+> *InfoVis Co-Authorship (Discrete):* a co-authorship network for papers published in the InfoVis conference from 1995 to 2015 [[1](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_31#ref-CR1)]. Authors collaborating on a paper are connected in a clique at the time of publication of the paper. Note this is not a cumulative network as authors can appear, disappear, and appear again. The data is of discrete nature with exactly 21 timeslices (one per year).
+
+From “[Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14615)”
+
+> InfoVis is a co-authorship network for papers published in the InfoVis conference from 1995 to 2015 [[IHK*16](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14615#cgf14615-bib-0035)]. Authors on a paper are connected in a clique at the time of publication. This is not a cumulative network as authors can appear, disappear and appear again. The dataset has 21 timeslices (one per year).
+
+## Example Figures
+
+From “[Six methods for transforming layered hypergraphs to apply layered graph layout algorithms](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14538)”
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled.png' width='80%'></div>
+
+**Fig. 7.** Collaborations in papers published at VIS between a set of universities—in particular, these are the collaborators of Harvard University and the collaborators of the collaborators (up to 2 degrees of separation). This figure shows the result of the application of  aggregate-collapse.
+
+From “[TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882)”
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%201.png' width='80%'></div>
+
+**Figure 5.** The TimeArcs visualization applied to the IEEE VIS publication co-authorship network of the top 50 researchers from 2010 to 2014 (i.e., the same data in Fig. [4](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882#cgf12882-fig-0004)). 
+
+# CPAN Graph Dataset
+
+## Descriptions from Literature
+
+From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.ieee.org/document/9222065)
+
+> **6.3.2 Cpan Graph Data Set**
+> The Cpan data set is a collaboration network with 839 nodes and 2,127 edges [1]. It depicts the relationships between the developers using the same Perl modules. The original graph and samples obtained by FF, TIES, and MCGS are shown in Figure 6. This case focused on the preservation of parachute-like rims at marginal areas.
+
+## Example Figures
+
+From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.ieee.org/document/9222065)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%202.png' width='80%'></div>
+
+**Fig. 6.** Visual illustration of the cpan graph data set (a) and three samples generated by ff (b), ties (c), and mcgs (d) with a sampling rate of 30%.
+
+# DBLP
+
+## Descriptions from the Literature
+
+From [ChordLink: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
+
+> The second case study considers co-authorship networks extracted from the DBLP dataset [[30](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22#ref-CR30)], which contains publication data in computer science. Through a query consisting of keywords and Boolean operators, one can retrieve a set of publications on a desired topic. We use the results returned by DBLP to construct networks where nodes are authors and edges indicate co-authorships, weighted by the number of papers shared by their end-nodes. Nodes are labeled with authors’ names and edges with the titles of the corresponding publications. 
+We performed the query “network AND visualization” and limited to 500 the number of search results (i.e., publications) to be returned. The resulting network consists of 1766 nodes, 3780 edges, and 382 connected components. The largest of these components contains 118 nodes and 322 edges.
+
+## Example Figures
+
+From Parallel Edge Splatting for Scalable dynamic Graph Visualization
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%203.png' width='80%'></div>
+
+**Fig. 8.** The evolution of the word graph generated from paper titles containing the words “vis” and “web”. 21 graphs are shown for the years 1990 until 2010. A total of 264, 311 edges with weights of more than five are displayed.
+
+From  [ChordLink: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%204.png' width='80%'></div>
+
+**Fig. 1.** A CHORDLINK visualization of a co-authorship network. The drawing has four clusters, represented as chord diagrams. In each chord diagram, circular arcs of the same color are copies of the same author. For example, in the smallest cluster, F. Montecchiani has two (green) copies, each connected to some nodes external to the cluster.
+
+From Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%205.png' width='80%'></div>
+
+**Fig. 10.** Paper and authorship data from the online database DBLP [26] for publications from 2013 to 2015 in IEEE Transactions on Pattern Analysis and Machine Intelligence. Each N-ary relationship is either a paper with N authors (left: the primal view) or an author with N papers (right: the dual view).
+
+<!-- == STOP RENDERING ==
+
+from [Drawing Dynamic Graphs Without Timeslices](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Dynamic%20Graphs%20Without%20Timeslices%204da7155eac4b4979ae165f3b0f1d2b1b.md) 
+
+InfoVis Co-Authorship (Discrete): a co-authorship network for papers published
+
+in the InfoVis conference from 1995 to 2015 [1]. Authors collaborating on a paper
+
+are connected in a clique at the time of publication of the paper. Note this is
+
+not a cumulative network as authors can appear, disappear, and appear again.
+
+The data is of discrete nature with exactly 21 timeslices (one per year).
+
+[https://cs.swan.ac.uk/~dynnoslice/software.html](https://cs.swan.ac.uk/~dynnoslice/software.html)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%206.png' width='80%'></div>
+
+^ not really a description of the graph 
+
+from **A Maxent-Stress Model for Graph Layout**
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%207.png' width='80%'></div>
+
+ith the exception of graph gd, which is an author collaboration graph of the International Symposium on Graph Drawing between 1994 and 2007, the graphs used are from the University of Florida Sparse Matrix Collection [9]. Our selection covers a range of graph sizes, and includes mesh-like and other nonmesh graphs, and graphs from Brandes and Pich's experimental study of distance scaling
+
+## CPAN-Explorer graphs
+
+Link works, but subpages do not
+
+[https://gephi.wordpress.com/2009/06/25/cpan-explorer-an-interactive-exploration-of-the-perl-ecosystem/](https://gephi.wordpress.com/2009/06/25/cpan-explorer-an-interactive-exploration-of-the-perl-ecosystem/)
+_site:150:21 -->
+
 
 ::: 
+
+<a name="Airlines_Migrations_and_Air_Traffic"></a>
 
 ::: {.callout-note title="Airlines, Migrations, and Air Traffic" collapse=true appearance="minimal"}
 
 <!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Airlines_MigrationsandAirTraffic")
-``` -->
+make_sparkline("Airlines_Migrations_and_Air_Traffic")
+```
 
-<div id="named-list-Airlines_MigrationsandAirTraffic" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Airlines_Migrations_and_Air_Traffic" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Airlines, migrations and air traffic data can be interesting for its <span class="pill-tag pill-tag-spatial">spatial</span> properties and <span class="pill-tag pill-tag-directed">directed</span> edges. The data is often used for edge bundling algorithms, which group edges together to reduce visual clutter.
+
+The data below was collected from the Edge-Path bundling paper by Markus Wallinger et al. They cite the Airlines dataset to Force Directed Edge Bundling for Graph Visualization and the migrations dataset to Geometry-Based Edge Clustering for Graph Visualization.
+
+ <div><b>Originally found at: </b><a href="https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data">https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9490a1101aa0dcf6a0ba5" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96d8c0c2b4d0f64386243" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971241101aa0e9f6a0c0b" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90e774cf7480ef0055631" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>235-1702 nodes, 2101-16494 edges</div><br>
+<div><b>Number of Graphs: </b>3</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@holten2009]</div><div class="col-8">Force-Directed Edge Bundling for Graph Visualization</div></div><div class="row"><div class="col-4">[@cui2008]</div><div class="col-8">Geometry-Based Edge Clustering for Graph Visualization</div></div><div class="row"><div class="col-4">[@Wallinger2022]</div><div class="col-8">Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Ersoy2011]</div><div class="col-4">Skeleton-Based Edge Bundling for Graph Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@Holten2009]</div><div class="col-4">Force-directed edge bundling for graph visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@vonLandesberger2016]</div><div class="col-4">MobilityGraphs: Visual Analysis of Mass Mobility Dynamics via Spatio-Temporal Graphs and Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@WeiweiCui2008]</div><div class="col-4">Geometry-Based Edge Clustering for Graph Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Wu2018]</div><div class="col-4">MLSEB: Edge Bundling Using Moving Least
+Squares Approximation</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@Perri2020]</div><div class="col-4">HOTVis: Higher-Order Time-Aware
+Visualisation of Dynamic Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><div class="row"><div class="col-4">[@Wallinger2022]</div><div class="col-4">Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@wang2020]</div><div class="col-4">Interactive Structure-aware Blending of Diverse Edge Bundling Visualizations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@wallinger2023]</div><div class="col-4">Faster Edge-Path Bundling through Graph Spanners</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/four_in_one.svg' width='80%'></div>
+
+### Descriptions from Literature
+
+From “[Skeleton-Based Edge Bundling for Graph Visualization](https://doi.org/10.1109/TVCG.2011.233)”:
+
+> Figure 7 illustrates the SBEB and compares it with several existing bundling methods. Note that in all images here generated with our method, we used simple additive edge blending only, as our focus here is the layout, not the rendering. Images (a,b) show an air traffic graph (nodes are city locations, edges are interconnecting flights)… Images (e-h) show the US migrations graph bundled with the WR, GBEB, FDEB, and our method (SBEB) respectively. Overall, SBEB produces stronger bundling, due to the many iterations I = 10 being used), and emphasizes the structure of connections between groups of close cities (due to the skeleton layout cues). If less bundling is desired, fewer iterations can be used (Fig. 4). Adjusting the postprocessing smoothing and relaxation parameters, SBEB can create bundling styles similar to either GBEB (higher bundle curvatures, more emphasis on the graph structure) or FDEB (smoother bundles). Finally, images (i,j) show the US airlines graph bundled with the FDEB and SBEB respectively. SBEB generates stronger bundling (more overdraw) but arguably less clutter. Note also that SBEB generates treelike bundle structures which is useful when the exploration task at hand has an inherent (local) hierarchical nature, e.g. see how traffic connections merge into and/or split from main traffic routes.
+
+### Example Figures
+
+From “[Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach](https://ieeexplore.ieee.org/document/9552919)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled.png' width='80%'></div>
+
+**Fig. 1.** Edge bundling of the migrations dataset. (a) Straight line drawing. (b) Force-directed edge bundling aggregates edges well, but overaggregates at the centre of the drawing making it difficult to see patterns in the east-west flow (red bundle). (c) Cubu has a similar drawback at the centre of the map to a lesser degree. (d) Winding roads divides this structure into several smaller flows, but they may not be necessarily related to graph structure. (e) Edge-path bundling is able to distinguish between several flows that reflect paths in the underlying graph. (f) When edge direction is considered, the algorithm is able to further subdivide these flows based on direction. 
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled%201.png' width='80%'></div>
+
+**Fig. 8.** Airlines (undirected). (a) Input drawing. (b) Force-directed bundling is able to cluster edges into the major flows, but some overaggregation prevents details from being visualised. (c) Cubu provides a good bundling, but also has overaggregation. (c) Confluent drawings can be imposed on the layout, but as the approach cannot layout the graph bicliques can be distantly located, resulting in suboptimal performance. (e) Winding roads divides the flows into many streams, but these streams can be unfaithful to graph structure. (f) Edge-path bundling aggregates edges using weighted paths. The four prominent bundle intersections on the east coast correspond to major airports: Atlanta, Detroit, Minneapolis, and Dallas.
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled%202.png' width='80%'></div>
+
+**Fig. 10.** Results of four algorithms on the air traffic network. (a) Force-directed bundling is able to recover the major trajectories but does not strongly bundle the network. (b) Cubu strongly bundles the main flows of airtraffic, but can suffer from overaggregation. (c) Winding roads divides the traffic into many smaller bundles, but this may not be reflective of underlying graph structure. (d) With edge-path bundling, each bundle necessarily reflects a path in the network. There are separate flows across the atlantic and asia that correspond to paths through the network.
+
+From “[Skeleton-Based Edge Bundling for Graph Visualization](https://doi.org/10.1109/TVCG.2011.233)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Screen_Shot_2023-08-14_at_3.42.37_PM.png' width='80%'></div>
+
+<!-- == STOP RENDERING ==
+
+gd contest: [http://www.research.att.com/conf/gd96/contest.html](http://www.research.att.com/conf/gd96/contest.html)
+
+look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) -->
 
 ::: 
+
+<a name="Code_Dependency_Graphs"></a>
 
 ::: {.callout-note title="Code Dependency Graphs" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Code_DependencyGraphs")
+make_sparkline("Code_Dependency_Graphs")
 ```
 
-<div id="named-list-Code_DependencyGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Code_Dependency_Graphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Various software call dependency graphs have been used in the literature. We provide the benchmarks used in [A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724), as these posed the most comprehensive and available collection. [Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://ieeexplore.ieee.org/document/6065001) used a software call graph from a device called a “Phillips Medical System Eindhoven medical scanner”, which is lost. Python and Eclipse subversion control logs are also currently lost. The authors of [Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://ieeexplore.ieee.org/document/6065001) used <a href="https://depfind.sourceforge.io/ ">https://depfind.sourceforge.io/</a> to extract the commit history.
+
+<div><b>Originally found at: </b><a href="http://vis.cs.ucdavis.edu/~ogawa/datasets/ ">http://vis.cs.ucdavis.edu/~ogawa/datasets/ </a>(broken)
+<a href="https://osf.io/dcz5h ">https://osf.io/dcz5h </a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94840803e0c0bf6558bd1" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dc01101aa0ea66a0bee" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970111101aa0ea36a0c62" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90f0994a6be0ec112e76b" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>128-2956 nodes, 310-10845 edges</div><br>
+<div><b>Number of Graphs: </b>11</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@gove2019]</div><div class="col-8">A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@burch2011]</div><div class="col-4">Parallel Edge Splatting for Scalable Dynamic Graph Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@Holten2006]</div><div class="col-4">Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">compound graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">hierarchical</div></div></div><div class="row"><div class="col-4">[@Tanahashi2015]</div><div class="col-4">An Efficient Framework for Generating Storyline Visualizations from Streaming Data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@devkota2018]</div><div class="col-4">CFGExplorer: Designing a Visual Control Flow Analytics System around Basic Program Analysis Operations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/four_in_one.svg' width='80%'></div>
+
+## Software Dependency Calls
+
+### Descriptions from Literature
+
+From “[A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724)”:
+
+> The software graphs show dependencies in several software packages [**[vB11](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724#cgf13724-bib-0076)**, **[vB02](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724#cgf13724-bib-0075)**, **[vB12](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724#cgf13724-bib-0077)**, **[vBB13](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724#cgf13724-bib-0078)**, **[vvBB14](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724#cgf13724-bib-0082)**].
+
+From “[Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://ieeexplore.ieee.org/document/6065001)”:
+
+> We collected the 21 available releases of JUnit as compiled Java bytecode and extracted the method call dependencies using *DependencyFinder* (depfind. sourceforge.net). The package and class structure provides a natural hierarchy on the methods of the system. The resulting dynamic graph consists of 2,817 vertices connected by 15,339 edges, where each edge is weighted by 1.
+
+### Example Figures
+
+From [Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://ieeexplore.ieee.org/document/6065001):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/Untitled.png' width='80%'></div>
+
+**Fig. 6.** Call dependencies between methods in 21 releases of the JUnit project: all (top), added (left), and removed (right) dependencies.
+
+## Phillips Medical Software Call Graph (Lost)
+
+### Descriptions from Literature
+
+From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data](https://ieeexplore.ieee.org/document/4015425)”:
+
+> The software is part of a medical scanner and was provided by Philips Medical Systems Eindhoven. Three hierarchy levels – layers, units, and modules – consisting of 284 nodes are used together with the associated call graph for the elements at the lowest level of the hierarchy, i.e., 1,011 adjacency relations representing module-to-module calls.
+
+### Example Figures
+
+From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data](https://ieeexplore.ieee.org/document/4015425)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/Untitled%201.png' width='80%'></div>
+
+**Fig. 13.** A software system and its associated call graph (caller = green, callee = red). (a) and (b) show the system with bundling strength β = 0.85 using a balloon layout (node labels disabled) and a radial layout, respectively. Bundling reduces visual clutter, making it easier to perceive the actual connections than when compared to the non-bundled versions (figures 2a and 11a). Bundled visualizations also show relations between sparsely connected systems more clearly (encircled regions); these are almost completely obscured in the non-bundled versions. The encircled regions highlight identical parts of the system for (a), (b), and figure 15.
+
+### Subversion Control Logs (Lost)
+
+From “[An Efficient Framework for Generating Storyline Visualizations from Streaming Data”:](https://ieeexplore.ieee.org/document/7015617)
+
+> The datasets we used for this study were:
+…
+*Python Subversion Control Logs* (*Python*) [30] 
+E*clipse Subversion Control Logs* (*Eclipse*) [30]
+…
+These datasets all contained temporal logs of events in which entities interact.
+
+<!-- === STOP RENDERING ==
+
+I cannot find the Phillips medical software call graphs - the paper implies they were directly given to the author so it might be hard to get. 
+
+Subversion control logs also lost. Broken link from UCDavis. 
+
+M. Ogawa. Software development history logs [Online]. Available:
+[http://vis.cs.ucdavis.edu/~ogawa/datasets/](http://vis.cs.ucdavis.edu/~ogawa/datasets/), Jan. 2015. -->
 
 ::: 
+
+<a name="Blogposts_Tweets_and_Forums"></a>
 
 ::: {.callout-note title="Blogposts, Tweets, and Forums" collapse=true appearance="minimal"}
 
 <!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Blogposts_TweetsandForums")
-``` -->
+make_sparkline("Blogposts_Tweets_and_Forums")
+```
 
-<div id="named-list-Blogposts_TweetsandForums" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Blogposts_Tweets_and_Forums" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+In the surveyed papers we found various instances of blogposts, tweets, and forum posts. Many of these are timestamped posts that connect user mentions, textually derived entities, hashtags, or user actions on posts. We provide a selection of Blogposts, Tweets, and MOOC (a student forum) as found in the literature.
+Time Arcs uses AMERICAblog, Huffington Post, and other sources (corpus_ner_geo) data which can be found at <a href="https://github.com/CreativeCodingLab/TimeArcs/tree/master/Text/data.">https://github.com/CreativeCodingLab/TimeArcs/tree/master/Text/data.</a>
+
+Fast filtering uses the Twitter gardenhouse streaming API to collect data on the 2013 Super Bowl and the announcement of Osama Bin Laden’s death, both can be found <a href="https://github.com/WICI/fastviz/tree/master/data ">https://github.com/WICI/fastviz/tree/master/data </a>(shared hashtags).
+
+Event-based Dynamic Graph Drawing without the Agonizing Pain uses the rugby tweet dataset (pro12_mentions) consisting of mentions among the members of the GuinessPro12 competition, and the MOOC dataset from the [KDD Cup 2015](http://moocdata.cn/challenges/kdd-cup-2015) (A data challenge).
+
+This kind of data can be interesting because it might be interpreted as <span class="pill-tag pill-tag-hypergraph">hypergraph</span> data, where nodes are connected by multiple edges, or as <span class="pill-tag pill-tag-dynamic">dynamic</span> data, where the edges change over time.
+
+ <div><b>Originally found at: </b><a href="http://moocdata.cn/data/user-activity
+">http://moocdata.cn/data/user-activity
+</a><a href="https://github.com/CreativeCodingLab/TimeArcs
+">https://github.com/CreativeCodingLab/TimeArcs
+</a><a href="https://github.com/WICI/fastviz/tree/master/data
+">https://github.com/WICI/fastviz/tree/master/data
+</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9497a0c2b4d0e8c386228" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96da194a6be112a12e740" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d971111101aa0ea36a0cb6" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94add4cf7481071055619" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>12-386412 nodes, 3151-556820 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@feng2019dropout]</div><div class="col-8">Understanding Dropouts in MOOCs</div></div><div class="row"><div class="col-4">[@dang2016]</div><div class="col-8">TimeArcs: Visualizing Fluctuations in Dynamic Networks</div></div><div class="row"><div class="col-4">[@Grabowicz2014]</div><div class="col-8">Fast filtering and animation of large dynamic networks</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Frishman2008]</div><div class="col-4">Online Dynamic Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic</div></div></div><div class="row"><div class="col-4">[@Purchase2020]</div><div class="col-4">The Turing Test for Graph Drawing Algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">generic</div></div></div><div class="row"><div class="col-4">[@Grabowicz2014]</div><div class="col-4">Fast filtering and animation of large dynamic
+networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (continuous)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Dang2016]</div><div class="col-4">TimeArcs: Visualizing Fluctuations in Dynamic Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">n-layers</div></div></div><div class="row"><div class="col-4">[@arleo2022]</div><div class="col-4">Event-based Dynamic Graph Drawing without the Agonizing Pain</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><br>
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/four_in_one.svg' width='80%'></div>
+
+## Blogs/MOOC
+
+### Descriptions from Literature
+
+From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://doi.org/10.1111/cgf.12882):
+
+> We collected 90,811 political blog posts over a ten-year period from 2005 to 2015 from seven different sources, including AMERICAblog, Huffington Post, and ProPublica. We then ran text analyses on these blogs and generated terms that were classified into four different categories. These terms were then input into *TimeArcs*.
+
+From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14615):
+
+> MOOC represents the actions (e.g. viewing a video, submitting an answer, etc.) taken by users on a popular massive open online class platform [[KZL19](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14615#cgf14615-bib-0037)]. The nodes represent users and course activities (targets), and temporal edges represent the actions by users on the targets. We pick and elaborate the first 15 thousands events.
+
+### Example Figures
+
+From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://doi.org/10.1111/cgf.12882):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled.png' width='80%'></div>
+
+**Fig. 7.** Overview of political events in the past 10 years using TimeArcs. The top 100 terms were selected based on their sudden attention and degree centrality. Terms are color-coded by category: green for person, red for location, blue for organization, yellow for miscellaneous category.
+
+From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14615):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%201.png' width='80%'></div>
+
+**Table 2.** Flattened snapshots of the network evolution over time taken at regular intervals. Twenty artificial time slices were inserted for temporal graphs
+
+## Tweets
+
+### Descriptions from Literature
+
+From  [Fast filtering and animation of large dynamic networks](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-014-0027-8):
+
+> We use data obtained through the Twitter gardenhose streaming API, which covers around 10% of the tweet volume.We focus on two events: the announcement of Osama bin Laden’s death and the 2013 Super Bowl. We consider user mentions and hashtags as entities and their co-occurrence in the same tweet as interactions between them.
+
+From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14615):
+
+> **Rugby** is a network derived from over 3000 tweets involving teams in the ‘Guinness Pro12’ rugby competition. The tweets were posted between 1 September 2014 and 23 October 2015. Each tweet contains information about the involved teams and the time of publication with a precision down to the second.
+
+### Example Figures
+
+From  [Fast filtering and animation of large dynamic networks](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-014-0027-8)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%202.png' width='80%'></div>
+
+<!-- == STOP RENDERING ==
+
+**Online dynamic -**  cannot find code online, paper shows two links of where they collected the data. Both broken [http://www.dailytech.com](http://www.dailytech.com/), [http://www.rimzu.com](http://www.rimzu.com/) - paper says to look in [https://www.computer.org/csdl/journal/tg/2008/04/ttg2008040727/13rRUxBJhvo](https://www.computer.org/csdl/journal/tg/2008/04/ttg2008040727/13rRUxBJhvo) but it is asking me to pay
+
+**Turing Test -** Uses the Zachary Karate dataset (they link to the suiteSparse Matrix collection, but I also know it is in sparse, and one of the Pajek subcollections). Also uses a timeslice of the same dataset used by Online dynamic (we could reconstruct this from their images since it is also only 85 nodes, but we really loose all the info we want)
+_site:150:21 -->
 
 ::: 
 
+<a name="Social_Networks"></a>
+
 ::: {.callout-note title="Social Networks" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Social_Networks")
 ```
 
-<div id="named-list-Social_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Social_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Various social network datasets are used in the literature and here we provide a collection of some of the ones found in our survey. Namely, the Zachary Karate Club, Facebook100, Infectious SocioPatterns dynamic contact networks, and the Van De Brunt Fraternity Data. Note that Facebook1684 refers to the ego network for user 1684, and this along various other users can be found in SNAP. Unfortunately, we are unable to provide this dataset at this time. Social networks can be useful for their <span class="pill-tag pill-tag-clusters">clustering</span> opportunities and <span class="pill-tag pill-tag-dynamic">dynamic</span> properties.
+
+<div><b>Originally found at: </b><a href="https://snap.stanford.edu/data/ego-Facebook.html
+">https://snap.stanford.edu/data/ego-Facebook.html
+</a><a href="https://cs.swan.ac.uk/~dynnoslice/software.html
+">https://cs.swan.ac.uk/~dynnoslice/software.html
+</a><a href="https://archive.org/details/oxford-2005-facebook-matrix 
+">https://archive.org/details/oxford-2005-facebook-matrix 
+</a><a href="https://osf.io/dcz5h
+">https://osf.io/dcz5h
+</a><a href="http://www.sociopatterns.org/datasets/infectious-sociopatterns-dynamic-contact-networks/
+">http://www.sociopatterns.org/datasets/infectious-sociopatterns-dynamic-contact-networks/
+</a><a href="http://www-personal.umich.edu/~mejn/netdata/">http://www-personal.umich.edu/~mejn/netdata/</a></div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@zachary1977]</div><div class="col-8">An Information Flow Model for Conflict and Fission in Small Groups</div></div><div class="row"><div class="col-4">[@mcauley2012]</div><div class="col-8">Learning to discover social circles in ego networks</div></div><div class="row"><div class="col-4">[@ISELLA2011166]</div><div class="col-8">What’s in a crowd? analysis of face-to-face behavioral networks</div></div><div class="row"><div class="col-4">[@van_de_bunt_friendship_1999]</div><div class="col-8">Friendship Networks Through Time: An Actor-Oriented Dynamic Statistical Network Model</div></div><div class="row"><div class="col-4">[@facebooklong]</div><div class="col-8">Social Structure of Facebook Networks</div></div><div class="row"><div class="col-4">[@red2011]</div><div class="col-8">Comparing Community Structure to Characteristics in Online Collegiate Social Networks</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@nocaj2015]</div><div class="col-4">Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-4">Preserving Minority Structures in Graph Sampling</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Simonetto2018]</div><div class="col-4">Drawing Dynamic Graphs Without Timeslices</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">dynamic (continuous)</div></div></div><div class="row"><div class="col-4">[@Raj2018]</div><div class="col-4">Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@Ni2018]</div><div class="col-4">Network Alignment by Discrete Ollivier-Ricci Flow</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Purchase2020]</div><div class="col-4">The Turing Test for Graph Drawing Algorithms</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@Hachul2006]</div><div class="col-4">An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Qu2022]</div><div class="col-4">Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div></div></div><div class="row"><div class="col-4">[@hoffswell2018]</div><div class="col-4">SetCoLa: High-Level Constraints for Graph Layout</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@fisheye2019]</div><div class="col-4">Structure-aware Fisheye Views for Efficient Large Graph Exploration</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@wang2018]</div><div class="col-4">Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div></div></div><br>
+
+## Zachary Karate Club Dataset
+
+### Descriptions from Literature
+
+*[The Turing Test for Graph Drawing Algorithms](https://link.springer.com/chapter/10.1007/978-3-030-68766-3_36)*  describes the dataset simply as “social network” in their Table 1.
+
+From [Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28):
+
+> The Zachary’s karate club graph is a well known data set that is a social network of friendships in a karate club at a US university, as recorded during a study [[32](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#ref-CR32)]. This graph contains 34 nodes, each representing an individual, and 78 unweighted edges that represent a friendship between the associated individuals (Fig. [1](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#Fig1)). During the period of observation, a conflict between two key members, identified as the “administrator” and “instructor”, leads to a split in the club, giving it an interesting two cluster structure. In Fig. [1](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#Fig1), nodes representing members who are part of the instructor’s and administrator’s groups are drawn in green and blue, respectively.
+> 
+
+### Example Figures
+
+From “[The Turing Test for Graph Drawing Algorithms](https://arxiv.org/abs/2008.04869)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled.png' width='80%'></div>
+
+Figure from [supplementary materials](https://www.dcs.gla.ac.uk/~hcp/GD2020/) using a force directed layout. 
+
+From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%201.png' width='80%'></div>
+
+**Fig. 1.** Visualization of Zachary’s karate club social network using (a) MDS, (b) radial layout, and (c) anisotropic radial layout. Node sizes encode betweenness centrality.
+
+ ****From “[Network Alignment by Discrete Ollivier-Ricci Flow](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_32)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%202.png' width='80%'></div>
+
+**Fig. 1.** An example of Ricci curvature on the karate club graph before and after Ricci flow. The colors represent the Ricci curvature while the thickness represents the edge weight. Ricci flow deformed the edge weights until Ricci curvatures converged (−0.0027 in this case).
+
+## Facebook100
+
+### Description from Literature
+
+From [Untangling the Hairballs of Multi-Centered, Small-World Online Social Media Networks](https://jgaa.info/getPaper?id=370):
+
+> As real world samples, we use the Facebook100 dataset [40], which contains social relations of 100 higher educational institutes in the US. The network size varies from 762 to 41K vertices and from 16K to 1.6M edges. Thedataset is directly from Facebook, not sampled, and thus very complete in terms of capturing the social relations according to a widely used service at that time. Additional attributes obtained from the Facebook profiles are gender, expected year of graduation, dormitory, etc. Due to incomplete profiles, a number of attribute values are missing.
+> 
+
+## Example Figures
+
+From [Untangling the Hairballs of Multi-Centered, Small-World Online Social Media Networks](https://jgaa.info/getPaper?id=370)
+
+**Fig. 1.** Facebook friendships at California Institute of Technology (Caltech36). Vertex color corresponds to dormitory (gray for missing values), but has not been utilized by the layout algorithm. The layout in (a) is based on the entire graph, whereas (b)-(f) use edge embeddedness, which spreads the graph while keeping cohesive groups together. Embeddedness mapped to edge color; backbone edges dark gray.
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%203.png' width='80%'></div>
+
+# Facebook Ego Networks (Facebook 1864)
+
+## Description from Literature
+
+From ****[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
+
+> The Facebook1684 graph data set is an online social network with 775 nodes and 14,006 edges. The original graph and six samples are shown in Figure 4. This data set is an unbalanced graph in which two large communities include 705 nodes and two small communities/cliques contain only 70 nodes.
+> 
+
+The [supplemental](https://github.com/saibalmars/RicciFlow-SampleGraphs/tree/61f9c2c48d0de368369e232da959c4f996122e3a) material for *****[Network Alignment by Discrete Ollivier-Ricci Flow](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_32)* also provides user 1864 of the Facebook ego networks in their repository. 
+
+From [A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts](https://osf.io/dcz5h):
+
+> The ego graphs are Facebook ego graphs [**[ML12](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13724#cgf13724-bib-0060)**] with the ego vertex re-added to the graph.
+
+# Example Figures
+
+From Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%204.png' width='80%'></div>
+
+**Fig. 4.** Interface for subjective assessment experiment with the Facebook1684 data set (775 nodes and 14,006 edges). The leftmost graph is the original graph. The six randomly arranged samples are generated by SST (a), FF (b), MCGS (c), RW (d), TIES (e), and RDN (f) with a sampling rate of 30%.
+
+# Van De Bunt Fraternity
+
+## Description from the Literature
+
+From [Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
+
+> *Van De Bunt (Discrete):* shows the relationships between 32 freshmen at seven different time points. A discrete dynamic graph is built using the method of Brandes *et al.*  [[9](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_31#ref-CR9)], with an undirected edge inserted into a timeslice if the participants reciprocally report “best friendship” or “friendship” at that time.
+
+# **Syphilis Social Network**
+
+## Description from the Literature
+
+From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440):
+
+> Social networks can be a powerful way to understand inter-personal relationships and are useful for tracking the spread of diseases that result from personal contact [**[RST*98](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045)**, **[FHH*01](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0022)**, **[MRV*03](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0043)**, **[FHD*11](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0021)**]. The ability to track and identify at risk individuals can lead to treatment and help manage the spread of the disease. In addition to the links between individuals, structuring the layout by node properties such as the social or ethnographically-identified group may reveal additional details about how the disease is spread.
+> 
+
+## Example Figures
+
+From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%205.png' width='80%'></div>
+
+**Fig. 4.** The layout for the syphilis social network from (a) Rothenberg et al. [[RST*98](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045)]. (b) We recreated and improved the layout in SetCoLa by introducing additional padding, alignment, and circle constraints to further highlight the relative number of interactions among the different groups. For both figures, the nodes are split into three groups, from left to right: young affluent white men, younger white women, and young African-American men. Individuals not associated with any of these “core” groups are positioned above the others. In both figures, individuals diagnosed with syphilis during the outbreak are labeled with an “S” on the node label.
+
+<!-- === STOP RENDERING ===
+
+Contact Network
+
+This dataset contains the daily dynamic contact networks collected during the [Infectious SocioPatterns](http://www.sociopatterns.org/deployments/infectious-sociopatterns/) event that took place at the [Science Gallery](http://www.sciencegallery.com/) in Dublin, Ireland, during the artscience exhibition [INFECTIOUS: STAY AWAY](http://www.sciencegallery.com/infectious). Each file in the downloadable package contains a tab-separated list representing the active contacts during 20-second intervals of one day of data collection.  Each line has the form “t i j“, where i and j are the anonymous IDs of the persons in contact, and the interval during which this contact was active is [ t – 20s, t ]. If multiple contacts are active in a given interval, you will see multiple lines starting with the same value of t. Time is measured in seconds and expressed in UNIX ctime.
+
+“This evaluation uses 109 common graphs from network science and graph algorithm research (note: many graphs from older research are no longer available online).”
+
+# C. Lipp?
+
+> The rest of the test graphs are taken from real-world applications. In particular, we selected graphs from the AT&T graph library [1], from C. Walshaw’s graph collection [20], and a graph that describes a social network of 2113 people that we obtained from C. Lipp.
+> 
+
+Last author of original paper,
+
+→ facebook100 network: [https://epubs.siam.org/doi/10.1137/080734315](https://epubs.siam.org/doi/10.1137/080734315)
+
+[https://archive.org/details/oxford-2005-facebook-matrix](https://archive.org/details/oxford-2005-facebook-matrix) ← pretty sure the internet archive is reliable? 
+
+→ dead link in this paper
+
+→ [http://masonporter.blogspot.com/2011/02/facebook100-data-set.html](http://masonporter.blogspot.com/2011/02/facebook100-data-set.html)
+also dead link
+
+→ here? [https://networkrepository.com/socfb.php](https://networkrepository.com/socfb.php)
+
+from [Drawing Dynamic Graphs Without Timeslices](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Dynamic%20Graphs%20Without%20Timeslices%204da7155eac4b4979ae165f3b0f1d2b1b.md) -->
 
 ::: 
 
+<a name="Transportation_Networks"></a>
+
 ::: {.callout-note title="Transportation Networks" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Transportation_Networks")
 ```
 
-<div id="named-list-Transportation_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Transportation_Networks" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Transportation networks are interesting because of their <span class="pill-tag pill-tag-spatial">spatial</span> nature, and feautre <span class="pill-tag pill-tag-directed">directed</span> edges.
+DIMACS USA Road Network source notes that the data has errors, namely missing major highways and bridges. We currently include only the subway layout networks in our files. 
+
+<div><b>Originally found at: </b>http://www.diag.uniroma1.it//challenge9/download.shtml
+<a href="https://osf.io/dcz5h">https://osf.io/dcz5h</a></div><br>
+<div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9498894a6be103212e712" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94d990c2b4d0e9c386231" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970f894a6be112a12ea21" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90f1394a6be0ec012e916" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
+<div><b>Size: </b>82-433 nodes, 158-950 edges</div><br>
+<div><b>Number of Graphs: </b>15</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@gove2019]</div><div class="col-8">A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@muelder2008b]</div><div class="col-4">A Treemap Based Method for Rapid Layout of Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@muelder2008]</div><div class="col-4">Rapid Graph Layout Using Space Filling Curves</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Meulemans2013]</div><div class="col-4">KelpFusion: A Hybrid Set Visualization Technique</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@Nollenburg2011]</div><div class="col-4">Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@Huang2016]</div><div class="col-4">TrajGraph: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@greilich2009]</div><div class="col-4">Visualizing the evolution of compound digraphs with TimeArcTrees</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">compound graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">hierarchical</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@brandes1998]</div><div class="col-4">Using Graph Layout to Visualize Train Interconnection Data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@zeng2019]</div><div class="col-4">Route-Aware Edge Bundling for Visualizing Origin-Destination Trails in Urban Traffic</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@preiner2020]</div><div class="col-4">Augmenting Node-Link Diagrams with Topographic Attribute Maps</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">categorical nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">topological</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">trees</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><div class="row"><div class="col-4">[@bast2020]</div><div class="col-4">Metro Maps on Octilinear Grid Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">octilinear</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">port constraints</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">terminals</div></div></div><div class="row"><div class="col-4">[@zheng2019]</div><div class="col-4">Graph Drawing by Stochastic Gradient Descent</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@fisheye2019]</div><div class="col-4">Structure-aware Fisheye Views for Efficient Large Graph Exploration</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><div class="row"><div class="col-4">[@wang2018]</div><div class="col-4">Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div></div></div><div class="row"><div class="col-4">[@batik2022]</div><div class="col-4">Shape-Guided Mixed Metro Map Layout</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">categorical nodes</div></div></div><br>
+
+## Subways
+
+### Statistics
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/four_in_one.svg' width='80%'></div>
+
+### Description from Literature
+
+> Apart from the example of Sydney presented in Section 6, we have evaluated our method for two additional real-world networks: Vienna, which is a rather small network, and London, the oldest and still one of the most complex metro systems in the world. These networks have not been used as examples for previous metro map layout methods, so we can compare only against the official maps of Vienna and London. The size of the metro graphs (including Sydney) is given in Table 3 and ranges from 84 vertices and 8 faces (Vienna) to 308 vertices and 55 faces (London). The table further shows how the removal of degree-2 vertices described in Section 5.1 effectively reduces the number of vertices and edges.
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled.png' width='80%'></div>
+
+### Example Figures
+
+From “[Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming](https://ieeexplore.ieee.org/document/5473229)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%201.png' width='80%'></div>
+
+**Fig. 16.** Unlabeled layout of the London Underground network produced by our method.
+
+## DIMACS USA Road Networks
+
+### Description from Literature
+
+From “[A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
+
+> The other graphs used in this paper are: a graph of network scans, which is a complete graph with edge weights between 0 and 1, but for clarity, edges with weights less than a certain threshold are not shown (Figures 3 and 4, |V|=878,|E|=385003, [19]), a small artificial graph of a grid topology (Figure 5, |V|=16,|E|=24), a large graph of streets in the San Francisco Bay Area (Figure 7, |V|=321,270,|E|=800,172, [8]).
+
+From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.org/document/4658143)”:
+
+> Finally, the “usafla” dataset (shown in Figure 7) is of the intersections and the streets between them in the state of Florida
+
+### Example Figures
+
+From “[A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%202.png' width='80%'></div>
+
+**Fig. 7.** *Scalability*. Our approach can scale to very large networks while still maintaining interactivity. |V|=321,270,|E|=800,172
+
+From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.org/document/4658143)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%203.png' width='80%'></div>
+
+**Fig. 7.** Scalability. Our approach can scale to large graphs. This graph
+is of the streets in the state of Florida, |V| = 1,070,376,|E| = 2,712,798
+One small region is expanded to show detail.
+
+<!-- === STOP RENDERING ===
+
+[http://www.diag.uniroma1.it//challenge9/download.shtml](http://www.diag.uniroma1.it//challenge9/download.shtml)
+_site:150:21
+ -->
 
 ::: 
 
@@ -1648,7 +2287,9 @@ Finally, we collected some datasets that we noticed being subsets of existing co
 
 C. Walshaw, collected for an archive of graph partitions which has been maintained since 2000.  These are multilevel mesh partitions of heterogeneous networks from a variety of domains.
 
-We do not provide the the data ourselves. Walshaw requests to be emailed for the distribution of the data, and so we link to their site and to the graphs found in the SuiteSparse Matrix Collection.
+We do not provide the the data ourselves. Walshaw requests to be emailed for the distribution of the data, and so we link to their site and to the graphs found in the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
+
+It has <span class="pill-tag pill-tag-node-weighted">weighted nodes</span> and <span class="pill-tag pill-tag-edge-weighted">weighted edges</span> graphs, and the partitions of the 34 graphs are given with various partition sizes and imbalance percentages.
 
 <!-- ```{ojs}
 //| echo: false
@@ -1752,7 +2393,7 @@ Graphs found on the Sparse Matrix Collection -->
 
 ::: 
 
-::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
+<!-- ::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
 
 ```{ojs}
 //| echo: false
@@ -1762,43 +2403,136 @@ make_sparkline("Pert_DAG")
 
 <div id="named-list-Pert_DAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
 
-::: 
+:::  -->
 
 <a name="amazon"></a>
 
 ::: {.callout-note title="Amazon" collapse=true appearance="minimal"} 
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Amazon")
 ```
 
-<div id="named-list-Amazon" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Amazon" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Wallinger et al. randomly filter data from the original dataset collected by Leskovec et al. in The dynamics of viral marketing. Leskovec et al. collected 15 million recommendations made from June 2001, to May 2003 by looking at the “Customers who Bought This Item Also Bought” feature in the Amazon online shopping platform. This dataset is a subset of SNAP and can be found there. It has <span class="pill-tag pill-tag-directed">directed</span> edges and <span class="pill-tag pill-tag-large">large</span> graphs.
+
+<div><b>Originally found at: </b> <a href="http://snap.stanford.edu/data/#amazon">http://snap.stanford.edu/data/#amazon</a></div><br>
+<div><b>Size: </b>1 graph, 192k vertices and 269k edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@snapnets]</div><div class="col-8">SNAP Datasets: Stanford Large Network Dataset Collection</div></div><div class="row"><div class="col-4">[@leskovec2007]</div><div class="col-8">The dynamics of viral marketing</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Wallinger2022]</div><div class="col-4">Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
+
+### Description from Literature
+
+From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
+
+> **Amazon Subset**
+> This dataset consists of products with edges indicating that they are commonly co-purchased. We randomly filtered edges from the original graph [33], [34]. It has |V|=192k vertices and |E|=269k edges.
+
+### Example Figures
+
+From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png' width='80%'></div>
+
+<!-- == STOP RENDERING ==
+
+look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) 
+
+Note: Amazon is the only dataset not included in their GitHub. They randomly sampled a graph with 192k vertices and 269k edges from the data collected by Leskovec et al in the SNAP dataset
+
+Original dataset: [http://snap.stanford.edu/data/#amazon](http://snap.stanford.edu/data/#amazon)
+
+ doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph)
+_site:150:21 -->
+
 
 ::: 
+
+<a name="Autonomous_System_Network"></a>
 
 ::: {.callout-note title="Autonomous System Network" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Autonomous_SystemNetwork")
+make_sparkline("Autonomous_System_Network")
 ```
 
-<div id="named-list-Autonomous_SystemNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Autonomous_System_Network" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The 733-AS network is a subset of SNAP. We provide the link containing the original project, https://www.routeviews.org/routeviews/, and redirect to SNAP, <a href="https://snap.stanford.edu/data/as-733.html ">https://snap.stanford.edu/data/as-733.html </a>for the network data. In the dataset description they highlight how the graphs exhibit node and edge addition and deletion over time. 
+
+The data was originally part of the University of Oregon’s RouteViews project. It was then used by Jure Leskovec et al. and eventually stored in SNAP. It contains <span class="pill-tag pill-tag-large">dynamic</span> graphs.
+
+ <div><b>Originally found at: </b><a href="https://www.routeviews.org/routeviews/
+">https://www.routeviews.org/routeviews/
+</a><a href="https://snap.stanford.edu/data/as-733.html
+">https://snap.stanford.edu/data/as-733.html
+</a><a href="https://github.com/csuvis/MCGS/blob/master/dataset/AS-733_edge.csv">https://github.com/csuvis/MCGS/blob/master/dataset/AS-733_edge.csv</a></div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-8">Preserving Minority Structures in Graph Sampling</div></div><div class="row"><div class="col-4">[@leskovec2005]</div><div class="col-8">Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations</div></div><br>
+<div><b>Number of Graphs: </b>733</div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-4">Preserving Minority Structures in Graph Sampling</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
+
+> The AS-733 graph data set [48] is an autonomous systems network on the Internet with 6,474 nodes and 13,895 edges. The original graph and samples obtained by RDN, SST, MCGS are shown in Figure 5.
+
+From “[Graphs over time: densification laws, shrinking diameters and possible explanations](https://dl.acm.org/doi/10.1145/1081870.1081893)”
+
+> The graph of routers comprising the Internet can be organized into sub-graphs called Autonomous Systems (AS). Each AS exchanges traffic flows with some neighbors (peers).
+We can construct a communication network of who-talks-towhom from the BGP (Border Gateway Protocol) logs. We use the the Autonomous Systems (AS) dataset from [26]. The dataset contains 735 daily instances which span an interval of 785 days from November 8 1997 to January 2 2000.In contrast to citation networks, where nodes and edges only get added (not deleted) over time, the AS dataset also exhibits both the addition and deletion of the nodes and edges over time.
+
+### Example Figures
+
+From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Autonomous%20System%20Network%2096d24eb9c7f94ab6a6b38e6a3af816ae/Untitled.png' width='80%'></div>
+
+**Fig. 5.** Case analysis of the AS-733 graph data set (a) and three samples generated by RDN (b), SST(c), and MCGS (d) with a sampling rate of 30%.
+
+<!-- == STOP RENDERING ==
+
+Possibly related to something like this:
+
+[https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/](https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/) -->
 
 ::: 
 
+<a name="Control_Flow_Graphs"></a>
+
 ::: {.callout-note title="Control Flow Graphs" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Control_FlowGraphs")
+make_sparkline("Control_Flow_Graphs")
 ```
 
-<div id="named-list-Control_FlowGraphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Control_Flow_Graphs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+14 graphs from the GraphViz test suite collected by Gansner and Hu to evaluate their PRISM algorithm in ”https://dx.doi.org/10.7155/jgaa.00198”. This is just a subset of [GraphViz](#Graphviz_Examples), so we link to that dataset instead.
+
+<div><b>Size: </b>14 graphs, from 36 to 1463 nodes</div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
+
+> Our data includes the same set of graphs that was used by the authors of
+PRISM to compare it with other algorithms [6]. The set is available in the
+Graphviz open source package.
+
+### Example Figures
+
+From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Control%20Flow%20Graphs%20af079f199a2c402d8633f6d41101934b/Untitled.png' width='80%'></div>
 
 ::: 
 
@@ -1810,121 +2544,479 @@ Unfortunately, some of the datasets that were used in the papers in our corpus a
 
 ::: {.callout-note title="GION" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("GION")
 ```
 
-<div id="named-list-GION" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-GION" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The data was originally collected for a Bioinformatics paper, [Graph-based clustering and characterization of repetitive sequences in next-generation sequencing data](https://doi.org/10.1186/1471-2105-11-378). It was then used in [GION: Interactively Untangling Large Graphs on Wall-Sized Displays](https://link.springer.com/chapter/10.1007/978-3-662-45803-7_10) as a benchmark for their layout and experiment. However, the links to the original data no longer work. It had <span class="pill-tag pill-tag-sparse">sparse</span>, <span class="pill-tag pill-tag-dense">dense</span> and <span class="pill-tag pill-tag-large">large</span> graphs.
+
+<div><b>Originally found at: </b><a href="http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip">http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip</a></div><br>
+<div><b>Number of Graphs: </b>8</div><br>
+<div><b>Size: </b>8 graphs, 1159-7885 nodes, 6424-427406 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Marner2014]</div><div class="col-8">GION: Interactively Untangling Large Graphs on Wall-Sized Displays</div></div><div class="row"><div class="col-4">[@novak_graph-based_2010]</div><div class="col-8">Graph-based clustering and characterization of repetitive sequences in next-generation sequencing data</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Eades2018]</div><div class="col-4">Drawing Big Graphs Using Spectral
+Sparsification</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Marner2014]</div><div class="col-4">GION: Interactively Untangling Large Graphs on Wall-Sized Displays</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Drawing Big Graphs Using Spectral Sparsification](https://doi.org/10.1007/978-3-319-73915-1_22)”:
+
+> this consists of RNA sequence graphs that are used for the analysis of repetitive sequences in sequencing data; these graphs have been used in previous experiments. They are locally dense and globally sparse, and generally have distinctive shapes.
+
+From “[GION: Interactively Untangling Large Graphs on Wall-Sized Displays](https://link.springer.com/chapter/10.1007/978-3-662-45803-7_10)”:
+
+> We selected graphs that come from a real world application where graph visualization is used for data analysis and the graph size and layout quality requirements pose a challenge for state-of-the-art layout methods. Our graph set consists of RNA sequence graphs that are used for the analysis of repetitive sequences in sequencing data [11].
+
+> Graph properties are provided in Table 1. The set of graphs can be downloaded from http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip. All graphs have high local density, and a sparse global structure that allows to create layouts far from hairballs that are showing the structure well.
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/GION%20fb235f160e504395a884f5a18fca6f17/Untitled.png' width='80%'></div>
+
+### Example Figures
+
+From “[GION: Interactively Untangling Large Graphs on Wall-Sized Displays](https://link.springer.com/chapter/10.1007/978-3-662-45803-7_10)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%201.png' width='80%'></div>
+
+From “[Graph-based clustering and characterization of repetitive sequences in next-generation sequencing data](https://link.springer.com/article/10.1186/1471-2105-11-378)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%202.png' width='80%'></div>
+
+**Fig. 4. Examples of graph layouts derived from clusters of repetitive sequences**. Graph layouts were calculated using the 3D version of Fruchterman and Reingold algorithm from which a 2D projection is shown. Individual reads are represented by vertices and similar reads are connected by edges. Individual clusters are described further in Table 1.
+
+<!-- === STOP RENDERING ===
+
+**NOTE: eliminate the relationships between different tables**
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%203.png' width='80%'></div>
+
+From [GION: Interactively Untangling Large Graphs on Wall-Sized Displays](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/GION%20Interactively%20Untangling%20Large%20Graphs%20on%20Wall%20774568ebdd114a8790c026bfa0b125f0.md) 
+Graph properties are provided in Table 1. The set of graphs can be downloaded from
+
+http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip. All graphs have high local density, and a sparse global structure that allows to create layouts far from hairballs that are showing the structure well
+
+Dead link! [http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip](http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip) ← Emailed [michael@20papercups.net](mailto:michael@20papercups.net) (seems to have left academia and this is the email under his personal website)
+_site:150:21 -->
 
 ::: 
 
+<a name="FM3"></a>
+
 ::: {.callout-note title="FM3" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("FM3")
 ```
 
-<div id="named-list-FM3" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-FM3" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+FM3 contains trees, path graphs, cycle graphs, scale-free graphs, caterpillar graphs, planar graphs, and generic graphs (connected simple graphs, generated with uniform probability distribution). Nonetheless, download links to data are broken.
+
+<div><b>Originally found at: </b><a href="http://www.felicedeluca.com/ply/data.html ">http://www.felicedeluca.com/ply/data.html </a>(broken)</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@felice2017]</div><div class="col-8">An Experimental Study on the Ply Number of Straight-Line Drawings”</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Heinsohn2018]</div><div class="col-4">An Interactive Tool to Explore and Improve the Ply Number of Drawings</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+
+### Descriptions from Literature
+
+From “[An Experimental Study on the Ply Number of Straight-Line Drawings](https://doi.org/10.1007/978-3-319-53925-6_11)”:
+
+> **Graph Datasets.** To understand whether the experimental results are influenced by the structure of the graph we considered several graph families. All graphs are of small or medium size, expressed as the number of their vertices. In some cases, the size and the number of instances used for each graph family depends on the type of question we want to answer (see Sect. 5 for details). We used the following datasets:
+**Trees.** Generated with uniform probability distribution using Pru ̈fer sequences [28].
+**Planar.** Connected simple planar graphs, generated with the OGDF library [6].
+**General.** Connected simple graphs, generated with uniform probability distribution.
+**Scale-free.** Scale-free graphs, generated according to the Barabasi-Albert model [2].
+**Caterpillars.** Each caterpillar of n vertices is generated by first creating a path (spine of the caterpillar) of length $k\in [ \frac{n}{4} , \frac{n}{2} ]$ (randomly chosen), and attaching each remaining vertex to a randomly selected vertex of the spine.
+**Paths, Cycles.** For each desired number of vertices n, there is only one (unlabeled) path and one (unlabeled) cycle of n vertices.
+**k-ary Trees.** Rooted trees where each node has either 0 or k children. Each tree is generated by starting with a single vertex and then creating k children of a randomly selected leaf, until the desired number n of vertices is achieved. When n cannot be obtained, we use a value close to it.
+
+From “[An Interactive Tool to Explore and Improve the Ply Number of Drawings](https://doi.org/10.1007/978-3-319-73915-1_4)”:
+
+> **FM3data** contains 50 caterpillars with 250 to 450 vertices… **FM3data** also contains planar graphs ranging from 250 to 400 vertices and a density ranging from 1.5 to 2… The remaining subset of **FM3data** consists of general graphs with 250 to 450 vertices and the densities 1.5 and 2.5.
+
+### Example Figures
+
+From “[An Experimental Study on the Ply Number of Straight-Line Drawings](https://doi.org/10.1007/978-3-319-53925-6_11)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/FM3%20b3dc638f5d7541b8b01105483c356e11/Screen_Shot_2023-08-16_at_3.26.01_PM.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+Download links seem to be broken… 😓 in website
+_site:150:21 -->
 
 ::: 
 
+<a name="Padia_Stories"></a>
+
 ::: {.callout-note title="Padia Stories" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Padia_Stories")
 ```
 
-<div id="named-list-Padia_Stories" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Padia_Stories" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+These consist of fabricated narratives for characters of popular culture franchises, namely “The Witcher” and “Friends”. They were proposed by Kapesh Padia et al. as case studies for [Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05). It had <span class="pill-tag pill-tag-temporal-event-sequence">temporal event sequences</span> and <span class="pill-tag pill-tag-layered-graphs">layered</span> graphs.
+
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@padia2018]</div><div class="col-8">Yarn: Generating Storyline Visualizations Using HTN Planning</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@padia2018]</div><div class="col-4">Yarn: generating storyline visualizations using HTN planning</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><div class="row"><div class="col-4">[@padia2019]</div><div class="col-4">A system for generating storyline visualizations using hierarchical task network planning</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+
+### Descriptions from Literature
+
+From ‘’[Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05)”:
+
+> For our first example we use a narrative adapted from the video game Witcher 2 to show the capabilities of Yarn. In our example narrative, the hero, Geralt of Rivia needs to rescue his friend, Triss Merigold, who has mysteriously disappeared. On his journey to find her he must first determine where she was seen last, talk to multiple friends, and resolve a conflict between a troll couple before he can meet her.
+There are two choice points in this narrative: first, Margot can either choose to help Geralt or refuse to provide help; second, the troll couple can either accept or reject Geralt’s solution to their conflict. Each of these choices affects the outcome of the narrative creating three possible timelines.
+The first timeline contains events favorable to Geralt. In this timeline, Margot agrees to help Geralt and the troll couple accept Geralt’s solution leading him to find Triss. Fig. 5 shows a visualization of this outcome as the reality timeline for our narrative. We can see that Geralt was able to successfully track Triss’s last known location, gather information from friends, resolve a conflict between the trolls, and meet Triss. Note that in this visualization we are showing the default, reality timeline and all links are drawn with 100% opacity. We can also observe all single-entity events in the narrative in this visualization.
+In the second timeline, the trolls reject Geralt’s solution to their conflict. Fig. 6 shows a visualization of this unfavorable outcome as diegetic timeline overlaid on top of the reality timeline. While most of the events are same in both timelines, the diegetic timeline ends at the event “Speak to She-Troll.” The reduced opacity of the reality timeline allows the user to compare common sections of the two timelines, even when one of them is smaller than the other.
+In the third timeline, Margot refuses to help Geralt preventing him from progressing further on his quest. This is the shortest timeline in our narrative.
+
+From ‘’[Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05)”:
+
+> For our second example we use a fictional narrative scenario based on the popular sitcom Friends.
+In this narrative, Ross’s plan is to take Rachel on a date. To do so, he must acquire more information about her, find some way of talking to her, ensure she is positively disposed towards him, and eventually ask her out. He can acquire more information about her in a number of ways including calling her mother, or asking Phoebe about her by either call or text. To ensure she is in a positive mood, he can either give her a gift or say nice things to her, and finally he can either ask her out himself or ask for Phoebe’s help. To illustrate causality of events in the narrative timeline, we have set up the operator functions for Rachel such that she is more inclined to say yes to Ross if he talks to her mother rather than requesting Phoebe’s help. Additionally, Rachel’s probability of accepting Ross’s proposal is also dependent on how impressed she is by him when he asks her.
+There are four choice points in this narrative: three for Ross, and one for Rachel. The choices made by Ross create 12 alternate timelines, each illustrating a different way in which he can ask Rachel out. Towards the end of each timeline Rachel can decide to either reply yes to Ross, or reply no, creating a total of 24 timelines.
+Fig. 7 shows a visualization where Rachel agrees to go out with Ross in both timelines. While the timelines result in the same outcome, and visually look the same, we can inspect the labels on top of the events in Ross’s timeline to identify the differences. Lighter labels correspond to the reality timeline, while darker labels correspond to the diegetic timeline. In the reality timeline, Ross decided to give a gift to Rachel after talking to her mom, while in the diegetic timeline he decided to act friendly with her.
+Fig. 8 shows another visualization for the same narrative. In this example we can see the effect of causal conditions set in the operator functions for Rachel. In the reality timeline, Rachel decided not to go out with Ross because he asked Phoebe for help by messaging her. On the other hand, she agreed to go out with him in the diegetic timeline because in this case Ross decided to talk to her mother.
+
+### Example Figures
+
+From ‘’[Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Padia%20Stories%20c02a38b9ea5e40bfb682ae77e2ac23af/Untitled.png' width='80%'></div>
 
 ::: 
 
 ::: {.callout-note title="Internet Mapping Project" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Internet_MappingProject")
+make_sparkline("Internet_Mapping_Project")
 ```
 
-<div id="named-list-Internet_MappingProject" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Internet_Mapping_Project" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The original Internet Mapping Project started at Bell lab in 1998. It was then transferred to the Lumeta Corporation, however, links to this corporation are broken.  A gallery of images still remains publicly available, hosted by Bill Cheswick on this personal website.
+
+<div><b>Originally found at: </b><a href="http://www.cheswick.com/ches/map/
+">http://www.cheswick.com/ches/map/
+</a><a href="http://www.lumeta.com/company/mapping.html ">http://www.lumeta.com/company/mapping.html </a>(broken)</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@burch1999]</div><div class="col-8">Mapping the Internet</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Gansner2005b]</div><div class="col-4">Topological fisheye views for visualizing large graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">high degree</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+### Description from Literature
+
+From “[Topological fisheye views for visualizing large graphs](https://doi.org/10.1109/TVCG.2005.66)”:
+
+> Fig. 7 shows two topological fisheye views of a published Internet map [4]. It is a large tree (|V|=87,931, |E|=87,930) made by tracing connections from a central probe to all reachable IP subnets. The full layout of this graph in Fig. 7a is too dense to read. In contrast, our approach, seen in Fig. 7b and Fig. 7c, yields useful views by focusing on different portions of the graph.
+
+### Example Figures
+
+From “[Internet Mapping Project: Map Gallery](http://www.cheswick.com/ches/map/gallery/index.html)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/isp-ss.gif' width='80%'></div>
+
+Layout showing the major ISPs.
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/Untitled.png' width='80%'></div>
+
+From “[Topological fisheye views for visualizing large graphs](https://doi.org/10.1109/TVCG.2005.66)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/Untitled%201.png' width='80%'></div>
+
+**Fig. 7.** This Internet map ((|V|=87,931, |E|=87,930)) is too large to visualize as a flat structure. Two topological fisheye views are shown. The focused sections in orange are the original graph. Peripheral areas, in blue, are simplified.
 
 ::: 
 
+Inaccessible as a dataset but still existing on the internet:
+
+<a name="Mathematics Genealogy"></a>
+
 ::: {.callout-note title="Mathematics Genealogy" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Mathematics_Genealogy")
 ```
 
-<div id="named-list-Mathematics_Genealogy" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Mathematics_Genealogy" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Database from a project started by Harry Coonce and now supported by the North Dakota State University. Refer to the <a href="https://mathgenealogy.org/contact.php ">https://mathgenealogy.org/contact.php</a> for the data, which consists of doctoral graduates in mathematics and some adjacent fields, alongside properties like the degree granting institution and tittle of thesis. Entries also have relations based on advisors. It has <span class="pill-tag pill-tag-non-planar">non-planar</span>, <span class="pill-tag pill-tag-dynamic-discrete">dynamic</span> and <span class="pill-tag pill-tag-tree">tree-like</span> graphs.
+
+<div><b>Originally found at: </b><a href="https://genealogy.math.ndsu.nodak.edu/">https://genealogy.math.ndsu.nodak.edu/</a></div><br>
+<div><b>Size: </b>291014 records as of May 2023. In 2016 the graph consisted of 200037 nodes with 3.8% percent of them being isolated, and 1962 components of size two. The largest component contained 180094 nodes.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@math2006-mw]</div><div class="col-8">The Mathematics Genealogy Project</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@gray2023]</div><div class="col-4">Visualizing Evolving Trees</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><br>
+
+### Description from Literature
+
+From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
+
+> **The Mathematics Genealogy:** shows advisor-advisee relationships in the world of mathematics, stretching back to the middle ages [[36](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23#ref-CR36)]. The dataset includes the thesis titles, students, advisors, dates, and number of descendants. The total number of nodes is around 260,000 and is continuously updated. While this data is not quite a tree (or even connected, or planar), we extract a subset to create a tree with 500 nodes. The maximum node degree of this tree is 5 and the radius is 14.
+
+### Example Figures
+
+From [The Mathematics Genealogy Project](https://genealogy.math.ndsu.nodak.edu/):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled.png' width='80%'></div>
+
+From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%201.png' width='80%'></div>
+
+**Fig. 4:** Layouts from DynNoSlice, DynaGraph, Dagre, Radial, ImPrEd, DynaCola and DynaSafe of the same evolving math genealogy tree; each row adds six new nodes.
+
+<!-- == STOP RENDERING ==
+
+[https://github.com/abureyanahmed/evolving_tree/tree/main/dataset](https://github.com/abureyanahmed/evolving_tree/tree/main/dataset)
+
+They make you request the data individually and in the linked form they have a note about not redistributing data:
+
+[mgp-permission-agreement.pdf](Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/mgp-permission-agreement.pdf)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%202.png' width='80%'></div>
+
+reached out to them 5/18/2023
+
+It is non-planar because multiple advisors can advise the same person or a person can have multiple advisors! Infact, there is a K3,3 in it
+
+In July 2016, Cosmin Ionita and Pat Quillen of 
+MathWorks used MATLAB to analyze the Math Genealogy Project graph. At 
+the time, the genealogy graph contained 200,037 vertices. There were 
+7639 (3.8%) isolated vertices and 1962 components of size two 
+(advisor-advisee pairs where we have no information about the advisor). 
+The largest component of the genealogy graph contained 180,094 vertices,
+ accounting for 90% of all vertices in the graph. The main component has
+ 7323 root vertices (individuals with no advisor) and 137,155 leaves 
+(mathematicians with no students), accounting for 76.2% of the vertices 
+in this component. The next largest component sizes were 81, 50, 47, 34,
+ 34, 33, 31, 31, and 30.
+For historical comparisonn, we also have data from June 2010, when 
+Professor David Joyner of the United States Naval Academy asked for data
+ from our database to analyze it as a graph. At the time, the genealogy 
+graph had 142,688 vertices. Of these, 7,190 were isolated vertices (5% 
+of the total). The largest component had 121,424 vertices (85% of the 
+total number). The next largest component had 128 vertices. The next 
+largest component sizes were 79, 61, 45, and 42. The most frequent size 
+of a nontrivial component was 2; there were 1937 components of size 2. 
+The component with 121,424 vertices had 4,639 root verticies, i.e., 
+mathematicians for whom the advisor is currently unknown.
+
+The Mathematics Genealogy Project graph is nonplanar. Thanks to 
+Professor Ezra Brown of Virginia Tech for assisting in finding the 
+subdivision of *K*3,3 depicted below. The green vertices
+ form one color class and the yellow ones form the other. Interestingly,
+ Gauß is the only vertex that needs to be connected by paths with more 
+than one edge.
+_site:150:21 -->
+
 
 ::: 
 
 ::: {.callout-note title="Medical Patient Records" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Medical_PatientRecords")
+make_sparkline("Medical_Patient_Records")
 ```
 
-<div id="named-list-Medical_PatientRecords" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Medical_Patient_Records" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Dataset was not found. It contained <span class="pill-tag pill-tag-spatial">spatial</span>, <span class="pill-tag pill-tag-multivariate">multivariate</span> data and <span class="pill-tag pill-tag-clusters-pre-existing">pre-existing clusters</span>. 
+
+<div><b>Download formatted data: </b></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@NanCao2011]</div><div class="col-4">DICON: Interactive Visual Analysis of Multidimensional Clusters</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">multivariate</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
+
+
+### Description from Literature
+
+From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
+
+> We also applied DICON within the healthcare domain to visualize a dataset containing more than 10,000 patient records. The data includes claims, labs, pharmacy, and patient profile information. To augment this data, we applied a patient similarity algorithm to compute patient similarity scores across multiple dimensions (e.g., diagnoses, lab results, etc.). We also indexed the patient records to make the data searchable.
+
+### Example Figures
+
+From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled.png' width='80%'></div>
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled%201.png' width='80%'></div>
+
+<!-- === STOP RENDERING ===
+
+Reached out to authors? ← saw this note but not Connor nor I
+_site:150:21 -->
 
 ::: 
+
+<a name="Assorted_Fiscal_Network"></a>
 
 ::: {.callout-note title="Assorted Fiscal Network" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
-make_sparkline("Assorted_FiscalNetwork")
+make_sparkline("Assorted_Fiscal_Network")
 ```
 
-<div id="named-list-Assorted_FiscalNetwork" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Assorted_Fiscal_Network" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The dataset is cited as being from an evaluation of TaxNet from Didimo et al. The authors claim how this system was adopted by the Italian Revenue Agency on a pilot program in Tuscany, where all the evaluations happened. The dataset is implied to be internal, with nodes corresponding to individual tax payers and the authors mentioning anonymizing data themselves for security reasons. It contained <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>, <span class="pill-tag pill-tag-high-degree">high degree</span> and <span class="pill-tag pill-tag-labeled-nodes">labeled nodes</span>.
+
+<div><b>Originally found at: </b>cannot find</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@DIDIMO201871]</div><div class="col-8">A visual analytics system to support tax evasion discovery</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Angori2019]</div><div class="col-4">ChordLink: A New Hybrid Visualization Model0</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">categorical nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">high degree</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div></div></div><br>
+
+## Descriptions from the Literature
+
+From “[CHORDLINK: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)”:
+
+> We considered a real network of taxpayers and their economic transactions. The network is provided by the IRV (Italian Revenue Agency) and refers to a portion of data for the fiscal year 2014, consisting of 174 subjects with high fiscal risk and 200 economic transactions between them [[11](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22#ref-CR11)].
+
+From “[A visual analytics system to support tax evasion discovery](https://www.sciencedirect.com/science/article/pii/S0167923618300563?via%3Dihub#s0015)”:
+
+> The data sources queried by the IRV officers are modeled in TaxNet as a unified network *G*. Each node *v* of *G* is a single taxpayer, which can be either an individual or a legal person, like a private company or a public institution. Many attributes are associated with *v*, including the type of economic activity, the geographic location and territorial scope, the declared income, the amount of VAT credits/debts and of VAT refunded/paid, and the amount of economic exchange within the European Union. The edges of *G* are directed edges. An edge (*u*,*v*) can model different types of relationships between *u* and *v*.
+
+## Example Figures
+
+From [CHORDLINK: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Fiscal%20Network%206610534d6d3b48c5a119b04659153258/Untitled.png' width='80%'></div>
+
+**Fig. 4.** A visualization obtained by selecting some communities in a node-link diagram.
+
+<!-- == STOP RENDERING ==
+
+[https://www.sciencedirect.com/science/article/abs/pii/S0167923618300563?via%3Dihub](https://www.sciencedirect.com/science/article/abs/pii/S0167923618300563?via%3Dihub) ← italian revenue agency
+_site:150:21 -->
+
 
 ::: 
 
+<a name="Debates"></a>
+
 ::: {.callout-note title="Debates" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Debates")
 ```
 
-<div id="named-list-Debates" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Debates" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+Created by researchers at the University of Konstanz for the [LingVis](https://lingvis.io/) framework and [VisArgue](http://www.visargue.uni-konstanz.de/en/) project. First appeared in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181).
+The authors did not respond to requests to make this dataset available. While the debate transcripts are publicly available, the entity relationship data generated in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181) is not. It has <span class="pill-tag pill-tag-categorical-nodes">categorical nodes</span>, <span class="pill-tag pill-tag-directed-edges">directed edges</span>, <span class="pill-tag pill-tag-labeled-nodes">labeled nodes</span> and <span class="pill-tag pill-tag-weighted-edges">weighted edges</span>.
+
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@elassady2017]</div><div class="col-8">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@elassady2017]</div><div class="col-4">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">categorical nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">directed edges</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">weighted edges</div></div></div><br>
+
+### Description from Literature
+
+From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
+
+> In order to explore the relations between entities, we use a distance-restricted model for creating entity-pairs. As described in Section 2, prior work considers relations between entities either as semantic relations based on linguistic knowledge or regards two entities as related due to their presence in the same document. The often ungrammatical structure of utterances in verbatim text transcripts (including non-standard lexical items, syntactic patterns, interruptions, repetitions, and crosstalk) requires a simple extralinguistic model. To overcome these limitations, we introduce a model that bounds the scope in which we consider two entities to be related, using a distance threshold (*maxDist*). Our method creates a pair of entities if the entities appear in the same sentences within *maxDist* words of one another.
+
+> However, not only are frequent entity-pairs important, but also pairs that are semantically similar (e.g., *cut $5 trillion*, *cut $4 trillion*). These often present opposing speaker opinions about a given topic. To maximize the chance that entity-pairs represent true semantic relations, we set the default value of *maxDist* to a low value (5 words). To vary the granularity of the analysis, the parameter can be changed interactively depending on the analysis task and data. Nevertheless, some infrequent longer-distance entity-pairs are discovered which do not represent salient relations. To reduce their impact, we calculate the average observed distance (in words) for each entity pair. We use both frequency and average distance in the visualization to reflect the strength of the entity-pair.
+
+### Example Figures
+
+From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0004-m.jpg' width='80%'></div>
+
+Entity graph of the first first presidential debate between Trump and Clinton
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0006-m.jpg' width='80%'></div>
+
+Entity graph of the same debate, focusing on the concept of taxes
 
 ::: 
 
+<a name="Car_Features"></a>
+
 ::: {.callout-note title="Car Features" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Car_Features")
 ```
 
-<div id="named-list-Car_Features" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Car_Features" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The origin of this dataset is not disclosed by the author. It is <span class="pill-tag pill-tag-spatial">spatial</span>, has <span class="pill-tag pill-tag-clusters-pre-existing">pre-existing clusters</span> and it is <span class="pill-tag pill-tag-multivariate">multivariate</span>.
+
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@NanCao2011]</div><div class="col-4">DICON: Interactive Visual Analysis of Multidimensional Clusters</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(11, 110, 153);">clusters (pre-existing)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">multivariate</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
+
+
+### Descriptions from Literature
+
+From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
+
+> We applied DICON to a cars dataset which has also been used to evaluate both parallel coordinates (PCP) and scatter plot matrices (SPM) (see Fig. 8(a) and (b)). The cars dataset contains 407 cars described by 7 different dimensions from which we selected 5 quantitative dimensions as features. The two remaining dimensions, year and origin, were used as additional attributes.
+
+### Example Figures
+
+From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Car%20Features%203365100498bc4a1eb77bcadcace2b2fa/IMG_0010.jpeg' width='80%'></div>
 
 ::: 
 
+<a name="Business Processes"></a>
+
 ::: {.callout-note title="Business Processes" collapse=true appearance="minimal"}
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 
 make_sparkline("Business_Processes")
 ```
 
-<div id="named-list-Business_Processes" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+<div id="named-list-Business_Processes" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The Origin Paper collects various graphs from a few of sources. Some of these datasets are from international business process intelligence challenges, and others are specific processes from companies in a certain domain (hospital, road traffic management, pay processes, etc.). Dataset links in supplemental materials are broken. After contacting the author, they mentioned that the other datasets were internal and could not be shared. It had <span class="pill-tag pill-tag-labeled-nodes">labeled nodes</span> and <span class="pill-tag pill-tag-layered-graphs">layered</span> graphs.
+
+<div><b>Originally found at: </b><a href="https://robinmennens.github.io/Portfolio/stableprocessgraphs.html">https://robinmennens.github.io/Portfolio/stableprocessgraphs.html</a></div><br>
+<div><b>Size: </b>13 graphs from 11 to 50 nodes and up to 772 edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@mennens2019]</div><div class="col-8">A Stable Graph Layout Algorithm for Processes</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@mennens2019]</div><div class="col-4">A stable graph layout algorithm for processes</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(15, 123, 108);">labeled nodes</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">layered graphs</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(173, 26, 114);">n-layers</div></div></div><br>
+
+### Description From Literature
+
+From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13723):
+
+> We use 13 datasets (see supplementary material), which represent real-world processes. For every dataset, we ran 500 tests on both methods. Each test involved a pair of randomly generated graphs  $G_1, G_2 \subseteq \bar{G}$  , which were obtained by randomly removing a subset of the edges $\bar{E}$ and then removing all nodes $n \in \bar{V}$ that became disconnected. Consequently, $G_1$ and $G_2$ are random sub-graphs of $\bar{G}$ .
+> 
+
+Table from Supplementary Materials:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled.png' width='80%'></div>
+
+### Example Figures
+
+From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13723):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled%201.png' width='80%'></div>
+
+<!-- == STOP RENDERING ==
+
+“Hi! Thanks for reaching out! The dataset used is an internal one that I cannot share unfortunately. Some other datasets were public datasets and I think I did include urls in my references” 
+
+-urls are broken -->
 
 ::: 
 
@@ -1934,6 +3026,8 @@ In the data we collected, we also found several instances of custom-made dataset
 For instance, consider the case where the authors of a paper develop an algorithm that works on hypergraphs. They want to test that the algorithm works, and test its performance on hypergraphs of various sizes, but datasets containing hypergraphs are difficult to find. For this reason, the authors craft one dataset synthetically, or take a pre-existing dataset and edit it so that it now contains hyperedges. 
 
 We split custom-made datasets in three categories, with their occurrences in the corpus of papers illustrated below:
+
+
 
 ```{ojs}
 //| echo: false
@@ -2009,143 +3103,3 @@ This information is closely tied to the distribution of supplemental material in
 This discussion is part of a larger discourse on research replicability, that is gaining traction in the scientific community. The ACM, for instance, has a policy on artifact review and badging, where authors are encouraged to submit their artifacts for review, and if they pass, they receive a badge that indicates the artifact is available for review. This is a step towards making research more replicable and reproducible, and we hope that our work will contribute to this effort. 
 
 See, e.g., ACM's definitions at [https://www.acm.org/publications/policies/artifact-review-and-badging-current](https://www.acm.org/publications/policies/artifact-review-and-badging-current).
-
-```{ojs}
-//| echo: false
-function make_dataset_name_and_title_list(chosen_collection_type, include_num_graphs){ 
-  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]).filter(c => c == chosen_collection_type);
-  let y_distance = 20;
-  let svgwidth = 700;
-  let numgraphs_offset = 40;
-
-  const svg = d3.create('svg')
-    .attr('width', svgwidth)
-    .attr('height', y_distance * collection_type.length + 60);
-
-  svg.append("text")
-    .attr("x", svgwidth/2)
-    .attr("y", 20)
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .text("List of datasets tagged as " + chosen_collection_type + " and their sources")
-
-  svg.append("text")
-      .attr("x", 200)
-      .attr("y", 45)
-      .style("text-anchor", "end")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Name")
-
-  if (include_num_graphs) {
-    svg.append("text")
-        .attr("x", 240)
-        .attr("y", 45)
-        .style("text-anchor", "middle")
-        .style("font-size", "small")
-        .style("fill", "#aaa")
-        .text("#Graphs")
-  }
-
-  svg.append("text")
-      .attr("x", 320 - (include_num_graphs ? 0 : numgraphs_offset))
-      .attr("y", 45)
-      .style("text-anchor", "middle")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Original link")
-
-  svg.append("text")
-      .attr("x", 370 - (include_num_graphs ? 0 : numgraphs_offset))
-      .attr("y", 45)
-      .style("text-anchor", "start")
-      .style("font-size", "small")
-      .style("fill", "#aaa")
-      .text("Origin paper / website")
-
-  for (let c of [... new Set(collection_type)]){
-    if (c == "Skip" || c == "Missed It") continue;
-    // console.log(c)
-    let instances = benchmark_datasets.filter(a => a["Type of Collection"] == c);
-    if (c.includes("No report")) c = "Established Network Repository";
-
-    for (let i in instances){
-      svg.append("text")
-        .attr("x", 200)
-        .attr("y", 65 + i * y_distance)
-        .style("text-anchor", "end")
-        .style("font-size", "small")
-        .text(instances[i]["Name"] + " ")
-
-      if (include_num_graphs){
-        svg.append("text")
-          .attr("x", 240)
-          .attr("y", 65 + i * y_distance)
-          .style("text-anchor", "middle")
-          .style("font-size", "small")
-          .text(instances[i]["Number of Graphs"] + " ")
-      }
-      
-      if (instances[i]["Originally found at"] != "" && instances[i]["Originally found at"] != undefined) {
-        const xPosOff = (include_num_graphs ? 0 : numgraphs_offset);
-        const yPos = (y_distance * i + 65);
-        svg.append("a")
-        .attr("href", instances[i]["Originally found at"])
-        .attr("transform", "translate("+ (310 - xPosOff) +", " + yPos + ")")
-        .attr("target", "_blank")
-        .append("text")
-        .text("[link]")
-        .style("fill", "#88d")
-        .style("font-size", "small")
-        
-        const paper = (paper_source.find(a => a.Name == instances[i]["Origin paper plaintext"]) || {})
-        let link = ""
-        if('bib' in paper){
-          const res = extractDOIUrl(paper.bib)
-          if (res) link = res;
-        }
-        
-        if(link != ""){
-          link = extractDOIUrl(paper.bib)
-          svg.append("a")
-          .attr("href", link)
-          .attr("transform", "translate("+ (370 - xPosOff)+", " + yPos + ")")
-          .attr("target", "_blank")
-          .append("text")
-          .text(instances[i]["Origin paper plaintext"].split("(")[0])
-          // .style("fill", "rgb(136, 136, 221)")
-          .style("fill","#1565c0")
-          .style("font-size", "small")
-        } else {
-          // What do we do here
-          svg.append("text")
-          .attr("transform", "translate("+ (370 - xPosOff)+", " + yPos + ")")
-          .text(instances[i]["Origin paper plaintext"].split("(")[0])
-          .style("fill", "#616161")
-          .style("font-size", "small")
-        }
-        
-      }
-    }
-  }
-
-  return svg.node();
-}
-
-function extractDOIUrl(bibtex) {
-    // Regular expression to find the DOI within the BibTeX entry
-    const doiRegex = /doi\s*=\s*{([^}]+)}/i;
-    
-    // Try to match the DOI in the BibTeX entry
-    const match = bibtex.match(doiRegex);
-    
-    // Check if a DOI was found
-    if (match) {
-        // Return the DOI as a full URL
-        return `https://doi.org/${match[1].trim()}`;
-    } else {
-        // Return null or an appropriate message if DOI is not found
-        return null;
-    }
-}
-```
