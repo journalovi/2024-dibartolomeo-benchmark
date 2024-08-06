@@ -5,34 +5,33 @@ The following chart shows how many times we found a dataset being used in the pa
 ```{ojs}
 //| echo: false
 { 
-  let d = []
+    let d = []
+    let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split("(")[0].trim()))].filter(a => a != "")
   
-  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split(",").map(a => a.split("(")[0].trim())).flat())].filter(a => a != "")
-  
-  allbenchmarkdatasets = allbenchmarkdatasets.filter(b => !b.includes("Custom"))
-  allbenchmarkdatasets = allbenchmarkdatasets.slice(0, 20)
+    allbenchmarkdatasets = allbenchmarkdatasets.filter(b => !b.includes("Custom"))
+    allbenchmarkdatasets = allbenchmarkdatasets.slice(0, 20)
+    console.log(allbenchmarkdatasets)
 
-  for (let dataset of allbenchmarkdatasets){
-    let literature_entries_with_this_dataset = literature.filter(l => l["Dataset tag relations"].includes(dataset))
-
-    d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
-  }
+    for (let dataset of allbenchmarkdatasets){
+        let literature_entries_with_this_dataset = literature.filter(l => l["Dataset tag relations"].includes(dataset))
+        d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
+    }
   
-  return Plot.plot({
-    color: {
+    return Plot.plot({
+        color: {
       // legend: true,
       // type: "categorical",
       // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
-      range: ["steelblue"],
+        range: ["steelblue"],
       // scheme: "Tableau10" // use the "accent" scheme
-    },
-    y: {
+        },
+        y: {
       // tickFormat: "s"
-    },
-    marks: [
-      Plot.barX(d, {x: "count", y: "dataset", fill: "dataset", inset: 2, sort: {y: "x", reverse: true}}),
-      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
-    ]
+        },
+        marks: [
+            Plot.barX(d, {x: "count", y: "dataset", fill: "dataset", inset: 2, sort: {y: "x", reverse: true}}),
+            Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
+        ]
   })
 }
 ```
