@@ -189,14 +189,6 @@ Specifically, we contribute:
   - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
 
 Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
-<!-- 
-```{python}
-import pandas as pd
-benchmark_data = pd.read_csv("data/Benchmark_datasets.csv")
-literature_data = pd.read_csv("data/Literature.csv")
-ojs_define(literature_pre = literature_data)
-``` 
--->
 
 ```{ojs}
 //| echo: false
@@ -222,8 +214,293 @@ paper_source = paper_sources_pre.filter(l => l.Name != "")
 
 For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. The following section defaults to illustrating the contents of Rome-Lib, but the reader can easily change the dataset in focus by modifying the value of the dropdown menu below:
 
-<!-- code to generate the collapsible dataset info things -->
 ```{ojs}
+//| echo: false
+function doify(text){
+        if (text == "" || text == undefined) return text;
+        if (text.includes("https")) return (text);
+        else return ("https://doi.org/" + text);
+    }
+```
+
+```{ojs}
+//| echo: false
+function add_simple_field(entry, field_name, div, name = ""){
+        if (entry[field_name] != "" && entry[field_name] != undefined){
+            let title = name === "" ? field_name : name;
+            div.append("div").html("<b>" + title + ": </b>" + urlify(entry[field_name]))
+        }
+    }
+```
+
+```{ojs}
+//| echo: false
+function add_download_field(entry, div){
+        let divSection = div.append("div").html("<b>" + "Download formatted data: " + "</b>");
+        const list = ['OSF link gexf', 'OSF link gml', 'OSF link graphml', 'OSF link json']
+
+        list.forEach((item)=>{
+            if(entry[item] != "" && entry[item] != undefined){
+                divSection.append("a")
+                // .attr('type', 'button')
+                .attr('href', entry[item])
+                .attr('class', 'btn btn-secondary btn-sm skinny-button')
+                .text(item.split("OSF link").pop().toUpperCase())
+            }   
+        })
+    }
+```
+
+```{ojs}
+//| echo: false
+function urlify(text) {
+        var urlRegex = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
+        return text.replace(urlRegex, function(url) {
+            return '<a href="' + url + '">' + url + '</a>';
+        })
+    }
+```
+
+```{ojs}
+//| echo: false
+function getTextAfterBody(input) {
+        const lines = input.split('\n');
+        let emptyLineCount = 0;
+        let text = '';
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim();
+            
+            if (line === '# Body') {
+                text = lines.slice(i + 1).join('\n');
+                // MathJax.typeset();
+            } 
+        }
+        
+        return text;
+    }
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+dict_of_graph_features_to_colors = {
+  let all_graph_features = [... new Set(benchmark_datasets.map(a => a["graph features handled"].split(",").map(a => a.trim())).flat().filter(a => a != ""))]
+  let d = {}
+  let colorscheme = d3.interpolateRainbow;
+  let count = 0;
+  for (let f in all_graph_features){
+    d[all_graph_features[f]] = d3.color(colorscheme(count++/all_graph_features.length)).darker(0.7)
+  }
+  return d;
+}
+```
+
+
+```{ojs}
+//| echo: false
+//| output: false
+{
+    document.querySelectorAll('a.dataset-link').forEach(item => {
+        item.addEventListener('click', function (e) {
+            // jumping is done by default with these links, we just need to get the collapsible to open up
+            let str = this.getAttribute('href')
+            // console.log('Link to ' + str + ' was clicked!'); // remember the str here has the hashtag in front!
+
+            // Prepare the identifier
+            // Remove the first character, assumed to hashtag 
+            const ident = str.split('#')[1] || '';
+
+            // find all the divs classed callout-titled and close them
+            document.querySelectorAll('.callout-titled').forEach(item => {
+                item.children[0].setAttribute('aria-expanded', 'false');
+                item.children[1].classList.remove('show');
+            });
+            
+            // find a div where the result of the function name_cleanup on its title attribute is equal to ident
+            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d => 
+              typeof d.getAttribute('title') === 'string' 
+              && (
+                name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
+                )
+              );
+
+            if (foundDiv) {
+                //console.log('Found div:', foundDiv);
+            
+                // Accessing the children of foundDiv
+                const children = foundDiv.children;
+                if (children.length >= 2) {
+                    // Assume the first child is the header and the second is the content container
+                    const header = children[0];
+                    const content = children[1];
+
+                    // Set aria-expanded to true on the header, this rotates the arrow icon on the right
+                    header.setAttribute('aria-expanded', 'true');
+
+                    // Add the 'show' class to the content container, this enables the content to be shown
+                    content.classList.add('show');
+                } else {
+                  console.error('Expected at least two children in the div');
+                }
+            } else {
+              console.error('Div not found');
+            }
+        });
+    });
+
+}
+```
+
+{{< include chapters/random_generation.qmd >}} 
+
+{{< include chapters/conclusion.qmd >}} 
+
+<!--
+
+## Interesting questions to answer
+
+Has the type of benchmark dataset used changed through the years?
+
+Do papers include supplemental material more frequently compared to previous years?
+
+-> Include a navigable analysis of the contents of the Datasets
+
+-> Include a table with dataset -> paper, split by graph feature
+
+-> Classification of the datasets
+
+## Examples
+
+Let's take a look at the AT&T dataset: -->
+<!-- ```{python}
+atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
+
+# display the field page id
+atnt_set.iloc[0]
+``` -->
+
+<!-- ```{python}
+atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
+
+# display the field page id
+atnt_set.iloc[0]["Related to Literature - Algorithm (1) (Dataset tag relations)"]
+``` -->
+
+<!-- ```{python}
+atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
+
+# display the field page id
+atnt_set.iloc[0]["Graph features in papers"]
+``` -->
+
+<!-- ## Setting up and writing a JoVI article {#setup}
+
+Articles on the JoVI experimental track are written in Quarto, which is a simple markdown-based text format. This template outlines some of the features that are most useful for writing academic articles in Quarto; for more visit <https://quarto.org>.
+
+You can find the source for this article in the [journalovi/jovi-template-quarto](https://github.com/journalovi/jovi-template-quarto) repository on Github. To create a new JoVI article, we recommend following these steps:
+
+1.  Install Quarto by following [these instructions](https://quarto.org/docs/getting-started/installation.html).
+
+2.  Create a new git repository to hold your article by [forking our template repository](https://github.com/journalovi/jovi-template-quarto).
+
+You can then edit `index.qmd` in your new repository to write your paper. There are several options for editing and rendering the paper:
+
+1.  You can execute `quarto serve` from the commandline to render the paper to `index.html` and preview it in the browser.
+
+2.  You can edit the paper in RStudio and render it by clicking on the *Render* button:
+
+    ![](images/rstudio-render-button.png){style="width: 382.5px" fig.alt="Click Render in the Rstudio toolbar to render a Quarto document."}
+
+**If you plan to use RStudio,** read more about RStudio and Quarto [here](https://quarto.org/docs/computations/using-rstudio.html). In particular, you should install RStudio \> version 1.5. If you do, you can also enable the visual editor:
+
+![](images/rstudio-visual-editor.png){style="width: 554.5px" fig.alt="Click the Settings button and then Use Visual Editor in the Rstudio toolbar to enable the visual editor."}
+
+## Citations and footnotes
+
+Citations can be inserted using `[@simkin2002read]`, which is rendered as: [@simkin2002read]. You can also format the citation just as the year with `[-@simkin2002read]`, though then we recommending including author names in the sentence; e.g. `Simkin and Roychowdhury [-@simkin2002read] said blah blah blah`: Simkin and Roychowdhury [-@simkin2002read] said blah blah blah. Citations for this paper are kept in `bibliography.bib` in BibTeX format.
+
+You can also insert footnotes.[^1] Note that some traditional uses of footnotes (e.g. to include URLs) are unnecessary in JoVI, as you can (and should) instead simply link directly to the URL you want to refer to with an [inline link](https://www.markdownguide.org/basic-syntax/#links).
+
+[^1]: Like this one!
+
+For more on footnotes and citations see [this Quarto documentation page](https://quarto.org/docs/authoring/footnotes-and-citations.html).
+
+## Figures and images
+
+Images can be included and for accessibility purposes **should always** have alt text. Alt text of visualizations should provide meaningful descriptions of the visualization.
+
+``` markdown
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal
+payoff for 10 conditions, showing an increase over time in most
+conditions, with dot50 having the highest value of
+approximately 97% of optimal."}
+```
+
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal payoff for 10 conditions, showing an increase over time in most conditions, with dot50 having the highest value of approximately 97% of optimal."}
+
+You can also add captions and figure references using a `:::` block combined with an id prefixed with `#fig-`:
+
+``` markdown
+::: {#fig-teaser}
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal
+payoff for 10 conditions, showing an increase over time in most
+conditions, with dot50 having the highest value of
+approximately 97% of optimal."}
+
+Mean expected payoff / optimal payoff for 10 conditions.
+:::
+```
+
+::: {#fig-teaser}
+![](images/teaser.svg){fig.alt="Mean expected payoff / optimal payoff for 10 conditions, showing an increase over time in most conditions, with dot50 having the highest value of approximately 97% of optimal."}
+
+Mean expected payoff / optimal payoff for 10 conditions.
+:::
+
+Then you can refer to the above figure in text using `@fig-teaser`; for example:
+
+Refer to @fig-teaser. For more on cross-references, see the [Quarto page on cross-references](https://quarto.org/docs/authoring/cross-references.html).
+
+For the highest-quality output, we recommend using SVG figures if possible.
+
+Quarto also contains classes for more complex figure layouts and subfigures, which we recommend using in most cases if you need more complex layouts; see [the Quarto page on figures](https://quarto.org/docs/authoring/figures-and-layout.html). That said, we encourage exploration of what is possible with online article formats, and you should feel free to experiment so long as the result is archivable, accessible, and readable.
+
+## Body text
+
+The basic body text, header formatting, and basic tags such as links, emphasis, etc should be left as-is except in rare cases (for which you should be able to demonstrate the value of your modifications). That said, we do encourage experimentation with what is possible in this format; some possibilities that just scrath the surface include: using color or other formatting to link text content semantically with figures; using inline figures; experimenting with interactive widgets in text and figures. So long as content retains archivability, accessibility, and readability, we welcome experimentation with the format.
+
+## Code
+
+Quarto supports R and python code; for example:
+
+## Equations
+
+Equations can be included using LaTeX syntax:
+
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+
+For more on equations, see [the corresponding section in the Quarto documentation](). -->
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+<script>
+notionFolders = Object()
+graph_feature_tags = []
+graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
+
+function name_cleanup(name){
+  return name.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "_").replaceAll(".", "").replaceAll("'", "").replaceAll("&", "").replaceAll(" ", "").replaceAll(",", "")
+}
+</script>
+
+<!-- code to generate the collapsible dataset info things -->
+<!-- ```{ojs}
 //| echo: false
 //| output: false
 {
@@ -239,17 +516,17 @@ make_sparkline("` + name_cleanup(dataset_to_be_visualized) + `")\n`
   }
   // console.log(s);
 }
-```
+``` -->
 
-{{< include chapters/dataset_detail_collapsibles.qmd >}} 
+<!-- {{< include chapters/dataset_detail_collapsibles.qmd >}}  -->
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 //| output: false
 viewof dataset_to_be_visualized = Inputs.select(benchmark_datasets.map(b => b.Name), {value: "Rome-Lib", label: "Dataset to visualize"})
-```
+``` -->
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 function make_sparkline(bname){
   let b = benchmark_datasets.find(l => name_cleanup(l.Name) == bname)["sparkline data"].replaceAll("'", '"')
@@ -269,11 +546,11 @@ function make_sparkline(bname){
   })
   } catch { return "No sparkline information to show" }
 }
-```
+``` -->
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 //| output: false
 {
@@ -289,9 +566,9 @@ function make_sparkline(bname){
     //else console.log("bname")
   }
 }
-```
+``` -->
 
-```{ojs}
+<!-- ```{ojs}
 //| echo: false
 async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_data, notionFolders){
 
@@ -448,303 +725,4 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
 
         console.log(entry, inforow.node().innerHTML.replaceAll("<br>", "<br>\n"))
 }
-```
-
-```{ojs}
-//| echo: false
-//| output: false
-notionFolders = Object()
-graph_feature_tags = []
-graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
-```
-
-<script>
-function name_cleanup(name){
-  return name.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "_").replaceAll(".", "").replaceAll("'", "").replaceAll("&", "").replaceAll(" ", "").replaceAll(",", "")
-}
-</script>
-
-```{ojs}
-//| echo: false
-function doify(text){
-        if (text == "" || text == undefined) return text;
-        if (text.includes("https")) return (text);
-        else return ("https://doi.org/" + text);
-    }
-```
-
-```{ojs}
-//| echo: false
-function add_simple_field(entry, field_name, div, name = ""){
-        if (entry[field_name] != "" && entry[field_name] != undefined){
-            let title = name === "" ? field_name : name;
-            div.append("div").html("<b>" + title + ": </b>" + urlify(entry[field_name]))
-        }
-    }
-```
-
-```{ojs}
-//| echo: false
-function add_download_field(entry, div){
-        let divSection = div.append("div").html("<b>" + "Download formatted data: " + "</b>");
-        const list = ['OSF link gexf', 'OSF link gml', 'OSF link graphml', 'OSF link json']
-
-        list.forEach((item)=>{
-            if(entry[item] != "" && entry[item] != undefined){
-                divSection.append("a")
-                // .attr('type', 'button')
-                .attr('href', entry[item])
-                .attr('class', 'btn btn-secondary btn-sm skinny-button')
-                .text(item.split("OSF link").pop().toUpperCase())
-            }   
-        })
-    }
-```
-
-```{ojs}
-//| echo: false
-function urlify(text) {
-        var urlRegex = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
-        return text.replace(urlRegex, function(url) {
-            return '<a href="' + url + '">' + url + '</a>';
-        })
-    }
-```
-
-```{ojs}
-//| echo: false
-//| output: false
-showdown = require('https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js')
-```
-
-```{ojs}
-//| echo: false
-function getTextAfterBody(input) {
-        const lines = input.split('\n');
-        let emptyLineCount = 0;
-        let text = '';
-
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim();
-            
-            if (line === '# Body') {
-                text = lines.slice(i + 1).join('\n');
-                // MathJax.typeset();
-            } 
-        }
-        
-        return text;
-    }
-```
-
-```{ojs}
-//| echo: false
-//| output: false
-dict_of_graph_features_to_colors = {
-  let all_graph_features = [... new Set(benchmark_datasets.map(a => a["graph features handled"].split(",").map(a => a.trim())).flat().filter(a => a != ""))]
-  let d = {}
-  let colorscheme = d3.interpolateRainbow;
-  let count = 0;
-  for (let f in all_graph_features){
-    d[all_graph_features[f]] = d3.color(colorscheme(count++/all_graph_features.length)).darker(0.7)
-  }
-  return d;
-}
-```
-
-
-```{ojs}
-//| echo: false
-//| output: false
-{
-    document.querySelectorAll('a.dataset-link').forEach(item => {
-        item.addEventListener('click', function (e) {
-            // jumping is done by default with these links, we just need to get the collapsible to open up
-            let str = this.getAttribute('href')
-            // console.log('Link to ' + str + ' was clicked!'); // remember the str here has the hashtag in front!
-
-            // Prepare the identifier
-            // Remove the first character, assumed to hashtag 
-            const ident = str.split('#')[1] || '';
-
-            // find all the divs classed callout-titled and close them
-            document.querySelectorAll('.callout-titled').forEach(item => {
-                item.children[0].setAttribute('aria-expanded', 'false');
-                item.children[1].classList.remove('show');
-            });
-            
-            // find a div where the result of the function name_cleanup on its title attribute is equal to ident
-            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d => 
-              typeof d.getAttribute('title') === 'string' 
-              && (
-                name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
-                )
-              );
-
-            if (foundDiv) {
-                //console.log('Found div:', foundDiv);
-            
-                // Accessing the children of foundDiv
-                const children = foundDiv.children;
-                if (children.length >= 2) {
-                    // Assume the first child is the header and the second is the content container
-                    const header = children[0];
-                    const content = children[1];
-
-                    // Set aria-expanded to true on the header, this rotates the arrow icon on the right
-                    header.setAttribute('aria-expanded', 'true');
-
-                    // Add the 'show' class to the content container, this enables the content to be shown
-                    content.classList.add('show');
-                } else {
-                  console.error('Expected at least two children in the div');
-                }
-            } else {
-              console.error('Div not found');
-            }
-        });
-    });
-
-}
-```
-
-
-
-
-
-{{< include chapters/random_generation.qmd >}} 
-
-{{< include chapters/conclusion.qmd >}} 
-
-<!--
-
-## Interesting questions to answer
-
-Has the type of benchmark dataset used changed through the years?
-
-Do papers include supplemental material more frequently compared to previous years?
-
--> Include a navigable analysis of the contents of the Datasets
-
--> Include a table with dataset -> paper, split by graph feature
-
--> Classification of the datasets
-
-## Examples
-
-Let's take a look at the AT&T dataset: -->
-<!-- ```{python}
-atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
-
-# display the field page id
-atnt_set.iloc[0]
 ``` -->
-
-<!-- ```{python}
-atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
-
-# display the field page id
-atnt_set.iloc[0]["Related to Literature - Algorithm (1) (Dataset tag relations)"]
-``` -->
-
-<!-- ```{python}
-atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
-
-# display the field page id
-atnt_set.iloc[0]["Graph features in papers"]
-``` -->
-
-<!-- ## Setting up and writing a JoVI article {#setup}
-
-Articles on the JoVI experimental track are written in Quarto, which is a simple markdown-based text format. This template outlines some of the features that are most useful for writing academic articles in Quarto; for more visit <https://quarto.org>.
-
-You can find the source for this article in the [journalovi/jovi-template-quarto](https://github.com/journalovi/jovi-template-quarto) repository on Github. To create a new JoVI article, we recommend following these steps:
-
-1.  Install Quarto by following [these instructions](https://quarto.org/docs/getting-started/installation.html).
-
-2.  Create a new git repository to hold your article by [forking our template repository](https://github.com/journalovi/jovi-template-quarto).
-
-You can then edit `index.qmd` in your new repository to write your paper. There are several options for editing and rendering the paper:
-
-1.  You can execute `quarto serve` from the commandline to render the paper to `index.html` and preview it in the browser.
-
-2.  You can edit the paper in RStudio and render it by clicking on the *Render* button:
-
-    ![](images/rstudio-render-button.png){style="width: 382.5px" fig.alt="Click Render in the Rstudio toolbar to render a Quarto document."}
-
-**If you plan to use RStudio,** read more about RStudio and Quarto [here](https://quarto.org/docs/computations/using-rstudio.html). In particular, you should install RStudio \> version 1.5. If you do, you can also enable the visual editor:
-
-![](images/rstudio-visual-editor.png){style="width: 554.5px" fig.alt="Click the Settings button and then Use Visual Editor in the Rstudio toolbar to enable the visual editor."}
-
-## Citations and footnotes
-
-Citations can be inserted using `[@simkin2002read]`, which is rendered as: [@simkin2002read]. You can also format the citation just as the year with `[-@simkin2002read]`, though then we recommending including author names in the sentence; e.g. `Simkin and Roychowdhury [-@simkin2002read] said blah blah blah`: Simkin and Roychowdhury [-@simkin2002read] said blah blah blah. Citations for this paper are kept in `bibliography.bib` in BibTeX format.
-
-You can also insert footnotes.[^1] Note that some traditional uses of footnotes (e.g. to include URLs) are unnecessary in JoVI, as you can (and should) instead simply link directly to the URL you want to refer to with an [inline link](https://www.markdownguide.org/basic-syntax/#links).
-
-[^1]: Like this one!
-
-For more on footnotes and citations see [this Quarto documentation page](https://quarto.org/docs/authoring/footnotes-and-citations.html).
-
-## Figures and images
-
-Images can be included and for accessibility purposes **should always** have alt text. Alt text of visualizations should provide meaningful descriptions of the visualization.
-
-``` markdown
-![](images/teaser.svg){fig.alt="Mean expected payoff / optimal
-payoff for 10 conditions, showing an increase over time in most
-conditions, with dot50 having the highest value of
-approximately 97% of optimal."}
-```
-
-![](images/teaser.svg){fig.alt="Mean expected payoff / optimal payoff for 10 conditions, showing an increase over time in most conditions, with dot50 having the highest value of approximately 97% of optimal."}
-
-You can also add captions and figure references using a `:::` block combined with an id prefixed with `#fig-`:
-
-``` markdown
-::: {#fig-teaser}
-![](images/teaser.svg){fig.alt="Mean expected payoff / optimal
-payoff for 10 conditions, showing an increase over time in most
-conditions, with dot50 having the highest value of
-approximately 97% of optimal."}
-
-Mean expected payoff / optimal payoff for 10 conditions.
-:::
-```
-
-::: {#fig-teaser}
-![](images/teaser.svg){fig.alt="Mean expected payoff / optimal payoff for 10 conditions, showing an increase over time in most conditions, with dot50 having the highest value of approximately 97% of optimal."}
-
-Mean expected payoff / optimal payoff for 10 conditions.
-:::
-
-Then you can refer to the above figure in text using `@fig-teaser`; for example:
-
-Refer to @fig-teaser. For more on cross-references, see the [Quarto page on cross-references](https://quarto.org/docs/authoring/cross-references.html).
-
-For the highest-quality output, we recommend using SVG figures if possible.
-
-Quarto also contains classes for more complex figure layouts and subfigures, which we recommend using in most cases if you need more complex layouts; see [the Quarto page on figures](https://quarto.org/docs/authoring/figures-and-layout.html). That said, we encourage exploration of what is possible with online article formats, and you should feel free to experiment so long as the result is archivable, accessible, and readable.
-
-## Body text
-
-The basic body text, header formatting, and basic tags such as links, emphasis, etc should be left as-is except in rare cases (for which you should be able to demonstrate the value of your modifications). That said, we do encourage experimentation with what is possible in this format; some possibilities that just scrath the surface include: using color or other formatting to link text content semantically with figures; using inline figures; experimenting with interactive widgets in text and figures. So long as content retains archivability, accessibility, and readability, we welcome experimentation with the format.
-
-## Code
-
-Quarto supports R and python code; for example:
-
-## Equations
-
-Equations can be included using LaTeX syntax:
-
-$$
-x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
-$$
-
-For more on equations, see [the corresponding section in the Quarto documentation](). -->
-
-## References {.unnumbered}
-
-::: {#refs}
-:::
