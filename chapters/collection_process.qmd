@@ -48,7 +48,7 @@ The chart below shows the distribution of papers across different venues:
 
 The following one, instead, shows the distribution of collected papers' publication date:
 
-<div id="years_distribution" style="width: 800px; height: 700px">
+<div id="years_distribution" style="max-width: 800px; width: 100%; height: 700px">
 <div id="tooltip" style="position: absolute; text-align: center; width: auto; height: auto; padding: 10px; font: 12px sans-serif; background: lightsteelblue; border: 0px; border-radius: 8px; pointer-events: none; opacity: 0;"></div>
 </div>
 
@@ -65,33 +65,34 @@ The following one, instead, shows the distribution of collected papers' publicat
     }
 
     const container = d3.select("#years_distribution");
-    const width = 800;
-    const height = 700;
-    const svg = container.append("svg") // Dynamically appending the SVG to the div container
+    let width = container.node().getBoundingClientRect().width; // Dynamic width based on container
+    const height = 700; // Fixed height
+    const margin = { top: 20, right: 60, bottom: 40, left: 60 };
+
+    const svg = container.append("svg")
         .attr("width", width)
         .attr("height", height);
 
-    const margin = {top: 20, right: 60, bottom: 40, left: 60}; // Adjusted left margin for label space
-
     const tooltip = d3.select("#tooltip");
 
+// Setup scales and axes
     const y = d3.scaleBand()
         .rangeRound([0, height - margin.top - margin.bottom])
         .padding(0.1)
         .domain(curr_data.map(d => d.year));
 
-    const x = d3.scaleLinear()
+    let x = d3.scaleLinear()
         .rangeRound([0, width - margin.left - margin.right])
         .domain([0, d3.max(curr_data, d => d.count)]);
 
     const g = svg.append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-
-    g.append("g")
+    // X-axis and labels
+    const xAxis = g.append("g")
         .attr("class", "axis axis--x")
         .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
-        .call(d3.axisBottom(x).ticks(10)) 
+        .call(d3.axisBottom(x).ticks(10))
         .append("text")
         .attr("x", width - margin.left - margin.right)
         .attr("y", -6)
@@ -99,23 +100,24 @@ The following one, instead, shows the distribution of collected papers' publicat
         .attr("text-anchor", "end")
         .text("Count");
 
+    // Y-axis
     g.append("g")
         .attr("class", "axis axis--y")
-        .call(d3.axisLeft(y).tickValues(curr_data.map(d => d.year).filter(year => year % 5 === 0))); 
+        .call(d3.axisLeft(y).tickValues(curr_data.map(d => d.year).filter(year => year % 5 === 0)));
 
-    // remove axis lines
+    // Hide axis lines
     g.selectAll(".axis--x path, .axis--y path")
         .attr("stroke", "none");
 
-
+    // Bars with tooltip
     g.selectAll(".bar")
         .data(curr_data)
         .enter().append("rect")
         .attr("class", "bar")
         .attr("y", d => y(d.year))
         .attr("height", y.bandwidth())
-        .attr("x", 0) // Start from the left
-        .attr("width", d => x(d.count)) // Set width based on the count
+        .attr("x", 0)
+        .attr("width", d => x(d.count))
         .style("fill", "steelblue")
         .on("mouseover", function(event, d) {
             tooltip.transition()
@@ -125,11 +127,23 @@ The following one, instead, shows the distribution of collected papers' publicat
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
         })
-        .on("mouseout", function(d) {
+        .on("mouseout", function() {
             tooltip.transition()
                 .duration(500)
                 .style("opacity", 0);
         });
+
+// Resize event listener to update dimensions
+    window.addEventListener('resize', () => {
+        width = container.node().getBoundingClientRect().width;
+        svg.attr('width', width);
+        x.rangeRound([0, width - margin.left - margin.right]);
+        xAxis.call(d3.axisBottom(x).ticks(10))
+            .select('text')
+            .attr('x', width - margin.left - margin.right);
+        g.selectAll(".bar")
+            .attr("width", d => x(d.count));
+    });
 }
 ```
 

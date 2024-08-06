@@ -327,8 +327,6 @@ The following interactive filtering system is an initial overview over the conte
             }
         }
     })
-    
-    console.log(tagMapping["hypergraphs"])
   
     literature.forEach((paper) => {
 
@@ -362,8 +360,8 @@ The following interactive filtering system is an initial overview over the conte
     var uniquePaperTags = [...uniquePaperTagSet]  
     //console.log(uniqueDataTags)
     //console.log(uniquePaperTagSet)
-    console.log(dataMap)
-    console.log(paperMap)
+    //console.log(dataMap)
+    //console.log(paperMap)
     //console.log(dataSetNames)
     //console.log(paperNames)
 

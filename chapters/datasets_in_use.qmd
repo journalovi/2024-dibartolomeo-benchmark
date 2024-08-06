@@ -10,7 +10,7 @@ The following chart shows how many times we found a dataset being used in the pa
   
     allbenchmarkdatasets = allbenchmarkdatasets.filter(b => !b.includes("Custom"))
     allbenchmarkdatasets = allbenchmarkdatasets.slice(0, 20)
-    console.log(allbenchmarkdatasets)
+    //console.log(allbenchmarkdatasets)
 
     for (let dataset of allbenchmarkdatasets){
         let literature_entries_with_this_dataset = literature.filter(l => l["Dataset tag relations"].includes(dataset))
