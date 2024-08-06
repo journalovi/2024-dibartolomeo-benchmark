@@ -274,7 +274,7 @@ The following interactive filtering system is an initial overview over the conte
 //| echo: false
 //| output: false
 {
-    console.log(benchmark_datasets)
+    //console.log(benchmark_datasets)
     var uniqueDataTagSet = new Set(); // set for the tags
     var uniquePaperTagSet = new Set();
     var dataSetNames = []; // list of names of datasets
@@ -283,9 +283,33 @@ The following interactive filtering system is an initial overview over the conte
     var paperMap = {} // maps from the tags to the individual papers
     var nameMap = {} // maps from the cleaned name to the actual name containing potentially special characters
 
-    console.log(literature)
+    //console.log(literature)
     // "Citation name": "bekos2022"
     // "Graph feature": "hypergraphs, spatial"
+    
+    const tagMapping = {
+    "hypergraphs": "hypergraph",
+    "spatial": "spatial",
+    "layered graphs": "layered graphs",
+    "generic": "generic",
+    "large": "large",
+    "dynamic (discrete)": "dynamic (discrete)",
+    "dynamic": "dynamic",
+    "clusters (generated)": "clusters (generated)",
+    "bundled edges (generated)": "bundled edges (generated)",
+    "directed edges": "directed edges",
+    "hierarchical": "hierarchical",
+    "categorical nodes": "categorical nodes",
+    "trees": "trees",
+    "labeled nodes": "labeled nodes",
+    "bipartite": "bipartite",
+    "tripartite": "bipartite",
+    "labeled edges": "labeled nodes",
+    "planar": "planar",
+    "sparse": "sparse",
+    "K-planar": "planar",
+    "2-planar": "planar"
+};
 
 
     benchmark_datasets.forEach((entry) => {
@@ -303,6 +327,8 @@ The following interactive filtering system is an initial overview over the conte
             }
         }
     })
+    
+    console.log(tagMapping["hypergraphs"])
   
     literature.forEach((paper) => {
 
@@ -311,15 +337,20 @@ The following interactive filtering system is an initial overview over the conte
       for (var part of parts) {
         if (part !== "") {
           uniquePaperTagSet.add(part);
-          if (!paperMap[part]) {
-            paperMap[part] = new Set();
+          
+          if (part in tagMapping) {
+              part = tagMapping[part]
           }
+          if (!paperMap[part]) {
+              paperMap[part] = new Set();
+          }
+          
           paperMap[part].add(paper["Citation name"]);
         }
       }
     })
   
-    // Add keys not present in the paperTags ( TODO: Some tags are just a letter off, please check )
+    // Add keys not present in the paperTags 
     Object.keys(dataMap).forEach((key) => {
       if (!paperMap[key]) {
         paperMap[key] = new Set();
@@ -330,9 +361,9 @@ The following interactive filtering system is an initial overview over the conte
     var uniqueDataTags = [...uniqueDataTagSet]
     var uniquePaperTags = [...uniquePaperTagSet]  
     //console.log(uniqueDataTags)
-    console.log(uniquePaperTagSet)
-    //console.log(dataMap)
-    //console.log(paperMap)
+    //console.log(uniquePaperTagSet)
+    console.log(dataMap)
+    console.log(paperMap)
     //console.log(dataSetNames)
     //console.log(paperNames)
 
