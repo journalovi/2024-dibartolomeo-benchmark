@@ -48,33 +48,88 @@ The chart below shows the distribution of papers across different venues:
 
 The following one, instead, shows the distribution of collected papers' publication date:
 
+<div id="years_distribution" style="width: 800px; height: 700px">
+<div id="tooltip" style="position: absolute; text-align: center; width: auto; height: auto; padding: 10px; font: 12px sans-serif; background: lightsteelblue; border: 0px; border-radius: 8px; pointer-events: none; opacity: 0;"></div>
+</div>
+
 ```{ojs}
 //| echo: false
-{ 
-  let d = []
-  let year_range = [1980, 2023]
-  for (let year = year_range[0]; year < year_range[1]; year++){
-    let literature_entries_with_this_year = literature.filter(l => parseInt(l["Year"]) == year);
+//| output: false
+{
+    let curr_data = [];
+    let year_range = [1980, 2024]; // including 1980, but excluding 2024
+    for (let year = year_range[0]; year < year_range[1]; year++) {
+        let literature_entries_with_this_year = literature.filter(l => parseInt(l["Year"]) == year);
 
-    d.push({"year": year, "count": literature_entries_with_this_year.length})
-  }
+        curr_data.push({"year": year, "count": literature_entries_with_this_year.length});
+    }
 
-  const tickPositions = d.map((d, i) => i).filter(i => i % 5 === 0);
-  
-  return Plot.plot({
-    color: {
-      range: ["steelblue"]
-    },
-    y: {
-      tickValues: tickPositions
-    },
-    height: 500,
-    marks: [
-      Plot.barX(d, {x: "count", y: "year", fill: "steelblue", inset: 2}),
-      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150, marginTop: 20, tickFormat: d3.format("d"), tickValues: tickPositions}),
-      Plot.text(['Year of publication of the papers included in the survey'], {frameAnchor: "Top",dy: -10})
-    ]
-  })
+    const container = d3.select("#years_distribution");
+    const width = 800;
+    const height = 700;
+    const svg = container.append("svg") // Dynamically appending the SVG to the div container
+        .attr("width", width)
+        .attr("height", height);
+
+    const margin = {top: 20, right: 60, bottom: 40, left: 60}; // Adjusted left margin for label space
+
+    const tooltip = d3.select("#tooltip");
+
+    const y = d3.scaleBand()
+        .rangeRound([0, height - margin.top - margin.bottom])
+        .padding(0.1)
+        .domain(curr_data.map(d => d.year));
+
+    const x = d3.scaleLinear()
+        .rangeRound([0, width - margin.left - margin.right])
+        .domain([0, d3.max(curr_data, d => d.count)]);
+
+    const g = svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+
+    g.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
+        .call(d3.axisBottom(x).ticks(10)) 
+        .append("text")
+        .attr("x", width - margin.left - margin.right)
+        .attr("y", -6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text("Count");
+
+    g.append("g")
+        .attr("class", "axis axis--y")
+        .call(d3.axisLeft(y).tickValues(curr_data.map(d => d.year).filter(year => year % 5 === 0))); 
+
+    // remove axis lines
+    g.selectAll(".axis--x path, .axis--y path")
+        .attr("stroke", "none");
+
+
+    g.selectAll(".bar")
+        .data(curr_data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("y", d => y(d.year))
+        .attr("height", y.bandwidth())
+        .attr("x", 0) // Start from the left
+        .attr("width", d => x(d.count)) // Set width based on the count
+        .style("fill", "steelblue")
+        .on("mouseover", function(event, d) {
+            tooltip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tooltip.html(`Year: ${d.year}<br/>Count: ${d.count}`)
+                .style("left", (event.pageX) + "px")
+                .style("top", (event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            tooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
 }
 ```
 
