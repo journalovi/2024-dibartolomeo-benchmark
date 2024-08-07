@@ -40,13 +40,33 @@ In the data we collected, the most used dataset is Rome-Lib, followed by assorte
 
 <!-- We deem the popularity of Rome-Lib to be due to its simplicity, versatility, and most importantly the fact that it is linked on graphdrawing.org and offered as a benchmark dataset there. This is also true for the North DAGs. -->
 
-In the following sections, the reader will find details about the classifications and datasets in detail. Each dataset gets a dedicated, collapsible section, that contains the following information:
-- A **sparkline** visualization is shown in case the dataset contains multiple graphs, illustrating the distribution of graph sizes (in nodes) in the graphs in the dataset.
+For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. 
 
+In the following sections, the reader will find details about the classifications and datasets in detail. Each dataset gets a dedicated, collapsible section, that contains the following information:
+
+- A brief summary description of the dataset, the reasons for its popularity, and notes about how it was created or collected.
+- Metadata containing:
+  - The original source of the dataset.
+  - Links to download the dataset in different formats, provided from our OSF repository.
+  - The size of the dataset.
+  - The original paper where the dataset was first introduced.
+  - A list of papers that have used the dataset, together with what features their graph layout algorithm handles.
+- Charts illustrating node and edge count distribution through the dataset, mean and maximum distribution.
+- Descriptions of the datasets lifted directly from the literature, which can help shine light on the content and properties of the dataset, how it was used in previous literature, or how it originated.
+- Figures collected from the literature, such as visualizations of the graphs, or other relevant information. The visualizations can help a reader looking for a specific type of graph to quickly identify if the dataset is relevant to their research.
 
 ## Classification of the Datasets
 
-We classified the datasets in different categories, based on their origins or amount of graphs contained in them:
+The datasets we collected are divided in different categories: the categorization we used is the same as the one used in @dibartolomeo2024evaluating. The following is a brief explanation of the categories used, which are explained in deeper detail in each one of the corresponding chapters.
+
+- **Uniform Benchmark (@sec-uniform-benchmark-datasets):** Datasets that are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
+- **Established Network Repository (@sec-established-network-repositories):** A collection of individual, or groups of graphs, part of a larger repository. These datasets are often used in evaluations that require a diverse set of graphs, or when the evaluation is focused on a specific type of graph. These collections usually also report on graphs with their own statistics or visualizations, providing a summary of the dataset. This category also includes **Subsets (@sec-subsets)**.
+- **Single Graphs (@sec-single-graphs):** The data used is comprised of one individual graph, which often contains special characteristics making it particularly relevant for the evaluation at hand. 
+- **Aggregate Collections (@sec-aggregate-collections):** Collections of graphs focusing on one specific context (such as forum posts, or airline routes) due to the given context having a special set of features that is relevant for a graph layout algorithm. 
+
+The type of collection informs various aspects of an evaluation, such as which results are relevant to report. For this discussion, we refer to @dibartolomeo2024evaluating, where the authors link the type of collection in the context of graph layout evaluations.
+
+The following visualization shows the amount of datasets we collected per category:
 
 ```{ojs}
 //| echo: false
@@ -59,18 +79,13 @@ We classified the datasets in different categories, based on their origins or am
     if (c == "Skip" || c == "Missed it") continue;
     let count = collection_type.filter(a => a == c).length;
     if (c.includes("No report")) c = "Established Network Repository";
+    if (c.includes("Lost")) continue;
     d.push({"collection_type": c, "count": count})
   }
   
   return Plot.plot({
     color: {
-      // legend: true,
-      // type: "categorical",
-      // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
-      scheme: "Tableau10" // use the "accent" scheme
-    },
-    y: {
-      // tickFormat: "s"
+      scheme: "Tableau10" 
     },
     marks: [
       Plot.barX(d, {x: "count", y: "collection_type", fill: "collection_type", inset: 2, sort: {y: "x", reverse: true}}),
@@ -80,11 +95,42 @@ We classified the datasets in different categories, based on their origins or am
 }
 ```
 
-### Tag-filtered Navigation
+Unfortunately, some of the datasets used in layout algorithm evaluations are not accessible anymore. Where possible, we still collected and reported all the information contained in the papers about the datasets, so that we can conserve an idea of what they contained. This phenomenon, as long as the information we could collect, is discussed in **Lost and Unavailable Datasets (@sec-lost)**.
+
+```{ojs}
+//| echo: false
+{ 
+  let d = []
+  
+  let collection_type = benchmark_datasets.map(a => a["Type of Collection"]);
+
+  for (let c of [... new Set(collection_type)]){
+    if (c == "Skip" || c == "Missed it") continue;
+    let count = collection_type.filter(a => a == c).length;
+    if (c.includes("No report")) c = "Established Network Repository";
+    if (!c.includes("Lost")) continue;
+    d.push({"collection_type": c, "count": count})
+  }
+  
+  return Plot.plot({
+    color: {
+      scheme: "PiYg" 
+    },
+    marks: [
+      Plot.barX(d, {x: "count", y: "collection_type", fill: "collection_type", inset: 2, sort: {y: "x", reverse: true}}),
+      Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
+    ]
+  })
+}
+```
+
+Finally, we include a discussion on **Custom-made Datasets (@sec-custom-made-datasets)**, synthetically generated datasets for the purpose of an experiment. 
+
+Each dataset also contains a number of graph features specific to the graphs contained in it. Authors might want to use a dataset that contains a specific feature, such as a graph with a high number of nodes, or a graph with a specific structure. The following interactive filtering systems allows for filtering of datasets (and papers) based on the features they contain.
 
 {{< include /chapters/interactive_filtering.qmd >}}
 
-### Uniform Benchmark datasets
+### Uniform Benchmark datasets {#sec-uniform-benchmark-datasets}
 
 **Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
 
@@ -878,7 +924,7 @@ Is it lost? -->
 
 ::: 
 
-### Established Network Repositories
+### Established Network Repositories {#sec-established-network-repositories}
 
 A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs. Because their hosts are already dedicated to the maintaining and reporting of information on these collections, we do not include here any storage of the data (which would be redundant) or report statistics on them. Rather, our analysis here is focused on highlighting their properties, origins, and ways in which they have been used. 
 
@@ -1102,7 +1148,237 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 ::: 
 
-### Single Graphs
+#### Subsets of other collections {#sec-subsets}
+
+Some of the datasets mentioned in the papers have, after a certain time, been integrated into other, larger collections. 
+This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the Walshaw dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be now found as part of many other larger collections. 
+In order to keep precise records about the data, we kept these instances separated, in order to link papers to the individual dataset they used if they explicitly mention using one of these smaller collections.
+We classified these datasets as **Subsets**.
+
+<a name="Walshaw"></a>
+
+::: {.callout-note title="Walshaw" collapse=true collapse-id="Walshaw" appearance="minimal"}
+
+C. Walshaw, collected for an archive of graph partitions which has been maintained since 2000.  These are multilevel mesh partitions of heterogeneous networks from a variety of domains.
+
+We do not provide the the data ourselves. Walshaw requests to be emailed for the distribution of the data, and so we link to their site and to the graphs found in the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
+
+It has <span class="pill-tag pill-tag-node-weighted">weighted nodes</span> and <span class="pill-tag pill-tag-edge-weighted">weighted edges</span> graphs, and the partitions of the 34 graphs are given with various partition sizes and imbalance percentages.
+
+<div><b>Originally found at: </b><a href="https://chriswalshaw.co.uk/partition/ ">https://chriswalshaw.co.uk/partition/ </a>where C. Walshaw requests to be emailed for the dataset at mailto:c.walshaw@gre.ac.uk. the individual graphs can also be found on the SuiteSparse Matrix Collection under different groups. 
+</div><br>
+<div><b>Size: </b>34 graphs, 2395-448695 nodes, 6837-3314611 edges. Node-weighted, edge-weighted. Partitions of the 34 graphs are given with various partition sizes and imbalance percentages.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@soper_combined_2004]</div><div class="col-8">A Combined Evolutionary Search and Multilevel Optimisation Approach to Graph Partitioning</div></div><div class="row"><div class="col-4">[@walshaw2000]</div><div class="col-8">Mesh Partitioning: a Multilevel Balancing and Refinement Algorithm</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@walshaw2001]</div><div class="col-4">A Multilevel Algorithm for Force-Directed Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@frishman2007]</div><div class="col-4">Multi-Level Graph Layout on the GPU</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@koren2002]</div><div class="col-4">ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@KOREN20051867]</div><div class="col-4">Drawing graphs by eigenvectors: theory and practice</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@civril2006]</div><div class="col-4">SDE: Graph Drawing Using Spectral Distance Embedding</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Efficient and High Quality Force-Directed Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Large-Graph Layout with the Fast Multipole Multilevel Method</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2005]</div><div class="col-4">Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Eades2018]</div><div class="col-4">Drawing Big Graphs Using Spectral
+Sparsification</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2006]</div><div class="col-4">An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@brandes2006]</div><div class="col-4">Eigensolver methods for progressive multidimensional scaling of large data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Gansner2005b]</div><div class="col-4">Topological fisheye views for visualizing large graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">high degree</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Frishman2008]</div><div class="col-4">Online Dynamic Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div></div></div><div class="row"><div class="col-4">[@Hong2019]</div><div class="col-4">Multi-level Graph Drawing Using Infomap Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">multilevel</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@meidiana2020]</div><div class="col-4">Sublinear Time Force Computation for Big Complex Network Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+
+### Descriptions from Literature
+
+From “[An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)”:
+
+> The rest of the test graphs are taken from real-world applications. In particular, we selected graphs from the AT&T graph library [1], from C. Walshaw’s graph collection [20], and a graph that describes a social network of 2113 people that we obtained from C. Lipp.
+
+From “[A Combined Evolutionary Search and Multilevel Optimisation Approach to Graph-Partitioning](https://doi.org/10.1023/B:JOGO.0000042115.44455.f3)”:
+
+> The test graphs have been chosen to be a representative sample of small to medium scale real-life problems (mostly mesh-based) and include both 2D and 3D examples of nodal graphs (where the mesh nodes are partitioned) and dual graphs (where the mesh elements are partitioned). In addition there is a 3D semi-structured graph, cti, which is unstructured in the x−y plane but extended regularly along the z-axis. Finally the test suite includes three non mesh-based graphs (add32, vibrobox, bcsstk32) which arise from various scientific computing applications2. None of the graphs have either vertex or edge weights; such graphs are not widely available since most applications do not accurately instrument costs and it is difficult to draw meaningful conclusions from the few examples that we have access to.
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled.png' width='80%'></div>
+
+### Example Figures
+
+From “[An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%201.png' width='80%'></div>
+
+From “[Multi-Level Graph Layout on the GPU](https://doi.org/10.1109/TVCG.2007.70580)”:
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%202.png' width='80%'></div>
+
+**Fig. 11.** 4elt. Red: our layout, black: Kamada-Kawai layout
+
+### Other
+
+From *[Group DIMACS10 in the SuiteSparse Matrix Collection](https://sparse.tamu.edu/DIMACS10)*:
+
+```
+Chris Walshaw's graph partitioning archive contains 34 graphs that
+    have been very popular as benchmarks for graph partitioning algorithms
+    ( http://staffweb.cms.gre.ac.uk/~wc06/partition/ ).
+
+    17 of them are already in the UF Collection.  Only the 17 new graphs
+    not yet in the collection are added here in the DIMACS10 set.
+
+DIMACS10 graph:                 new?   UF matrix:
+    ---------------                 ----   -------------
+    walshaw/144                      *     DIMACS10/144
+    walshaw/3elt                           AG-Monien/3elt
+    walshaw/4elt                           Pothen/barth5
+    walshaw/598a                     *     DIMACS10/598a
+    walshaw/add20                          Hamm/add20
+    walshaw/add32                          Hamm/add32
+    walshaw/auto                     *     DIMACS10/auto
+    walshaw/bcsstk29                       HB/bcsstk29
+    walshaw/bcsstk30                       HB/bcsstk30
+    walshaw/bcsstk31                       HB/bcsstk31
+    walshaw/bcsstk32                       HB/bcsstk32
+    walshaw/bcsstk33                       HB/bcsstk33
+    walshaw/brack2                         AG-Monien/brack2
+    walshaw/crack                          AG-Monient/crack
+    walshaw/cs4                      *     DIMACS10/cs4
+    walshaw/cti                      *     DIMACS10/cti
+    walshaw/data                     *     DIMACS10/data
+    walshaw/fe_4elt2                 *     DIMACS10/fe_4elt2
+    walshaw/fe_body                  *     DIMACS10/fe_body
+    walshaw/fe_ocean                 *     DIMACS10/fe_ocean
+    walshaw/fe_pwt                         Pothen/pwt
+    walshaw/fe_rotor                 *     DIMACS10/fe_rotor
+    walshaw/fe_sphere                *     DIMACS10/fe_sphere
+    walshaw/fe_tooth                 *     DIMACS10/fe_tooth
+    walshaw/finan512                       Mulvey/finan512
+    walshaw/m14b                     *     DIMACS10/m14b
+    walshaw/memplus                        Hamm/memplus
+    walshaw/t60k                     *     DIMACS10/t60k
+    walshaw/uk                       *     DIMACS10/uk
+    walshaw/vibrobox                       Cote/vibrobox
+    walshaw/wave                           AG-Monien/wave
+    walshaw/whitaker3                      AG-Monien/whitaker3
+    walshaw/wing                     *     DIMACS10/wing
+    walshaw/wing_nodal               *     DIMACS10/wing_nodal
+```
+
+<!-- === STOP RENDERING ===
+
+Made explicit that they want people to reach out to them for the dataset so we do not collect it. Also in Suite Sparse, and many of the graphs are included in the Scotch graph collection.
+
+From: [An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)
+
+<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%203.png' width='80%'></div>
+
+Graphs found on the Sparse Matrix Collection -->
+
+::: 
+
+<!-- ::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Pert_DAG")
+```
+
+<div id="named-list-Pert_DAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+:::  -->
+
+<a name="amazon"></a>
+
+::: {.callout-note title="Amazon" collapse=true appearance="minimal"} 
+
+Wallinger et al. randomly filter data from the original dataset collected by Leskovec et al. in The dynamics of viral marketing. Leskovec et al. collected 15 million recommendations made from June 2001, to May 2003 by looking at the “Customers who Bought This Item Also Bought” feature in the Amazon online shopping platform. This dataset is a subset of SNAP and can be found there. It has <span class="pill-tag pill-tag-directed">directed</span> edges and <span class="pill-tag pill-tag-large">large</span> graphs.
+
+<div><b>Originally found at: </b> <a href="http://snap.stanford.edu/data/#amazon">http://snap.stanford.edu/data/#amazon</a></div><br>
+<div><b>Size: </b>1 graph, 192k vertices and 269k edges</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@snapnets]</div><div class="col-8">SNAP Datasets: Stanford Large Network Dataset Collection</div></div><div class="row"><div class="col-4">[@leskovec2007]</div><div class="col-8">The dynamics of viral marketing</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Wallinger2022]</div><div class="col-4">Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
+
+### Description from Literature
+
+From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
+
+> **Amazon Subset**
+> This dataset consists of products with edges indicating that they are commonly co-purchased. We randomly filtered edges from the original graph [33], [34]. It has |V|=192k vertices and |E|=269k edges.
+
+### Example Figures
+
+From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png' width='80%'></div>
+
+<!-- == STOP RENDERING ==
+
+look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) 
+
+Note: Amazon is the only dataset not included in their GitHub. They randomly sampled a graph with 192k vertices and 269k edges from the data collected by Leskovec et al in the SNAP dataset
+
+Original dataset: [http://snap.stanford.edu/data/#amazon](http://snap.stanford.edu/data/#amazon)
+
+ doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph)
+_site:150:21 -->
+
+
+::: 
+
+<a name="Autonomous_System_Network"></a>
+
+::: {.callout-note title="Autonomous System Network" collapse=true appearance="minimal"}
+
+The 733-AS network is a subset of SNAP. We provide the link containing the original project, https://www.routeviews.org/routeviews/, and redirect to SNAP, <a href="https://snap.stanford.edu/data/as-733.html ">https://snap.stanford.edu/data/as-733.html </a>for the network data. In the dataset description they highlight how the graphs exhibit node and edge addition and deletion over time. 
+
+The data was originally part of the University of Oregon’s RouteViews project. It was then used by Jure Leskovec et al. and eventually stored in SNAP. It contains <span class="pill-tag pill-tag-large">dynamic</span> graphs.
+
+ <div><b>Originally found at: </b><a href="https://www.routeviews.org/routeviews/
+">https://www.routeviews.org/routeviews/
+</a><a href="https://snap.stanford.edu/data/as-733.html
+">https://snap.stanford.edu/data/as-733.html
+</a><a href="https://github.com/csuvis/MCGS/blob/master/dataset/AS-733_edge.csv">https://github.com/csuvis/MCGS/blob/master/dataset/AS-733_edge.csv</a></div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-8">Preserving Minority Structures in Graph Sampling</div></div><div class="row"><div class="col-4">[@leskovec2005]</div><div class="col-8">Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations</div></div><br>
+<div><b>Number of Graphs: </b>733</div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-4">Preserving Minority Structures in Graph Sampling</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
+
+> The AS-733 graph data set [48] is an autonomous systems network on the Internet with 6,474 nodes and 13,895 edges. The original graph and samples obtained by RDN, SST, MCGS are shown in Figure 5.
+
+From “[Graphs over time: densification laws, shrinking diameters and possible explanations](https://dl.acm.org/doi/10.1145/1081870.1081893)”
+
+> The graph of routers comprising the Internet can be organized into sub-graphs called Autonomous Systems (AS). Each AS exchanges traffic flows with some neighbors (peers).
+We can construct a communication network of who-talks-towhom from the BGP (Border Gateway Protocol) logs. We use the the Autonomous Systems (AS) dataset from [26]. The dataset contains 735 daily instances which span an interval of 785 days from November 8 1997 to January 2 2000.In contrast to citation networks, where nodes and edges only get added (not deleted) over time, the AS dataset also exhibits both the addition and deletion of the nodes and edges over time.
+
+### Example Figures
+
+From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Autonomous%20System%20Network%2096d24eb9c7f94ab6a6b38e6a3af816ae/Untitled.png' width='80%'></div>
+
+**Fig. 5.** Case analysis of the AS-733 graph data set (a) and three samples generated by RDN (b), SST(c), and MCGS (d) with a sampling rate of 30%.
+
+<!-- == STOP RENDERING ==
+
+Possibly related to something like this:
+
+[https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/](https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/) -->
+
+::: 
+
+<a name="Control_Flow_Graphs"></a>
+
+::: {.callout-note title="Control Flow Graphs" collapse=true appearance="minimal"}
+
+14 graphs from the GraphViz test suite collected by Gansner and Hu to evaluate their PRISM algorithm in ”https://dx.doi.org/10.7155/jgaa.00198”. This is just a subset of [GraphViz](#Graphviz_Examples), so we link to that dataset instead.
+
+<div><b>Size: </b>14 graphs, from 36 to 1463 nodes</div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
+
+### Descriptions from Literature
+
+From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
+
+> Our data includes the same set of graphs that was used by the authors of
+PRISM to compare it with other algorithms [6]. The set is available in the
+Graphviz open source package.
+
+### Example Figures
+
+From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Control%20Flow%20Graphs%20af079f199a2c402d8633f6d41101934b/Untitled.png' width='80%'></div>
+
+::: 
+
+### Single Graphs {#sec-single-graphs}
 
 A number of papers used individual, **Single Graphs** for their experiments instead of a collection. These graphs have become popular because of their properties as individual graphs - see, for example, the <a href="#Enron" class="dataset-link">Enron</a> dataset below, a huge individual graph that has a large variance in node degree distribution. Many of these graphs are also available in other repositories - their locations are noted wherever known.
 
@@ -1466,7 +1742,7 @@ Reached out to author - Alex Adai
 
 ::: 
 
-### Aggregate Collections
+### Aggregate Collections {#sec-aggregate-collections}
 
 Many papers use graphs from specific domains that contain particular characteristics, such as geographical coordinates often found in airline data. Instead of collecting each of these individual, contextual datasets, we aggregated them into subcategories called **Aggregate collections**. These collections group together datasets from the same real-life context, which may have multiple sources. Real-life contexts are distinguishable by specific properties or requirements found in graphs from those sources; for instance, collaboration networks can be represented as hypergraphs, while air traffic routes have nodes (airports) with fixed spatial coordinates and numerous edges connecting the nodes, making them suitable for edge bundling algorithms. Individual information about each aggregate collection can be found in the papers that contain them.
 
@@ -2032,233 +2308,6 @@ _site:150:21
 
 ::: 
 
-### Subsets of other collections
-
-Finally, we collected some datasets that we noticed being subsets of existing collections. This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the Walshaw dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be found as part of many other larger collections, such as SNAP. We classified these datasets as **Subsets**.
-
-<a name="Walshaw"></a>
-
-::: {.callout-note title="Walshaw" collapse=true collapse-id="Walshaw" appearance="minimal"}
-
-C. Walshaw, collected for an archive of graph partitions which has been maintained since 2000.  These are multilevel mesh partitions of heterogeneous networks from a variety of domains.
-
-We do not provide the the data ourselves. Walshaw requests to be emailed for the distribution of the data, and so we link to their site and to the graphs found in the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
-
-It has <span class="pill-tag pill-tag-node-weighted">weighted nodes</span> and <span class="pill-tag pill-tag-edge-weighted">weighted edges</span> graphs, and the partitions of the 34 graphs are given with various partition sizes and imbalance percentages.
-
-<div><b>Originally found at: </b><a href="https://chriswalshaw.co.uk/partition/ ">https://chriswalshaw.co.uk/partition/ </a>where C. Walshaw requests to be emailed for the dataset at mailto:c.walshaw@gre.ac.uk. the individual graphs can also be found on the SuiteSparse Matrix Collection under different groups. 
-</div><br>
-<div><b>Size: </b>34 graphs, 2395-448695 nodes, 6837-3314611 edges. Node-weighted, edge-weighted. Partitions of the 34 graphs are given with various partition sizes and imbalance percentages.</div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@soper_combined_2004]</div><div class="col-8">A Combined Evolutionary Search and Multilevel Optimisation Approach to Graph Partitioning</div></div><div class="row"><div class="col-4">[@walshaw2000]</div><div class="col-8">Mesh Partitioning: a Multilevel Balancing and Refinement Algorithm</div></div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@walshaw2001]</div><div class="col-4">A Multilevel Algorithm for Force-Directed Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">clusters (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@frishman2007]</div><div class="col-4">Multi-Level Graph Layout on the GPU</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@koren2002]</div><div class="col-4">ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@KOREN20051867]</div><div class="col-4">Drawing graphs by eigenvectors: theory and practice</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4">[@civril2006]</div><div class="col-4">SDE: Graph Drawing Using Spectral Distance Embedding</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Efficient and High Quality Force-Directed Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">Large-Graph Layout with the Fast Multipole Multilevel Method</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2005]</div><div class="col-4">Drawing Large Graphs with a Potential-Field-Based Multilevel Algorithm</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Eades2018]</div><div class="col-4">Drawing Big Graphs Using Spectral
-Sparsification</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Hachul2006]</div><div class="col-4">An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@brandes2006]</div><div class="col-4">Eigensolver methods for progressive multidimensional scaling of large data</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Gansner2005b]</div><div class="col-4">Topological fisheye views for visualizing large graphs</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">high degree</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><div class="row"><div class="col-4">[@Frishman2008]</div><div class="col-4">Online Dynamic Graph Drawing</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div></div></div><div class="row"><div class="col-4">[@Hong2019]</div><div class="col-4">Multi-level Graph Drawing Using Infomap Clustering</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(105, 64, 165);">multilevel</div></div></div><div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><div class="row"><div class="col-4">[@meidiana2020]</div><div class="col-4">Sublinear Time Force Computation for Big Complex Network Visualization</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
-
-
-### Descriptions from Literature
-
-From “[An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)”:
-
-> The rest of the test graphs are taken from real-world applications. In particular, we selected graphs from the AT&T graph library [1], from C. Walshaw’s graph collection [20], and a graph that describes a social network of 2113 people that we obtained from C. Lipp.
-
-From “[A Combined Evolutionary Search and Multilevel Optimisation Approach to Graph-Partitioning](https://doi.org/10.1023/B:JOGO.0000042115.44455.f3)”:
-
-> The test graphs have been chosen to be a representative sample of small to medium scale real-life problems (mostly mesh-based) and include both 2D and 3D examples of nodal graphs (where the mesh nodes are partitioned) and dual graphs (where the mesh elements are partitioned). In addition there is a 3D semi-structured graph, cti, which is unstructured in the x−y plane but extended regularly along the z-axis. Finally the test suite includes three non mesh-based graphs (add32, vibrobox, bcsstk32) which arise from various scientific computing applications2. None of the graphs have either vertex or edge weights; such graphs are not widely available since most applications do not accurately instrument costs and it is difficult to draw meaningful conclusions from the few examples that we have access to.
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled.png' width='80%'></div>
-
-### Example Figures
-
-From “[An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)”:
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%201.png' width='80%'></div>
-
-From “[Multi-Level Graph Layout on the GPU](https://doi.org/10.1109/TVCG.2007.70580)”:
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%202.png' width='80%'></div>
-
-**Fig. 11.** 4elt. Red: our layout, black: Kamada-Kawai layout
-
-### Other
-
-From *[Group DIMACS10 in the SuiteSparse Matrix Collection](https://sparse.tamu.edu/DIMACS10)*:
-
-```
-Chris Walshaw's graph partitioning archive contains 34 graphs that
-    have been very popular as benchmarks for graph partitioning algorithms
-    ( http://staffweb.cms.gre.ac.uk/~wc06/partition/ ).
-
-    17 of them are already in the UF Collection.  Only the 17 new graphs
-    not yet in the collection are added here in the DIMACS10 set.
-
-DIMACS10 graph:                 new?   UF matrix:
-    ---------------                 ----   -------------
-    walshaw/144                      *     DIMACS10/144
-    walshaw/3elt                           AG-Monien/3elt
-    walshaw/4elt                           Pothen/barth5
-    walshaw/598a                     *     DIMACS10/598a
-    walshaw/add20                          Hamm/add20
-    walshaw/add32                          Hamm/add32
-    walshaw/auto                     *     DIMACS10/auto
-    walshaw/bcsstk29                       HB/bcsstk29
-    walshaw/bcsstk30                       HB/bcsstk30
-    walshaw/bcsstk31                       HB/bcsstk31
-    walshaw/bcsstk32                       HB/bcsstk32
-    walshaw/bcsstk33                       HB/bcsstk33
-    walshaw/brack2                         AG-Monien/brack2
-    walshaw/crack                          AG-Monient/crack
-    walshaw/cs4                      *     DIMACS10/cs4
-    walshaw/cti                      *     DIMACS10/cti
-    walshaw/data                     *     DIMACS10/data
-    walshaw/fe_4elt2                 *     DIMACS10/fe_4elt2
-    walshaw/fe_body                  *     DIMACS10/fe_body
-    walshaw/fe_ocean                 *     DIMACS10/fe_ocean
-    walshaw/fe_pwt                         Pothen/pwt
-    walshaw/fe_rotor                 *     DIMACS10/fe_rotor
-    walshaw/fe_sphere                *     DIMACS10/fe_sphere
-    walshaw/fe_tooth                 *     DIMACS10/fe_tooth
-    walshaw/finan512                       Mulvey/finan512
-    walshaw/m14b                     *     DIMACS10/m14b
-    walshaw/memplus                        Hamm/memplus
-    walshaw/t60k                     *     DIMACS10/t60k
-    walshaw/uk                       *     DIMACS10/uk
-    walshaw/vibrobox                       Cote/vibrobox
-    walshaw/wave                           AG-Monien/wave
-    walshaw/whitaker3                      AG-Monien/whitaker3
-    walshaw/wing                     *     DIMACS10/wing
-    walshaw/wing_nodal               *     DIMACS10/wing_nodal
-```
-
-<!-- === STOP RENDERING ===
-
-Made explicit that they want people to reach out to them for the dataset so we do not collect it. Also in Suite Sparse, and many of the graphs are included in the Scotch graph collection.
-
-From: [An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)
-
-<div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%203.png' width='80%'></div>
-
-Graphs found on the Sparse Matrix Collection -->
-
-::: 
-
-<!-- ::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
-
-```{ojs}
-//| echo: false
-
-make_sparkline("Pert_DAG")
-```
-
-<div id="named-list-Pert_DAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-:::  -->
-
-<a name="amazon"></a>
-
-::: {.callout-note title="Amazon" collapse=true appearance="minimal"} 
-
-Wallinger et al. randomly filter data from the original dataset collected by Leskovec et al. in The dynamics of viral marketing. Leskovec et al. collected 15 million recommendations made from June 2001, to May 2003 by looking at the “Customers who Bought This Item Also Bought” feature in the Amazon online shopping platform. This dataset is a subset of SNAP and can be found there. It has <span class="pill-tag pill-tag-directed">directed</span> edges and <span class="pill-tag pill-tag-large">large</span> graphs.
-
-<div><b>Originally found at: </b> <a href="http://snap.stanford.edu/data/#amazon">http://snap.stanford.edu/data/#amazon</a></div><br>
-<div><b>Size: </b>1 graph, 192k vertices and 269k edges</div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@snapnets]</div><div class="col-8">SNAP Datasets: Stanford Large Network Dataset Collection</div></div><div class="row"><div class="col-4">[@leskovec2007]</div><div class="col-8">The dynamics of viral marketing</div></div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Wallinger2022]</div><div class="col-4">Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(155, 154, 151);">bundled edges (generated)</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(223, 171, 1);">spatial</div></div></div><br>
-
-### Description from Literature
-
-From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
-
-> **Amazon Subset**
-> This dataset consists of products with edges indicating that they are commonly co-purchased. We randomly filtered edges from the original graph [33], [34]. It has |V|=192k vertices and |E|=269k edges.
-
-### Example Figures
-
-From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
-
-<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png' width='80%'></div>
-
-<!-- == STOP RENDERING ==
-
-look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) 
-
-Note: Amazon is the only dataset not included in their GitHub. They randomly sampled a graph with 192k vertices and 269k edges from the data collected by Leskovec et al in the SNAP dataset
-
-Original dataset: [http://snap.stanford.edu/data/#amazon](http://snap.stanford.edu/data/#amazon)
-
- doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph)
-_site:150:21 -->
-
-
-::: 
-
-<a name="Autonomous_System_Network"></a>
-
-::: {.callout-note title="Autonomous System Network" collapse=true appearance="minimal"}
-
-The 733-AS network is a subset of SNAP. We provide the link containing the original project, https://www.routeviews.org/routeviews/, and redirect to SNAP, <a href="https://snap.stanford.edu/data/as-733.html ">https://snap.stanford.edu/data/as-733.html </a>for the network data. In the dataset description they highlight how the graphs exhibit node and edge addition and deletion over time. 
-
-The data was originally part of the University of Oregon’s RouteViews project. It was then used by Jure Leskovec et al. and eventually stored in SNAP. It contains <span class="pill-tag pill-tag-large">dynamic</span> graphs.
-
- <div><b>Originally found at: </b><a href="https://www.routeviews.org/routeviews/
-">https://www.routeviews.org/routeviews/
-</a><a href="https://snap.stanford.edu/data/as-733.html
-">https://snap.stanford.edu/data/as-733.html
-</a><a href="https://github.com/csuvis/MCGS/blob/master/dataset/AS-733_edge.csv">https://github.com/csuvis/MCGS/blob/master/dataset/AS-733_edge.csv</a></div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-8">Preserving Minority Structures in Graph Sampling</div></div><div class="row"><div class="col-4">[@leskovec2005]</div><div class="col-8">Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations</div></div><br>
-<div><b>Number of Graphs: </b>733</div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-4">Preserving Minority Structures in Graph Sampling</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">generic</div></div></div><br>
-
-### Descriptions from Literature
-
-From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
-
-> The AS-733 graph data set [48] is an autonomous systems network on the Internet with 6,474 nodes and 13,895 edges. The original graph and samples obtained by RDN, SST, MCGS are shown in Figure 5.
-
-From “[Graphs over time: densification laws, shrinking diameters and possible explanations](https://dl.acm.org/doi/10.1145/1081870.1081893)”
-
-> The graph of routers comprising the Internet can be organized into sub-graphs called Autonomous Systems (AS). Each AS exchanges traffic flows with some neighbors (peers).
-We can construct a communication network of who-talks-towhom from the BGP (Border Gateway Protocol) logs. We use the the Autonomous Systems (AS) dataset from [26]. The dataset contains 735 daily instances which span an interval of 785 days from November 8 1997 to January 2 2000.In contrast to citation networks, where nodes and edges only get added (not deleted) over time, the AS dataset also exhibits both the addition and deletion of the nodes and edges over time.
-
-### Example Figures
-
-From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
-
-<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Autonomous%20System%20Network%2096d24eb9c7f94ab6a6b38e6a3af816ae/Untitled.png' width='80%'></div>
-
-**Fig. 5.** Case analysis of the AS-733 graph data set (a) and three samples generated by RDN (b), SST(c), and MCGS (d) with a sampling rate of 30%.
-
-<!-- == STOP RENDERING ==
-
-Possibly related to something like this:
-
-[https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/](https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/) -->
-
-::: 
-
-<a name="Control_Flow_Graphs"></a>
-
-::: {.callout-note title="Control Flow Graphs" collapse=true appearance="minimal"}
-
-14 graphs from the GraphViz test suite collected by Gansner and Hu to evaluate their PRISM algorithm in ”https://dx.doi.org/10.7155/jgaa.00198”. This is just a subset of [GraphViz](#Graphviz_Examples), so we link to that dataset instead.
-
-<div><b>Size: </b>14 graphs, from 36 to 1463 nodes</div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(224, 62, 62);">large</div></div></div><br>
-
-### Descriptions from Literature
-
-From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
-
-> Our data includes the same set of graphs that was used by the authors of
-PRISM to compare it with other algorithms [6]. The set is available in the
-Graphviz open source package.
-
-### Example Figures
-
-From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
-
-<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Control%20Flow%20Graphs%20af079f199a2c402d8633f6d41101934b/Untitled.png' width='80%'></div>
-
-::: 
-
 ### Lost and unavailable datasets {#sec-lost}
 
 Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
@@ -2662,7 +2711,7 @@ From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley
 -urls are broken -->
 ::: 
 
-### Custom-made datasets
+### Custom-made Datasets {#sec-custom-made-datasets}
 In the data we collected, we also found several instances of custom-made datasets. We consider custom-made datasets either edits to pre-existing datasets, where the authors found it necessary to either split or modify the dataset in a particular way, or datasets completely made up from scratch using random generators or custom-made code. This can happen in cases where the authors of a paper needed a dataset containing particular characteristics which was not easy to find in the wild, so a new dataset was crafted.
 
 For instance, consider the case where the authors of a paper develop an algorithm that works on hypergraphs. They want to test that the algorithm works, and test its performance on hypergraphs of various sizes, but datasets containing hypergraphs are difficult to find. For this reason, the authors craft one dataset synthetically, or take a pre-existing dataset and edit it so that it now contains hyperedges. 

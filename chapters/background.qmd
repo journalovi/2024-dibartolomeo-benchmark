@@ -56,5 +56,5 @@ They also propose a visual system and prototype that could be conceptually used 
 A major emphasis of our work was to provide several file formats to facilitate the use of other tools and allow researchers greater ease of use. 
 
 Therefore, we intend to create a network repository of graph collections tailored explicitly for evaluating graph layout algorithms. This is provided by linking collections to graph features present in the datasets (dynamic, layered, containing clusters, etc.), providing analysis and examples of usage in previous research to aid in discovering and finding relevant datasets.
- We describe the curated collections in [Sec:Large] and uniform benchmark datasets in [Sec: Benchmarks].
+We describe the curated collections in [Sec:Large] and uniform benchmark datasets in [Sec: Benchmarks].
 

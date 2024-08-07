@@ -149,7 +149,7 @@ The following one, instead, shows the distribution of collected papers' publicat
 
 After collecting the datasets, we looked more in-depth into their contents, running analysis on a number of statistics associated with the graphs contained in them. 
 
-We finally ended up collecting 46 datasets, listed below:
+<!-- We finally ended up collecting 46 datasets, listed below: -->
 
 ```{ojs}
 //| echo: false

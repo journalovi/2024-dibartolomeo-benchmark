@@ -210,9 +210,6 @@ paper_source = paper_sources_pre.filter(l => l.Name != "")
  
 {{< include chapters/datasets_in_use.qmd >}} 
 
-## Details of the datasets
-
-For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. The following section defaults to illustrating the contents of Rome-Lib, but the reader can easily change the dataset in focus by modifying the value of the dropdown menu below:
 
 ```{ojs}
 //| echo: false
