@@ -17,11 +17,14 @@ This work was supported in part by the U.S. National Science Foundation (NSF) un
 
 # Authorship {#sec-authorship}
 
-* **Sara Di Bartolomeo** <a href="https://orcid.org/0000-0001-9517-3526"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Conceptualization, Data Collection & Categorization, Writing Original Draft + Review & Editing, Visualization, Validation.
-* **Eduardo Puerta** <a href="https://orcid.org/0000-0003-4664-4365"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-* **Connor Wilson** <a href="https://orcid.org/0000-0002-6936-4078"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-* **Tarik Crnovrsanin** <a href="https://orcid.org/0000-0002-4397-5532"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization, Writing Original Draft + Review & Editing, Validation.
-* **Cody Dunne** <a href="https://orcid.org/0000-0002-1609-9776"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Supervision, Writing Original Draft + Review & Editing, Validation, Funding Acquisition.
+<!-- based on CRediT author statement https://www.elsevier.com/researcher/author/policies-and-guidelines/credit-author-statement -->
+
+* **Sara Di Bartolomeo** <a href="https://orcid.org/0000-0001-9517-3526"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Conceptualization, Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Visualization, Validation.
+* **Eduardo Puerta** <a href="https://orcid.org/0000-0003-4664-4365"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Connor Wilson** <a href="https://orcid.org/0000-0002-6936-4078"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Tarik Crnovrsanin** <a href="https://orcid.org/0000-0002-4397-5532"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Alexander Frings** <a href="https://orcid.org/0009-0009-1718-2967"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Categorization & Curation, Writing - Review & Editing, Software, Visualization, Validation.
+* **Cody Dunne** <a href="https://orcid.org/0000-0002-1609-9776"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Supervision, Writing - Original Draft + Review & Editing, Validation, Funding Acquisition.
 
 # License 
 

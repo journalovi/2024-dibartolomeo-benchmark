@@ -4,6 +4,8 @@ The following chart shows how many times we found a dataset being used in the pa
 
 ```{ojs}
 //| echo: false
+//| fig-cap: "This barchart shows, for the top 20 most used datasets, the number of times a dataset was used in collected papers."
+//| fig-alt: "A barchart showing the number of times a dataset was used in the papers in our survey. The most used dataset is Rome-Lib, followed by assorted collaboration networks (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from C.Walshaw."
 { 
     let d = []
     let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split("(")[0].trim()))].filter(a => a != "")
@@ -22,8 +24,8 @@ The following chart shows how many times we found a dataset being used in the pa
       // legend: true,
       // type: "categorical",
       // domain: d3.range(10).map((d, i) => `Category ${i + 1}`),
-        range: ["steelblue"],
-      // scheme: "Tableau10" // use the "accent" scheme
+        // range: ["steelblue"],
+          scheme: "Tableau10" // use the "accent" scheme
         },
         y: {
       // tickFormat: "s"
