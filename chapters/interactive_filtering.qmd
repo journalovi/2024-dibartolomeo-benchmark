@@ -277,6 +277,8 @@ The following interactive filtering system is an initial overview over the conte
 //| output: false
 {
     //console.log(benchmark_datasets)
+    
+    // sorry for all the vars instead of let but this was split before into different cells
     var uniqueDataTagSet = new Set(); // set for the tags
     var uniquePaperTagSet = new Set();
     var dataSetNames = []; // list of names of datasets
@@ -313,7 +315,7 @@ The following interactive filtering system is an initial overview over the conte
     "2-planar": "planar"
 };
 
-
+    
     benchmark_datasets.forEach((entry) => {
         let name = name_cleanup(entry.Name)
         nameMap[name] = entry.Name
@@ -329,6 +331,9 @@ The following interactive filtering system is an initial overview over the conte
             }
         }
     })
+     
+    
+     
   
     literature.forEach((paper) => {
 
@@ -358,7 +363,63 @@ The following interactive filtering system is an initial overview over the conte
     })
   
   
-    var uniqueDataTags = [...uniqueDataTagSet]
+    
+    var category_tags = {
+        0: "Layered",
+        3: "Hierarchical",
+        6: "Time Related",
+        10: "Structures",
+        23: "Imprecise",
+        27: "Other"
+    }
+    
+    // if you change this ordering or move around values also change the category map above!!!
+    //var uniqueDataTags = [...uniqueDataTagSet]
+    var uniqueDataTags = [
+        // Layered
+        "many layers",
+        "layered graphs",
+        "bipartite",
+        
+        // Hierarchical
+        "tree-like",
+        "trees",
+        "hierarchical",
+
+        // Time Related
+        "dynamic (discrete)",
+        "dynamic",
+        "temporal",
+        "temporal event sequence",
+        
+        // Structures
+        "clusters",
+        "clusters (generated)",
+        "directed edges",
+        "labeled nodes",
+        "edge weighted",
+        "node weighted",
+        "signed",
+        "categorical nodes",
+        "hypergraph",
+        "bundled edges (generated)",
+        "partition",
+        "multigraph",
+        "mesh",
+
+        // Imprecise
+        "large",
+        "dense",
+        "sparse",
+        
+        // Other
+        "generic",
+        "spatial",
+        "planar",
+        "nonplanar",
+        "acyclic",
+        "known crossing number"
+    ]
     var uniquePaperTags = [...uniquePaperTagSet]  
     //console.log(uniqueDataTags)
     //console.log(uniquePaperTagSet)
@@ -370,9 +431,6 @@ The following interactive filtering system is an initial overview over the conte
     // remove empty entries
     paperNames = paperNames.filter(str => str.trim() !== "")
     
-    
-
-    // TODO: reorder tags here if wished!
 
 
     var checkBoxContainer = document.getElementById('checkbox-container');
@@ -519,7 +577,18 @@ The following interactive filtering system is an initial overview over the conte
 
   // Automatically add checkboxes on load for each tag, we cannot reorder after this!
   uniqueDataTags.forEach((entry, index) => {
-    addCheckbox(index, entry);
+      if (category_tags.hasOwnProperty(index)) {
+          const span = document.createElement('span');
+          span.style.opacity = "50%";  // Setting it to be less obnoxious
+          span.textContent = category_tags[index];
+
+          const div = document.createElement('div');
+          div.className = 'd-flex align-items-center';  
+          div.appendChild(span);
+
+          checkBoxContainer.appendChild(div);
+      }
+      addCheckbox(index, entry);
   })
 
   // initial call to display all datasets (now a bit redundant but adds the "display" style-attribute)
