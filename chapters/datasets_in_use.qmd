@@ -928,9 +928,9 @@ Is it lost? -->
 
 A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs. Because their hosts are already dedicated to the maintaining and reporting of information on these collections, we do not include here any storage of the data (which would be redundant) or report statistics on them. Rather, our analysis here is focused on highlighting their properties, origins, and ways in which they have been used. 
 
-Compiled by the [Mathematical and Computational Sciences Division](https://math.nist.gov/mcsd/) of the [Information Technology Laboratory](http://www.itl.nist.gov/) of the [National Institute of Standards and Technology](http://www.nist.gov/), the **Matrix Market** is a repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services. It has been used for experiments with <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-large">large</span> graphs, and graphs with <span class="pill-tag pill-tag-weighted-edges">weighted edges</span>. Each matrix entry is accompanied by metadata that includes the matrix name and identifier, dimensions (number of rows and columns), number of non-zero elements, symmetry type (symmetric, skew-symmetric, or general) and data type (real, complex, integer, or pattern). The website also provides visualizations of the matrices, helping users understand their structure and distribution of non-zero elements. Downloads are also provided in a variety of formats, including their own Matrix Market Exchange (MME) format, Harwell-Boeing, and MATLAB.
-
 ::: {.callout-note title="Matrix Market" collapse=true appearance="minimal"}
+
+Compiled by the [Mathematical and Computational Sciences Division](https://math.nist.gov/mcsd/) of the [Information Technology Laboratory](http://www.itl.nist.gov/) of the [National Institute of Standards and Technology](http://www.nist.gov/), the **Matrix Market** is a repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services. It has been used for experiments with <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-large">large</span> graphs, and graphs with <span class="pill-tag pill-tag-weighted-edges">weighted edges</span>. Each matrix entry is accompanied by metadata that includes the matrix name and identifier, dimensions (number of rows and columns), number of non-zero elements, symmetry type (symmetric, skew-symmetric, or general) and data type (real, complex, integer, or pattern). The website also provides visualizations of the matrices, helping users understand their structure and distribution of non-zero elements. Downloads are also provided in a variety of formats, including their own Matrix Market Exchange (MME) format, Harwell-Boeing, and MATLAB.
 
 <!-- <div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
@@ -943,9 +943,9 @@ Compiled by the [Mathematical and Computational Sciences Division](https://math.
 
 <a name="Network_Repository"></a>
 
-The **Network Repository** was proposed in 2015 by Rossi and Ahmed of Purdue University as a visually interactive real world graph tool and database. Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.
-
 ::: {.callout-note title="Network Repository" collapse=true appearance="minimal"}
+
+The **Network Repository** was proposed in 2015 by Rossi and Ahmed of Purdue University as a visually interactive real world graph tool and database. Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.
 
 <div><b>Originally found at: </b><a href="https://networkrepository.com/">https://networkrepository.com/</a></div><br>
 <!-- <div><b>Note: </b>Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.</div><br>
@@ -969,9 +969,9 @@ From “[Drawing Big Graphs Using Spectral Sparsification](https://link.springer
 
 <a name="Pajek"></a>
 
-The **Pajek** Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleagues. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection. As a curiosity, pajek means spider in Slovenian. Many of Pajek graphs have been included as part of the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
-
 ::: {.callout-note title="Pajek" collapse=true appearance="minimal"}
+
+The **Pajek** Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleagues. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection. As a curiosity, pajek means spider in Slovenian. Many of Pajek graphs have been included as part of the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
 
 <div><b>Originally found at: </b><a href="http://vlado.fmf.uni-lj.si/pub/networks/data/">http://vlado.fmf.uni-lj.si/pub/networks/data/</a></div><br>
 <!-- <div><b>Download formatted data: </b></div><br> -->
@@ -1024,12 +1024,12 @@ There is another link to data not mentioned in their repo. (Also part of SuiteSp
 
 <a name="SNAP"></a>
 
+::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse-id="SNAP" collapse=true appearance="minimal"}
+
 The **SNAP** repository is a collection of datasets assembled as part of the Stanford Network Analysis Platform, which started in 2004 and launched their website in 2009.
 Well-known, widely used graph repository.
 <!-- There also exists BioSNAP, which consists of similar datasets for medical applications under the same umbrella project. While BioSNAP was not as relevant in the literature, it may still prove useful for future researchers.  -->
 A number of graphs that became relevant individually are included in SNAP, such as <a href="#Enron" class="dataset-link">Enron</a>, [Amazon](#amazon), [Protein Interactions](#protein-interaction) datasets and various [Social Network](#social-network) graphs. SNAP contains <span class="pill-tag pill-tag-generic">generic</span> graphs, <span class="pill-tag pill-tag-directed">directed</span> and <span class="pill-tag pill-tag-undirected">undirected</span> graphs, <span class="pill-tag pill-tag-dynamic">dynamic</span> graphs and more. Graphs are presented with name and descriptions and a few statistics such as a general description, numbers of nodes and edges, source and reference information.
-
-::: {.callout-note title="SNAP (Stanford Network Analysis Platform)" collapse-id="SNAP" collapse=true appearance="minimal"}
 
 <div><b>Originally found at: </b><a href="http://snap.stanford.edu/data/index.html">http://snap.stanford.edu/data/index.html</a></div><br>
 <!-- <div><b>Note: </b>Well-known, widely used graph repository.
@@ -1055,9 +1055,9 @@ From “[ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visu
 
 <a name="Stanford_GraphBase"></a>
 
-Compiled by Donald Knuth, the **Stanford Graphbase** consists of programs and datasets for network analysis. The datasets accompany a textbook, “The Stanford GraphBase: A Platform for Combinatorial Computing”.
-
 ::: {.callout-note title="Stanford GraphBase" collapse=true appearance="minimal"}
+
+Compiled by Donald Knuth, the **Stanford Graphbase** consists of programs and datasets for network analysis. The datasets accompany a textbook, “The Stanford GraphBase: A Platform for Combinatorial Computing”.
 
 <div><b>Originally found at: </b><a href="https://www-cs-faculty.stanford.edu/~knuth/sgb.html">https://www-cs-faculty.stanford.edu/~knuth/sgb.html</a></div><br>
 <div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@Knuth_2009]</div><div class="col-8">The Stanford GraphBase: A Platform for Combinatorial Computing</div></div><br>
@@ -1095,11 +1095,11 @@ From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in G
 
 <a name="SuiteSparse_Matrix_Collection"></a>
 
-The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuiteSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
-
 ::: {.callout-note title="SuiteSparse Matrix Collection" collapse=true appearance="minimal"}
 <!-- 
 <div id="named-list-SuiteSparse_MatrixCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
+
+The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuiteSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
 
 <div><b>Originally found at: </b><a href="https://sparse.tamu.edu/">https://sparse.tamu.edu/</a></div><br>
 <div><b>Size: </b>2893</div><br>
@@ -2478,84 +2478,6 @@ From “[Topological fisheye views for visualizing large graphs](https://doi.org
 
 ::: 
 
-Inaccessible as a dataset but still existing on the internet:
-
-<a name="Mathematics Genealogy"></a>
-
-::: {.callout-note title="Mathematics Genealogy" collapse=true appearance="minimal"}
-
-Database from a project started by Harry Coonce and now supported by the North Dakota State University. Refer to the <a href="https://mathgenealogy.org/contact.php ">https://mathgenealogy.org/contact.php</a> for the data, which consists of doctoral graduates in mathematics and some adjacent fields, alongside properties like the degree granting institution and tittle of thesis. Entries also have relations based on advisors. It has <span class="pill-tag pill-tag-non-planar">non-planar</span>, <span class="pill-tag pill-tag-dynamic-discrete">dynamic</span> and <span class="pill-tag pill-tag-tree">tree-like</span> graphs.
-
-<div><b>Originally found at: </b><a href="https://genealogy.math.ndsu.nodak.edu/">https://genealogy.math.ndsu.nodak.edu/</a></div><br>
-<div><b>Size: </b>291014 records as of May 2023. In 2016 the graph consisted of 200037 nodes with 3.8% percent of them being isolated, and 1962 components of size two. The largest component contained 180094 nodes.</div><br>
-<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@math2006-mw]</div><div class="col-8">The Mathematics Genealogy Project</div></div><br>
-<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@gray2023]</div><div class="col-4">Visualizing Evolving Trees</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><br>
-
-### Description from Literature
-
-From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
-
-> **The Mathematics Genealogy:** shows advisor-advisee relationships in the world of mathematics, stretching back to the middle ages [[36](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23#ref-CR36)]. The dataset includes the thesis titles, students, advisors, dates, and number of descendants. The total number of nodes is around 260,000 and is continuously updated. While this data is not quite a tree (or even connected, or planar), we extract a subset to create a tree with 500 nodes. The maximum node degree of this tree is 5 and the radius is 14.
-
-### Example Figures
-
-From [The Mathematics Genealogy Project](https://genealogy.math.ndsu.nodak.edu/):
-
-<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled.png' width='80%'></div>
-
-From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
-
-<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%201.png' width='80%'></div>
-
-**Fig. 4:** Layouts from DynNoSlice, DynaGraph, Dagre, Radial, ImPrEd, DynaCola and DynaSafe of the same evolving math genealogy tree; each row adds six new nodes.
-
-<!-- == STOP RENDERING ==
-
-[https://github.com/abureyanahmed/evolving_tree/tree/main/dataset](https://github.com/abureyanahmed/evolving_tree/tree/main/dataset)
-
-They make you request the data individually and in the linked form they have a note about not redistributing data:
-
-[mgp-permission-agreement.pdf](Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/mgp-permission-agreement.pdf)
-
-<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%202.png' width='80%'></div>
-
-reached out to them 5/18/2023
-
-It is non-planar because multiple advisors can advise the same person or a person can have multiple advisors! Infact, there is a K3,3 in it
-
-In July 2016, Cosmin Ionita and Pat Quillen of 
-MathWorks used MATLAB to analyze the Math Genealogy Project graph. At 
-the time, the genealogy graph contained 200,037 vertices. There were 
-7639 (3.8%) isolated vertices and 1962 components of size two 
-(advisor-advisee pairs where we have no information about the advisor). 
-The largest component of the genealogy graph contained 180,094 vertices,
- accounting for 90% of all vertices in the graph. The main component has
- 7323 root vertices (individuals with no advisor) and 137,155 leaves 
-(mathematicians with no students), accounting for 76.2% of the vertices 
-in this component. The next largest component sizes were 81, 50, 47, 34,
- 34, 33, 31, 31, and 30.
-For historical comparisonn, we also have data from June 2010, when 
-Professor David Joyner of the United States Naval Academy asked for data
- from our database to analyze it as a graph. At the time, the genealogy 
-graph had 142,688 vertices. Of these, 7,190 were isolated vertices (5% 
-of the total). The largest component had 121,424 vertices (85% of the 
-total number). The next largest component had 128 vertices. The next 
-largest component sizes were 79, 61, 45, and 42. The most frequent size 
-of a nontrivial component was 2; there were 1937 components of size 2. 
-The component with 121,424 vertices had 4,639 root verticies, i.e., 
-mathematicians for whom the advisor is currently unknown.
-
-The Mathematics Genealogy Project graph is nonplanar. Thanks to 
-Professor Ezra Brown of Virginia Tech for assisting in finding the 
-subdivision of *K*3,3 depicted below. The green vertices
- form one color class and the yellow ones form the other. Interestingly,
- Gauß is the only vertex that needs to be connected by paths with more 
-than one edge.
-_site:150:21 -->
-
-
-::: 
-
 ::: {.callout-note title="Medical Patient Records" collapse=true appearance="minimal"}
 
 Dataset was not found. It contained <span class="pill-tag pill-tag-spatial">spatial</span>, <span class="pill-tag pill-tag-multivariate">multivariate</span> data and <span class="pill-tag pill-tag-clusters-pre-existing">pre-existing clusters</span>. 
@@ -2709,6 +2631,83 @@ From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley
 “Hi! Thanks for reaching out! The dataset used is an internal one that I cannot share unfortunately. Some other datasets were public datasets and I think I did include urls in my references” 
 
 -urls are broken -->
+::: 
+
+This last one is inaccessible as a whole, but still navigable on the internet:
+
+<a name="Mathematics Genealogy"></a>
+
+::: {.callout-note title="Mathematics Genealogy" collapse=true appearance="minimal"}
+
+Database from a project started by Harry Coonce and now supported by the North Dakota State University. Refer to the <a href="https://mathgenealogy.org/contact.php ">https://mathgenealogy.org/contact.php</a> for the data, which consists of doctoral graduates in mathematics and some adjacent fields, alongside properties like the degree granting institution and tittle of thesis. Entries also have relations based on advisors. It has <span class="pill-tag pill-tag-non-planar">non-planar</span>, <span class="pill-tag pill-tag-dynamic-discrete">dynamic</span> and <span class="pill-tag pill-tag-tree">tree-like</span> graphs.
+
+<div><b>Originally found at: </b><a href="https://genealogy.math.ndsu.nodak.edu/">https://genealogy.math.ndsu.nodak.edu/</a></div><br>
+<div><b>Size: </b>291014 records as of May 2023. In 2016 the graph consisted of 200037 nodes with 3.8% percent of them being isolated, and 1962 components of size two. The largest component contained 180094 nodes.</div><br>
+<div><b>Origin paper: </b></div><div class="row"><div class="col-4">[@math2006-mw]</div><div class="col-8">The Mathematics Genealogy Project</div></div><br>
+<div><b>Usage examples: </b></div><div class="row"><div class="col-4">[@gray2023]</div><div class="col-4">Visualizing Evolving Trees</div><div class="col-4"><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(217, 115, 13);">dynamic</div><div class="rounded-pill badge" style="margin: 2px; background-color: rgb(100, 71, 58);">dynamic (discrete)</div></div></div><br>
+
+### Description from Literature
+
+From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
+
+> **The Mathematics Genealogy:** shows advisor-advisee relationships in the world of mathematics, stretching back to the middle ages [[36](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23#ref-CR36)]. The dataset includes the thesis titles, students, advisors, dates, and number of descendants. The total number of nodes is around 260,000 and is continuously updated. While this data is not quite a tree (or even connected, or planar), we extract a subset to create a tree with 500 nodes. The maximum node degree of this tree is 5 and the radius is 14.
+
+### Example Figures
+
+From [The Mathematics Genealogy Project](https://genealogy.math.ndsu.nodak.edu/):
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled.png' width='80%'></div>
+
+From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%201.png' width='80%'></div>
+
+**Fig. 4:** Layouts from DynNoSlice, DynaGraph, Dagre, Radial, ImPrEd, DynaCola and DynaSafe of the same evolving math genealogy tree; each row adds six new nodes.
+
+<!-- == STOP RENDERING ==
+
+[https://github.com/abureyanahmed/evolving_tree/tree/main/dataset](https://github.com/abureyanahmed/evolving_tree/tree/main/dataset)
+
+They make you request the data individually and in the linked form they have a note about not redistributing data:
+
+[mgp-permission-agreement.pdf](Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/mgp-permission-agreement.pdf)
+
+<div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%202.png' width='80%'></div>
+
+reached out to them 5/18/2023
+
+It is non-planar because multiple advisors can advise the same person or a person can have multiple advisors! Infact, there is a K3,3 in it
+
+In July 2016, Cosmin Ionita and Pat Quillen of 
+MathWorks used MATLAB to analyze the Math Genealogy Project graph. At 
+the time, the genealogy graph contained 200,037 vertices. There were 
+7639 (3.8%) isolated vertices and 1962 components of size two 
+(advisor-advisee pairs where we have no information about the advisor). 
+The largest component of the genealogy graph contained 180,094 vertices,
+ accounting for 90% of all vertices in the graph. The main component has
+ 7323 root vertices (individuals with no advisor) and 137,155 leaves 
+(mathematicians with no students), accounting for 76.2% of the vertices 
+in this component. The next largest component sizes were 81, 50, 47, 34,
+ 34, 33, 31, 31, and 30.
+For historical comparisonn, we also have data from June 2010, when 
+Professor David Joyner of the United States Naval Academy asked for data
+ from our database to analyze it as a graph. At the time, the genealogy 
+graph had 142,688 vertices. Of these, 7,190 were isolated vertices (5% 
+of the total). The largest component had 121,424 vertices (85% of the 
+total number). The next largest component had 128 vertices. The next 
+largest component sizes were 79, 61, 45, and 42. The most frequent size 
+of a nontrivial component was 2; there were 1937 components of size 2. 
+The component with 121,424 vertices had 4,639 root verticies, i.e., 
+mathematicians for whom the advisor is currently unknown.
+
+The Mathematics Genealogy Project graph is nonplanar. Thanks to 
+Professor Ezra Brown of Virginia Tech for assisting in finding the 
+subdivision of *K*3,3 depicted below. The green vertices
+ form one color class and the yellow ones form the other. Interestingly,
+ Gauß is the only vertex that needs to be connected by paths with more 
+than one edge.
+_site:150:21 -->
+
 ::: 
 
 ### Custom-made Datasets {#sec-custom-made-datasets}
