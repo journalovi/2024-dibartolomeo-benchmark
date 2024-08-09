@@ -1,15 +1,16 @@
 
-  .container {
+.container {
     --bs-badge-padding-x: 0.65em;
     --bs-badge-padding-y: 0.35em;
     --bs-badge-font-size: 0.75em;
     --bs-badge-font-weight: 700;
     --bs-badge-color: #fff;
     --bs-badge-border-radius: 50rem;
-    display:flex;
+    display: flex;
 
-  }
-  .btn {
+}
+
+.btn {
     --bs-btn-padding-y: .15rem;
     --bs-btn-padding-x: 0.5rem;
     --bs-btn-font-size: .7rem;
@@ -20,45 +21,55 @@
     font-size: var(--bs-btn-font-size);
     border-radius: .25rem;
     padding-bottom: 0.05rem;
-  }
-  
-  .btn-secondary {
-    background-color:#6c757d;
-    color:#fff !important;
-  }
-  .btn-secondary:hover{
-    background-color:#565e64;
-    
-  }
-  .a {
-    color:rgb(13, 110, 253);
-  }
-  .a:hover{
-    color:#0a58ca;
-  }
+}
 
-  .card {
-  }
-  .card-body {
-  }
-  .row {
-    display:flex;
-  }
-  .col-8 {
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff !important;
+}
+
+.btn-secondary:hover {
+    background-color: #565e64;
+
+}
+
+.a {
+    color: rgb(13, 110, 253);
+}
+
+.a:hover {
+    color: #0a58ca;
+}
+
+.card {
+}
+
+.card-body {
+}
+
+.row {
+    display: flex;
+}
+
+.col-8 {
     flex: 0 0 auto;
     width: 66.66666667%;
-  }
-  .col-4 {
+}
+
+.col-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
-  }
-  .small-text{
-    font-size:small;
-  } 
-  .rounded-pill {
+}
+
+.small-text {
+    font-size: small;
+}
+
+.rounded-pill {
     border-radius: var(--bs-badge-border-radius) !important;
-  }
-  .badge {
+}
+
+.badge {
     display: inline-block;
     padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
     font-size: var(--bs-badge-font-size);
@@ -68,9 +79,9 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-  }
+}
 
-  .pill-tag {
+.pill-tag {
     background-color: #ddd;
     border: none;
     color: white;
@@ -81,56 +92,38 @@
     border-radius: 20px;
     margin: 0 2px;
     font-size: 0.85em; /* Reduce font size instead of scaling */
-  }
+}
 
-  .pill-tag-generic {
-    background-color: rgb(217, 115, 13);
-  }
+.pill_color_acyclic { background-color: #9B9A97; }
+.pill_color_bipartite { background-color: #64473A; }
+.pill_color_bundled_edges_generated { background-color: #D9730D; }
+.pill_color_categorical_nodes { background-color: #DFAB01; }
+.pill_color_clusters { background-color: #0F7B6C; }
+.pill_color_clusters_generated { background-color: #0B6E99; }
+.pill_color_dense { background-color: #6940A5; }
+.pill_color_directed_edges { background-color: #AD1A72; }
+.pill_color_dynamic { background-color: #E03E3E; }
+.pill_color_dynamic_discrete { background-color: #9B9A97; }
+.pill_color_edge_weighted { background-color: #64473A; }
+.pill_color_generic { background-color: #D9730D; }
+.pill_color_hierarchical { background-color: #DFAB01; }
+.pill_color_hypergraph { background-color: #0F7B6C; }
+.pill_color_known_crossing_number { background-color: #0B6E99; }
+.pill_color_labeled_nodes { background-color: #6940A5; }
+.pill_color_large { background-color: #AD1A72; }
+.pill_color_layered_graphs { background-color: #E03E3E; }
+.pill_color_many_layers { background-color: #9B9A97; }
+.pill_color_mesh { background-color: #64473A; }
+.pill_color_multigraph { background-color: #D9730D; }
+.pill_color_node_weighted { background-color: #DFAB01; }
+.pill_color_nonplanar { background-color: #0F7B6C; }
+.pill_color_partition { background-color: #0B6E99; }
+.pill_color_planar { background-color: #6940A5; }
+.pill_color_signed { background-color: #AD1A72; }
+.pill_color_sparse { background-color: #E03E3E; }
+.pill_color_spatial { background-color: #9B9A97; }
+.pill_color_temporal { background-color: #64473A; }
+.pill_color_temporal_event_sequence { background-color: #D9730D; }
+.pill_color_tree-like { background-color: #DFAB01; }
+.pill_color_trees { background-color: #0F7B6C; }
 
-  .pill-tag-large {
-    background-color: rgb(224, 62, 62);
-  }
-
-  .pill-tag-weighted-edges {
-    background-color: rgb(223, 171, 1)
-  }
-
-  .pill-tag-directed {
-    background-color: rgb(100, 71, 58)
-  }
-
-  .pill-tag-acyclic {
-    background-color: rgb(0, 128, 0)
-  }
-
-  .pill-tag-layered {
-    background-color: rgb(105, 64, 165)
-  }
-
-  .pill-tag-clusters {
-    background-color: rgb(223, 171, 1)
-  }
-
-  .pill-tag-labeled-nodes {
-    background-color: rgb(0, 128, 0)
-  }
-
-  .pill-tag-temporal-event-sequence {
-    background-color: rgb(137, 44, 111)
-  }
-
-  .pill-tag-dynamic {
-    background-color: rgb(217, 115, 13)
-  }
-
-  .pill-tag-categorical-nodes{
-    background-color: rgb(0, 128, 0)
-  }
-
-  .pill-tag-spatial {
-    background-color: rgb(223, 171, 1);
-  }
-
-  .pill-tag-weighted-nodes {
-    background-color: rgb(224, 62, 62);
-  }

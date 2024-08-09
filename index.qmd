@@ -2,7 +2,7 @@
 title: "Benchmark Datasets for Graph Layout Algorithms"
 number-sections: true
 self-contained: true
-author: 
+author:
   - name: Sara Di Bartolomeo
     orcid: 0000-0001-9517-3526
     email: sara.di-bartolomeo@uni-konstanz.de
@@ -31,7 +31,7 @@ author:
         country: USA
   - name: Eduardo Puerta
     orcid: 0000-0003-4664-4365
-    email: eduardo puerta.e@northeastern.edu 
+    email: eduardo puerta.e@northeastern.edu
     affiliations:
       - name: Northeastern University
         city: Boston
@@ -52,10 +52,11 @@ author:
         city: Boston
         state: MA
         country: USA
-    
+
 bibliography: bibliography.bib
 
 ---
+
 <!-- 
 This template is intended for the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
 
@@ -64,6 +65,7 @@ This template describes how to set up the [Quarto](https://quarto.org/) environm
 If you have not setup [Quarto](https://quarto.org/) or the JoVI template yet, skip to the [Setup](#setup) section below. -->
 
 ::: {.callout-note appearance="simple" icon="false" collapse="false"}
+
 ## Abstract {.unnumbered}
 
 <!-- We highly recommend all JoVI articles use a structured abstract. Structured abstracts provide a succinct overview of an article using a common set of sections. Which sections are used depends on the type of research and its goals. For example, articles with empirical methods should have a data collection section, while articles that do not analyze data to support a conclusion do not need such a section.
@@ -80,27 +82,36 @@ Plot = import("https://esm.run/@observablehq/plot")
 
 ### Introduction
 
-Computational evaluations are crucial for standardized and objective evaluation of graph layout algorithms. Standard benchmark datasets facilitate comparison with prior work, and reliable access to datasets is fundamental for replicability. However, there is no comprehensive repository of benchmark datasets for Graph Drawing, and many datasets have been lost.
+Computational evaluations are crucial for standardized and objective evaluation of graph layout algorithms. Standard
+benchmark datasets facilitate comparison with prior work, and reliable access to datasets is fundamental for
+replicability. However, there is no comprehensive repository of benchmark datasets for Graph Drawing, and many datasets
+have been lost.
 
 ### Data collection
 
-We collected 196 papers from Graph Drawing, IEEE venues, and Eurographics venues that include computational evaluations of graph layout algorithms. We searched for the datasets used.
+We collected 196 papers from Graph Drawing, IEEE venues, and Eurographics venues that include computational evaluations
+of graph layout algorithms. We searched for the datasets used.
 
 ### Data analysis
 
-We archived datasets we found and re-created ones that were lost but had sufficient replication instructions. We classified graphs by their features and statistics. We also found text and images from papers using those graphs.
+We archived datasets we found and re-created ones that were lost but had sufficient replication instructions. We
+classified graphs by their features and statistics. We also found text and images from papers using those graphs.
 
 ### Implementation
 
 We implemented graph creation, data analysis, and website code.
 
-### Materials 	
+### Materials
 
-We provide a [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website; a [repository](https://github.com/visdunneright/gd_benchmark_sets/) with code for the website and metadata on the benchmark datasets; a [long-term archive](https://osf.io/j7ucv/) of this repository and the benchmark datasets.
+We provide a [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website;
+a [repository](https://github.com/visdunneright/gd_benchmark_sets/) with code for the website and metadata on the
+benchmark datasets; a [long-term archive](https://osf.io/j7ucv/) of this repository and the benchmark datasets.
 
 ### Conclusion
 
-We provide a resource for the Graph Drawing and visualization communities to use to find datasets for computational evaluations of graph layout algorithms. Our organization by features and statistics supports rapid identification of relevant graphs. We have re-created and archived graphs used in research for their long-term preservation.
+We provide a resource for the Graph Drawing and visualization communities to use to find datasets for computational
+evaluations of graph layout algorithms. Our organization by features and statistics supports rapid identification of
+relevant graphs. We have re-created and archived graphs used in research for their long-term preservation.
 
 <!-- ## Motivation + Background
 
@@ -144,6 +155,7 @@ Link to repositories containing raw data, open source code or (pre-)registration
 :::
 
 ::: {.callout-note appearance="simple" icon="false" collapse="true"}
+
 ## Materials, Authorship, License, Conflicts
 
 ###### Research materials
@@ -156,7 +168,8 @@ Link to repositories containing raw data, open source code or (pre-)registration
 
 ###### License
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+This work is licensed under
+a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ###### Conflicts of interest
 
@@ -167,28 +180,53 @@ See [the corresponding section in the author guide](https://www.journalovi.org/a
 
 # Introduction
 
-Benchmarking is a crucial aspect of computer science, as it allows researchers, developers, and engineers to compare the performance of various systems, algorithms, or hardware. A benchmark is a standardized test or set of tests used to measure and compare the performance of hardware, software, or systems under specific conditions. Benchmarking aims to provide objective and consistent metrics that allow for fair comparisons and informed decision-making. Benchmarks are widely used in various fields, including computer hardware evaluation, software optimization, and system performance analysis.
-In all these fields, benchmarking provides a standardized and objective way to compare and assess the performance of different systems, algorithms, or software implementations. It aids in making informed decisions about which solution best suits a specific use case or requirement.
+Benchmarking is a crucial aspect of computer science, as it allows researchers, developers, and engineers to compare the
+performance of various systems, algorithms, or hardware. A benchmark is a standardized test or set of tests used to
+measure and compare the performance of hardware, software, or systems under specific conditions. Benchmarking aims to
+provide objective and consistent metrics that allow for fair comparisons and informed decision-making. Benchmarks are
+widely used in various fields, including computer hardware evaluation, software optimization, and system performance
+analysis.
+In all these fields, benchmarking provides a standardized and objective way to compare and assess the performance of
+different systems, algorithms, or software implementations. It aids in making informed decisions about which solution
+best suits a specific use case or requirement.
 
-The same is true for graph drawing, particularly for studying the performance and results of graph layout algorithms [@dibartolomeo2024evaluating]. 
+The same is true for graph drawing, particularly for studying the performance and results of graph layout
+algorithms [@dibartolomeo2024evaluating].
 Benchmark datasets can provide a standardized set of graphs with known properties and characteristics.
 These graphs can vary in size, density, connectivity, and structure.
-Researchers can objectively compare their performance or the quality of their results by applying various graph layout algorithms to the same benchmark dataset. 
+Researchers can objectively compare their performance or the quality of their results by applying various graph layout
+algorithms to the same benchmark dataset.
 
-In our own work, we have faced challenges in determining which benchmark datasets to use for evaluating the layout algorithms we developed. This led us to build a collection of benchmark datasets used in previous graph layout algorithm papers and a [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website for perusing the collection. We collected 196 papers from Graph Drawing, IEEE venues, and Eurographics venues that include computational evaluations of graph layout algorithms. We then searched for the datasets used for the benchmarks. We collected the data we could find and had permission to archive and re-created datasets that were lost but had sufficient replication instructions. We classified graphs by their features and statistics. We also found text and images from papers using those graphs. 
+In our own work, we have faced challenges in determining which benchmark datasets to use for evaluating the layout
+algorithms we developed. This led us to build a collection of benchmark datasets used in previous graph layout algorithm
+papers and a [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website for perusing the
+collection. We collected 196 papers from Graph Drawing, IEEE venues, and Eurographics venues that include computational
+evaluations of graph layout algorithms. We then searched for the datasets used for the benchmarks. We collected the data
+we could find and had permission to archive and re-created datasets that were lost but had sufficient replication
+instructions. We classified graphs by their features and statistics. We also found text and images from papers using
+those graphs.
 
-This paper aims to present this graph drawing benchmark sets resource to the Graph Drawing and visualization communities so that other authors may benefit from our archiving and organization efforts. We hope this resource will encourage the discoverability of these datasets and the ease of running benchmarks for graph layout algorithms. Moreover, as reliable access to datasets is fundamental for replicability, we aim to preserve these datasets in perpetuity. Beyond collecting available datasets and re-creating lost ones, we archived all our materials [on OSF](https://osf.io/j7ucv/) for long-term availability. This included saving each graph in multiple common file formats to avoid translation issues for individual authors. We believe our work will lead to more reproducible and replicable Graph Drawing research by providing a long-term and open archive of the data we use in our computational evaluations.
+This paper aims to present this graph drawing benchmark sets resource to the Graph Drawing and visualization communities
+so that other authors may benefit from our archiving and organization efforts. We hope this resource will encourage the
+discoverability of these datasets and the ease of running benchmarks for graph layout algorithms. Moreover, as reliable
+access to datasets is fundamental for replicability, we aim to preserve these datasets in perpetuity. Beyond collecting
+available datasets and re-creating lost ones, we archived all our materials [on OSF](https://osf.io/j7ucv/) for
+long-term availability. This included saving each graph in multiple common file formats to avoid translation issues for
+individual authors. We believe our work will lead to more reproducible and replicable Graph Drawing research by
+providing a long-term and open archive of the data we use in our computational evaluations.
 
 Specifically, we contribute:
 
 - A collection of benchmark datasets used for graph layout algorithm evaluations, including:
   - Re-creating lost datasets based on paper descriptions and a list of unavailable data,
-  - A classification of these datasets by graph features and statistics to aid in identifying appropriate evaluation candidates,
+  - A classification of these datasets by graph features and statistics to aid in identifying appropriate evaluation
+    candidates,
   - Exemplar text and images from papers that use these datasets,
   - A website for perusing this collection, and
   - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
 
-Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
+Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data,
+OSF archive, and Notion database.
 
 ```{ojs}
 //| echo: false
@@ -199,17 +237,6 @@ benchmark_datasets = benchmark_datasets_pre.filter(l => l.Name != "")
 paper_sources_pre = await FileAttachment("data/Paper Sources.csv").csv()
 paper_source = paper_sources_pre.filter(l => l.Name != "")
 ```
-
-{{< include chapters/background.qmd >}}
-
-{{< include chapters/motivation.qmd >}} 
-
-{{< include chapters/collection_process.qmd >}} 
-
-{{< include chapters/additional_dataset_work.qmd >}} 
- 
-{{< include chapters/datasets_in_use.qmd >}} 
-
 
 ```{ojs}
 //| echo: false
@@ -293,6 +320,110 @@ dict_of_graph_features_to_colors = {
 }
 ```
 
+<script>
+// alphabetically sorted list to keep the color assignment consistent (remember this is resorted later for the interactive filtering)
+// please then also adapt the styles.css, the code for which is generated in the ojs block below
+graph_feature_tags = [
+    "acyclic",
+    "bipartite",
+    "bundled edges (generated)",
+    "categorical nodes",
+    "clusters",
+    "clusters (generated)",
+    "dense",
+    "directed edges",
+    "dynamic",
+    "dynamic (discrete)",
+    "edge weighted",
+    "generic",
+    "hierarchical",
+    "hypergraph",
+    "known crossing number",
+    "labeled nodes",
+    "large",
+    "layered graphs",
+    "many layers",
+    "mesh",
+    "multigraph",
+    "node weighted",
+    "nonplanar",
+    "partition",
+    "planar",
+    "signed",
+    "sparse",
+    "spatial",
+    "temporal",
+    "temporal event sequence",
+    "tree-like",
+    "trees"
+]
+
+graph_feature_tags_colors = [
+    "#9B9A97", 
+    "#64473A", 
+    "#D9730D", 
+    "#DFAB01", 
+    "#0F7B6C", 
+    "#0B6E99", 
+    "#6940A5", 
+    "#AD1A72", 
+    "#E03E3E"
+]
+
+function name_cleanup(name){
+  return name.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "_").replaceAll(".", "").replaceAll("'", "").replaceAll("&", "").replaceAll(" ", "").replaceAll(",", "")
+}
+
+// fallback function if adding a class is not an option
+function get_css_color_for_tag(graph_feature_name) {
+  return graph_feature_tags_colors[graph_feature_tags.indexOf(graph_feature_name)%graph_feature_tags_colors.length]
+}
+
+</script>
+
+
+
+```{ojs}
+//| echo: false
+//| output: false
+{
+
+// The following provides output to be added to the styles.css manually, since quartro cannot hanlde dynamically injected css
+    
+    // add new custom style because the compilation destroys the styles.css (not found under document.styleSheets)
+    //let targetStyle = document.createElement('style');
+    //document.head.appendChild(targetStyle);
+    
+    //console.log(targetStyle.sheet)
+    
+    let new_style = ""
+
+    // Dynamically add CSS rules for each tag
+    graph_feature_tags.forEach((graph_feature_name) => {
+        const clean_css_tag_name = name_cleanup(graph_feature_name);
+        const rule = `.pill_color_${clean_css_tag_name} { background-color: ${get_css_color_for_tag(graph_feature_name)}; }`;
+        
+        new_style += rule + "\n"
+        
+        /*try {
+            targetStyle.sheet.insertRule(rule, targetStyle.sheet.cssRules.length);
+        } catch (e) {
+            console.error('Failed to insert rule:', e);
+        }*/
+    });
+
+    // uncomment this to get the current color mapping for the tags to be added to the style.css
+    //console.log(new_style)
+
+    //console.log('Number of CSS rules added:', targetStyle.sheet.cssRules.length);
+    // Log each rule
+    //Array.from(targetStyle.sheet.cssRules).forEach(rule => {
+    //    console.log(rule.cssText);
+    //});
+}
+```
+
+
 
 ```{ojs}
 //| echo: false
@@ -313,18 +444,18 @@ dict_of_graph_features_to_colors = {
                 item.children[0].setAttribute('aria-expanded', 'false');
                 item.children[1].classList.remove('show');
             });
-            
+
             // find a div where the result of the function name_cleanup on its title attribute is equal to ident
-            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d => 
-              typeof d.getAttribute('title') === 'string' 
-              && (
-                name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
-                )
-              );
+            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d =>
+                    typeof d.getAttribute('title') === 'string'
+                    && (
+                        name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
+                    )
+            );
 
             if (foundDiv) {
                 //console.log('Found div:', foundDiv);
-            
+
                 // Accessing the children of foundDiv
                 const children = foundDiv.children;
                 if (children.length >= 2) {
@@ -338,10 +469,10 @@ dict_of_graph_features_to_colors = {
                     // Add the 'show' class to the content container, this enables the content to be shown
                     content.classList.add('show');
                 } else {
-                  console.error('Expected at least two children in the div');
+                    console.error('Expected at least two children in the div');
                 }
             } else {
-              console.error('Div not found');
+                console.error('Div not found');
             }
         });
     });
@@ -349,9 +480,19 @@ dict_of_graph_features_to_colors = {
 }
 ```
 
-{{< include chapters/random_generation.qmd >}} 
+{{< include chapters/background.qmd >}}
 
-{{< include chapters/conclusion.qmd >}} 
+{{< include chapters/motivation.qmd >}}
+
+{{< include chapters/collection_process.qmd >}}
+
+{{< include chapters/additional_dataset_work.qmd >}}
+
+{{< include chapters/datasets_in_use.qmd >}}
+
+{{< include chapters/random_generation.qmd >}}
+
+{{< include chapters/conclusion.qmd >}}
 
 <!--
 
@@ -486,16 +627,6 @@ For more on equations, see [the corresponding section in the Quarto documentatio
 ::: {#refs}
 :::
 
-<script>
-notionFolders = Object()
-graph_feature_tags = []
-graph_feature_tags_colors = ["#9B9A97", "#64473A", "#D9730D", "#DFAB01", "#0F7B6C", "#0B6E99", "#6940A5", "#AD1A72", "#E03E3E"]
-
-function name_cleanup(name){
-  return name.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "_").replaceAll(".", "").replaceAll("'", "").replaceAll("&", "").replaceAll(" ", "").replaceAll(",", "")
-}
-</script>
-
 <!-- code to generate the collapsible dataset info things -->
 <!-- ```{ojs}
 //| echo: false
@@ -506,7 +637,7 @@ function name_cleanup(name){
     s += `::: {.callout-note title="` + dataset_to_be_visualized + `" collapse=true appearance="minimal"}` + "\n\n"
     s += "```{ojs}\n"
     s += `//| echo: false\n
-make_sparkline("` + name_cleanup(dataset_to_be_visualized) + `")\n`
+      make_sparkline("` + name_cleanup(dataset_to_be_visualized) + `")\n`
     s += "```\n\n"
     s += `<div id="named-list-` + name_cleanup(dataset_to_be_visualized) + `" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>\n\n`
     s += "::: \n\n\n"

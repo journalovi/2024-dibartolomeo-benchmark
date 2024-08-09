@@ -546,12 +546,14 @@ The following interactive filtering system is an initial overview over the conte
       newCheckbox.type = 'checkbox';
       newCheckbox.id = 'checkbox' + index;
       newCheckbox.style.marginRight = '8px'; 
-      newCheckbox.className = 'form-check-input';
+      newCheckbox.classList.add('form-check-input');
 
       // Creating the span that will act as a label
       const span = document.createElement('span');
-      span.className = 'pill-tag';
-      span.style.backgroundColor = graph_feature_tags_colors[index % graph_feature_tags_colors.length];  // Setting the background color
+      span.classList.add('pill-tag');
+      span.classList.add(`pill_color_${name_cleanup(name)}`);
+      //span.style.backgroundColor = get_css_color_for_tag(name)
+      //span.style.backgroundColor = graph_feature_tags_colors[index % graph_feature_tags_colors.length];  
       span.textContent = name;
 
       const label = document.createElement('label');
@@ -580,7 +582,7 @@ The following interactive filtering system is an initial overview over the conte
       if (category_tags.hasOwnProperty(index)) {
           const span = document.createElement('span');
           span.style.opacity = "50%";  // Setting it to be less obnoxious
-          span.textContent = category_tags[index];
+          span.textContent = "\u2012 " + category_tags[index] + "\u2012 ";
 
           const div = document.createElement('div');
           div.className = 'd-flex align-items-center';  
