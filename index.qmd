@@ -482,8 +482,6 @@ function get_css_color_for_tag(graph_feature_name) {
 
 {{< include chapters/background.qmd >}}
 
-{{< include chapters/motivation.qmd >}}
-
 {{< include chapters/collection_process.qmd >}}
 
 {{< include chapters/additional_dataset_work.qmd >}}

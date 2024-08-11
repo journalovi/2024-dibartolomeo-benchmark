@@ -1,7 +1,21 @@
-# Motivation
+# Motivation and Background
 
-This work stemmed from our need to find datasets tailored to test graph layout algorithms for graphs with specific features.
-While many extant graph databases exist across various archives, we found ourselves seeking datasets used for algorithms in the graph drawing and network visualization literature, including information about their transformations and usage.
+This work stems from the challenges we encountered in finding datasets tailored to test graph layout algorithms. When developing a graph layout algorithm which handles specific features (such as layers, or clusters), it is essential to have a benchmark dataset that reflects these features. While conducting our own evaluations, we found it difficult to find datasets that would incorporate features that we needed. This submission is part of an ongoing effort to keep a curated list of datasets. 
+
+ <!-- This is further discussed in @sec-related-work. -->
+Our work focuses on providing a graph benchmark collection that categorizes datasets by how they organize their graphs and emphasizes their features. We aim to facilitate researchers' choice of benchmarks to reflect real use cases or allow comparisons to other algorithms in their respective fields. 
+Although a number of graph repositories exist, their target and objectives are not always aligned with the needs of graph drawing researchers.
+While the scope of this work revolves around compiling graphs and networks used in the graph drawing literature, we highlight that other, adjacent fields have also created similar **repositories tailored to different needs**. 
+For example, the <a href="#Network_Repository" class="dataset-link">Network Repository</a> consists of a comprehensive collection of datasets that contain many attributes and are used for benchmarking in machine learning, data mining, and many other network applications [@nr].
+In biology, the <a href="#Biological_Pathways_KEGG" class="dataset-link">KEGG Encyclopedia of Genes and Genomes</a> contains network information relevant to biological pathways [@kegg].
+Some general-purpose collections used in network science are also relevant to our discussion. 
+Among the most famous ones, the <a href="#SuiteSparse_Matrix_Collection" class="dataset-link">SuiteSparse Matrix Collection</a>, the <a href="#SNAP" class="dataset-link">Stanford Network Analysis Project (SNAP)</a>, and the <a href="#Pajek" class="dataset-link">Pajek</a> collection stand out since they propose large compilations of datasets that often come from diverse sources.
+Much simpler examples of similar collections can be found in curated lists of links on GitHub, often referred to as *awesome* lists, where a short comment usually accompanies every entry (for instance, [here](https://github.com/gzcsudo/Awesome-Hypergraph-Network) and [here](https://github.com/domargan/awesome-dynamic-graphs)). The purpose and scope of such repositories is provided with more depth in @sec-established-network-repositories. 
+
+Such lists can serve as great tools to find particular case studies, but they do not serve the same purpose as a **uniform collection** like <a href="#Rome-Lib" class="dataset-link">Rome-Lib</a>: a collection of graphs with similar features that can be used to test an algorithm on thousands of graphs with increasing nodes. Rome-Lib is hosted on the main website of the Graph Drawing website, as proof of its usefulness as a benchmark dataset, together with the AT&T graphs and the random DAGs. Another example is the Graph Partitioning Archive, also known as the <a href="#Walshaw" class="dataset-link">Walshaw</a> Collection, which compiles relevant graphs and partitioning algorithms from disparate sources in the relevant literature [@walshaw2000]. The uniformity of such collections allows scientists to easily run thousand of tests on similar graphs, allowing to test the scalability of an algorithm varying density, number of nodes and number of edges --- as opposed to the previously mentioned collections, where the focus is on the diversity of the graphs. See @sec-uniform-benchmark-datasets for more information on this topic.
+
+<!-- This work stemmed from our need to find datasets tailored to test graph layout algorithms for graphs with specific features. -->
+<!-- While many extant graph databases exist across various archives, we found ourselves seeking datasets used for algorithms in the graph drawing and network visualization literature, including information about their transformations and usage.
 For instance, some layered graph drawing papers mention imposing layers on non-layered graphs for their evaluations [cite].
 Therefore, different evaluations using different implementations of the layering may have different graphs despite using the same underlying dataset. 
 Similarly, we also wanted to find real-world datasets for case studies, which might not be accurate using a synthetic layering of non-layered graphs. 
@@ -9,52 +23,67 @@ While our work focused on layered graphs, similar datasets are used in many grap
 Therefore, our work focuses on providing a graph benchmark collection that categorizes datasets by how they organize their graphs and emphasizes their features (e.g., ranging sizes for testing scalability).
 We aim to facilitate researchers' choice of benchmarks to reflect real use cases or allow comparisons to other algorithms in their respective fields. 
 We also summarize the graphs to help users overview the dataset before downloading.
-This summary also includes some analysis to provide overarching quantitative graph information, such as node and edge distribution, which is relevant for problems involving graph sparsity. 
+This summary also includes some analysis to provide overarching quantitative graph information, such as node and edge distribution, which is relevant for problems involving graph sparsity.  -->
 
-Beyond finding relevant datasets for comparison and consistency with real-case scenarios, another priority that impulsed this work was the *reproducibility* of past and future research. 
-A dataset that has been used in an evaluation and is now unaccessible greatly hinders its reproducibility.
-In the worst case, it makes it impossible to reproduce and, as such, much less meaningful. 
-In this context, it is also worth mentioning that in recent years, several initiatives have been aimed at encouraging care for replicability in research.
+We care particularly about the **reproducibility** of past and future research. A dataset that has been used in an evaluation and is now unaccessible greatly hinders the reproducibility of the evaluation, and in the worst case it makes it impossible to reproduce, and, as such, much less meaningful. 
+Losing a dataset to link rot is an unfortunately common problem in the digital age, as URLs change, websites go down, and data is lost. One example of this is the [Open Graph Archive](https://www.open-graph-archive.org/) from @bachmaier2012, which was a project to create a graph database that categorizes, analyses, and visualizes graphs uploaded from the community, a laudable effort now rendered unfortunately inaccessible. At the time of writing, the popular repository [Konect](http://konect.cc/) is also unavailable and only accessible through the webarchive, although all the links to it in previous papers are now broken. Several other instances are discussed in @sec-lost.
+
+We tried to mitigate the problem of lost datasets by still documenting what we could find about them.
+For every dataset that we found that is now lost or inaccessible, we documented every detail we could find about it in literature, including descriptions and pictures of the rendered graphs, so that we can conserve a hint of what the dataset contained. We also went through a process of reaching out to authors and looking into internal storages of research groups (those that were available to us) to find datasets that were not available online. In a couple of cases, this led to successfull outcomes: see <a href="#Storylines_Movie_Plots" class="dataset-link">Storylines (Movie Plots)</a> or <a href="#Debates" class="dataset-link">Debates</a>.
+
+We store our collection on the [Open Science Framework (OSF)](https://osf.io/), which is the currently recommended solution in the VIS community for long-term archival of research data. As per [OSF's backup and preservation policy](https://help.osf.io/article/547-account-and-security-faq-s#Backup), storage and open access is guaranteed for the next 50 years. 
+
+<!-- Beyond finding relevant datasets for comparison and consistency with real-case scenarios, another priority that impulsed this work was the **reproducibility** of past and future research.  -->
+<!-- A dataset that has been used in an evaluation and is now unaccessible greatly hinders its reproducibility. -->
+<!-- In the worst case, it makes it impossible to reproduce and, as such, much less meaningful.  -->
+<!-- In this context, it is also worth mentioning that in recent years, several initiatives have been aimed at encouraging care for replicability in research.
 One such example is the graphics replicability stamp [https://www.replicabilitystamp.org/], which endorses the replicability of the results presented in a paper and ensures its replicability through an additional review process. 
 Another similar initiative is the ACM badges [https://www.acm.org/publications/policies/artifact-review-and-badging-current], or the SIGMOD availability and reproducibility initiative, which goes one step further and publishes full reports commenting on how reproducible a paper is. 
 Because our work aims to maintain a useful repository of graph datasets, we encourage anyone who may want to correct, integrate, or replace information to contact us. Authors are also welcome to submit a pull request to the following GitHub repository [link-git-hub].
-Similarly, we host our work on the Open Science Framework (OSF), which contains a snapshot of the data and the code for formatting, collecting,  and re-creating data when applicable.
+Similarly, we host our work on the Open Science Framework (OSF), which contains a snapshot of the data and the code for formatting, collecting,  and re-creating data when applicable. -->
 
-# Related Work
+In this context, it is also worth mentioning that in recent years there have been several initiatives aimed at encouraging care for replicability in research.
+The [Graphics Replicability Stamp](https://www.replicabilitystamp.org/) is one of these, meant to be an endorsement of the replicability of the results presented in a paper, which ensures the replicability of the results of a paper through an additional review process. Another similar intiative are the [ACM badges](https://www.acm.org/publications/policies/artifact-review-and-badging-current), or the [SIGMOD availability and reproducibility initiative](https://reproducibility.sigmod.org/), which goes one step further and publishes full reports commenting on how reproducible a paper is. 
 
-Multiple collections and network data repositories are used as benchmarks across many domains.
-While the scope of this work revolves around compiling graphs and networks used in the graph drawing literature, we highlight that other fields have also created similar repositories tailored to different needs. 
-For example, the Network Repository consists of a comprehensive collection of datasets that contain many attributes and are used for benchmarking in machine learning, data mining, and many other network applications [cite].
-In biology, the KEGG Encyclopedia of Genes and Genomes contains network information relevant to biological pathways [cite].
-Some general-purpose collections used in network sciences are also relevant to our discussion. 
-Among the most famous ones, the SuiteSparse Matrix Collection, the Stanford Network Analysis Project (SNAP), and the Koblenz Network Collection (KONECT) stand out since they propose large compilations of datasets that often come from diverse sources and host smaller collections like the Barabasi graphs [cite].
-Like some of these projects, our work proposes an overarching taxonomy of datasets and collections based on their structure while also providing a higher emphasis on the features and usage within the literature of our field.
-Therefore, our collection complements these other ones, as we intend to aid researchers in finding graphs in the context of layout algorithms and network visualization. 
-In section [Large collections], we discuss these and several others in more detail and offer links to their sites. We also provide examples from our survey of how those graphs are used to evaluate graph layout algorithms. 
+::: {.callout-note appearance="simple" icon=false}
+Because the intention behind this initiative is an ongoing effort to maintain an useful repository of graph datasets, we encourage anyone who may want to correct, integrate or replace information to [reach out to us](#sec-authorship). Authors are also welcome to submit a pull request to our [GitHub repository](https://github.com/VisDunneRight/jovi-benchmark-sets).
+:::
 
-Additionally, other collections of datasets can often be found in curated lists of links on GitHub, often referred to as *awesome* lists, where a short comment usually accompanies every entry [cite]. 
-While the list of network datasets could be vastly expanded, this paper limits itself to listing only the datasets that are explicitly cited in our corpus of 210 graph drawing papers.
-Although such lists can serve as great tools to find particular case studies, they do not serve the same purpose as a collection like Rome-Lib: a collection of graphs with similar features that can be used to test an algorithm on thousands of graphs with increasing nodes. 
-Besides, while the collections above offer insights into the properties and features of the graphs (see KONECT), the insights offered are not explicitly tailored to graph layout algorithms.
- Although we do include a discussion on the content of these collections, we believe they can cover a different purpose than the one we present above. 
+This work proposes an overarching taxonomy of datasets and collections based on their structure while also providing a higher emphasis on the features and usage within the literature of our field. 
+Our collection is offered as a complement to the previously mentioned collections, as we intend to aid researchers in finding graphs in the context of layout algorithms and network visualization, with an accent on encouraging efforts towards replicability. 
 
-Several other efforts have been made to compile similar benchmarks within graph drawing and other graph problems. 
-A notable example is how the Graph Drawing organization hosts three primary data sets used significantly in the field: the AT&T graphs, the Rome graphs, and randomly generated directed acyclic graphs [cite].
-Another example is the Graph Partitioning Archive, also known as the Walshaw Collection, which compiles relevant graphs and partitioning algorithms from disparate sources in the relevant literature [cite]. 
-We discuss some of these in further detail as well in section [Sec: Uniform].
+<!-- # Related Work {#sec-related-work} -->
 
-Similarly, Bachmeier et al. proposed the Open Graph Archive in 2011 as an effort to create a graph database that categorizes, analyses, and visualizes graphs uploaded from the community [cite].
+
+
+
+
+<!-- While the list of network datasets could be vastly expanded, this paper limits itself to listing only the datasets that are explicitly cited in our corpus of 196 papers. -->
+
+
+<!-- In section [Large collections], we discuss these and several others in more detail and offer links to their sites. We also provide examples from our survey of how those graphs are used to evaluate graph layout algorithms.  -->
+
+<!-- We discuss some of these in further detail as well in section [Sec: Uniform]. -->
+<!-- The Graph Drawing organization hosts three primary data sets used significantly in the field: the AT&T graphs, the Rome graphs, and randomly generated directed acyclic graphs [cite]. -->
+
+<!-- Besides, while the collections above offer insights into the properties and features of the graphs (see KONECT), the insights offered are not explicitly tailored to graph layout algorithms. -->
+<!-- Several other efforts have been made to compile similar benchmarks within graph drawing and other graph problems.  -->
+
+<!-- Although we do include a discussion on the content of these collections, we believe they can cover a different purpose than the one we present above.  -->
+
+
+
+<!-- Similarly, Bachmeier et al. proposed the Open Graph Archive in 2011 as an effort to create a graph database that categorizes, analyses, and visualizes graphs uploaded from the community [cite].
 Their work consisted of a similarly developed web-based interface that allows graphs to be exported in several formats. 
 They also included graphs across various large collections like the SuiteSparse Matrix Collection (formerly known as Florida in their paper).
 While this work is valuable, the project is discontinued, and the URLs to the site are broken as of this paper's writing. 
-Hence, we emphasize our work with OSF for the longer posterity of the graph base we collect, independent of the health of our proposed web interface.
+Hence, we emphasize our work with OSF for the longer posterity of the graph base we collect, independent of the health of our proposed web interface. -->
 
-Kennedy et al. highlight some of the importance of tools to help researchers choose appropriate benchmarks in network sciences and graph drawing [].
+<!-- Kennedy et al. highlight some of the importance of tools to help researchers choose appropriate benchmarks in network sciences and graph drawing [].
 Therefore, they proposed The Graph Landscape, a visual system with several views and graph metrics to compare across graphs from various bases like the Rome library. 
 While our work does not focus on the same extensive metrics they do, our base still provides visual examples of graph usage and summary statistics per dataset. 
 They also propose a visual system and prototype that could be conceptually used with the collections we compile. 
-A major emphasis of our work was to provide several file formats to facilitate the use of other tools and allow researchers greater ease of use. 
+A major emphasis of our work was to provide several file formats to facilitate the use of other tools and allow researchers greater ease of use.  -->
 
-Therefore, we intend to create a network repository of graph collections tailored explicitly for evaluating graph layout algorithms. This is provided by linking collections to graph features present in the datasets (dynamic, layered, containing clusters, etc.), providing analysis and examples of usage in previous research to aid in discovering and finding relevant datasets.
-We describe the curated collections in [Sec:Large] and uniform benchmark datasets in [Sec: Benchmarks].
+<!-- Our intention with this paper is to create a network repository of graph collections tailored explicitly for evaluating graph layout algorithms. This is provided by linking collections to graph features present in the datasets (dynamic, layered, containing clusters, etc.), providing analysis and examples of usage in previous research to aid in discovering and finding relevant datasets. -->
 

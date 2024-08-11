@@ -16,6 +16,7 @@ The chart below shows the distribution of papers across different venues:
 
 ```{ojs}
 //| echo: false
+//| fig-cap: "Chart showing the distribution of papers collected across different venues. While the most occurrences are from Graph Drawing, a significant number of entries comes from TVCG and CGF."
 { 
   let d = []
   let allbenchmarkdatasets = [...new Set(literature.map(l => l["Conference"].split(",").map(d => d.trim())).flat().map(a => {
@@ -34,7 +35,7 @@ The chart below shows the distribution of papers across different venues:
   return Plot.plot({
     
     color: {
-      range: ["steelblue"]
+      scheme: "category10"
     },
     y: {},
     marks: [
@@ -48,174 +49,36 @@ The chart below shows the distribution of papers across different venues:
 
 The following one, instead, shows the distribution of collected papers' publication date:
 
-<div id="years_distribution" style="max-width: 800px; width: 100%; height: 700px">
-<div id="tooltip" style="position: absolute; text-align: center; width: auto; height: auto; padding: 10px; font: 12px sans-serif; background: lightsteelblue; border: 0px; border-radius: 8px; pointer-events: none; opacity: 0;"></div>
-</div>
-
 ```{ojs}
 //| echo: false
-//| output: false
-{
-    let curr_data = [];
-    let year_range = [1980, 2024]; // including 1980, but excluding 2024
-    for (let year = year_range[0]; year < year_range[1]; year++) {
-        let literature_entries_with_this_year = literature.filter(l => parseInt(l["Year"]) == year);
-
-        curr_data.push({"year": year, "count": literature_entries_with_this_year.length});
-    }
-
-    const container = d3.select("#years_distribution");
-    let width = container.node().getBoundingClientRect().width; // Dynamic width based on container
-    const height = 700; // Fixed height
-    const margin = { top: 20, right: 60, bottom: 40, left: 60 };
-
-    const svg = container.append("svg")
-        .attr("width", width)
-        .attr("height", height);
-
-    const tooltip = d3.select("#tooltip");
-
-// Setup scales and axes
-    const y = d3.scaleBand()
-        .rangeRound([0, height - margin.top - margin.bottom])
-        .padding(0.1)
-        .domain(curr_data.map(d => d.year));
-
-    let x = d3.scaleLinear()
-        .rangeRound([0, width - margin.left - margin.right])
-        .domain([0, d3.max(curr_data, d => d.count)]);
-
-    const g = svg.append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
-
-    // X-axis and labels
-    const xAxis = g.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
-        .call(d3.axisBottom(x).ticks(10))
-        .append("text")
-        .attr("x", width - margin.left - margin.right)
-        .attr("y", -6)
-        .attr("dy", "0.71em")
-        .attr("text-anchor", "end")
-        .text("Count");
-
-    // Y-axis
-    g.append("g")
-        .attr("class", "axis axis--y")
-        .call(d3.axisLeft(y).tickValues(curr_data.map(d => d.year).filter(year => year % 5 === 0)));
-
-    // Hide axis lines
-    g.selectAll(".axis--x path, .axis--y path")
-        .attr("stroke", "none");
-
-    // Bars with tooltip
-    g.selectAll(".bar")
-        .data(curr_data)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("y", d => y(d.year))
-        .attr("height", y.bandwidth())
-        .attr("x", 0)
-        .attr("width", d => x(d.count))
-        .style("fill", "steelblue")
-        .on("mouseover", function(event, d) {
-            tooltip.transition()
-                .duration(200)
-                .style("opacity", .9);
-            tooltip.html(`Year: ${d.year}<br/>Count: ${d.count}`)
-                .style("left", (event.pageX) + "px")
-                .style("top", (event.pageY - 28) + "px");
-        })
-        .on("mouseout", function() {
-            tooltip.transition()
-                .duration(500)
-                .style("opacity", 0);
-        });
-
-// Resize event listener to update dimensions
-    window.addEventListener('resize', () => {
-        width = container.node().getBoundingClientRect().width;
-        svg.attr('width', width);
-        x.rangeRound([0, width - margin.left - margin.right]);
-        xAxis.call(d3.axisBottom(x).ticks(10))
-            .select('text')
-            .attr('x', width - margin.left - margin.right);
-        g.selectAll(".bar")
-            .attr("width", d => x(d.count));
-    });
-}
-```
-
-After collecting the datasets, we looked more in-depth into their contents, running analysis on a number of statistics associated with the graphs contained in them. 
-
-<!-- We finally ended up collecting 46 datasets, listed below: -->
-
-```{ojs}
-//| echo: false
-//| output: false
+//| fig-cap: "Chart showing the distribution of papers collected by year of publication. The bulk of the papers we collected were fairly recent---indeed, our collection process focused mostly on the last 7 years of Graph Drawing proceedings, but thanks to the snowballing process we used we were able to include many papers from previous years."
 { 
-  let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split(",").map(a => a.split("(")[0].trim())).flat())].filter(a => a != "")
-  let collection_types = benchmark_datasets.map(a => a["Type of Collection"]);
+  let d = []
+  let year_range = [1980, 2024]
+  for (let year = year_range[0]; year < year_range[1]; year++){
+    let literature_entries_with_this_year = literature.filter(l => parseInt(l["Year"]) == year);
 
-  // console.log(allbenchmarkdatasets.filter(b => !b.includes("Custom").length))
-  // console.log(allbenchmarkdatasets.filter(b => b.includes("Custom").length))
-
-  let s = ""
-  s += "| Dataset Name | Papers using this dataset | \n"
-  s += "| --- | --- | \n"
-  
-  for (let dataset of allbenchmarkdatasets){
-    let literature_entries_with_this_dataset = literature.filter(l => l["Dataset tag relations"].includes(dataset))
-    let d_entry = benchmark_datasets.find(b => b["Name"].includes(dataset))
-    // if (d_entry == undefined) console.log("not found: ", dataset);
-    // else console.log(d_entry)
-
-    if (literature_entries_with_this_dataset.length < 2) continue;
-
-    s += `| ${dataset} | ` 
-    for (let entry of literature_entries_with_this_dataset){
-      s += "[@" + entry["Citation name"] + "] "
-    }
-    s += "| \n"
+    d.push({"year": year, "count": literature_entries_with_this_year.length})
   }
-  // console.log(s)
+  
+  return Plot.plot({
+    color: {
+      range: ["steelblue"]
+    },
+    height: 500,
+    marks: [
+      Plot.barX(d, {x: "count", y: "year", fill: "steelblue", inset: 2}),
+      Plot.axisY({
+        label: null, 
+        lineWidth: 12, 
+        marginLeft: 150, 
+        marginTop: 20, 
+        tickFormat: year => year % 5 === 0 ? "" + year : "", // Only show ticks for years divisible by 5
+      }),
+      Plot.text(['Year of publication of the papers included in the survey'], {frameAnchor: "Top", dy: -10})
+    ]
+  })
 }
 ```
 
-<!-- | Dataset Name | Papers using this dataset | 
-| --- | --- | 
-| Assorted Collaboration Network | [@saket2016] [@Ogawa2010] [@minghim2006] [@gove2019] [@mizuno2019] [@Qu2022] [@Henry2007] [@burch2011] [@Bach2014] [@Zhao2021] [@Gansner2013] [@Lin2010] [@diBartolomeo2022] [@Dang2016] [@Grabowicz2014] [@Simonetto2018] [@Angori2019] [@DiGiacomo2020] [@arleo2022] | 
-| Code Dependency Graphs | [@devkota2018] [@Tanahashi2015] [@Holten2006] [@burch2011] | 
-| Transportation Networks | [@zheng2019] [@wang2018] [@muelder2008b] [@fisheye2019] [@bast2020] [@preiner2020] [@gove2019] [@zeng2019] [@Huang2016] [@Nollenburg2011] [@Meulemans2013] [@greilich2009] [@brandes1998] [@muelder2008] [@batik2022] | 
-| SuiteSparse Matrix Collection | [@zheng2019] [@DRGraph21] [@zhong2023] [@Gansner2013] [@kruiger2017] [@Eades2018] [@Ortmann2017] [@Hong2019] [@Brsig2020] [@miller2023] [@meidiana2023] | 
-| SNAP | [@zhong2023] [@gove2019] [@Jacomy2014] [@Arleo2019] [@Meidiana2019] [@meidiana2023] | 
-| Social Networks | [@wang2018] [@fisheye2019] [@gove2019] [@hoffswell2018] [@Qu2022] [@Zhao2021] [@nocaj2015] [@Raj2018] [@Simonetto2018] [@Hachul2006] [@Ni2018] [@Purchase2020] | 
-| Enron | [@vandenElzen2013] [@Tanahashi2015] | 
-| California | [@muelder2008b] [@muelder2008] | 
-| Airlines | [@wang2020] [@Wallinger2022] [@WeiweiCui2008] [@vonLandesberger2016] [@Ersoy2011] [@Holten2009] [@Wu2018] [@Perri2020] [@wallinger2023] | 
-| Migrations | [@wang2020] [@Wallinger2022] [@WeiweiCui2008] [@vonLandesberger2016] [@Ersoy2011] [@Holten2009] [@Wu2018] [@Perri2020] [@wallinger2023] | 
-| and Air Traffic | [@wang2020] [@Wallinger2022] [@WeiweiCui2008] [@vonLandesberger2016] [@Ersoy2011] [@Holten2009] [@Wu2018] [@Perri2020] [@wallinger2023] | 
-| Rome-Lib | [@Buchheim2008] [@chimani2010] [@chimani2006] [@diBartolomeo2022b] [@Clancy2019] [@DiBattista1997b] [@chimani2016b] [@Chimani2008] [@Bekos2018] [@Demel2018] [@Heinsohn2018] [@Kindermann2018] [@chimani2016] [@Chimani2012] [@Gansner2006] [@Gutwenger2004] [@klammler2018] [@Niedermann2020] [@Giovannangeli2021] [@Chimani2021] | 
-| North DAGs | [@chimani2010] [@chimani2016b] [@DIBATTISTA2000] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022] | 
-| Stanford GraphBase | [@gove2019] [@barth2002] [@junger1997] [@kruiger2017] [@Raj2018] [@Gronemann2016b] | 
-| Walshaw | [@gove2019] [@Frishman2008] [@Gansner2005b] [@KOREN20051867] [@hu2005efficient] [@Eades2018] [@Hachul2006] [@Hachul2005] [@Hong2019] [@civril2006] [@brandes2006] [@hacul2005] [@koren2002] [@frishman2007] [@walshaw2001] [@meidiana2020] | 
-| Storylines | [@diBartolomeo2022b] [@Tanahashi2015] [@ShixiaLiu2013] [@Tanahashi2012] [@Bartolomeo2021] [@vanDijk2018] [@Gronemann2016b] | 
-| Militarized Interstate Disputes | [@ShixiaLiu2013] [@Tanahashi2012] | 
-| Neural Network | [@Liu2017] [@Wongsuphasawat2018] | 
-| Blogposts | [@Frishman2008] [@Dang2016] [@Grabowicz2014] [@Purchase2020] [@arleo2022] | 
-| Tweets | [@Frishman2008] [@Dang2016] [@Grabowicz2014] [@Purchase2020] [@arleo2022] | 
-| and Forums | [@Frishman2008] [@Dang2016] [@Grabowicz2014] [@Purchase2020] [@arleo2022] | 
-| AT&T | [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] | 
-| KnownCR | [@Clancy2019] [@Chimani2012] [@Chimani2021] | 
-| World Bank Trade Data | [@nocaj2015] [@noack2004] | 
-| Pajek | [@noack2004] [@Meidiana2019] | 
-| Matrix Market | [@KOREN20051867] [@Gansner2005] [@klammler2018] [@brandes2006] [@meidiana2020] | 
-| Padia Stories | [@padia2019] [@padia2018] | 
-| Protein Interactions | [@Dang2016] [@muelder2008] | 
-| GION | [@Eades2018] [@Marner2014] | 
-| Network Repository | [@Eades2018] [@Arleo2019] | 
-| Graphviz Examples | [@Nachmanson2017] [@Gange2011] [@giovannangeli2023] | 
-| Scotch Graph Collection | [@koren2002] [@harel2001] |  -->
-
-The purpose of our collection effort is to facilitate comparisons and replication of results, and to provide a resource for researchers to find datasets that are used in the literature. We also provide links to the specific papers that use each dataset, so that they can be used as examples and sources of information. 
+After collecting the datasets, we looked more in-depth into their contents, running analysis on a number of statistics associated with the graphs contained in them. Based on common metrics reported in @dibartolomeo2024evaluating, we collect and plot statistics about the datasets: distribution of number of nodes, edges, mean degree and maximum degree. Additionally, we collected all the descriptions of the datasets we could find in the literature, which can contain relevant information about the origin of the dataset or its content, and we collected figures representing the content of the datasets taken from papers that use it, to give a visual representation and an immediate idea of the graphs contained in it.
