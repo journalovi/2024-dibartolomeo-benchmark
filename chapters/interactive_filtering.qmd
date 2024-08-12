@@ -294,7 +294,7 @@ The following interactive filtering system is an initial overview over the conte
     const tagMapping = {
     "hypergraphs": "hypergraph",
     "spatial": "spatial",
-    "layered graphs": "layered graphs",
+    "layered graphs": "N-layers",
     "generic": "generic",
     "large": "large",
     "dynamic (discrete)": "dynamic (discrete)",
@@ -302,12 +302,12 @@ The following interactive filtering system is an initial overview over the conte
     "clusters (generated)": "clusters (generated)",
     "bundled edges (generated)": "bundled edges (generated)",
     "directed edges": "directed edges",
-    "hierarchical": "hierarchical",
+    "hierarchical": "Hierarchical",
     "categorical nodes": "categorical nodes",
-    "trees": "trees",
+    "trees": "Trees",
     "labeled nodes": "labeled nodes",
-    "bipartite": "bipartite",
-    "tripartite": "bipartite",
+    "bipartite": "Bipartite",
+    "tripartite": "Bipartite",
     "labeled edges": "labeled nodes",
     "planar": "planar",
     "sparse": "sparse",
@@ -366,25 +366,27 @@ The following interactive filtering system is an initial overview over the conte
     
     var category_tags = {
         0: "Layered",
-        3: "Hierarchical",
-        6: "Time Related",
-        10: "Structures",
-        23: "Imprecise",
-        27: "Other"
+        2: "Hierarchical",
+        4: "Time Related",
+        8: "Structures",
+        21: "Imprecise",
+        25: "Other"
     }
     
     // if you change this ordering or move around values also change the category map above!!!
     //var uniqueDataTags = [...uniqueDataTagSet]
     var uniqueDataTags = [
         // Layered
-        "many layers",
-        "layered graphs",
-        "bipartite",
+        // "many layers",
+        // "layered graphs",
+        "Bipartite",
+        "N-layers",
         
         // Hierarchical
-        "tree-like",
-        "trees",
-        "hierarchical",
+        // "tree-like",
+        "Trees",
+        // "trees",
+        "Hierarchical",
 
         // Time Related
         "dynamic (discrete)",

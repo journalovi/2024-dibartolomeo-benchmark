@@ -1,7 +1,7 @@
 ---
 title: "Benchmark Datasets for Graph Layout Algorithms"
 number-sections: true
-self-contained: true
+self-contained: false
 author:
   - name: Sara Di Bartolomeo
     orcid: 0000-0001-9517-3526
@@ -223,14 +223,6 @@ The work we did also includes reconstructing lost datasets based on author descr
 - A website for perusing this collection, [available here](https://visdunneright.github.io/gd_benchmark_sets/).
 - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
 
-<!-- - A collection of benchmark datasets used for graph layout algorithm evaluations, including:
-  - Re-creating lost datasets based on paper descriptions and a list of unavailable data,
-  - A classification of these datasets by graph features and statistics to aid in identifying appropriate evaluation
-    candidates,
-  - Exemplar text and images from papers that use these datasets,
-  - A website for perusing this collection, and
-  - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations. -->
-
 Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
 
 ```{ojs}
@@ -384,57 +376,40 @@ function get_css_color_for_tag(graph_feature_name) {
   return graph_feature_tags_colors[graph_feature_tags.indexOf(graph_feature_name)%graph_feature_tags_colors.length]
 }
 
-</script>
-
-
-
-```{ojs}
-//| echo: false
-//| output: false
-{
-
 // The following provides output to be added to the styles.css manually, since quartro cannot hanlde dynamically injected css
     
-    // add new custom style because the compilation destroys the styles.css (not found under document.styleSheets)
-    //let targetStyle = document.createElement('style');
-    //document.head.appendChild(targetStyle);
+// add new custom style because the compilation destroys the styles.css (not found under document.styleSheets)
+//let targetStyle = document.createElement('style');
+//document.head.appendChild(targetStyle);
+
+//console.log(targetStyle.sheet)
+
+let new_style = ""
+
+// Dynamically add CSS rules for each tag
+graph_feature_tags.forEach((graph_feature_name) => {
+    const clean_css_tag_name = name_cleanup(graph_feature_name);
+    const rule = `.pill_color_${clean_css_tag_name} { background-color: ${get_css_color_for_tag(graph_feature_name)}; }`;
     
-    //console.log(targetStyle.sheet)
+    new_style += rule + "\n"
     
-    let new_style = ""
+    /*try {
+        targetStyle.sheet.insertRule(rule, targetStyle.sheet.cssRules.length);
+    } catch (e) {
+        console.error('Failed to insert rule:', e);
+    }*/
+});
 
-    // Dynamically add CSS rules for each tag
-    graph_feature_tags.forEach((graph_feature_name) => {
-        const clean_css_tag_name = name_cleanup(graph_feature_name);
-        const rule = `.pill_color_${clean_css_tag_name} { background-color: ${get_css_color_for_tag(graph_feature_name)}; }`;
-        
-        new_style += rule + "\n"
-        
-        /*try {
-            targetStyle.sheet.insertRule(rule, targetStyle.sheet.cssRules.length);
-        } catch (e) {
-            console.error('Failed to insert rule:', e);
-        }*/
-    });
+// uncomment this to get the current color mapping for the tags to be added to the style.css
+//console.log(new_style)
 
-    // uncomment this to get the current color mapping for the tags to be added to the style.css
-    //console.log(new_style)
+//console.log('Number of CSS rules added:', targetStyle.sheet.cssRules.length);
+// Log each rule
+//Array.from(targetStyle.sheet.cssRules).forEach(rule => {
+//    console.log(rule.cssText);
+//});
 
-    //console.log('Number of CSS rules added:', targetStyle.sheet.cssRules.length);
-    // Log each rule
-    //Array.from(targetStyle.sheet.cssRules).forEach(rule => {
-    //    console.log(rule.cssText);
-    //});
-}
-```
-
-
-
-```{ojs}
-//| echo: false
-//| output: false
-{
-    document.querySelectorAll('a.dataset-link').forEach(item => {
+document.querySelectorAll('a.dataset-link').forEach(item => {
         item.addEventListener('click', function (e) {
             // jumping is done by default with these links, we just need to get the collapsible to open up
             let str = this.getAttribute('href')
@@ -482,8 +457,7 @@ function get_css_color_for_tag(graph_feature_name) {
         });
     });
 
-}
-```
+</script>
 
 {{< include chapters/background.qmd >}}
 

@@ -173,6 +173,8 @@ Each dataset also contains a number of graph features specific to the graphs con
 
 **Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
 
+Differently from the collections presented later in this section, an experiment that uses an Uniform Benchmark dataset aims to provide a general overview of the performance of a graph layout algorithm by testing on a large amount of graphs varying in size and density, rather than focusing on a specific type of graph.
+
 The first of these collapsible sections is shown already expanded, to give an example of the content that can be found in each of them. The content is generated dynamically based on the data we collected. 
 
 <!-- [http://graphdrawing.org describes it as: “Test suites of directed and undirected graphs from the http://www.dia.uniroma3.it/~gdt/ homepage (also known as the Rome Graphs)”.  -->
@@ -1038,7 +1040,9 @@ Additional interesting graphs can be found in the [Graph Drawing Contest website
 
 ### Established Network Repositories {#sec-established-network-repositories}
 
-A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs. Because their hosts are already dedicated to the maintaining and reporting of information on these collections, we do not include here any storage of the data (which would be redundant) or report statistics on them. Rather, our analysis here is focused on highlighting their properties, origins, and ways in which they have been used. 
+A popular choice is to use datasets from **Established Network Repositories**. These are ample collections, often organized in dedicated websites which also offer a few stats about the contained graphs. These collections are particularly useful when trying to locate a graph with a specific structure or property. 
+
+Because their hosts are already dedicated to the maintaining and reporting of information on these collections, we do not include here any storage of the data (which would be redundant) or report statistics on them. Rather, our analysis here is focused on highlighting their properties, origins, and ways in which they have been used. 
 
 ::: {.callout-note title="Matrix Market" collapse=true appearance="minimal"}
 
@@ -1298,10 +1302,12 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 ::: 
 
+One more of such collections is [Konect](http://konect.cc/). At the time of writing, though, the website for Konect has been down for a while. Both the data and the website are still accessible through [web archive](https://web.archive.org/web/20231201123711/http://www.konect.cc/)---thus we do not consider this a lost collection.
+
 #### Subsets of other collections {#sec-subsets}
 
 Some of the datasets mentioned in the papers have, after a certain time, been integrated into other, larger collections. 
-This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the Walshaw dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be now found as part of many other larger collections. 
+This is a phenomenon that can happen through the years, through the redistribution and through the merging of different sources: the <a href="#Walshaw" class="dataset-link">Walshaw</a> dataset, for instance, was and still is distributed and cited as its own standalone dataset, but its graphs can be now found as part of many other larger collections. 
 In order to keep precise records about the data, we kept these instances separated, in order to link papers to the individual dataset they used if they explicitly mention using one of these smaller collections.
 We classified these datasets as **Subsets**.
 
@@ -2588,7 +2594,11 @@ _site:150:21
 
 ### Lost and unavailable datasets {#sec-lost}
 
-Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
+Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. A dataset that is not anymore accessible renders all the papers using it unfortunately not reproducible. Most of the instances we found became lost because of lack of maintenance of the original storage locations: websites, servers, or repositories. This is, unfortunately, a significant issue in science, which is now hopefully gaining more and more attention.
+
+"Loss" of a dataset does not exclusively mean that the entire, original dataset became lost, but also that a paper using a dataset with particular edits---such as interpreting a <a href="#Debates" class="dataset-link">debate</a> as a graph between the participants---has not documented well enough their process and did not link to the edited dataset. This makes it impossible to reproduce the results of the paper, and is further discussed in @sec-custom-made-datasets.
+
+While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
 
 <a name="GION"></a>
 
