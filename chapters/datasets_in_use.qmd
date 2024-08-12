@@ -217,11 +217,11 @@ Information about optimal crossings can be found as part of [WebCompute](#WebCom
 <div class="row"><div class="col-4">[@chimani2016b]</div><div class="col-4">An ILP-based Proof System for the Crossing
 Number Problem</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Rome-Lib%20c2f20984de724f4c89764b0bc494e99e/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[A branch-and-cut approach to the crossing number problem](https://doi.org/10.1016/j.disopt.2007.05.006)”:
 
@@ -245,7 +245,7 @@ From “[An Experimental Comparison of Four Graph Drawing Algorithms](https://do
 
 > Our approach is based on the following scheme. We defined several primitive operations for updating graphs, which correspond to the typical operations performed by designers of Entity-Relationship and Data-Flow Diagrams, and attributed a certain probability to each of them. More specifically, the updating primitives we have used are the following: InsertEdge, which inserts a new edge between two existing vertices; DeleteEdge, which deletes an existing edge; InsertVertex, which splits an existing edge into two edges by inserting a new vertex; DeleteVertex, which deletes a vertex and all its incident edges; and MakeVertex, which creates a new vertex and connects it to a subset of vertices. The test graphs were then generated in several iterations starting from the core graphs by applying random sequences of operations with a "genetic" mechanism. Namely, at each iteration a new set of test graphs was obtained by applying a random sequence of operations to the current test set. Each new graph was then evaluated for "suitability", and those found not suitable were discarded. The probability of each primitive operation was varied at the end of each iteration. The evaluation of the suitability of the generated graphs was conducted using both objective and subjective analyses. The objective analysis consisted of determining whether the new graph had similar structural properties with respect to the core graph it was derived from. We have taken into account parameters like the average ratio between number of vertices and number of edges and the average number of biconnected components. The subjective analysis consisted in a visual inspection of the new graph and an assessment by expert users of Entity-Relationship and Data-Flow diagrams of its similarity to a "real-life" diagram. For obvious reasons, the subjective analysis has been done on a randomly selected subset of the graphs.
 
-### Example Figures
+#### Example Figures
 
 From ”[An Experimental Comparison of Four Graph Drawing Algorithms](https://doi.org/10.1016/s0925-7721(96)00005-3)”:
 
@@ -291,11 +291,11 @@ It contains <a href="#directed_edges"><span class="pill-tag pill_color_directed_
 <div class="row"><div class="col-4">[@welch2017]</div><div class="col-4">Measuring Symmetry in Drawings of Graphs</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/AT&T%20e86f130c42344169a9d75a61abc7e487/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Drawing Directed Acyclic Graphs: An Experimental Study](https://doi.org/10.1142/s0218195900000358)”:
 
@@ -315,7 +315,7 @@ From “[Layer-Free Upward Crossing Minimization](https://doi.org/10.1145/167197
 
 > *North DAGs.* The North DAGs have been introduced in an experimental comparison of algorithms for drawing DAGs [Di Battista et al. 2000]. The benchmark set contains 1,158 DAGs collected by Stephen North, which were slightly modified by Di Battista et al. The graphs are grouped into nine sets, where set *i* contains graphs with *10 i* to *10 i+9* arcs for *i=1, …, 9*.
 
-### Example Figures
+#### Example Figures
 
 From “[Drawing Directed Acyclic Graphs: An Experimental Study](https://doi.org/10.1142/s0218195900000358)”:
 
@@ -366,7 +366,7 @@ This is the same collection as AT&amp;T, but referred to as North DAGs in the pa
 <div class="row"><div class="col-4">[@binucci2022]</div><div class="col-4">Placing Arrows in Directed Graph Layouts: Algorithms and Experiments</div><div class="col-4"><a href="#directed_edges"><span class="pill-tag pill_color_directed_edges">directed edges</span></a></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Layer-Free Upward Crossing Minimization](https://doi.org/10.1145/1671970.1671975)”:
 
@@ -409,17 +409,17 @@ make_sparkline("RandDAG")
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@klammler2018]</div><div class="col-4">Aesthetic Discrimination of Graph Layouts</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/RandDAG%2054b6ed8fdecb4256b2cca6298f09965e/four_in_one.svg' width='80%'></div>
 
-### Descriptions from the Literature
+#### Descriptions from the Literature
 
 From “[Aesthetic Discrimination of Graph Layouts](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_12)”:
 
 > We have assembled such a dataset using two types of sources. First, we used the collections of the well-known graph archives ROME, NORTH and RANDDAG which are published on [graphdrawing.org](http://www.graphdrawing.org/) as well as the NIST’s “Matrix Market” [[2](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_12#ref-CR2)].
 
-### Example Figures
+#### Example Figures
 
 From “[Aesthetic Discrimination of Graph Layouts](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_12) ([Appendix](https://arxiv.org/abs/1809.01017))”:
 
@@ -463,11 +463,11 @@ make_sparkline("KnownCR")
 <div class="row"><div class="col-4">[@Chimani2012]</div><div class="col-4">Advances in the Planarization Method: Effective Multiple Edge Insertions</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/KnownCR%20ed33d600c65e4c52a1506a905b774335/four_in_one.svg' width='80%'></div>
 
-### Description from Literature
+#### Description from Literature
 
 From “[An effective crossing minimisation heuristic based on star insertion](https://dx.doi.org/10.7155/jgaa.00487)”:
 
@@ -481,7 +481,7 @@ From “[Advances in the Planarization Method: Effective Multiple Edge Insertion
 
 > Finally, the KnownCR graphs [11] are a collection of 1946 graphs with known crossing numbers (by proofs), consisting of generalized Petersen graphs (P(m, 2), P(m, 3)) and products of cycles $C_n$, paths $P_n$, and 5-vertex graphs $G_i (C_m \times C_n, G_i \times P_n, G_i \times C_n)$; these graphs have between 9 and 250 nodes.
 
-### Example Figures
+#### Example Figures
 
 From “[Application of SPQR-Trees in the Planarization Approach for Drawing Graphs](https://eldorado.tu-dortmund.de/handle/2003/27430?mode=full)”:
 
@@ -526,11 +526,11 @@ Their website also features proofs of the crossing numbers of many of the Rome-L
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@chimani2016b]</div><div class="col-4">An ILP-based Proof System for the Crossing Number Problem</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/WebCompute%207a10c41801914e6faa5a6cc1b1ef0b77/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[An ILP-based Proof System for the Crossing Number Problem](https://doi.org/10.4230/LIPIcs.ESA.2016.29)”:
 
@@ -557,11 +557,11 @@ The linked dataset includes both the complete graphs $K_n$ for $5≤n≤50$ and 
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Clancy2019]</div><div class="col-4">An effective crossing minimisation heuristic based on star insertion</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Complete%20Graphs%20202f26621cf34604935433a41b130f10/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[An effective crossing minimisation heuristic based on star insertion](https://doi.org/10.7155/jgaa.00487)”:
 
@@ -586,7 +586,8 @@ In some cases, authors of algorithms that deal with particular graph types might
 ::: {.callout-note title="Storylines (Movie Plots)" collapse-id="Storylines_Movie_Plots" collapse=true appearance="minimal"}
 
 The storylines dataset is particularly useful for <a href="#temporal_event_sequence"><span class="pill-tag pill_color_temporal_event_sequence">temporal event sequence</span></a>visualization because of its <a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a>aspect and <a href="#clusters"><span class="pill-tag pill_color_clusters">clusters</span></a>(which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
-This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis, which, unfortunately, got taken down after some time from its publication. This caused the dataset to be lost for a period of time, as none of the papers that used it provided a link to the dataset or stored it as part of their supplemental material. The experiments contained in such papers were then rendered non-reproducible because of the missing dataset. The effects of lost datasets are discussed more in depth in @sec-lost. 
+This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis, which, unfortunately, got taken down after some time from its publication. This caused the dataset to be lost for a period of time, as none of the papers that used it provided a link to the dataset or stored it as part of their supplemental material. The experiments contained in such papers were then rendered non-reproducible because of the missing dataset. 
+<!-- The effects of lost datasets are discussed more in depth in @sec-lost.  -->
 Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
 
 <div><b>Originally found at: </b>UC Davis’ website, personal page which is now unavailable. Currently distributed here.</div><br>
@@ -604,11 +605,11 @@ Through the help of personal connections at UC Davis, we were luckily able to re
 <div class="row"><div class="col-4">[@Bartolomeo2021]</div><div class="col-4">Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div>
 <div class="row"><div class="col-4">[@diBartolomeo2022b]</div><div class="col-4">Stratisfimal Layout: A modular optimization model for laying out layered node-link network visualizations</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-compound graphs</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Storylines%20(Movie%20Plots)%205d9ea7cbfc2c4a6c88a7ca1bf32c67d7/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “An efficient Framework for Generating Storyline Visualizations from Streaming Data”:
 
@@ -623,7 +624,7 @@ More precisely, we define an interaction session as a unit which holds three att
 • members.
 Initiation time corresponds to the time when the interaction session begins. Duration corresponds to the duration of the interaction session. Members corresponds to the set of characters involved in the interaction session. Each interaction session represents a time slot in the data where its members are interacting. Note that any change in the formation of members (e.g., a character leaving or joining) indicates a separate interaction session.
 
-### Example Figures
+#### Example Figures
 
 From “[An Efficient Framework for Generating Storyline Visualizations from Streaming Data](https://doi.org/10.1109/TVCG.2015.2392771)”:
 
@@ -654,7 +655,7 @@ Collected as part of the [Correlates Of War](https://correlatesofwar.org/data-se
 <div class="row"><div class="col-4">[@Tanahashi2012]</div><div class="col-4">Design Considerations for Optimizing Storyline Visualizations</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div>
 <div class="row"><div class="col-4">[@ShixiaLiu2013]</div><div class="col-4">StoryFlow: Tracking the Evolution of Stories</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Description From Literature
+#### Description From Literature
 
 From [Design Considerations for Optimizing Storyline Visualizations:](https://ieeexplore.ieee.org/document/6327274)
 
@@ -666,7 +667,7 @@ From [StoryFlow: Tracking the Evolution of Stories](https://ieeexplore.ieee.org/
 
 > We conducted the experiment based on three movie datasets and a network dataset: Star Wars, Inception, The Matrix, and the MID network dataset (from 1817 to 1947).
 
-### Example Figures
+#### Example Figures
 
 From [Design Considerations for Optimizing Storyline Visualization](https://ieeexplore.ieee.org/document/6327274):
 
@@ -722,11 +723,11 @@ World Bank country information transformed into a weight-vectors dataset. Some o
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Nickel2019]</div><div class="col-4">Computing Stable Demers Cartograms</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
 
@@ -736,7 +737,7 @@ From Supplemental Materials, Appendix C of *[“Computing Stable Demers Cartogra
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/Untitled.png' width='80%'></div>
 
-### Example Figures
+#### Example Figures
 
 From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
 
@@ -787,11 +788,11 @@ The graphs have various origins, most of which are described on the Graphviz htt
 <div class="row"><div class="col-4">[@giovannangeli2023]</div><div class="col-4">FORBID: Fast Overlap Removal by&nbsp;Stochastic GradIent Descent for&nbsp;Graph Drawing</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Graphviz%20Examples%20e90aec42f02c4e8b8a6b8727fe2f86ae/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
 
@@ -801,7 +802,7 @@ From “[Optimal k-level planarization and crossing minimization](https://doi.or
 
 > The first set of graphs are all the hierarchical network diagrams appearing in the GraphViz gallery [3]… Table 1 shows the results of minimizing edge crossings and maximizing planar subgraphs with MIP and SAT solvers, as well as the crossings resulting in the Graphviz heuristic layout for graphs from the GraphViz gallery.
 
-### Example Figures
+#### Example Figures
 
 From “[Node Overlap Removal by Growing a Tree](https://doi.org/10.7155/jgaa.00442)”:
 
@@ -837,17 +838,17 @@ The [SCOTCH software package](https://gitlab.inria.fr/scotch/scotch) is produced
 <div class="row"><div class="col-4">[@harel2001]</div><div class="col-4">A Fast Multi-Scale Method for Drawing Large Graphs</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div>
 <div class="row"><div class="col-4">[@koren2002]</div><div class="col-4">ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs](https://doi.org/10.1109/INFVIS.2002.1173159)”:
 
 > Figure 10c, the 4elt graph, is yet another example of a graph with inherent diversity of distance scales.
 
-### Example Figures
+#### Example Figures
 
 From “[A Fast Multi-Scale Method for Drawing Large Graphs](https://doi.org/10.1007/3-540-44541-2_18)”:
 
@@ -915,17 +916,17 @@ According to [kegg.jp](https://www.kegg.jp/kegg-bin/show_pathway?map01100), “t
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Wu2020]</div><div class="col-4">Multi-Level Area Balancing of Clustered Graphs</div><div class="col-4"><a href="#categorical_nodes"><span class="pill-tag pill_color_categorical_nodes">categorical nodes</span></a><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#labeled_nodes"><span class="pill-tag pill_color_labeled_nodes">labeled nodes</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109/TVCG.2020.3038154)”:
 
 > KEGG Overview Pathway. Fig. 6 is the result of reproducing the KEGG overview pathway map using our approach. The color coding of the category here is directly retrieved from the original KEGG database [43], as similarly incorporated in Metabopolis [64] (see figures in supplementary materials, available online). We also set the same threshold for specifying unimportant vertices as in Metabopolis, so that readers can refer to the paper for comparison (Fig. 6). The advantage of this technique allows us to arrange the vertexts in a balanced fashion by pushing vertexts away from each other. This initially gives users an idea of how big each category is, and explicitly shows which reaction is classified under which category. Users can also identify sub-components effectively since those components with identical topological structures are aligned as neighbors. This also helps users to comprehend which structures are associated with certain types of pathways, such as small chains, stars, etc.
 
-### Example Figures
+#### Example Figures
 
 From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109/TVCG.2020.3038154)”:
 
@@ -956,11 +957,11 @@ Collected by the authors of “https://almob.biomedcentral.com/articles/10.1186/
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Calamoneri2018]</div><div class="col-4">Visualizing Co-phylogenetic Reconciliations</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">-?-binary trees</span></a><a href="#trees"><span class="pill-tag pill_color_trees">trees</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Co-Phylogenetic%20Trees%202440f3927d254148abd93168c1399b43/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[EUCALYPT: efficient tree reconciliation enumerator](https://almob.biomedcentral.com/articles/10.1186/s13015-014-0031-3)”:
 
@@ -968,7 +969,7 @@ From “[EUCALYPT: efficient tree reconciliation enumerator](https://almob.biome
 
 > In addition, we used a dataset of our own which corresponds to arthropod hosts and a bacterium genus, Wolbachia, living inside the cells of their hosts [32,33]. The datasets were chosen to provide a variety in terms of size of the host and parasite trees: those from the literature are relatively small (from 7 to 100 leaves), while our own data provide an example of much bigger host and parasite trees, each having 387 leaves. Moreover, we were careful that the selected datasets cover, as much as possible, a range of situations in terms of coevolution and of the expected frequencies of each event
 
-### Example Figures
+#### Example Figures
 
 From “[Visualizing Co-phylogenetic Reconciliations](https://doi.org/10.1007/978-3-319-73915-1_27)”:
 
@@ -1011,17 +1012,17 @@ And finally, a collection of graph problems:
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@chimani2016]</div><div class="col-4">A Note on the Practicality of Maximal Planar Subgraph Algorithms</div><div class="col-4"><a href="#planar"><span class="pill-tag pill_color_planar">planar</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/SteinLib%204b766ffe22de40ecaa9307671862ea96/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From [A Note on the Practicality of Maximal Planar Subgraph Algorithms](https://doi.org/10.1007/978-3-319-50106-2_28):
 
 > We use the non-planar graphs of the established benchmark sets North [12] (423 instances), Rome [11] (8249), and **SteinLib** [16] (586), all of which include real-world instances. In our plots, we group instances according to |V| rounded to the nearest multiple of 10; for Rome we only consider graph with ≥ 25 vertices.
 
-### Example Figures
+#### Example Figures
 
 From [SteinLib: An Updated Library on Steiner Tree Problems in Graphs](https://doi.org/10.1007/978-1-4613-0255-1_9):
 
@@ -1032,6 +1033,8 @@ From [SteinLib: An Updated Library on Steiner Tree Problems in Graphs](https://d
 Is it lost? -->
 
 ::: 
+
+Additional interesting graphs can be found in the [Graph Drawing Contest website](https://mozart.diei.unipg.it/gdcontest/history/).
 
 ### Established Network Repositories {#sec-established-network-repositories}
 
@@ -1072,7 +1075,7 @@ The **Network Repository** was proposed in 2015 by Rossi and Ahmed of Purdue Uni
 Sparsification</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div>
 <div class="row"><div class="col-4">[@Arleo2019]</div><div class="col-4">A Distributed Multilevel Force-Directed Algorithm</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[A Distributed Multilevel Force-Directed Algorithm](https://doi.org/10.1109/TPDS.2018.2869805)”:
 
@@ -1101,7 +1104,7 @@ The **Pajek** Program for Large Network Analysis is a tool developed and hosted 
 <div class="row"><div class="col-4">[@noack2004]</div><div class="col-4">Energy Models for Graph Clustering</div><div class="col-4"><a href="#clusters_generated"><span class="pill-tag pill_color_clusters_generated">clusters (generated)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div>
 <div class="row"><div class="col-4">[@Meidiana2019]</div><div class="col-4">A Quality Metric for Visualization of Clusters in Graphs</div><div class="col-4"><a href="#clusters_generated"><span class="pill-tag pill_color_clusters_generated">clusters (generated)</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
 
@@ -1116,7 +1119,7 @@ From “[A Quality Metric for Visualization of Clusters in Graphs](https://link.
 
 > We re-used some datasets from the validation experiments and created some new ones, listed in Table [2](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#Tab2). We also selected real world graph datasets with existing vertex categorization, which are listed under the double line in Table [2](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#Tab2). The datasets were taken from Pajek [[2](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#ref-CR2)] and Stanford Network Analysis Project’s (SNAP) repository [[23](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#ref-CR23), [40](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_10#ref-CR40)].
 
-### Example Figures
+#### Example Figures
 
 From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
 
@@ -1167,13 +1170,13 @@ Note that BioSNAP, which consists of similar datasets for medical applications, 
 <div class="row"><div class="col-4">[@zhong2023]</div><div class="col-4">Force-Directed Graph Layouts Revisited: A New Force Based on the T-Distribution</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div>
 <div class="row"><div class="col-4">[@meidiana2023]</div><div class="col-4">Shape-Faithful Graph Drawings</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">-?-almost proximity drawable graphs</span></a><a href="#mesh"><span class="pill-tag pill_color_mesh">mesh</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-scale-free graphs</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-strong proximity drawable graphs</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-weak proximity drawable graphs</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software](https://doi.org/10.1371/journal.pone.0098679)”:
 
 > We benchmarked our algorithm with a dataset of 68 networks from 5 to 23,133 nodes. We tried to gather varied networks corresponding to the actual use of Gephi (a lot of social networks, and scale-free networks in general). Most of these networks are from the Stanford Large Network Dataset Collection ([http://snap](http://snap/). [stanford.edu/data/](http://stanford.edu/data/)) and include social networks (Facebook and Twitter ego-networks), collaboration networks (from Arxiv) and autonomous systems (peering information inferred from Oregon route-views).
 
-### Example Figures
+#### Example Figures
 
 From “[ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software](https://doi.org/10.1371/journal.pone.0098679)”:
 
@@ -1199,7 +1202,7 @@ Compiled by Donald Knuth, the **Stanford Graphbase** consists of programs and da
 <div class="row"><div class="col-4"></div><div class="col-4">A Random Sampling O</div><div class="col-4"></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Crossing Minimization in Storyline Visualizations](https://doi.org/10.1007/978-3-319-50106-2_29)”:
 
@@ -1210,7 +1213,7 @@ From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in G
 > The third dataset is a graph of character associations in the famous French novel Les Miserables (Fig. 5) [18]. This graph consists of 77 nodes, each representing a character in the novel, and 254 weighted edges where the weights represent the number of chapters that feature both characters associated with an edge.
 We see the that the main protagonist Valjean (marked in red) is placed prominently in all three visualizations (Fig. 5). However, other key characters in the plot such as Inspector Javert (blue) and Cosett (orange), who do not appear often with characters other than the protagonist (and thus have low betweenness centrality) are treated differently. While the radial layout relegates them to the periphery (far from Valjean) (Fig. 5b), MDS (Fig. 5a) paints a conflicting picture with regard to their centrality, e.g., Cosett’s node almost overlaps with Valjean despite its low centrality. In contrast, the proposed ARL (Fig.5c) is able to coherently convey the low centrality of the Inspector Javert and Cosett, as well as, their closeness to Valjean. The above issue of distance distortion appears to be a frequent occurrence in the radial layout due to many characters who have a low centrality value causing them to end up being packed in the outer periphery. A case of contrast is that of the character Bishop Myriel (green) who despite being associated with several characters, is only seen with Valjean once.
 
-### Example Figures
+#### Example Figures
 
 From “[Crossing Minimization in Storyline Visualizations](https://doi.org/10.1007/978-3-319-50106-2_29)”:
 
@@ -1255,7 +1258,7 @@ Sparsification</div><div class="col-4"><a href="#generic"><span class="pill-tag 
 <div class="row"><div class="col-4">[@meidiana2023]</div><div class="col-4">Shape-Faithful Graph Drawings</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">-?-almost proximity drawable graphs</span></a><a href="#mesh"><span class="pill-tag pill_color_mesh">mesh</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-scale-free graphs</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-strong proximity drawable graphs</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-weak proximity drawable graphs</span></a></div></div><br>
 
 
-### Descriptions From Literature
+#### Descriptions From Literature
 
 From “[A Sparse Stress Model](https://dx.doi.org/10.7155/jgaa.00440)”:
 
@@ -1279,7 +1282,7 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 **Table 1.** Test Datasets
 
-### Example Figures
+#### Example Figures
 
 From “[The university of Florida sparse matrix collection](https://doi.org/10.1145/2049662.2049663)**”:**
 
@@ -1338,7 +1341,7 @@ Sparsification</div><div class="col-4"><a href="#generic"><span class="pill-tag 
 <div class="row"><div class="col-4">[@meidiana2020]</div><div class="col-4">Sublinear Time Force Computation for Big Complex Network Visualization</div><div class="col-4"><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)”:
 
@@ -1350,7 +1353,7 @@ From “[A Combined Evolutionary Search and Multilevel Optimisation Approach to 
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled.png' width='80%'></div>
 
-### Example Figures
+#### Example Figures
 
 From “[An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)”:
 
@@ -1362,7 +1365,7 @@ From “[Multi-Level Graph Layout on the GPU](https://doi.org/10.1109/TVCG.2007.
 
 **Fig. 11.** 4elt. Red: our layout, black: Kamada-Kawai layout
 
-### Other
+#### Other
 
 From *[Group DIMACS10 in the SuiteSparse Matrix Collection](https://sparse.tamu.edu/DIMACS10)*:
 
@@ -1450,14 +1453,14 @@ Wallinger et al. randomly filter data from the original dataset collected by Les
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Wallinger2022]</div><div class="col-4">Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach</div><div class="col-4"><a href="#bundled_edges_generated"><span class="pill-tag pill_color_bundled_edges_generated">bundled edges (generated)</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div><br>
 
-### Description from Literature
+#### Description from Literature
 
 From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
 
 > **Amazon Subset**
 > This dataset consists of products with edges indicating that they are commonly co-purchased. We randomly filtered edges from the original graph [33], [34]. It has |V|=192k vertices and |E|=269k edges.
 
-### Example Figures
+#### Example Figures
 
 From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
 
@@ -1497,7 +1500,7 @@ The data was originally part of the University of Oregon’s RouteViews project.
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Zhao2021]</div><div class="col-4">Preserving Minority Structures in Graph Sampling</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
 
@@ -1508,7 +1511,7 @@ From “[Graphs over time: densification laws, shrinking diameters and possible 
 > The graph of routers comprising the Internet can be organized into sub-graphs called Autonomous Systems (AS). Each AS exchanges traffic flows with some neighbors (peers).
 We can construct a communication network of who-talks-towhom from the BGP (Border Gateway Protocol) logs. We use the the Autonomous Systems (AS) dataset from [26]. The dataset contains 735 daily instances which span an interval of 785 days from November 8 1997 to January 2 2000.In contrast to citation networks, where nodes and edges only get added (not deleted) over time, the AS dataset also exhibits both the addition and deletion of the nodes and edges over time.
 
-### Example Figures
+#### Example Figures
 
 From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
 
@@ -1534,7 +1537,7 @@ Possibly related to something like this:
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Nachmanson2017]</div><div class="col-4">Node Overlap Removal by Growing a Tree</div><div class="col-4"><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
 
@@ -1542,7 +1545,7 @@ From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa
 PRISM to compare it with other algorithms [6]. The set is available in the
 Graphviz open source package.
 
-### Example Figures
+#### Example Figures
 
 From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
 
@@ -1569,13 +1572,13 @@ Data made public by the Federal Energy Regulatory Commission when investigating 
 <div class="row"><div class="col-4">[@vandenElzen2013]</div><div class="col-4">Reordering massive sequence views: Enabling temporal and structural analysis of dynamic networks</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Reordering massive sequence views: Enabling temporal and structural analysis of dynamic networks](https://doi.org/10.1109/PacificVis.2013.6596125)”:
 
 > We cleaned the data set by removing duplicates, spam and only to contain internal communication between Enron employees annotated with employee function leaving us with 151 nodes (employees) and 21374 edges (emails). Visualization using a node-link diagram enables the identification of stronger connections (see Figure 9(a)). However, temporal patterns and the evolution of the network cannot be analysed. From the standard MSV (Figure 9(b)) it becomes somewhat clear that transaction density increases over time and we can distinguish between different phases. We cannot, however, see features and identify communities due to visual clutter
 
-### Example Figures
+#### Example Figures
 
 From “[An Efficient Framework for Generating Storyline Visualizations from Streaming Data](https://doi.org/10.1109/TVCG.2015.2392771)”:
 
@@ -1643,11 +1646,11 @@ Data contains links related to an online search of the word “California” as 
 <div class="row"><div class="col-4">[@muelder2008b]</div><div class="col-4">A Treemap Based Method for Rapid Layout of Large Graphs</div><div class="col-4"><a href="#clusters_generated"><span class="pill-tag pill_color_clusters_generated">clusters (generated)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div>
 <div class="row"><div class="col-4">[@muelder2008]</div><div class="col-4">Rapid Graph Layout Using Space Filling Curves</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/California%20e0a841bc57c045b5a8514110cfe85635/degree_distr.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From [“A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
 
@@ -1657,7 +1660,7 @@ From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.
 
 > The “california” dataset (shown in Figures 5 and 8) consists of the links between the webpages found from a search for the word 'California' [4].
 
-### Example Figures
+#### Example Figures
 
 From [“A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
 
@@ -1693,15 +1696,15 @@ Data collected by the [WRI](https://www.wri.org/). Linked data is from a differe
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@zarate2018]</div><div class="col-4">Optimal Sankey Diagrams via Integer Programming</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Greenhouse%20Gas%20Emissions%20859aab42a55e43ac9dad1eae1a91a534/degree_distr.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 > We have tested our method on the “World Greenhouse Gas Emissions” data from the World Resources Institute [8]. After transforming the “long” edges of the graph into “short” edges and adding the corresponding dummy nodes, as described in Section 3, this example has 4 layers, 55 nodes and 100 edges. The node ordering in the layout of the Sankey diagram shown in Figure 1 has been computed using Sugiyama’s heuristic method [13].
 
-### Example Figures
+#### Example Figures
 
 From [Optimal Sankey Diagrams via Integer Linear Programming](https://doi.org/10.1109/PacificVis.2018.00025):
 
@@ -1728,13 +1731,13 @@ From [Optimal Sankey Diagrams via Integer Linear Programming](https://doi.org/10
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Bartolomeo2021]</div><div class="col-4">Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes](https://doi.org/10.1109/TVCG.2020.3030442)”:
 
 > 200 Chess openings displayed with Sequence Braiding. Each line represents a sequence of moves of the white player, each group is a chess piece type. Most openings start with a pawn, and very little with the knight.
 
-### Example Figures
+#### Example Figures
 
 From “[Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes](https://doi.org/10.1109/TVCG.2020.3030442)”:
 
@@ -1759,13 +1762,13 @@ Part of the <a href="http://tolweb.org/tree/to ">http://tolweb.org/tree/to </a>c
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@gray2023]</div><div class="col-4">Visualizing Evolving Trees</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
 
 > **The Tree of Life:** captures the evolutionary progression of life on Earth [[37](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23#ref-CR37)]. The underlying data is a tree structure with a natural time component. As a new species evolves, a new node in the tree is added. The edges give the parent-child relation of the nodes, where the parent is the original species, and the child is the new species. We use a subset of this graph with 500 nodes. The maximum node degree of this tree is 5, and the radius is 24
 
-### Example Figures
+#### Example Figures
 
 From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
 
@@ -1798,17 +1801,17 @@ Bilateral trade value in 1999 (total imports+exports), from [wits.worldbank.org]
 <div class="row"><div class="col-4">[@nocaj2015]</div><div class="col-4">Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br> 
 
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/World%20Bank%20Trade%20Data%20e6e54a00bc574c639cfa165458c71232/degree_distr.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
 
 > The difference between conventional energy models, node-repulsion LinLog, and edge-repulsion LinLog can be illustrated with a model of the trade between ten North American and European countries. The nodes of the graph correspond to the countries, and the edge weights specify the trade volume between each pair of countries. Because of geographical closeness and free trade agreements, countries on the same continent trade more intensively than countries on different continents. Figure 1 shows the minimum energy layouts of the trade graph for the three force and energy models. The layout of the widely used Fruchterman-Reingold model [20] does not show any clear groups at all. The layout of the node-repulsion LinLog energy model groups the countries (nodes) primarily according to their total trade volume (degree). Only the layout of the edge-repulsion LinLog energy model shows the expected grouping according to continents.
 
-### Example Figures
+#### Example Figures
 
 From “[Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks](https://doi.org/10.7155/jgaa.00370)”:
 
@@ -1837,17 +1840,17 @@ Data collected in a survey of Ohio State University students by D. W. Malone. St
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Sugiyama1981]</div><div class="col-4">Methods for Visual Understanding of Hierarchical System Structures</div><div class="col-4"><a href="#hierarchical"><span class="pill-tag pill_color_hierarchical">hierarchical</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Investment%20Interdependence%20141028dac1c34b6dbb69710ea5c7ee10/two_in_one.svg' width='80%'></div>
 
-### Description from Literature
+#### Description from Literature
 
 From [Methods for Visual Understanding of Hierarchical System Structures](https://ieeexplore.ieee.org/document/4308636):
 
 > Presented in Fig. 5 are drawings of the nine-level hierarchy which appeared in Malone [11] and represent the interdependence of obstacles to investment in the Columbus, Ohio, central business district.
 
-### Example Figures
+#### Example Figures
 
 From [Methods for Visual Understanding of Hierarchical System Structures](https://ieeexplore.ieee.org/document/4308636):
 
@@ -1876,13 +1879,13 @@ Various types of protein interaction graphs are recorded in other network collec
 <div class="row"><div class="col-4">[@muelder2008]</div><div class="col-4">Rapid Graph Layout Using Space Filling Curves</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div>
 <div class="row"><div class="col-4">[@Dang2016]</div><div class="col-4">TimeArcs: Visualizing Fluctuations in Dynamic Networks</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-## Protein Interaction Publications
+#### Protein Interaction Publications
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Protein%20Interactions%20(Publications)%20fb5bc3bb0c5d40468da36d279a114a78/degree_distr.svg' width='80%'></div>
 
-### Description from the Literature
+#### Description from the Literature
 
 From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882):
 
@@ -1890,7 +1893,7 @@ From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibr
 
 > When there are multiple arcs connecting two proteins, it falls into one of the two circumstances. If they have the same color, these arcs indicate that there are supporting evidences in different publications which *confirm* the interaction between two elements. On the other hand, if they have the different colors, the more recent appearance provides either more detailed knowledge about the interaction or shows a *conflict* between different articles regarding the way in which these proteins interact.
 
-### Example Figures
+#### Example Figures
 
 From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882):
 
@@ -1898,9 +1901,9 @@ From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibr
 
 **Fig. 10**: TimeArcs visualization for interactions around PCAF protein. (1), (2), and (3) in the figure are supporting evidences in literature of “PCAF binds MAML”. 
 
-## Protein Homology (Lost)
+#### Protein Homology (Lost)
 
-### Description from the Literature
+#### Description from the Literature
 
 From [Rapid Graph Layout Using Space Filling Curves:](https://ieeexplore.ieee.org/document/4658143\)
 
@@ -1908,7 +1911,7 @@ From [Rapid Graph Layout Using Space Filling Curves:](https://ieeexplore.ieee.or
 
 Consists of 28, 854 vertices and 1,180, 816 edges, found in Table 1 of paper above. 
 
-### Example Figures
+#### Example Figures
 
 From [Rapid Graph Layout Using Space Filling Curves:](https://ieeexplore.ieee.org/document/4658143)
 
@@ -1985,11 +1988,11 @@ networks</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_c
 Relational Clustering</div><div class="col-4"><a href="#clusters_generated"><span class="pill-tag pill_color_clusters_generated">clusters (generated)</span></a><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic (continuous)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-tripartite</span></a></div></div>
 <div class="row"><div class="col-4">[@saket2016]</div><div class="col-4">Comparing Node-Link and Node-Link-Group Visualizations From An Enjoyment Perspective</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/four_in_one.svg' width='80%'></div>
 
-### Description from papers
+#### Description from papers
 
 From “[Drawing Dynamic Graphs Without Timeslices](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_31)”
 
@@ -1999,7 +2002,7 @@ From “[Event-based Dynamic Graph Drawing without the Agonizing Pain](https://o
 
 > InfoVis is a co-authorship network for papers published in the InfoVis conference from 1995 to 2015 [[IHK*16](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14615#cgf14615-bib-0035)]. Authors on a paper are connected in a clique at the time of publication. This is not a cumulative network as authors can appear, disappear and appear again. The dataset has 21 timeslices (one per year).
 
-### Example Figures
+#### Example Figures
 
 From “[Six methods for transforming layered hypergraphs to apply layered graph layout algorithms](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14538)”
 
@@ -2013,16 +2016,16 @@ From “[TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinel
 
 **Figure 5.** The TimeArcs visualization applied to the IEEE VIS publication co-authorship network of the top 50 researchers from 2010 to 2014 (i.e., the same data in Fig. [4](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882#cgf12882-fig-0004)). 
 
-### CPAN Graph Dataset
+#### CPAN Graph Dataset
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.ieee.org/document/9222065)
 
 > **6.3.2 Cpan Graph Data Set**
 > The Cpan data set is a collaboration network with 839 nodes and 2,127 edges [1]. It depicts the relationships between the developers using the same Perl modules. The original graph and samples obtained by FF, TIES, and MCGS are shown in Figure 6. This case focused on the preservation of parachute-like rims at marginal areas.
 
-### Example Figures
+#### Example Figures
 
 From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.ieee.org/document/9222065)
 
@@ -2030,16 +2033,16 @@ From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.i
 
 **Fig. 6.** Visual illustration of the cpan graph data set (a) and three samples generated by ff (b), ties (c), and mcgs (d) with a sampling rate of 30%.
 
-### DBLP
+#### DBLP
 
-### Descriptions from the Literature
+#### Descriptions from the Literature
 
 From [ChordLink: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
 
 > The second case study considers co-authorship networks extracted from the DBLP dataset [[30](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22#ref-CR30)], which contains publication data in computer science. Through a query consisting of keywords and Boolean operators, one can retrieve a set of publications on a desired topic. We use the results returned by DBLP to construct networks where nodes are authors and edges indicate co-authorships, weighted by the number of papers shared by their end-nodes. Nodes are labeled with authors’ names and edges with the titles of the corresponding publications. 
 We performed the query “network AND visualization” and limited to 500 the number of search results (i.e., publications) to be returned. The resulting network consists of 1766 nodes, 3780 edges, and 382 connected components. The largest of these components contains 118 nodes and 322 edges.
 
-### Example Figures
+#### Example Figures
 
 From Parallel Edge Splatting for Scalable dynamic Graph Visualization
 
@@ -2122,17 +2125,17 @@ Visualisation of Dynamic Graphs</div><div class="col-4"><a href="#dynamic"><span
 <div class="row"><div class="col-4">[@wang2020]</div><div class="col-4">Interactive Structure-aware Blending of Diverse Edge Bundling Visualizations</div><div class="col-4"><a href="#bundled_edges_generated"><span class="pill-tag pill_color_bundled_edges_generated">bundled edges (generated)</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div>
 <div class="row"><div class="col-4">[@wallinger2023]</div><div class="col-4">Faster Edge-Path Bundling through Graph Spanners</div><div class="col-4"><a href="#bundled_edges_generated"><span class="pill-tag pill_color_bundled_edges_generated">bundled edges (generated)</span></a><a href="#directed_edges"><span class="pill-tag pill_color_directed_edges">directed edges</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/four_in_one.svg' width='80%'></div>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Skeleton-Based Edge Bundling for Graph Visualization](https://doi.org/10.1109/TVCG.2011.233)”:
 
 > Figure 7 illustrates the SBEB and compares it with several existing bundling methods. Note that in all images here generated with our method, we used simple additive edge blending only, as our focus here is the layout, not the rendering. Images (a,b) show an air traffic graph (nodes are city locations, edges are interconnecting flights)… Images (e-h) show the US migrations graph bundled with the WR, GBEB, FDEB, and our method (SBEB) respectively. Overall, SBEB produces stronger bundling, due to the many iterations I = 10 being used), and emphasizes the structure of connections between groups of close cities (due to the skeleton layout cues). If less bundling is desired, fewer iterations can be used (Fig. 4). Adjusting the postprocessing smoothing and relaxation parameters, SBEB can create bundling styles similar to either GBEB (higher bundle curvatures, more emphasis on the graph structure) or FDEB (smoother bundles). Finally, images (i,j) show the US airlines graph bundled with the FDEB and SBEB respectively. SBEB generates stronger bundling (more overdraw) but arguably less clutter. Note also that SBEB generates treelike bundle structures which is useful when the exploration task at hand has an inherent (local) hierarchical nature, e.g. see how traffic connections merge into and/or split from main traffic routes.
 
-### Example Figures
+#### Example Figures
 
 From “[Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach](https://ieeexplore.ieee.org/document/9552919)”:
 
@@ -2179,13 +2182,13 @@ Various software call dependency graphs have been used in the literature. We pro
 <div class="row"><div class="col-4">[@Tanahashi2015]</div><div class="col-4">An Efficient Framework for Generating Storyline Visualizations from Streaming Data</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div>
 <div class="row"><div class="col-4">[@devkota2018]</div><div class="col-4">CFGExplorer: Designing a Visual Control Flow Analytics System around Basic Program Analysis Operations</div><div class="col-4"><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/four_in_one.svg' width='80%'></div>
 
-### Software Dependency Calls
+#### Software Dependency Calls
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13724)”:
 
@@ -2195,7 +2198,7 @@ From “[Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https
 
 > We collected the 21 available releases of JUnit as compiled Java bytecode and extracted the method call dependencies using *DependencyFinder* (depfind. sourceforge.net). The package and class structure provides a natural hierarchy on the methods of the system. The resulting dynamic graph consists of 2,817 vertices connected by 15,339 edges, where each edge is weighted by 1.
 
-### Example Figures
+#### Example Figures
 
 From [Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://ieeexplore.ieee.org/document/6065001):
 
@@ -2203,15 +2206,15 @@ From [Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://
 
 **Fig. 6.** Call dependencies between methods in 21 releases of the JUnit project: all (top), added (left), and removed (right) dependencies.
 
-### Phillips Medical Software Call Graph (Lost)
+#### Phillips Medical Software Call Graph (Lost)
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data](https://ieeexplore.ieee.org/document/4015425)”:
 
 > The software is part of a medical scanner and was provided by Philips Medical Systems Eindhoven. Three hierarchy levels – layers, units, and modules – consisting of 284 nodes are used together with the associated call graph for the elements at the lowest level of the hierarchy, i.e., 1,011 adjacency relations representing module-to-module calls.
 
-### Example Figures
+#### Example Figures
 
 From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data](https://ieeexplore.ieee.org/document/4015425)”:
 
@@ -2219,7 +2222,7 @@ From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hier
 
 **Fig. 13.** A software system and its associated call graph (caller = green, callee = red). (a) and (b) show the system with bundling strength β = 0.85 using a balloon layout (node labels disabled) and a radial layout, respectively. Bundling reduces visual clutter, making it easier to perceive the actual connections than when compared to the non-bundled versions (figures 2a and 11a). Bundled visualizations also show relations between sparsely connected systems more clearly (encircled regions); these are almost completely obscured in the non-bundled versions. The encircled regions highlight identical parts of the system for (a), (b), and figure 15.
 
-### Subversion Control Logs (Lost)
+#### Subversion Control Logs (Lost)
 
 From “[An Efficient Framework for Generating Storyline Visualizations from Streaming Data”:](https://ieeexplore.ieee.org/document/7015617)
 
@@ -2275,13 +2278,13 @@ networks</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_c
 <div class="row"><div class="col-4">[@Dang2016]</div><div class="col-4">TimeArcs: Visualizing Fluctuations in Dynamic Networks</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div>
 <div class="row"><div class="col-4">[@arleo2022]</div><div class="col-4">Event-based Dynamic Graph Drawing without the Agonizing Pain</div><div class="col-4"><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a></div></div><br>
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/four_in_one.svg' width='80%'></div>
 
-### Blogs/MOOC
+#### Blogs/MOOC
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://doi.org/10.1111/cgf.12882):
 
@@ -2291,7 +2294,7 @@ From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onli
 
 > MOOC represents the actions (e.g. viewing a video, submitting an answer, etc.) taken by users on a popular massive open online class platform [[KZL19](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14615#cgf14615-bib-0037)]. The nodes represent users and course activities (targets), and temporal edges represent the actions by users on the targets. We pick and elaborate the first 15 thousands events.
 
-### Example Figures
+#### Example Figures
 
 From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://doi.org/10.1111/cgf.12882):
 
@@ -2305,9 +2308,9 @@ From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onli
 
 **Table 2.** Flattened snapshots of the network evolution over time taken at regular intervals. Twenty artificial time slices were inserted for temporal graphs
 
-### Tweets
+#### Tweets
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From  [Fast filtering and animation of large dynamic networks](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-014-0027-8):
 
@@ -2317,7 +2320,7 @@ From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onli
 
 > **Rugby** is a network derived from over 3000 tweets involving teams in the ‘Guinness Pro12’ rugby competition. The tweets were posted between 1 September 2014 and 23 October 2015. Each tweet contains information about the involved teams and the time of publication with a precision down to the second.
 
-### Example Figures
+#### Example Figures
 
 From  [Fast filtering and animation of large dynamic networks](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-014-0027-8)
 
@@ -2370,9 +2373,9 @@ Various social network datasets are used in the literature and here we provide a
 <div class="row"><div class="col-4">[@fisheye2019]</div><div class="col-4">Structure-aware Fisheye Views for Efficient Large Graph Exploration</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div>
 <div class="row"><div class="col-4">[@wang2018]</div><div class="col-4">Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a></div></div><br>
 
-### Zachary Karate Club Dataset
+#### Zachary Karate Club Dataset
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 *[The Turing Test for Graph Drawing Algorithms](https://link.springer.com/chapter/10.1007/978-3-030-68766-3_36)*  describes the dataset simply as “social network” in their Table 1.
 
@@ -2381,7 +2384,7 @@ From [Anisotropic Radial Layout for Visualizing Centrality and Structure in Grap
 > The Zachary’s karate club graph is a well known data set that is a social network of friendships in a karate club at a US university, as recorded during a study [[32](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#ref-CR32)]. This graph contains 34 nodes, each representing an individual, and 78 unweighted edges that represent a friendship between the associated individuals (Fig. [1](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#Fig1)). During the period of observation, a conflict between two key members, identified as the “administrator” and “instructor”, leads to a split in the club, giving it an interesting two cluster structure. In Fig. [1](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#Fig1), nodes representing members who are part of the instructor’s and administrator’s groups are drawn in green and blue, respectively.
 > 
 
-### Example Figures
+#### Example Figures
 
 From “[The Turing Test for Graph Drawing Algorithms](https://arxiv.org/abs/2008.04869)”:
 
@@ -2401,16 +2404,16 @@ From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in G
 
 **Fig. 1.** An example of Ricci curvature on the karate club graph before and after Ricci flow. The colors represent the Ricci curvature while the thickness represents the edge weight. Ricci flow deformed the edge weights until Ricci curvatures converged (−0.0027 in this case).
 
-### Facebook100
+#### Facebook100
 
-### Description from Literature
+#### Description from Literature
 
 From [Untangling the Hairballs of Multi-Centered, Small-World Online Social Media Networks](https://jgaa.info/getPaper?id=370):
 
 > As real world samples, we use the Facebook100 dataset [40], which contains social relations of 100 higher educational institutes in the US. The network size varies from 762 to 41K vertices and from 16K to 1.6M edges. Thedataset is directly from Facebook, not sampled, and thus very complete in terms of capturing the social relations according to a widely used service at that time. Additional attributes obtained from the Facebook profiles are gender, expected year of graduation, dormitory, etc. Due to incomplete profiles, a number of attribute values are missing.
 > 
 
-### Example Figures
+#### Example Figures
 
 From [Untangling the Hairballs of Multi-Centered, Small-World Online Social Media Networks](https://jgaa.info/getPaper?id=370)
 
@@ -2418,9 +2421,9 @@ From [Untangling the Hairballs of Multi-Centered, Small-World Online Social Medi
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%203.png' width='80%'></div>
 
-### Facebook Ego Networks (Facebook 1864)
+#### Facebook Ego Networks (Facebook 1864)
 
-### Description from Literature
+#### Description from Literature
 
 From ****[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
 
@@ -2433,7 +2436,7 @@ From [A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts](http
 
 > The ego graphs are Facebook ego graphs [**[ML12](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13724#cgf13724-bib-0060)**] with the ego vertex re-added to the graph.
 
-### Example Figures
+#### Example Figures
 
 From Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
 
@@ -2441,24 +2444,24 @@ From Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.o
 
 **Fig. 4.** Interface for subjective assessment experiment with the Facebook1684 data set (775 nodes and 14,006 edges). The leftmost graph is the original graph. The six randomly arranged samples are generated by SST (a), FF (b), MCGS (c), RW (d), TIES (e), and RDN (f) with a sampling rate of 30%.
 
-### Van De Bunt Fraternity
+#### Van De Bunt Fraternity
 
-### Description from the Literature
+#### Description from the Literature
 
 From [Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
 
 > *Van De Bunt (Discrete):* shows the relationships between 32 freshmen at seven different time points. A discrete dynamic graph is built using the method of Brandes *et al.*  [[9](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_31#ref-CR9)], with an undirected edge inserted into a timeslice if the participants reciprocally report “best friendship” or “friendship” at that time.
 
-### **Syphilis Social Network**
+#### **Syphilis Social Network**
 
-### Description from the Literature
+#### Description from the Literature
 
 From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440):
 
 > Social networks can be a powerful way to understand inter-personal relationships and are useful for tracking the spread of diseases that result from personal contact [**[RST*98](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045)**, **[FHH*01](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0022)**, **[MRV*03](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0043)**, **[FHD*11](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0021)**]. The ability to track and identify at risk individuals can lead to treatment and help manage the spread of the disease. In addition to the links between individuals, structuring the layout by node properties such as the social or ethnographically-identified group may reveal additional details about how the disease is spread.
 > 
 
-### Example Figures
+#### Example Figures
 
 From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440):
 
@@ -2527,19 +2530,19 @@ DIMACS USA Road Network source notes that the data has errors, namely missing ma
 <div class="row"><div class="col-4">[@wang2018]</div><div class="col-4">Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a></div></div>
 <div class="row"><div class="col-4">[@batik2022]</div><div class="col-4">Shape-Guided Mixed Metro Map Layout</div><div class="col-4"><a href="#categorical_nodes"><span class="pill-tag pill_color_categorical_nodes">categorical nodes</span></a></div></div><br>
 
-## Subways
+#### Subways
 
-### Statistics
+#### Statistics
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/four_in_one.svg' width='80%'></div>
 
-### Description from Literature
+#### Description from Literature
 
 > Apart from the example of Sydney presented in Section 6, we have evaluated our method for two additional real-world networks: Vienna, which is a rather small network, and London, the oldest and still one of the most complex metro systems in the world. These networks have not been used as examples for previous metro map layout methods, so we can compare only against the official maps of Vienna and London. The size of the metro graphs (including Sydney) is given in Table 3 and ranges from 84 vertices and 8 faces (Vienna) to 308 vertices and 55 faces (London). The table further shows how the removal of degree-2 vertices described in Section 5.1 effectively reduces the number of vertices and edges.
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled.png' width='80%'></div>
 
-### Example Figures
+#### Example Figures
 
 From “[Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming](https://ieeexplore.ieee.org/document/5473229)”:
 
@@ -2547,9 +2550,9 @@ From “[Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programmi
 
 **Fig. 16.** Unlabeled layout of the London Underground network produced by our method.
 
-## DIMACS USA Road Networks
+#### DIMACS USA Road Networks
 
-### Description from Literature
+#### Description from Literature
 
 From “[A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
 
@@ -2559,7 +2562,7 @@ From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.
 
 > Finally, the “usafla” dataset (shown in Figure 7) is of the intersections and the streets between them in the state of Florida
 
-### Example Figures
+#### Example Figures
 
 From “[A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
 
@@ -2604,7 +2607,7 @@ The data was originally collected for a Bioinformatics paper, [Graph-based clust
 Sparsification</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div>
 <div class="row"><div class="col-4">[@Marner2014]</div><div class="col-4">GION: Interactively Untangling Large Graphs on Wall-Sized Displays</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[Drawing Big Graphs Using Spectral Sparsification](https://doi.org/10.1007/978-3-319-73915-1_22)”:
 
@@ -2618,7 +2621,7 @@ From “[GION: Interactively Untangling Large Graphs on Wall-Sized Displays](htt
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/GION%20fb235f160e504395a884f5a18fca6f17/Untitled.png' width='80%'></div>
 
-### Example Figures
+#### Example Figures
 
 From “[GION: Interactively Untangling Large Graphs on Wall-Sized Displays](https://link.springer.com/chapter/10.1007/978-3-662-45803-7_10)”:
 
@@ -2659,7 +2662,7 @@ FM3 contains trees, path graphs, cycle graphs, scale-free graphs, caterpillar gr
 <div class="row"><div class="col-4">[@Heinsohn2018]</div><div class="col-4">An Interactive Tool to Explore and Improve the Ply Number of Drawings</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[An Experimental Study on the Ply Number of Straight-Line Drawings](https://doi.org/10.1007/978-3-319-53925-6_11)”:
 
@@ -2676,7 +2679,7 @@ From “[An Interactive Tool to Explore and Improve the Ply Number of Drawings](
 
 > **FM3data** contains 50 caterpillars with 250 to 450 vertices… **FM3data** also contains planar graphs ranging from 250 to 400 vertices and a density ranging from 1.5 to 2… The remaining subset of **FM3data** consists of general graphs with 250 to 450 vertices and the densities 1.5 and 2.5.
 
-### Example Figures
+#### Example Figures
 
 From “[An Experimental Study on the Ply Number of Straight-Line Drawings](https://doi.org/10.1007/978-3-319-53925-6_11)”:
 
@@ -2702,7 +2705,7 @@ These consist of fabricated narratives for characters of popular culture franchi
 <div class="row"><div class="col-4">[@padia2019]</div><div class="col-4">A system for generating storyline visualizations using hierarchical task network planning</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From ‘’[Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05)”:
 
@@ -2720,7 +2723,7 @@ There are four choice points in this narrative: three for Ross, and one for Rach
 Fig. 7 shows a visualization where Rachel agrees to go out with Ross in both timelines. While the timelines result in the same outcome, and visually look the same, we can inspect the labels on top of the events in Ross’s timeline to identify the differences. Lighter labels correspond to the reality timeline, while darker labels correspond to the diegetic timeline. In the reality timeline, Ross decided to give a gift to Rachel after talking to her mom, while in the diegetic timeline he decided to act friendly with her.
 Fig. 8 shows another visualization for the same narrative. In this example we can see the effect of causal conditions set in the operator functions for Rachel. In the reality timeline, Rachel decided not to go out with Ross because he asked Phoebe for help by messaging her. On the other hand, she agreed to go out with him in the diegetic timeline because in this case Ross decided to talk to her mother.
 
-### Example Figures
+#### Example Figures
 
 From ‘’[Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05)”:
 
@@ -2740,13 +2743,13 @@ The original Internet Mapping Project started at Bell lab in 1998. It was then t
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Gansner2005b]</div><div class="col-4">Topological fisheye views for visualizing large graphs</div><div class="col-4"><a href="#generic"><span class="pill-tag pill_color_generic">generic</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-high degree</span></a><a href="#large"><span class="pill-tag pill_color_large">large</span></a></div></div><br>
 
-### Description from Literature
+#### Description from Literature
 
 From “[Topological fisheye views for visualizing large graphs](https://doi.org/10.1109/TVCG.2005.66)”:
 
 > Fig. 7 shows two topological fisheye views of a published Internet map [4]. It is a large tree (|V|=87,931, |E|=87,930) made by tracing connections from a central probe to all reachable IP subnets. The full layout of this graph in Fig. 7a is too dense to read. In contrast, our approach, seen in Fig. 7b and Fig. 7c, yields useful views by focusing on different portions of the graph.
 
-### Example Figures
+#### Example Figures
 
 From “[Internet Mapping Project: Map Gallery](http://www.cheswick.com/ches/map/gallery/index.html)”:
 
@@ -2773,13 +2776,13 @@ Dataset was not found. It contained <a href="#spatial"><span class="pill-tag pil
 <div class="row"><div class="col-4">[@NanCao2011]</div><div class="col-4">DICON: Interactive Visual Analysis of Multidimensional Clusters</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-multivariate</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div><br>
 
 
-### Description from Literature
+#### Description from Literature
 
 From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
 
 > We also applied DICON within the healthcare domain to visualize a dataset containing more than 10,000 patient records. The data includes claims, labs, pharmacy, and patient profile information. To augment this data, we applied a patient similarity algorithm to compute patient similarity scores across multiple dimensions (e.g., diagnoses, lab results, etc.). We also indexed the patient records to make the data searchable.
 
-### Example Figures
+#### Example Figures
 
 From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
 
@@ -2806,7 +2809,7 @@ The dataset is cited as being from an evaluation of TaxNet from Didimo et al. Th
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@Angori2019]</div><div class="col-4">ChordLink: A New Hybrid Visualization Model0</div><div class="col-4"><a href="#categorical_nodes"><span class="pill-tag pill_color_categorical_nodes">categorical nodes</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-high degree</span></a><a href="#labeled_nodes"><span class="pill-tag pill_color_labeled_nodes">labeled nodes</span></a></div></div><br>
 
-### Descriptions from the Literature
+#### Descriptions from the Literature
 
 From “[CHORDLINK: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)”:
 
@@ -2816,7 +2819,7 @@ From “[A visual analytics system to support tax evasion discovery](https://www
 
 > The data sources queried by the IRV officers are modeled in TaxNet as a unified network *G*. Each node *v* of *G* is a single taxpayer, which can be either an individual or a legal person, like a private company or a public institution. Many attributes are associated with *v*, including the type of economic activity, the geographic location and territorial scope, the declared income, the amount of VAT credits/debts and of VAT refunded/paid, and the amount of economic exchange within the European Union. The edges of *G* are directed edges. An edge (*u*,*v*) can model different types of relationships between *u* and *v*.
 
-### Example Figures
+#### Example Figures
 
 From [CHORDLINK: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
 
@@ -2837,14 +2840,16 @@ _site:150:21 -->
 ::: {.callout-note title="Debates" collapse=true appearance="minimal"}
 
 Created by researchers at the University of Konstanz for the [LingVis](https://lingvis.io/) framework and [VisArgue](http://www.visargue.uni-konstanz.de/en/) project. First appeared in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181).
-The authors did not respond to requests to make this dataset available. While the debate transcripts are publicly available, the entity relationship data generated in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181) is not. It has <a href="#categorical_nodes"><span class="pill-tag pill_color_categorical_nodes">categorical nodes</span></a> <a href="#directed_edges"><span class="pill-tag pill_color_directed_edges">directed edges</span></a> <a href="#labeled_nodes"><span class="pill-tag pill_color_labeled_nodes">labeled nodes</span></a>and <a href="#edge_weighted"><span class="pill-tag pill_color_edge_weighted">weighted edges</span></a>
+The authors did not respond to requests to make this dataset available. While the debate transcripts are publicly available, the entity relationship data generated in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181) is not. It has <a href="#categorical_nodes"><span class="pill-tag pill_color_categorical_nodes">categorical nodes</span></a> <a href="#directed_edges"><span class="pill-tag pill_color_directed_edges">directed edges</span></a> <a href="#labeled_nodes"><span class="pill-tag pill_color_labeled_nodes">labeled nodes</span></a>and <a href="#edge_weighted"><span class="pill-tag pill_color_edge_weighted">weighted edges</span></a>.
+
+Note: we found the Debates dataset used for the paper mentioned below in the internal storage of the university of Konstanz, now available on OSF [at this link](https://osf.io/rp483/metadata/?format=datacite-json). However, additional non-trivial processing was made to the data to generate the entity relationship data used in the paper. Because of this, we still consider the dataset as lost.
 
 <div><b>Origin paper: </b></div>
 <div class="row"><div class="col-4">[@elassady2017]</div><div class="col-8">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div></div><br>
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@elassady2017]</div><div class="col-4">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div><div class="col-4"><a href="#categorical_nodes"><span class="pill-tag pill_color_categorical_nodes">categorical nodes</span></a><a href="#directed_edges"><span class="pill-tag pill_color_directed_edges">directed edges</span></a><a href="#labeled_nodes"><span class="pill-tag pill_color_labeled_nodes">labeled nodes</span></a><a href="#edge_weighted"><span class="pill-tag pill_color_edge_weighted">edge weighted</span></a></div></div><br>
 
-### Description from Literature
+#### Description from Literature
 
 From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
 
@@ -2852,7 +2857,7 @@ From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversatio
 
 > However, not only are frequent entity-pairs important, but also pairs that are semantically similar (e.g., *cut $5 trillion*, *cut $4 trillion*). These often present opposing speaker opinions about a given topic. To maximize the chance that entity-pairs represent true semantic relations, we set the default value of *maxDist* to a low value (5 words). To vary the granularity of the analysis, the parameter can be changed interactively depending on the analysis task and data. Nevertheless, some infrequent longer-distance entity-pairs are discovered which do not represent salient relations. To reduce their impact, we calculate the average observed distance (in words) for each entity pair. We use both frequency and average distance in the visualization to reflect the strength of the entity-pair.
 
-### Example Figures
+#### Example Figures
 
 From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
 
@@ -2876,13 +2881,13 @@ The origin of this dataset is not disclosed by the author. It is <a href="#spati
 <div class="row"><div class="col-4">[@NanCao2011]</div><div class="col-4">DICON: Interactive Visual Analysis of Multidimensional Clusters</div><div class="col-4"><a href="#clusters"><span class="pill-tag pill_color_clusters">clusters (pre-existing)</span></a><a href="#generic"><span class="pill-tag pill_color_generic">-?-multivariate</span></a><a href="#spatial"><span class="pill-tag pill_color_spatial">spatial</span></a></div></div><br>
 
 
-### Descriptions from Literature
+#### Descriptions from Literature
 
 From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
 
 > We applied DICON to a cars dataset which has also been used to evaluate both parallel coordinates (PCP) and scatter plot matrices (SPM) (see Fig. 8(a) and (b)). The cars dataset contains 407 cars described by 7 different dimensions from which we selected 5 quantitative dimensions as features. The two remaining dimensions, year and origin, were used as additional attributes.
 
-### Example Figures
+#### Example Figures
 
 From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
 
@@ -2903,7 +2908,7 @@ The Origin Paper collects various graphs from a few of sources. Some of these da
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@mennens2019]</div><div class="col-4">A stable graph layout algorithm for processes</div><div class="col-4"><a href="#labeled_nodes"><span class="pill-tag pill_color_labeled_nodes">labeled nodes</span></a><a href="#layered_graphs"><span class="pill-tag pill_color_layered_graphs">layered graphs</span></a><a href="#many_layers"><span class="pill-tag pill_color_many_layers">many layers</span></a></div></div><br>
 
-### Description From Literature
+#### Description From Literature
 
 From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13723):
 
@@ -2914,7 +2919,7 @@ Table from Supplementary Materials:
 
 <div style='text-align: center'><img src='../data/Benchmark datasets 64e0439269f9497799025562a4087ce1/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled.png' width='80%'></div>
 
-### Example Figures
+#### Example Figures
 
 From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13723):
 
@@ -2927,7 +2932,7 @@ From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley
 -urls are broken -->
 ::: 
 
-This last one is inaccessible as a whole, but still navigable on the internet:
+This last one is not available as an individual download, but still navigable on the internet and could potentially be crawled:
 
 <a name="Mathematics Genealogy"></a>
 
@@ -2942,13 +2947,13 @@ Database from a project started by Harry Coonce and now supported by the North D
 <div><b>Usage examples: </b></div>
 <div class="row"><div class="col-4">[@gray2023]</div><div class="col-4">Visualizing Evolving Trees</div><div class="col-4"><a href="#dynamic"><span class="pill-tag pill_color_dynamic">dynamic</span></a><a href="#dynamic_discrete"><span class="pill-tag pill_color_dynamic_discrete">dynamic (discrete)</span></a></div></div><br>
 
-### Description from Literature
+#### Description from Literature
 
 From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
 
 > **The Mathematics Genealogy:** shows advisor-advisee relationships in the world of mathematics, stretching back to the middle ages [[36](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23#ref-CR36)]. The dataset includes the thesis titles, students, advisors, dates, and number of descendants. The total number of nodes is around 260,000 and is continuously updated. While this data is not quite a tree (or even connected, or planar), we extract a subset to create a tree with 500 nodes. The maximum node degree of this tree is 5 and the radius is 14.
 
-### Example Figures
+#### Example Figures
 
 From [The Mathematics Genealogy Project](https://genealogy.math.ndsu.nodak.edu/):
 

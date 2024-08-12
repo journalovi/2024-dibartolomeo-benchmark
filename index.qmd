@@ -194,6 +194,7 @@ The same is true for graph drawing, particularly for studying the performance an
 algorithms [@dibartolomeo2024evaluating].
 Benchmark datasets can provide a standardized set of graphs with known properties and characteristics.
 These graphs can vary in size, density, connectivity, and structure.
+Having reference collections of benchmark graphs is a huge positive for these evaluations: indeed, if algorithms are tested on the same easy-to-find datasets, it becomes easier to compare them and benefits the reproducibility of the experiment.
 Researchers can objectively compare their performance or the quality of their results by applying various graph layout
 algorithms to the same benchmark dataset.
 
@@ -217,16 +218,20 @@ providing a long-term and open archive of the data we use in our computational e
 
 Specifically, we contribute:
 
-- A collection of benchmark datasets used for graph layout algorithm evaluations, including:
+- A systematic collection of the graphs commonly used in Graph Drawing research---along with a characterization of the graph features available in each dataset---which will help future researchers and practitioners identify appropriate benchmark datasets to use for their evaluations. 
+The work we did also includes reconstructing lost datasets based on author descriptions, or scouting through citations or emailing authors to hopefully find these lost collections.
+- A website for perusing this collection, [available here](https://visdunneright.github.io/gd_benchmark_sets/).
+- A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
+
+<!-- - A collection of benchmark datasets used for graph layout algorithm evaluations, including:
   - Re-creating lost datasets based on paper descriptions and a list of unavailable data,
   - A classification of these datasets by graph features and statistics to aid in identifying appropriate evaluation
     candidates,
   - Exemplar text and images from papers that use these datasets,
   - A website for perusing this collection, and
-  - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations.
+  - A long-term archive of our metadata and the collection to aid in reproducibility and replicability of evaluations. -->
 
-Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data,
-OSF archive, and Notion database.
+Please see @sec-research-statements below for our supplemental materials, including links to the website, code and data, OSF archive, and Notion database.
 
 ```{ojs}
 //| echo: false
