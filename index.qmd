@@ -322,7 +322,7 @@ dict_of_graph_features_to_colors = {
 // please then also adapt the styles.css, the code for which is generated in the ojs block below
 graph_feature_tags = [
     "acyclic",
-    "bipartite",
+    "Bipartite",
     "bundled edges (generated)",
     "categorical nodes",
     "clusters",
@@ -333,13 +333,13 @@ graph_feature_tags = [
     "dynamic (discrete)",
     "edge weighted",
     "generic",
-    "hierarchical",
+    "Hierarchical",
     "hypergraph",
     "known crossing number",
     "labeled nodes",
     "large",
-    "layered graphs",
-    "many layers",
+    "N-layers",
+    // "many layers",
     "mesh",
     "multigraph",
     "node weighted",
@@ -351,8 +351,8 @@ graph_feature_tags = [
     "spatial",
     "temporal",
     "temporal event sequence",
-    "tree-like",
-    "trees"
+    // "tree-like",
+    "Trees"
 ]
 
 graph_feature_tags_colors = [

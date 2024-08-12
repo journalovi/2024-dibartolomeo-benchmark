@@ -96,6 +96,7 @@
 
 .pill_color_acyclic { background-color: #9B9A97; }
 .pill_color_bipartite { background-color: #64473A; }
+.pill_color_Bipartite { background-color: #64473A; }
 .pill_color_bundled_edges_generated { background-color: #D9730D; }
 .pill_color_categorical_nodes { background-color: #DFAB01; }
 .pill_color_clusters { background-color: #0F7B6C; }
@@ -107,12 +108,14 @@
 .pill_color_edge_weighted { background-color: #64473A; }
 .pill_color_generic { background-color: #D9730D; }
 .pill_color_hierarchical { background-color: #DFAB01; }
+.pill_color_Hierarchical { background-color: #DFAB01; }
 .pill_color_hypergraph { background-color: #0F7B6C; }
 .pill_color_known_crossing_number { background-color: #0B6E99; }
 .pill_color_labeled_nodes { background-color: #6940A5; }
 .pill_color_large { background-color: #AD1A72; }
 .pill_color_layered_graphs { background-color: #E03E3E; }
 .pill_color_many_layers { background-color: #9B9A97; }
+.pill_color_N-layers { background-color: #9B9A97; }
 .pill_color_mesh { background-color: #64473A; }
 .pill_color_multigraph { background-color: #D9730D; }
 .pill_color_node_weighted { background-color: #DFAB01; }
@@ -126,4 +129,4 @@
 .pill_color_temporal_event_sequence { background-color: #D9730D; }
 .pill_color_tree-like { background-color: #DFAB01; }
 .pill_color_trees { background-color: #0F7B6C; }
-
+.pill_color_Trees { background-color: #0F7B6C; }

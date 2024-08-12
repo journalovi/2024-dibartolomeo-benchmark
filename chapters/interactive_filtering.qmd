@@ -300,6 +300,7 @@ The following interactive filtering system is an initial overview over the conte
     "dynamic (discrete)": "dynamic (discrete)",
     "dynamic": "dynamic",
     "clusters (generated)": "clusters (generated)",
+    "clusters (pre-existing)": "Clusters (pre-existing)",
     "bundled edges (generated)": "bundled edges (generated)",
     "directed edges": "directed edges",
     "hierarchical": "Hierarchical",
@@ -370,7 +371,7 @@ The following interactive filtering system is an initial overview over the conte
         4: "Time Related",
         8: "Structures",
         21: "Imprecise",
-        25: "Other"
+        24: "Other"
     }
     
     // if you change this ordering or move around values also change the category map above!!!
@@ -395,7 +396,7 @@ The following interactive filtering system is an initial overview over the conte
         "temporal event sequence",
         
         // Structures
-        "clusters",
+        "Clusters (pre-existing)",
         "clusters (generated)",
         "directed edges",
         "labeled nodes",
@@ -405,9 +406,9 @@ The following interactive filtering system is an initial overview over the conte
         "categorical nodes",
         "hypergraph",
         "bundled edges (generated)",
-        "partition",
-        "multigraph",
-        "mesh",
+        "Partition",
+        "Multigraph",
+        "Mesh",
 
         // Imprecise
         "large",
