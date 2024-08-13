@@ -72,7 +72,7 @@ If you have not setup [Quarto](https://quarto.org/) or the JoVI template yet, sk
 
 Your paper may fall into multiple types of work. We provide some example sections you may want to include in your structured abstract below, depending on the type of work. You can use the example sections to fill in the subsections that apply to your paper, then delete these first two paragraphs and the subsections that do not apply to your paper. Please add, merge, rename, or re-order sections if you feel that would improve clarity. We have some (partial) examples of structured abstracts [here](https://www.journalovi.org/structured-abstract-examples.html). -->
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style/style.css"></link>
 
 ```{ojs}
 //| echo: false
@@ -84,8 +84,7 @@ Plot = import("https://esm.run/@observablehq/plot")
 
 Computational evaluations are crucial for standardized and objective evaluation of graph layout algorithms. Standard
 benchmark datasets facilitate comparison with prior work, and reliable access to datasets is fundamental for
-replicability. However, there is no comprehensive repository of benchmark datasets for Graph Drawing, and many datasets
-have been lost.
+replicability. However, there is no comprehensive repository of benchmark datasets for Graph Drawing, and many datasets have been lost.
 
 ### Data collection
 

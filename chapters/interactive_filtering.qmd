@@ -100,7 +100,7 @@ The following interactive filtering system is an initial overview over the conte
 <div id="Clancy2019-link">[@Clancy2019]</div>
 <div id="DIBATTISTA2000-link">[@DIBATTISTA2000]</div>
 <div id="DRGraph21-link">[@DRGraph21]</div>
-<div id="Dang2016-link">[@Dang2016]</div>
+<div id="Dang2016-link">[@dang2016]</div>
 <div id="Demel2018-link">[@Demel2018]</div>
 <div id="Devkota2019-link">[@Devkota2019]</div>
 <div id="DiBattista1997b-link">[@DiBattista1997b]</div>
@@ -182,7 +182,7 @@ The following interactive filtering system is an initial overview over the conte
 <div id="Taurus2023-link">[@Taurus2023]</div>
 <div id="Wallinger2022-link">[@Wallinger2022]</div>
 <div id="Walter2020-link">[@Walter2020]</div>
-<div id="WeiweiCui2008-link">[@WeiweiCui2008]</div>
+<div id="WeiweiCui2008-link">[@cui2008]</div>
 <div id="Wongsuphasawat2018-link">[@Wongsuphasawat2018]</div>
 <div id="Wu2018-link">[@Wu2018]</div>
 <div id="Wu2020-link">[@Wu2020]</div>
@@ -292,28 +292,32 @@ The following interactive filtering system is an initial overview over the conte
     // "Graph feature": "hypergraphs, spatial"
     
     const tagMapping = {
-    "hypergraphs": "hypergraph",
-    "spatial": "spatial",
+    "hypergraphs": "Hypergraphs",
+    "spatial": "Spatial",
     "layered graphs": "N-layers",
-    "generic": "generic",
-    "large": "large",
-    "dynamic (discrete)": "dynamic (discrete)",
-    "dynamic": "dynamic",
-    "clusters (generated)": "clusters (generated)",
+    "generic": "Generic",
+    "large": "Large",
+    "dynamic (discrete)": "Dynamic",
+    "dynamic": "Dynamic",
+    "dynamic (continuous)": "Dynamic",
+    "clusters (generated)": "Clusters (generated)",
     "clusters (pre-existing)": "Clusters (pre-existing)",
-    "bundled edges (generated)": "bundled edges (generated)",
-    "directed edges": "directed edges",
+    "bundled edges (generated)": "Bundled edges (generated)",
+    "directed edges": "Directed edges",
+    "weighted edges": "Weighted edges",
+    "weighted nodes": "Weighted nodes",
     "hierarchical": "Hierarchical",
-    "categorical nodes": "categorical nodes",
+    "categorical nodes": "Categorical nodes",
     "trees": "Trees",
-    "labeled nodes": "labeled nodes",
+    "labeled nodes": "Labeled nodes",
     "bipartite": "Bipartite",
     "tripartite": "Bipartite",
-    "labeled edges": "labeled nodes",
-    "planar": "planar",
-    "sparse": "sparse",
-    "K-planar": "planar",
-    "2-planar": "planar"
+    "labeled edges": "Labeled edges",
+    "planar": "Planar",
+    "sparse": "Sparse",
+    "K-planar": "Planar",
+    "2-planar": "Planar",
+    "acyclic": "Acyclic",
 };
 
     
@@ -368,60 +372,50 @@ The following interactive filtering system is an initial overview over the conte
     var category_tags = {
         0: "Layered",
         2: "Hierarchical",
-        4: "Time Related",
-        8: "Structures",
-        21: "Imprecise",
-        24: "Other"
+        4: "Attributes",
+        11: "Structures",
+        21: "Other",
     }
     
     // if you change this ordering or move around values also change the category map above!!!
     //var uniqueDataTags = [...uniqueDataTagSet]
     var uniqueDataTags = [
         // Layered
-        // "many layers",
-        // "layered graphs",
         "Bipartite",
         "N-layers",
         
         // Hierarchical
-        // "tree-like",
         "Trees",
-        // "trees",
         "Hierarchical",
 
-        // Time Related
-        "dynamic (discrete)",
-        "dynamic",
-        "temporal",
-        "temporal event sequence",
+        // Attributes
+        "Dynamic",
+        "Weighted edges",
+        "Weighted nodes",
+        "Labeled nodes",
+        "Categorical nodes",
+        "Signed",
+        "Spatial",
         
         // Structures
         "Clusters (pre-existing)",
-        "clusters (generated)",
-        "directed edges",
-        "labeled nodes",
-        "edge weighted",
-        "node weighted",
-        "signed",
-        "categorical nodes",
-        "hypergraph",
-        "bundled edges (generated)",
+        "Clusters (generated)",
+        "Directed edges",
+        "Hypergraphs",
+        "Bundled edges (generated)",
         "Partition",
         "Multigraph",
+        "Acyclic",
         "Mesh",
 
-        // Imprecise
-        "large",
-        "dense",
-        "sparse",
-        
         // Other
-        "generic",
-        "spatial",
-        "planar",
-        "nonplanar",
-        "acyclic",
-        "known crossing number"
+        "Generic",
+        "Planar",
+        "Nonplanar",
+        "Known crossing number",
+        "Large",
+        "Dense",
+        "Sparse",
     ]
     var uniquePaperTags = [...uniquePaperTagSet]  
     //console.log(uniqueDataTags)

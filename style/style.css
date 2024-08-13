@@ -1,0 +1,167 @@
+
+.container {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 0.75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: 50rem;
+    display: flex;
+
+}
+
+.btn {
+    --bs-btn-padding-y: .15rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: .7rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    padding-top: 0.05rem;
+    font-size: var(--bs-btn-font-size);
+    border-radius: .25rem;
+    padding-bottom: 0.05rem;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff !important;
+}
+
+.btn-secondary:hover {
+    background-color: #565e64;
+
+}
+
+.a {
+    color: rgb(13, 110, 253);
+}
+
+.a:hover {
+    color: #0a58ca;
+}
+
+.card {
+}
+
+.card-body {
+}
+
+.row {
+    display: flex;
+}
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.small-text {
+    font-size: small;
+}
+
+.rounded-pill {
+    border-radius: var(--bs-badge-border-radius) !important;
+}
+
+.badge {
+    display: inline-block;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    color: var(--bs-badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.pill-tag {
+    background-color: #ddd;
+    border: none;
+    color: white;
+    padding: 0 8px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 20px;
+    margin: 0 2px;
+    font-size: 0.85em; /* Reduce font size instead of scaling */
+}
+
+/* .pill_color_bipartite, .pill_color_Bipartite { background-color: #64473A; }
+.pill_color_many_layers, .pill_color_N-layers, .pill_color_layered_graphs { background-color: #9B9A97; }
+
+.pill_color_trees, .pill_color_Trees, .pill_color_tree-like { background-color: #0F7B6C; }
+.pill_color_hierarchical, .pill_color_Hierarchical { background-color: #DFAB01; }
+
+.pill_color_dynamic, .pill_color_dynamic_discrete, .pill_color_temporal, .pill_color_temporal_event_sequence { background-color: #E03E3E; }
+.pill_color_edge_weighted, .pill_color_Weighted_edges { background-color: #64473A; }
+.pill_color_node_weighted, .pill_color_Weighted_nodes { background-color: #DFAB01; }
+.pill_color_labeled_nodes, .pill_color_Labeled_nodes { background-color: #6940A5; }
+.pill_color_categorical_nodes, .pill_color_Categorical_nodes { background-color: #DFAB01; }
+.pill_color_signed, .pill_color_Signed { background-color: #AD1A72; }
+.pill_color_spatial, .pill_color_Spatial { background-color: #9B9A97; }
+
+.pill_color_clusters, .pill_color_Clusters_pre-existing { background-color: #0F7B6C; }
+.pill_color_clusters_generated, .pill_color_Clusters_generated { background-color: #0B6E99; }
+.pill_color_directed_edges, .pill_color_Directed_edges { background-color: #AD1A72; }
+.pill_color_hypergraph, .pill_color_Hypergraphs { background-color: #0F7B6C; }
+.pill_color_bundled_edges_generated, .pill_color_Bundled_edges_generated { background-color: #D9730D; }
+.pill_color_partition, .pill_color_Partition { background-color: #0B6E99; }
+.pill_color_multigraph, .pill_color_Multigraph { background-color: #D9730D; }
+.pill_color_acyclic, .pill_color_Acyclic { background-color: #9B9A97; }
+.pill_color_mesh, .pill_color_Mesh { background-color: #64473A; }
+.pill_color_generic, .pill_color_Generic { background-color: #D9730D; }
+
+.pill_color_planar, .pill_color_Planar { background-color: #6940A5; }
+.pill_color_nonplanar, .pill_color_Nonplanar { background-color: #0F7B6C; }
+.pill_color_known_crossing_number, .pill_color_Known_crossing_number { background-color: #0B6E99; }
+.pill_color_large, .pill_color_Large { background-color: #AD1A72; }
+.pill_color_dense, .pill_color_Dense { background-color: #6940A5; }
+.pill_color_sparse, .pill_color_Sparse { background-color: #E03E3E; } */
+
+
+.pill_color_bipartite, .pill_color_Bipartite { background-color: #e6c229; }
+.pill_color_many_layers, .pill_color_N-layers, .pill_color_layered_graphs { background-color: #c9a818; }
+
+.pill_color_trees, .pill_color_Trees, .pill_color_tree-like { background-color: #f17105; }
+.pill_color_hierarchical, .pill_color_Hierarchical { background-color: #c85c04; }
+
+.pill_color_dynamic, .pill_color_Dynamic, .pill_color_dynamic_discrete, .pill_color_temporal, .pill_color_temporal_event_sequence { background-color: #d11149; }
+.pill_color_edge_weighted, .pill_color_Weighted_edges { background-color: #bd0f40; }
+.pill_color_node_weighted, .pill_color_Weighted_nodes { background-color: #aa0e3a; }
+.pill_color_labeled_nodes, .pill_color_Labeled_nodes { background-color: #970c34; }
+.pill_color_categorical_nodes, .pill_color_Categorical_nodes { background-color: #840b2d; }
+.pill_color_signed, .pill_color_Signed { background-color: #710927; }
+.pill_color_spatial, .pill_color_Spatial { background-color: #5E0820; }
+
+.pill_color_clusters, .pill_color_Clusters_pre-existing { background-color: #6610F2; }
+.pill_color_clusters_generated, .pill_color_Clusters_generated { background-color: #610CE9; }
+.pill_color_directed_edges, .pill_color_Directed_edges { background-color: #590BD5; }
+.pill_color_hypergraph, .pill_color_Hypergraphs { background-color: #510AC2; }
+.pill_color_bundled_edges_generated, .pill_color_Bundled_edges_generated { background-color: #4909AE; }
+.pill_color_partition, .pill_color_Partition { background-color: #40089B; }
+.pill_color_multigraph, .pill_color_Multigraph { background-color: #380788; }
+.pill_color_acyclic, .pill_color_Acyclic { background-color: #300674; }
+.pill_color_mesh, .pill_color_Mesh { background-color: #280561; }
+.pill_color_generic, .pill_color_Generic { background-color: #20044E; }
+
+.pill_color_planar, .pill_color_Planar { background-color: #1A8FE3; }
+.pill_color_nonplanar, .pill_color_Nonplanar { background-color: #187FC9; }
+.pill_color_known_crossing_number, .pill_color_Known_crossing_number { background-color: #1368A4; }
+.pill_color_large, .pill_color_Large { background-color: #0F5180; }
+.pill_color_dense, .pill_color_Dense { background-color: #0B3A5B; }
+.pill_color_sparse, .pill_color_Sparse { background-color: #072336; }
+
+
+
+
+
+
+
