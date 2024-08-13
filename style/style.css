@@ -82,7 +82,7 @@
 }
 
 .pill-tag {
-    background-color: #ddd;
+    background-color: #777;
     border: none;
     color: white;
     padding: 0 8px;
@@ -128,7 +128,7 @@
 
 
 .pill_color_bipartite, .pill_color_Bipartite { background-color: #e6c229; }
-.pill_color_many_layers, .pill_color_N-layers, .pill_color_layered_graphs { background-color: #c9a818; }
+.pill_color_many_layers, .pill_color_N-layers, .pill_color_layered_graphs, .pill_color_Layered_graphs { background-color: #c9a818; }
 
 .pill_color_trees, .pill_color_Trees, .pill_color_tree-like { background-color: #f17105; }
 .pill_color_hierarchical, .pill_color_Hierarchical { background-color: #c85c04; }
@@ -158,9 +158,6 @@
 .pill_color_large, .pill_color_Large { background-color: #0F5180; }
 .pill_color_dense, .pill_color_Dense { background-color: #0B3A5B; }
 .pill_color_sparse, .pill_color_Sparse { background-color: #072336; }
-
-
-
 
 
 
