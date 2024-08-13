@@ -408,54 +408,6 @@ graph_feature_tags.forEach((graph_feature_name) => {
 //    console.log(rule.cssText);
 //});
 
-document.querySelectorAll('a.dataset-link').forEach(item => {
-        item.addEventListener('click', function (e) {
-            // jumping is done by default with these links, we just need to get the collapsible to open up
-            let str = this.getAttribute('href')
-            // console.log('Link to ' + str + ' was clicked!'); // remember the str here has the hashtag in front!
-
-            // Prepare the identifier
-            // Remove the first character, assumed to hashtag 
-            const ident = str.split('#')[1] || '';
-
-            // find all the divs classed callout-titled and close them
-            document.querySelectorAll('.callout-titled').forEach(item => {
-                item.children[0].setAttribute('aria-expanded', 'false');
-                item.children[1].classList.remove('show');
-            });
-
-            // find a div where the result of the function name_cleanup on its title attribute is equal to ident
-            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d =>
-                    typeof d.getAttribute('title') === 'string'
-                    && (
-                        name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
-                    )
-            );
-
-            if (foundDiv) {
-                //console.log('Found div:', foundDiv);
-
-                // Accessing the children of foundDiv
-                const children = foundDiv.children;
-                if (children.length >= 2) {
-                    // Assume the first child is the header and the second is the content container
-                    const header = children[0];
-                    const content = children[1];
-
-                    // Set aria-expanded to true on the header, this rotates the arrow icon on the right
-                    header.setAttribute('aria-expanded', 'true');
-
-                    // Add the 'show' class to the content container, this enables the content to be shown
-                    content.classList.add('show');
-                } else {
-                    console.error('Expected at least two children in the div');
-                }
-            } else {
-                console.error('Div not found');
-            }
-        });
-    });
-
 </script>
 
 {{< include chapters/background.qmd >}}
@@ -830,3 +782,53 @@ async function add_entry_row(named_list_dom, entry, paper_data, origin_paper_dat
         console.log(entry, inforow.node().innerHTML.replaceAll("<br>", "<br>\n"))
 }
 ``` -->
+
+<script>
+  document.querySelectorAll('a.dataset-link').forEach(item => {
+        item.addEventListener('click', function (e) {
+            // jumping is done by default with these links, we just need to get the collapsible to open up
+            let str = this.getAttribute('href')
+            // console.log('Link to ' + str + ' was clicked!'); // remember the str here has the hashtag in front!
+
+            // Prepare the identifier
+            // Remove the first character, assumed to hashtag 
+            const ident = str.split('#')[1] || '';
+
+            // find all the divs classed callout-titled and close them
+            document.querySelectorAll('.callout-titled').forEach(item => {
+                item.children[0].setAttribute('aria-expanded', 'false');
+                item.children[1].classList.remove('show');
+            });
+
+            // find a div where the result of the function name_cleanup on its title attribute is equal to ident
+            let foundDiv = [...document.querySelectorAll(".callout-titled")].find(d =>
+                    typeof d.getAttribute('title') === 'string'
+                    && (
+                        name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
+                    )
+            );
+
+            if (foundDiv) {
+                //console.log('Found div:', foundDiv);
+
+                // Accessing the children of foundDiv
+                const children = foundDiv.children;
+                if (children.length >= 2) {
+                    // Assume the first child is the header and the second is the content container
+                    const header = children[0];
+                    const content = children[1];
+
+                    // Set aria-expanded to true on the header, this rotates the arrow icon on the right
+                    header.setAttribute('aria-expanded', 'true');
+
+                    // Add the 'show' class to the content container, this enables the content to be shown
+                    content.classList.add('show');
+                } else {
+                    console.error('Expected at least two children in the div');
+                }
+            } else {
+                console.error('Div not found');
+            }
+        });
+    });
+  </script>

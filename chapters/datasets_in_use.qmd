@@ -1711,6 +1711,8 @@ From [Optimal Sankey Diagrams via Integer Linear Programming](https://doi.org/10
 
 ::: 
 
+<a name="Chess_Games"></a>
+
 ::: {.callout-note title="Chess Games" collapse=true appearance="minimal"}
 
 20,058 chess openings from games in a database of played online chess games. The authors of “Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes” collected the dataset online from the data science platform kaggle. The dataset was collected by user Mitchell J. and collects data from the chess website Lichess.org. The data used in the literature focuses on the 200 most common openings. These are all sequences of 6 moves and are topologically equivalent. It is a layered graph with <a href="#Categorical_nodes"><span class="pill-tag pill_color_Categorical_nodes">Categorical nodes</span></a>and <a href="#N-layers"><span class="pill-tag pill_color_N-layers">Layers</span></a> and can be seen as a <a href="#Dynamic"><span class="pill-tag pill_color_Dynamic">Temporal event sequence</span></a>
@@ -2840,7 +2842,7 @@ _site:150:21 -->
 Created by researchers at the University of Konstanz for the [LingVis](https://lingvis.io/) framework and [VisArgue](http://www.visargue.uni-konstanz.de/en/) project. First appeared in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181).
 The authors did not respond to requests to make this dataset available. While the debate transcripts are publicly available, the entity relationship data generated in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181) is not. It has <a href="#Categorical_nodes"><span class="pill-tag pill_color_Categorical_nodes">Categorical nodes</span></a> <a href="#Directed_edges"><span class="pill-tag pill_color_Directed_edges">Directed edges</span></a> <a href="#Labeled_nodes"><span class="pill-tag pill_color_Labeled_nodes">Labeled nodes</span></a>and <a href="#Weighted_edges"><span class="pill-tag pill_color_Weighted_edges">Weighted edges</span></a>.
 
-Note: we found the Debates dataset used for the paper mentioned below in the internal storage of the university of Konstanz, now available on OSF [at this link](https://osf.io/rp483/metadata/?format=datacite-json). However, additional non-trivial processing was made to the data to generate the entity relationship data used in the paper. Because of this, we still consider the dataset as lost.
+Note: we found the Debates dataset published as a student assignment for a course at the University of Konstanz, now available on OSF [at this link](https://osf.io/rp483/metadata/?format=datacite-json). However, additional non-trivial processing was made to the data to generate the entity relationship data used in the paper. Because of this, we still consider the dataset as lost.
 
 <div><b>Origin paper: </b></div>
 <div class="row"><div class="col-4">[@elassady2017]</div><div class="col-8">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div></div><br>
