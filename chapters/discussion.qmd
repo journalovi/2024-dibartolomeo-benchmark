@@ -1,0 +1,59 @@
+
+<!-- ::: {.callout-note title="Neural Network" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Neural_Network")
+```
+
+<div id="named-list-Neural_Network" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+:::  -->
+
+<!-- ::: {.callout-note title="Tobler's Flow Mapper" collapse=true appearance="minimal"}
+
+```{ojs}
+//| echo: false
+
+make_sparkline("Toblers_FlowMapper")
+```
+
+<div id="named-list-Toblers_FlowMapper" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
+
+:::  -->
+
+# Discussion, Limitations and Conclusion {#sec-discussion}
+
+Having reliable and easy ways to compare algorithm performances on a variety of graphs with different features is an important aspect of graph drawing research. 
+
+In this work, we presented a comprehensive benchmark dataset collection for graph layout algorithms. Compiling, organizing, and making a wide array of datasets with diverse characteristics accessible not only facilitates rigorous and fair comparisons of algorithmic performance but also addresses critical issues of replicability and reproducibility in research. The Graph Benchmark Datasets website, along with the efforts for long-term archival, is an effort towards maintaining these valuable resources available to the community. 
+
+```{ojs}
+//| echo: false
+{
+    // create a new svg
+    const svg = d3.create("svg")
+        .attr("viewBox", [0, 0, 500, 500])
+
+    for (let i in benchmark_datasets){
+        const dataset = benchmark_datasets[i]
+
+        console.log(dataset)
+        
+        svg.append("text")
+            .attr("x", 100)
+            .attr("y", i * 20 + 10)
+            .attr("font-size", "x-small")
+            .attr("text-anchor", "end")
+            .text(dataset.Name)
+    }
+
+    return svg.node();
+}
+```
+
+The work we did for the collection process doesn't come without **limitations**: although we focused, as a main venue to start collecting papers, on the Graph Drawing conference, it is not a given that all the datasets that could be relevant are comprised in the ones we collected. Indeed, in no way we consider this collection comprehensive, but rather a starting point. 
+
+<!-- We hope to help both current and future researchers to benefit from a rich repository of data, standardizing the evaluation process for graph layout algorithms, fostering innovation and development within the field and contributes to the advancement of graph drawing and visualization research. With this work, we hope to underscore the importance of accessible, well-documented benchmark datasets in driving scientific progress and highlights our commitment to enhancing the integrity and reliability of computational evaluations in the Graph Drawing community. -->
+

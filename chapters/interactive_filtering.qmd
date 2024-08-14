@@ -215,7 +215,7 @@ The following interactive filtering system is an initial overview over the conte
 <div id="diBartolomeo2022-link">[@diBartolomeo2022]</div>
 <div id="diBartolomeo2022b-link">[@diBartolomeo2022b]</div>
 <div id="eades1984-link">[@eades1984]</div>
-<div id="elassady2017-link">[@elassady2017]</div>
+<!-- <div id="elassady2017-link">[@elassady2017]</div> -->
 <div id="felice2019-link">[@felice2019]</div>
 <div id="fisheye2019-link">[@fisheye2019]</div>
 <div id="frick1995-link">[@frick1995]</div>

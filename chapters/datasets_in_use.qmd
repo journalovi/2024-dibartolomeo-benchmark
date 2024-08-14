@@ -38,7 +38,8 @@ The following chart shows how many times we found a dataset being used in the pa
 }
 ```
 
-In the data we collected, the most used dataset is Rome-Lib, followed by assorted collaboration networks (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from C.Walshaw - it is important to note that the Walshaw dataset is available as part of other collections - for instance, its graphs are found in SNAP. However, during the collection process, we preferred giving precedence to how the authors reported their own information. Thus, if the authors claimed the data was from the Walshaw collection, we reported it as such.
+In the data we collected, the most used dataset is 
+<a href="#Rome-Lib" class="dataset-link">Rome-Lib</a>, followed by <a href="#Assorted_collaboration_networks" class="dataset-link">assorted collaboration networks</a> (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from <a href="#Walshaw" class="dataset-link">C.Walshaw</a> - it is important to note that the Walshaw dataset is available as part of other collections - for instance, its graphs are found in <a href="#SNAP" class="dataset-link">SNAP</a>. However, during the collection process, we preferred giving precedence to how the authors reported their own information. Thus, if the authors claimed the data was from the Walshaw collection, we reported it as such.
 
 <!-- We deem the popularity of Rome-Lib to be due to its simplicity, versatility, and most importantly the fact that it is linked on graphdrawing.org and offered as a benchmark dataset there. This is also true for the North DAGs. -->
 
@@ -2586,7 +2587,7 @@ _site:150:21
 
 Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. A dataset that is not anymore accessible renders all the papers using it unfortunately not reproducible. Most of the instances we found became lost because of lack of maintenance of the original storage locations: websites, servers, or repositories. This is, unfortunately, a significant issue in science, which is now hopefully gaining more and more attention.
 
-"Loss" of a dataset does not exclusively mean that the entire, original dataset became lost, but also that a paper using a dataset with particular edits---such as interpreting a <a href="#Debates" class="dataset-link">debate</a> as a graph between the participants---has not documented well enough their process and did not link to the edited dataset. This makes it impossible to reproduce the results of the paper, and is further discussed in @sec-custom-made-datasets.
+"Loss" of a dataset does not exclusively mean that the entire, original dataset became lost, but also that a paper using a dataset with particular edits---such as interpreting a debate as a graph between the participants---has not documented well enough their process and did not link to the edited dataset. This makes it impossible to reproduce the results of the paper, and is further discussed in @sec-custom-made-datasets.
 
 While we did go through the effort, for each one of them, to recover them and store them on OSF, we could not find anywhere the following list of datasets:
 
@@ -2835,7 +2836,7 @@ _site:150:21 -->
 
 ::: 
 
-<a name="Debates"></a>
+<!-- <a name="Debates"></a>
 
 ::: {.callout-note title="Debates" collapse=true appearance="minimal"}
 
@@ -2869,7 +2870,7 @@ Entity graph of the first first presidential debate between Trump and Clinton
 
 Entity graph of the same debate, focusing on the concept of taxes
 
-::: 
+:::  -->
 
 <a name="Car_Features"></a>
 

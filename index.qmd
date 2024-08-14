@@ -64,6 +64,14 @@ This template describes how to set up the [Quarto](https://quarto.org/) environm
 
 If you have not setup [Quarto](https://quarto.org/) or the JoVI template yet, skip to the [Setup](#setup) section below. -->
 
+::: {.callout-important appearance="simple"}
+## Under Review {.unnumbered}
+This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of
+the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the 
+[reviewing process](https://github.com/journalovi/20XX-REPO-NAME/issues).
+:::
+
+
 ::: {.callout-note appearance="simple" icon="false" collapse="false"}
 
 ## Abstract {.unnumbered}
@@ -155,15 +163,36 @@ Link to repositories containing raw data, open source code or (pre-)registration
 
 ::: {.callout-note appearance="simple" icon="false" collapse="true"}
 
-## Materials, Authorship, License, Conflicts
+## Materials, Authorship, Acknowledgements, License, Conflicts
 
 ###### Research materials
 
 <!-- See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#research-material-statements). -->
 
+The supplemental material for this publication includes:
+
+* The [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website, hosted on GitHub Pages.
+* Code for the website, metadata on the benchmark datasets, and data processing scripts are stored in the [gd_benchmark_sets](https://github.com/visdunneright/gd_benchmark_sets/) GitHub repository. 
+<!-- **_TODO (CD 2024-03-08): clean up and add documentation for how to use. Esp. clean the `data` folder, `readme.md`, the random `.ipynb` files. Add `LICENCE` file specifying ideally Apache 2.0 for code, and info to `readme.md` specifying Apache 2.0 for code and CC BY 4.0 for data & metadata._** -->
+* This code and metadata, along with the benchmark datasets themselves in several common graph file formats, are archived for long-term availability in the [Benchmark datasets for graph drawing](https://osf.io/j7ucv/) project on OSF. **_TODO  (CD 2024-03-08): add the website code + data. This can be done by creating a registration on OSF. I linked the GitHub repo as a data source on OSF, but the registration is what copies it to OSF as an archived snapshot._**
+* The original database used for metadata collection and storage is available on Notion as [Benchmark datasets](https://picorana.notion.site/64e0439269f9497799025562a4087ce1?v=271e88e50ca24ee0bfd1c99ffa25daf5&pvs=74).
+
 ###### Authorship
 
 <!-- See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#authorship). -->
+
+<!-- based on CRediT author statement https://www.elsevier.com/researcher/author/policies-and-guidelines/credit-author-statement -->
+
+* **Sara Di Bartolomeo** <a href="https://orcid.org/0000-0001-9517-3526"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Conceptualization, Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Visualization, Validation.
+* **Eduardo Puerta** <a href="https://orcid.org/0000-0003-4664-4365"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Connor Wilson** <a href="https://orcid.org/0000-0002-6936-4078"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Tarik Crnovrsanin** <a href="https://orcid.org/0000-0002-4397-5532"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Alexander Frings** <a href="https://orcid.org/0009-0009-1718-2967"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Categorization & Curation, Writing - Review & Editing, Software, Visualization, Validation.
+* **Cody Dunne** <a href="https://orcid.org/0000-0002-1609-9776"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Supervision, Writing - Original Draft + Review & Editing, Validation, Funding Acquisition.
+
+###### Acknowledgements
+
+This work was supported by the U.S. National Science Foundation (NSF) under award number CAREER IIS-2145382 and the Austrian Science Fund (FWF) [ESP 513-N].
 
 ###### License
 
@@ -172,7 +201,9 @@ a [Creative Commons Attribution-ShareAlike 4.0 International License](https://cr
 
 ###### Conflicts of interest
 
-See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#conflicts-of-interest).
+<!-- See [the corresponding section in the author guide](https://www.journalovi.org/author-guide.html#conflicts-of-interest). -->
+
+The authors declare that there are no competing interests.
 :::
 
 <!-- # Introduction -->
@@ -229,7 +260,7 @@ Please see @sec-research-statements below for our supplemental materials, includ
 literature_pre = await FileAttachment("data/Literature.csv").csv()
 benchmark_datasets_pre = await FileAttachment("data/Benchmark_datasets.csv").csv()
 literature = literature_pre.filter(d => !d.Name.includes("EXCLUDE") && !d.Name == "")
-benchmark_datasets = benchmark_datasets_pre.filter(l => l.Name != "")
+benchmark_datasets = benchmark_datasets_pre.filter(l => l.Name != "" && l.Name != "Debates")
 paper_sources_pre = await FileAttachment("data/Paper Sources.csv").csv()
 paper_source = paper_sources_pre.filter(l => l.Name != "")
 ```
@@ -419,6 +450,8 @@ graph_feature_tags.forEach((graph_feature_name) => {
 {{< include chapters/datasets_in_use.qmd >}}
 
 {{< include chapters/random_generation.qmd >}}
+
+{{< include chapters/discussion.qmd >}}
 
 {{< include chapters/conclusion.qmd >}}
 
