@@ -12,6 +12,8 @@ Papers for this track are written in [Quarto](https://quarto.org/) which is an o
 !  Commit the HTML version of the paper upon submission for ease of review.
 ```
 
+See <https://osf.io/j7ucv/> for more details on the related publication and supplemental materials.
+
 ## Setup instructions
 
 1. Clone the repo.
@@ -99,4 +101,10 @@ and to publish it to GitHub pages use
 
 ```bash
 quarto publish --no-prompt gh-pages
+```
+
+While you're editing, it is helpful to periodically delete the `_site` folder and regenerate it to ensure all changes are used and that warnings don't show up:
+
+```bash
+rm -rf _site
 ```

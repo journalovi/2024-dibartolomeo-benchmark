@@ -169,7 +169,7 @@ Each dataset also contains a number of graph features specific to the graphs con
 
 ### Uniform Benchmark datasets {#sec-uniform-benchmark-datasets}
 
-**Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics - usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
+**Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics—usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
 
 Differently from the collections presented later in this section, an experiment that uses an Uniform Benchmark dataset aims to provide a general overview of the performance of a graph layout algorithm by testing on a large amount of graphs varying in size and density, rather than focusing on a specific type of graph.
 
@@ -578,7 +578,6 @@ In some cases, authors of algorithms that deal with particular graph types might
 
 The storylines dataset is particularly useful for <a href="#Dynamic"><span class="pill-tag pill_color_Dynamic">Temporal event sequence</span></a>visualization because of its <a href="#Dynamic"><span class="pill-tag pill_color_Dynamic">Dynamic</span></a>aspect and <a href="#Clusters_pre-existing"><span class="pill-tag pill_color_Clusters_pre-existing">Clusters</span></a> (which also evolve through time). It is a collection of graphs that represent movie plots, and the nodes are the characters in the movie. The edges represent the interactions between the characters.
 This dataset was initially collected by Yuzuru Tanahashi, then stored on his homepage at UC Davis, which, unfortunately, got taken down after some time from its publication. This caused the dataset to be lost for a period of time, as none of the papers that used it provided a link to the dataset or stored it as part of their supplemental material. The experiments contained in such papers were then rendered non-reproducible because of the missing dataset. 
-<!-- The effects of lost datasets are discussed more in depth in @sec-lost.  -->
 Through the help of personal connections at UC Davis, we were luckily able to recover the dataset.
 
 <div><b>Originally found at: </b>UC Davis’ website, personal page which is now unavailable. Currently distributed here.</div><br>
