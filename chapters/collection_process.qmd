@@ -10,7 +10,7 @@ For each paper, we collected which features were handled by the graph layout alg
 Following this process, we tried to track down the datasets used in computational evaluations: (1) we first looked for official or linked supplemental material, (2) we next Googled the dataset or paper name, (3) finally, we emailed the authors. 
 When in doubt about the artifact replication policy, we asked the owners or authors by email.
 In cases where it was explicitly mentioned that approval should be received before redistribution, we did not redistribute the datasets. However, if we received approval or did not receive an answer and found no explicit policy preventing redistirbution, we collected and stored the dataset to preserve it for future researchers. 
-If any dataset owner or author discovers their own work in our collection and would like it removed, we kindly request that they contact us (see @sec-authorship below), and we will promptly remove it. Furthermore, we want to emphasize that we do not assert any ownership rights over the datasets listed.
+If any dataset owner or author discovers their own work in our collection and would like it removed, we kindly request that they contact us (see our [authorship statement](#nte-post-abstract) above), and we will promptly remove it. Furthermore, we want to emphasize that we do not assert any ownership rights over the datasets listed.
 
 The chart below shows the distribution of papers across different venues:
 

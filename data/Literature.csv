@@ -119,7 +119,7 @@ A Treemap Based Method for Rapid Layout of Large Graphs,No,muelder2008b,https://
 
 ”san francisco transportation network”
 http://www.diag.uniroma1.it//challenge9/download.shtml",,,No,,"878-321,270",No,No,Yes,
-Content-based text mapping using multi-dimensional projections for exploration of document collections,No,minghim2006,https://doi.org/https://doi.org/10.1117/12.650880,generic,Rosane Minghim and Fernando Vieira Paulovich and Alneu de Andrade Lopes,quantitative,https://sites.icmc.usp.br/alneu/papers/minghim_etal2006.pdf,2006,algorithm,4,VDA,,"@inproceedings{minghim2006,
+Content-based text mapping using multi-dimensional projections for exploration of document collections,No,minghim2006,https://doi.org/10.1117/12.650880,generic,Rosane Minghim and Fernando Vieira Paulovich and Alneu de Andrade Lopes,quantitative,https://sites.icmc.usp.br/alneu/papers/minghim_etal2006.pdf,2006,algorithm,4,VDA,,"@inproceedings{minghim2006,
 author = {Minghim, Rosane and Paulovich, Fernando and Lopes, Alneu},
 year = {2006},
 month = {01},
@@ -296,7 +296,7 @@ pages = {301–331},
 numpages = {31},
 keywords = {graph drawing, aesthetics, simulated annealing}
 }",Custom (Non Replicable),,Observations,No,"Case Study, Visual Comparison",NO,24 - 75,no,NA,NA,,unclear where these datasets come from?,Visual compared to other methods,,,Literature%20ad87f14e7097454fb2f784e2c8a2797a/234535.234538.pdf,No,,24 - 75,,No,Yes,
-A branch-and-cut approach to the crossing number problem,No,Buchheim2008,https://doi.org/https://doi.org/10.1016/j.disopt.2007.05.006,generic,Christoph Buchheim and Markus Chimani and Dietmar Ebner and Carsten Gutwenger and Michael Jünger and Gunnar W Klau and Petra Mutzel and René Weiskircher,quantitative,https://www.sciencedirect.com/science/article/pii/S1572528607000497,2008,"algorithm, comparison",11389,WEA,ILP,"@article{Buchheim2008,
+A branch-and-cut approach to the crossing number problem,No,Buchheim2008,https://doi.org/10.1016/j.disopt.2007.05.006,generic,Christoph Buchheim and Markus Chimani and Dietmar Ebner and Carsten Gutwenger and Michael Jünger and Gunnar W Klau and Petra Mutzel and René Weiskircher,quantitative,https://www.sciencedirect.com/science/article/pii/S1572528607000497,2008,"algorithm, comparison",11389,WEA,ILP,"@article{Buchheim2008,
 doi = {10.1016/j.disopt.2007.05.006},
 url = {https://doi.org/10.1016/j.disopt.2007.05.006},
 year = {2008},
@@ -441,7 +441,7 @@ eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13668},
 abstract = {Abstract A set diagram represents the membership relation among data elements. It is often visualized as secondary information on top of primary information, such as the spatial positions of elements on maps and charts. Visualizing the temporal evolution of such set diagrams as well as their primary features is quite important; however, conventional approaches have only focused on the temporal behavior of the primary features and do not provide an effective means to highlight notable transitions within the set relationships. This paper presents an approach for generating a stepwise animation between set diagrams by decomposing the entire transition into atomic changes associated with individual data elements. The key idea behind our approach is to optimize the ordering of the atomic changes such that the synthesized animation minimizes unwanted set occlusions by considering their depth ordering and reduces the gaze shift between two consecutive stepwise changes. Experimental results and a user study demonstrate that the proposed approach effectively facilitates the visual identification of the detailed transitions inherent in dynamic set diagrams.},
 year = {2019}
 }",Collaboration Networks,Assorted Collaboration Network (https://www.notion.so/Assorted-Collaboration-Network-6062ff126f474a50b5f3dc9b945d43da?pvs=21),"Gaze, Running Time, User Preference, User Time",No,"Quantitative Individual, User Study x2","In Table, Text",12 - 17,video,truncated,youtube,,,,,,,No,,,,No,No,
-Stratisfimal Layout: A modular optimization model for laying out layered node-link network visualizations,No,diBartolomeo2022b,https://doi.org/https://doi.org/10.1109/TVCG.2021.3114756,"clusters (pre-existing), compound graphs, layered graphs, n-layers",Sara di Bartolomeo and Mirek Riedewald and Wolfgang Gatterbauer and Cody Dunne,quantitative,https://osf.io/qdyt9,2022,algorithm,468,TVCG,ILP,"@article{diBartolomeo2022b,
+Stratisfimal Layout: A modular optimization model for laying out layered node-link network visualizations,No,diBartolomeo2022b,https://doi.org/10.1109/TVCG.2021.3114756,"clusters (pre-existing), compound graphs, layered graphs, n-layers",Sara di Bartolomeo and Mirek Riedewald and Wolfgang Gatterbauer and Cody Dunne,quantitative,https://osf.io/qdyt9,2022,algorithm,468,TVCG,ILP,"@article{diBartolomeo2022b,
 doi = {10.1109/tvcg.2021.3114756},
 url = {https://doi.org/10.1109/tvcg.2021.3114756},
 year = {2022},
@@ -454,7 +454,7 @@ author = {Sara di Bartolomeo and Mirek Riedewald and Wolfgang Gatterbauer and Co
 title = {{STRATISFIMAL} {LAYOUT}: A modular optimization model for laying out layered node-link network visualizations},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }","Movie Plots, Rome-Lib, Rome-Lib*, SQL queries","Rome-Lib (https://www.notion.so/Rome-Lib-c2f20984de724f4c89764b0bc494e99e?pvs=21), Storylines (Movie Plots) (https://www.notion.so/Storylines-Movie-Plots-5d9ea7cbfc2c4a6c88a7ca1bf32c67d7?pvs=21)","Edge Length, Num Crossings, Running Time, Success Rate (LP)",External Link,"Quantitative Aggregated, Visual Comparison",Text,10 - 95,"Yes, appendix","Clusterization, rank assignment",Osf,Rome-Lib,Rome-Lib - layered and with added groups (graphs with too many nodes were left out from Rome-Lib),"aggregate, visual",,,,No,,10-95,yes,No,No,
-Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach,No,Wallinger2022,https://doi.org/https://doi.ieeecomputersociety.org/10.1109/TVCG.2021.3114795,"bundled edges (generated), spatial",Markus Wallinger and Daniel Archambault and David Auber and Martin Nollenburg and Jaakko Peltonen,"qualitative, quantitative",https://arxiv.org/pdf/2108.05467.pdf,2022,"algorithm, comparison",9,TVCG,,"@article{Wallinger2022,
+Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach,No,Wallinger2022,https://doi.org/10.1109/TVCG.2021.3114795,"bundled edges (generated), spatial",Markus Wallinger and Daniel Archambault and David Auber and Martin Nollenburg and Jaakko Peltonen,"qualitative, quantitative",https://arxiv.org/pdf/2108.05467.pdf,2022,"algorithm, comparison",9,TVCG,,"@article{Wallinger2022,
 doi = {10.1109/tvcg.2021.3114795},
 url = {https://doi.org/10.1109/tvcg.2021.3114795},
 year = {2022},
@@ -644,7 +644,7 @@ author = {Benjamin Bach and Emmanuel Pietriga and Jean-Daniel Fekete},
 title = {{GraphDiaries}: Animated Transitions {andTemporal} Navigation for Dynamic Networks},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }","Collaboration Networks, Custom (Non Replicable)",Assorted Collaboration Network (https://www.notion.so/Assorted-Collaboration-Network-6062ff126f474a50b5f3dc9b945d43da?pvs=21),"User Accuracy, User Time",No,User Study,NO,NA,"Yes, video",NA,publisher website,collaboration network,,visual,,,,No,,describe a bit about the modification but not enough to reproduce,yes - video,No,No,
-TrajGraph: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data,No,Huang2016,https://doi.org/https://doi.org/10.1109/tvcg.2015.2467771,"labeled nodes, spatial",Xiaoke Huang and Ye Zhao and Chao Ma and Jing Yang and Xinyue Ye and Chong Zhang,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7192687,2016,technique,1,TVCG,other,"@article{Huang2016,
+TrajGraph: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data,No,Huang2016,https://doi.org/10.1109/tvcg.2015.2467771,"labeled nodes, spatial",Xiaoke Huang and Ye Zhao and Chao Ma and Jing Yang and Xinyue Ye and Chong Zhang,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7192687,2016,technique,1,TVCG,other,"@article{Huang2016,
 doi = {10.1109/tvcg.2015.2467771},
 url = {https://doi.org/10.1109/tvcg.2015.2467771},
 year = {2016},
@@ -657,7 +657,7 @@ author = {Xiaoke Huang and Ye Zhao and Chao Ma and Jing Yang and Xinyue Ye and C
 title = {{TrajGraph}: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }",Transportation Network/Map,Transportation Networks (https://www.notion.so/Transportation-Networks-720a658bb1914b51910c480d86943e80?pvs=21),"Running Time, User Accuracy",No,"Case Study, Expert Interview, User Study",In Table,100 - 37000,Yes,NA,publisher website,taxi tracks,,"case study, domain experts, user study",,,,No,also report node centrality measures,"[100, 37000]",yes - video,No,No,
-Online Dynamic Graph Drawing,No,Frishman2008,https://doi.org/https://doi.org/10.1109/tvcg.2008.11,dynamic,Yaniv Frishman and Ayellet Tal,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4433990,2008,algorithm,4,TVCG,other,"@article{Frishman2008,
+Online Dynamic Graph Drawing,No,Frishman2008,https://doi.org/10.1109/tvcg.2008.11,dynamic,Yaniv Frishman and Ayellet Tal,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4433990,2008,algorithm,4,TVCG,other,"@article{Frishman2008,
 doi = {10.1109/tvcg.2008.11},
 url = {https://doi.org/10.1109/tvcg.2008.11},
 year = {2008},
@@ -674,7 +674,7 @@ journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 
 [35] T.M. Newcomb, The Acquaintance Process. Holt, Rinehart, and
 Winston, 1961.",visual,,,,No,,"[4097, 32715]",yes - video,No,No,"3elt (C. Walshaw - Sparse Matrix), 4elt (C. Walshaw), bcsstk31 (C. Walshaw), fe_pwt (C. Walshaw)"
-Skeleton-Based Edge Bundling for Graph Visualization,No,Ersoy2011,https://doi.org/https://doi.org/10.1109/tvcg.2011.233,"generic, spatial",Ozan Ersoy and Christophe Hurter and Fernando Paulovich and Gabriel Cantareiro and Alex Telea,quantitative,https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6065003,2011,"algorithm, technique",5,TVCG,other,"@article{Ersoy2011,
+Skeleton-Based Edge Bundling for Graph Visualization,No,Ersoy2011,https://doi.org/10.1109/tvcg.2011.233,"generic, spatial",Ozan Ersoy and Christophe Hurter and Fernando Paulovich and Gabriel Cantareiro and Alex Telea,quantitative,https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6065003,2011,"algorithm, technique",5,TVCG,other,"@article{Ersoy2011,
 doi = {10.1109/tvcg.2011.233},
 url = {https://doi.org/10.1109/tvcg.2011.233},
 year = {2011},
@@ -687,7 +687,7 @@ author = {O. Ersoy and C. Hurter and Fernando V. Paulovich and G. Cantareiro and
 title = {Skeleton-Based Edge Bundling for Graph Visualization},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }",Airlines/Migration Routes,"Airlines, Migrations, and Air Traffic (https://www.notion.so/Airlines-Migrations-and-Air-Traffic-45ffa6caedd141b082e163d7da6eb895?pvs=21)","Amount of Clusters, Running Time",No,"Case Study, Visual Comparison",In Table,235 - 34550,Yes,NA,publisher website,"US airlines, airlines french, migrations, poker",,visual,edge clustering,,,No,,[235. 34550],yes - just a video,No,No,us migration
-Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming,No,Nollenburg2011,https://doi.org/https://doi.org/10.1109/tvcg.2010.81,"labeled nodes, spatial",Martin Nollenburg and Alexander Wolff,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5473229,2011,"algorithm, technique",3,TVCG,ILP,"@article{Nollenburg2011,
+Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming,No,Nollenburg2011,https://doi.org/10.1109/tvcg.2010.81,"labeled nodes, spatial",Martin Nollenburg and Alexander Wolff,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5473229,2011,"algorithm, technique",3,TVCG,ILP,"@article{Nollenburg2011,
 doi = {10.1109/tvcg.2010.81},
 url = {https://doi.org/10.1109/tvcg.2010.81},
 year = {2011},
@@ -720,7 +720,7 @@ tics Norway (www.ssb.no), Central Statistical Bureau of Latvia
 (www.csb.gov.lv), and the Scotch Whisky Association in Ed-
 inburgh, statistical report 2009 (www.scotch-whisky.org.uk).
 All URLs were accessed on 2011-04-19.",case studies,,,,No,,unspecified,no,No,No,
-Topological fisheye views for visualizing large graphs,No,Gansner2005b,https://doi.org/https://doi.org/10.1109/tvcg.2005.66,"generic, high degree, large",E.R. Gansner and Y. Koren and S.C. North,quantitative,https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1432691,2005,"algorithm, technique",6 + 1,TVCG,other,"@article{Gansner2005b,
+Topological fisheye views for visualizing large graphs,No,Gansner2005b,https://doi.org/10.1109/tvcg.2005.66,"generic, high degree, large",E.R. Gansner and Y. Koren and S.C. North,quantitative,https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1432691,2005,"algorithm, technique",6 + 1,TVCG,other,"@article{Gansner2005b,
 doi = {10.1109/tvcg.2005.66},
 url = {https://doi.org/10.1109/tvcg.2005.66},
 year = {2005},
@@ -736,7 +736,7 @@ journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 vol. 32, no. 4, pp. 97-98, 102, Apr. 1999
 
 (dead) [25] J. Petit , http://www.lsi.upc.es/jpetit/MinLA/Experiments, 2005",visual,,,,No,,"[1240, 250000]",yes,No,No,"4elt (C. Walshaw), crack (C. Walshaw), grid_317x317, grid_500x500, internet_graph (internet mapping project), sierpinski10"
-DICON: Interactive Visual Analysis of Multidimensional Clusters,No,NanCao2011,https://doi.org/https://doi.org/10.1109/tvcg.2011.188,"clusters (pre-existing), multivariate, spatial",Nan Cao and David Gotz and Jimeng Sun and Huamin Qu,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6065026,2011,"algorithm, technique",3,TVCG,other,"@article{NanCao2011,
+DICON: Interactive Visual Analysis of Multidimensional Clusters,No,NanCao2011,https://doi.org/10.1109/tvcg.2011.188,"clusters (pre-existing), multivariate, spatial",Nan Cao and David Gotz and Jimeng Sun and Huamin Qu,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6065026,2011,"algorithm, technique",3,TVCG,other,"@article{NanCao2011,
 doi = {10.1109/tvcg.2011.188},
 url = {https://doi.org/10.1109/tvcg.2011.188},
 year = {2011},
@@ -749,7 +749,7 @@ author = {Nan Cao and D. Gotz and J. Sun and Huamin Qu},
 title = {{DICON}: Interactive Visual Analysis of Multidimensional Clusters},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }","Car Features, Medical Patient Records","Medical Patient Records (https://www.notion.so/Medical-Patient-Records-9bb4f4fc1e8242b2905eb286a0e00143?pvs=21), Car Features (https://www.notion.so/Car-Features-3365100498bc4a1eb77bcadcace2b2fa?pvs=21)","User Accuracy, User Time, User Usability",In Paper,"Case Study, Quantitative Aggregated, User Study",NO,3 - 50,video,generated,youtube,"Car dataset, Healthcare patient records",,"aggregate, user study, case study",user study + interview with domain experts,,,No,,3 to 50,"yes - just a video, have to search for it separately",No,No,
-KelpFusion: A Hybrid Set Visualization Technique,No,Meulemans2013,https://doi.org/https://doi.org/10.1109/tvcg.2013.76,spatial,Wouter Meulemans and Nathalie Henry Riche and Bettina Speckmann and Basak Alper and Tim Dwyer,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6509874,2013,algorithm,4,TVCG,other,"@article{Meulemans2013,
+KelpFusion: A Hybrid Set Visualization Technique,No,Meulemans2013,https://doi.org/10.1109/tvcg.2013.76,spatial,Wouter Meulemans and Nathalie Henry Riche and Bettina Speckmann and Basak Alper and Tim Dwyer,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6509874,2013,algorithm,4,TVCG,other,"@article{Meulemans2013,
 doi = {10.1109/tvcg.2013.76},
 url = {https://doi.org/10.1109/tvcg.2013.76},
 year = {2013},
@@ -762,7 +762,7 @@ author = {Wouter Meulemans and Nathalie Henry Riche and Bettina Speckmann and Ba
 title = {{KelpFusion}: A Hybrid Set Visualization Technique},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }",Transportation Network/Map,Transportation Networks (https://www.notion.so/Transportation-Networks-720a658bb1914b51910c480d86943e80?pvs=21),"User Accuracy, User Time",In Paper,"Quantitative Aggregated, User Study, Visual Comparison",In Table,12 - 50,no,generated,NA,Boston map,Bing maps - boston - they generated it themselves,"visual, aggregate",user study,,,No,,"[12, 50]",yes - just a video though,No,No,
-Preserving Minority Structures in Graph Sampling,No,Zhao2021,https://doi.org/https://doi.org/10.1109/tvcg.2020.3030428,generic,Ying Zhao and Haojin Jiang and Qi'an Chen and Yaqi Qin and Huixuan Xie and Yitao Wu and Shixia Liu and Zhiguang Zhou and Jiazhi Xia and Fangfang Zhou,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9222065,2021,"algorithm, comparison",34 + 3,TVCG,other,"@article{Zhao2021,
+Preserving Minority Structures in Graph Sampling,No,Zhao2021,https://doi.org/10.1109/tvcg.2020.3030428,generic,Ying Zhao and Haojin Jiang and Qi'an Chen and Yaqi Qin and Huixuan Xie and Yitao Wu and Shixia Liu and Zhiguang Zhou and Jiazhi Xia and Fangfang Zhou,"qualitative, quantitative",https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9222065,2021,"algorithm, comparison",34 + 3,TVCG,other,"@article{Zhao2021,
 doi = {10.1109/tvcg.2020.3030428},
 url = {https://doi.org/10.1109/tvcg.2020.3030428},
 year = {2021},
@@ -934,7 +934,7 @@ author = {Sara Di Bartolomeo and Yixuan Zhang and Fangfang Sheng and Cody Dunne}
 title = {Sequence Braiding: Visual Overviews of Temporal Event Sequences and Attributes},
 journal = {{IEEE} Transactions on Visualization and Computer Graphics}
 }","Chess Games, Custom (Reproducible), Diabetes data, Movie Plots","Chess Games (https://www.notion.so/Chess-Games-023a47d6ae914567a05132ac1dfbe972?pvs=21), Storylines (Movie Plots) (https://www.notion.so/Storylines-Movie-Plots-5d9ea7cbfc2c4a6c88a7ca1bf32c67d7?pvs=21)","Num Crossings, Observations, Running Time, User Accuracy, User Preference, User Time","External Link, In Paper",Quantitative Aggregated,NO,83 - 1200,"Data, appendix",rank assignment,Osf,Chess Games,chess games,"visual, aggregate",,,,No,,83-1200,yes,No,No,
-Multi-Level Area Balancing of Clustered Graphs,No,Wu2020,https://doi.org/https://doi.org/10.1109/TVCG.2020.3038154,"categorical nodes, clusters (pre-existing), labeled nodes",Hsiang-Yun Wu and Martin Nollenburg  and Ivan Viola,"qualitative, quantitative",http://yun-vis.net/projects/bionet/tvcg2020.pdf,2020,"algorithm, comparison",4,TVCG,,"@article{Wu2020,
+Multi-Level Area Balancing of Clustered Graphs,No,Wu2020,https://doi.org/10.1109/TVCG.2020.3038154,"categorical nodes, clusters (pre-existing), labeled nodes",Hsiang-Yun Wu and Martin Nollenburg  and Ivan Viola,"qualitative, quantitative",http://yun-vis.net/projects/bionet/tvcg2020.pdf,2020,"algorithm, comparison",4,TVCG,,"@article{Wu2020,
 doi = {10.1109/tvcg.2020.3038154},
 url = {https://doi.org/10.1109/tvcg.2020.3038154},
 year = {2020},
@@ -998,7 +998,7 @@ author = {Yu-Ru Lin and Jimeng Sun and Nan Cao and Shixia Liu},
 title = {{ContexTour}: Contextual Contour Visual Analysis on Dynamic Multi-Relational Clustering},
 booktitle = {Proceedings of the 2010 {SIAM} International Conference on Data Mining}
 }","Collaboration Networks, Custom (Non Replicable)",Assorted Collaboration Network (https://www.notion.so/Assorted-Collaboration-Network-6062ff126f474a50b5f3dc9b945d43da?pvs=21),"Amount of Clusters, Memory Used, Running Time",In Paper,Case Study,NO,32 - 2000,appendix,"cherry-picked, generated",In paper,"DBLP, custom",their own - dblp 1995 to 2008 with cherry-picked conferences,visual,,not specified,,No,,32 - 2000,"Yes, Appendix",No,No,
-Drawing graphs by eigenvectors: theory and practice,No,KOREN20051867,https://doi.org/https://doi.org/10.1016/j.camwa.2004.08.015,generic,Y. Koren,quantitative,https://www.sciencedirect.com/science/article/pii/S089812210500204X,2005,algorithm,14,Computers & Mathematics with Applications,spectral,"@article{KOREN20051867,
+Drawing graphs by eigenvectors: theory and practice,No,KOREN20051867,https://doi.org/10.1016/j.camwa.2004.08.015,generic,Y. Koren,quantitative,https://www.sciencedirect.com/science/article/pii/S089812210500204X,2005,algorithm,14,Computers & Mathematics with Applications,spectral,"@article{KOREN20051867,
 title = {Drawing graphs by eigenvectors: theory and practice},
 journal = {Computers & Mathematics with Applications},
 volume = {49},
@@ -1476,7 +1476,7 @@ author = {Martin Gronemann and Michael J\""{u}nger and Frauke Liers and Francesc
 title = {Crossing Minimization in Storyline Visualization},
 booktitle = {Lecture Notes in Computer Science}
 }","Movie Plots, Stanford GraphBase","Storylines (Movie Plots) (https://www.notion.so/Storylines-Movie-Plots-5d9ea7cbfc2c4a6c88a7ca1bf32c67d7?pvs=21), Stanford GraphBase (https://www.notion.so/Stanford-GraphBase-effff4b40e9d4a79b6f33825ccca7401?pvs=21)","Num Crossings, Running Time",In Paper,Quantitative Individual,"In Table, Text",192 - 5467,no,NA,NA,"Stanford GraphBase, movie plots",movie plots (lost),"visual, quantitative individual",good evaluation,,,No,,"[192, 5467]",no,No,No,"Adventures of Huckleberry Finn (Stanford GraphBase), Anna Karenina (Stanford GraphBase), inception (movie plots), lesmis (SparseMatrix - Stanford GraphBase), matrix (movie plots), star wars (movie plots)"
-A Distributed Multilevel Force-Directed Algorithm,No,Arleo2019,https://doi.org/https://doi.org/10.1109/TPDS.2018.2869805,"generic, large",Alessio Arleo and Walter Didimo and Giuseppe Liotta and Fabrizio Montecchiani,quantitative,https://ieeexplore.ieee.org/document/8462766,2016,algorithm,52,TVCG,force-directed,"@article{Arleo2019,
+A Distributed Multilevel Force-Directed Algorithm,No,Arleo2019,https://doi.org/10.1109/TPDS.2018.2869805,"generic, large",Alessio Arleo and Walter Didimo and Giuseppe Liotta and Fabrizio Montecchiani,quantitative,https://ieeexplore.ieee.org/document/8462766,2016,algorithm,52,TVCG,force-directed,"@article{Arleo2019,
 doi = {10.1109/tpds.2018.2869805},
 url = {https://doi.org/10.1109/tpds.2018.2869805},
 year = {2019},
@@ -1511,7 +1511,7 @@ reports tiny stats for each graph used!
 source for dataset: http://www.cise.ufl.edu/research/sparse/matrices
 
 use this paper as an example in discussion section",,Literature%20ad87f14e7097454fb2f784e2c8a2797a/OrtmannKlimentaBrandes2017.21.5.pdf,Yes,,from 1005 nodes to 20657,yes! here: https://github.com/MarkOrtmann/sparse-stress,No,No,"1138_bus (Sparse matrix - Matrix Market), 3elt (C. Walshaw - Sparse Matrix), LeHavre (SparseMatrix), bodyy5 (SparseMatrix), btree (Sparse Matrix), commanche (Sparse Matrix), dwt1005 (SparseMatrix), finance256 (SparseMatrix), lp_ship041 (Sparse Matrix), pesa (SparseMatrix), plat1919 (SparseMatrix), qh882 (Sparse Matrix), us_powergrid (Sparse Matrix)"
-Node Overlap Removal by Growing a Tree,No,Nachmanson2017,https://doi.org/https://doi.org/10.7155/jgaa.00442,large,Lev Nachmanson and Arlind Nocaj and Sergey Bereg and Leishi Zhang and Alexander Holroyd,quantitative,https://jgaa.info/accepted/2017/Nachmanson+2017.21.5.pdf,2016,"algorithm, comparison",10077,GD,other,"@article{Nachmanson2017,
+Node Overlap Removal by Growing a Tree,No,Nachmanson2017,https://doi.org/10.7155/jgaa.00442,large,Lev Nachmanson and Arlind Nocaj and Sergey Bereg and Leishi Zhang and Alexander Holroyd,quantitative,https://jgaa.info/accepted/2017/Nachmanson+2017.21.5.pdf,2016,"algorithm, comparison",10077,GD,other,"@article{Nachmanson2017,
   doi = {10.7155/jgaa.00442},
   url = {https://doi.org/10.7155/jgaa.00442},
   year = {2017},
@@ -1523,7 +1523,7 @@ Node Overlap Removal by Growing a Tree,No,Nachmanson2017,https://doi.org/https:/
   title = {Node Overlap Removal by Growing a Tree},
   journal = {Journal of Graph Algorithms and Applications}
 }","Control Flow graphs, Custom (Reproducible), Graphviz Examples","Graphviz Examples (https://www.notion.so/Graphviz-Examples-e90aec42f02c4e8b8a6b8727fe2f86ae?pvs=21), Control Flow Graphs (https://www.notion.so/Control-Flow-Graphs-af079f199a2c402d8633f6d41101934b?pvs=21)","Area, Running Time",In Paper,"Proof, Quantitative Aggregated, Visual Comparison",In Figure,36 - 1463,no,NA,Github,"custom (random), graphviz examples",source for some of the graphs: https://github.com/Microsoft/automatic-graph-layout/,"visual, aggregate, proof",,,,No,,36-1463 ← Not sure about the top range,no,No,No,
-Placing Arrows in Directed Graph Drawings,No,Binucci2016,https://doi.org/https://doi.org/10.1007/978-3-319-50106-2_4,directed edges,Carla Binucci and Markus Chimani and Walter Didimo and Giuseppe Liotta and Fabrizio Montecchiani,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,"algorithm, comparison",1275 + 60,GD,other,"@incollection{Binucci2016,
+Placing Arrows in Directed Graph Drawings,No,Binucci2016,https://doi.org/10.1007/978-3-319-50106-2_4,directed edges,Carla Binucci and Markus Chimani and Walter Didimo and Giuseppe Liotta and Fabrizio Montecchiani,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,"algorithm, comparison",1275 + 60,GD,other,"@incollection{Binucci2016,
   doi = {10.1007/978-3-319-50106-2_4},
   url = {https://doi.org/10.1007/978-3-319-50106-2_4},
   year = {2016},
@@ -1536,7 +1536,7 @@ Placing Arrows in Directed Graph Drawings,No,Binucci2016,https://doi.org/https:/
 → large: not really, up to 500
 
 graphs generated with OGDF",,Literature%20ad87f14e7097454fb2f784e2c8a2797a/Binucci2016_Chapter_PlacingArrowsInDirectedGraphDr.pdf,No,,"one set is [100, 500] nodes, the other is [10-100]",,No,No,
-A Generalization of the Directed Graph Layering Problem,No,Regg2016,https://doi.org/https://doi.org/10.1007/978-3-319-50106-2_16,"directed edges, layered graphs, n-layers",Ulf Rüegg and Thorsten Ehlers and Miro Spönemann and Reinhard von Hanxleden,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,algorithm,146 + 160,GD,other,"@incollection{Regg2016,
+A Generalization of the Directed Graph Layering Problem,No,Regg2016,https://doi.org/10.1007/978-3-319-50106-2_16,"directed edges, layered graphs, n-layers",Ulf Rüegg and Thorsten Ehlers and Miro Spönemann and Reinhard von Hanxleden,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,algorithm,146 + 160,GD,other,"@incollection{Regg2016,
 doi = {10.1007/978-3-319-50106-2_16},
 url = {https://doi.org/10.1007/978-3-319-50106-2_16},
 year = {2016},
@@ -1546,7 +1546,7 @@ author = {Ulf R\""{u}egg and Thorsten Ehlers and Miro Sp\""{o}nemann and Reinhar
 title = {A Generalization of the Directed Graph Layering Problem},
 booktitle = {Lecture Notes in Computer Science}
 }","AT&T, AT&T*, Custom (Non Replicable)",North DAGs (https://www.notion.so/North-DAGs-a58f7143ef524c8a8c737df90162d3fb?pvs=21),"Area, Aspect Ratio, Height",In Paper,Quantitative Aggregated,Text,17 - 60,appendix,"cherry-picked, generated",arxiv,"North Lib, custom (random)","North Lib but a subset (at least 20 nodes with aspect ratio below .5 ??) - removed plain pats, pairs of nodes connected with 1 edge, and trees",aggregate,,,Literature%20ad87f14e7097454fb2f784e2c8a2797a/Ruegg2016_Chapter_AGeneralizationOfTheDirectedGr.pdf,No,,17 to 60 nodes (custom set),no,No,No,
-Compact Layered Drawings of General Directed Graphs,No,Jabrayilov2016,https://doi.org/https://doi.org/10.1007/978-3-319-50106-2_17,"directed edges, layered graphs, n-layers",Adalat Jabrayilov and Sven Mallach and Petra Mutzel and Ulf Rüegg and Reinhard von Hanxleden,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,algorithm,486,GD,ILP,"@incollection{Jabrayilov2016,
+Compact Layered Drawings of General Directed Graphs,No,Jabrayilov2016,https://doi.org/10.1007/978-3-319-50106-2_17,"directed edges, layered graphs, n-layers",Adalat Jabrayilov and Sven Mallach and Petra Mutzel and Ulf Rüegg and Reinhard von Hanxleden,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,algorithm,486,GD,ILP,"@incollection{Jabrayilov2016,
   doi = {10.1007/978-3-319-50106-2_17},
   url = {https://doi.org/10.1007/978-3-319-50106-2_17},
   year = {2016},
@@ -1556,7 +1556,7 @@ Compact Layered Drawings of General Directed Graphs,No,Jabrayilov2016,https://do
   title = {Compact Layered Drawings of General Directed Graphs},
   booktitle = {Lecture Notes in Computer Science}
 }","AT&T, AT&T*, Custom (Reproducible)",AT&T (https://www.notion.so/AT-T-e86f130c42344169a9d75a61abc7e487?pvs=21),"Aspect Ratio, Edge Length, Running Time, Width",No,Quantitative Aggregated,Text,17 - 105,Yes,,arxiv,"AT&T, custom (random)",AT&T (subsection),aggregate,dataset link: https://ls11-www.cs.tu-dortmund.de/mutzel/gdbenchmarks,146 + 340,Literature%20ad87f14e7097454fb2f784e2c8a2797a/Jabrayilov2016_Chapter_CompactLayeredDrawingsOfGenera.pdf,No,,max 100 vertices,"fully, link available",No,No,
-Bitonic st-orderings for Upward Planar Graphs,No,Gronemann2016,https://doi.org/https://doi.org/10.1007/978-3-319-50106-2_18,"ST-graphs, directed edges, planar",Martin Gronemann,none,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,algorithm,NA,GD,other,"@incollection{Gronemann2016,
+Bitonic st-orderings for Upward Planar Graphs,No,Gronemann2016,https://doi.org/10.1007/978-3-319-50106-2_18,"ST-graphs, directed edges, planar",Martin Gronemann,none,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,algorithm,NA,GD,other,"@incollection{Gronemann2016,
 doi = {10.1007/978-3-319-50106-2_18},
 url = {https://doi.org/10.1007/978-3-319-50106-2_18},
 year = {2016},
@@ -1567,7 +1567,7 @@ title = {Bitonic st-orderings for Upward Planar Graphs},
 booktitle = {Lecture Notes in Computer Science}
 }",none,,None,In Paper,Proof,,NA,appendix,NA,arxiv,none,no experiment,proof,"validates through proof
 bitonic = sorting algorithm that’s common for networks",,Literature%20ad87f14e7097454fb2f784e2c8a2797a/Gronemann2016_Chapter_BitonicSt-orderingsForUpwardPl.pdf,No,,,no,No,No,
-A Note on the Practicality of Maximal Planar Subgraph Algorithms,No,chimani2016,https://doi.org/https://doi.org/10.1007/978-3-319-50106-2_28,planar,Markus Chimani and Karsten Klein and Tilo Wiedera,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,comparison,9558,GD,ILP,"@InProceedings{chimani2016,
+A Note on the Practicality of Maximal Planar Subgraph Algorithms,No,chimani2016,https://doi.org/10.1007/978-3-319-50106-2_28,planar,Markus Chimani and Karsten Klein and Tilo Wiedera,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,comparison,9558,GD,ILP,"@InProceedings{chimani2016,
 author=""Chimani, Markus
 and Klein, Karsten
 and Wiedera, Tilo"",
@@ -1590,7 +1590,7 @@ regular: Steger, A., Wormald, N.C.: Generating random regular graphs quickly. Co
 Probab. Comput. 8(4), 377–396 (1999)
 
 I like how they described their choice of dataset",,Literature%20ad87f14e7097454fb2f784e2c8a2797a/Chimani2016_Chapter_ANoteOnThePracticalityOfMaxima.pdf,No,,from 25 to 10^4,no,No,No,
-Block Crossings in Storyline Visualizations,No,vanDijk2016,https://doi.org/https://doi.org/10.1007/978-3-319-50106-2_30,"dynamic (discrete), hypergraphs, layered graphs, n-layers",Thomas C. van Dijk and Martin Fink and Norbert Fischer and Fabian Lipp and Peter Markfelder and Alexander Ravsky and Subhash Suri and Alexander Wolff,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,"algorithm, comparison",1000,GD,,"@incollection{vanDijk2016,
+Block Crossings in Storyline Visualizations,No,vanDijk2016,https://doi.org/10.1007/978-3-319-50106-2_30,"dynamic (discrete), hypergraphs, layered graphs, n-layers",Thomas C. van Dijk and Martin Fink and Norbert Fischer and Fabian Lipp and Peter Markfelder and Alexander Ravsky and Subhash Suri and Alexander Wolff,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-319-50106-2.pdf,2016,"algorithm, comparison",1000,GD,,"@incollection{vanDijk2016,
 doi = {10.1007/978-3-319-50106-2_30},
 url = {https://doi.org/10.1007/978-3-319-50106-2_30},
 year = {2016},
@@ -1647,7 +1647,7 @@ booktitle = {Graph Drawing}
 
 To compare speed and effectiveness of the model we ran it on two sets of
 graphs. The first set of graphs are all the hierarchical network diagrams appearing in the GraphViz gallery [3]. The second set of graphs are random graphs of k-levels with n nodes per level and a fixed edge density of 20% (that is each node is connected on average to 20% of the nodes on the next layer). Problem class gk_n is a suite of 10 randomly generated instances with k levels and n nodes per level",,,No,,"[21, 80]",no,No,No,"crazy (graphviz), datastruct (graphviz), fsm (graphviz), lion_share (graphviz), profile (graphviz), switch (graphviz), traffic_lights (graphviz), unix (graphviz), world (graphviz)"
-Line Crossing Minimization on Metro Maps,No,Bekos2007,https://doi.org/https://doi.org/10.1007/978-3-540-77537-9_24,terminals,Michael A. Bekos and Michael Kaufmann and Katerina Potika and Antonios Symvonis,,https://link.springer.com/content/pdf/10.1007/978-3-540-77537-9_24.pdf,2007,algorithm,NA,GD,,"@incollection{Bekos2007,
+Line Crossing Minimization on Metro Maps,No,Bekos2007,https://doi.org/10.1007/978-3-540-77537-9_24,terminals,Michael A. Bekos and Michael Kaufmann and Katerina Potika and Antonios Symvonis,,https://link.springer.com/content/pdf/10.1007/978-3-540-77537-9_24.pdf,2007,algorithm,NA,GD,,"@incollection{Bekos2007,
 doi = {10.1007/978-3-540-77537-9_24},
 url = {https://doi.org/10.1007/978-3-540-77537-9_24},
 publisher = {Springer Berlin Heidelberg},
@@ -1697,7 +1697,7 @@ title = {An Experimental Comparison of Fast Algorithms for Drawing General Large
 booktitle = {Graph Drawing}
 }","AT&T, C. Walshaw's graph collection, Custom (Replicable), Social Networks","Walshaw (https://www.notion.so/Walshaw-e40b37a1147942d89ff1d8dfad285256?pvs=21), AT&T (https://www.notion.so/AT-T-e86f130c42344169a9d75a61abc7e487?pvs=21), Social Networks (https://www.notion.so/Social-Networks-90888b3285d042d49072985b05f95203?pvs=21)",Running Time,No,Visual Comparison,In Table,930 - 143437,no,"NA, generated",NA,"C. Walshaw's graph collection, North Lib, custom",their own + AT&T + “C. Walshaw’s graph collection”,visual,"has some discussion on what they did to generate their own graphs. NOTE: This mentions the more famous layout papers, we should make sure they are included in our list",,,No,,"[930,143437]",yes (appendix),No,No,
 "A Fast and Simple Heuristic
-for Constrained Two-Level Crossing Reduction",No,Forster2005,https://doi.org/https://doi.org/10.1007/978-3-540-31843-9_22,"bipartite, layered graphs",Michael Forster,quantitative,https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.59.1966&rep=rep1&type=pdf,2004,"algorithm, comparison",37500,GD,,"@incollection{Forster2005,
+for Constrained Two-Level Crossing Reduction",No,Forster2005,https://doi.org/10.1007/978-3-540-31843-9_22,"bipartite, layered graphs",Michael Forster,quantitative,https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.59.1966&rep=rep1&type=pdf,2004,"algorithm, comparison",37500,GD,,"@incollection{Forster2005,
 doi = {10.1007/978-3-540-31843-9_22},
 url = {https://doi.org/10.1007/978-3-540-31843-9_22},
 year = {2005},
@@ -1732,7 +1732,7 @@ title = {Graph Drawing by Stress Majorization},
 booktitle = {Graph Drawing}
 }",Matrix Market,Matrix Market (https://www.notion.so/Matrix-Market-80bd4320417342458aefa031cf65db1f?pvs=21),"Running Time, Stress",No,"Case Study, Quantitative Individual",In Figure,516 - 3847,Yes,NA,external website - not their own,"C. Walshaw's graph collection, SuiteSparse Matrix Collection",,aggregate (same graph evaluated multiple times),,,Literature%20ad87f14e7097454fb2f784e2c8a2797a/Gansner2005_Chapter_GraphDrawingByStressMajorizati.pdf,No,,"[516, 3847]",no,No,No,"1138_bus (Sparse matrix - Matrix Market), bcspwr07 (Matrix Market), plsk1919 (Matrix Market), qh1484 (Matrix Market)"
 "An Experimental Study of Crossing
-Minimization Heuristics",No,Gutwenger2004,https://doi.org/https://doi.org/10.1007/978-3-540-24595-7_2,generic,Carsten Gutwenger and Petra Mutzel,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-540-24595-7_2.pdf,2003,comparison,11389,GD,,"@incollection{Gutwenger2004,
+Minimization Heuristics",No,Gutwenger2004,https://doi.org/10.1007/978-3-540-24595-7_2,generic,Carsten Gutwenger and Petra Mutzel,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-540-24595-7_2.pdf,2003,comparison,11389,GD,,"@incollection{Gutwenger2004,
 doi = {10.1007/978-3-540-24595-7_2},
 url = {https://doi.org/10.1007/978-3-540-24595-7_2},
 year = {2004},
@@ -2074,7 +2074,7 @@ booktitle = {Lecture Notes in Computer Science}
 }","Cable Plans, Custom (Reproducible)",,"Area, Aspect Ratio, Edge Bends, Num Crossings, Num Dummy Vertices Created, Running Time",External Link,Quantitative Aggregated,Text,2 - 240,"Yes, appendix",added/removed edges,"Github, arxiv",cable plans,cable plans of a german company (says dataset is on github),aggregate. measures ratio of crossings and ratio of bends,,,,No,,2- 240,"Yes, https://arxiv.org/pdf/2008.10583.pdf, https://github.com/j-zink-wuerzburg/praline, https://github.com/j-zink-wuerzburg/pseudo-praline-plan-generation",Yes,No,
 "An Integer-Linear Program
 for Bend-Minimization in Ortho-Radial
-Drawings",No,Niedermann2020,https://doi.org/https://doi.org/10.1007/978-3-030-68766-3_19,"ortho, ortho-radial",Benjamin Niedermann and Ignaz Rutter,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-030-68766-3.pdf,2020,algorithm,"4048 ",GD,ILP,"@incollection{Niedermann2020,
+Drawings",No,Niedermann2020,https://doi.org/10.1007/978-3-030-68766-3_19,"ortho, ortho-radial",Benjamin Niedermann and Ignaz Rutter,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-030-68766-3.pdf,2020,algorithm,"4048 ",GD,ILP,"@incollection{Niedermann2020,
 doi = {10.1007/978-3-030-68766-3_19},
 url = {https://doi.org/10.1007/978-3-030-68766-3_19},
 year = {2020},
@@ -2148,7 +2148,7 @@ html
 
 https://tradingeconomics.com/kosovo/forest-area-percent-of-land-area-wb-data.
 html","aggregate, visual",,,,No,,N/A,"Yes, appendix",No,No,
-A Quality Metric for Visualization of Clusters in Graphs,No,Meidiana2019,https://doi.org/https://doi.org/10.1007/978-3-030-35802-0_10,clusters (generated),Amyra Meidiana and Seok-Hee Hong and Peter Eades and Daniel Keim,quantitative,https://doi.org/10.1007/978-3-030-35802-0_10,2019,"comparison, quality metrics",18,GD,force-directed,"@incollection{Meidiana2019,
+A Quality Metric for Visualization of Clusters in Graphs,No,Meidiana2019,https://doi.org/10.1007/978-3-030-35802-0_10,clusters (generated),Amyra Meidiana and Seok-Hee Hong and Peter Eades and Daniel Keim,quantitative,https://doi.org/10.1007/978-3-030-35802-0_10,2019,"comparison, quality metrics",18,GD,force-directed,"@incollection{Meidiana2019,
 doi = {10.1007/978-3-030-35802-0_10},
 url = {https://doi.org/10.1007/978-3-030-35802-0_10},
 year = {2019},
@@ -2238,7 +2238,7 @@ title = {Deep Neural Network for {DrawiNg} Networks},
 booktitle = {Lecture Notes in Computer Science}
 }","Custom (Non Replicable), Rome-Lib",Rome-Lib (https://www.notion.so/Rome-Lib-c2f20984de724f4c89764b0bc494e99e?pvs=21),"Angular Resolution, Aspect Ratio, Cluster Overlap, Neighborhood Preservation, Num Crossings, Running Time",External Link,"Quantitative Aggregated, Visual Comparison",In Table,2 - 128,"appendix, code","NA, generated",arxiv,"Rome-Lib, custom (random)","Rome-Lib, random graphs","aggregate, visual",has a visual evaluation of the results,1931 graphs have been used for the test set.,,No,,2-128,"yes, https://github.com/HanKruiger/tsNET",No,No,
 "Graph Drawing via Gradient
-Descent, (GD)2",No,Ahmed2020,https://doi.org/https://doi.org/10.1007/978-3-030-68766-3_1,generic,Reyan Ahmed and Felice De Luca and Sabin Devkota and Stephen Kobourov and Mingwei Li,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-030-68766-3.pdf,2020,algorithm,10,GD,other,"@incollection{Ahmed2020,
+Descent, (GD)2",No,Ahmed2020,https://doi.org/10.1007/978-3-030-68766-3_1,generic,Reyan Ahmed and Felice De Luca and Sabin Devkota and Stephen Kobourov and Mingwei Li,quantitative,https://link.springer.com/content/pdf/10.1007%2F978-3-030-68766-3.pdf,2020,algorithm,10,GD,other,"@incollection{Ahmed2020,
 doi = {10.1007/978-3-030-68766-3_1},
 url = {https://doi.org/10.1007/978-3-030-68766-3_1},
 year = {2020},

@@ -1,6 +1,9 @@
 project:
   type: website
   title: "GD benchmark sets"
+  preview:
+    browser: true
+    watch-inputs: true
 
 website:
   title: "GD benchmark sets"

@@ -47,7 +47,7 @@ In this context, it is also worth mentioning that in recent years there have bee
 The [Graphics Replicability Stamp](https://www.replicabilitystamp.org/) is one of these, meant to be an endorsement of the replicability of the results presented in a paper, which ensures the replicability of the results of a paper through an additional review process. Another similar intiative are the [ACM badges](https://www.acm.org/publications/policies/artifact-review-and-badging-current), or the [SIGMOD availability and reproducibility initiative](https://reproducibility.sigmod.org/), which goes one step further and publishes full reports commenting on how reproducible a paper is. 
 
 ::: {.callout-note appearance="simple" icon=false}
-Because the intention behind this initiative is an ongoing effort to maintain an useful repository of graph datasets, we encourage anyone who may want to correct, integrate or replace information to [reach out to us](#sec-authorship). Authors are also welcome to submit a pull request to our [GitHub repository](https://github.com/VisDunneRight/jovi-benchmark-sets).
+Because the intention behind this initiative is an ongoing effort to maintain an useful repository of graph datasets, we encourage anyone who may want to correct, integrate or replace information to [reach out to us](#nte-post-abstract). Authors are also welcome to submit a pull request to our [GitHub repository](https://github.com/VisDunneRight/jovi-benchmark-sets).
 :::
 
 This work proposes an overarching taxonomy of datasets and collections based on their structure while also providing a higher emphasis on the features and usage within the literature of our field. 
