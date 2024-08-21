@@ -1,5 +1,6 @@
 ---
-title: "Benchmark Datasets for Graph Layout Algorithms"
+# title: "Benchmark Datasets for Graph Layout Algorithms"
+title: "GLADOS: Graph Layout Algorithm benchmark Datasets for Open Science"
 number-sections: true
 self-contained: false
 author:
@@ -21,17 +22,17 @@ author:
         city: Boston
         state: MA
         country: USA
-  - name: Tarik Crnovrsanin
-    orcid: 0000-0002-4397-5532
-    email: t.crnovrsanin@northeastern.edu
+  - name: Eduardo Puerta
+    orcid: 0000-0003-4664-4365
+    email: eduardo puerta.e@northeastern.edu
     affiliations:
       - name: Northeastern University
         city: Boston
         state: MA
         country: USA
-  - name: Eduardo Puerta
-    orcid: 0000-0003-4664-4365
-    email: eduardo puerta.e@northeastern.edu
+  - name: Tarik Crnovrsanin
+    orcid: 0000-0002-4397-5532
+    email: t.crnovrsanin@northeastern.edu
     affiliations:
       - name: Northeastern University
         city: Boston
@@ -120,7 +121,7 @@ The supplemental material for this publication includes:
 * The [Graph Benchmark Datasets](https://visdunneright.github.io/gd_benchmark_sets/) website, hosted on GitHub Pages.
 * A main project on OSF which contains PDFs of our publications and the benchmark datsets in several common graph file formats, archived for long-term availability: <https://osf.io/j7ucv/>.
 * An OSF component which contains the website code and survey data: <https://osf.io/q4697/> ([github.com/visdunneright/gd_benchmark_sets/](https://github.com/visdunneright/gd_benchmark_sets/))
-* ... graph data, graph fromat conversion code, and analysis code: <https://osf.io/j2tfs/> ([github.com/VisDunneRight/benchmark_sets_analysis_data/](https://github.com/VisDunneRight/benchmark_sets_analysis_data/))
+* ... graph data, graph format conversion code, and analysis code: <https://osf.io/j2tfs/> ([github.com/VisDunneRight/benchmark_sets_analysis_data/](https://github.com/VisDunneRight/benchmark_sets_analysis_data/))
 * ... this publication's code: <https://osf.io/qx3zh/> ([github.com/VisDunneRight/jovi-benchmark-sets](https://github.com/VisDunneRight/jovi-benchmark-sets)).
 * The original database used for metadata collection and storage is available on Notion as [Benchmark datasets](https://picorana.notion.site/64e0439269f9497799025562a4087ce1?v=271e88e50ca24ee0bfd1c99ffa25daf5&pvs=74).
 
@@ -129,8 +130,8 @@ Archives of these connected GitHub repositories will be added to OSF storage upo
 ###### Authorship
 
 * **Sara Di Bartolomeo** <a href="https://orcid.org/0000-0001-9517-3526"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Conceptualization, Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Visualization, Validation.
-* **Eduardo Puerta** <a href="https://orcid.org/0000-0003-4664-4365"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
 * **Connor Wilson** <a href="https://orcid.org/0000-0002-6936-4078"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
+* **Eduardo Puerta** <a href="https://orcid.org/0000-0003-4664-4365"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
 * **Tarik Crnovrsanin** <a href="https://orcid.org/0000-0002-4397-5532"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Collection & Categorization & Curation, Writing - Original Draft + Review & Editing, Validation.
 * **Alexander Frings** <a href="https://orcid.org/0009-0009-1718-2967"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Data Categorization & Curation, Writing - Review & Editing, Software, Visualization, Validation.
 * **Cody Dunne** <a href="https://orcid.org/0000-0002-1609-9776"><img src="images/ORCID_iD.svg.png" alt="orcid_16x16@2.gif" width="20"/></a> : Supervision, Writing - Original Draft + Review & Editing, Validation, Funding Acquisition.
@@ -431,8 +432,6 @@ atnt_set = benchmark_data[benchmark_data["Name"] == "AT&T"]
 # display the field page id
 atnt_set.iloc[0]["Graph features in papers"]
 ``` -->
-
-<
 
 ## References {.unnumbered}
 

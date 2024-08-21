@@ -6,31 +6,99 @@ In this work, we presented a comprehensive benchmark dataset collection for grap
 Compiling, organizing, and making a wide array of datasets with diverse characteristics accessible not only facilitates rigorous and fair comparisons of algorithmic performance but also addresses critical issues of replicability and reproducibility in research.
 The Graph Benchmark Datasets website, along with the efforts for long-term archival, is an effort towards maintaining these valuable resources available to the community. 
 
+The work we did for the collection process doesn't come without **limitations**.
+We focused on the Graph Drawing conference as the main venue to begin collecting papers, which limits the completeness of our search.
+There could be many relevant datasets that we did not find to include here.
+Indeed, in no way we consider this collection comprehensive, but rather a starting point. 
+
+There is a large number of interesting **follow-up questions** that could be tackled starting from the data we collected, and information that could be gathered from cross-referencing the datasets with the literature. For instance, it would be interesting to study the spread of a dataset based on its features and how it has been distributed. The following is a chart comparing the year of publication of a dataset with the year of publication of papers that use the dataset:
+
 ```{ojs}
 //| echo: false
+//| fig-cap: "Date of publication of a dataset, compared to the dates of publications of papers using the dataset. A gray dot indicates the publication of the paper of the dataset, while a blue dot indicates the publication of a paper that uses the dataset. Darker blue dots mean more papers with the same datasets being published in the same year. Note that, in several instances, the paper presenting the dataset can be published after the dataset has already been used several times."
 {
-    // create a new svg
     const svg = d3.create("svg")
-        .attr("viewBox", [0, 0, 500, 500])
+        .attr("viewBox", [0, 0, 500, 400])
 
-    for (let i in benchmark_datasets){
-        const dataset = benchmark_datasets[i]
+    let xscale = d3.scaleLinear()
+        .domain([1970, 2025])
+        .range([170, 480])
 
-        console.log(dataset)
+    // append xscale to the svg with a tick every 5 years, and format it as integers
+    svg.append("g")
+        .attr("transform", "translate(0, 380)")
+        .call(d3.axisBottom(xscale).ticks(5).tickFormat(d3.format("d")))
+
+    let dataset_list = benchmark_datasets.filter(d => d.Name != "Chess Games" && d.Name != "Pajek" && d.Name != "World Bank Trade Data" && d.Name != "Scotch Graph Collection" && d.Name != "GION" && d.Name != "Network Repository" && d.Name != "Padia Stories" && d.Name != "Medical Patient Records" && d.Name != "Car Features" && d.Name != "Internet Mapping Project" && d.Name != "Autonomous System Network" && d.Name != "Tobler's Flow Mapper" && d.Name != "Protein Interactions (Publications)" && d.Name != "Neural Network" && d.Name != "Investment Interdependence" && d.Name != "SteinLib" && d.Name != "Control Flow Graphs" && d.Name != "Co-Phylogenetic Trees" && d.Name != "FM3" && d.Name != "Complete Graphs" && d.Name != "World Maps" && d.Name != "WebCompute" && d.Name != "KnownCR" && d.Name != "California" && d.Name != "Militarized Interstate Disputes (MID)" && d.Name != "World Greenhouse Gas Emissions" && d.Name != "Biological Pathways (KEGG)" && d.Name != "Business Processes" && d.Name != "Tree of Life" && d.Name != "Amazon" && d.Name != "Mathematics Genealogy" && d.Name != "RandDAG" && d.Name != "Pert DAG")
+
+    for (let i in dataset_list){
+        const dataset = dataset_list[i]
         
         svg.append("text")
-            .attr("x", 100)
-            .attr("y", i * 20 + 10)
+            .attr("x", 150)
+            .attr("y", i * 20 + 27)
             .attr("font-size", "x-small")
             .attr("text-anchor", "end")
             .text(dataset.Name)
+    // append a dotted line for each dataset
+        svg.append("line")
+            .attr("x1", 160)
+            .attr("y1", i * 20 + 30)
+            .attr("x2", 480)
+            .attr("y2", i * 20 + 30)
+            .attr("stroke", "#ccc")
+            .attr("stroke-dasharray", "2,4")
+
+        if (dataset["Origin paper plaintext"] == undefined) continue;
+
+        for (let origin_paper_name of dataset["Origin paper plaintext"].split(",")){
+            if (origin_paper_name == undefined || origin_paper_name == "") continue;
+            let bibkey = "bib"
+            if (origin_paper_name == undefined) continue;
+            let origin_paper = paper_source.find(p => p.Name == origin_paper_name)
+            if (origin_paper == undefined) {
+                origin_paper = literature.find(p => p.Name == origin_paper_name)
+                bibkey = "Bibtex"
+            }
+            if (origin_paper == undefined) continue;
+            
+            let year = parseInt(origin_paper[bibkey].match(/year\s*=\s*["{]?(\d{4})["}]?/i)[1])
+
+            svg.append("circle")
+                .attr("cx", xscale(year))
+                .attr("cy", i * 20 + 20)
+                .attr("r", 3)
+                .attr("fill", "#666")
+        }
+
+        for (let lit of dataset["Related to Literature - Algorithm (Dataset tag relations) 1"].split(",")){
+            let lit_paper = literature.find(p => p.Name == lit.split("(")[0].trim().replace("\n", ""))
+            if (lit_paper == undefined) continue;
+            let lyear = lit_paper["Year"]
+
+            svg.append("circle")
+                .attr("cx", xscale(lyear))  
+                .attr("cy", i * 20 + 20)
+                .attr("r", 2)
+                .style("opacity", 0.3)
+                .attr("fill", "steelblue")
+        }
     }
+
+    let domain = svg.selectAll(".domain").attr("stroke", "#ccc")
+    svg.selectAll(".tick line").attr("stroke", "#ccc")
+    domain.selectAll("text").attr("fill", "#ccc")
+    domain.selectAll("text").attr("font-size", "x-small")
 
     return svg.node();
 }
 ```
 
-The work we did for the collection process doesn't come without **limitations**.
-We focused on the Graph Drawing conference as the main venue to begin collecting papers, which limits the completeness of our search.
-There could be many relevant datasets that we did not find to include here.
-Indeed, in no way we consider this collection comprehensive, but rather a starting point . 
+Additional questions that would be interesting to explore would be:
+
+- Has the type of benchmark datasets used in the literature changed over time?
+- The datasets we collected definitely went through changes in the years --- some merged, some underwent changes. How did these datasets evolve over time?
+- How has the inclusion of supplemental material in literature changed?
+
+We leave these questions for new and exciting future work. In the meantime, we hope that the Graph Benchmark Datasets website will be an appreciated resource for the community.
+
