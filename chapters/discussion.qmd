@@ -94,7 +94,7 @@ There is a large number of interesting **follow-up questions** that could be tac
 }
 ```
 
-Additional questions that would be interesting to explore would be:
+Additional questions that would be interesting to explore could be:
 
 - Has the type of benchmark datasets used in the literature changed over time?
 - The datasets we collected definitely went through changes in the years --- some merged, some underwent changes. How did these datasets evolve over time?

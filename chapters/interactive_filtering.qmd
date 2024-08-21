@@ -33,7 +33,6 @@ The following interactive filtering system is an initial overview over the conte
 <div id="Complete_Graphs-link"><a href="#Complete_Graphs" class="dataset-link">Complete Graphs</a></div>
 <div id="World_Maps-link"><a href="#World_Maps" class="dataset-link">World Maps</a></div>
 <div id="Control_Flow_Graphs-link"><a href="#Control_Flow_Graphs" class="dataset-link">Control Flow Graphs</a></div>
-<div id="Debates-link"><a href="#Debates" class="dataset-link">Debates</a></div>
 <div id="Enron-link"><a href="#Enron" class="dataset-link">Enron</a></div>
 <div id="FM3-link"><a href="#FM3" class="dataset-link">FM3</a></div>
 <div id="GION-link"><a href="#GION" class="dataset-link">GION</a></div>
@@ -50,7 +49,6 @@ The following interactive filtering system is an initial overview over the conte
 <div id="North_DAGs-link"><a href="#North_DAGs" class="dataset-link">North DAGs</a></div>
 <div id="Padia_Stories-link"><a href="#Padia_Stories" class="dataset-link">Padia Stories</a></div>
 <div id="Pajek-link"><a href="#Pajek" class="dataset-link">Pajek</a></div>
-<div id="Pert_DAG-link"><a href="#Pert_DAG" class="dataset-link">Pert DAG</a></div>
 <div id="Protein_Interactions_Publications-link"><a href="#Protein_Interactions_Publications" class="dataset-link">Protein Interactions (Publications)</a></div>
 <div id="RandDAG-link"><a href="#RandDAG" class="dataset-link">RandDAG</a></div>
 <div id="Rome-Lib-link"><a href="#Rome-Lib" class="dataset-link">Rome-Lib</a></div>
@@ -61,7 +59,6 @@ The following interactive filtering system is an initial overview over the conte
 <div id="SteinLib-link"><a href="#SteinLib" class="dataset-link">SteinLib</a></div>
 <div id="Storylines_Movie_Plots-link"><a href="#Storylines_Movie_Plots" class="dataset-link">Storylines (Movie Plots)</a></div>
 <div id="SuiteSparse_Matrix_Collection-link"><a href="#SuiteSparse_Matrix_Collection" class="dataset-link">SuiteSparse Matrix Collection</a></div>
-<div id="Toblers_Flow_Mapper-link"><a href="#Toblers_Flow_Mapper" class="dataset-link">Tobler's Flow Mapper</a></div>
 <div id="Transportation_Networks-link"><a href="#Transportation_Networks" class="dataset-link">Transportation Networks</a></div>
 <div id="Tree_of_Life-link"><a href="#Tree_of_Life" class="dataset-link">Tree of Life</a></div>
 <div id="Walshaw-link"><a href="#Walshaw" class="dataset-link">Walshaw</a></div>
@@ -215,7 +212,6 @@ The following interactive filtering system is an initial overview over the conte
 <div id="diBartolomeo2022-link">[@diBartolomeo2022]</div>
 <div id="diBartolomeo2022b-link">[@diBartolomeo2022b]</div>
 <div id="eades1984-link">[@eades1984]</div>
-<!-- <div id="elassady2017-link">[@elassady2017]</div> -->
 <div id="felice2019-link">[@felice2019]</div>
 <div id="fisheye2019-link">[@fisheye2019]</div>
 <div id="frick1995-link">[@frick1995]</div>
