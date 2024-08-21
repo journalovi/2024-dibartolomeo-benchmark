@@ -832,7 +832,7 @@ The [SCOTCH software package](https://gitlab.inria.fr/scotch/scotch) is produced
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/four_in_one.svg' width='80%'></div>
 
 #### Descriptions from Literature
 
@@ -844,13 +844,13 @@ From “[ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs
 
 From “[A Fast Multi-Scale Method for Drawing Large Graphs](https://doi.org/10.1007/3-540-44541-2_18)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.14.10_AM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.14.10_AM.png' width='80%'></div>
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.14.29_AM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.14.29_AM.png' width='80%'></div>
 
 From “[ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs](https://doi.org/10.1109/INFVIS.2002.1173159)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.30.54_AM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.30.54_AM.png' width='80%'></div>
 
 <!-- ===  STOP RENDERING ===
 
@@ -910,7 +910,7 @@ According to [kegg.jp](https://www.kegg.jp/kegg-bin/show_pathway?map01100), “t
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/four_in_one.svg' width='80%'></div>
 
 #### Descriptions from Literature
 
@@ -922,13 +922,13 @@ From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109
 
 From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109/TVCG.2020.3038154)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.50.53_AM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.50.53_AM.png' width='80%'></div>
 
 <!-- === STOP RENDERING ===
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.52.55_AM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.52.55_AM.png' width='80%'></div>
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Untitled.png' width='80%'></div>
 _site:150:21 -->
 
 
@@ -1460,7 +1460,7 @@ From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieee
 
 From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png' width='80%'></div>
 
 <!-- == STOP RENDERING ==
 
@@ -1511,7 +1511,7 @@ We can construct a communication network of who-talks-towhom from the BGP (Borde
 
 From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)”
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Autonomous%20System%20Network%2096d24eb9c7f94ab6a6b38e6a3af816ae/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Autonomous%20System%20Network%2096d24eb9c7f94ab6a6b38e6a3af816ae/Untitled.png' width='80%'></div>
 
 **Fig. 5.** Case analysis of the AS-733 graph data set (a) and three samples generated by RDN (b), SST(c), and MCGS (d) with a sampling rate of 30%.
 
@@ -1545,7 +1545,7 @@ Graphviz open source package.
 
 From “[Node Overlap Removal by Growing a Tree](https://dx.doi.org/10.7155/jgaa.00442)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Control%20Flow%20Graphs%20af079f199a2c402d8633f6d41101934b/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Control%20Flow%20Graphs%20af079f199a2c402d8633f6d41101934b/Untitled.png' width='80%'></div>
 
 ::: 
 
@@ -1988,7 +1988,7 @@ Relational Clustering</div><div class="col-4"><a href="#Clusters_generated"><spa
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/four_in_one.svg' width='80%'></div>
 
 #### Description from papers
 
@@ -2004,13 +2004,13 @@ From “[Event-based Dynamic Graph Drawing without the Agonizing Pain](https://o
 
 From “[Six methods for transforming layered hypergraphs to apply layered graph layout algorithms](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14538)”
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled.png' width='80%'></div>
 
 **Fig. 7.** Collaborations in papers published at VIS between a set of universities—in particular, these are the collaborators of Harvard University and the collaborators of the collaborators (up to 2 degrees of separation). This figure shows the result of the application of  aggregate-collapse.
 
 From “[TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882)”
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%201.png' width='80%'></div>
 
 **Figure 5.** The TimeArcs visualization applied to the IEEE VIS publication co-authorship network of the top 50 researchers from 2010 to 2014 (i.e., the same data in Fig. [4](https://onlinelibrary.wiley.com/doi/10.1111/cgf.12882#cgf12882-fig-0004)). 
 
@@ -2027,7 +2027,7 @@ From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.i
 
 From [**Preserving Minority Structures in Graph Sampling**](https://ieeexplore.ieee.org/document/9222065)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%202.png' width='80%'></div>
 
 **Fig. 6.** Visual illustration of the cpan graph data set (a) and three samples generated by ff (b), ties (c), and mcgs (d) with a sampling rate of 30%.
 
@@ -2044,19 +2044,19 @@ We performed the query “network AND visualization” and limited to 500 the nu
 
 From Parallel Edge Splatting for Scalable dynamic Graph Visualization
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%203.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%203.png' width='80%'></div>
 
 **Fig. 8.** The evolution of the word graph generated from paper titles containing the words “vis” and “web”. 21 graphs are shown for the years 1990 until 2010. A total of 264, 311 edges with weights of more than five are displayed.
 
 From  [ChordLink: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%204.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%204.png' width='80%'></div>
 
 **Fig. 1.** A CHORDLINK visualization of a co-authorship network. The drawing has four clusters, represented as chord diagrams. In each chord diagram, circular arcs of the same color are copies of the same author. For example, in the smallest cluster, F. Montecchiani has two (green) copies, each connected to some nodes external to the cluster.
 
 From Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%205.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%205.png' width='80%'></div>
 
 **Fig. 10.** Paper and authorship data from the online database DBLP [26] for publications from 2013 to 2015 in IEEE Transactions on Pattern Analysis and Machine Intelligence. Each N-ary relationship is either a paper with N authors (left: the primal view) or an author with N papers (right: the dual view).
 
@@ -2076,13 +2076,13 @@ The data is of discrete nature with exactly 21 timeslices (one per year).
 
 [https://cs.swan.ac.uk/~dynnoslice/software.html](https://cs.swan.ac.uk/~dynnoslice/software.html)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%206.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%206.png' width='80%'></div>
 
 ^ not really a description of the graph 
 
 from **A Maxent-Stress Model for Graph Layout**
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%207.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%207.png' width='80%'></div>
 
 ith the exception of graph gd, which is an author collaboration graph of the International Symposium on Graph Drawing between 1994 and 2007, the graphs used are from the University of Florida Sparse Matrix Collection [9]. Our selection covers a range of graph sizes, and includes mesh-like and other nonmesh graphs, and graphs from Brandes and Pich's experimental study of distance scaling
 
@@ -2125,7 +2125,7 @@ Visualisation of Dynamic Graphs</div><div class="col-4"><a href="#Dynamic"><span
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/four_in_one.svg' width='80%'></div>
 
 #### Descriptions from Literature
 
@@ -2137,21 +2137,21 @@ From “[Skeleton-Based Edge Bundling for Graph Visualization](https://doi.org/1
 
 From “[Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach](https://ieeexplore.ieee.org/document/9552919)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled.png' width='80%'></div>
 
 **Fig. 1.** Edge bundling of the migrations dataset. (a) Straight line drawing. (b) Force-directed edge bundling aggregates edges well, but overaggregates at the centre of the drawing making it difficult to see patterns in the east-west flow (red bundle). (c) Cubu has a similar drawback at the centre of the map to a lesser degree. (d) Winding roads divides this structure into several smaller flows, but they may not be necessarily related to graph structure. (e) Edge-path bundling is able to distinguish between several flows that reflect paths in the underlying graph. (f) When edge direction is considered, the algorithm is able to further subdivide these flows based on direction. 
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled%201.png' width='80%'></div>
 
 **Fig. 8.** Airlines (undirected). (a) Input drawing. (b) Force-directed bundling is able to cluster edges into the major flows, but some overaggregation prevents details from being visualised. (c) Cubu provides a good bundling, but also has overaggregation. (c) Confluent drawings can be imposed on the layout, but as the approach cannot layout the graph bicliques can be distantly located, resulting in suboptimal performance. (e) Winding roads divides the flows into many streams, but these streams can be unfaithful to graph structure. (f) Edge-path bundling aggregates edges using weighted paths. The four prominent bundle intersections on the east coast correspond to major airports: Atlanta, Detroit, Minneapolis, and Dallas.
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Untitled%202.png' width='80%'></div>
 
 **Fig. 10.** Results of four algorithms on the air traffic network. (a) Force-directed bundling is able to recover the major trajectories but does not strongly bundle the network. (b) Cubu strongly bundles the main flows of airtraffic, but can suffer from overaggregation. (c) Winding roads divides the traffic into many smaller bundles, but this may not be reflective of underlying graph structure. (d) With edge-path bundling, each bundle necessarily reflects a path in the network. There are separate flows across the atlantic and asia that correspond to paths through the network.
 
 From “[Skeleton-Based Edge Bundling for Graph Visualization](https://doi.org/10.1109/TVCG.2011.233)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Screen_Shot_2023-08-14_at_3.42.37_PM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Screen_Shot_2023-08-14_at_3.42.37_PM.png' width='80%'></div>
 
 <!-- == STOP RENDERING ==
 
@@ -2182,7 +2182,7 @@ Various software call dependency graphs have been used in the literature. We pro
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/four_in_one.svg' width='80%'></div>
 
 #### Software Dependency Calls
 
@@ -2200,7 +2200,7 @@ From “[Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https
 
 From [Parallel Edge Splatting for Scalable Dynamic Graph Visualization](https://ieeexplore.ieee.org/document/6065001):
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/Untitled.png' width='80%'></div>
 
 **Fig. 6.** Call dependencies between methods in 21 releases of the JUnit project: all (top), added (left), and removed (right) dependencies.
 
@@ -2216,7 +2216,7 @@ From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hier
 
 From “[Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data](https://ieeexplore.ieee.org/document/4015425)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Code%20Dependency%20Graphs%203b6beec0413c486184cee398056e6c87/Untitled%201.png' width='80%'></div>
 
 **Fig. 13.** A software system and its associated call graph (caller = green, callee = red). (a) and (b) show the system with bundling strength β = 0.85 using a balloon layout (node labels disabled) and a radial layout, respectively. Bundling reduces visual clutter, making it easier to perceive the actual connections than when compared to the non-bundled versions (figures 2a and 11a). Bundled visualizations also show relations between sparsely connected systems more clearly (encircled regions); these are almost completely obscured in the non-bundled versions. The encircled regions highlight identical parts of the system for (a), (b), and figure 15.
 
@@ -2278,7 +2278,7 @@ networks</div><div class="col-4"><a href="#Dynamic"><span class="pill-tag pill_c
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/four_in_one.svg' width='80%'></div>
 
 #### Blogs/MOOC
 
@@ -2296,13 +2296,13 @@ From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onli
 
 From [TimeArcs: Visualizing Fluctuations in Dynamic Networks](https://doi.org/10.1111/cgf.12882):
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled.png' width='80%'></div>
 
 **Fig. 7.** Overview of political events in the past 10 years using TimeArcs. The top 100 terms were selected based on their sudden attention and degree centrality. Terms are color-coded by category: green for person, red for location, blue for organization, yellow for miscellaneous category.
 
 From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.14615):
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%201.png' width='80%'></div>
 
 **Table 2.** Flattened snapshots of the network evolution over time taken at regular intervals. Twenty artificial time slices were inserted for temporal graphs
 
@@ -2322,7 +2322,7 @@ From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onli
 
 From  [Fast filtering and animation of large dynamic networks](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-014-0027-8)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%202.png' width='80%'></div>
 
 <!-- == STOP RENDERING ==
 
@@ -2386,19 +2386,19 @@ From [Anisotropic Radial Layout for Visualizing Centrality and Structure in Grap
 
 From “[The Turing Test for Graph Drawing Algorithms](https://arxiv.org/abs/2008.04869)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled.png' width='80%'></div>
 
 Figure from [supplementary materials](https://www.dcs.gla.ac.uk/~hcp/GD2020/) using a force directed layout. 
 
 From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs](https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%201.png' width='80%'></div>
 
 **Fig. 1.** Visualization of Zachary’s karate club social network using (a) MDS, (b) radial layout, and (c) anisotropic radial layout. Node sizes encode betweenness centrality.
 
  ****From “[Network Alignment by Discrete Ollivier-Ricci Flow](https://link.springer.com/chapter/10.1007/978-3-030-04414-5_32)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%202.png' width='80%'></div>
 
 **Fig. 1.** An example of Ricci curvature on the karate club graph before and after Ricci flow. The colors represent the Ricci curvature while the thickness represents the edge weight. Ricci flow deformed the edge weights until Ricci curvatures converged (−0.0027 in this case).
 
@@ -2417,7 +2417,7 @@ From [Untangling the Hairballs of Multi-Centered, Small-World Online Social Medi
 
 **Fig. 1.** Facebook friendships at California Institute of Technology (Caltech36). Vertex color corresponds to dormitory (gray for missing values), but has not been utilized by the layout algorithm. The layout in (a) is based on the entire graph, whereas (b)-(f) use edge embeddedness, which spreads the graph while keeping cohesive groups together. Embeddedness mapped to edge color; backbone edges dark gray.
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%203.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%203.png' width='80%'></div>
 
 #### Facebook Ego Networks (Facebook 1864)
 
@@ -2438,7 +2438,7 @@ From [A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts](http
 
 From Preserving Minority Structures in Graph Sampling](https://ieeexplore.ieee.org/document/9222065)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%204.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%204.png' width='80%'></div>
 
 **Fig. 4.** Interface for subjective assessment experiment with the Facebook1684 data set (775 nodes and 14,006 edges). The leftmost graph is the original graph. The six randomly arranged samples are generated by SST (a), FF (b), MCGS (c), RW (d), TIES (e), and RDN (f) with a sampling rate of 30%.
 
@@ -2463,7 +2463,7 @@ From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wi
 
 From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440):
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%205.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Social%20Networks%2090888b3285d042d49072985b05f95203/Untitled%205.png' width='80%'></div>
 
 **Fig. 4.** The layout for the syphilis social network from (a) Rothenberg et al. [[RST*98](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045)]. (b) We recreated and improved the layout in SetCoLa by introducing additional padding, alignment, and circle constraints to further highlight the relative number of interactions among the different groups. For both figures, the nodes are split into three groups, from left to right: young affluent white men, younger white women, and young African-American men. Individuals not associated with any of these “core” groups are positioned above the others. In both figures, individuals diagnosed with syphilis during the outbreak are labeled with an “S” on the node label.
 
@@ -2532,19 +2532,19 @@ DIMACS USA Road Network source notes that the data has errors, namely missing ma
 
 #### Statistics
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/four_in_one.svg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/four_in_one.svg' width='80%'></div>
 
 #### Description from Literature
 
 > Apart from the example of Sydney presented in Section 6, we have evaluated our method for two additional real-world networks: Vienna, which is a rather small network, and London, the oldest and still one of the most complex metro systems in the world. These networks have not been used as examples for previous metro map layout methods, so we can compare only against the official maps of Vienna and London. The size of the metro graphs (including Sydney) is given in Table 3 and ranges from 84 vertices and 8 faces (Vienna) to 308 vertices and 55 faces (London). The table further shows how the removal of degree-2 vertices described in Section 5.1 effectively reduces the number of vertices and edges.
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled.png' width='80%'></div>
 
 #### Example Figures
 
 From “[Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming](https://ieeexplore.ieee.org/document/5473229)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%201.png' width='80%'></div>
 
 **Fig. 16.** Unlabeled layout of the London Underground network produced by our method.
 
@@ -2564,13 +2564,13 @@ From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.
 
 From “[A Treemap Based Method for Rapid Layout of Large Graphs](https://ieeexplore.ieee.org/document/4475481)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%202.png' width='80%'></div>
 
 **Fig. 7.** *Scalability*. Our approach can scale to very large networks while still maintaining interactivity. |V|=321,270,|E|=800,172
 
 From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.org/document/4658143)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%203.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Transportation%20Networks%20720a658bb1914b51910c480d86943e80/Untitled%203.png' width='80%'></div>
 
 **Fig. 7.** Scalability. Our approach can scale to large graphs. This graph
 is of the streets in the state of Florida, |V| = 1,070,376,|E| = 2,712,798
@@ -2621,17 +2621,17 @@ From “[GION: Interactively Untangling Large Graphs on Wall-Sized Displays](htt
 
 > Graph properties are provided in Table 1. The set of graphs can be downloaded from http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip. All graphs have high local density, and a sparse global structure that allows to create layouts far from hairballs that are showing the structure well.
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled.png' width='80%'></div>
 
 #### Example Figures
 
 From “[GION: Interactively Untangling Large Graphs on Wall-Sized Displays](https://link.springer.com/chapter/10.1007/978-3-662-45803-7_10)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%201.png' width='80%'></div>
 
 From “[Graph-based clustering and characterization of repetitive sequences in next-generation sequencing data](https://link.springer.com/article/10.1186/1471-2105-11-378)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%202.png' width='80%'></div>
 
 **Fig. 4. Examples of graph layouts derived from clusters of repetitive sequences**. Graph layouts were calculated using the 3D version of Fruchterman and Reingold algorithm from which a 2D projection is shown. Individual reads are represented by vertices and similar reads are connected by edges. Individual clusters are described further in Table 1.
 
@@ -2639,7 +2639,7 @@ From “[Graph-based clustering and characterization of repetitive sequences in 
 
 **NOTE: eliminate the relationships between different tables**
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%203.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%203.png' width='80%'></div>
 
 From [GION: Interactively Untangling Large Graphs on Wall-Sized Displays](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/GION%20Interactively%20Untangling%20Large%20Graphs%20on%20Wall%20774568ebdd114a8790c026bfa0b125f0.md) 
 Graph properties are provided in Table 1. The set of graphs can be downloaded from
@@ -2685,7 +2685,7 @@ From “[An Interactive Tool to Explore and Improve the Ply Number of Drawings](
 
 From “[An Experimental Study on the Ply Number of Straight-Line Drawings](https://doi.org/10.1007/978-3-319-53925-6_11)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/FM3%20b3dc638f5d7541b8b01105483c356e11/Screen_Shot_2023-08-16_at_3.26.01_PM.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/FM3%20b3dc638f5d7541b8b01105483c356e11/Screen_Shot_2023-08-16_at_3.26.01_PM.png' width='80%'></div>
 
 <!-- === STOP RENDERING ===
 
@@ -2729,7 +2729,7 @@ Fig. 8 shows another visualization for the same narrative. In this example we ca
 
 From ‘’[Yarn: Generating Storyline Visualizations Using HTN Planning](https://doi.org/10.20380/GI2018.05)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Padia%20Stories%20c02a38b9ea5e40bfb682ae77e2ac23af/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Padia%20Stories%20c02a38b9ea5e40bfb682ae77e2ac23af/Untitled.png' width='80%'></div>
 
 ::: 
 
@@ -2755,15 +2755,15 @@ From “[Topological fisheye views for visualizing large graphs](https://doi.org
 
 From “[Internet Mapping Project: Map Gallery](http://www.cheswick.com/ches/map/gallery/index.html)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/isp-ss.gif' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/isp-ss.gif' width='80%'></div>
 
 Layout showing the major ISPs.
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/Untitled.png' width='80%'></div>
 
 From “[Topological fisheye views for visualizing large graphs](https://doi.org/10.1109/TVCG.2005.66)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Internet%20Mapping%20Project%20fe59286f353d4841a2a328fdd6160b2f/Untitled%201.png' width='80%'></div>
 
 **Fig. 7.** This Internet map ((|V|=87,931, |E|=87,930)) is too large to visualize as a flat structure. Two topological fisheye views are shown. The focused sections in orange are the original graph. Peripheral areas, in blue, are simplified.
 
@@ -2788,9 +2788,9 @@ From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https:
 
 From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled.png' width='80%'></div>
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled%201.png' width='80%'></div>
 
 <!-- === STOP RENDERING ===
 
@@ -2825,7 +2825,7 @@ From “[A visual analytics system to support tax evasion discovery](https://www
 
 From [CHORDLINK: A New Hybrid Visualization Model](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_22)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Assorted%20Fiscal%20Network%206610534d6d3b48c5a119b04659153258/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Fiscal%20Network%206610534d6d3b48c5a119b04659153258/Untitled.png' width='80%'></div>
 
 **Fig. 4.** A visualization obtained by selecting some communities in a node-link diagram.
 
@@ -2863,11 +2863,11 @@ From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversatio
 
 From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0004-m.jpg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0004-m.jpg' width='80%'></div>
 
 Entity graph of the first first presidential debate between Trump and Clinton
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0006-m.jpg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0006-m.jpg' width='80%'></div>
 
 Entity graph of the same debate, focusing on the concept of taxes
 
@@ -2893,7 +2893,7 @@ From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https:
 
 From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https://doi.org/10.1109/TVCG.2011.188)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Car%20Features%203365100498bc4a1eb77bcadcace2b2fa/IMG_0010.jpeg' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Car%20Features%203365100498bc4a1eb77bcadcace2b2fa/IMG_0010.jpeg' width='80%'></div>
 
 ::: 
 
@@ -2919,13 +2919,13 @@ From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley
 
 Table from Supplementary Materials:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled.png' width='80%'></div>
 
 #### Example Figures
 
 From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13723):
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled%201.png' width='80%'></div>
 
 <!-- == STOP RENDERING ==
 
@@ -2959,11 +2959,11 @@ From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/9
 
 From [The Mathematics Genealogy Project](https://genealogy.math.ndsu.nodak.edu/):
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled.png' width='80%'></div>
 
 From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/978-3-031-22203-0_23)”:
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%201.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%201.png' width='80%'></div>
 
 **Fig. 4:** Layouts from DynNoSlice, DynaGraph, Dagre, Radial, ImPrEd, DynaCola and DynaSafe of the same evolving math genealogy tree; each row adds six new nodes.
 
@@ -2975,7 +2975,7 @@ They make you request the data individually and in the linked form they have a n
 
 [mgp-permission-agreement.pdf](Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/mgp-permission-agreement.pdf)
 
-<div style='text-align: center'><img src='../data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%202.png' width='80%'></div>
+<div style='text-align: center'><img src='./data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%202.png' width='80%'></div>
 
 reached out to them 5/18/2023
 

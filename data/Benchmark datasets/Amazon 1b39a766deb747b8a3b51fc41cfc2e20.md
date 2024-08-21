@@ -44,7 +44,7 @@ From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieee
 
 ![Untitled](Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png)
 
-== STOP RENDERING ==
+<!-- == STOP RENDERING ==
 
 look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) 
 
@@ -52,4 +52,4 @@ Note: Amazon is the only dataset not included in their GitHub. They randomly sam
 
 Original dataset: [http://snap.stanford.edu/data/#amazon](http://snap.stanford.edu/data/#amazon)
 
- doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph)
+ doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph) -->
