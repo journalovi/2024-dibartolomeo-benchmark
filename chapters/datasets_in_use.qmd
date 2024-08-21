@@ -41,8 +41,6 @@ The following chart shows how many times we found a dataset being used in the pa
 In the data we collected, the most used dataset is 
 <a href="#Rome-Lib" class="dataset-link">Rome-Lib</a>, followed by <a href="#Assorted_collaboration_networks" class="dataset-link">assorted collaboration networks</a> (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from <a href="#Walshaw" class="dataset-link">C.Walshaw</a> - it is important to note that the Walshaw dataset is available as part of other collections - for instance, its graphs are found in <a href="#SNAP" class="dataset-link">SNAP</a>. However, during the collection process, we preferred giving precedence to how the authors reported their own information. Thus, if the authors claimed the data was from the Walshaw collection, we reported it as such.
 
-<!-- We deem the popularity of Rome-Lib to be due to its simplicity, versatility, and most importantly the fact that it is linked on graphdrawing.org and offered as a benchmark dataset there. This is also true for the North DAGs. -->
-
 For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. 
 
 In the following sections, the reader will find details about the classifications and datasets in detail. Each dataset gets a dedicated, collapsible section, that contains the following information:
@@ -177,10 +175,6 @@ Differently from the collections presented later in this section, an experiment 
 
 The first of these collapsible sections is shown already expanded, to give an example of the content that can be found in each of them. The content is generated dynamically based on the data we collected. 
 
-<!-- [http://graphdrawing.org describes it as: “Test suites of directed and undirected graphs from the http://www.dia.uniroma3.it/~gdt/ homepage (also known as the Rome Graphs)”.  -->
-
-<!-- ,  and it is used in a large number of papers: [@Buchheim2008] [@chimani2010] [@chimani2006] [@diBartolomeo2022b] [@Clancy2019] [@DiBattista1997b] [@chimani2016b] [@Chimani2008] [@Bekos2018] [@Demel2018] [@Heinsohn2018] [@Kindermann2018] [@chimani2016] [@Chimani2012] [@Gansner2006] [@Gutwenger2004] [@klammler2018] [@Niedermann2020] [@Giovannangeli2021] [@Chimani2021]. -->
-
 <a name="Rome-Lib"></a>
 
 ::: {.callout-note title="Rome-Lib" collapse=false appearance="minimal"}
@@ -266,7 +260,6 @@ From: [Deep Neural Network for DrawiNg Networks, (DNN)2](https://link.springer.c
 ::: 
 
 The following collections, together with Rome-Lib, can be easily accessed from the homepage of the [Graph Drawing Conference](http://www.graphdrawing.org/data.html) website, and are therefore well known and widely used.
-<!-- AT&T is used in [@barth2002] [@DIBATTISTA2000] [@Jabrayilov2016] [@Chimani2012] [@Hachul2006] [@Hachul2005] [@Mallach2019] [@Jnger2018] [@hacul2005] [@welch2017] (and referred as AT&T), while the papers that use it but refer to it as North DAGs are [@chimani2010] [@chimani2016b] [@Demel2018] [@Binucci2016] [@Regg2016] [@chimani2016] [@klammler2018] [@Chimani2021] [@binucci2022]. -->
 
 <a name="ATT"></a>
 
@@ -339,14 +332,6 @@ From “[A Flow Formulation for Horizontal Coordinate Assignment with Prescribed
 
 ::: {.callout-note title="North DAGs" collapse-id="North_DAGs" collapse=true appearance="minimal"}
 
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("North_DAGs")
-```
-
-<div id="named-list-North_DAGs" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
-
 This is the same collection as AT&amp;T, but referred to as North DAGs in the papers we analyzed. We kept the two collections separate, based on how they are referred to in the papers we collected.
 
 <div><b>Originally found at: </b>See AT&amp;T</div><br>
@@ -374,33 +359,11 @@ From “[Layer-Free Upward Crossing Minimization](https://doi.org/10.1145/167197
 
 **North DAGs.** The North DAGs have been introduced in an experimental comparison of algorithms for drawing DAGs [Di Battista et al. 2000]. The benchmark set contains 1,158 DAGs collected by Stephen North, which were slightly modified by Di Battista et al. The graphs are grouped into nine sets, where set $i$ contains graphs with $10 i$ to $10 i+9$ arcs for $i=1, \ldots, 9$.
 
-<!-- === STOP RENDERING ===
-
-is this the AT&T collection? [http://www.graphdrawing.org/data/](http://www.graphdrawing.org/data/)
-
-from [Drawing Directed Acyclic Graphs: An Experimental Study](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Directed%20Acyclic%20Graphs%20An%20Experimental%20St%201677531652194663b7fdf25025c61cc6.md) 
-
- 
-
-<div style='text-align: center'><img src='data/Benchmark datasets/North%20DAGs%20a58f7143ef524c8a8c737df90162d3fb/Untitled.png' width='80%'></div>
-
-from [Layer-Free Upward Crossing Minimization](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Layer-Free%20Upward%20Crossing%20Minimization%20676f8a507ff343b5ae83c34446796fb5.md) 
-
-<div style='text-align: center'><img src='data/Benchmark datasets/North%20DAGs%20a58f7143ef524c8a8c737df90162d3fb/Untitled%201.png' width='80%'></div> -->
-
 ::: 
 
 ::: {.callout-note title="RandDAG or DAGMar" collapse=true collapse-id="RandDAG" appearance="minimal"}
 
 The randDAG collection concludes the collections that can be easily accessed from graphdrawing.org. http://[graphdrawing.org](http://graphdrawing.org) highlights the DAGmar graph generator, and provides a benchmark set of randomly generated directed acyclic graphs. While not explicit, it is implied this benchmark comes from the DAGmar generator. The collection is uniformly sampled from set of level graphs with certain graph parameters, such as number of nodes and number of edges. These graphs have no particular features, thus they are classified as <a href="#Generic"><span class="pill-tag pill_color_Generic">Generic</span></a>
-
-<!-- ```{ojs}
-//| echo: false
-
-make_sparkline("RandDAG")
-```
-
-<div id="named-list-RandDAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
 <div><b>Originally found at: </b><a href="http://www.graphdrawing.org/data.html">http://www.graphdrawing.org/data.html</a></div><br>
 <div><b>Download formatted data: </b><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d948061101aa0dc66a0c55" class="btn btn-secondary btn-sm skinny-button"> GEXF</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d96dec94a6be112512e706" class="btn btn-secondary btn-sm skinny-button"> GML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d97088803e0c0cb6558d7e" class="btn btn-secondary btn-sm skinny-button"> GRAPHML</a><a href="https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90eff803e0c0b04558ca3" class="btn btn-secondary btn-sm skinny-button"> JSON</a></div><br>
@@ -428,10 +391,6 @@ From “[Aesthetic Discrimination of Graph Layouts](https://link.springer.com/ch
 <div style='text-align: center'><img src='data/Benchmark datasets/RandDAG%2054b6ed8fdecb4256b2cca6298f09965e/Untitled.png' width='80%'></div>
 
 **Fig. 5.** (cropped)… All graphs are visualized using the $FM^3$ algorithm. 
-
-<!-- === STOP RENDERING ===
-
-Might be same as DAGmar graphs? looked at internet archive to see what the GD data website looked like in 2018 and there is no mention of RAndDAG as a thing, but there are the randomly generated DAGs which makes sense tto believe it is those. -->
 
 ::: 
 
@@ -480,27 +439,6 @@ From “[Application of SPQR-Trees in the Planarization Approach for Drawing Gra
 
 <div style='text-align: center'><img src='data/Benchmark datasets/KnownCR%20ed33d600c65e4c52a1506a905b774335/Screen_Shot_2023-01-28_at_2.42.42_PM.png' width='80%'></div>
 
-<!-- === STOP RENDERING ===
-
-[Eldorado: Application of SPQR-trees in the planarization approach for drawing graphs](https://eldorado.tu-dortmund.de/handle/2003/27430)
-
-From *An effective crossing minimisation heuristic based on star insertion,* “KnownCR graphs- these are a set of instances containing between 9 and 250 vertices, first collected by Gutwenger [22], which can be further partitioned into four families of graphs as follows:
-
-- Ci ×Cj: the Cartesian product of the cycle on i vertices with the cycle on j vertices. The instances contain graphs with 3 ≤ i ≤ 7 and j ≥i such that ij ≤ 250.
-- Gi×Pj: the cartesian product of the path on j+1 vertices with one of the 21 non-isomorphic connected graphs on 5 vertices, where i denotes which of the 21. The instances contain graphs with 3 ≤ j ≤ 49.
-- Gi ×Cj: the cartesian product of the cycle on j vertices with one of the 21 non-isomorphic connected graphs on 5 vertices, where i denotes which of the 21. The crossing number of these graphs are only known for some of the Gi and only these cases are included. The instances contain graphs with 3 ≤ j ≤ 50
-- The Generalised Petersen graphs P(j,2) and P(j,3), on 2j vertices. We shall only use those of type P(j,3) as P(j,2) (studied in [20]) are154 Clancy et al. An effective crossing minimisation heuristic easy for heuristics to solve as has already been observed in [9]. The instances contain graphs with 9 ≤ j ≤ 125.” from **(An effective crossing minimisation heuristic based on star insertion, Clancy et al. )**
-
-How to construct a cartesian product graph:
-
-<div style='text-align: center'><img src='data/Benchmark datasets/KnownCR%20ed33d600c65e4c52a1506a905b774335/Screen_Shot_2023-01-28_at_2.42.31_PM.png' width='80%'></div>
-
-Example of construction:
-
-Images showing each Gi, and the known crossing number of Gi x Pn:
-
-<div style='text-align: center'><img src='data/Benchmark datasets/KnownCR%20ed33d600c65e4c52a1506a905b774335/Screen_Shot_2023-01-28_at_2.50.06_PM.png' width='80%'></div> -->
-
 ::: 
 
 <a name="WebCompute"></a>
@@ -530,10 +468,6 @@ From “[An ILP-based Proof System for the Crossing Number Problem](https://doi.
 > To determine the applicability of the proof system, we tested the algorithms on three
 benchmark sets: the 3110 non-trivial Rome graphs [14], the 1277 North graphs [15], and the145 non-planar graphs ([http://crossings.uos.de/instances](http://crossings.uos.de/instances)) collected by our crossing
 number web-service.
-
-<!-- === STOP RENDERING ===
-
-Paper attached to his dataset provides no visuliaztion of the graph, [https://arxiv.org/abs/2108.11443](https://arxiv.org/abs/2108.11443) also uses the dataset and provides no visualizations of the graphs themselves -->
 
 ::: 
 
@@ -665,36 +599,6 @@ From [Design Considerations for Optimizing Storyline Visualization](https://ieee
 
 <div style='text-align: center'><img src='data/Benchmark datasets/Militarized%20Interstate%20Disputes%20(MID)%2027d9df7d11e44a9596267bb930bc6f03/Screen_Shot_2023-01-21_at_2.41.34_PM.png' width='80%'></div>
 
-<!-- == STOP RENDERING ==
-
-Earliest Citation on Website for version 2.1: [Jones, Daniel M., Stuart A. Bremer and J. David Singer. 1996 .”Militarized Interstate Disputes, 1816-1992: Rationale, Coding Rules, and Empirical Patterns.” *Conflict Management and Peace Science 15*
-:163-213](https://doi.org/10.1177/073889429601500203)
-
-Was originally here:
-
-[http://psfaculty.ucdavis.edu/zmaoz/dyadmid.html](http://psfaculty.ucdavis.edu/zmaoz/dyadmid.html)
-
-[**Design Considerations for Optimizing Storyline Visualizations**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Design%20Considerations%20for%20Optimizing%20Storyline%20Vis%200a518ed402154bdcb136759d50e09b1b.md) 
-
-Or here: [https://correlatesofwar.org/COW2 Data/MIDs/MID310.html](https://correlatesofwar.org/COW2%20Data/MIDs/MID310.html)
-from [**StoryFlow: Tracking the Evolution of Stories**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/StoryFlow%20Tracking%20the%20Evolution%20of%20Stories%2085d6352e70a54f3e8840adcfea70363a.md) 
-
-**Now it’s here**: [https://correlatesofwar.org/data-sets/MIDs/](https://correlatesofwar.org/data-sets/MIDs/)
-
-And linked to by Z. Maoz’s website: [https://zmaoz.faculty.ucdavis.edu/data-sets/](https://zmaoz.faculty.ucdavis.edu/data-sets/)
-
-StoryFlow: Tracking Evolution of Stories had no visualization-
-
-“We failed to generate the storyline layout of the MID
-data, so we used the results provided by Tanahashi.”
-
-Version 5 Bibliography entry:
-
-Palmer, Glenn, Roseanne W. McManus, Vito D’Orazio, Michael R. Kenwick, Mikaela Karstens, Chase Bloch, Nick Dietrich, Kayla Kahn, Kellan Ritter, Michael J. Soules. 2020. “The MID5 Dataset, 2011-2014: Procedures, Coding Rules, and Description.” *Conflict Management and Peace Science*
-, 39(4): 470-482. DOI: [https://journals.sagepub.com/doi/full/10.1177/0738894221995743](https://doi.org/10.1177/0738894221995743)
-
-Part of Storylines data -->
-
 ::: 
 
 <a name="World_Maps"></a>
@@ -734,29 +638,6 @@ From Supplemental Materials, Appendix C of *[“Computing Stable Demers Cartogra
 From  [Computing Stable Demers Cartograms](https://link.springer.com/chapter/10.1007/978-3-030-35802-0_4)”:
 
 <div style='text-align: center'><img src='data/Benchmark datasets/World%20Maps%2099689f52cc854daba9c25be42de1cbe3/Untitled%201.png' width='80%'></div>
-
-<!-- === STOP RENDERING ===
-
-from [Computing Stable Demers Cartograms](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Computing%20Stable%20Demers%20Cartograms%20fb418899e13f45f4b6b3c6296e07a599.md) 
-
-World bank - bunch of references - all temporal datasets!
-
-Missing Data from the world bank was filled with following linked sources:
-
-https://en.wikipedia.org/wiki/Economy of North Korea#cite note-2
-
-https://tradingeconomics.com/kuwait/rural-population-wb-data.html
-
-http://www.efgs.info/wp-content/uploads/conferences/efgs/2016/S8-1
-presentationV1 IdrizShala EFGS2016.pdf
-
-https://tradingeconomics.com/eritrea/rural-population-wb-data.html
-
-https://tradingeconomics.com/kuwait/forest-area-percent-of-land-area-wb-data.
-html
-
-https://tradingeconomics.com/kosovo/forest-area-percent-of-land-area-wb-data.
-html -->
 
 ::: 
 
@@ -852,43 +733,6 @@ From “[ACE: A Fast Multiscale Eigenvectors Computation for Drawing Huge Graphs
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Scotch%20Graph%20Collection%20cfe6f105da3a4c699fa3e02ca1f6e88a/Screen_Shot_2023-08-04_at_8.30.54_AM.png' width='80%'></div>
 
-<!-- ===  STOP RENDERING ===
-
-```
-
-			===========================
-
-			The SCOTCH graph collection
-
-			===========================
-
-The graphs that comprise this collection have been gathered from various
-sites and people (Steve Hammond, the Harwell-Boeing collection, Bruce
-Hendrickson, and Horst Simon). They are all stored in SCOTCH source graph
-format (.src), and are accompanied with their geometry file (.xyz) whenever
-available.
-
-This directory contains:
-
-ar_*		: Architecture graphs for classical topologies, mostly meshes.
-
-fe_*		: Triangular and quadrangular unstructured meshes related to
-		  fluid dynamics, structural mechanics, or combinatorial
-		  optimization problems.
-
-nd_*		: Valuated interprocess communication graphs issued from a
-		  parallel implementation of a sparse block Cholesky
-		  factorization solver, which represent partitions of the
-		  unknowns induced by a nested dissection method.
-		  The nd_ref0, nd_ref1, nd_ref2, nd_ref3, and nd_ref4 graphs
-		  are aliases for the nd_2047.7750, nd_2453.47659,
-		  nd_2815.84406, nd_3093.105713, and nd_3470.135148 graphs,
-		  respectively.
-```
-
-Author: Francois Pellegrini (*[pelegrin@labri.u-bordeaux.fr](mailto:pelegrin@labri.u-bordeaux.fr)*)
-_site:150:21 -->
-
 ::: 
 
 Otherwise, one might decide to focus on a particular domain:
@@ -923,14 +767,6 @@ From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109
 From “[Multi-Level Area Balancing of Clustered Graphs](https://doi.org/10.1109/TVCG.2020.3038154)”:
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.50.53_AM.png' width='80%'></div>
-
-<!-- === STOP RENDERING ===
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Screen_Shot_2023-01-25_at_10.52.55_AM.png' width='80%'></div>
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Biological%20Pathways%20(KEGG)%206d302b16e7af4982a57c5b9aeecfe3b8/Untitled.png' width='80%'></div>
-_site:150:21 -->
-
 
 ::: 
 
@@ -971,20 +807,6 @@ From “[Visualizing Co-phylogenetic Reconciliations](https://doi.org/10.1007/97
 
 <div style='text-align: center'><img src='data/Benchmark datasets/Co-Phylogenetic%20Trees%202440f3927d254148abd93168c1399b43/Screen_Shot_2023-08-15_at_10.49.57_AM.png' width='80%'></div>
 
-<!-- === STOP RENDERING ===
-
-from [Visualizing Co-phylogenetic Reconciliations](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Visualizing%20Co-phylogenetic%20Reconciliations%20fd4b98c0071f4e96924bacd938e706b5.md) 
-Eucalypt tool (Donati, B., Baudet, C., Sinaimeri, B., Crescenzi, P., Sagot, M.F.: EUCALYPT:
-efficient tree reconciliation enumerator. Algorithms Mol. Biol. 10(1), 3 (2015)), trees from a bioinfromatics journal (Wieseke, N., Hartmann, T., Bernt, M., Middendorf, M.: Cophylogenetic reconcil-
-iation with ILP. IEEE/ACM Trans. Comput. Biol. Bioinform. 12(6), 1227–1235
-(2015))
-
-Figure below: An HP-drawing of a reconciliation of Gopher & Lice drawn by SearchMaximalPlanar. (2) The same instance drawn by ShortenHostSwitch.
-
-<div style='text-align: center'><img src='data/Benchmark datasets/Co-Phylogenetic%20Trees%202440f3927d254148abd93168c1399b43/Untitled.png' width='80%'></div>
-
-<div style='text-align: center'><img src='data/Benchmark datasets/Co-Phylogenetic%20Trees%202440f3927d254148abd93168c1399b43/evolu.png' width='80%'></div> -->
-
 ::: 
 
 And finally, a collection of graph problems:
@@ -1020,10 +842,6 @@ From [SteinLib: An Updated Library on Steiner Tree Problems in Graphs](https://d
 
 <div style='text-align: center'><img src='data/Benchmark datasets/SteinLib%204b766ffe22de40ecaa9307671862ea96/Screen_Shot_2023-08-09_at_4.09.50_PM.png' width='80%'></div>
 
-<!-- === STOP RENDERING ===
-
-Is it lost? -->
-
 ::: 
 
 Additional interesting graphs can be found in the [Graph Drawing Contest website](https://mozart.diei.unipg.it/gdcontest/history/).
@@ -1037,8 +855,6 @@ Because their hosts are already dedicated to the maintaining and reporting of in
 ::: {.callout-note title="Matrix Market" collapse=true appearance="minimal"}
 
 Compiled by the [Mathematical and Computational Sciences Division](https://math.nist.gov/mcsd/) of the [Information Technology Laboratory](http://www.itl.nist.gov/) of the [National Institute of Standards and Technology](http://www.nist.gov/), the **Matrix Market** is a repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services. It has been used for experiments with <a href="#Generic"><span class="pill-tag pill_color_Generic">Generic</span></a>graphs, <a href="#Large"><span class="pill-tag pill_color_Large">Large</span></a>graphs, and graphs with <a href="#Weighted_edges"><span class="pill-tag pill_color_Weighted_edges">Weighted edges</span></a> Each matrix entry is accompanied by metadata that includes the matrix name and identifier, dimensions (number of rows and columns), number of non-zero elements, symmetry type (symmetric, skew-symmetric, or general) and data type (real, complex, integer, or pattern). The website also provides visualizations of the matrices, helping users understand their structure and distribution of non-zero elements. Downloads are also provided in a variety of formats, including their own Matrix Market Exchange (MME) format, Harwell-Boeing, and MATLAB.
-
-<!-- <div id="named-list-Matrix_Market" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
 <div class="col"><div><b>Originally found at: </b><a href="https://math.nist.gov/MatrixMarket/index.html">https://math.nist.gov/MatrixMarket/index.html</a></div><br><div><b>Download formatted data: </b></div><br>
 <div><b>Note: </b>A repository of test data for use in comparative studies of algorithms for numerical linear algebra, featuring nearly 500 sparse matrices from a variety of applications, as well as matrix generation tools and services.</div><br><br><div><b>Origin Notes: </b>Compiled by the <a href="https://math.nist.gov/mcsd/&nbsp;">https://math.nist.gov/mcsd/&nbsp;</a>of the&nbsp;<a href="http://www.itl.nist.gov/&nbsp;">http://www.itl.nist.gov/&nbsp;</a>of the&nbsp;<a href="http://www.nist.gov/">http://www.nist.gov/</a></div><br><div><b>Origin paper: </b></div><div>Matrix Market: a web resource for test matrix collections</div><br><div><b>Usage examples: </b></div>
@@ -1059,9 +875,6 @@ Compiled by the [Mathematical and Computational Sciences Division](https://math.
 The **Network Repository** was proposed in 2015 by Rossi and Ahmed of Purdue University as a visually interactive real world graph tool and database. Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.
 
 <div><b>Originally found at: </b><a href="https://networkrepository.com/">https://networkrepository.com/</a></div><br>
-<!-- <div><b>Note: </b>Graphs in this repository are tagged with their real-world source, have in-depth analysis, and even a preview visualization of each individual graph. Types of graphs include social networks, infrastructure networks, biological networks, and many others. The repository also offers sources for individual graphs. It contains many graphs from other benchmark sets described here.</div><br>
-<br>
-<div><b>Origin Notes: </b>This repository was proposed in 2015 by Rossi and Ahmed of Purdue University as a visually interactive real world graph tool and database.</div><br> -->
 <div><b>Origin paper: </b></div>
 <div class="row"><div class="col-4">[@nr]</div><div class="col-8">The Network Data Repository with Interactive Graph Analytics and Visualization</div></div><br>
 <div><b>Usage examples: </b></div>
@@ -1088,10 +901,6 @@ From “[Drawing Big Graphs Using Spectral Sparsification](https://link.springer
 The **Pajek** Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleagues. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection. As a curiosity, pajek means spider in Slovenian. Many of Pajek graphs have been included as part of the [SuiteSparse Matrix Collection](#SuiteSparse_Matrix_Collection).
 
 <div><b>Originally found at: </b><a href="http://vlado.fmf.uni-lj.si/pub/networks/data/">http://vlado.fmf.uni-lj.si/pub/networks/data/</a></div><br>
-<!-- <div><b>Download formatted data: </b></div><br> -->
-<!-- <div><b>Note: </b>Pajek means spider in Slovenian.</div><br>
-<br>
-<div><b>Origin Notes: </b>The Pajek Program for Large Network Analysis is a tool developed and hosted by Andrej Vlado and some of their colleges. As part of this program, they later compiled relevant graphs and links to other datasets, which we call today the Pajek collection.</div><br> -->
 <div><b>Origin paper: </b></div>
 <div class="row"><div class="col-4">[@pajek]</div><div class="col-8">Pajek datasets</div></div><br>
 <div><b>Usage examples: </b></div>
@@ -1121,22 +930,6 @@ From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-2
 
 <div style='text-align: center'><img src='data/Benchmark datasets/Pajek%20e323e05a735d4151a0bccfec08aa3bd6/Screen_Shot_2023-08-17_at_4.06.19_PM.png' width='80%'></div>
 
-<!-- === STOP RENDERING ===
-
-[http://vlado.fmf.uni-lj.si/pub/networks/data/](http://vlado.fmf.uni-lj.si/pub/networks/data/)
-
-Direct flights between US airports (332 nodes, 2126 edges). Some
-
-distant airports in Alaska and the South Sea (e.g. Guam) are omitted to improve
-
-readability.
-
-[](http://vlado.fmf.uni-lj.si/pub/networks/doc/)
-
-Collection of other dataset that might not be linked into paper
-
-There is another link to data not mentioned in their repo. (Also part of SuiteSpase Matrix Collection) -->
-
 ::: 
 
 <a name="SNAP"></a>
@@ -1145,14 +938,10 @@ There is another link to data not mentioned in their repo. (Also part of SuiteSp
 
 The **SNAP** repository is a collection of datasets assembled as part of the Stanford Network Analysis Platform, which started in 2004 and launched their website in 2009.
 Well-known, widely used graph repository.
-<!-- There also exists BioSNAP, which consists of similar datasets for medical applications under the same umbrella project. While BioSNAP was not as relevant in the literature, it may still prove useful for future researchers.  -->
 A number of graphs that became relevant individually are included in SNAP, such as <a href="#Enron" class="dataset-link">Enron</a>, [Amazon](#amazon), [Protein Interactions](#protein-interaction) datasets and various [Social Network](#social-network) graphs. SNAP contains <a href="#Generic"><span class="pill-tag pill_color_Generic">Generic</span></a>graphs, <a href="#directed_edges"><span class="pill-tag pill_color_directed_edges">directed</span></a>and <a href="#Other"><span class="pill-tag pill_color_other">Undirected</span></a>graphs, <a href="#Dynamic"><span class="pill-tag pill_color_Dynamic">Dynamic</span></a>graphs and more. Graphs are presented with name and descriptions and a few statistics such as a general description, numbers of nodes and edges, source and reference information.
 
 <div><b>Originally found at: </b><a href="http://snap.stanford.edu/data/index.html">http://snap.stanford.edu/data/index.html</a></div><br>
-<!-- <div><b>Note: </b>Well-known, widely used graph repository.
-Note that BioSNAP, which consists of similar datasets for medical applications, exists under the same umbrella project. While BioSNAP was not as relevant in the literature, it may still prove useful for future researchers.</div><br> -->
 <div><b>Size: </b>1008 unique graphs (excluding graph classification tasks consisting of 352,536 graphs)</div><br>
-<!-- <div><b>Origin Notes: </b>The SNAP library is the collection of datasets assembled as part of the Stanford Network Analysis Platform, which started in 2004 and launched their website in 2009. The group attributes the dataset preparation to Ana Pavlisic. </div><br> -->
 <div><b>Origin paper: </b></div>
 <div class="row"><div class="col-4">[@snapnets]</div><div class="col-8">SNAP Datasets: Stanford Large Network Dataset Collection</div></div><br>
 <div><b>Usage examples: </b></div>
@@ -1228,8 +1017,6 @@ From “[Anisotropic Radial Layout for Visualizing Centrality and Structure in G
 <a name="SuiteSparse_Matrix_Collection"></a>
 
 ::: {.callout-note title="SuiteSparse Matrix Collection" collapse=true appearance="minimal"}
-<!-- 
-<div id="named-list-SuiteSparse_MatrixCollection" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div> -->
 
 The **SuiteSparse Matrix Collection**, formerly known as the **University of Florida Sparse Matrix Collection**, is a comprehensive repository of 2893 sparse matrices. All graphs in SuiteSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them.
 
@@ -1411,29 +1198,7 @@ DIMACS10 graph:                 new?   UF matrix:
     walshaw/wing_nodal               *     DIMACS10/wing_nodal
 ```
 
-<!-- === STOP RENDERING ===
-
-Made explicit that they want people to reach out to them for the dataset so we do not collect it. Also in Suite Sparse, and many of the graphs are included in the Scotch graph collection.
-
-From: [An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs](https://link.springer.com/chapter/10.1007/11618058_22)
-
-<div style='text-align: center'><img src='data/Benchmark datasets/Walshaw%20e40b37a1147942d89ff1d8dfad285256/Untitled%203.png' width='80%'></div>
-
-Graphs found on the Sparse Matrix Collection -->
-
 ::: 
-
-<!-- ::: {.callout-note title="Pert DAG" collapse=true appearance="minimal"}
-
-```{ojs}
-//| echo: false
-
-make_sparkline("Pert_DAG")
-```
-
-<div id="named-list-Pert_DAG" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>
-
-:::  -->
 
 <a name="amazon"></a>
 
@@ -1461,18 +1226,6 @@ From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieee
 From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieeexplore.ieee.org/document/9552919)
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png' width='80%'></div>
-
-<!-- == STOP RENDERING ==
-
-look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) 
-
-Note: Amazon is the only dataset not included in their GitHub. They randomly sampled a graph with 192k vertices and 269k edges from the data collected by Leskovec et al in the SNAP dataset
-
-Original dataset: [http://snap.stanford.edu/data/#amazon](http://snap.stanford.edu/data/#amazon)
-
- doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph)
-_site:150:21 -->
-
 
 ::: 
 
@@ -1514,12 +1267,6 @@ From “[Preserving Minority Structures in Graph Sampling](https://ieeexplore.ie
 <div style='text-align: center'><img src='./data/Benchmark datasets/Autonomous%20System%20Network%2096d24eb9c7f94ab6a6b38e6a3af816ae/Untitled.png' width='80%'></div>
 
 **Fig. 5.** Case analysis of the AS-733 graph data set (a) and three samples generated by RDN (b), SST(c), and MCGS (d) with a sampling rate of 30%.
-
-<!-- == STOP RENDERING ==
-
-Possibly related to something like this:
-
-[https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/](https://www.caida.org/catalog/datasets/ipv4_routed_24_topology_dataset/) -->
 
 ::: 
 
@@ -1584,47 +1331,6 @@ From “[Reordering massive sequence views: Enabling temporal and structural ana
 
 <div style='text-align: center'><img src='data/Benchmark datasets/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled%201.png' width='80%'></div>
 
-<!-- === STOP RENDERING ===
-
-[https://www.cs.cmu.edu/~enron/](https://www.cs.cmu.edu/~enron/)
-
-150 enron executives (users), 500k messages - many more employees
-
-some have attachments
-
-case nodes are users: could be a very connected dataset (perhaps too few nodes) - very high variance in node degree
-
-case nodes are messages: could be a sparsely connected graph
-
-there’s dates → can be layered
-
-This dataset was collected and prepared by the
-
-[CALO Project](http://www.ai.sri.com/project/CALO)
-
-(A Cognitive Assistant that Learns and Organizes). It contains data from about 150 users, mostly senior management of Enron, organized into folders. The corpus contains a total of about 0.5M messages. This data was originally
-
-[made public, and posted to the web](http://www.salon.com/news/feature/2003/10/14/enron/index_np.html)
-
-, by the
-
-[Federal Energy Regulatory Commission](http://www.ferc.gov/)
-
-during its investigation.
-
-The email dataset was later purchased by [Leslie Kaelbling](http://www.ai.mit.edu/people/lpk/lpk.html) at MIT, and turned out to have a number of integrity problems. A number of folks at SRI, notably [Melinda Gervasio](http://www.ai.sri.com/people/gervasio), worked hard to correct these problems, and it is thanks to them (not me) that the dataset is available. The dataset here does not include attachments, and some messages have been deleted "as part of a redaction effort due to requests from affected employees". Invalid email addresses were converted to something of the form user@enron.com whenever possible (i.e., recipient is specified in some parse-able format like "Doe, John" or "Mary K. Smith") and to no_address@enron.com when no recipient was specified.
-
-Visualizations from [https://www.kaggle.com/jamestollefson/enron-network-analysis](https://www.kaggle.com/jamestollefson/enron-network-analysis):
-
-<div style='text-align: center'><img src='data/Benchmark datasets/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled%202.png' width='80%'></div>
-
-<div style='text-align: center'><img src='data/Benchmark datasets/Enron%20ed3c62b92cf14a7b86c691ac3651dab3/Untitled%203.png' width='80%'></div>
-
-This paper definitely uses this as a layered, categorical graph - could even be a hypergraph
-
-
-→ unclear. Layered? -->
-
 ::: 
 
 <a name="California"></a>
@@ -1669,10 +1375,6 @@ From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.
 <div style='text-align: center'><img src='data/Benchmark datasets/California%20e0a841bc57c045b5a8514110cfe85635/Untitled%201.png' width='80%'></div>
 
 **Fig. 5** *Separating clusters.* By adjusting the spacing between nodes according to the clustering information, clusters can be separated.
-
-<!-- == STOP RENDERING ==
-
-[https://www.cs.cornell.edu/courses/cs685/2002fa/data/gr0.California](https://www.cs.cornell.edu/courses/cs685/2002fa/data/gr0.California) -->
 
 ::: 
 
@@ -1774,12 +1476,6 @@ From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/9
 
 **Fig. 4.** Layouts obtained by the seven methods for the tree of life dataset.
 
-<!-- == STOP RENDERING ==
-
-From:
-
-[http://tolweb.org/tree/](http://tolweb.org/tree/) -->
-
 ::: 
 
 <a name="World_BankTradeData"></a>
@@ -1818,10 +1514,6 @@ From “[Untangling the Hairballs of Multi-Centered Small-World Online Social Me
 From “[Energy Models for Graph Clustering](https://doi.org/10.1007/978-3-540-24595-7_40)”:
 
 <div style='text-align: center'><img src='data/Benchmark datasets/World%20Bank%20Trade%20Data%20e6e54a00bc574c639cfa165458c71232/Screen_Shot_2023-08-17_at_5.13.41_PM.png' width='80%'></div>
-
-<!-- === STOP RENDERING ===
-
-world bank: [www.worldbank.org](http://www.worldbank.org/) -->
 
 ::: 
 
@@ -1922,17 +1614,6 @@ From [LGL: Creating a Map of Protein Function with an Algorithm for Visualizing 
 <div style='text-align: center'><img src='data/Benchmark datasets/Protein%20Interactions%20(Publications)%20fb5bc3bb0c5d40468da36d279a114a78/Untitled%202.png' width='80%'></div>
 
 **Fig. 3.** The complete protein homology map. A layout of the entire protein homology map; a total of 11,516 connected sets containing 111,604 proteins (vertices) with 1,912,684 edges. The largest connected set is shown more clearly in the inset and is enlarged further in [Figure 4](https://www.sciencedirect.com/science/article/pii/S0022283604004851?via%3Dihub#FIG4).
-
-<!-- == STOP RENDERING ==
-broken link referenced in [**Rapid Graph Layout Using Space Filling Curves**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Rapid%20Graph%20Layout%20Using%20Space%20Filling%20Curves%2010601cd6078a4ea18b17c7d40eda0041.md) : 
-
-Same link referenced in original paper, 
-
-I also found [https://lgl.sourceforge.net/](https://lgl.sourceforge.net/) which contains the link to supposedly download the dataset but it is also broken
-
-Reached out to author - Alex Adai 
-
-[](http://www.marcottelab.org/index.php/OldBioinformaticsServerlgl/) -->
 
 ::: 
 
@@ -2060,38 +1741,6 @@ From Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs
 
 **Fig. 10.** Paper and authorship data from the online database DBLP [26] for publications from 2013 to 2015 in IEEE Transactions on Pattern Analysis and Machine Intelligence. Each N-ary relationship is either a paper with N authors (left: the primal view) or an author with N papers (right: the dual view).
 
-<!-- == STOP RENDERING ==
-
-from [Drawing Dynamic Graphs Without Timeslices](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Dynamic%20Graphs%20Without%20Timeslices%204da7155eac4b4979ae165f3b0f1d2b1b.md) 
-
-InfoVis Co-Authorship (Discrete): a co-authorship network for papers published
-
-in the InfoVis conference from 1995 to 2015 [1]. Authors collaborating on a paper
-
-are connected in a clique at the time of publication of the paper. Note this is
-
-not a cumulative network as authors can appear, disappear, and appear again.
-
-The data is of discrete nature with exactly 21 timeslices (one per year).
-
-[https://cs.swan.ac.uk/~dynnoslice/software.html](https://cs.swan.ac.uk/~dynnoslice/software.html)
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%206.png' width='80%'></div>
-
-^ not really a description of the graph 
-
-from **A Maxent-Stress Model for Graph Layout**
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Assorted%20Collaboration%20Network%206062ff126f474a50b5f3dc9b945d43da/Untitled%207.png' width='80%'></div>
-
-ith the exception of graph gd, which is an author collaboration graph of the International Symposium on Graph Drawing between 1994 and 2007, the graphs used are from the University of Florida Sparse Matrix Collection [9]. Our selection covers a range of graph sizes, and includes mesh-like and other nonmesh graphs, and graphs from Brandes and Pich's experimental study of distance scaling
-
-## CPAN-Explorer graphs
-
-Link works, but subpages do not
-
-[https://gephi.wordpress.com/2009/06/25/cpan-explorer-an-interactive-exploration-of-the-perl-ecosystem/](https://gephi.wordpress.com/2009/06/25/cpan-explorer-an-interactive-exploration-of-the-perl-ecosystem/)
-_site:150:21 -->
 ::: 
 
 <a name="Airlines_Migrations_and_Air_Traffic"></a>
@@ -2152,12 +1801,6 @@ From “[Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach](https://ie
 From “[Skeleton-Based Edge Bundling for Graph Visualization](https://doi.org/10.1109/TVCG.2011.233)”:
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Airlines,%20Migrations,%20and%20Air%20Traffic%2045ffa6caedd141b082e163d7da6eb895/Screen_Shot_2023-08-14_at_3.42.37_PM.png' width='80%'></div>
-
-<!-- == STOP RENDERING ==
-
-gd contest: [http://www.research.att.com/conf/gd96/contest.html](http://www.research.att.com/conf/gd96/contest.html)
-
-look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) -->
 
 ::: 
 
@@ -2230,15 +1873,6 @@ From “[An Efficient Framework for Generating Storyline Visualizations from Str
 E*clipse Subversion Control Logs* (*Eclipse*) [30]
 …
 These datasets all contained temporal logs of events in which entities interact.
-
-<!-- === STOP RENDERING ==
-
-I cannot find the Phillips medical software call graphs - the paper implies they were directly given to the author so it might be hard to get. 
-
-Subversion control logs also lost. Broken link from UCDavis. 
-
-M. Ogawa. Software development history logs [Online]. Available:
-[http://vis.cs.ucdavis.edu/~ogawa/datasets/](http://vis.cs.ucdavis.edu/~ogawa/datasets/), Jan. 2015. -->
 
 ::: 
 
@@ -2323,13 +1957,6 @@ From [Event-based Dynamic Graph Drawing without the Agonizing Pain](https://onli
 From  [Fast filtering and animation of large dynamic networks](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-014-0027-8)
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Blogposts,%20Tweets,%20and%20Forums%20e315a82238dc40c5a3559c81ef7c57c8/Untitled%202.png' width='80%'></div>
-
-<!-- == STOP RENDERING ==
-
-**Online dynamic -**  cannot find code online, paper shows two links of where they collected the data. Both broken [http://www.dailytech.com](http://www.dailytech.com/), [http://www.rimzu.com](http://www.rimzu.com/) - paper says to look in [https://www.computer.org/csdl/journal/tg/2008/04/ttg2008040727/13rRUxBJhvo](https://www.computer.org/csdl/journal/tg/2008/04/ttg2008040727/13rRUxBJhvo) but it is asking me to pay
-
-**Turing Test -** Uses the Zachary Karate dataset (they link to the suiteSparse Matrix collection, but I also know it is in sparse, and one of the Pajek subcollections). Also uses a timeslice of the same dataset used by Online dynamic (we could reconstruct this from their images since it is also only 85 nodes, but we really loose all the info we want)
-_site:150:21 -->
 
 ::: 
 
@@ -2467,34 +2094,6 @@ From [SetCoLa: High-Level Constraints for Graph Layout](https://onlinelibrary.wi
 
 **Fig. 4.** The layout for the syphilis social network from (a) Rothenberg et al. [[RST*98](https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045)]. (b) We recreated and improved the layout in SetCoLa by introducing additional padding, alignment, and circle constraints to further highlight the relative number of interactions among the different groups. For both figures, the nodes are split into three groups, from left to right: young affluent white men, younger white women, and young African-American men. Individuals not associated with any of these “core” groups are positioned above the others. In both figures, individuals diagnosed with syphilis during the outbreak are labeled with an “S” on the node label.
 
-<!-- === STOP RENDERING ===
-
-Contact Network
-
-This dataset contains the daily dynamic contact networks collected during the [Infectious SocioPatterns](http://www.sociopatterns.org/deployments/infectious-sociopatterns/) event that took place at the [Science Gallery](http://www.sciencegallery.com/) in Dublin, Ireland, during the artscience exhibition [INFECTIOUS: STAY AWAY](http://www.sciencegallery.com/infectious). Each file in the downloadable package contains a tab-separated list representing the active contacts during 20-second intervals of one day of data collection.  Each line has the form “t i j“, where i and j are the anonymous IDs of the persons in contact, and the interval during which this contact was active is [ t – 20s, t ]. If multiple contacts are active in a given interval, you will see multiple lines starting with the same value of t. Time is measured in seconds and expressed in UNIX ctime.
-
-“This evaluation uses 109 common graphs from network science and graph algorithm research (note: many graphs from older research are no longer available online).”
-
-# C. Lipp?
-
-> The rest of the test graphs are taken from real-world applications. In particular, we selected graphs from the AT&T graph library [1], from C. Walshaw’s graph collection [20], and a graph that describes a social network of 2113 people that we obtained from C. Lipp.
-> 
-
-Last author of original paper,
-
-→ facebook100 network: [https://epubs.siam.org/doi/10.1137/080734315](https://epubs.siam.org/doi/10.1137/080734315)
-
-[https://archive.org/details/oxford-2005-facebook-matrix](https://archive.org/details/oxford-2005-facebook-matrix) ← pretty sure the internet archive is reliable? 
-
-→ dead link in this paper
-
-→ [http://masonporter.blogspot.com/2011/02/facebook100-data-set.html](http://masonporter.blogspot.com/2011/02/facebook100-data-set.html)
-also dead link
-
-→ here? [https://networkrepository.com/socfb.php](https://networkrepository.com/socfb.php)
-
-from [Drawing Dynamic Graphs Without Timeslices](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Dynamic%20Graphs%20Without%20Timeslices%204da7155eac4b4979ae165f3b0f1d2b1b.md) -->
-
 ::: 
 
 <a name="Transportation_Networks"></a>
@@ -2576,12 +2175,6 @@ From “[Rapid Graph Layout Using Space Filling Curves](https://ieeexplore.ieee.
 is of the streets in the state of Florida, |V| = 1,070,376,|E| = 2,712,798
 One small region is expanded to show detail.
 
-<!-- === STOP RENDERING ===
-
-[http://www.diag.uniroma1.it//challenge9/download.shtml](http://www.diag.uniroma1.it//challenge9/download.shtml)
-_site:150:21
- -->
-
 ::: 
 
 ### Lost and unavailable datasets {#sec-lost}
@@ -2635,20 +2228,6 @@ From “[Graph-based clustering and characterization of repetitive sequences in 
 
 **Fig. 4. Examples of graph layouts derived from clusters of repetitive sequences**. Graph layouts were calculated using the 3D version of Fruchterman and Reingold algorithm from which a 2D projection is shown. Individual reads are represented by vertices and similar reads are connected by edges. Individual clusters are described further in Table 1.
 
-<!-- === STOP RENDERING ===
-
-**NOTE: eliminate the relationships between different tables**
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/GION%20fb235f160e504395a884f5a18fca6f17/Untitled%203.png' width='80%'></div>
-
-From [GION: Interactively Untangling Large Graphs on Wall-Sized Displays](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/GION%20Interactively%20Untangling%20Large%20Graphs%20on%20Wall%20774568ebdd114a8790c026bfa0b125f0.md) 
-Graph properties are provided in Table 1. The set of graphs can be downloaded from
-
-http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip. All graphs have high local density, and a sparse global structure that allows to create layouts far from hairballs that are showing the structure well
-
-Dead link! [http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip](http://wcl.ml.unisa.edu.au/graph-untangling/graphs.zip) ← Emailed [michael@20papercups.net](mailto:michael@20papercups.net) (seems to have left academia and this is the email under his personal website)
-_site:150:21 -->
-
 ::: 
 
 <a name="FM3"></a>
@@ -2686,11 +2265,6 @@ From “[An Interactive Tool to Explore and Improve the Ply Number of Drawings](
 From “[An Experimental Study on the Ply Number of Straight-Line Drawings](https://doi.org/10.1007/978-3-319-53925-6_11)”:
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/FM3%20b3dc638f5d7541b8b01105483c356e11/Screen_Shot_2023-08-16_at_3.26.01_PM.png' width='80%'></div>
-
-<!-- === STOP RENDERING ===
-
-Download links seem to be broken…  in website
-_site:150:21 -->
 
 ::: 
 
@@ -2792,11 +2366,6 @@ From “[DICON: Interactive Visual Analysis of Multidimensional Clusters](https:
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Medical%20Patient%20Records%209bb4f4fc1e8242b2905eb286a0e00143/Untitled%201.png' width='80%'></div>
 
-<!-- === STOP RENDERING ===
-
-Reached out to authors? ← saw this note but not Connor nor I
-_site:150:21 -->
-
 ::: 
 
 <a name="Assorted_Fiscal_Network"></a>
@@ -2829,49 +2398,7 @@ From [CHORDLINK: A New Hybrid Visualization Model](https://link.springer.com/cha
 
 **Fig. 4.** A visualization obtained by selecting some communities in a node-link diagram.
 
-<!-- == STOP RENDERING ==
-
-[https://www.sciencedirect.com/science/article/abs/pii/S0167923618300563?via%3Dihub](https://www.sciencedirect.com/science/article/abs/pii/S0167923618300563?via%3Dihub) ← italian revenue agency
-_site:150:21 -->
-
-
 ::: 
-
-<!-- <a name="Debates"></a>
-
-::: {.callout-note title="Debates" collapse=true appearance="minimal"}
-
-Created by researchers at the University of Konstanz for the [LingVis](https://lingvis.io/) framework and [VisArgue](http://www.visargue.uni-konstanz.de/en/) project. First appeared in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181).
-The authors did not respond to requests to make this dataset available. While the debate transcripts are publicly available, the entity relationship data generated in [NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181) is not. It has <a href="#Categorical_nodes"><span class="pill-tag pill_color_Categorical_nodes">Categorical nodes</span></a> <a href="#Directed_edges"><span class="pill-tag pill_color_Directed_edges">Directed edges</span></a> <a href="#Labeled_nodes"><span class="pill-tag pill_color_Labeled_nodes">Labeled nodes</span></a>and <a href="#Weighted_edges"><span class="pill-tag pill_color_Weighted_edges">Weighted edges</span></a>.
-
-Note: we found the Debates dataset published as a student assignment for a course at the University of Konstanz, now available on OSF [at this link](https://osf.io/rp483/metadata/?format=datacite-json). However, additional non-trivial processing was made to the data to generate the entity relationship data used in the paper. Because of this, we still consider the dataset as lost.
-
-<div><b>Origin paper: </b></div>
-<div class="row"><div class="col-4">[@elassady2017]</div><div class="col-8">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div></div><br>
-<div><b>Usage examples: </b></div>
-<div class="row"><div class="col-4">[@elassady2017]</div><div class="col-4">NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations</div><div class="col-4"><a href="#Categorical_nodes"><span class="pill-tag pill_color_Categorical_nodes">Categorical nodes</span></a><a href="#Directed_edges"><span class="pill-tag pill_color_Directed_edges">Directed edges</span></a><a href="#Labeled_nodes"><span class="pill-tag pill_color_Labeled_nodes">Labeled nodes</span></a><a href="#Weighted_edges"><span class="pill-tag pill_color_Weighted_edges">Weighted edges</span></a></div></div><br>
-
-#### Description from Literature
-
-From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
-
-> In order to explore the relations between entities, we use a distance-restricted model for creating entity-pairs. As described in Section 2, prior work considers relations between entities either as semantic relations based on linguistic knowledge or regards two entities as related due to their presence in the same document. The often ungrammatical structure of utterances in verbatim text transcripts (including non-standard lexical items, syntactic patterns, interruptions, repetitions, and crosstalk) requires a simple extralinguistic model. To overcome these limitations, we introduce a model that bounds the scope in which we consider two entities to be related, using a distance threshold (*maxDist*). Our method creates a pair of entities if the entities appear in the same sentences within *maxDist* words of one another.
-
-> However, not only are frequent entity-pairs important, but also pairs that are semantically similar (e.g., *cut $5 trillion*, *cut $4 trillion*). These often present opposing speaker opinions about a given topic. To maximize the chance that entity-pairs represent true semantic relations, we set the default value of *maxDist* to a low value (5 words). To vary the granularity of the analysis, the parameter can be changed interactively depending on the analysis task and data. Nevertheless, some infrequent longer-distance entity-pairs are discovered which do not represent salient relations. To reduce their impact, we calculate the average observed distance (in words) for each entity pair. We use both frequency and average distance in the visualization to reflect the strength of the entity-pair.
-
-#### Example Figures
-
-From “[NEREx: Named-Entity Relationship Exploration in Multi-Party Conversations](https://doi.org/10.1111/cgf.13181)”:
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0004-m.jpg' width='80%'></div>
-
-Entity graph of the first first presidential debate between Trump and Clinton
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Debates%2054eb2cd4ba2c48eb945bd49e5f4bbf4f/cgf13181-fig-0006-m.jpg' width='80%'></div>
-
-Entity graph of the same debate, focusing on the concept of taxes
-
-:::  -->
 
 <a name="Car_Features"></a>
 
@@ -2927,11 +2454,6 @@ From [A stable graph layout algorithm for processes](https://onlinelibrary.wiley
 
 <div style='text-align: center'><img src='./data/Benchmark datasets/Business%20Processes%209d09430927704fcf8fdf1ee4e00cabbc/Untitled%201.png' width='80%'></div>
 
-<!-- == STOP RENDERING ==
-
-“Hi! Thanks for reaching out! The dataset used is an internal one that I cannot share unfortunately. Some other datasets were public datasets and I think I did include urls in my references” 
-
--urls are broken -->
 ::: 
 
 This last one is not available as an individual download, but still navigable on the internet and could potentially be crawled:
@@ -2966,50 +2488,6 @@ From “[Visualizing Evolving Trees](https://link.springer.com/chapter/10.1007/9
 <div style='text-align: center'><img src='./data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%201.png' width='80%'></div>
 
 **Fig. 4:** Layouts from DynNoSlice, DynaGraph, Dagre, Radial, ImPrEd, DynaCola and DynaSafe of the same evolving math genealogy tree; each row adds six new nodes.
-
-<!-- == STOP RENDERING ==
-
-[https://github.com/abureyanahmed/evolving_tree/tree/main/dataset](https://github.com/abureyanahmed/evolving_tree/tree/main/dataset)
-
-They make you request the data individually and in the linked form they have a note about not redistributing data:
-
-[mgp-permission-agreement.pdf](Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/mgp-permission-agreement.pdf)
-
-<div style='text-align: center'><img src='./data/Benchmark datasets/Mathematics%20Genealogy%20081ba4645aac48c19719b16033c637f3/Untitled%202.png' width='80%'></div>
-
-reached out to them 5/18/2023
-
-It is non-planar because multiple advisors can advise the same person or a person can have multiple advisors! Infact, there is a K3,3 in it
-
-In July 2016, Cosmin Ionita and Pat Quillen of 
-MathWorks used MATLAB to analyze the Math Genealogy Project graph. At 
-the time, the genealogy graph contained 200,037 vertices. There were 
-7639 (3.8%) isolated vertices and 1962 components of size two 
-(advisor-advisee pairs where we have no information about the advisor). 
-The largest component of the genealogy graph contained 180,094 vertices,
- accounting for 90% of all vertices in the graph. The main component has
- 7323 root vertices (individuals with no advisor) and 137,155 leaves 
-(mathematicians with no students), accounting for 76.2% of the vertices 
-in this component. The next largest component sizes were 81, 50, 47, 34,
- 34, 33, 31, 31, and 30.
-For historical comparisonn, we also have data from June 2010, when 
-Professor David Joyner of the United States Naval Academy asked for data
- from our database to analyze it as a graph. At the time, the genealogy 
-graph had 142,688 vertices. Of these, 7,190 were isolated vertices (5% 
-of the total). The largest component had 121,424 vertices (85% of the 
-total number). The next largest component had 128 vertices. The next 
-largest component sizes were 79, 61, 45, and 42. The most frequent size 
-of a nontrivial component was 2; there were 1937 components of size 2. 
-The component with 121,424 vertices had 4,639 root verticies, i.e., 
-mathematicians for whom the advisor is currently unknown.
-
-The Mathematics Genealogy Project graph is nonplanar. Thanks to 
-Professor Ezra Brown of Virginia Tech for assisting in finding the 
-subdivision of *K*3,3 depicted below. The green vertices
- form one color class and the yellow ones form the other. Interestingly,
- Gauß is the only vertex that needs to be connected by paths with more 
-than one edge.
-_site:150:21 -->
 
 ::: 
 

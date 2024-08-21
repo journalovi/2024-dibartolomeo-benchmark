@@ -479,25 +479,33 @@ The following interactive filtering system is an initial overview over the conte
         final_datasets.forEach((name) => {
             //console.log(name + '-link')
             let currLinkDiv = document.getElementById(name + '-link')
-            currLinkDiv.style.display = 'block';  // Clear the display property to default ('block')
+            if (currLinkDiv != null) {
+                currLinkDiv.style.display = 'block';  // Clear the display property to default ('block')
+            } 
         })
 
         final_data_inverse.forEach((name) => {
             //console.log(name + '-link')
             let currLinkDiv = document.getElementById(name + '-link')
-            currLinkDiv.style.display = 'none';  // Hide the div
+            if (currLinkDiv != null) {
+                currLinkDiv.style.display = 'none';  // Hide the div
+            }
         })
 
         final_papers.forEach((name) => {
             //console.log(name + '-link')
             let currLinkDiv = document.getElementById(name + '-link')
-            currLinkDiv.style.display = 'block';  // Clear the display property to default ('block')
+            if (currLinkDiv != null) {
+                currLinkDiv.style.display = 'block';  // Clear the display property to default ('block')
+            }
         })
 
         final_paper_inverse.forEach((name) => {
             //console.log(name + '-link')
             let currLinkDiv = document.getElementById(name + '-link')
-            currLinkDiv.style.display = 'none';  // Hide the div
+            if (currLinkDiv != null) {
+                currLinkDiv.style.display = 'none';  // Hide the div
+            }
         })
 
       /*
