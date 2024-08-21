@@ -107,6 +107,7 @@ The following visualization shows the amount of datasets we collected per catego
 
 ```{ojs}
 //| echo: false
+//| fig-cap: "Occurrences of datasets we collected per category. Unform benchmark datasets were the majority."
 { 
   let d = []
   
@@ -136,6 +137,7 @@ Unfortunately, some of the datasets used in layout algorithm evaluations are not
 
 ```{ojs}
 //| echo: false
+//| fig-cap: "Unfortunately, 9 of the datasets we found being used in the literature were either lost or no longer accessible."
 { 
   let d = []
   
@@ -3021,6 +3023,7 @@ We split custom-made datasets in three categories, with their occurrences in the
 
 ```{ojs}
 //| echo: false
+//| fig-cap: "The chart shows what type of edits were made to datasets, or how they were generated. Non-Replicable edits or generation of datasets where the majority in the corpus of papers we collected."
 { 
   let d = []
   
@@ -3062,6 +3065,7 @@ This information is closely tied to the distribution of supplemental material in
 
 ```{ojs}
 //| echo: false
+//| fig-cap: What is distributed as supplemental material with papers? Most papers just distribute an extended version of their content, while another large chunk in our analysis did not distribute any. 
 { 
   let d = []
   
@@ -3069,6 +3073,10 @@ This information is closely tied to the distribution of supplemental material in
 
   for (let dataset of allbenchmarkdatasets){
     let literature_entries_with_this_dataset = literature.filter(l => l["Supplemental material (Multi-select)"].includes(dataset))
+
+    if (dataset == "Yes") continue;
+    // capitalize first letter
+    dataset = dataset.charAt(0).toUpperCase() + dataset.slice(1)
 
     d.push({"dataset": dataset, "count": literature_entries_with_this_dataset.length})
   }
