@@ -1,4 +1,4 @@
-# Benchmark Datasets for Graph Layout Algorithms
+# GLaDOS: Graph Layout algorithm Datasets for Open Science
 
 This paper is under submission to the the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
 

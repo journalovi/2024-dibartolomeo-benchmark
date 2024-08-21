@@ -1,6 +1,6 @@
 ---
 # title: "Benchmark Datasets for Graph Layout Algorithms"
-title: "GLADOS: Graph Layout Algorithm benchmark Datasets for Open Science"
+title: "GLaDOS: Graph Layout algorithm Datasets for Open Science"
 number-sections: true
 self-contained: false
 author:
@@ -62,7 +62,7 @@ bibliography: bibliography.bib
 ## Under Review {.unnumbered}
 This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of
 the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the 
-[reviewing process](https://github.com/journalovi/2024-dibartolomeo-benchmark/issues).
+[reviewing process](https://github.com/journalovi/2024-dibartolomeo-gd-benchmark/issues).
 :::
 
 
