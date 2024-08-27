@@ -8,10 +8,6 @@ Papers for this track are written in [Quarto](https://quarto.org/) which is an o
 !  Only edit .qmd files! The other files are generated from this.
 ```
 
-```diff
-!  Commit the HTML version of the paper upon submission for ease of review.
-```
-
 See <https://osf.io/j7ucv/> for more details on the related publication and supplemental materials.
 
 ## Setup instructions
