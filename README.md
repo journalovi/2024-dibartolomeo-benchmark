@@ -1,3 +1,13 @@
+```diff
+! This paper is under review on the experimental track of the Journal of Visualization and Interaction.
+Authors: [insert Github IDs]
+OC: TBD
+AE: TBD
+R1: TBD
+R2: TBD
+R3: TBD
+```
+
 # GLaDOS: Graph Layout algorithm Datasets for Open Science
 
 This paper is under submission to the the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
