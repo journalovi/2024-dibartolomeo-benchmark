@@ -3,9 +3,9 @@
 Authors: @picorana
 OC: Chat Wacharamanotham
 AE: Lane Harrison
-R1: TBD
-R2: TBD
-R3: TBD
+R1: mjwybrow
+R2: eelir
+R3: gdrawing-anon-reviewer
 ```
 
 # GLaDOS: Graph Layout algorithm Datasets for Open Science
