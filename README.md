@@ -28,19 +28,7 @@ See <https://osf.io/j7ucv/> for more details on the related publication and supp
 
 2. `CD` to the repo directory.
 
-3. Install `uv`. E.g.
-
-   * On Windows:
-  
-        ```ps
-        powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-        ```
-
-   * On macOS and Linux:
-
-        ```bash
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-        ```
+3. Install `uv` following [their instructions](https://docs.astral.sh/uv/getting-started/installation/).
 
 ## Run instructions
 
