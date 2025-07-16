@@ -1,13 +1,13 @@
 # Amazon
 
-Note: This dataset is a subset of SNAP and can be found there.
-Origin Notes: In "The dynamics of viral marketing" Leskovec et al. collected 15 million recommendations made from June 2001, to May 2003 by looking at the “Customers who Bought This Item Also Bought” feature in the Amazon online shopping platform.
-graph features handled: directed edges, large
+Note: This dataset is a proper subset of SNAP%20(Stanford%20Network%20Analysis%20Platform)%201cd77eaee57147ce8263b2f9eaa2589c.md and can be found there.
+Origin Notes: Wallinger et al. randomly filter data from the original dataset collected by Leskovec et al. in The dynamics of viral marketing. Leskovec et al. collected 15 million recommendations made from June 2001, to May 2003 by looking at the “Customers who Bought This Item Also Bought” feature in the Amazon online shopping platform.
+graph features handled: Directed edges, Large
 Graph features in papers: bundled edges (generated),spatial
 Origin Paper: SNAP Datasets: Stanford Large Network Dataset Collection (https://www.notion.so/SNAP-Datasets-Stanford-Large-Network-Dataset-Collection-b5f4bd2e98834a638a5c4ab563047d28?pvs=21), The dynamics of viral marketing (https://www.notion.so/The-dynamics-of-viral-marketing-f45ebdd22e5f4a95a1456bc1ae1b0fdb?pvs=21)
 Originally found at:  http://snap.stanford.edu/data/#amazon
 Size: 1 graph, 192k vertices and 269k edges
-Number of Graphs: 1
+Number of Graphs: 0
 Child collections: SNAP (Stanford Network Analysis Platform) (SNAP%20(Stanford%20Network%20Analysis%20Platform)%201cd77eaee57147ce8263b2f9eaa2589c.md)
 Appeared in years: 2022
 Type of Collection: Subset of other collection
@@ -44,7 +44,7 @@ From [Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach:](https://ieee
 
 ![Untitled](Amazon%201b39a766deb747b8a3b51fc41cfc2e20/Untitled.png)
 
-<!-- == STOP RENDERING ==
+== STOP RENDERING ==
 
 look here: [https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data](https://github.com/mwallinger-tu/edge-path-bundling/tree/master/data) from [**Edge-Path Bundling: A Less Ambiguous Edge Bundling Approach**](../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Edge-Path%20Bundling%20A%20Less%20Ambiguous%20Edge%20Bundling%20%20fcfa5882e692481298cbee906e005c30.md) 
 
@@ -52,4 +52,4 @@ Note: Amazon is the only dataset not included in their GitHub. They randomly sam
 
 Original dataset: [http://snap.stanford.edu/data/#amazon](http://snap.stanford.edu/data/#amazon)
 
- doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph) -->
+ doi: 10.1145/1134707.1134732 (subgraph of a SNAP collection graph)

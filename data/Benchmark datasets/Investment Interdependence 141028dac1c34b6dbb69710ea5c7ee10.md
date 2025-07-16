@@ -1,7 +1,7 @@
 # Investment Interdependence
 
 Origin Notes: Data collected in a survey of Ohio State University students by D. W. Malone. Students were presented with two potential obstacles to investment in Columbus, Ohio’s business district and asked, “does obstacle A aggravate or intensify obstacle B?”
-graph features handled: directed edges, hierarchical
+graph features handled: Directed edges, Hierarchical
 Graph features in papers: hierarchical,layered graphs,n-layers
 Origin Paper: An introduction to the application of interpretive structural modeling (https://www.notion.so/An-introduction-to-the-application-of-interpretive-structural-modeling-6d2f2dbeecb94b9b833cc24ed98bacc2?pvs=21)
 Size: 25 nodes, 30 edges

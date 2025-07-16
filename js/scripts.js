@@ -1,6 +1,6 @@
 // <!-- code to generate the collapsible dataset info things -->
 
-generate_collapsible_dataset_info(){
+function generate_collapsible_dataset_info(){
   let s = ""
   for (let dataset_to_be_visualized of benchmark_datasets.map(d => d.Name)){
     s += `::: {.callout-note title="` + dataset_to_be_visualized + `" collapse=true appearance="minimal"}` + "\n\n"
@@ -11,6 +11,7 @@ generate_collapsible_dataset_info(){
     s += `<div id="named-list-` + name_cleanup(dataset_to_be_visualized) + `" data-bs-spy="scroll"  data-bs-target="db-nav-list" data-bs-offset="20" tabindex="0"></div>\n\n`
     s += "::: \n\n\n"
   }
+  return s;
   // console.log(s);
 }
 
@@ -34,7 +35,7 @@ function make_sparkline(bname){
   } catch { return "No sparkline information to show" }
 }
 
-generate_all_entry_rows(){
+function generate_all_entry_rows(){
   for (let benchmark_dataset of benchmark_datasets.map(d => d.Name).filter(n => n.includes("Forums"))){
     let bname = name_cleanup(benchmark_dataset)
     //console.log("bname", bname)

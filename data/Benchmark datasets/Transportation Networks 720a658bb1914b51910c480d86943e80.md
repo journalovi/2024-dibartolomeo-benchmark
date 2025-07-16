@@ -1,7 +1,7 @@
 # Transportation Networks
 
 Note: DIMACS USA Road Network source notes that the data has errors, namely missing major highways and bridges. We currently include only the subway layout networks in our files.
-graph features handled: directed edges, spatial
+graph features handled: Directed edges, Spatial
 Graph features in papers: clusters (generated),generic,large,generic,large,spatial,labeled nodes,spatial,compound graphs,directed edges,hierarchical,spatial,weighted edges,generic,spatial,bundled edges (generated),spatial,generic,categorical nodes,generic,topological,trees,weighted edges,octilinear,port constraints,terminals,clusters (pre-existing),generic,large,spatial,clusters (pre-existing),categorical nodes
 Origin Paper: A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts (https://www.notion.so/A-Random-Sampling-O-n-Force-calculation-Algorithm-for-Graph-Layouts-a0bc2ae6ebdb4e8cbddb924c0484cfad?pvs=21)
 Originally found at: http://www.diag.uniroma1.it//challenge9/download.shtml

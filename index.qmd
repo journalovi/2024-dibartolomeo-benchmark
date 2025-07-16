@@ -71,10 +71,11 @@ the [Journal of Visualization and Interaction](https://www.journalovi.org/). See
 ## Abstract {.unnumbered}
 
 <link rel="stylesheet" href="style/style.css"></link>
+<script src="js/collapsible_info.js"></script>
 
 ```{ojs}
 //| echo: false
-//| output: false
+//| output: false 
 Plot = import("https://esm.run/@observablehq/plot")
 ```
 
@@ -114,7 +115,7 @@ relevant graphs. We have re-created and archived graphs used in research for the
 
 ## Materials, Authorship, Acknowledgements, License, Conflicts
 
-###### Research materials
+###### Research materials 
 
 The supplemental material for this publication includes:
 
@@ -221,7 +222,7 @@ dict_of_graph_features_to_colors = {
   return d;
 }
 ```
-
+  
 <script>
 // alphabetically sorted list to keep the color assignment consistent (remember this is resorted later for the interactive filtering)
 // please then also adapt the styles.css, the code for which is generated in the ojs block below
@@ -331,8 +332,8 @@ graph_feature_tags.forEach((graph_feature_name) => {
 ## References {.unnumbered}
 
 ::: {#refs}
-:::
-
+::: 
+ 
 
 
 <script>
@@ -358,7 +359,7 @@ graph_feature_tags.forEach((graph_feature_name) => {
                     && (
                         name_cleanup(d.getAttribute('title')) == ident || d.getAttribute("data-collapse-id") == ident
                     )
-            );
+            ); 
 
             if (foundDiv) {
                 //console.log('Found div:', foundDiv);
@@ -383,4 +384,4 @@ graph_feature_tags.forEach((graph_feature_name) => {
             }
         });
     });
-  </script>
+  </script> 

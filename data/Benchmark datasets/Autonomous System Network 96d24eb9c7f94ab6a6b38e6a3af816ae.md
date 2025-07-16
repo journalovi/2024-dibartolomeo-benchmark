@@ -2,7 +2,7 @@
 
 Note: The 733-AS network is a subset of SNAP. We provide the link containing the original project, https://www.routeviews.org/routeviews/, and redirect to SNAP, https://snap.stanford.edu/data/as-733.html for the network data. In the dataset description they highlight how the graphs exhibit node and edge addition and deletion over time. 
 Origin Notes: The data was originally part of the University of Oregon’s RouteViews project. It was then used by Jure Leskovec et al. and eventually stored in SNAP.
-graph features handled: dynamic, generic
+graph features handled: Dynamic, Generic
 Graph features in papers: generic
 Origin Paper: Preserving Minority Structures in Graph Sampling (https://www.notion.so/Preserving-Minority-Structures-in-Graph-Sampling-d0f9e612663d434e85599c402c9b700c?pvs=21), Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations (https://www.notion.so/Graphs-over-Time-Densification-Laws-Shrinking-Diameters-and-Possible-Explanations-9b33c460755241c591e462c7326db101?pvs=21)
 Originally found at: https://www.routeviews.org/routeviews/

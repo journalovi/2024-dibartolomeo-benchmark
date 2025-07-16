@@ -2,17 +2,17 @@
 
 The information we collected is a by-product of a larger systematic review we conducted related to graph layout algorithms, which included 196 papers The following figure shows the original data collection process (from [@dibartolomeo2024evaluating]):
 
-![The sources used for the collection of papers. We started from the last 7 years of graph drawing, then integrated with the results from IEEE and Eurographics search, and then we also included all the most cited papers in Graph Drawing. The final result was 196 papers containing layout algorithm evaluations.](images/paper-sources.svg){fig.alt="The sources used for the collection of papers. We started from the last 7 years of graph drawing, then integrated with the results from IEEE and Eurographics search, and then we also included all the most cited papers in Graph Drawing. The final result was 196 papers containing layout algorithm evaluations."} 
+![The sources used for the collection of papers. We started from the last 7 years of graph drawing, then integrated with the results from IEEE and Eurographics search, and then we also included all the most cited papers in Graph Drawing. The final result was 196 papers containing layout algorithm evaluations.](images/paper-sources.svg){#fig-sources}
 
 The core of our data collection was the last seven years of Graph Drawing proceedings (264 papers in total), filtering out papers without computational evaluations.
 We further expanded our graph layout algorithm papers collection by searching IEEE Xplore and Wiley digital libraries to include papers from TVCG and CGF. Then, we checked all the citations in the papers we collected from Graph Drawing, and added to our collection all the papers that were cited more than 4 times in the last 6 years of graph drawing --- to make sure we included algorithm papers that were important, but not published at GD, on IEEE Xplore or on the Wiley digital library.
 For each paper, we collected which features were handled by the graph layout algorithm presented, and what dataset was used in the evaluation. When collecting features, we always prioritized the authors' own wording and description of the features. The tagging of the papers was done by two people at the same time, over two different passes for sanity-checking purposes. 
-Following this process, we tried to track down the datasets used in computational evaluations: (1) we first looked for official or linked supplemental material, (2) we next Googled the dataset or paper name, (3) finally, we emailed the authors. 
+We used the following process to track down the datasets used in computational evaluations: (1) we first looked for official or linked supplemental material, (2) we next Googled the dataset or paper name, (3) finally, we emailed the authors. 
 When in doubt about the artifact replication policy, we asked the owners or authors by email.
-In cases where it was explicitly mentioned that approval should be received before redistribution, we did not redistribute the datasets. However, if we received approval or did not receive an answer and found no explicit policy preventing redistirbution, we collected and stored the dataset to preserve it for future researchers. 
+In cases where it was explicitly mentioned that approval should be received before redistribution, we did not redistribute the datasets. However, if we received approval or did not receive an answer and found no explicit policy preventing redistribution, we collected and stored the dataset to preserve it for future researchers. 
 If any dataset owner or author discovers their own work in our collection and would like it removed, we kindly request that they contact us (see our [authorship statement](#nte-post-abstract) above), and we will promptly remove it. Furthermore, we want to emphasize that we do not assert any ownership rights over the datasets listed.
 
-The chart below shows the distribution of papers across different venues:
+Figure 1 shows the distribution of papers across different venues:
 
 ```{ojs}
 //| echo: false
@@ -47,11 +47,11 @@ The chart below shows the distribution of papers across different venues:
 }
 ```
 
-The following one, instead, shows the distribution of collected papers' publication date:
+Figure 2 shows the distribution of collected papers' publication date:
 
 ```{ojs}
 //| echo: false
-//| fig-cap: "Chart showing the distribution of papers collected by year of publication. The bulk of the papers we collected were fairly recent---indeed, our collection process focused mostly on the last 7 years of Graph Drawing proceedings, but thanks to the snowballing process we used we were able to include many papers from previous years."
+//| fig-cap: "Chart showing the distribution of papers collected by year of publication. The bulk of the papers we collected were fairly recent---indeed, our collection process focused mostly on the last 7 years (2016-2023 at the time of writing) of Graph Drawing proceedings, but thanks to the snowballing process we used we were able to include many papers from previous years."
 { 
   let d = []
   let year_range = [1980, 2024]

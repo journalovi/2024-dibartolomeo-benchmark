@@ -4,14 +4,14 @@ The following chart shows how many times we found a dataset being used in the pa
 
 ```{ojs}
 //| echo: false
-//| fig-cap: "This barchart shows, for the top 20 most used datasets, the number of times a dataset was used in collected papers."
+//| fig-cap: "This barchart shows, for the top 14 most used datasets, the number of times a dataset was used in collected papers. All the other datasets are used only once in the collection."
 //| fig-alt: "A barchart showing the number of times a dataset was used in the papers in our survey. The most used dataset is Rome-Lib, followed by assorted collaboration networks (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from C.Walshaw."
 { 
     let d = []
     let allbenchmarkdatasets = [...new Set(literature.map(l => l["Dataset tag relations"].split("(")[0].trim()))].filter(a => a != "")
   
     allbenchmarkdatasets = allbenchmarkdatasets.filter(b => !b.includes("Custom"))
-    allbenchmarkdatasets = allbenchmarkdatasets.slice(0, 20)
+    allbenchmarkdatasets = allbenchmarkdatasets.slice(0, 14)
     //console.log(allbenchmarkdatasets)
 
     for (let dataset of allbenchmarkdatasets){
@@ -40,6 +40,8 @@ The following chart shows how many times we found a dataset being used in the pa
 
 In the data we collected, the most used dataset is 
 <a href="#Rome-Lib" class="dataset-link">Rome-Lib</a>, followed by <a href="#Assorted_collaboration_networks" class="dataset-link">assorted collaboration networks</a> (which in many cases refers to datasets of academic collaborations such as dblp or vispubdata). The third most used dataset is from <a href="#Walshaw" class="dataset-link">C.Walshaw</a> - it is important to note that the Walshaw dataset is available as part of other collections - for instance, its graphs are found in <a href="#SNAP" class="dataset-link">SNAP</a>. However, during the collection process, we preferred giving precedence to how the authors reported their own information. Thus, if the authors claimed the data was from the Walshaw collection, we reported it as such.
+
+In some cases, we grouped together datasets that share similar structural or contextual characteristics under a broader category — for example, Social Networks includes graphs from multiple sources such as Facebook, DBLP, and others. These graphs are often used interchangeably in layout evaluation papers, and while most papers only use one of them, we grouped them to reflect the broader trend of using social networks as a class of input graphs. We note, however, that this grouping may affect how the most-used datasets are ranked. In particular, counts for grouped categories like Social Networks reflect cumulative usage across all sources in the group, rather than implying that all papers used the full set.
 
 For each of the datasets collected as part of our process, we conducted a brief analysis of their contents. Where possible, the analysis includes information about the number of nodes per graph, the source of the dataset, which papers have used the dataset and what graph features they took into account. 
 
@@ -131,7 +133,7 @@ The following visualization shows the amount of datasets we collected per catego
 }
 ```
 
-Unfortunately, some of the datasets used in layout algorithm evaluations are not accessible anymore. Where possible, we still collected and reported all the information contained in the papers about the datasets, so that we can conserve an idea of what they contained. This phenomenon, as long as the information we could collect, is discussed in **Lost and Unavailable Datasets (@sec-lost)**.
+Unfortunately, some of the datasets used in layout algorithm evaluations are not accessible anymore. Where possible, we still collected and reported all the information contained in the papers about the datasets, so that we can conserve an idea of what they contained. This phenomenon, as well as the information we could collect, is discussed in **Lost and Unavailable Datasets (@sec-lost)**.
 
 ```{ojs}
 //| echo: false
@@ -169,9 +171,9 @@ Each dataset also contains a number of graph features specific to the graphs con
 
 ### Uniform Benchmark datasets {#sec-uniform-benchmark-datasets}
 
-**Uniform Benchmark** datasets are standalone widely used collections of graphs featuring uniform characteristics—usually simple, generic graphs, often used in evaluations that run over thousands of graphs to report average completion times, or other experiments where the reported metrics are usually aggregated.
+**Uniform Benchmark** datasets are standalone, widely used collections of graphs that share consistent structural characteristics — typically simple, synthetic, or randomly generated graphs. These benchmarks are often used in large-scale evaluations where experiments are run on thousands of graphs, and results are reported as aggregated metrics such as average running time or layout quality scores.
 
-Differently from the collections presented later in this section, an experiment that uses an Uniform Benchmark dataset aims to provide a general overview of the performance of a graph layout algorithm by testing on a large amount of graphs varying in size and density, rather than focusing on a specific type of graph.
+What distinguishes these benchmarks is that they are designed to test the general performance of layout algorithms across a wide range of input sizes and densities, rather than being tied to a particular real-world context or graph semantics. This is different from other collections presented later in this section, which may focus on graphs with specific structural patterns (e.g., social networks, hierarchical trees, storyline structures) or graphs drawn from a single domain.
 
 The first of these collapsible sections is shown already expanded, to give an example of the content that can be found in each of them. The content is generated dynamically based on the data we collected. 
 
@@ -395,7 +397,7 @@ From “[Aesthetic Discrimination of Graph Layouts](https://link.springer.com/ch
 ::: 
 
 A very common problem in graph drawing is approximating or computing the exact **crossing number** of a graph. 
-The datasets listed below are particularly useful when researchers are particularly useful for this task, as they contain graphs with <a href="#Known_crossing_number"><span class ="pill-tag pill_color_Known_crossing_number">Known crossing numbers</span></a>, so that other algorithms' results can be tested against them. 
+The datasets listed below are particularly useful for this task, as they contain graphs with <a href="#Known_crossing_number"><span class ="pill-tag pill_color_Known_crossing_number">Known crossing numbers</span></a>, so that other algorithms' results can be tested against them. 
 
 <a name="KnownCR"></a>
 
@@ -1079,7 +1081,23 @@ From “[DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by 
 
 ::: 
 
-One more of such collections is [Konect](http://konect.cc/). At the time of writing, though, the website for Konect has been down for a while. Both the data and the website are still accessible through [web archive](https://web.archive.org/web/20231201123711/http://www.konect.cc/)---thus we do not consider this a lost collection.
+<!--One more of such collections is [Konect](http://konect.cc/). At the time of writing, though, the website for Konect has been down for a while. Both the data and the website are still accessible through [web archive](https://web.archive.org/web/20231201123711/http://www.konect.cc/)---thus we do not consider this a lost collection.-->
+
+<a name="KONECT"></a>
+
+::: {.callout-note title="KONECT" collapse=true appearance="minimal"}
+
+Contains a large amount of networks, classified under various categories (features, context) and reports a large amount of statistics for each individual network. Some of the datasets contained in Konect are also available as part of other network repositories.
+
+The KONECT project is run at the University of Namur by Jérôme Kunegis.
+
+<div><b>Originally found at: </b><a href="http://konect.cc/">http://konect.cc/</a>
+</div><br>
+<div><b>Size: </b>1326 graphs.</div><br>
+<div><b>Origin paper: </b></div>
+<div class="row"><div class="col-4">[@konect]</div><div class="col-8">KONECT: The Koblenz Network Collection</div></div><br>
+
+:::
 
 #### Subsets of other collections {#sec-subsets}
 
@@ -2179,7 +2197,7 @@ One small region is expanded to show detail.
 
 ### Lost and unavailable datasets {#sec-lost}
 
-Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. A dataset that is not anymore accessible renders all the papers using it unfortunately not reproducible. Most of the instances we found became lost because of lack of maintenance of the original storage locations: websites, servers, or repositories. This is, unfortunately, a significant issue in science, which is now hopefully gaining more and more attention.
+Unfortunately, some of the datasets that were used in the papers in our corpus are lost, or not available anymore. A dataset that is not accessible anymore renders all the papers using it unfortunately not reproducible. Most of the instances we found became lost because of lack of maintenance of the original storage locations: websites, servers, or repositories. This is, unfortunately, a significant issue in science, which is now hopefully gaining more attention.
 
 "Loss" of a dataset does not exclusively mean that the entire, original dataset became lost, but also that a paper using a dataset with particular edits---such as interpreting a debate as a graph between the participants---has not documented well enough their process and did not link to the edited dataset. This makes it impossible to reproduce the results of the paper, and is further discussed in @sec-custom-made-datasets.
 

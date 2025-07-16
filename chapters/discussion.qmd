@@ -15,7 +15,7 @@ There is a large number of interesting **follow-up questions** that could be tac
 
 ```{ojs}
 //| echo: false
-//| fig-cap: "Date of publication of a dataset, compared to the dates of publications of papers using the dataset. A gray dot indicates the publication of the paper of the dataset, while a blue dot indicates the publication of a paper that uses the dataset. Darker blue dots mean more papers with the same datasets being published in the same year. Note that, in several instances, the paper presenting the dataset can be published after the dataset has already been used several times."
+//| fig-cap: "Date of publication of a dataset, compared to the dates of publications of papers using the dataset. A gray dot indicates the publication of the paper of the dataset, while a red dot indicates the publication of a paper that uses the dataset. Darker red dots mean more papers with the same datasets being published in the same year. Note that, in several instances, the paper presenting the dataset can be published after the dataset has already been used several times."
 {
     const svg = d3.create("svg")
         .attr("viewBox", [0, 0, 500, 400])
@@ -81,7 +81,7 @@ There is a large number of interesting **follow-up questions** that could be tac
                 .attr("cy", i * 20 + 20)
                 .attr("r", 2)
                 .style("opacity", 0.3)
-                .attr("fill", "steelblue")
+                .attr("fill", "red")
         }
     }
 

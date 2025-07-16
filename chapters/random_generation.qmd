@@ -15,24 +15,13 @@ The following is a practical example of a case where you would need to edit a ne
 
 While the creation of a synthetic dataset is a perfectly viable way to produce a benchmark set, in addition to replicability criteria (as discussed above), we also have to pay particular attention to a number of statistics related to the structure of graphs --- both when generating new datasets, and when slicing up existing datasets to reduce their size, or to create more graphs from a single, larger graph.
 
-The list of features to take into account to claim that a synthetic graph is _comparable_ to another one would be long, and perhaps out of the scope of this publication. These are just a few examples of what could be relevant:
+Comparing two synthetic graph collections meaningfully is not straightforward. Without shared generation procedures or metadata, it’s difficult to claim that they represent comparable input conditions for layout evaluation. A number of structural and contextual features may affect comparability — including, for example, graph size (nodes and edges), density, and distribution of components or motifs. Even small changes in these properties can have a significant impact on layout results.
 
-- **Size (nodes, edges):** The total number of nodes and edges in the graph, indicating its overall scale.
-- **Diameter:** The longest shortest path between any two nodes, showing the graph's maximum extent.
-- **Density:** The ratio of existing edges to possible edges, reflecting how closely knit the graph is.
-- **Motifs:** Recurring, significant subgraphs; identify which motifs occur more or less frequently than expected.
-- **Connectedness:** Evaluates both the number and sizes of graph components, along with detailed analysis per component.
-- **Centrality Measures (betweenness, closeness, degree):** Quantify the importance of nodes based on their position and connections within the graph.
-- **Special Cases:**
-  - **Layers:** Characteristics like number of layers, nodes per layer, and inter-layer connections.
-  - **Disjoint Groups:** The count and size distribution of separate clusters, plus an analysis of each group's properties.
-  - **Overlapping Sets:** Number and size distribution of intersecting groups, along with detailed features.
-  - **Additional Node/Edge Data:** Information such as timestamps, attributes, or weights that add context to nodes/edges.
-  - **Dynamic:** Describes changes in the graph over time, including the nature and frequency of node/edge modifications.
+While a full discussion of all relevant factors is beyond the scope of this paper, we highlight this issue to caution against assuming that two synthetic datasets are interchangeable just because they were randomly generated. A more careful analysis of their structural characteristics is often necessary.
 
-The generation of random graphs that accurately mimic specific features presents a complex challenge, that has been explored abundantly in the past, but has found no universal solution yet. Two examples of popular models used to generate synthetic datasets are the Erdős-Rényi (ER) and the Barabási-Albert (BA) models, each one with their distinct focus and limitations:
+The generation of random graphs that accurately mimic specific features presents a complex challenge, that has been explored abundantly in the past, but has not resulted in a universal solution. Two examples of popular models used to generate synthetic datasets are the Erdős-Rényi (ER) @erdHos1960evolution and the Barabási-Albert (BA) @barabasi1999 models, each one with their distinct focus and limitations:
 
-The ER model excels in creating graphs with uniform edge distribution, ideal for testing an algorithm's ability to evenly space nodes and reduce edge crossings. However, it falls short in replicating the complex, non-uniform connections seen in real-world networks, limiting its applicability to scenarios requiring simplicity and randomness.
-Conversely, the BA model produces scale-free networks with a few highly connected nodes, reflecting the hierarchical structure of many natural and human-made systems. It challenges layout algorithms to effectively display these hubs without cluttering. The limitation here is its focus on growth and preferential attachment, which might not suit all types of networks, particularly those without clear hub structures.
+The ER model excels in creating graphs with uniform edge distribution @erdHos1960evolution, ideal for testing an algorithm's ability to evenly space nodes and reduce edge crossings. However, it falls short in replicating the complex, non-uniform connections seen in real-world networks, limiting its applicability to scenarios requiring simplicity and randomness.
+Conversely, the BA model produces scale-free networks with a few highly connected nodes @barabasi1999, reflecting the hierarchical structure of many natural and human-made systems. It challenges layout algorithms to effectively display these hubs without cluttering. The limitation here is its focus on growth and preferential attachment, which might not suit all types of networks, particularly those without clear hub structures.
 
 As there is no universal solution for random graph generation, _our recommendation_ is to try as much as possible to pay attention to research replicability criteria, such as redistributing the generated dataset as supplemental material in the paper.

@@ -1,3 +1,43 @@
+<div style="background-color: #f0f0f0; padding: 10px; margin-bottom: 20px; border-radius: 5px;">
+<div id="search-bar" width="100%" style="text-align: center; margin: 20px;">
+<input type="text" id="dataset-search" placeholder="Search datasets..." style="width: 300px; padding: 5px;" />
+</div>
+<div id="search-results" style="text-align: center; margin-bottom: 20px;">
+<i>Type to search for datasets by name or feature. Results will appear here.</i>
+</div> 
+</div>
+
+```{ojs}
+//| echo: false
+//| output: false
+console.log(benchmark_datasets)
+document.getElementById('dataset-search').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    // Example: filter and log matching dataset names
+    const matches = benchmark_datasets.filter(d => {
+      const nameMatch = d.Name && d.Name.toLowerCase().includes(query);
+      const featureMatch = d["graph features handled"] && d["graph features handled"].toLowerCase().includes(query);
+      return nameMatch || featureMatch;
+    });
+    // You can replace this with code to update the UI with the filtered results
+    const resultsContainer = document.getElementById('search-results');
+    resultsContainer.innerHTML = ''; // Clear previous results
+    if (matches.length > 0 && query.length > 0) {
+        resultsContainer.innerHTML = `<strong>Found ${matches.length} matching datasets:</strong>`;
+        matches.forEach(match => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.innerHTML = `<a class="dataset-link" href="#${name_cleanup(match.Name)}">${match.Name}</a> - ${match["graph features handled"] || "No features listed"}`;
+            resultsContainer.appendChild(resultItem);
+        });
+    } else if (query.length > 0) {
+        resultsContainer.innerHTML = '<i>No matching datasets found.</i>';
+    } else {
+        resultsContainer.innerHTML = '<i>Type to search for datasets by name or feature. Results will appear here.</i>';
+    }
+});
+```
+
 ::: {.callout-note appearance="simple" icon=fals title="Tag-filtered Navigation"}
 The following interactive filtering system is an initial overview over the contents of the paper, and can be used to navigate and identify datasets and papers easily. The left column contains all the properties used to tag graphs in the datasets (additional information about the nature of these tags can be found in @sec-collection-process and @sec-data-processing). Each tag has an associated checkbox: selecting a tag (or more than one) will filter the datasets and papers to only show those that contain the selected tags. The middle column contains the datasets, and the right column contains the papers. Clicking on a dataset or paper will scroll the page to the corresponding section in the paper. The datasets and papers are sorted alphabetically by name and citation name, respectively. The tags, datasets, and papers are generated from the data in the repository, and are updated automatically when the data changes.
 :::
