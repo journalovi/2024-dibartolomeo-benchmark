@@ -1,6 +1,7 @@
 project:
   type: website
   title: "GD benchmark sets"
+  output-dir: .
   preview:
     browser: true
     watch-inputs: true
@@ -18,3 +19,8 @@ number-depth: 2
 
 editor:
   render-on-save: true
+
+citations-hover: false
+footnotes-hover: false
+crossrefs-hover: false
+

@@ -155,6 +155,9 @@ Unfortunately, some of the datasets used in layout algorithm evaluations are not
     color: {
       scheme: "PiYg" 
     },
+    x: {
+      domain: [0, 15]
+    },
     marks: [
       Plot.barX(d, {x: "count", y: "collection_type", fill: "collection_type", inset: 2, sort: {y: "x", reverse: true}}),
       Plot.axisY({label: null, lineWidth: 12, marginLeft: 150}),
