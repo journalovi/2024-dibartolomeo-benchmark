@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>collection_process – GD benchmark sets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a202ed359b7240dcab911ed64cbd0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-collection-process" id="toc-sec-collection-process" class="nav-link active" data-scroll-target="#sec-collection-process"><span class="header-section-number">1</span> Collection process</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="sec-collection-process" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Collection process</h1>
+<p>The information we collected is a by-product of a larger systematic review we conducted related to graph layout algorithms, which included 196 papers The following figure shows the original data collection process (from <span class="citation" data-cites="dibartolomeo2024evaluating">[@dibartolomeo2024evaluating]</span>):</p>
+<div id="fig-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paper-sources.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The sources used for the collection of papers. We started from the last 7 years of graph drawing, then integrated with the results from IEEE and Eurographics search, and then we also included all the most cited papers in Graph Drawing. The final result was 196 papers containing layout algorithm evaluations.
+</figcaption>
+</figure>
+</div>
+<p>The core of our data collection was the last seven years of Graph Drawing proceedings (264 papers in total), filtering out papers without computational evaluations. We further expanded our graph layout algorithm papers collection by searching IEEE Xplore and Wiley digital libraries to include papers from TVCG and CGF. Then, we checked all the citations in the papers we collected from Graph Drawing, and added to our collection all the papers that were cited more than 4 times in the last 6 years of graph drawing — to make sure we included algorithm papers that were important, but not published at GD, on IEEE Xplore or on the Wiley digital library. For each paper, we collected which features were handled by the graph layout algorithm presented, and what dataset was used in the evaluation. When collecting features, we always prioritized the authors’ own wording and description of the features. The tagging of the papers was done by two people at the same time, over two different passes for sanity-checking purposes. We used the following process to track down the datasets used in computational evaluations: (1) we first looked for official or linked supplemental material, (2) we next Googled the dataset or paper name, (3) finally, we emailed the authors. When in doubt about the artifact replication policy, we asked the owners or authors by email. In cases where it was explicitly mentioned that approval should be received before redistribution, we did not redistribute the datasets. However, if we received approval or did not receive an answer and found no explicit policy preventing redistribution, we collected and stored the dataset to preserve it for future researchers. If any dataset owner or author discovers their own work in our collection and would like it removed, we kindly request that they contact us (see our <a href="#nte-post-abstract">authorship statement</a> above), and we will promptly remove it. Furthermore, we want to emphasize that we do not assert any ownership rights over the datasets listed.</p>
+<p>Figure 1 shows the distribution of papers across different venues:</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="19" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 18;"><span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>{ </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> d <span class="op">=</span> []</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> allbenchmarkdatasets <span class="op">=</span> [<span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(literature<span class="op">.</span><span class="fu">map</span>(l <span class="kw">=&gt;</span> l[<span class="st">"Conference"</span>]<span class="op">.</span><span class="fu">split</span>(<span class="st">","</span>)<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">trim</span>()))<span class="op">.</span><span class="fu">flat</span>()<span class="op">.</span><span class="fu">map</span>(a <span class="kw">=&gt;</span> {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (a <span class="op">==</span> <span class="st">"EuroVis"</span>) <span class="cf">return</span> <span class="st">"Computer Graphics Forum"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">return</span> a<span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  }))]<span class="op">.</span><span class="fu">filter</span>(a <span class="kw">=&gt;</span> a <span class="op">!=</span> <span class="st">""</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> dataset <span class="kw">of</span> allbenchmarkdatasets){</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> literature_entries_with_this_dataset <span class="op">=</span> literature<span class="op">.</span><span class="fu">filter</span>(l <span class="kw">=&gt;</span> l[<span class="st">"Conference"</span>]<span class="op">.</span><span class="fu">includes</span>(dataset))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (literature_entries_with_this_dataset<span class="op">.</span><span class="at">length</span> <span class="op">&lt;</span> <span class="dv">2</span>) <span class="cf">continue</span><span class="op">;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="fu">push</span>({<span class="st">"dataset"</span><span class="op">:</span> dataset<span class="op">,</span> <span class="st">"count"</span><span class="op">:</span> literature_entries_with_this_dataset<span class="op">.</span><span class="at">length</span>})</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">scheme</span><span class="op">:</span> <span class="st">"category10"</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> {}<span class="op">,</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">barX</span>(d<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"dataset"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"dataset"</span><span class="op">,</span><span class="dt">inset</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">sort</span><span class="op">:</span> {<span class="dt">y</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span>}})<span class="op">,</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">axisY</span>({<span class="dt">label</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">lineWidth</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">150</span><span class="op">,</span> <span class="dt">marginTop</span><span class="op">:</span> <span class="dv">20</span>})<span class="op">,</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">text</span>([<span class="st">'Venues where the papers where published'</span>]<span class="op">,</span> {<span class="dt">frameAnchor</span><span class="op">:</span> <span class="st">"Top"</span><span class="op">,</span><span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-ojs-cell-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ojs-cell-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="ojs-cell-1" data-nodetype="expression">
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ojs-cell-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Chart showing the distribution of papers collected across different venues. While the most occurrences are from Graph Drawing, a significant number of entries comes from TVCG and CGF.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Figure 2 shows the distribution of collected papers’ publication date:</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="54" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 53;"><span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>{ </span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> d <span class="op">=</span> []</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> year_range <span class="op">=</span> [<span class="dv">1980</span><span class="op">,</span> <span class="dv">2024</span>]</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> year <span class="op">=</span> year_range[<span class="dv">0</span>]<span class="op">;</span> year <span class="op">&lt;</span> year_range[<span class="dv">1</span>]<span class="op">;</span> year<span class="op">++</span>){</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> literature_entries_with_this_year <span class="op">=</span> literature<span class="op">.</span><span class="fu">filter</span>(l <span class="kw">=&gt;</span> <span class="pp">parseInt</span>(l[<span class="st">"Year"</span>]) <span class="op">==</span> year)<span class="op">;</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="fu">push</span>({<span class="st">"year"</span><span class="op">:</span> year<span class="op">,</span> <span class="st">"count"</span><span class="op">:</span> literature_entries_with_this_year<span class="op">.</span><span class="at">length</span>})</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">range</span><span class="op">:</span> [<span class="st">"steelblue"</span>]</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">barX</span>(d<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span><span class="op">,</span> <span class="dt">inset</span><span class="op">:</span> <span class="dv">2</span>})<span class="op">,</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">axisY</span>({</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>        <span class="dt">label</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> </span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>        <span class="dt">lineWidth</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">150</span><span class="op">,</span> </span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        <span class="dt">marginTop</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="dt">tickFormat</span><span class="op">:</span> year <span class="kw">=&gt;</span> year <span class="op">%</span> <span class="dv">5</span> <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">""</span> <span class="op">+</span> year <span class="op">:</span> <span class="st">""</span><span class="op">,</span> <span class="co">// Only show ticks for years divisible by 5</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>      })<span class="op">,</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">text</span>([<span class="st">'Year of publication of the papers included in the survey'</span>]<span class="op">,</span> {<span class="dt">frameAnchor</span><span class="op">:</span> <span class="st">"Top"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-ojs-cell-2" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ojs-cell-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ojs-cell-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Chart showing the distribution of papers collected by year of publication. The bulk of the papers we collected were fairly recent—indeed, our collection process focused mostly on the last 7 years (2016-2023 at the time of writing) of Graph Drawing proceedings, but thanks to the snowballing process we used we were able to include many papers from previous years.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>After collecting the datasets, we looked more in-depth into their contents, running analysis on a number of statistics associated with the graphs contained in them. Based on common metrics reported in <span class="citation" data-cites="dibartolomeo2024evaluating">@dibartolomeo2024evaluating</span>, we collect and plot statistics about the datasets: distribution of number of nodes, edges, mean degree and maximum degree. Additionally, we collected all the descriptions of the datasets we could find in the literature, which can contain relevant information about the origin of the dataset or its content, and we collected figures representing the content of the datasets taken from papers that use it, to give a visual representation and an immediate idea of the graphs contained in it.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InsgXG4gIGxldCBkID0gW11cbiAgbGV0IGFsbGJlbmNobWFya2RhdGFzZXRzID0gWy4uLm5ldyBTZXQobGl0ZXJhdHVyZS5tYXAobCA9PiBsW1wiQ29uZmVyZW5jZVwiXS5zcGxpdChcIixcIikubWFwKGQgPT4gZC50cmltKCkpKS5mbGF0KCkubWFwKGEgPT4ge1xuICAgIGlmIChhID09IFwiRXVyb1Zpc1wiKSByZXR1cm4gXCJDb21wdXRlciBHcmFwaGljcyBGb3J1bVwiXG4gICAgZWxzZSByZXR1cm4gYTtcbiAgfSkpXS5maWx0ZXIoYSA9PiBhICE9IFwiXCIpXG5cbiAgZm9yIChsZXQgZGF0YXNldCBvZiBhbGxiZW5jaG1hcmtkYXRhc2V0cyl7XG4gICAgbGV0IGxpdGVyYXR1cmVfZW50cmllc193aXRoX3RoaXNfZGF0YXNldCA9IGxpdGVyYXR1cmUuZmlsdGVyKGwgPT4gbFtcIkNvbmZlcmVuY2VcIl0uaW5jbHVkZXMoZGF0YXNldCkpXG5cbiAgICBpZiAobGl0ZXJhdHVyZV9lbnRyaWVzX3dpdGhfdGhpc19kYXRhc2V0Lmxlbmd0aCA8IDIpIGNvbnRpbnVlO1xuXG4gICAgZC5wdXNoKHtcImRhdGFzZXRcIjogZGF0YXNldCwgXCJjb3VudFwiOiBsaXRlcmF0dXJlX2VudHJpZXNfd2l0aF90aGlzX2RhdGFzZXQubGVuZ3RofSlcbiAgfVxuICBcbiAgcmV0dXJuIFBsb3QucGxvdCh7XG4gICAgXG4gICAgY29sb3I6IHtcbiAgICAgIHNjaGVtZTogXCJjYXRlZ29yeTEwXCJcbiAgICB9LFxuICAgIHk6IHt9LFxuICAgIG1hcmtzOiBbXG4gICAgICBQbG90LmJhclgoZCwge3g6IFwiY291bnRcIiwgeTogXCJkYXRhc2V0XCIsIGZpbGw6IFwiZGF0YXNldFwiLGluc2V0OiAyLCBzb3J0OiB7eTogXCJ4XCIsIHJldmVyc2U6IHRydWV9fSksXG4gICAgICBQbG90LmF4aXNZKHtsYWJlbDogbnVsbCwgbGluZVdpZHRoOiAxMiwgbWFyZ2luTGVmdDogMTUwLCBtYXJnaW5Ub3A6IDIwfSksXG4gICAgICBQbG90LnRleHQoWydWZW51ZXMgd2hlcmUgdGhlIHBhcGVycyB3aGVyZSBwdWJsaXNoZWQnXSwge2ZyYW1lQW5jaG9yOiBcIlRvcFwiLGR5OiAtMTB9KVxuICAgIF1cbiAgfSlcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InsgXG4gIGxldCBkID0gW11cbiAgbGV0IHllYXJfcmFuZ2UgPSBbMTk4MCwgMjAyNF1cbiAgZm9yIChsZXQgeWVhciA9IHllYXJfcmFuZ2VbMF07IHllYXIgPCB5ZWFyX3JhbmdlWzFdOyB5ZWFyKyspe1xuICAgIGxldCBsaXRlcmF0dXJlX2VudHJpZXNfd2l0aF90aGlzX3llYXIgPSBsaXRlcmF0dXJlLmZpbHRlcihsID0+IHBhcnNlSW50KGxbXCJZZWFyXCJdKSA9PSB5ZWFyKTtcblxuICAgIGQucHVzaCh7XCJ5ZWFyXCI6IHllYXIsIFwiY291bnRcIjogbGl0ZXJhdHVyZV9lbnRyaWVzX3dpdGhfdGhpc195ZWFyLmxlbmd0aH0pXG4gIH1cbiAgXG4gIHJldHVybiBQbG90LnBsb3Qoe1xuICAgIGNvbG9yOiB7XG4gICAgICByYW5nZTogW1wic3RlZWxibHVlXCJdXG4gICAgfSxcbiAgICBoZWlnaHQ6IDUwMCxcbiAgICBtYXJrczogW1xuICAgICAgUGxvdC5iYXJYKGQsIHt4OiBcImNvdW50XCIsIHk6IFwieWVhclwiLCBmaWxsOiBcInN0ZWVsYmx1ZVwiLCBpbnNldDogMn0pLFxuICAgICAgUGxvdC5heGlzWSh7XG4gICAgICAgIGxhYmVsOiBudWxsLCBcbiAgICAgICAgbGluZVdpZHRoOiAxMiwgXG4gICAgICAgIG1hcmdpbkxlZnQ6IDE1MCwgXG4gICAgICAgIG1hcmdpblRvcDogMjAsIFxuICAgICAgICB0aWNrRm9ybWF0OiB5ZWFyID0+IHllYXIgJSA1ID09PSAwID8gXCJcIiArIHllYXIgOiBcIlwiLCAvLyBPbmx5IHNob3cgdGlja3MgZm9yIHllYXJzIGRpdmlzaWJsZSBieSA1XG4gICAgICB9KSxcbiAgICAgIFBsb3QudGV4dChbJ1llYXIgb2YgcHVibGljYXRpb24gb2YgdGhlIHBhcGVycyBpbmNsdWRlZCBpbiB0aGUgc3VydmV5J10sIHtmcmFtZUFuY2hvcjogXCJUb3BcIiwgZHk6IC0xMH0pXG4gICAgXVxuICB9KVxufVxuIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../chapters";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

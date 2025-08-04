@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>interactive_filtering – GD benchmark sets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a202ed359b7240dcab911ed64cbd0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<div style="background-color: #f0f0f0; padding: 10px; margin-bottom: 20px; border-radius: 5px;">
+<div id="search-bar" width="100%" style="text-align: center; margin: 20px;">
+<p><input type="text" id="dataset-search" placeholder="Search datasets..." style="width: 300px; padding: 5px;"></p>
+</div>
+<div id="search-results" style="text-align: center; margin-bottom: 20px;">
+<p><i>Type to search for datasets by name or feature. Results will appear here.</i></p>
+</div>
+</div>
+<div class="cell hidden">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="13" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 12;"><span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(benchmark_datasets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="14" data-source-offset="-32"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'dataset-search'</span>)<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'input'</span><span class="op">,</span> <span class="kw">function</span>(e) {</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> query <span class="op">=</span> e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span><span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Example: filter and log matching dataset names</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> matches <span class="op">=</span> benchmark_datasets<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> {</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> nameMatch <span class="op">=</span> d<span class="op">.</span><span class="at">Name</span> <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">Name</span><span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(query)<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> featureMatch <span class="op">=</span> d[<span class="st">"graph features handled"</span>] <span class="op">&amp;&amp;</span> d[<span class="st">"graph features handled"</span>]<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(query)<span class="op">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> nameMatch <span class="op">||</span> featureMatch<span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">// You can replace this with code to update the UI with the filtered results</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> resultsContainer <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'search-results'</span>)<span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    resultsContainer<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">''</span><span class="op">;</span> <span class="co">// Clear previous results</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (matches<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> query<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        resultsContainer<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`&lt;strong&gt;Found </span><span class="sc">${</span>matches<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs"> matching datasets:&lt;/strong&gt;`</span><span class="op">;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        matches<span class="op">.</span><span class="fu">forEach</span>(match <span class="kw">=&gt;</span> {</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> resultItem <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            resultItem<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">'search-result-item'</span><span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>            resultItem<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`&lt;a class="dataset-link" href="#</span><span class="sc">${</span><span class="fu">name_cleanup</span>(match<span class="op">.</span><span class="at">Name</span>)<span class="sc">}</span><span class="vs">"&gt;</span><span class="sc">${</span>match<span class="op">.</span><span class="at">Name</span><span class="sc">}</span><span class="vs">&lt;/a&gt; - </span><span class="sc">${</span>match[<span class="st">"graph features handled"</span>] <span class="op">||</span> <span class="st">"No features listed"</span><span class="sc">}</span><span class="vs">`</span><span class="op">;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>            resultsContainer<span class="op">.</span><span class="fu">appendChild</span>(resultItem)<span class="op">;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (query<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        resultsContainer<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">'&lt;i&gt;No matching datasets found.&lt;/i&gt;'</span><span class="op">;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        resultsContainer<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">'&lt;i&gt;Type to search for datasets by name or feature. Results will appear here.&lt;/i&gt;'</span><span class="op">;</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Tag-filtered Navigation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tag-filtered Navigation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following interactive filtering system is an initial overview over the contents of the paper, and can be used to navigate and identify datasets and papers easily. The left column contains all the properties used to tag graphs in the datasets (additional information about the nature of these tags can be found in <strong>?@sec-collection-process</strong> and <strong>?@sec-data-processing</strong>). Each tag has an associated checkbox: selecting a tag (or more than one) will filter the datasets and papers to only show those that contain the selected tags. The middle column contains the datasets, and the right column contains the papers. Clicking on a dataset or paper will scroll the page to the corresponding section in the paper. The datasets and papers are sorted alphabetically by name and citation name, respectively. The tags, datasets, and papers are generated from the data in the repository, and are updated automatically when the data changes.</p>
+</div>
+</div>
+<div style="font-size: 0.9em">
+<div class="row">
+<div class="col-4 justify-content-center">
+<b>Tags</b>
+</div>
+<div class="col-4 justify-content-center">
+<b>Datsets</b>
+</div>
+<div class="col-4 justify-content-center">
+<b>Papers</b>
+</div>
+</div>
+<div class="row" style="max-height: 600px">
+<div class="col-4" style="overflow-y:scroll; padding:2%">
+<div id="checkbox-container" class="d-flex flex-column align-items-start">
+
+</div>
+</div>
+<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll; padding:2%">
+<div id="datasetlinkslist-container">
+<div id="Airlines_Migrations_and_Air_Traffic-link">
+<a href="#Airlines_Migrations_and_Air_Traffic" class="dataset-link">Airlines, Migrations, and Air Traffic</a>
+</div>
+<div id="Amazon-link">
+<a href="#Amazon" class="dataset-link">Amazon</a>
+</div>
+<div id="Assorted_Collaboration_Network-link">
+<a href="#Assorted_Collaboration_Network" class="dataset-link">Assorted Collaboration Network</a>
+</div>
+<div id="Assorted_Fiscal_Network-link">
+<a href="#Assorted_Fiscal_Network" class="dataset-link">Assorted Fiscal Network</a>
+</div>
+<div id="ATT-link">
+<a href="#ATT" class="dataset-link">AT&amp;T</a>
+</div>
+<div id="Autonomous_System_Network-link">
+<a href="#Autonomous_System_Network" class="dataset-link">Autonomous System Network</a>
+</div>
+<div id="Biological_Pathways_KEGG-link">
+<a href="#Biological_Pathways_KEGG" class="dataset-link">Biological Pathways (KEGG)</a>
+</div>
+<div id="Blogposts_Tweets_and_Forums-link">
+<a href="#Blogposts_Tweets_and_Forums" class="dataset-link">Blogposts, Tweets, and Forums</a>
+</div>
+<div id="Business_Processes-link">
+<a href="#Business_Processes" class="dataset-link">Business Processes</a>
+</div>
+<div id="California-link">
+<a href="#California" class="dataset-link">California</a>
+</div>
+<div id="Car_Features-link">
+<a href="#Car_Features" class="dataset-link">Car Features</a>
+</div>
+<div id="Chess_Games-link">
+<a href="#Chess_Games" class="dataset-link">Chess Games</a>
+</div>
+<div id="World_Greenhouse_Gas_Emissions-link">
+<a href="#World_Greenhouse_Gas_Emissions" class="dataset-link">World Greenhouse Gas Emissions</a>
+</div>
+<div id="Co-Phylogenetic_Trees-link">
+<a href="#Co-Phylogenetic_Trees" class="dataset-link">Co-Phylogenetic Trees</a>
+</div>
+<div id="Code_Dependency_Graphs-link">
+<a href="#Code_Dependency_Graphs" class="dataset-link">Code Dependency Graphs</a>
+</div>
+<div id="Complete_Graphs-link">
+<a href="#Complete_Graphs" class="dataset-link">Complete Graphs</a>
+</div>
+<div id="World_Maps-link">
+<a href="#World_Maps" class="dataset-link">World Maps</a>
+</div>
+<div id="Control_Flow_Graphs-link">
+<a href="#Control_Flow_Graphs" class="dataset-link">Control Flow Graphs</a>
+</div>
+<div id="Enron-link">
+<a href="#Enron" class="dataset-link">Enron</a>
+</div>
+<div id="FM3-link">
+<a href="#FM3" class="dataset-link">FM3</a>
+</div>
+<div id="GION-link">
+<a href="#GION" class="dataset-link">GION</a>
+</div>
+<div id="Graphviz_Examples-link">
+<a href="#Graphviz_Examples" class="dataset-link">Graphviz Examples</a>
+</div>
+<div id="Internet_Mapping_Project-link">
+<a href="#Internet_Mapping_Project" class="dataset-link">Internet Mapping Project</a>
+</div>
+<div id="Investment_Interdependence-link">
+<a href="#Investment_Interdependence" class="dataset-link">Investment Interdependence</a>
+</div>
+<div id="KnownCR-link">
+<a href="#KnownCR" class="dataset-link">KnownCR</a>
+</div>
+<div id="Mathematics_Genealogy-link">
+<a href="#Mathematics_Genealogy" class="dataset-link">Mathematics Genealogy</a>
+</div>
+<div id="Matrix_Market-link">
+<a href="#Matrix_Market" class="dataset-link">Matrix Market</a>
+</div>
+<div id="Medical_Patient_Records-link">
+<a href="#Medical_Patient_Records" class="dataset-link">Medical Patient Records</a>
+</div>
+<div id="Militarized_Interstate_Disputes_MID-link">
+<a href="#Militarized_Interstate_Disputes_MID" class="dataset-link">Militarized Interstate Disputes (MID)</a>
+</div>
+<div id="Network_Repository-link">
+<a href="#Network_Repository" class="dataset-link">Network Repository</a>
+</div>
+<div id="Neural_Network-link">
+<a href="#Neural_Network" class="dataset-link">Neural Network</a>
+</div>
+<div id="North_DAGs-link">
+<a href="#North_DAGs" class="dataset-link">North DAGs</a>
+</div>
+<div id="Padia_Stories-link">
+<a href="#Padia_Stories" class="dataset-link">Padia Stories</a>
+</div>
+<div id="Pajek-link">
+<a href="#Pajek" class="dataset-link">Pajek</a>
+</div>
+<div id="Protein_Interactions_Publications-link">
+<a href="#Protein_Interactions_Publications" class="dataset-link">Protein Interactions (Publications)</a>
+</div>
+<div id="RandDAG-link">
+<a href="#RandDAG" class="dataset-link">RandDAG</a>
+</div>
+<div id="Rome-Lib-link">
+<a href="#Rome-Lib" class="dataset-link">Rome-Lib</a>
+</div>
+<div id="Scotch_Graph_Collection-link">
+<a href="#Scotch_Graph_Collection" class="dataset-link">Scotch Graph Collection</a>
+</div>
+<div id="SNAP_Stanford_Network_Analysis_Platform-link">
+<a href="#SNAP_Stanford_Network_Analysis_Platform" class="dataset-link">SNAP (Stanford Network Analysis Platform)</a>
+</div>
+<div id="Social_Networks-link">
+<a href="#Social_Networks" class="dataset-link">Social Networks</a>
+</div>
+<div id="Stanford_GraphBase-link">
+<a href="#Stanford_GraphBase" class="dataset-link">Stanford GraphBase</a>
+</div>
+<div id="SteinLib-link">
+<a href="#SteinLib" class="dataset-link">SteinLib</a>
+</div>
+<div id="Storylines_Movie_Plots-link">
+<a href="#Storylines_Movie_Plots" class="dataset-link">Storylines (Movie Plots)</a>
+</div>
+<div id="SuiteSparse_Matrix_Collection-link">
+<a href="#SuiteSparse_Matrix_Collection" class="dataset-link">SuiteSparse Matrix Collection</a>
+</div>
+<div id="Transportation_Networks-link">
+<a href="#Transportation_Networks" class="dataset-link">Transportation Networks</a>
+</div>
+<div id="Tree_of_Life-link">
+<a href="#Tree_of_Life" class="dataset-link">Tree of Life</a>
+</div>
+<div id="Walshaw-link">
+<a href="#Walshaw" class="dataset-link">Walshaw</a>
+</div>
+<div id="WebCompute-link">
+<a href="#WebCompute" class="dataset-link">WebCompute</a>
+</div>
+<div id="World_Bank_Trade_Data-link">
+<a href="#World_Bank_Trade_Data" class="dataset-link">World Bank Trade Data</a>
+</div>
+</div>
+</div>
+<div class="col-4 d-flex flex-column align-items-start" style="overflow-y:scroll; padding:2%">
+<div id="paperlinkslist-container">
+<div id="Ahmed2020-link">
+<span class="citation" data-cites="Ahmed2020">[@Ahmed2020]</span>
+</div>
+<div id="Alegra2021-link">
+<span class="citation" data-cites="Alegra2021">[@Alegra2021]</span>
+</div>
+<div id="Angori2019-link">
+<span class="citation" data-cites="Angori2019">[@Angori2019]</span>
+</div>
+<div id="Arleo2019-link">
+<span class="citation" data-cites="Arleo2019">[@Arleo2019]</span>
+</div>
+<div id="Bach2014-link">
+<span class="citation" data-cites="Bach2014">[@Bach2014]</span>
+</div>
+<div id="Ballweg2018-link">
+<span class="citation" data-cites="Ballweg2018">[@Ballweg2018]</span>
+</div>
+<div id="Barnes1986-link">
+<span class="citation" data-cites="Barnes1986">[@Barnes1986]</span>
+</div>
+<div id="Bartolomeo2021-link">
+<span class="citation" data-cites="Bartolomeo2021">[@Bartolomeo2021]</span>
+</div>
+<div id="Bekos2007-link">
+<span class="citation" data-cites="Bekos2007">[@Bekos2007]</span>
+</div>
+<div id="Bekos2018-link">
+<span class="citation" data-cites="Bekos2018">[@Bekos2018]</span>
+</div>
+<div id="Bertault2000-link">
+<span class="citation" data-cites="Bertault2000">[@Bertault2000]</span>
+</div>
+<div id="Bhatt1984-link">
+<span class="citation" data-cites="Bhatt1984">[@Bhatt1984]</span>
+</div>
+<div id="Bhore2021-link">
+<span class="citation" data-cites="Bhore2021">[@Bhore2021]</span>
+</div>
+<div id="Biedl2018-link">
+<span class="citation" data-cites="Biedl2018">[@Biedl2018]</span>
+</div>
+<div id="Binucci2016-link">
+<span class="citation" data-cites="Binucci2016">[@Binucci2016]</span>
+</div>
+<div id="Binucci2021-link">
+<span class="citation" data-cites="Binucci2021">[@Binucci2021]</span>
+</div>
+<div id="Brsig2020-link">
+<span class="citation" data-cites="Brsig2020">[@Brsig2020]</span>
+</div>
+<div id="Buchheim2006-link">
+<span class="citation" data-cites="Buchheim2006">[@Buchheim2006]</span>
+</div>
+<div id="Buchheim2008-link">
+<span class="citation" data-cites="Buchheim2008">[@Buchheim2008]</span>
+</div>
+<div id="Buchin2011-link">
+<span class="citation" data-cites="Buchin2011">[@Buchin2011]</span>
+</div>
+<div id="Calamoneri2018-link">
+<span class="citation" data-cites="Calamoneri2018">[@Calamoneri2018]</span>
+</div>
+<div id="Castermans2018-link">
+<span class="citation" data-cites="Castermans2018">[@Castermans2018]</span>
+</div>
+<div id="Chen2019-link">
+<span class="citation" data-cites="Chen2019">[@Chen2019]</span>
+</div>
+<div id="Chimani2008-link">
+<span class="citation" data-cites="Chimani2008">[@Chimani2008]</span>
+</div>
+<div id="Chimani2012-link">
+<span class="citation" data-cites="Chimani2012">[@Chimani2012]</span>
+</div>
+<div id="Chimani2021-link">
+<span class="citation" data-cites="Chimani2021">[@Chimani2021]</span>
+</div>
+<div id="Clancy2019-link">
+<span class="citation" data-cites="Clancy2019">[@Clancy2019]</span>
+</div>
+<div id="DIBATTISTA2000-link">
+<span class="citation" data-cites="DIBATTISTA2000">[@DIBATTISTA2000]</span>
+</div>
+<div id="DRGraph21-link">
+<span class="citation" data-cites="DRGraph21">[@DRGraph21]</span>
+</div>
+<div id="Dang2016-link">
+<span class="citation" data-cites="dang2016">[@dang2016]</span>
+</div>
+<div id="Demel2018-link">
+<span class="citation" data-cites="Demel2018">[@Demel2018]</span>
+</div>
+<div id="Devkota2019-link">
+<span class="citation" data-cites="Devkota2019">[@Devkota2019]</span>
+</div>
+<div id="DiBattista1997b-link">
+<span class="citation" data-cites="DiBattista1997b">[@DiBattista1997b]</span>
+</div>
+<div id="DiGiacomo2020-link">
+<span class="citation" data-cites="DiGiacomo2020">[@DiGiacomo2020]</span>
+</div>
+<div id="Didimo2018-link">
+<span class="citation" data-cites="Didimo2018">[@Didimo2018]</span>
+</div>
+<div id="Didimo2019-link">
+<span class="citation" data-cites="Didimo2019">[@Didimo2019]</span>
+</div>
+<div id="Dwyer2013-link">
+<span class="citation" data-cites="Dwyer2013">[@Dwyer2013]</span>
+</div>
+<div id="Eades2018-link">
+<span class="citation" data-cites="Eades2018">[@Eades2018]</span>
+</div>
+<div id="Ersoy2011-link">
+<span class="citation" data-cites="Ersoy2011">[@Ersoy2011]</span>
+</div>
+<div id="Firman2019-link">
+<span class="citation" data-cites="Firman2019">[@Firman2019]</span>
+</div>
+<div id="Forster2002-link">
+<span class="citation" data-cites="Forster2002">[@Forster2002]</span>
+</div>
+<div id="Forster2005-link">
+<span class="citation" data-cites="Forster2005">[@Forster2005]</span>
+</div>
+<div id="Frishman2008-link">
+<span class="citation" data-cites="Frishman2008">[@Frishman2008]</span>
+</div>
+<div id="Frster2021-link">
+<span class="citation" data-cites="Frster2021">[@Frster2021]</span>
+</div>
+<div id="Fruchterman1991-link">
+<span class="citation" data-cites="Fruchterman1991">[@Fruchterman1991]</span>
+</div>
+<div id="Fulek2018-link">
+<span class="citation" data-cites="Fulek2018">[@Fulek2018]</span>
+</div>
+<div id="Gange2011-link">
+<span class="citation" data-cites="Gange2011">[@Gange2011]</span>
+</div>
+<div id="Gansner1993-link">
+<span class="citation" data-cites="Gansner1993">[@Gansner1993]</span>
+</div>
+<div id="Gansner2005-link">
+<span class="citation" data-cites="Gansner2005">[@Gansner2005]</span>
+</div>
+<div id="Gansner2005b-link">
+<span class="citation" data-cites="Gansner2005b">[@Gansner2005b]</span>
+</div>
+<div id="Gansner2006-link">
+<span class="citation" data-cites="Gansner2006">[@Gansner2006]</span>
+</div>
+<div id="Gansner2013-link">
+<span class="citation" data-cites="Gansner2013">[@Gansner2013]</span>
+</div>
+<div id="Gibson2012-link">
+<span class="citation" data-cites="Gibson2012">[@Gibson2012]</span>
+</div>
+<div id="Giovannangeli2021-link">
+<span class="citation" data-cites="Giovannangeli2021">[@Giovannangeli2021]</span>
+</div>
+<div id="Grabowicz2014-link">
+<span class="citation" data-cites="Grabowicz2014">[@Grabowicz2014]</span>
+</div>
+<div id="Gronemann2016-link">
+<span class="citation" data-cites="Gronemann2016">[@Gronemann2016]</span>
+</div>
+<div id="Gronemann2016b-link">
+<span class="citation" data-cites="Gronemann2016b">[@Gronemann2016b]</span>
+</div>
+<div id="Gutwenger2004-link">
+<span class="citation" data-cites="Gutwenger2004">[@Gutwenger2004]</span>
+</div>
+<div id="Hachul2005-link">
+<span class="citation" data-cites="Hachul2005">[@Hachul2005]</span>
+</div>
+<div id="Hachul2006-link">
+<span class="citation" data-cites="Hachul2006">[@Hachul2006]</span>
+</div>
+<div id="Heinsohn2018-link">
+<span class="citation" data-cites="Heinsohn2018">[@Heinsohn2018]</span>
+</div>
+<div id="Henry2007-link">
+<span class="citation" data-cites="Henry2007">[@Henry2007]</span>
+</div>
+<div id="Holten2006-link">
+<span class="citation" data-cites="Holten2006">[@Holten2006]</span>
+</div>
+<div id="Holten2009-link">
+<span class="citation" data-cites="Holten2009">[@Holten2009]</span>
+</div>
+<div id="Hong2019-link">
+<span class="citation" data-cites="Hong2019">[@Hong2019]</span>
+</div>
+<div id="Huang2016-link">
+<span class="citation" data-cites="Huang2016">[@Huang2016]</span>
+</div>
+<div id="Hummel2019-link">
+<span class="citation" data-cites="Hummel2019">[@Hummel2019]</span>
+</div>
+<div id="Jabrayilov2016-link">
+<span class="citation" data-cites="Jabrayilov2016">[@Jabrayilov2016]</span>
+</div>
+<div id="Jacomy2014-link">
+<span class="citation" data-cites="Jacomy2014">[@Jacomy2014]</span>
+</div>
+<div id="Jnger2018-link">
+<span class="citation" data-cites="Jnger2018">[@Jnger2018]</span>
+</div>
+<div id="KOREN20051867-link">
+<span class="citation" data-cites="KOREN20051867">[@KOREN20051867]</span>
+</div>
+<div id="Kindermann2018-link">
+<span class="citation" data-cites="Kindermann2018">[@Kindermann2018]</span>
+</div>
+<div id="Klawitter2018-link">
+<span class="citation" data-cites="Klawitter2018">[@Klawitter2018]</span>
+</div>
+<div id="Klawitter2021-link">
+<span class="citation" data-cites="Klawitter2021">[@Klawitter2021]</span>
+</div>
+<div id="Klemz2021-link">
+<span class="citation" data-cites="Klemz2021">[@Klemz2021]</span>
+</div>
+<div id="Lim2021-link">
+<span class="citation" data-cites="Lim2021">[@Lim2021]</span>
+</div>
+<div id="Lin2010-link">
+<span class="citation" data-cites="Lin2010">[@Lin2010]</span>
+</div>
+<div id="Liu2017-link">
+<span class="citation" data-cites="Liu2017">[@Liu2017]</span>
+</div>
+<div id="Mallach2019-link">
+<span class="citation" data-cites="Mallach2019">[@Mallach2019]</span>
+</div>
+<div id="Marner2014-link">
+<span class="citation" data-cites="Marner2014">[@Marner2014]</span>
+</div>
+<div id="Meidiana2019-link">
+<span class="citation" data-cites="Meidiana2019">[@Meidiana2019]</span>
+</div>
+<div id="Meulemans2013-link">
+<span class="citation" data-cites="Meulemans2013">[@Meulemans2013]</span>
+</div>
+<div id="Misue2019-link">
+<span class="citation" data-cites="Misue2019">[@Misue2019]</span>
+</div>
+<div id="Nachmanson2017-link">
+<span class="citation" data-cites="Nachmanson2017">[@Nachmanson2017]</span>
+</div>
+<div id="NanCao2011-link">
+<span class="citation" data-cites="NanCao2011">[@NanCao2011]</span>
+</div>
+<div id="Ni2018-link">
+<span class="citation" data-cites="Ni2018">[@Ni2018]</span>
+</div>
+<div id="Nickel2019-link">
+<span class="citation" data-cites="Nickel2019">[@Nickel2019]</span>
+</div>
+<div id="Niedermann2020-link">
+<span class="citation" data-cites="Niedermann2020">[@Niedermann2020]</span>
+</div>
+<div id="Nllenburg2010-link">
+<span class="citation" data-cites="Nllenburg2010">[@Nllenburg2010]</span>
+</div>
+<div id="Nllenburg2021-link">
+<span class="citation" data-cites="Nllenburg2021">[@Nllenburg2021]</span>
+</div>
+<div id="Nollenburg2011-link">
+<span class="citation" data-cites="Nollenburg2011">[@Nollenburg2011]</span>
+</div>
+<div id="Ogawa2010-link">
+<span class="citation" data-cites="Ogawa2010">[@Ogawa2010]</span>
+</div>
+<div id="Oikonomou2018-link">
+<span class="citation" data-cites="Oikonomou2018">[@Oikonomou2018]</span>
+</div>
+<div id="Olszewski2018-link">
+<span class="citation" data-cites="Olszewski2018">[@Olszewski2018]</span>
+</div>
+<div id="Ortali2018-link">
+<span class="citation" data-cites="Ortali2018">[@Ortali2018]</span>
+</div>
+<div id="Ortmann2017-link">
+<span class="citation" data-cites="Ortmann2017">[@Ortmann2017]</span>
+</div>
+<div id="Perri2020-link">
+<span class="citation" data-cites="Perri2020">[@Perri2020]</span>
+</div>
+<div id="Purchase2020-link">
+<span class="citation" data-cites="Purchase2020">[@Purchase2020]</span>
+</div>
+<div id="Qu2022-link">
+<span class="citation" data-cites="Qu2022">[@Qu2022]</span>
+</div>
+<div id="Raj2018-link">
+<span class="citation" data-cites="Raj2018">[@Raj2018]</span>
+</div>
+<div id="Regg2016-link">
+<span class="citation" data-cites="Regg2016">[@Regg2016]</span>
+</div>
+<div id="Sander1996-link">
+<span class="citation" data-cites="Sander1996">[@Sander1996]</span>
+</div>
+<div id="ShixiaLiu2013-link">
+<span class="citation" data-cites="ShixiaLiu2013">[@ShixiaLiu2013]</span>
+</div>
+<div id="Simonetto2018-link">
+<span class="citation" data-cites="Simonetto2018">[@Simonetto2018]</span>
+</div>
+<div id="Skambath2016-link">
+<span class="citation" data-cites="Skambath2016">[@Skambath2016]</span>
+</div>
+<div id="Sugiyama1981-link">
+<span class="citation" data-cites="Sugiyama1981">[@Sugiyama1981]</span>
+</div>
+<div id="Tanahashi2012-link">
+<span class="citation" data-cites="Tanahashi2012">[@Tanahashi2012]</span>
+</div>
+<div id="Tanahashi2015-link">
+<span class="citation" data-cites="Tanahashi2015">[@Tanahashi2015]</span>
+</div>
+<div id="Taurus2023-link">
+<span class="citation" data-cites="Taurus2023">[@Taurus2023]</span>
+</div>
+<div id="Wallinger2022-link">
+<span class="citation" data-cites="Wallinger2022">[@Wallinger2022]</span>
+</div>
+<div id="Walter2020-link">
+<span class="citation" data-cites="Walter2020">[@Walter2020]</span>
+</div>
+<div id="WeiweiCui2008-link">
+<span class="citation" data-cites="cui2008">[@cui2008]</span>
+</div>
+<div id="Wongsuphasawat2018-link">
+<span class="citation" data-cites="Wongsuphasawat2018">[@Wongsuphasawat2018]</span>
+</div>
+<div id="Wu2018-link">
+<span class="citation" data-cites="Wu2018">[@Wu2018]</span>
+</div>
+<div id="Wu2020-link">
+<span class="citation" data-cites="Wu2020">[@Wu2020]</span>
+</div>
+<div id="Zhang2010-link">
+<span class="citation" data-cites="Zhang2010">[@Zhang2010]</span>
+</div>
+<div id="Zhao2021-link">
+<span class="citation" data-cites="Zhao2021">[@Zhao2021]</span>
+</div>
+<div id="arleo2022-link">
+<span class="citation" data-cites="arleo2022">[@arleo2022]</span>
+</div>
+<div id="barth2002-link">
+<span class="citation" data-cites="barth2002">[@barth2002]</span>
+</div>
+<div id="bast2020-link">
+<span class="citation" data-cites="bast2020">[@bast2020]</span>
+</div>
+<div id="batik2022-link">
+<span class="citation" data-cites="batik2022">[@batik2022]</span>
+</div>
+<div id="bekos2022-link">
+<span class="citation" data-cites="bekos2022">[@bekos2022]</span>
+</div>
+<div id="binucci2022-link">
+<span class="citation" data-cites="binucci2022">[@binucci2022]</span>
+</div>
+<div id="binucci2023-link">
+<span class="citation" data-cites="binucci2023">[@binucci2023]</span>
+</div>
+<div id="brandes1998-link">
+<span class="citation" data-cites="brandes1998">[@brandes1998]</span>
+</div>
+<div id="brandes2002-link">
+<span class="citation" data-cites="brandes2002">[@brandes2002]</span>
+</div>
+<div id="brandes2006-link">
+<span class="citation" data-cites="brandes2006">[@brandes2006]</span>
+</div>
+<div id="brandes2009-link">
+<span class="citation" data-cites="brandes2009">[@brandes2009]</span>
+</div>
+<div id="burch2011-link">
+<span class="citation" data-cites="burch2011">[@burch2011]</span>
+</div>
+<div id="burch2017-link">
+<span class="citation" data-cites="burch2017">[@burch2017]</span>
+</div>
+<div id="chimani2006-link">
+<span class="citation" data-cites="chimani2006">[@chimani2006]</span>
+</div>
+<div id="chimani2010-link">
+<span class="citation" data-cites="chimani2010">[@chimani2010]</span>
+</div>
+<div id="chimani2016-link">
+<span class="citation" data-cites="chimani2016">[@chimani2016]</span>
+</div>
+<div id="chimani2016b-link">
+<span class="citation" data-cites="chimani2016b">[@chimani2016b]</span>
+</div>
+<div id="civril2006-link">
+<span class="citation" data-cites="civril2006">[@civril2006]</span>
+</div>
+<div id="cohen1997-link">
+<span class="citation" data-cites="cohen1997">[@cohen1997]</span>
+</div>
+<div id="cornel2016-link">
+<span class="citation" data-cites="cornel2016">[@cornel2016]</span>
+</div>
+<div id="cypko2017-link">
+<span class="citation" data-cites="cypko2017">[@cypko2017]</span>
+</div>
+<div id="davidson1996-link">
+<span class="citation" data-cites="davidson1996">[@davidson1996]</span>
+</div>
+<div id="deCol2019-link">
+<span class="citation" data-cites="deCol2019">[@deCol2019]</span>
+</div>
+<div id="devkota2018-link">
+<span class="citation" data-cites="devkota2018">[@devkota2018]</span>
+</div>
+<div id="diBartolomeo2022-link">
+<span class="citation" data-cites="diBartolomeo2022">[@diBartolomeo2022]</span>
+</div>
+<div id="diBartolomeo2022b-link">
+<span class="citation" data-cites="diBartolomeo2022b">[@diBartolomeo2022b]</span>
+</div>
+<div id="eades1984-link">
+<span class="citation" data-cites="eades1984">[@eades1984]</span>
+</div>
+<div id="felice2019-link">
+<span class="citation" data-cites="felice2019">[@felice2019]</span>
+</div>
+<div id="fisheye2019-link">
+<span class="citation" data-cites="fisheye2019">[@fisheye2019]</span>
+</div>
+<div id="frick1995-link">
+<span class="citation" data-cites="frick1995">[@frick1995]</span>
+</div>
+<div id="frishman2004-link">
+<span class="citation" data-cites="frishman2004">[@frishman2004]</span>
+</div>
+<div id="frishman2007-link">
+<span class="citation" data-cites="frishman2007">[@frishman2007]</span>
+</div>
+<div id="giovannangeli2023-link">
+<span class="citation" data-cites="giovannangeli2023">[@giovannangeli2023]</span>
+</div>
+<div id="gove2019-link">
+<span class="citation" data-cites="gove2019">[@gove2019]</span>
+</div>
+<div id="gray2023-link">
+<span class="citation" data-cites="gray2023">[@gray2023]</span>
+</div>
+<div id="greilich2009-link">
+<span class="citation" data-cites="greilich2009">[@greilich2009]</span>
+</div>
+<div id="hacul2005-link">
+<span class="citation" data-cites="hacul2005">[@hacul2005]</span>
+</div>
+<div id="harel2001-link">
+<span class="citation" data-cites="harel2001">[@harel2001]</span>
+</div>
+<div id="hoffswell2018-link">
+<span class="citation" data-cites="hoffswell2018">[@hoffswell2018]</span>
+</div>
+<div id="hofmann2017-link">
+<span class="citation" data-cites="hofmann2017">[@hofmann2017]</span>
+</div>
+<div id="hu2005efficient-link">
+<span class="citation" data-cites="hu2005efficient">[@hu2005efficient]</span>
+</div>
+<div id="junger1997-link">
+<span class="citation" data-cites="junger1997">[@junger1997]</span>
+</div>
+<div id="kamada19897-link">
+<span class="citation" data-cites="kamada19897">[@kamada19897]</span>
+</div>
+<div id="klammler2018-link">
+<span class="citation" data-cites="klammler2018">[@klammler2018]</span>
+</div>
+<div id="koren2002-link">
+<span class="citation" data-cites="koren2002">[@koren2002]</span>
+</div>
+<div id="kruiger2017-link">
+<span class="citation" data-cites="kruiger2017">[@kruiger2017]</span>
+</div>
+<div id="lukasczyk2017-link">
+<span class="citation" data-cites="lukasczyk2017">[@lukasczyk2017]</span>
+</div>
+<div id="meidiana2020-link">
+<span class="citation" data-cites="meidiana2020">[@meidiana2020]</span>
+</div>
+<div id="meidiana2022-link">
+<span class="citation" data-cites="meidiana2022">[@meidiana2022]</span>
+</div>
+<div id="meidiana2023-link">
+<span class="citation" data-cites="meidiana2023">[@meidiana2023]</span>
+</div>
+<div id="mennens2019-link">
+<span class="citation" data-cites="mennens2019">[@mennens2019]</span>
+</div>
+<div id="miller2023-link">
+<span class="citation" data-cites="miller2023">[@miller2023]</span>
+</div>
+<div id="minghim2006-link">
+<span class="citation" data-cites="minghim2006">[@minghim2006]</span>
+</div>
+<div id="mizuno2019-link">
+<span class="citation" data-cites="mizuno2019">[@mizuno2019]</span>
+</div>
+<div id="muelder2008-link">
+<span class="citation" data-cites="muelder2008">[@muelder2008]</span>
+</div>
+<div id="muelder2008b-link">
+<span class="citation" data-cites="muelder2008b">[@muelder2008b]</span>
+</div>
+<div id="noack2004-link">
+<span class="citation" data-cites="noack2004">[@noack2004]</span>
+</div>
+<div id="nocaj2015-link">
+<span class="citation" data-cites="nocaj2015">[@nocaj2015]</span>
+</div>
+<div id="padia2018-link">
+<span class="citation" data-cites="padia2018">[@padia2018]</span>
+</div>
+<div id="padia2019-link">
+<span class="citation" data-cites="padia2019">[@padia2019]</span>
+</div>
+<div id="pawel2000-link">
+<span class="citation" data-cites="pawel2000">[@pawel2000]</span>
+</div>
+<div id="preiner2020-link">
+<span class="citation" data-cites="preiner2020">[@preiner2020]</span>
+</div>
+<div id="saket2016-link">
+<span class="citation" data-cites="saket2016">[@saket2016]</span>
+</div>
+<div id="vanDijk2016-link">
+<span class="citation" data-cites="vanDijk2016">[@vanDijk2016]</span>
+</div>
+<div id="vanDijk2018-link">
+<span class="citation" data-cites="vanDijk2018">[@vanDijk2018]</span>
+</div>
+<div id="vandenElzen2013-link">
+<span class="citation" data-cites="vandenElzen2013">[@vandenElzen2013]</span>
+</div>
+<div id="vonLandesberger2016-link">
+<span class="citation" data-cites="vonLandesberger2016">[@vonLandesberger2016]</span>
+</div>
+<div id="wallinger2023-link">
+<span class="citation" data-cites="wallinger2023">[@wallinger2023]</span>
+</div>
+<div id="walshaw2001-link">
+<span class="citation" data-cites="walshaw2001">[@walshaw2001]</span>
+</div>
+<div id="wang2018-link">
+<span class="citation" data-cites="wang2018">[@wang2018]</span>
+</div>
+<div id="wang2020-link">
+<span class="citation" data-cites="wang2020">[@wang2020]</span>
+</div>
+<div id="welch2017-link">
+<span class="citation" data-cites="welch2017">[@welch2017]</span>
+</div>
+<div id="zarate2018-link">
+<span class="citation" data-cites="zarate2018">[@zarate2018]</span>
+</div>
+<div id="zeng2019-link">
+<span class="citation" data-cites="zeng2019">[@zeng2019]</span>
+</div>
+<div id="zheng2019-link">
+<span class="citation" data-cites="zheng2019">[@zheng2019]</span>
+</div>
+<div id="zhong2023-link">
+<span class="citation" data-cites="zhong2023">[@zhong2023]</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell hidden">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="313" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 312;"><span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(benchmark_datasets)</span></span>
+<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a>    <span class="co">// sorry for all the vars instead of let but this was split before into different cells</span></span>
+<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> uniqueDataTagSet <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>()<span class="op">;</span> <span class="co">// set for the tags</span></span>
+<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> uniquePaperTagSet <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>()<span class="op">;</span></span>
+<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> dataSetNames <span class="op">=</span> []<span class="op">;</span> <span class="co">// list of names of datasets</span></span>
+<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> paperNames <span class="op">=</span> []</span>
+<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> dataMap <span class="op">=</span> {} <span class="co">// maps from the tags to the individual datasets</span></span>
+<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> paperMap <span class="op">=</span> {} <span class="co">// maps from the tags to the individual papers</span></span>
+<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> nameMap <span class="op">=</span> {} <span class="co">// maps from the cleaned name to the actual name containing potentially special characters</span></span>
+<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(literature)</span></span>
+<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "Citation name": "bekos2022"</span></span>
+<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "Graph feature": "hypergraphs, spatial"</span></span>
+<span id="cb3-328"><a href="#cb3-328" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> tagMapping <span class="op">=</span> {</span>
+<span id="cb3-330"><a href="#cb3-330" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hypergraphs"</span><span class="op">:</span> <span class="st">"Hypergraphs"</span><span class="op">,</span></span>
+<span id="cb3-331"><a href="#cb3-331" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spatial"</span><span class="op">:</span> <span class="st">"Spatial"</span><span class="op">,</span></span>
+<span id="cb3-332"><a href="#cb3-332" aria-hidden="true" tabindex="-1"></a>    <span class="st">"layered graphs"</span><span class="op">:</span> <span class="st">"N-layers"</span><span class="op">,</span></span>
+<span id="cb3-333"><a href="#cb3-333" aria-hidden="true" tabindex="-1"></a>    <span class="st">"generic"</span><span class="op">:</span> <span class="st">"Generic"</span><span class="op">,</span></span>
+<span id="cb3-334"><a href="#cb3-334" aria-hidden="true" tabindex="-1"></a>    <span class="st">"large"</span><span class="op">:</span> <span class="st">"Large"</span><span class="op">,</span></span>
+<span id="cb3-335"><a href="#cb3-335" aria-hidden="true" tabindex="-1"></a>    <span class="st">"dynamic (discrete)"</span><span class="op">:</span> <span class="st">"Dynamic"</span><span class="op">,</span></span>
+<span id="cb3-336"><a href="#cb3-336" aria-hidden="true" tabindex="-1"></a>    <span class="st">"dynamic"</span><span class="op">:</span> <span class="st">"Dynamic"</span><span class="op">,</span></span>
+<span id="cb3-337"><a href="#cb3-337" aria-hidden="true" tabindex="-1"></a>    <span class="st">"dynamic (continuous)"</span><span class="op">:</span> <span class="st">"Dynamic"</span><span class="op">,</span></span>
+<span id="cb3-338"><a href="#cb3-338" aria-hidden="true" tabindex="-1"></a>    <span class="st">"clusters (generated)"</span><span class="op">:</span> <span class="st">"Clusters (generated)"</span><span class="op">,</span></span>
+<span id="cb3-339"><a href="#cb3-339" aria-hidden="true" tabindex="-1"></a>    <span class="st">"clusters (pre-existing)"</span><span class="op">:</span> <span class="st">"Clusters (pre-existing)"</span><span class="op">,</span></span>
+<span id="cb3-340"><a href="#cb3-340" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bundled edges (generated)"</span><span class="op">:</span> <span class="st">"Bundled edges (generated)"</span><span class="op">,</span></span>
+<span id="cb3-341"><a href="#cb3-341" aria-hidden="true" tabindex="-1"></a>    <span class="st">"directed edges"</span><span class="op">:</span> <span class="st">"Directed edges"</span><span class="op">,</span></span>
+<span id="cb3-342"><a href="#cb3-342" aria-hidden="true" tabindex="-1"></a>    <span class="st">"weighted edges"</span><span class="op">:</span> <span class="st">"Weighted edges"</span><span class="op">,</span></span>
+<span id="cb3-343"><a href="#cb3-343" aria-hidden="true" tabindex="-1"></a>    <span class="st">"weighted nodes"</span><span class="op">:</span> <span class="st">"Weighted nodes"</span><span class="op">,</span></span>
+<span id="cb3-344"><a href="#cb3-344" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hierarchical"</span><span class="op">:</span> <span class="st">"Hierarchical"</span><span class="op">,</span></span>
+<span id="cb3-345"><a href="#cb3-345" aria-hidden="true" tabindex="-1"></a>    <span class="st">"categorical nodes"</span><span class="op">:</span> <span class="st">"Categorical nodes"</span><span class="op">,</span></span>
+<span id="cb3-346"><a href="#cb3-346" aria-hidden="true" tabindex="-1"></a>    <span class="st">"trees"</span><span class="op">:</span> <span class="st">"Trees"</span><span class="op">,</span></span>
+<span id="cb3-347"><a href="#cb3-347" aria-hidden="true" tabindex="-1"></a>    <span class="st">"labeled nodes"</span><span class="op">:</span> <span class="st">"Labeled nodes"</span><span class="op">,</span></span>
+<span id="cb3-348"><a href="#cb3-348" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bipartite"</span><span class="op">:</span> <span class="st">"Bipartite"</span><span class="op">,</span></span>
+<span id="cb3-349"><a href="#cb3-349" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tripartite"</span><span class="op">:</span> <span class="st">"Bipartite"</span><span class="op">,</span></span>
+<span id="cb3-350"><a href="#cb3-350" aria-hidden="true" tabindex="-1"></a>    <span class="st">"labeled edges"</span><span class="op">:</span> <span class="st">"Labeled edges"</span><span class="op">,</span></span>
+<span id="cb3-351"><a href="#cb3-351" aria-hidden="true" tabindex="-1"></a>    <span class="st">"planar"</span><span class="op">:</span> <span class="st">"Planar"</span><span class="op">,</span></span>
+<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sparse"</span><span class="op">:</span> <span class="st">"Sparse"</span><span class="op">,</span></span>
+<span id="cb3-353"><a href="#cb3-353" aria-hidden="true" tabindex="-1"></a>    <span class="st">"K-planar"</span><span class="op">:</span> <span class="st">"Planar"</span><span class="op">,</span></span>
+<span id="cb3-354"><a href="#cb3-354" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2-planar"</span><span class="op">:</span> <span class="st">"Planar"</span><span class="op">,</span></span>
+<span id="cb3-355"><a href="#cb3-355" aria-hidden="true" tabindex="-1"></a>    <span class="st">"acyclic"</span><span class="op">:</span> <span class="st">"Acyclic"</span><span class="op">,</span></span>
+<span id="cb3-356"><a href="#cb3-356" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb3-357"><a href="#cb3-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-358"><a href="#cb3-358" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-359"><a href="#cb3-359" aria-hidden="true" tabindex="-1"></a>    benchmark_datasets<span class="op">.</span><span class="fu">forEach</span>((entry) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-360"><a href="#cb3-360" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> name <span class="op">=</span> <span class="fu">name_cleanup</span>(entry<span class="op">.</span><span class="at">Name</span>)</span>
+<span id="cb3-361"><a href="#cb3-361" aria-hidden="true" tabindex="-1"></a>        nameMap[name] <span class="op">=</span> entry<span class="op">.</span><span class="at">Name</span></span>
+<span id="cb3-362"><a href="#cb3-362" aria-hidden="true" tabindex="-1"></a>        dataSetNames<span class="op">.</span><span class="fu">push</span>(name)<span class="op">;</span></span>
+<span id="cb3-363"><a href="#cb3-363" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> parts <span class="op">=</span> entry[<span class="st">"graph features handled"</span>]<span class="op">.</span><span class="fu">split</span>(<span class="st">","</span>)<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> item<span class="op">.</span><span class="fu">trim</span>())</span>
+<span id="cb3-364"><a href="#cb3-364" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="kw">var</span> part <span class="kw">of</span> parts) {</span>
+<span id="cb3-365"><a href="#cb3-365" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (part <span class="op">!==</span> <span class="st">""</span>) {</span>
+<span id="cb3-366"><a href="#cb3-366" aria-hidden="true" tabindex="-1"></a>                uniqueDataTagSet<span class="op">.</span><span class="fu">add</span>(part)<span class="op">;</span></span>
+<span id="cb3-367"><a href="#cb3-367" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> (<span class="op">!</span>dataMap[part]) {</span>
+<span id="cb3-368"><a href="#cb3-368" aria-hidden="true" tabindex="-1"></a>                    dataMap[part] <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>()<span class="op">;</span></span>
+<span id="cb3-369"><a href="#cb3-369" aria-hidden="true" tabindex="-1"></a>                }</span>
+<span id="cb3-370"><a href="#cb3-370" aria-hidden="true" tabindex="-1"></a>                dataMap[part]<span class="op">.</span><span class="fu">add</span>(name)<span class="op">;</span></span>
+<span id="cb3-371"><a href="#cb3-371" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb3-372"><a href="#cb3-372" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-373"><a href="#cb3-373" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb3-374"><a href="#cb3-374" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb3-375"><a href="#cb3-375" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-376"><a href="#cb3-376" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb3-377"><a href="#cb3-377" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-378"><a href="#cb3-378" aria-hidden="true" tabindex="-1"></a>    literature<span class="op">.</span><span class="fu">forEach</span>((paper) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-379"><a href="#cb3-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-380"><a href="#cb3-380" aria-hidden="true" tabindex="-1"></a>      paperNames<span class="op">.</span><span class="fu">push</span>(paper[<span class="st">"Citation name"</span>])<span class="op">;</span></span>
+<span id="cb3-381"><a href="#cb3-381" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> parts <span class="op">=</span> paper[<span class="st">"Graph feature"</span>]<span class="op">.</span><span class="fu">split</span>(<span class="st">","</span>)<span class="op">.</span><span class="fu">map</span>(item <span class="kw">=&gt;</span> item<span class="op">.</span><span class="fu">trim</span>())</span>
+<span id="cb3-382"><a href="#cb3-382" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">var</span> part <span class="kw">of</span> parts) {</span>
+<span id="cb3-383"><a href="#cb3-383" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (part <span class="op">!==</span> <span class="st">""</span>) {</span>
+<span id="cb3-384"><a href="#cb3-384" aria-hidden="true" tabindex="-1"></a>          uniquePaperTagSet<span class="op">.</span><span class="fu">add</span>(part)<span class="op">;</span></span>
+<span id="cb3-385"><a href="#cb3-385" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb3-386"><a href="#cb3-386" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (part <span class="kw">in</span> tagMapping) {</span>
+<span id="cb3-387"><a href="#cb3-387" aria-hidden="true" tabindex="-1"></a>              part <span class="op">=</span> tagMapping[part]</span>
+<span id="cb3-388"><a href="#cb3-388" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb3-389"><a href="#cb3-389" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (<span class="op">!</span>paperMap[part]) {</span>
+<span id="cb3-390"><a href="#cb3-390" aria-hidden="true" tabindex="-1"></a>              paperMap[part] <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>()<span class="op">;</span></span>
+<span id="cb3-391"><a href="#cb3-391" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb3-392"><a href="#cb3-392" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb3-393"><a href="#cb3-393" aria-hidden="true" tabindex="-1"></a>          paperMap[part]<span class="op">.</span><span class="fu">add</span>(paper[<span class="st">"Citation name"</span>])<span class="op">;</span></span>
+<span id="cb3-394"><a href="#cb3-394" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-395"><a href="#cb3-395" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-396"><a href="#cb3-396" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb3-397"><a href="#cb3-397" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-398"><a href="#cb3-398" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Add keys not present in the paperTags </span></span>
+<span id="cb3-399"><a href="#cb3-399" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(dataMap)<span class="op">.</span><span class="fu">forEach</span>((key) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-400"><a href="#cb3-400" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="op">!</span>paperMap[key]) {</span>
+<span id="cb3-401"><a href="#cb3-401" aria-hidden="true" tabindex="-1"></a>        paperMap[key] <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>()<span class="op">;</span></span>
+<span id="cb3-402"><a href="#cb3-402" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-403"><a href="#cb3-403" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb3-404"><a href="#cb3-404" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-405"><a href="#cb3-405" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-406"><a href="#cb3-406" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-407"><a href="#cb3-407" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> category_tags <span class="op">=</span> {</span>
+<span id="cb3-408"><a href="#cb3-408" aria-hidden="true" tabindex="-1"></a>        <span class="dv">0</span><span class="op">:</span> <span class="st">"Layered"</span><span class="op">,</span></span>
+<span id="cb3-409"><a href="#cb3-409" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span><span class="op">:</span> <span class="st">"Hierarchical"</span><span class="op">,</span></span>
+<span id="cb3-410"><a href="#cb3-410" aria-hidden="true" tabindex="-1"></a>        <span class="dv">4</span><span class="op">:</span> <span class="st">"Attributes"</span><span class="op">,</span></span>
+<span id="cb3-411"><a href="#cb3-411" aria-hidden="true" tabindex="-1"></a>        <span class="dv">11</span><span class="op">:</span> <span class="st">"Structures"</span><span class="op">,</span></span>
+<span id="cb3-412"><a href="#cb3-412" aria-hidden="true" tabindex="-1"></a>        <span class="dv">21</span><span class="op">:</span> <span class="st">"Other"</span><span class="op">,</span></span>
+<span id="cb3-413"><a href="#cb3-413" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-414"><a href="#cb3-414" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-415"><a href="#cb3-415" aria-hidden="true" tabindex="-1"></a>    <span class="co">// if you change this ordering or move around values also change the category map above!!!</span></span>
+<span id="cb3-416"><a href="#cb3-416" aria-hidden="true" tabindex="-1"></a>    <span class="co">//var uniqueDataTags = [...uniqueDataTagSet]</span></span>
+<span id="cb3-417"><a href="#cb3-417" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> uniqueDataTags <span class="op">=</span> [</span>
+<span id="cb3-418"><a href="#cb3-418" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Layered</span></span>
+<span id="cb3-419"><a href="#cb3-419" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Bipartite"</span><span class="op">,</span></span>
+<span id="cb3-420"><a href="#cb3-420" aria-hidden="true" tabindex="-1"></a>        <span class="st">"N-layers"</span><span class="op">,</span></span>
+<span id="cb3-421"><a href="#cb3-421" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-422"><a href="#cb3-422" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Hierarchical</span></span>
+<span id="cb3-423"><a href="#cb3-423" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Trees"</span><span class="op">,</span></span>
+<span id="cb3-424"><a href="#cb3-424" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Hierarchical"</span><span class="op">,</span></span>
+<span id="cb3-425"><a href="#cb3-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-426"><a href="#cb3-426" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Attributes</span></span>
+<span id="cb3-427"><a href="#cb3-427" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Dynamic"</span><span class="op">,</span></span>
+<span id="cb3-428"><a href="#cb3-428" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Weighted edges"</span><span class="op">,</span></span>
+<span id="cb3-429"><a href="#cb3-429" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Weighted nodes"</span><span class="op">,</span></span>
+<span id="cb3-430"><a href="#cb3-430" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Labeled nodes"</span><span class="op">,</span></span>
+<span id="cb3-431"><a href="#cb3-431" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Categorical nodes"</span><span class="op">,</span></span>
+<span id="cb3-432"><a href="#cb3-432" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Signed"</span><span class="op">,</span></span>
+<span id="cb3-433"><a href="#cb3-433" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Spatial"</span><span class="op">,</span></span>
+<span id="cb3-434"><a href="#cb3-434" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-435"><a href="#cb3-435" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Structures</span></span>
+<span id="cb3-436"><a href="#cb3-436" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Clusters (pre-existing)"</span><span class="op">,</span></span>
+<span id="cb3-437"><a href="#cb3-437" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Clusters (generated)"</span><span class="op">,</span></span>
+<span id="cb3-438"><a href="#cb3-438" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Directed edges"</span><span class="op">,</span></span>
+<span id="cb3-439"><a href="#cb3-439" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Hypergraphs"</span><span class="op">,</span></span>
+<span id="cb3-440"><a href="#cb3-440" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Bundled edges (generated)"</span><span class="op">,</span></span>
+<span id="cb3-441"><a href="#cb3-441" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Partition"</span><span class="op">,</span></span>
+<span id="cb3-442"><a href="#cb3-442" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Multigraph"</span><span class="op">,</span></span>
+<span id="cb3-443"><a href="#cb3-443" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Acyclic"</span><span class="op">,</span></span>
+<span id="cb3-444"><a href="#cb3-444" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Mesh"</span><span class="op">,</span></span>
+<span id="cb3-445"><a href="#cb3-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-446"><a href="#cb3-446" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Other</span></span>
+<span id="cb3-447"><a href="#cb3-447" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Generic"</span><span class="op">,</span></span>
+<span id="cb3-448"><a href="#cb3-448" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Planar"</span><span class="op">,</span></span>
+<span id="cb3-449"><a href="#cb3-449" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Nonplanar"</span><span class="op">,</span></span>
+<span id="cb3-450"><a href="#cb3-450" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Known crossing number"</span><span class="op">,</span></span>
+<span id="cb3-451"><a href="#cb3-451" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Large"</span><span class="op">,</span></span>
+<span id="cb3-452"><a href="#cb3-452" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Dense"</span><span class="op">,</span></span>
+<span id="cb3-453"><a href="#cb3-453" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sparse"</span><span class="op">,</span></span>
+<span id="cb3-454"><a href="#cb3-454" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb3-455"><a href="#cb3-455" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> uniquePaperTags <span class="op">=</span> [<span class="op">...</span>uniquePaperTagSet]  </span>
+<span id="cb3-456"><a href="#cb3-456" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(uniqueDataTags)</span></span>
+<span id="cb3-457"><a href="#cb3-457" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(uniquePaperTagSet)</span></span>
+<span id="cb3-458"><a href="#cb3-458" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(dataMap)</span></span>
+<span id="cb3-459"><a href="#cb3-459" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(paperMap)</span></span>
+<span id="cb3-460"><a href="#cb3-460" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(dataSetNames)</span></span>
+<span id="cb3-461"><a href="#cb3-461" aria-hidden="true" tabindex="-1"></a>    <span class="co">//console.log(paperNames)</span></span>
+<span id="cb3-462"><a href="#cb3-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-463"><a href="#cb3-463" aria-hidden="true" tabindex="-1"></a>    <span class="co">// remove empty entries</span></span>
+<span id="cb3-464"><a href="#cb3-464" aria-hidden="true" tabindex="-1"></a>    paperNames <span class="op">=</span> paperNames<span class="op">.</span><span class="fu">filter</span>(str <span class="kw">=&gt;</span> str<span class="op">.</span><span class="fu">trim</span>() <span class="op">!==</span> <span class="st">""</span>)</span>
+<span id="cb3-465"><a href="#cb3-465" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-466"><a href="#cb3-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-467"><a href="#cb3-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-468"><a href="#cb3-468" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> checkBoxContainer <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-container'</span>)<span class="op">;</span></span>
+<span id="cb3-469"><a href="#cb3-469" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> linksListContainer <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'datasetlinkslist-container'</span>)</span>
+<span id="cb3-470"><a href="#cb3-470" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> paperLinksContainer <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'paperlinkslist-container'</span>)</span>
+<span id="cb3-471"><a href="#cb3-471" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> checkboxStates <span class="op">=</span> []<span class="op">;</span>  <span class="co">// Array to keep track of checkbox states (booleans)</span></span>
+<span id="cb3-472"><a href="#cb3-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-473"><a href="#cb3-473" aria-hidden="true" tabindex="-1"></a>    <span class="co">// needs to be in here since we access so many "global" variables</span></span>
+<span id="cb3-474"><a href="#cb3-474" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">displayDataSetLinksList</span>() {</span>
+<span id="cb3-475"><a href="#cb3-475" aria-hidden="true" tabindex="-1"></a>        <span class="co">//console.log(checkboxStates); // current states to check which dataset links to display (index-based)</span></span>
+<span id="cb3-476"><a href="#cb3-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-477"><a href="#cb3-477" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> filteredTags <span class="op">=</span> uniqueDataTags<span class="op">.</span><span class="fu">map</span>((item<span class="op">,</span> index) <span class="kw">=&gt;</span> checkboxStates[index] <span class="op">?</span> item <span class="op">:</span> <span class="kw">undefined</span>)</span>
+<span id="cb3-478"><a href="#cb3-478" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">filter</span>(item <span class="kw">=&gt;</span> item <span class="op">!==</span> <span class="kw">undefined</span>)<span class="op">;</span></span>
+<span id="cb3-479"><a href="#cb3-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-480"><a href="#cb3-480" aria-hidden="true" tabindex="-1"></a>        <span class="co">//console.log(filteredTags)</span></span>
+<span id="cb3-481"><a href="#cb3-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-482"><a href="#cb3-482" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> final_datasets <span class="op">=</span> []</span>
+<span id="cb3-483"><a href="#cb3-483" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> final_data_inverse <span class="op">=</span> []</span>
+<span id="cb3-484"><a href="#cb3-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-485"><a href="#cb3-485" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> final_papers <span class="op">=</span> []</span>
+<span id="cb3-486"><a href="#cb3-486" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> final_paper_inverse <span class="op">=</span> []</span>
+<span id="cb3-487"><a href="#cb3-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-488"><a href="#cb3-488" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (filteredTags<span class="op">.</span><span class="at">length</span> <span class="op">==</span> <span class="dv">0</span>) {</span>
+<span id="cb3-489"><a href="#cb3-489" aria-hidden="true" tabindex="-1"></a>            final_datasets <span class="op">=</span> dataSetNames<span class="op">;</span></span>
+<span id="cb3-490"><a href="#cb3-490" aria-hidden="true" tabindex="-1"></a>            final_papers <span class="op">=</span> paperNames<span class="op">;</span></span>
+<span id="cb3-491"><a href="#cb3-491" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb3-492"><a href="#cb3-492" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Retrieve an array of sets from the provided keys</span></span>
+<span id="cb3-493"><a href="#cb3-493" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> dataSets <span class="op">=</span> filteredTags<span class="op">.</span><span class="fu">map</span>(key <span class="kw">=&gt;</span> dataMap[key])<span class="op">;</span></span>
+<span id="cb3-494"><a href="#cb3-494" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> paperSets <span class="op">=</span> filteredTags<span class="op">.</span><span class="fu">map</span>(key <span class="kw">=&gt;</span> paperMap[key])<span class="op">;</span></span>
+<span id="cb3-495"><a href="#cb3-495" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-496"><a href="#cb3-496" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Calculate the intersection of all sets</span></span>
+<span id="cb3-497"><a href="#cb3-497" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> dataIntersection <span class="op">=</span> dataSets<span class="op">.</span><span class="fu">reduce</span>((acc<span class="op">,</span> <span class="kw">set</span>) <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="bu">Set</span>([<span class="op">...</span>acc]<span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> <span class="kw">set</span><span class="op">.</span><span class="fu">has</span>(x))))<span class="op">;</span></span>
+<span id="cb3-498"><a href="#cb3-498" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> paperIntersection <span class="op">=</span> paperSets<span class="op">.</span><span class="fu">reduce</span>((acc<span class="op">,</span> <span class="kw">set</span>) <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="bu">Set</span>([<span class="op">...</span>acc]<span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> <span class="kw">set</span><span class="op">.</span><span class="fu">has</span>(x))))<span class="op">;</span></span>
+<span id="cb3-499"><a href="#cb3-499" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-500"><a href="#cb3-500" aria-hidden="true" tabindex="-1"></a>            final_datasets <span class="op">=</span> [<span class="op">...</span>dataIntersection] <span class="co">// white list</span></span>
+<span id="cb3-501"><a href="#cb3-501" aria-hidden="true" tabindex="-1"></a>            final_papers <span class="op">=</span> [<span class="op">...</span>paperIntersection]</span>
+<span id="cb3-502"><a href="#cb3-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-503"><a href="#cb3-503" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Now, compute the difference between dataSetNames and final_datasets</span></span>
+<span id="cb3-504"><a href="#cb3-504" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> dataDifference <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>(dataSetNames<span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> <span class="op">!</span>final_datasets<span class="op">.</span><span class="fu">includes</span>(x)))<span class="op">;</span></span>
+<span id="cb3-505"><a href="#cb3-505" aria-hidden="true" tabindex="-1"></a>            <span class="kw">const</span> paperDifference <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>(paperNames<span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> <span class="op">!</span>final_papers<span class="op">.</span><span class="fu">includes</span>(x)))<span class="op">;</span></span>
+<span id="cb3-506"><a href="#cb3-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-507"><a href="#cb3-507" aria-hidden="true" tabindex="-1"></a>            final_data_inverse <span class="op">=</span> [<span class="op">...</span>dataDifference]<span class="op">;</span> <span class="co">// black list</span></span>
+<span id="cb3-508"><a href="#cb3-508" aria-hidden="true" tabindex="-1"></a>            final_paper_inverse <span class="op">=</span> [<span class="op">...</span>paperDifference]</span>
+<span id="cb3-509"><a href="#cb3-509" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-510"><a href="#cb3-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-511"><a href="#cb3-511" aria-hidden="true" tabindex="-1"></a>        <span class="co">//console.log("show: " + final_datasets) // white list </span></span>
+<span id="cb3-512"><a href="#cb3-512" aria-hidden="true" tabindex="-1"></a>        <span class="co">//console.log("show: " + final_papers)</span></span>
+<span id="cb3-513"><a href="#cb3-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-514"><a href="#cb3-514" aria-hidden="true" tabindex="-1"></a>        final_datasets<span class="op">.</span><span class="fu">forEach</span>((name) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-515"><a href="#cb3-515" aria-hidden="true" tabindex="-1"></a>            <span class="co">//console.log(name + '-link')</span></span>
+<span id="cb3-516"><a href="#cb3-516" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> currLinkDiv <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(name <span class="op">+</span> <span class="st">'-link'</span>)</span>
+<span id="cb3-517"><a href="#cb3-517" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (currLinkDiv <span class="op">!=</span> <span class="kw">null</span>) {</span>
+<span id="cb3-518"><a href="#cb3-518" aria-hidden="true" tabindex="-1"></a>                currLinkDiv<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'block'</span><span class="op">;</span>  <span class="co">// Clear the display property to default ('block')</span></span>
+<span id="cb3-519"><a href="#cb3-519" aria-hidden="true" tabindex="-1"></a>            } </span>
+<span id="cb3-520"><a href="#cb3-520" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb3-521"><a href="#cb3-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-522"><a href="#cb3-522" aria-hidden="true" tabindex="-1"></a>        final_data_inverse<span class="op">.</span><span class="fu">forEach</span>((name) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-523"><a href="#cb3-523" aria-hidden="true" tabindex="-1"></a>            <span class="co">//console.log(name + '-link')</span></span>
+<span id="cb3-524"><a href="#cb3-524" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> currLinkDiv <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(name <span class="op">+</span> <span class="st">'-link'</span>)</span>
+<span id="cb3-525"><a href="#cb3-525" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (currLinkDiv <span class="op">!=</span> <span class="kw">null</span>) {</span>
+<span id="cb3-526"><a href="#cb3-526" aria-hidden="true" tabindex="-1"></a>                currLinkDiv<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'none'</span><span class="op">;</span>  <span class="co">// Hide the div</span></span>
+<span id="cb3-527"><a href="#cb3-527" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb3-528"><a href="#cb3-528" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb3-529"><a href="#cb3-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-530"><a href="#cb3-530" aria-hidden="true" tabindex="-1"></a>        final_papers<span class="op">.</span><span class="fu">forEach</span>((name) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-531"><a href="#cb3-531" aria-hidden="true" tabindex="-1"></a>            <span class="co">//console.log(name + '-link')</span></span>
+<span id="cb3-532"><a href="#cb3-532" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> currLinkDiv <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(name <span class="op">+</span> <span class="st">'-link'</span>)</span>
+<span id="cb3-533"><a href="#cb3-533" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (currLinkDiv <span class="op">!=</span> <span class="kw">null</span>) {</span>
+<span id="cb3-534"><a href="#cb3-534" aria-hidden="true" tabindex="-1"></a>                currLinkDiv<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'block'</span><span class="op">;</span>  <span class="co">// Clear the display property to default ('block')</span></span>
+<span id="cb3-535"><a href="#cb3-535" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb3-536"><a href="#cb3-536" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb3-537"><a href="#cb3-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-538"><a href="#cb3-538" aria-hidden="true" tabindex="-1"></a>        final_paper_inverse<span class="op">.</span><span class="fu">forEach</span>((name) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-539"><a href="#cb3-539" aria-hidden="true" tabindex="-1"></a>            <span class="co">//console.log(name + '-link')</span></span>
+<span id="cb3-540"><a href="#cb3-540" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> currLinkDiv <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(name <span class="op">+</span> <span class="st">'-link'</span>)</span>
+<span id="cb3-541"><a href="#cb3-541" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (currLinkDiv <span class="op">!=</span> <span class="kw">null</span>) {</span>
+<span id="cb3-542"><a href="#cb3-542" aria-hidden="true" tabindex="-1"></a>                currLinkDiv<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'none'</span><span class="op">;</span>  <span class="co">// Hide the div</span></span>
+<span id="cb3-543"><a href="#cb3-543" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb3-544"><a href="#cb3-544" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb3-545"><a href="#cb3-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-546"><a href="#cb3-546" aria-hidden="true" tabindex="-1"></a>      <span class="co">/*</span></span>
+<span id="cb3-547"><a href="#cb3-547" aria-hidden="true" tabindex="-1"></a><span class="co">      // this is how the it ran earlier and it was used to generate the static html links above this</span></span>
+<span id="cb3-548"><a href="#cb3-548" aria-hidden="true" tabindex="-1"></a><span class="co">      </span></span>
+<span id="cb3-549"><a href="#cb3-549" aria-hidden="true" tabindex="-1"></a><span class="co">      if (final_datasets.length == 0) {</span></span>
+<span id="cb3-550"><a href="#cb3-550" aria-hidden="true" tabindex="-1"></a><span class="co">      // display message that no dataset contains all these tags</span></span>
+<span id="cb3-551"><a href="#cb3-551" aria-hidden="true" tabindex="-1"></a><span class="co">      linksListContainer.innerHTML = '';</span></span>
+<span id="cb3-552"><a href="#cb3-552" aria-hidden="true" tabindex="-1"></a><span class="co">      } else {</span></span>
+<span id="cb3-553"><a href="#cb3-553" aria-hidden="true" tabindex="-1"></a><span class="co">      </span></span>
+<span id="cb3-554"><a href="#cb3-554" aria-hidden="true" tabindex="-1"></a><span class="co">      linksListContainer.innerHTML = '';</span></span>
+<span id="cb3-555"><a href="#cb3-555" aria-hidden="true" tabindex="-1"></a><span class="co">      </span></span>
+<span id="cb3-556"><a href="#cb3-556" aria-hidden="true" tabindex="-1"></a><span class="co">      final_datasets.forEach((currDataName) =&gt; {</span></span>
+<span id="cb3-557"><a href="#cb3-557" aria-hidden="true" tabindex="-1"></a><span class="co">      const anchor = document.createElement('a');</span></span>
+<span id="cb3-558"><a href="#cb3-558" aria-hidden="true" tabindex="-1"></a><span class="co">      anchor.href = '#' + currDataName</span></span>
+<span id="cb3-559"><a href="#cb3-559" aria-hidden="true" tabindex="-1"></a><span class="co">      anchor.classList.add('dataset-link')</span></span>
+<span id="cb3-560"><a href="#cb3-560" aria-hidden="true" tabindex="-1"></a><span class="co">      anchor.textContent = nameMap[currDataName]</span></span>
+<span id="cb3-561"><a href="#cb3-561" aria-hidden="true" tabindex="-1"></a><span class="co">      </span></span>
+<span id="cb3-562"><a href="#cb3-562" aria-hidden="true" tabindex="-1"></a><span class="co">      const div = document.createElement('div');</span></span>
+<span id="cb3-563"><a href="#cb3-563" aria-hidden="true" tabindex="-1"></a><span class="co">      div.id = currDataName + '-link'</span></span>
+<span id="cb3-564"><a href="#cb3-564" aria-hidden="true" tabindex="-1"></a><span class="co">      div.appendChild(anchor);</span></span>
+<span id="cb3-565"><a href="#cb3-565" aria-hidden="true" tabindex="-1"></a><span class="co">      </span></span>
+<span id="cb3-566"><a href="#cb3-566" aria-hidden="true" tabindex="-1"></a><span class="co">      linksListContainer.appendChild(div);</span></span>
+<span id="cb3-567"><a href="#cb3-567" aria-hidden="true" tabindex="-1"></a><span class="co">      })</span></span>
+<span id="cb3-568"><a href="#cb3-568" aria-hidden="true" tabindex="-1"></a><span class="co">      }</span></span>
+<span id="cb3-569"><a href="#cb3-569" aria-hidden="true" tabindex="-1"></a><span class="co">      </span></span>
+<span id="cb3-570"><a href="#cb3-570" aria-hidden="true" tabindex="-1"></a><span class="co">      // and here for the paper names</span></span>
+<span id="cb3-571"><a href="#cb3-571" aria-hidden="true" tabindex="-1"></a><span class="co">      paperNames = paperNames.filter(str =&gt; str.trim() !== "").sort();</span></span>
+<span id="cb3-572"><a href="#cb3-572" aria-hidden="true" tabindex="-1"></a><span class="co">      paperNames.forEach((currPaperName) =&gt; {</span></span>
+<span id="cb3-573"><a href="#cb3-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-574"><a href="#cb3-574" aria-hidden="true" tabindex="-1"></a><span class="co">          const div = document.createElement('div');</span></span>
+<span id="cb3-575"><a href="#cb3-575" aria-hidden="true" tabindex="-1"></a><span class="co">          div.id = currPaperName + '-link'</span></span>
+<span id="cb3-576"><a href="#cb3-576" aria-hidden="true" tabindex="-1"></a><span class="co">          div.textContent = `[@${currPaperName}]`</span></span>
+<span id="cb3-577"><a href="#cb3-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-578"><a href="#cb3-578" aria-hidden="true" tabindex="-1"></a><span class="co">          paperLinksContainer.appendChild(div);</span></span>
+<span id="cb3-579"><a href="#cb3-579" aria-hidden="true" tabindex="-1"></a><span class="co">      });*/</span></span>
+<span id="cb3-580"><a href="#cb3-580" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-581"><a href="#cb3-581" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-582"><a href="#cb3-582" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb3-583"><a href="#cb3-583" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Function to add a new checkbox with a styled span label</span></span>
+<span id="cb3-584"><a href="#cb3-584" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">addCheckbox</span>(index<span class="op">,</span> name) {</span>
+<span id="cb3-585"><a href="#cb3-585" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> newCheckbox <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'input'</span>)<span class="op">;</span></span>
+<span id="cb3-586"><a href="#cb3-586" aria-hidden="true" tabindex="-1"></a>      newCheckbox<span class="op">.</span><span class="at">type</span> <span class="op">=</span> <span class="st">'checkbox'</span><span class="op">;</span></span>
+<span id="cb3-587"><a href="#cb3-587" aria-hidden="true" tabindex="-1"></a>      newCheckbox<span class="op">.</span><span class="at">id</span> <span class="op">=</span> <span class="st">'checkbox'</span> <span class="op">+</span> index<span class="op">;</span></span>
+<span id="cb3-588"><a href="#cb3-588" aria-hidden="true" tabindex="-1"></a>      newCheckbox<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">marginRight</span> <span class="op">=</span> <span class="st">'8px'</span><span class="op">;</span> </span>
+<span id="cb3-589"><a href="#cb3-589" aria-hidden="true" tabindex="-1"></a>      newCheckbox<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'form-check-input'</span>)<span class="op">;</span></span>
+<span id="cb3-590"><a href="#cb3-590" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-591"><a href="#cb3-591" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Creating the span that will act as a label</span></span>
+<span id="cb3-592"><a href="#cb3-592" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> span <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'span'</span>)<span class="op">;</span></span>
+<span id="cb3-593"><a href="#cb3-593" aria-hidden="true" tabindex="-1"></a>      span<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">'pill-tag'</span>)<span class="op">;</span></span>
+<span id="cb3-594"><a href="#cb3-594" aria-hidden="true" tabindex="-1"></a>      span<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="vs">`pill_color_</span><span class="sc">${</span><span class="fu">name_cleanup</span>(name)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-595"><a href="#cb3-595" aria-hidden="true" tabindex="-1"></a>      <span class="co">//span.style.backgroundColor = get_css_color_for_tag(name)</span></span>
+<span id="cb3-596"><a href="#cb3-596" aria-hidden="true" tabindex="-1"></a>      <span class="co">//span.style.backgroundColor = graph_feature_tags_colors[index % graph_feature_tags_colors.length];  </span></span>
+<span id="cb3-597"><a href="#cb3-597" aria-hidden="true" tabindex="-1"></a>      span<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> name<span class="op">;</span></span>
+<span id="cb3-598"><a href="#cb3-598" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-599"><a href="#cb3-599" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> label <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'label'</span>)<span class="op">;</span></span>
+<span id="cb3-600"><a href="#cb3-600" aria-hidden="true" tabindex="-1"></a>      label<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">'d-flex align-items-center justify-content-start'</span><span class="op">;</span></span>
+<span id="cb3-601"><a href="#cb3-601" aria-hidden="true" tabindex="-1"></a>      label<span class="op">.</span><span class="at">htmlFor</span> <span class="op">=</span> newCheckbox<span class="op">.</span><span class="at">id</span><span class="op">;</span></span>
+<span id="cb3-602"><a href="#cb3-602" aria-hidden="true" tabindex="-1"></a>      label<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">cursor</span> <span class="op">=</span> <span class="st">'pointer'</span><span class="op">;</span>  <span class="co">// Change the cursor to a pointer on hover</span></span>
+<span id="cb3-603"><a href="#cb3-603" aria-hidden="true" tabindex="-1"></a>      label<span class="op">.</span><span class="fu">appendChild</span>(newCheckbox)<span class="op">;</span></span>
+<span id="cb3-604"><a href="#cb3-604" aria-hidden="true" tabindex="-1"></a>      label<span class="op">.</span><span class="fu">appendChild</span>(span)<span class="op">;</span>  <span class="co">// Append the span to the label</span></span>
+<span id="cb3-605"><a href="#cb3-605" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-606"><a href="#cb3-606" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> div <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb3-607"><a href="#cb3-607" aria-hidden="true" tabindex="-1"></a>      div<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">'form-check d-flex align-items-center'</span><span class="op">;</span>  <span class="co">// Ensure the checkbox and label are aligned</span></span>
+<span id="cb3-608"><a href="#cb3-608" aria-hidden="true" tabindex="-1"></a>      div<span class="op">.</span><span class="fu">appendChild</span>(label)<span class="op">;</span></span>
+<span id="cb3-609"><a href="#cb3-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-610"><a href="#cb3-610" aria-hidden="true" tabindex="-1"></a>      checkBoxContainer<span class="op">.</span><span class="fu">appendChild</span>(div)<span class="op">;</span></span>
+<span id="cb3-611"><a href="#cb3-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-612"><a href="#cb3-612" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Update state array and add event listener</span></span>
+<span id="cb3-613"><a href="#cb3-613" aria-hidden="true" tabindex="-1"></a>      checkboxStates<span class="op">.</span><span class="fu">push</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb3-614"><a href="#cb3-614" aria-hidden="true" tabindex="-1"></a>      newCheckbox<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb3-615"><a href="#cb3-615" aria-hidden="true" tabindex="-1"></a>          checkboxStates[index] <span class="op">=</span> newCheckbox<span class="op">.</span><span class="at">checked</span><span class="op">;</span></span>
+<span id="cb3-616"><a href="#cb3-616" aria-hidden="true" tabindex="-1"></a>          <span class="fu">displayDataSetLinksList</span>()</span>
+<span id="cb3-617"><a href="#cb3-617" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb3-618"><a href="#cb3-618" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-619"><a href="#cb3-619" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-620"><a href="#cb3-620" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Automatically add checkboxes on load for each tag, we cannot reorder after this!</span></span>
+<span id="cb3-621"><a href="#cb3-621" aria-hidden="true" tabindex="-1"></a>  uniqueDataTags<span class="op">.</span><span class="fu">forEach</span>((entry<span class="op">,</span> index) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-622"><a href="#cb3-622" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (category_tags<span class="op">.</span><span class="fu">hasOwnProperty</span>(index)) {</span>
+<span id="cb3-623"><a href="#cb3-623" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> span <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'span'</span>)<span class="op">;</span></span>
+<span id="cb3-624"><a href="#cb3-624" aria-hidden="true" tabindex="-1"></a>          span<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">opacity</span> <span class="op">=</span> <span class="st">"50%"</span><span class="op">;</span>  <span class="co">// Setting it to be less obnoxious</span></span>
+<span id="cb3-625"><a href="#cb3-625" aria-hidden="true" tabindex="-1"></a>          span<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"</span><span class="sc">\u2012</span><span class="st"> "</span> <span class="op">+</span> category_tags[index] <span class="op">+</span> <span class="st">"</span><span class="sc">\u2012</span><span class="st"> "</span><span class="op">;</span></span>
+<span id="cb3-626"><a href="#cb3-626" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-627"><a href="#cb3-627" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> div <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb3-628"><a href="#cb3-628" aria-hidden="true" tabindex="-1"></a>          div<span class="op">.</span><span class="at">className</span> <span class="op">=</span> <span class="st">'d-flex align-items-center'</span><span class="op">;</span>  </span>
+<span id="cb3-629"><a href="#cb3-629" aria-hidden="true" tabindex="-1"></a>          div<span class="op">.</span><span class="fu">appendChild</span>(span)<span class="op">;</span></span>
+<span id="cb3-630"><a href="#cb3-630" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-631"><a href="#cb3-631" aria-hidden="true" tabindex="-1"></a>          checkBoxContainer<span class="op">.</span><span class="fu">appendChild</span>(div)<span class="op">;</span></span>
+<span id="cb3-632"><a href="#cb3-632" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-633"><a href="#cb3-633" aria-hidden="true" tabindex="-1"></a>      <span class="fu">addCheckbox</span>(index<span class="op">,</span> entry)<span class="op">;</span></span>
+<span id="cb3-634"><a href="#cb3-634" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb3-635"><a href="#cb3-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-636"><a href="#cb3-636" aria-hidden="true" tabindex="-1"></a>  <span class="co">// initial call to display all datasets (now a bit redundant but adds the "display" style-attribute)</span></span>
+<span id="cb3-637"><a href="#cb3-637" aria-hidden="true" tabindex="-1"></a>  <span class="fu">displayDataSetLinksList</span>()</span>
+<span id="cb3-638"><a href="#cb3-638" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-639"><a href="#cb3-639" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display hidden">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImNvbnNvbGUubG9nKGJlbmNobWFya19kYXRhc2V0cylcbmRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdkYXRhc2V0LXNlYXJjaCcpLmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JywgZnVuY3Rpb24oZSkge1xuICAgIGNvbnN0IHF1ZXJ5ID0gZS50YXJnZXQudmFsdWUudG9Mb3dlckNhc2UoKTtcbiAgICAvLyBFeGFtcGxlOiBmaWx0ZXIgYW5kIGxvZyBtYXRjaGluZyBkYXRhc2V0IG5hbWVzXG4gICAgY29uc3QgbWF0Y2hlcyA9IGJlbmNobWFya19kYXRhc2V0cy5maWx0ZXIoZCA9PiB7XG4gICAgICBjb25zdCBuYW1lTWF0Y2ggPSBkLk5hbWUgJiYgZC5OYW1lLnRvTG93ZXJDYXNlKCkuaW5jbHVkZXMocXVlcnkpO1xuICAgICAgY29uc3QgZmVhdHVyZU1hdGNoID0gZFtcImdyYXBoIGZlYXR1cmVzIGhhbmRsZWRcIl0gJiYgZFtcImdyYXBoIGZlYXR1cmVzIGhhbmRsZWRcIl0udG9Mb3dlckNhc2UoKS5pbmNsdWRlcyhxdWVyeSk7XG4gICAgICByZXR1cm4gbmFtZU1hdGNoIHx8IGZlYXR1cmVNYXRjaDtcbiAgICB9KTtcbiAgICAvLyBZb3UgY2FuIHJlcGxhY2UgdGhpcyB3aXRoIGNvZGUgdG8gdXBkYXRlIHRoZSBVSSB3aXRoIHRoZSBmaWx0ZXJlZCByZXN1bHRzXG4gICAgY29uc3QgcmVzdWx0c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzZWFyY2gtcmVzdWx0cycpO1xuICAgIHJlc3VsdHNDb250YWluZXIuaW5uZXJIVE1MID0gJyc7IC8vIENsZWFyIHByZXZpb3VzIHJlc3VsdHNcbiAgICBpZiAobWF0Y2hlcy5sZW5ndGggPiAwICYmIHF1ZXJ5Lmxlbmd0aCA+IDApIHtcbiAgICAgICAgcmVzdWx0c0NvbnRhaW5lci5pbm5lckhUTUwgPSBgPHN0cm9uZz5Gb3VuZCAke21hdGNoZXMubGVuZ3RofSBtYXRjaGluZyBkYXRhc2V0czo8L3N0cm9uZz5gO1xuICAgICAgICBtYXRjaGVzLmZvckVhY2gobWF0Y2ggPT4ge1xuICAgICAgICAgICAgY29uc3QgcmVzdWx0SXRlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuICAgICAgICAgICAgcmVzdWx0SXRlbS5jbGFzc05hbWUgPSAnc2VhcmNoLXJlc3VsdC1pdGVtJztcbiAgICAgICAgICAgIHJlc3VsdEl0ZW0uaW5uZXJIVE1MID0gYDxhIGNsYXNzPVwiZGF0YXNldC1saW5rXCIgaHJlZj1cIiMke25hbWVfY2xlYW51cChtYXRjaC5OYW1lKX1cIj4ke21hdGNoLk5hbWV9PC9hPiAtICR7bWF0Y2hbXCJncmFwaCBmZWF0dXJlcyBoYW5kbGVkXCJdIHx8IFwiTm8gZmVhdHVyZXMgbGlzdGVkXCJ9YDtcbiAgICAgICAgICAgIHJlc3VsdHNDb250YWluZXIuYXBwZW5kQ2hpbGQocmVzdWx0SXRlbSk7XG4gICAgICAgIH0pO1xuICAgIH0gZWxzZSBpZiAocXVlcnkubGVuZ3RoID4gMCkge1xuICAgICAgICByZXN1bHRzQ29udGFpbmVyLmlubmVySFRNTCA9ICc8aT5ObyBtYXRjaGluZyBkYXRhc2V0cyBmb3VuZC48L2k+JztcbiAgICB9IGVsc2Uge1xuICAgICAgICByZXN1bHRzQ29udGFpbmVyLmlubmVySFRNTCA9ICc8aT5UeXBlIHRvIHNlYXJjaCBmb3IgZGF0YXNldHMgYnkgbmFtZSBvciBmZWF0dXJlLiBSZXN1bHRzIHdpbGwgYXBwZWFyIGhlcmUuPC9pPic7XG4gICAgfVxufSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ7XG4gICAgLy9jb25zb2xlLmxvZyhiZW5jaG1hcmtfZGF0YXNldHMpXG4gICAgXG4gICAgLy8gc29ycnkgZm9yIGFsbCB0aGUgdmFycyBpbnN0ZWFkIG9mIGxldCBidXQgdGhpcyB3YXMgc3BsaXQgYmVmb3JlIGludG8gZGlmZmVyZW50IGNlbGxzXG4gICAgdmFyIHVuaXF1ZURhdGFUYWdTZXQgPSBuZXcgU2V0KCk7IC8vIHNldCBmb3IgdGhlIHRhZ3NcbiAgICB2YXIgdW5pcXVlUGFwZXJUYWdTZXQgPSBuZXcgU2V0KCk7XG4gICAgdmFyIGRhdGFTZXROYW1lcyA9IFtdOyAvLyBsaXN0IG9mIG5hbWVzIG9mIGRhdGFzZXRzXG4gICAgdmFyIHBhcGVyTmFtZXMgPSBbXVxuICAgIHZhciBkYXRhTWFwID0ge30gLy8gbWFwcyBmcm9tIHRoZSB0YWdzIHRvIHRoZSBpbmRpdmlkdWFsIGRhdGFzZXRzXG4gICAgdmFyIHBhcGVyTWFwID0ge30gLy8gbWFwcyBmcm9tIHRoZSB0YWdzIHRvIHRoZSBpbmRpdmlkdWFsIHBhcGVyc1xuICAgIHZhciBuYW1lTWFwID0ge30gLy8gbWFwcyBmcm9tIHRoZSBjbGVhbmVkIG5hbWUgdG8gdGhlIGFjdHVhbCBuYW1lIGNvbnRhaW5pbmcgcG90ZW50aWFsbHkgc3BlY2lhbCBjaGFyYWN0ZXJzXG5cbiAgICAvL2NvbnNvbGUubG9nKGxpdGVyYXR1cmUpXG4gICAgLy8gXCJDaXRhdGlvbiBuYW1lXCI6IFwiYmVrb3MyMDIyXCJcbiAgICAvLyBcIkdyYXBoIGZlYXR1cmVcIjogXCJoeXBlcmdyYXBocywgc3BhdGlhbFwiXG4gICAgXG4gICAgY29uc3QgdGFnTWFwcGluZyA9IHtcbiAgICBcImh5cGVyZ3JhcGhzXCI6IFwiSHlwZXJncmFwaHNcIixcbiAgICBcInNwYXRpYWxcIjogXCJTcGF0aWFsXCIsXG4gICAgXCJsYXllcmVkIGdyYXBoc1wiOiBcIk4tbGF5ZXJzXCIsXG4gICAgXCJnZW5lcmljXCI6IFwiR2VuZXJpY1wiLFxuICAgIFwibGFyZ2VcIjogXCJMYXJnZVwiLFxuICAgIFwiZHluYW1pYyAoZGlzY3JldGUpXCI6IFwiRHluYW1pY1wiLFxuICAgIFwiZHluYW1pY1wiOiBcIkR5bmFtaWNcIixcbiAgICBcImR5bmFtaWMgKGNvbnRpbnVvdXMpXCI6IFwiRHluYW1pY1wiLFxuICAgIFwiY2x1c3RlcnMgKGdlbmVyYXRlZClcIjogXCJDbHVzdGVycyAoZ2VuZXJhdGVkKVwiLFxuICAgIFwiY2x1c3RlcnMgKHByZS1leGlzdGluZylcIjogXCJDbHVzdGVycyAocHJlLWV4aXN0aW5nKVwiLFxuICAgIFwiYnVuZGxlZCBlZGdlcyAoZ2VuZXJhdGVkKVwiOiBcIkJ1bmRsZWQgZWRnZXMgKGdlbmVyYXRlZClcIixcbiAgICBcImRpcmVjdGVkIGVkZ2VzXCI6IFwiRGlyZWN0ZWQgZWRnZXNcIixcbiAgICBcIndlaWdodGVkIGVkZ2VzXCI6IFwiV2VpZ2h0ZWQgZWRnZXNcIixcbiAgICBcIndlaWdodGVkIG5vZGVzXCI6IFwiV2VpZ2h0ZWQgbm9kZXNcIixcbiAgICBcImhpZXJhcmNoaWNhbFwiOiBcIkhpZXJhcmNoaWNhbFwiLFxuICAgIFwiY2F0ZWdvcmljYWwgbm9kZXNcIjogXCJDYXRlZ29yaWNhbCBub2Rlc1wiLFxuICAgIFwidHJlZXNcIjogXCJUcmVlc1wiLFxuICAgIFwibGFiZWxlZCBub2Rlc1wiOiBcIkxhYmVsZWQgbm9kZXNcIixcbiAgICBcImJpcGFydGl0ZVwiOiBcIkJpcGFydGl0ZVwiLFxuICAgIFwidHJpcGFydGl0ZVwiOiBcIkJpcGFydGl0ZVwiLFxuICAgIFwibGFiZWxlZCBlZGdlc1wiOiBcIkxhYmVsZWQgZWRnZXNcIixcbiAgICBcInBsYW5hclwiOiBcIlBsYW5hclwiLFxuICAgIFwic3BhcnNlXCI6IFwiU3BhcnNlXCIsXG4gICAgXCJLLXBsYW5hclwiOiBcIlBsYW5hclwiLFxuICAgIFwiMi1wbGFuYXJcIjogXCJQbGFuYXJcIixcbiAgICBcImFjeWNsaWNcIjogXCJBY3ljbGljXCIsXG59O1xuXG4gICAgXG4gICAgYmVuY2htYXJrX2RhdGFzZXRzLmZvckVhY2goKGVudHJ5KSA9PiB7XG4gICAgICAgIGxldCBuYW1lID0gbmFtZV9jbGVhbnVwKGVudHJ5Lk5hbWUpXG4gICAgICAgIG5hbWVNYXBbbmFtZV0gPSBlbnRyeS5OYW1lXG4gICAgICAgIGRhdGFTZXROYW1lcy5wdXNoKG5hbWUpO1xuICAgICAgICB2YXIgcGFydHMgPSBlbnRyeVtcImdyYXBoIGZlYXR1cmVzIGhhbmRsZWRcIl0uc3BsaXQoXCIsXCIpLm1hcChpdGVtID0+IGl0ZW0udHJpbSgpKVxuICAgICAgICBmb3IgKHZhciBwYXJ0IG9mIHBhcnRzKSB7XG4gICAgICAgICAgICBpZiAocGFydCAhPT0gXCJcIikge1xuICAgICAgICAgICAgICAgIHVuaXF1ZURhdGFUYWdTZXQuYWRkKHBhcnQpO1xuICAgICAgICAgICAgICAgIGlmICghZGF0YU1hcFtwYXJ0XSkge1xuICAgICAgICAgICAgICAgICAgICBkYXRhTWFwW3BhcnRdID0gbmV3IFNldCgpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBkYXRhTWFwW3BhcnRdLmFkZChuYW1lKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH0pXG4gICAgIFxuICAgIFxuICAgICBcbiAgXG4gICAgbGl0ZXJhdHVyZS5mb3JFYWNoKChwYXBlcikgPT4ge1xuXG4gICAgICBwYXBlck5hbWVzLnB1c2gocGFwZXJbXCJDaXRhdGlvbiBuYW1lXCJdKTtcbiAgICAgIHZhciBwYXJ0cyA9IHBhcGVyW1wiR3JhcGggZmVhdHVyZVwiXS5zcGxpdChcIixcIikubWFwKGl0ZW0gPT4gaXRlbS50cmltKCkpXG4gICAgICBmb3IgKHZhciBwYXJ0IG9mIHBhcnRzKSB7XG4gICAgICAgIGlmIChwYXJ0ICE9PSBcIlwiKSB7XG4gICAgICAgICAgdW5pcXVlUGFwZXJUYWdTZXQuYWRkKHBhcnQpO1xuICAgICAgICAgIFxuICAgICAgICAgIGlmIChwYXJ0IGluIHRhZ01hcHBpbmcpIHtcbiAgICAgICAgICAgICAgcGFydCA9IHRhZ01hcHBpbmdbcGFydF1cbiAgICAgICAgICB9XG4gICAgICAgICAgaWYgKCFwYXBlck1hcFtwYXJ0XSkge1xuICAgICAgICAgICAgICBwYXBlck1hcFtwYXJ0XSA9IG5ldyBTZXQoKTtcbiAgICAgICAgICB9XG4gICAgICAgICAgXG4gICAgICAgICAgcGFwZXJNYXBbcGFydF0uYWRkKHBhcGVyW1wiQ2l0YXRpb24gbmFtZVwiXSk7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9KVxuICBcbiAgICAvLyBBZGQga2V5cyBub3QgcHJlc2VudCBpbiB0aGUgcGFwZXJUYWdzIFxuICAgIE9iamVjdC5rZXlzKGRhdGFNYXApLmZvckVhY2goKGtleSkgPT4ge1xuICAgICAgaWYgKCFwYXBlck1hcFtrZXldKSB7XG4gICAgICAgIHBhcGVyTWFwW2tleV0gPSBuZXcgU2V0KCk7XG4gICAgICB9XG4gICAgfSlcbiAgXG4gIFxuICAgIFxuICAgIHZhciBjYXRlZ29yeV90YWdzID0ge1xuICAgICAgICAwOiBcIkxheWVyZWRcIixcbiAgICAgICAgMjogXCJIaWVyYXJjaGljYWxcIixcbiAgICAgICAgNDogXCJBdHRyaWJ1dGVzXCIsXG4gICAgICAgIDExOiBcIlN0cnVjdHVyZXNcIixcbiAgICAgICAgMjE6IFwiT3RoZXJcIixcbiAgICB9XG4gICAgXG4gICAgLy8gaWYgeW91IGNoYW5nZSB0aGlzIG9yZGVyaW5nIG9yIG1vdmUgYXJvdW5kIHZhbHVlcyBhbHNvIGNoYW5nZSB0aGUgY2F0ZWdvcnkgbWFwIGFib3ZlISEhXG4gICAgLy92YXIgdW5pcXVlRGF0YVRhZ3MgPSBbLi4udW5pcXVlRGF0YVRhZ1NldF1cbiAgICB2YXIgdW5pcXVlRGF0YVRhZ3MgPSBbXG4gICAgICAgIC8vIExheWVyZWRcbiAgICAgICAgXCJCaXBhcnRpdGVcIixcbiAgICAgICAgXCJOLWxheWVyc1wiLFxuICAgICAgICBcbiAgICAgICAgLy8gSGllcmFyY2hpY2FsXG4gICAgICAgIFwiVHJlZXNcIixcbiAgICAgICAgXCJIaWVyYXJjaGljYWxcIixcblxuICAgICAgICAvLyBBdHRyaWJ1dGVzXG4gICAgICAgIFwiRHluYW1pY1wiLFxuICAgICAgICBcIldlaWdodGVkIGVkZ2VzXCIsXG4gICAgICAgIFwiV2VpZ2h0ZWQgbm9kZXNcIixcbiAgICAgICAgXCJMYWJlbGVkIG5vZGVzXCIsXG4gICAgICAgIFwiQ2F0ZWdvcmljYWwgbm9kZXNcIixcbiAgICAgICAgXCJTaWduZWRcIixcbiAgICAgICAgXCJTcGF0aWFsXCIsXG4gICAgICAgIFxuICAgICAgICAvLyBTdHJ1Y3R1cmVzXG4gICAgICAgIFwiQ2x1c3RlcnMgKHByZS1leGlzdGluZylcIixcbiAgICAgICAgXCJDbHVzdGVycyAoZ2VuZXJhdGVkKVwiLFxuICAgICAgICBcIkRpcmVjdGVkIGVkZ2VzXCIsXG4gICAgICAgIFwiSHlwZXJncmFwaHNcIixcbiAgICAgICAgXCJCdW5kbGVkIGVkZ2VzIChnZW5lcmF0ZWQpXCIsXG4gICAgICAgIFwiUGFydGl0aW9uXCIsXG4gICAgICAgIFwiTXVsdGlncmFwaFwiLFxuICAgICAgICBcIkFjeWNsaWNcIixcbiAgICAgICAgXCJNZXNoXCIsXG5cbiAgICAgICAgLy8gT3RoZXJcbiAgICAgICAgXCJHZW5lcmljXCIsXG4gICAgICAgIFwiUGxhbmFyXCIsXG4gICAgICAgIFwiTm9ucGxhbmFyXCIsXG4gICAgICAgIFwiS25vd24gY3Jvc3NpbmcgbnVtYmVyXCIsXG4gICAgICAgIFwiTGFyZ2VcIixcbiAgICAgICAgXCJEZW5zZVwiLFxuICAgICAgICBcIlNwYXJzZVwiLFxuICAgIF1cbiAgICB2YXIgdW5pcXVlUGFwZXJUYWdzID0gWy4uLnVuaXF1ZVBhcGVyVGFnU2V0XSAgXG4gICAgLy9jb25zb2xlLmxvZyh1bmlxdWVEYXRhVGFncylcbiAgICAvL2NvbnNvbGUubG9nKHVuaXF1ZVBhcGVyVGFnU2V0KVxuICAgIC8vY29uc29sZS5sb2coZGF0YU1hcClcbiAgICAvL2NvbnNvbGUubG9nKHBhcGVyTWFwKVxuICAgIC8vY29uc29sZS5sb2coZGF0YVNldE5hbWVzKVxuICAgIC8vY29uc29sZS5sb2cocGFwZXJOYW1lcylcblxuICAgIC8vIHJlbW92ZSBlbXB0eSBlbnRyaWVzXG4gICAgcGFwZXJOYW1lcyA9IHBhcGVyTmFtZXMuZmlsdGVyKHN0ciA9PiBzdHIudHJpbSgpICE9PSBcIlwiKVxuICAgIFxuXG5cbiAgICB2YXIgY2hlY2tCb3hDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY2hlY2tib3gtY29udGFpbmVyJyk7XG4gICAgdmFyIGxpbmtzTGlzdENvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdkYXRhc2V0bGlua3NsaXN0LWNvbnRhaW5lcicpXG4gICAgdmFyIHBhcGVyTGlua3NDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncGFwZXJsaW5rc2xpc3QtY29udGFpbmVyJylcbiAgICB2YXIgY2hlY2tib3hTdGF0ZXMgPSBbXTsgIC8vIEFycmF5IHRvIGtlZXAgdHJhY2sgb2YgY2hlY2tib3ggc3RhdGVzIChib29sZWFucylcblxuICAgIC8vIG5lZWRzIHRvIGJlIGluIGhlcmUgc2luY2Ugd2UgYWNjZXNzIHNvIG1hbnkgXCJnbG9iYWxcIiB2YXJpYWJsZXNcbiAgICBmdW5jdGlvbiBkaXNwbGF5RGF0YVNldExpbmtzTGlzdCgpIHtcbiAgICAgICAgLy9jb25zb2xlLmxvZyhjaGVja2JveFN0YXRlcyk7IC8vIGN1cnJlbnQgc3RhdGVzIHRvIGNoZWNrIHdoaWNoIGRhdGFzZXQgbGlua3MgdG8gZGlzcGxheSAoaW5kZXgtYmFzZWQpXG5cbiAgICAgICAgY29uc3QgZmlsdGVyZWRUYWdzID0gdW5pcXVlRGF0YVRhZ3MubWFwKChpdGVtLCBpbmRleCkgPT4gY2hlY2tib3hTdGF0ZXNbaW5kZXhdID8gaXRlbSA6IHVuZGVmaW5lZClcbiAgICAgICAgICAgIC5maWx0ZXIoaXRlbSA9PiBpdGVtICE9PSB1bmRlZmluZWQpO1xuXG4gICAgICAgIC8vY29uc29sZS5sb2coZmlsdGVyZWRUYWdzKVxuXG4gICAgICAgIHZhciBmaW5hbF9kYXRhc2V0cyA9IFtdXG4gICAgICAgIHZhciBmaW5hbF9kYXRhX2ludmVyc2UgPSBbXVxuXG4gICAgICAgIHZhciBmaW5hbF9wYXBlcnMgPSBbXVxuICAgICAgICB2YXIgZmluYWxfcGFwZXJfaW52ZXJzZSA9IFtdXG5cbiAgICAgICAgaWYgKGZpbHRlcmVkVGFncy5sZW5ndGggPT0gMCkge1xuICAgICAgICAgICAgZmluYWxfZGF0YXNldHMgPSBkYXRhU2V0TmFtZXM7XG4gICAgICAgICAgICBmaW5hbF9wYXBlcnMgPSBwYXBlck5hbWVzO1xuICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgLy8gUmV0cmlldmUgYW4gYXJyYXkgb2Ygc2V0cyBmcm9tIHRoZSBwcm92aWRlZCBrZXlzXG4gICAgICAgICAgICBjb25zdCBkYXRhU2V0cyA9IGZpbHRlcmVkVGFncy5tYXAoa2V5ID0+IGRhdGFNYXBba2V5XSk7XG4gICAgICAgICAgICBjb25zdCBwYXBlclNldHMgPSBmaWx0ZXJlZFRhZ3MubWFwKGtleSA9PiBwYXBlck1hcFtrZXldKTtcbiAgICAgICAgICAgIFxuICAgICAgICAgICAgLy8gQ2FsY3VsYXRlIHRoZSBpbnRlcnNlY3Rpb24gb2YgYWxsIHNldHNcbiAgICAgICAgICAgIGNvbnN0IGRhdGFJbnRlcnNlY3Rpb24gPSBkYXRhU2V0cy5yZWR1Y2UoKGFjYywgc2V0KSA9PiBuZXcgU2V0KFsuLi5hY2NdLmZpbHRlcih4ID0+IHNldC5oYXMoeCkpKSk7XG4gICAgICAgICAgICBjb25zdCBwYXBlckludGVyc2VjdGlvbiA9IHBhcGVyU2V0cy5yZWR1Y2UoKGFjYywgc2V0KSA9PiBuZXcgU2V0KFsuLi5hY2NdLmZpbHRlcih4ID0+IHNldC5oYXMoeCkpKSk7XG4gICAgICAgICAgICBcbiAgICAgICAgICAgIGZpbmFsX2RhdGFzZXRzID0gWy4uLmRhdGFJbnRlcnNlY3Rpb25dIC8vIHdoaXRlIGxpc3RcbiAgICAgICAgICAgIGZpbmFsX3BhcGVycyA9IFsuLi5wYXBlckludGVyc2VjdGlvbl1cblxuICAgICAgICAgICAgLy8gTm93LCBjb21wdXRlIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gZGF0YVNldE5hbWVzIGFuZCBmaW5hbF9kYXRhc2V0c1xuICAgICAgICAgICAgY29uc3QgZGF0YURpZmZlcmVuY2UgPSBuZXcgU2V0KGRhdGFTZXROYW1lcy5maWx0ZXIoeCA9PiAhZmluYWxfZGF0YXNldHMuaW5jbHVkZXMoeCkpKTtcbiAgICAgICAgICAgIGNvbnN0IHBhcGVyRGlmZmVyZW5jZSA9IG5ldyBTZXQocGFwZXJOYW1lcy5maWx0ZXIoeCA9PiAhZmluYWxfcGFwZXJzLmluY2x1ZGVzKHgpKSk7XG5cbiAgICAgICAgICAgIGZpbmFsX2RhdGFfaW52ZXJzZSA9IFsuLi5kYXRhRGlmZmVyZW5jZV07IC8vIGJsYWNrIGxpc3RcbiAgICAgICAgICAgIGZpbmFsX3BhcGVyX2ludmVyc2UgPSBbLi4ucGFwZXJEaWZmZXJlbmNlXVxuICAgICAgICB9XG5cbiAgICAgICAgLy9jb25zb2xlLmxvZyhcInNob3c6IFwiICsgZmluYWxfZGF0YXNldHMpIC8vIHdoaXRlIGxpc3QgXG4gICAgICAgIC8vY29uc29sZS5sb2coXCJzaG93OiBcIiArIGZpbmFsX3BhcGVycylcblxuICAgICAgICBmaW5hbF9kYXRhc2V0cy5mb3JFYWNoKChuYW1lKSA9PiB7XG4gICAgICAgICAgICAvL2NvbnNvbGUubG9nKG5hbWUgKyAnLWxpbmsnKVxuICAgICAgICAgICAgbGV0IGN1cnJMaW5rRGl2ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQobmFtZSArICctbGluaycpXG4gICAgICAgICAgICBpZiAoY3VyckxpbmtEaXYgIT0gbnVsbCkge1xuICAgICAgICAgICAgICAgIGN1cnJMaW5rRGl2LnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOyAgLy8gQ2xlYXIgdGhlIGRpc3BsYXkgcHJvcGVydHkgdG8gZGVmYXVsdCAoJ2Jsb2NrJylcbiAgICAgICAgICAgIH0gXG4gICAgICAgIH0pXG5cbiAgICAgICAgZmluYWxfZGF0YV9pbnZlcnNlLmZvckVhY2goKG5hbWUpID0+IHtcbiAgICAgICAgICAgIC8vY29uc29sZS5sb2cobmFtZSArICctbGluaycpXG4gICAgICAgICAgICBsZXQgY3VyckxpbmtEaXYgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChuYW1lICsgJy1saW5rJylcbiAgICAgICAgICAgIGlmIChjdXJyTGlua0RpdiAhPSBudWxsKSB7XG4gICAgICAgICAgICAgICAgY3VyckxpbmtEaXYuc3R5bGUuZGlzcGxheSA9ICdub25lJzsgIC8vIEhpZGUgdGhlIGRpdlxuICAgICAgICAgICAgfVxuICAgICAgICB9KVxuXG4gICAgICAgIGZpbmFsX3BhcGVycy5mb3JFYWNoKChuYW1lKSA9PiB7XG4gICAgICAgICAgICAvL2NvbnNvbGUubG9nKG5hbWUgKyAnLWxpbmsnKVxuICAgICAgICAgICAgbGV0IGN1cnJMaW5rRGl2ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQobmFtZSArICctbGluaycpXG4gICAgICAgICAgICBpZiAoY3VyckxpbmtEaXYgIT0gbnVsbCkge1xuICAgICAgICAgICAgICAgIGN1cnJMaW5rRGl2LnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOyAgLy8gQ2xlYXIgdGhlIGRpc3BsYXkgcHJvcGVydHkgdG8gZGVmYXVsdCAoJ2Jsb2NrJylcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSlcblxuICAgICAgICBmaW5hbF9wYXBlcl9pbnZlcnNlLmZvckVhY2goKG5hbWUpID0+IHtcbiAgICAgICAgICAgIC8vY29uc29sZS5sb2cobmFtZSArICctbGluaycpXG4gICAgICAgICAgICBsZXQgY3VyckxpbmtEaXYgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChuYW1lICsgJy1saW5rJylcbiAgICAgICAgICAgIGlmIChjdXJyTGlua0RpdiAhPSBudWxsKSB7XG4gICAgICAgICAgICAgICAgY3VyckxpbmtEaXYuc3R5bGUuZGlzcGxheSA9ICdub25lJzsgIC8vIEhpZGUgdGhlIGRpdlxuICAgICAgICAgICAgfVxuICAgICAgICB9KVxuXG4gICAgICAvKlxuICAgICAgLy8gdGhpcyBpcyBob3cgdGhlIGl0IHJhbiBlYXJsaWVyIGFuZCBpdCB3YXMgdXNlZCB0byBnZW5lcmF0ZSB0aGUgc3RhdGljIGh0bWwgbGlua3MgYWJvdmUgdGhpc1xuICAgICAgXG4gICAgICBpZiAoZmluYWxfZGF0YXNldHMubGVuZ3RoID09IDApIHtcbiAgICAgIC8vIGRpc3BsYXkgbWVzc2FnZSB0aGF0IG5vIGRhdGFzZXQgY29udGFpbnMgYWxsIHRoZXNlIHRhZ3NcbiAgICAgIGxpbmtzTGlzdENvbnRhaW5lci5pbm5lckhUTUwgPSAnJztcbiAgICAgIH0gZWxzZSB7XG4gICAgICBcbiAgICAgIGxpbmtzTGlzdENvbnRhaW5lci5pbm5lckhUTUwgPSAnJztcbiAgICAgIFxuICAgICAgZmluYWxfZGF0YXNldHMuZm9yRWFjaCgoY3VyckRhdGFOYW1lKSA9PiB7XG4gICAgICBjb25zdCBhbmNob3IgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdhJyk7XG4gICAgICBhbmNob3IuaHJlZiA9ICcjJyArIGN1cnJEYXRhTmFtZVxuICAgICAgYW5jaG9yLmNsYXNzTGlzdC5hZGQoJ2RhdGFzZXQtbGluaycpXG4gICAgICBhbmNob3IudGV4dENvbnRlbnQgPSBuYW1lTWFwW2N1cnJEYXRhTmFtZV1cbiAgICAgIFxuICAgICAgY29uc3QgZGl2ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG4gICAgICBkaXYuaWQgPSBjdXJyRGF0YU5hbWUgKyAnLWxpbmsnXG4gICAgICBkaXYuYXBwZW5kQ2hpbGQoYW5jaG9yKTtcbiAgICAgIFxuICAgICAgbGlua3NMaXN0Q29udGFpbmVyLmFwcGVuZENoaWxkKGRpdik7XG4gICAgICB9KVxuICAgICAgfVxuICAgICAgXG4gICAgICAvLyBhbmQgaGVyZSBmb3IgdGhlIHBhcGVyIG5hbWVzXG4gICAgICBwYXBlck5hbWVzID0gcGFwZXJOYW1lcy5maWx0ZXIoc3RyID0+IHN0ci50cmltKCkgIT09IFwiXCIpLnNvcnQoKTtcbiAgICAgIHBhcGVyTmFtZXMuZm9yRWFjaCgoY3VyclBhcGVyTmFtZSkgPT4ge1xuXG4gICAgICAgICAgY29uc3QgZGl2ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG4gICAgICAgICAgZGl2LmlkID0gY3VyclBhcGVyTmFtZSArICctbGluaydcbiAgICAgICAgICBkaXYudGV4dENvbnRlbnQgPSBgW0Ake2N1cnJQYXBlck5hbWV9XWBcblxuICAgICAgICAgIHBhcGVyTGlua3NDb250YWluZXIuYXBwZW5kQ2hpbGQoZGl2KTtcbiAgICAgIH0pOyovXG4gICAgICBcbiAgICB9XG4gICBcbiAgLy8gRnVuY3Rpb24gdG8gYWRkIGEgbmV3IGNoZWNrYm94IHdpdGggYSBzdHlsZWQgc3BhbiBsYWJlbFxuICBmdW5jdGlvbiBhZGRDaGVja2JveChpbmRleCwgbmFtZSkge1xuICAgICAgY29uc3QgbmV3Q2hlY2tib3ggPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdpbnB1dCcpO1xuICAgICAgbmV3Q2hlY2tib3gudHlwZSA9ICdjaGVja2JveCc7XG4gICAgICBuZXdDaGVja2JveC5pZCA9ICdjaGVja2JveCcgKyBpbmRleDtcbiAgICAgIG5ld0NoZWNrYm94LnN0eWxlLm1hcmdpblJpZ2h0ID0gJzhweCc7IFxuICAgICAgbmV3Q2hlY2tib3guY2xhc3NMaXN0LmFkZCgnZm9ybS1jaGVjay1pbnB1dCcpO1xuXG4gICAgICAvLyBDcmVhdGluZyB0aGUgc3BhbiB0aGF0IHdpbGwgYWN0IGFzIGEgbGFiZWxcbiAgICAgIGNvbnN0IHNwYW4gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzcGFuJyk7XG4gICAgICBzcGFuLmNsYXNzTGlzdC5hZGQoJ3BpbGwtdGFnJyk7XG4gICAgICBzcGFuLmNsYXNzTGlzdC5hZGQoYHBpbGxfY29sb3JfJHtuYW1lX2NsZWFudXAobmFtZSl9YCk7XG4gICAgICAvL3NwYW4uc3R5bGUuYmFja2dyb3VuZENvbG9yID0gZ2V0X2Nzc19jb2xvcl9mb3JfdGFnKG5hbWUpXG4gICAgICAvL3NwYW4uc3R5bGUuYmFja2dyb3VuZENvbG9yID0gZ3JhcGhfZmVhdHVyZV90YWdzX2NvbG9yc1tpbmRleCAlIGdyYXBoX2ZlYXR1cmVfdGFnc19jb2xvcnMubGVuZ3RoXTsgIFxuICAgICAgc3Bhbi50ZXh0Q29udGVudCA9IG5hbWU7XG5cbiAgICAgIGNvbnN0IGxhYmVsID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnbGFiZWwnKTtcbiAgICAgIGxhYmVsLmNsYXNzTmFtZSA9ICdkLWZsZXggYWxpZ24taXRlbXMtY2VudGVyIGp1c3RpZnktY29udGVudC1zdGFydCc7XG4gICAgICBsYWJlbC5odG1sRm9yID0gbmV3Q2hlY2tib3guaWQ7XG4gICAgICBsYWJlbC5zdHlsZS5jdXJzb3IgPSAncG9pbnRlcic7ICAvLyBDaGFuZ2UgdGhlIGN1cnNvciB0byBhIHBvaW50ZXIgb24gaG92ZXJcbiAgICAgIGxhYmVsLmFwcGVuZENoaWxkKG5ld0NoZWNrYm94KTtcbiAgICAgIGxhYmVsLmFwcGVuZENoaWxkKHNwYW4pOyAgLy8gQXBwZW5kIHRoZSBzcGFuIHRvIHRoZSBsYWJlbFxuXG4gICAgICBjb25zdCBkaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICAgIGRpdi5jbGFzc05hbWUgPSAnZm9ybS1jaGVjayBkLWZsZXggYWxpZ24taXRlbXMtY2VudGVyJzsgIC8vIEVuc3VyZSB0aGUgY2hlY2tib3ggYW5kIGxhYmVsIGFyZSBhbGlnbmVkXG4gICAgICBkaXYuYXBwZW5kQ2hpbGQobGFiZWwpO1xuXG4gICAgICBjaGVja0JveENvbnRhaW5lci5hcHBlbmRDaGlsZChkaXYpO1xuXG4gICAgICAvLyBVcGRhdGUgc3RhdGUgYXJyYXkgYW5kIGFkZCBldmVudCBsaXN0ZW5lclxuICAgICAgY2hlY2tib3hTdGF0ZXMucHVzaChmYWxzZSk7XG4gICAgICBuZXdDaGVja2JveC5hZGRFdmVudExpc3RlbmVyKCdjaGFuZ2UnLCAoKSA9PiB7XG4gICAgICAgICAgY2hlY2tib3hTdGF0ZXNbaW5kZXhdID0gbmV3Q2hlY2tib3guY2hlY2tlZDtcbiAgICAgICAgICBkaXNwbGF5RGF0YVNldExpbmtzTGlzdCgpXG4gICAgICB9KTtcbiAgfVxuXG4gIC8vIEF1dG9tYXRpY2FsbHkgYWRkIGNoZWNrYm94ZXMgb24gbG9hZCBmb3IgZWFjaCB0YWcsIHdlIGNhbm5vdCByZW9yZGVyIGFmdGVyIHRoaXMhXG4gIHVuaXF1ZURhdGFUYWdzLmZvckVhY2goKGVudHJ5LCBpbmRleCkgPT4ge1xuICAgICAgaWYgKGNhdGVnb3J5X3RhZ3MuaGFzT3duUHJvcGVydHkoaW5kZXgpKSB7XG4gICAgICAgICAgY29uc3Qgc3BhbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NwYW4nKTtcbiAgICAgICAgICBzcGFuLnN0eWxlLm9wYWNpdHkgPSBcIjUwJVwiOyAgLy8gU2V0dGluZyBpdCB0byBiZSBsZXNzIG9ibm94aW91c1xuICAgICAgICAgIHNwYW4udGV4dENvbnRlbnQgPSBcIlxcdTIwMTIgXCIgKyBjYXRlZ29yeV90YWdzW2luZGV4XSArIFwiXFx1MjAxMiBcIjtcblxuICAgICAgICAgIGNvbnN0IGRpdiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuICAgICAgICAgIGRpdi5jbGFzc05hbWUgPSAnZC1mbGV4IGFsaWduLWl0ZW1zLWNlbnRlcic7ICBcbiAgICAgICAgICBkaXYuYXBwZW5kQ2hpbGQoc3Bhbik7XG5cbiAgICAgICAgICBjaGVja0JveENvbnRhaW5lci5hcHBlbmRDaGlsZChkaXYpO1xuICAgICAgfVxuICAgICAgYWRkQ2hlY2tib3goaW5kZXgsIGVudHJ5KTtcbiAgfSlcblxuICAvLyBpbml0aWFsIGNhbGwgdG8gZGlzcGxheSBhbGwgZGF0YXNldHMgKG5vdyBhIGJpdCByZWR1bmRhbnQgYnV0IGFkZHMgdGhlIFwiZGlzcGxheVwiIHN0eWxlLWF0dHJpYnV0ZSlcbiAgZGlzcGxheURhdGFTZXRMaW5rc0xpc3QoKVxuXG59XG4ifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../chapters";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

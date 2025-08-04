@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>background – GD benchmark sets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a202ed359b7240dcab911ed64cbd0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation-and-background" id="toc-motivation-and-background" class="nav-link active" data-scroll-target="#motivation-and-background"><span class="header-section-number">1</span> Motivation and Background</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="motivation-and-background" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Motivation and Background</h1>
+<p>This work stems from the challenges we encountered in finding datasets tailored to test graph layout algorithms. When developing a graph layout algorithm which handles specific features (such as layers, or clusters), it is essential to have a benchmark dataset that reflects these features. While conducting our own evaluations, we found it difficult to find datasets that would incorporate features that we needed. This submission is part of an ongoing effort to keep a curated list of datasets.</p>
+<p>Our work focuses on providing a graph benchmark collection that categorizes datasets by how they organize their graphs and emphasizes their features. We aim to facilitate researchers’ choice of benchmarks to reflect real use cases or allow comparisons to other algorithms in their respective fields. Although a number of graph repositories exist, their target and objectives are not always aligned with the needs of graph drawing researchers. While the scope of this work revolves around compiling graphs and networks used in the graph drawing literature, we highlight that other, adjacent fields have also created similar <strong>repositories tailored to different needs</strong>. For example, the <a href="#Network_Repository" class="dataset-link">Network Repository</a> consists of a comprehensive collection of datasets that contain many attributes and are used for benchmarking in machine learning, data mining, and many other network applications <span class="citation" data-cites="nr">[@nr]</span>. In biology, the <a href="#Biological_Pathways_KEGG" class="dataset-link">KEGG Encyclopedia of Genes and Genomes</a> contains network information relevant to biological pathways <span class="citation" data-cites="kegg">[@kegg]</span>. Some general-purpose collections used in network science are also relevant to our discussion. Among the most famous ones, the <a href="#SuiteSparse_Matrix_Collection" class="dataset-link">SuiteSparse Matrix Collection</a>, the <a href="#SNAP" class="dataset-link">Stanford Network Analysis Project (SNAP)</a>, and the <a href="#Pajek" class="dataset-link">Pajek</a> collection stand out since they propose large compilations of datasets that often come from diverse sources. The <a href="https://ogb.stanford.edu/">Open Graph Benchmark</a> collection from <span class="citation" data-cites="hu2020">@hu2020</span> is also worth mentioning. It provides an important infrastructure for evaluating machine learning methods on graph-structured data, including datasets, tasks, and evaluation metrics, but it is not focused on layout quality or human-perceived readability of graph visualizations. Our work complements such efforts by specifically targeting datasets designed to evaluate the perceptual and aesthetic dimensions of layout algorithms, which are not addressed in <span class="citation" data-cites="hu2020">@hu2020</span>. Much simpler examples of similar collections can be found in curated lists of links on GitHub, often referred to as <em>awesome</em> lists, where a short comment usually accompanies every entry (for instance, <a href="https://github.com/gzcsudo/Awesome-Hypergraph-Network">here</a> and <a href="https://github.com/domargan/awesome-dynamic-graphs">here</a>). The purpose and scope of such repositories is provided with more depth in <strong>?@sec-established-network-repositories</strong>.</p>
+<p>Such lists can serve as great tools to find particular case studies, but they do not serve the same purpose as a <strong>uniform collection</strong> like <a href="#Rome-Lib" class="dataset-link">Rome-Lib</a>: a collection of graphs with similar features that can be used to test an algorithm on thousands of graphs with increasing nodes. Rome-Lib is hosted on the main website of the Graph Drawing website, as proof of its usefulness as a benchmark dataset, together with the AT&amp;T graphs and the random DAGs. Another example is the Graph Partitioning Archive, also known as the <a href="#Walshaw" class="dataset-link">Walshaw</a> Collection, which compiles relevant graphs and partitioning algorithms from disparate sources in the relevant literature <span class="citation" data-cites="walshaw2000">[@walshaw2000]</span>. The uniformity of such collections allows scientists to easily run thousand of tests on similar graphs, allowing to test the scalability of an algorithm varying density, number of nodes and number of edges — as opposed to the previously mentioned collections, where the focus is on the diversity of the graphs. See <strong>?@sec-uniform-benchmark-datasets</strong> for more information on this topic.</p>
+<p>We care particularly about the <strong>reproducibility</strong> of past and future research. A dataset that has been used in an evaluation and is now unaccessible greatly hinders the reproducibility of the evaluation, and in the worst case it makes it impossible to reproduce, and, as such, much less meaningful. Losing a dataset to link rot is an unfortunately common problem in the digital age, as URLs change, websites go down, and data is lost. One example of this is the <a href="https://www.open-graph-archive.org/">Open Graph Archive</a> from <span class="citation" data-cites="bachmaier2012">@bachmaier2012</span>, which was a project to create a graph database that categorizes, analyses, and visualizes graphs uploaded from the community, a laudable effort now rendered unfortunately inaccessible. For more discussion, see <strong>?@sec-lost</strong>.</p>
+<p>We tried to mitigate the problem of lost datasets by documenting what we could still find about them. For every dataset that we found that is now lost or inaccessible, we documented every detail we could find about it in literature, including descriptions and pictures of the rendered graphs, so that we can conserve a hint of what the dataset contained. We also reached out to colleagues in other universities who we knew had worked with certain datasets in the past, and asked if they could check their internal storage — for example, shared drives or old project folders — to see if the data was still available. In a couple of cases, this led to successfull outcomes: see <a href="#Storylines_Movie_Plots" class="dataset-link">Storylines (Movie Plots)</a>.</p>
+<p>We store our collection on the <a href="https://osf.io/">Open Science Framework (OSF)</a>, which is the currently recommended solution in the VIS community for long-term archival of research data. As per <a href="https://help.osf.io/article/547-account-and-security-faq-s#Backup">OSF’s backup and preservation policy</a>, storage and open access is guaranteed for the next 50 years.</p>
+<p>In this context, it is also worth mentioning that in recent years there have been several initiatives aimed at encouraging care for replicability in research. The <a href="https://www.replicabilitystamp.org/">Graphics Replicability Stamp</a> is one of these, meant to be an endorsement of the replicability of the results presented in a paper, which ensures the replicability of the results of a paper through an additional review process. Another similar intiative are the <a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">ACM badges</a>, or the <a href="https://reproducibility.sigmod.org/">SIGMOD availability and reproducibility initiative</a>, which goes one step further and publishes full reports commenting on how reproducible a paper is.</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Maintenance plans and contribution to the repository">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Maintenance plans and contribution to the repository
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Contributions to the dataset collection (corrections, integrations, replacement) are most welcome — and strongly encouraged. However, to ensure data quality and avoid accidental overwriting or inconsistency, we don’t allow direct edits to the files by everyone. Instead, there are two main ways to contribute:</p>
+<ul>
+<li><p><strong>Pull requests</strong>: If you prefer to fill in all the information yourself, you can submit a pull request directly to the repository. The data for both the papers and the datasets is stored in CSV format, <a href="https://github.com/VisDunneRight/gd_benchmark_sets/tree/master/notion_data">available here</a>.</p></li>
+<li><p><strong>GitHub issues</strong>: If you’d rather just point us to a new dataset or share some additional info (e.g., missing metadata, clarifications, or links), we’ve created an <a href="https://github.com/VisDunneRight/gd_benchmark_sets/issues/new?template=dataset-inclusion.md">issue template</a> to make that easier. We’ll then take care of adding the dataset and filling in whatever information we can find or infer.</p></li>
+</ul>
+<p>Even without external contributions, we actively monitor the space and try to keep the repository up to date as new datasets emerge. And if none of the options above work for you, feel free to just <a href="#nte-post-abstract">reach out to us</a> — we’re happy to handle things more informally as well.</p>
+<p>That said, it’s worth noting a clear limitation: this collection does not aim to be exhaustive. The starting point for the dataset list was a literature review covering a few hundred papers, which means it’s entirely possible that some benchmarks were missed — especially if they weren’t cited often or were introduced in more obscure venues. For this reason, contributions from the community are especially valuable to help fill in the gaps and keep the resource as useful and complete as possible.</p>
+</div>
+</div>
+<p>This work proposes a working classification of datasets and collections based on their structure while also providing a higher emphasis on the features and usage within the literature of our field. Our collection is offered as a complement to the previously mentioned collections, as we intend to aid researchers in finding graphs in the context of layout algorithms and network visualization, with a focus on encouraging replicability.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

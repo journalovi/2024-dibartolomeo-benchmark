@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>transportation-networks-720a658bb1914b51910c480d86943e80 – GD benchmark sets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a202ed359b7240dcab911ed64cbd0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transportation-networks" id="toc-transportation-networks" class="nav-link active" data-scroll-target="#transportation-networks"><span class="header-section-number">1</span> Transportation Networks</a></li>
+  <li><a href="#body" id="toc-body" class="nav-link" data-scroll-target="#body"><span class="header-section-number">2</span> Body</a>
+  <ul class="collapse">
+  <li><a href="#subways" id="toc-subways" class="nav-link" data-scroll-target="#subways"><span class="header-section-number">2.1</span> Subways</a>
+  <ul class="collapse">
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
+  <li><a href="#description-from-literature" id="toc-description-from-literature" class="nav-link" data-scroll-target="#description-from-literature">Description from Literature</a></li>
+  <li><a href="#example-figures" id="toc-example-figures" class="nav-link" data-scroll-target="#example-figures">Example Figures</a></li>
+  </ul></li>
+  <li><a href="#dimacs-usa-road-networks" id="toc-dimacs-usa-road-networks" class="nav-link" data-scroll-target="#dimacs-usa-road-networks"><span class="header-section-number">2.2</span> DIMACS USA Road Networks</a>
+  <ul class="collapse">
+  <li><a href="#description-from-literature-1" id="toc-description-from-literature-1" class="nav-link" data-scroll-target="#description-from-literature-1">Description from Literature</a></li>
+  <li><a href="#example-figures-1" id="toc-example-figures-1" class="nav-link" data-scroll-target="#example-figures-1">Example Figures</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="transportation-networks" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Transportation Networks</h1>
+<p>Note: DIMACS USA Road Network source notes that the data has errors, namely missing major highways and bridges. We currently include only the subway layout networks in our files. graph features handled: Directed edges, Spatial Graph features in papers: clusters (generated),generic,large,generic,large,spatial,labeled nodes,spatial,compound graphs,directed edges,hierarchical,spatial,weighted edges,generic,spatial,bundled edges (generated),spatial,generic,categorical nodes,generic,topological,trees,weighted edges,octilinear,port constraints,terminals,clusters (pre-existing),generic,large,spatial,clusters (pre-existing),categorical nodes Origin Paper: A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts (https://www.notion.so/A-Random-Sampling-O-n-Force-calculation-Algorithm-for-Graph-Layouts-a0bc2ae6ebdb4e8cbddb924c0484cfad?pvs=21) Originally found at: http://www.diag.uniroma1.it//challenge9/download.shtml https://osf.io/dcz5h Size: 82-433 nodes, 158-950 edges Number of Graphs: 15 Appeared in years: 2008,2013,2011,2016,2009,1998,2019,2020,2018,2022 Type of Collection: Aggregate collection is it stored properly?: No must be analyzed: No In repo?: No Related to Literature - Algorithm (1) (Dataset tag relations): KelpFusion: A Hybrid Set Visualization Technique (https://www.notion.so/KelpFusion-A-Hybrid-Set-Visualization-Technique-145828a44b7a437eb633075383f7cede?pvs=21), TrajGraph: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data (https://www.notion.so/TrajGraph-A-Graph-Based-Visual-Analytics-Approach-to-Studying-Urban-Network-Centralities-Using-Taxi-21e339918ee44f5da7703535881936f8?pvs=21), Visualizing the evolution of compound digraphs with TimeArcTrees (https://www.notion.so/Visualizing-the-evolution-of-compound-digraphs-with-TimeArcTrees-2431c9f6f9c5440589c57f9a723b3ac4?pvs=21), Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming (https://www.notion.so/Drawing-and-Labeling-High-Quality-Metro-Maps-by-Mixed-Integer-Programming-5a4b255a5dbd4f18a7f88d70212a2eff?pvs=21), A Treemap Based Method for Rapid Layout of Large Graphs (https://www.notion.so/A-Treemap-Based-Method-for-Rapid-Layout-of-Large-Graphs-7d9e14d48d9e452da4fcf8b64b007ea5?pvs=21), Rapid Graph Layout Using Space Filling Curves (https://www.notion.so/Rapid-Graph-Layout-Using-Space-Filling-Curves-847c46047b5c400bb9dcf339c8d42f12?pvs=21), Using Graph Layout to Visualize Train Interconnection Data (https://www.notion.so/Using-Graph-Layout-to-Visualize-Train-Interconnection-Data-b96db45ca8e94e75bf9a65ee15658ebf?pvs=21) cleaned format?: No duplicate?: No link works?: No Added in paper: No OSF link json: https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d90f1394a6be0ec012e916 Origin paper plaintext: A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts Page id: 720a658bb1914b51910c480d86943e80 unavailable/skip: No Cleaned ALL data: No OSF link gexf: https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d9498894a6be103212e712 OSF link gml: https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d94d990c2b4d0e9c386231 OSF link graphml: https://files.osf.io/v1/resources/j7ucv/providers/osfstorage/64d970f894a6be112a12ea21 first look: No sparkline data: {‘min’: 82, ‘max’: 433, ‘step_size’: 25, ‘num_bins’: 18, ‘bins’: [0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425], ‘num_nodes’: [0, 0, 0, 1, 2, 5, 1, 0, 2, 0, 1, 1, 0, 0, 0, 1, 0, 1]} Related to Literature - Algorithm (Dataset tag relations) 1: A Treemap Based Method for Rapid Layout of Large Graphs (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/A%20Treemap%20Based%20Method%20for%20Rapid%20Layout%20of%20Large%20G%20f96d2a808a5f4df2a781d9a890e2b266.md), Rapid Graph Layout Using Space Filling Curves (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Rapid%20Graph%20Layout%20Using%20Space%20Filling%20Curves%2010601cd6078a4ea18b17c7d40eda0041.md), KelpFusion: A Hybrid Set Visualization Technique (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/KelpFusion%20A%20Hybrid%20Set%20Visualization%20Technique%2031a567279ecc4c3980caf078144017db.md), Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20and%20Labeling%20High-Quality%20Metro%20Maps%20by%20Mi%2096459aa8ab3641978c6a93e1bd4447a2.md), TrajGraph: A Graph-Based Visual Analytics Approach to Studying Urban Network Centralities Using Taxi Trajectory Data (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/TrajGraph%20A%20Graph-Based%20Visual%20Analytics%20Approach%20%20a8a60bf2c8d34198b967636b64e97be6.md), Visualizing the evolution of compound digraphs with TimeArcTrees (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Visualizing%20the%20evolution%20of%20compound%20digraphs%20wit%20e3c6f596c3644af2a9be28dd3f7d57c5.md), Using Graph Layout to Visualize Train Interconnection Data (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Using%20Graph%20Layout%20to%20Visualize%20Train%20Interconnect%20d1e747efa23d469496dc7e73249d49d9.md), Route-Aware Edge Bundling for Visualizing Origin-Destination Trails in Urban Traffic (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Route-Aware%20Edge%20Bundling%20for%20Visualizing%20Origin-D%2063f378f25262476cbf983d569ca1af95.md), A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/A%20Random%20Sampling%20O(n)%20Force-calculation%20Algorithm%2086599a831f314d1cb8871a5a92420d0f.md), Augmenting Node-Link Diagrams with Topographic Attribute Maps (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Augmenting%20Node-Link%20Diagrams%20with%20Topographic%20Att%205995a73c463c49db8ee966cc9db41ec5.md), Metro Maps on Octilinear Grid Graphs (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Metro%20Maps%20on%20Octilinear%20Grid%20Graphs%20a8834ec2af3f40aab051ef1bfb5ddb1a.md), Graph Drawing by Stochastic Gradient Descent (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Graph%20Drawing%20by%20Stochastic%20Gradient%20Descent%20c829549f150044628d68b79584273c19.md), Structure-aware Fisheye Views for Efficient Large Graph Exploration (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Structure-aware%20Fisheye%20Views%20for%20Efficient%20Large%20%20690c77bbfc7647c098c21827e4491457.md), Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Revisiting%20Stress%20Majorization%20as%20a%20Unified%20Framew%200765ea891e9e403593025430656f35f3.md), Shape-Guided Mixed Metro Map Layout (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Shape-Guided%20Mixed%20Metro%20Map%20Layout%20e1bb181a68304d8bac8dd8167081c028.md)</p>
+</section>
+<section id="body" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Body</h1>
+<section id="subways" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="subways"><span class="header-section-number">2.1</span> Subways</h2>
+<section id="statistics" class="level3">
+<h3 class="anchored" data-anchor-id="statistics">Statistics</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Transportation Networks 720a658bb1914b51910c480d86943e80/four_in_one.svg" class="img-fluid figure-img"></p>
+<figcaption>four_in_one.svg</figcaption>
+</figure>
+</div>
+</section>
+<section id="description-from-literature" class="level3">
+<h3 class="anchored" data-anchor-id="description-from-literature">Description from Literature</h3>
+<blockquote class="blockquote">
+<p>Apart from the example of Sydney presented in Section 6, we have evaluated our method for two additional real-world networks: Vienna, which is a rather small network, and London, the oldest and still one of the most complex metro systems in the world. These networks have not been used as examples for previous metro map layout methods, so we can compare only against the official maps of Vienna and London. The size of the metro graphs (including Sydney) is given in Table 3 and ranges from 84 vertices and 8 faces (Vienna) to 308 vertices and 55 faces (London). The table further shows how the removal of degree-2 vertices described in Section 5.1 effectively reduces the number of vertices and edges.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Transportation Networks 720a658bb1914b51910c480d86943e80/Untitled.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-figures" class="level3">
+<h3 class="anchored" data-anchor-id="example-figures">Example Figures</h3>
+<p>From “<a href="https://ieeexplore.ieee.org/document/5473229">Drawing and Labeling High-Quality Metro Maps by Mixed-Integer Programming</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Transportation Networks 720a658bb1914b51910c480d86943e80/Untitled 1.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 16.</strong> Unlabeled layout of the London Underground network produced by our method.</p>
+</section>
+</section>
+<section id="dimacs-usa-road-networks" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="dimacs-usa-road-networks"><span class="header-section-number">2.2</span> DIMACS USA Road Networks</h2>
+<section id="description-from-literature-1" class="level3">
+<h3 class="anchored" data-anchor-id="description-from-literature-1">Description from Literature</h3>
+<p>From “<a href="https://ieeexplore.ieee.org/document/4475481">A Treemap Based Method for Rapid Layout of Large Graphs</a>”:</p>
+<blockquote class="blockquote">
+<p>The other graphs used in this paper are: a graph of network scans, which is a complete graph with edge weights between 0 and 1, but for clarity, edges with weights less than a certain threshold are not shown (Figures 3&nbsp;and&nbsp;4,&nbsp;|V|=878,|E|=385003,&nbsp;[19]), a small artificial graph of a grid topology (Figure 5,&nbsp;|V|=16,|E|=24), a large graph of streets in the San Francisco Bay Area (Figure 7,&nbsp;|V|=321,270,|E|=800,172,&nbsp;[8]).</p>
+</blockquote>
+<p>From “<a href="https://ieeexplore.ieee.org/document/4658143">Rapid Graph Layout Using Space Filling Curves</a>”:</p>
+<blockquote class="blockquote">
+<p>Finally, the “usafla” dataset (shown in&nbsp;Figure 7) is of the intersections and the streets between them in the state of Florida</p>
+</blockquote>
+</section>
+<section id="example-figures-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-figures-1">Example Figures</h3>
+<p>From “<a href="https://ieeexplore.ieee.org/document/4475481">A Treemap Based Method for Rapid Layout of Large Graphs</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Transportation Networks 720a658bb1914b51910c480d86943e80/Untitled 2.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 7.</strong>&nbsp;<em>Scalability</em>. Our approach can scale to very large networks while still maintaining interactivity.&nbsp;|V|=321,270,|E|=800,172</p>
+<p>From “<a href="https://ieeexplore.ieee.org/document/4658143">Rapid Graph Layout Using Space Filling Curves</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Transportation Networks 720a658bb1914b51910c480d86943e80/Untitled 3.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 7.</strong> Scalability. Our approach can scale to large graphs. This graph is of the streets in the state of Florida, |V| = 1,070,376,|E| = 2,712,798 One small region is expanded to show detail.</p>
+<p>=== STOP RENDERING ===</p>
+<p><a href="http://www.diag.uniroma1.it//challenge9/download.shtml">http://www.diag.uniroma1.it//challenge9/download.shtml</a></p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

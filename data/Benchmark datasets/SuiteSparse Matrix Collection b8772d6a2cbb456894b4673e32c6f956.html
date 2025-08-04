@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>suitesparse-matrix-collection-b8772d6a2cbb456894b4673e32c6f956 – GD benchmark sets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a202ed359b7240dcab911ed64cbd0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#suitesparse-matrix-collection" id="toc-suitesparse-matrix-collection" class="nav-link active" data-scroll-target="#suitesparse-matrix-collection"><span class="header-section-number">1</span> SuiteSparse Matrix Collection</a></li>
+  <li><a href="#body" id="toc-body" class="nav-link" data-scroll-target="#body"><span class="header-section-number">2</span> Body</a>
+  <ul class="collapse">
+  <li><a href="#descriptions-from-literature" id="toc-descriptions-from-literature" class="nav-link" data-scroll-target="#descriptions-from-literature">Descriptions From Literature</a></li>
+  <li><a href="#example-figures" id="toc-example-figures" class="nav-link" data-scroll-target="#example-figures">Example Figures</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="suitesparse-matrix-collection" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> SuiteSparse Matrix Collection</h1>
+<p>Note: All graphs in SuitSparse belong to groups which will have more information about the graphs and the sub-collections they belong to. In our Descriptions from the Literature section we also highlight a few tables with the specific graphs used in a couple of papers. Origin Notes: From “The university of Florida Sparse Matrix Collection”, Davis and Hu describe the origin of this network repository. Namely they cite the Harwell-Boeing collection as the starting point for SuiteSparse, then called the University of Florida (UF) Sparse matrix collection, back in 1991. Other groups, or collections, have then been added to SuitseSparse through the years, mainly focusing on real-world matrices and other relevant problems related to them. graph features handled: Bipartite, Categorical nodes, Dense, Directed edges, Dynamic, Generic, Hierarchical, Large, Mesh, Multigraph, Sparse, Spatial, Weighted edges, Weighted nodes, temporal Graph features in papers: generic,large,weighted edges,generic,large,multilevel,clusters (generated),generic,planar,spatial,almost proximity drawable graphs,mesh graphs,scale-free graphs,strong proximity drawable graphs,weak proximity drawable graphs Origin Paper: The University of Florida Sparse Matrix Collection (https://www.notion.so/The-University-of-Florida-Sparse-Matrix-Collection-b861824a77d94175af99b7b367768cb3?pvs=21) Originally found at: https://sparse.tamu.edu/ Size: 2893 Child collections: Walshaw (Walshaw%20e40b37a1147942d89ff1d8dfad285256.md), Pajek (Pajek%20e323e05a735d4151a0bccfec08aa3bd6.md) Appeared in years: 2013,2016,2017,2019,2020,2021,2023 Type of Collection: Established Network Repo (No report) is it stored properly?: No must be analyzed: Yes In repo?: No Related to Literature - Algorithm (1) (Dataset tag relations): Graph Layouts by t-SNE (https://www.notion.so/Graph-Layouts-by-t-SNE-6adb46473eb2415294b0d797ad86b077?pvs=21), Drawing Big Graphs Using Spectral Sparsification (https://www.notion.so/Drawing-Big-Graphs-Using-Spectral-Sparsification-89da2043d0444f75a6c663b1fc999512?pvs=21), A Maxent-Stress Model for Graph Layout (https://www.notion.so/A-Maxent-Stress-Model-for-Graph-Layout-8da4fc24a7c7438c9d10c3113841b7fd?pvs=21), Multi-level Graph Drawing Using Infomap Clustering (https://www.notion.so/Multi-level-Graph-Drawing-Using-Infomap-Clustering-ad97d205cc804c748ab87d3012b18ebc?pvs=21), A Sparse Stress Model (https://www.notion.so/A-Sparse-Stress-Model-ba603193aa4c49a8a55e1d23068def6f?pvs=21), Stochastic Gradient Descent Works Really Well for Stress Minimization (https://www.notion.so/Stochastic-Gradient-Descent-Works-Really-Well-for-Stress-Minimization-e1cb81e542004fdf848c5a303e9e43e5?pvs=21) cleaned format?: No duplicate?: No link works?: No Added in paper: No Origin paper plaintext: The University of Florida Sparse Matrix Collection Page id: b8772d6a2cbb456894b4673e32c6f956 unavailable/skip: Yes Cleaned ALL data: No first look: No Related to Literature - Algorithm (Dataset tag relations) 1: A Maxent-Stress Model for Graph Layout (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/A%20Maxent-Stress%20Model%20for%20Graph%20Layout%2000c097ef77dd46d6a2df74869581a5c9.md), A Sparse Stress Model (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/A%20Sparse%20Stress%20Model%2096e7e209fadc468f9156cb44d0c8e59b.md), Drawing Big Graphs Using Spectral Sparsification (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Big%20Graphs%20Using%20Spectral%20Sparsification%20e5d3efdca48541f2b1789ec74357ebf6.md), Multi-level Graph Drawing Using Infomap Clustering (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Multi-level%20Graph%20Drawing%20Using%20Infomap%20Clustering%20eadf3605c6ed46ff93629fb92858fbd4.md), Stochastic Gradient Descent Works Really Well for Stress Minimization (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Stochastic%20Gradient%20Descent%20Works%20Really%20Well%20for%20%20af084ad735564f1da5f20c16773572d0.md), Graph Layouts by t-SNE (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Graph%20Layouts%20by%20t-SNE%203af4ccbc89b547a38748745511744997.md), Graph Drawing by Stochastic Gradient Descent (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Graph%20Drawing%20by%20Stochastic%20Gradient%20Descent%20c829549f150044628d68b79584273c19.md), DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/DRGraph%20An%20Efficient%20Graph%20Layout%20Algorithm%20for%20La%203e38c2bb01724b70be45cb8d19695051.md), Force-Directed Graph Layouts Revisited: A New Force Based on the T-Distribution (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Force-Directed%20Graph%20Layouts%20Revisited%20A%20New%20Force%208c79f21b6f2a41fca20311b3ba1ab644.md), Spherical Graph Drawing by&nbsp;Multi-dimensional Scaling (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Spherical%20Graph%20Drawing%20by%20Multi-dimensional%20Scali%20f12cabb0ee2d48d398492f62af07404b.md), Shape-Faithful Graph Drawings (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Shape-Faithful%20Graph%20Drawings%209551555e517f400ea733e3e3c56c8686.md)</p>
+</section>
+<section id="body" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Body</h1>
+<section id="descriptions-from-literature" class="level3">
+<h3 class="anchored" data-anchor-id="descriptions-from-literature">Descriptions From Literature</h3>
+<p>From “<a href="https://dx.doi.org/10.7155/jgaa.00440">A Sparse Stress Model</a>”:</p>
+<blockquote class="blockquote">
+<p>We conducted our experiments on a series of different graphs, see Tab. 1, most of them taken from the sparse matrix collection [9]. We selected these graphs as they differ in their structure and size, and are large enough to compare the results of different techniques. Two of the graphs, LeHavre and commanche, have predefined edge lengths that were derived from the node coordinates. We did not modify the graphs in any way, except for those that were disconnected, in which case we only kept the largest component.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SuiteSparse Matrix Collection b8772d6a2cbb456894b4673e32c6f956/Untitled.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p>From “<a href="https://doi.org/10.1109/TVCG.2012.299">A Maxent-Stress Model for Graph Layout</a>”:</p>
+<blockquote class="blockquote">
+<p>With the exception of graph&nbsp;gd, which is an author collaboration graph of the International Symposium on Graph Drawing between 1994 and 2007, the graphs used are from the University of Florida Sparse Matrix Collection&nbsp;[9]. Our selection covers a range of graph sizes, and includes mesh-like and other nonmesh graphs, and graphs from Brandes and Pich’s experimental study of distance scaling&nbsp;[5].</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SuiteSparse Matrix Collection b8772d6a2cbb456894b4673e32c6f956/Untitled 1.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Table 2.</strong> Test Graphs</p>
+<p>From “<a href="https://doi.org/10.1109/TVCG.2020.3030447">DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction</a>”:</p>
+<blockquote class="blockquote">
+<p>We perform experiments on a broad range of datasets selected from the University of Florida Sparse Matrix Collection&nbsp;[10]&nbsp;and tsNET&nbsp;[34]&nbsp;(Table 1).</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SuiteSparse Matrix Collection b8772d6a2cbb456894b4673e32c6f956/Untitled 2.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Table 1.</strong> Test Datasets</p>
+</section>
+<section id="example-figures" class="level3">
+<h3 class="anchored" data-anchor-id="example-figures">Example Figures</h3>
+<p>From “<a href="https://doi.org/10.1145/2049662.2049663">The university of Florida sparse matrix collection</a><strong>”:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SuiteSparse Matrix Collection b8772d6a2cbb456894b4673e32c6f956/Untitled 3.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 13.</strong> A sample of matrices from the Collection, for the purpose of illustrating the complexity and diversity of matrices arising in real applications</p>
+<p>From “<a href="https://doi.org/10.1109/TVCG.2020.3030447">DRGraph: An Efficient Graph Layout Algorithm for Large-scale Graphs by Dimensionality Reduction</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="SuiteSparse Matrix Collection b8772d6a2cbb456894b4673e32c6f956/Untitled 4.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 8.</strong> Visualizations of selected graph datasets using FR, KK, S.M., FM3, SFDP, PMDS, tsNET and DRGraph.</p>
+<p>=== STOP RENDERING ===</p>
+<p>it was originally named “University of Florida Sparse Matrix collection”</p>
+<p><a href="SuiteSparse Matrix Collection b8772d6a2cbb456894b4673e32c6f956/Children of SuiteSparse Matrix collection d16b1e4a85034b53935fd3c1285860cc.csv">Children of SuiteSparse Matrix collection</a></p>
+<p>Davis, T.A., Hu, Y.: The University of Florida sparse matrix collection. ACM</p>
+<p>Trans. Math. Softw. 38(1), 1 (2011). https://doi.org/10.1145/2049662.2049663</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

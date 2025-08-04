@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>social-networks-90888b3285d042d49072985b05f95203 – GD benchmark sets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a202ed359b7240dcab911ed64cbd0efc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#social-networks" id="toc-social-networks" class="nav-link active" data-scroll-target="#social-networks"><span class="header-section-number">1</span> Social Networks</a></li>
+  <li><a href="#body" id="toc-body" class="nav-link" data-scroll-target="#body"><span class="header-section-number">2</span> Body</a>
+  <ul class="collapse">
+  <li><a href="#zachary-karate-club-dataset" id="toc-zachary-karate-club-dataset" class="nav-link" data-scroll-target="#zachary-karate-club-dataset"><span class="header-section-number">2.1</span> Zachary Karate Club Dataset</a>
+  <ul class="collapse">
+  <li><a href="#descriptions-from-literature" id="toc-descriptions-from-literature" class="nav-link" data-scroll-target="#descriptions-from-literature">Descriptions from Literature</a></li>
+  <li><a href="#example-figures" id="toc-example-figures" class="nav-link" data-scroll-target="#example-figures">Example Figures</a></li>
+  </ul></li>
+  <li><a href="#facebook100" id="toc-facebook100" class="nav-link" data-scroll-target="#facebook100"><span class="header-section-number">2.2</span> Facebook100</a>
+  <ul class="collapse">
+  <li><a href="#description-from-literature" id="toc-description-from-literature" class="nav-link" data-scroll-target="#description-from-literature">Description from Literature</a></li>
+  </ul></li>
+  <li><a href="#example-figures-1" id="toc-example-figures-1" class="nav-link" data-scroll-target="#example-figures-1"><span class="header-section-number">2.3</span> Example Figures</a></li>
+  </ul></li>
+  <li><a href="#facebook-ego-networks-facebook-1864" id="toc-facebook-ego-networks-facebook-1864" class="nav-link" data-scroll-target="#facebook-ego-networks-facebook-1864"><span class="header-section-number">3</span> Facebook Ego Networks (Facebook 1864)</a>
+  <ul class="collapse">
+  <li><a href="#description-from-literature-1" id="toc-description-from-literature-1" class="nav-link" data-scroll-target="#description-from-literature-1"><span class="header-section-number">3.1</span> Description from Literature</a></li>
+  </ul></li>
+  <li><a href="#example-figures-2" id="toc-example-figures-2" class="nav-link" data-scroll-target="#example-figures-2"><span class="header-section-number">4</span> Example Figures</a></li>
+  <li><a href="#van-de-bunt-fraternity" id="toc-van-de-bunt-fraternity" class="nav-link" data-scroll-target="#van-de-bunt-fraternity"><span class="header-section-number">5</span> Van De Bunt Fraternity</a>
+  <ul class="collapse">
+  <li><a href="#description-from-the-literature" id="toc-description-from-the-literature" class="nav-link" data-scroll-target="#description-from-the-literature"><span class="header-section-number">5.1</span> Description from the Literature</a></li>
+  </ul></li>
+  <li><a href="#infectious-sociopatterns-dynamic-contact-networks" id="toc-infectious-sociopatterns-dynamic-contact-networks" class="nav-link" data-scroll-target="#infectious-sociopatterns-dynamic-contact-networks"><span class="header-section-number">6</span> <strong>Infectious SocioPatterns dynamic contact networks</strong></a>
+  <ul class="collapse">
+  <li><a href="#description-from-the-literature-1" id="toc-description-from-the-literature-1" class="nav-link" data-scroll-target="#description-from-the-literature-1"><span class="header-section-number">6.1</span> Description from the Literature</a></li>
+  </ul></li>
+  <li><a href="#syphilis-social-network" id="toc-syphilis-social-network" class="nav-link" data-scroll-target="#syphilis-social-network"><span class="header-section-number">7</span> <strong>Syphilis Social Network</strong></a>
+  <ul class="collapse">
+  <li><a href="#description-from-the-literature-2" id="toc-description-from-the-literature-2" class="nav-link" data-scroll-target="#description-from-the-literature-2"><span class="header-section-number">7.1</span> Description from the Literature</a></li>
+  <li><a href="#example-figures-3" id="toc-example-figures-3" class="nav-link" data-scroll-target="#example-figures-3"><span class="header-section-number">7.2</span> Example Figures</a></li>
+  </ul></li>
+  <li><a href="#c.-lipp" id="toc-c.-lipp" class="nav-link" data-scroll-target="#c.-lipp"><span class="header-section-number">8</span> C. Lipp?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="social-networks" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Social Networks</h1>
+<p>Note: Various social network datasets are used in the literature and here we provide a collection of some of the ones found in our survey. Namely, the Zachary Karate Club, Facebook100, Infectious SocioPatterns dynamic contact networks, and the Van De Brunt Fraternity Data. Note that Facebook1684 refers to the ego network for user 1684, and this along various other users can be found in SNAP. Unfortunately, we are unable to provide this dataset at this time. graph features handled: Clusters (generated), Dynamic, Generic, N-layers Graph features in papers: generic,large,generic,dynamic,dynamic (continuous),clusters (generated),weighted edges,clusters (generated),clusters (pre-existing),generic,labeled nodes,layered graphs,n-layers,clusters (pre-existing),generic,large,spatial,clusters (pre-existing) Origin Paper: An Information Flow Model for Conflict and Fission in Small Groups (https://www.notion.so/An-Information-Flow-Model-for-Conflict-and-Fission-in-Small-Groups-34bb7441d1c4482a990c99d9d4990e14?pvs=21), Learning to discover social circles in ego networks (https://www.notion.so/Learning-to-discover-social-circles-in-ego-networks-742fdd60008348ed8271f3f039005c26?pvs=21), What’s in a crowd? analysis of face-to-face behavioral networks (https://www.notion.so/What-s-in-a-crowd-analysis-of-face-to-face-behavioral-networks-6e1997f78eb84272ac3fa79ecb571cb8?pvs=21), Friendship Networks Through Time: An Actor-Oriented Dynamic Statistical Network Model (https://www.notion.so/Friendship-Networks-Through-Time-An-Actor-Oriented-Dynamic-Statistical-Network-Model-06c4d3cdd29b4568ae1aa5c9e265041a?pvs=21), Social Structure of Facebook Networks (https://www.notion.so/Social-Structure-of-Facebook-Networks-d41db3795a424c1086f4b4cf2720528e?pvs=21), Comparing Community Structure to Characteristics in Online Collegiate Social Networks (https://www.notion.so/Comparing-Community-Structure-to-Characteristics-in-Online-Collegiate-Social-Networks-156b7ef6e40c4c89b20ee42dc57a551d?pvs=21) Originally found at: https://snap.stanford.edu/data/ego-Facebook.html https://cs.swan.ac.uk/~dynnoslice/software.html https://archive.org/details/oxford-2005-facebook-matrix https://osf.io/dcz5h http://www.sociopatterns.org/datasets/infectious-sociopatterns-dynamic-contact-networks/ http://www-personal.umich.edu/~mejn/netdata/ Number of Graphs: 156 Appeared in years: 2015,2021,2017,2018,2020,2005,2019 Type of Collection: Aggregate collection is it stored properly?: No must be analyzed: No In repo?: Yes Related to Literature - Algorithm (1) (Dataset tag relations): Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs (https://www.notion.so/Automatic-Polygon-Layout-for-Primal-Dual-Visualization-of-Hypergraphs-09ec6b5a17ae4f5eb6aebedf0dde6467?pvs=21), Drawing Dynamic Graphs Without Timeslices (https://www.notion.so/Drawing-Dynamic-Graphs-Without-Timeslices-15310bfa5a2f4015b7a4ae0098e6c151?pvs=21), The Turing Test for Graph Drawing Algorithms (https://www.notion.so/The-Turing-Test-for-Graph-Drawing-Algorithms-2a183bdf85bf4ab0acb311d5b9615440?pvs=21), Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks (https://www.notion.so/Untangling-the-Hairballs-of-Multi-Centered-Small-World-Online-Social-Media-Networks-8d6315c26f82480cb56a0256ef7ec569?pvs=21), Network Alignment by Discrete Ollivier-Ricci Flow (https://www.notion.so/Network-Alignment-by-Discrete-Ollivier-Ricci-Flow-b9a362d8006a44cf97a1fcbfec24ea57?pvs=21), An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs (https://www.notion.so/An-Experimental-Comparison-of-Fast-Algorithms-for-Drawing-General-Large-Graphs-bbb7bb7d51d84d109030dee3c06d895d?pvs=21), Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs (https://www.notion.so/Anisotropic-Radial-Layout-for-Visualizing-Centrality-and-Structure-in-Graphs-c604b563b3594a69b6c8e57b5ce9f02f?pvs=21), Preserving Minority Structures in Graph Sampling (https://www.notion.so/Preserving-Minority-Structures-in-Graph-Sampling-cf062d6fa8f5484ab1190edd125f739f?pvs=21) cleaned format?: Yes duplicate?: No link works?: No Added in paper: No Origin paper plaintext: An Information Flow Model for Conflict and Fission in Small Groups, Learning to discover social circles in ego networks, What’s in a crowd? analysis of face-to-face behavioral networks, Friendship Networks Through Time: An Actor-Oriented Dynamic Statistical Network Model, Social Structure of Facebook Networks, Comparing Community Structure to Characteristics in Online Collegiate Social Networks Page id: 90888b3285d042d49072985b05f95203 unavailable/skip: No Cleaned ALL data: No first look: No Related to Literature - Algorithm (Dataset tag relations) 1: Untangling the Hairballs of Multi-Centered Small-World Online Social Media Networks (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Untangling%20the%20Hairballs%20of%20Multi-Centered%20Small-W%20690af12a963849cd80c0285d27221086.md), Preserving Minority Structures in Graph Sampling (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Preserving%20Minority%20Structures%20in%20Graph%20Sampling%202d52160d6ac04019aaf808496f7d4240.md), Drawing Dynamic Graphs Without Timeslices (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Drawing%20Dynamic%20Graphs%20Without%20Timeslices%204da7155eac4b4979ae165f3b0f1d2b1b.md), Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Anisotropic%20Radial%20Layout%20for%20Visualizing%20Centrali%20c964c73e1c2946f992cb72bac2b19c42.md), Network Alignment by Discrete Ollivier-Ricci Flow (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Network%20Alignment%20by%20Discrete%20Ollivier-Ricci%20Flow%20f49d058c38ad42c59c2baec961170d7c.md), The Turing Test for Graph Drawing Algorithms (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/The%20Turing%20Test%20for%20Graph%20Drawing%20Algorithms%209927a9580ae74b49a468a8c2816334da.md), An Experimental Comparison of Fast Algorithms for Drawing General Large Graphs (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/An%20Experimental%20Comparison%20of%20Fast%20Algorithms%20for%20%20190e5036cf974a879b50614cfff525f1.md), Automatic Polygon Layout for Primal-Dual Visualization of Hypergraphs (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Automatic%20Polygon%20Layout%20for%20Primal-Dual%20Visualiza%2078257e61a97c4b9ca0eb0a128ce89101.md), SetCoLa: High-Level Constraints for Graph Layout (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/SetCoLa%20High-Level%20Constraints%20for%20Graph%20Layout%20e1af8f01247d49b7bc7ac0562e1919cf.md), A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/A%20Random%20Sampling%20O(n)%20Force-calculation%20Algorithm%2086599a831f314d1cb8871a5a92420d0f.md), Structure-aware Fisheye Views for Efficient Large Graph Exploration (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Structure-aware%20Fisheye%20Views%20for%20Efficient%20Large%20%20690c77bbfc7647c098c21827e4491457.md), Revisiting Stress Majorization as a Unified Framework for Interactive Constrained Graph Visualization (../Benchmark%20sets%200cc6b5e454304aec98f3b59b1a720476/Literature%20ad87f14e7097454fb2f784e2c8a2797a/Literature%20-%20Algorithm%2012e01bfc60a84007aa7d2d34293e123d/Revisiting%20Stress%20Majorization%20as%20a%20Unified%20Framew%200765ea891e9e403593025430656f35f3.md)</p>
+</section>
+<section id="body" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Body</h1>
+<section id="zachary-karate-club-dataset" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="zachary-karate-club-dataset"><span class="header-section-number">2.1</span> Zachary Karate Club Dataset</h2>
+<section id="descriptions-from-literature" class="level3">
+<h3 class="anchored" data-anchor-id="descriptions-from-literature">Descriptions from Literature</h3>
+<p><a href="https://link.springer.com/chapter/10.1007/978-3-030-68766-3_36">*The Turing Test for Graph Drawing Algorithms</a>* describes the dataset simply as “social network” in their Table 1.</p>
+<p>From <a href="https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28">Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs</a>:</p>
+<blockquote class="blockquote">
+<p>The Zachary’s karate club graph is a well known data set that is a social network of friendships in a karate club at a US university, as recorded during a study&nbsp;[<a href="https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#ref-CR32">32</a>]. This graph contains 34 nodes, each representing an individual, and 78 unweighted edges that represent a friendship between the associated individuals (Fig.&nbsp;<a href="https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#Fig1">1</a>). During the period of observation, a conflict between two key members, identified as the “administrator” and “instructor”, leads to a split in the club, giving it an interesting two cluster structure. In Fig.&nbsp;<a href="https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28#Fig1">1</a>, nodes representing members who are part of the instructor’s and administrator’s groups are drawn in green and blue, respectively.</p>
+</blockquote>
+</section>
+<section id="example-figures" class="level3">
+<h3 class="anchored" data-anchor-id="example-figures">Example Figures</h3>
+<p>From “<a href="https://arxiv.org/abs/2008.04869">The Turing Test for Graph Drawing Algorithms</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social Networks 90888b3285d042d49072985b05f95203/Untitled.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p>Figure from <a href="https://www.dcs.gla.ac.uk/~hcp/GD2020/">supplementary materials</a> using a force directed layout.</p>
+<p>From “<a href="https://link.springer.com/chapter/10.1007/978-3-319-73915-1_28">Anisotropic Radial Layout for Visualizing Centrality and Structure in Graphs</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social Networks 90888b3285d042d49072985b05f95203/Untitled 1.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 1.</strong> Visualization of Zachary’s karate club social network using (a) MDS, (b) radial layout, and (c) anisotropic radial layout. Node sizes encode betweenness centrality.</p>
+<p>****From “<a href="https://link.springer.com/chapter/10.1007/978-3-030-04414-5_32">Network Alignment by Discrete Ollivier-Ricci Flow</a>”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social Networks 90888b3285d042d49072985b05f95203/Untitled 2.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 1.</strong> An example of Ricci curvature on the karate club graph before and after Ricci flow. The colors represent the Ricci curvature while the thickness represents the edge weight. Ricci flow deformed the edge weights until Ricci curvatures converged (−0.0027 in this case).</p>
+</section>
+</section>
+<section id="facebook100" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="facebook100"><span class="header-section-number">2.2</span> Facebook100</h2>
+<section id="description-from-literature" class="level3">
+<h3 class="anchored" data-anchor-id="description-from-literature">Description from Literature</h3>
+<p>From <a href="https://jgaa.info/getPaper?id=370">Untangling the Hairballs of Multi-Centered, Small-World Online Social Media Networks</a>:</p>
+<blockquote class="blockquote">
+<p>As real world samples, we use the Facebook100 dataset [40], which contains social relations of 100 higher educational institutes in the US. The network size varies from 762 to 41K vertices and from 16K to 1.6M edges. Thedataset is directly from Facebook, not sampled, and thus very complete in terms of capturing the social relations according to a widely used service at that time. Additional attributes obtained from the Facebook profiles are gender, expected year of graduation, dormitory, etc. Due to incomplete profiles, a number of attribute values are missing.</p>
+</blockquote>
+</section>
+</section>
+<section id="example-figures-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="example-figures-1"><span class="header-section-number">2.3</span> Example Figures</h2>
+<p>From <a href="https://jgaa.info/getPaper?id=370">Untangling the Hairballs of Multi-Centered, Small-World Online Social Media Networks</a></p>
+<p><strong>Fig. 1.</strong> Facebook friendships at California Institute of Technology (Caltech36). Vertex color corresponds to dormitory (gray for missing values), but has not been utilized by the layout algorithm. The layout in (a) is based on the entire graph, whereas (b)-(f) use edge embeddedness, which spreads the graph while keeping cohesive groups together. Embeddedness mapped to edge color; backbone edges dark gray.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social Networks 90888b3285d042d49072985b05f95203/Untitled 3.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="facebook-ego-networks-facebook-1864" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Facebook Ego Networks (Facebook 1864)</h1>
+<section id="description-from-literature-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="description-from-literature-1"><span class="header-section-number">3.1</span> Description from Literature</h2>
+<p>From ****<a href="https://ieeexplore.ieee.org/document/9222065">Preserving Minority Structures in Graph Sampling</a></p>
+<blockquote class="blockquote">
+<p>The Facebook1684 graph data set is an online social network with 775 nodes and 14,006 edges. The original graph and six samples are shown in&nbsp;Figure 4. This data set is an unbalanced graph in which two large communities include 705 nodes and two small communities/cliques contain only 70 nodes.</p>
+</blockquote>
+<p>The <a href="https://github.com/saibalmars/RicciFlow-SampleGraphs/tree/61f9c2c48d0de368369e232da959c4f996122e3a">supplemental</a> material for *****<a href="https://link.springer.com/chapter/10.1007/978-3-030-04414-5_32">Network Alignment by Discrete Ollivier-Ricci Flow</a>* also provides user 1864 of the Facebook ego networks in their repository.</p>
+<p>From <a href="https://osf.io/dcz5h">A Random Sampling O(n) Force-calculation Algorithm for Graph Layouts</a>:</p>
+<blockquote class="blockquote">
+<p>The ego graphs are Facebook ego graphs [<a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13724#cgf13724-bib-0060"><strong>ML12</strong></a>] with the ego vertex re-added to the graph.</p>
+</blockquote>
+</section>
+</section>
+<section id="example-figures-2" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Example Figures</h1>
+<p>From ****<a href="https://ieeexplore.ieee.org/document/9222065">Preserving Minority Structures in Graph Sampling</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social Networks 90888b3285d042d49072985b05f95203/Untitled 4.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 4.</strong>&nbsp;Interface for subjective assessment experiment with the Facebook1684 data set (775 nodes and 14,006 edges). The leftmost graph is the original graph. The six randomly arranged samples are generated by SST (a), FF (b), MCGS (c), RW (d), TIES (e), and RDN (f) with a sampling rate of 30%.</p>
+</section>
+<section id="van-de-bunt-fraternity" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Van De Bunt Fraternity</h1>
+<section id="description-from-the-literature" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="description-from-the-literature"><span class="header-section-number">5.1</span> Description from the Literature</h2>
+<p>From Preserving</p>
+<blockquote class="blockquote">
+<p><em>Van De Bunt (Discrete):</em>&nbsp;shows the relationships between 32 freshmen at seven different time points. A discrete dynamic graph is built using the method of Brandes&nbsp;<em>et al.</em>&nbsp;&nbsp;[<a href="https://link.springer.com/chapter/10.1007/978-3-319-73915-1_31#ref-CR9">9</a>], with an undirected edge inserted into a timeslice if the participants reciprocally report “best friendship” or “friendship” at that time.</p>
+</blockquote>
+</section>
+</section>
+<section id="infectious-sociopatterns-dynamic-contact-networks" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> <strong>Infectious SocioPatterns dynamic contact networks</strong></h1>
+<section id="description-from-the-literature-1" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="description-from-the-literature-1"><span class="header-section-number">6.1</span> Description from the Literature</h2>
+<p>From</p>
+<blockquote class="blockquote">
+
+</blockquote>
+</section>
+</section>
+<section id="syphilis-social-network" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> <strong>Syphilis Social Network</strong></h1>
+<section id="description-from-the-literature-2" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="description-from-the-literature-2"><span class="header-section-number">7.1</span> Description from the Literature</h2>
+<p>From <a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440">SetCoLa: High-Level Constraints for Graph Layout</a>:</p>
+<blockquote class="blockquote">
+<p>Social networks can be a powerful way to understand inter-personal relationships and are useful for tracking the spread of diseases that result from personal contact [<a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045">**RST*98**</a>,&nbsp;<a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0022">**FHH*01**</a>,&nbsp;<a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0043">**MRV*03**</a>,&nbsp;<a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0021">**FHD*11**</a>]. The ability to track and identify at risk individuals can lead to treatment and help manage the spread of the disease. In addition to the links between individuals, structuring the layout by node properties such as the social or ethnographically-identified group may reveal additional details about how the disease is spread.</p>
+</blockquote>
+</section>
+<section id="example-figures-3" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="example-figures-3"><span class="header-section-number">7.2</span> Example Figures</h2>
+<p>From <a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440">SetCoLa: High-Level Constraints for Graph Layout</a>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Social Networks 90888b3285d042d49072985b05f95203/Untitled 5.png" class="img-fluid figure-img"></p>
+<figcaption>Untitled</figcaption>
+</figure>
+</div>
+<p><strong>Fig. 4.</strong> The layout for the syphilis social network from (a) Rothenberg et al.&nbsp;[<a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.13440#cgf13440-bib-0045">RST*98</a>]. (b) We recreated and improved the layout in SetCoLa by introducing additional padding, alignment, and circle constraints to further highlight the relative number of interactions among the different groups. For both figures, the nodes are split into three groups, from left to right: young affluent white men, younger white women, and young African-American men. Individuals not associated with any of these “core” groups are positioned above the others. In both figures, individuals diagnosed with syphilis during the outbreak are labeled with an “S” on the node label.</p>
+<p>=== STOP RENDERING ===</p>
+<p>Contact Network</p>
+<p>This dataset contains the daily dynamic contact networks collected during the&nbsp;<a href="http://www.sociopatterns.org/deployments/infectious-sociopatterns/">Infectious SocioPatterns</a>&nbsp;event that took place at the&nbsp;<a href="http://www.sciencegallery.com/">Science Gallery</a>&nbsp;in Dublin, Ireland, during the artscience exhibition&nbsp;<a href="http://www.sciencegallery.com/infectious">INFECTIOUS: STAY AWAY</a>. Each file in the downloadable package contains a tab-separated list representing the active contacts during 20-second intervals of one day of data collection.&nbsp; Each line has the form “t i j“, where i and j are the anonymous IDs of the persons in contact, and the interval during which this contact was active is [ t – 20s, t ]. If multiple contacts are active in a given interval, you will see multiple lines starting with the same value of t. Time is measured in seconds and expressed in UNIX ctime.</p>
+<p>“This evaluation uses 109 common graphs from network science and graph algorithm research (note: many graphs from older research are no longer available online).”</p>
+</section>
+</section>
+<section id="c.-lipp" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> C. Lipp?</h1>
+<blockquote class="blockquote">
+<p>The rest of the test graphs are taken from real-world applications. In particular, we selected graphs from the AT&amp;T graph library [1], from C. Walshaw’s graph collection [20], and a graph that describes a social network of 2113 people that we obtained from C. Lipp.</p>
+</blockquote>
+<p>Last author of original paper,</p>
+<p>→ facebook100 network: <a href="https://epubs.siam.org/doi/10.1137/080734315">https://epubs.siam.org/doi/10.1137/080734315</a></p>
+<p><a href="https://archive.org/details/oxford-2005-facebook-matrix">https://archive.org/details/oxford-2005-facebook-matrix</a> ← pretty sure the internet archive is reliable?</p>
+<p>→ dead link in this paper</p>
+<p>→ <a href="http://masonporter.blogspot.com/2011/02/facebook100-data-set.html">http://masonporter.blogspot.com/2011/02/facebook100-data-set.html</a> also dead link</p>
+<p>→ here? <a href="https://networkrepository.com/socfb.php">https://networkrepository.com/socfb.php</a></p>
+<p>from <a href="../Benchmark sets 0cc6b5e454304aec98f3b59b1a720476/Literature ad87f14e7097454fb2f784e2c8a2797a/Literature - Algorithm 12e01bfc60a84007aa7d2d34293e123d/Drawing Dynamic Graphs Without Timeslices 4da7155eac4b4979ae165f3b0f1d2b1b.md">Drawing Dynamic Graphs Without Timeslices</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
