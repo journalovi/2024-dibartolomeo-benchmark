@@ -54,16 +54,14 @@ author:
         state: MA
         country: USA
 
-bibliography: bibliography.bib
-
 ---
 
-::: {.callout-important appearance="simple"}
+<!-- ::: {.callout-important appearance="simple"}
 ## Under Review {.unnumbered}
 This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of
 the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the 
 [reviewing process](https://github.com/journalovi/2024-dibartolomeo-gd-benchmark/issues).
-:::
+::: -->
 
 
 ::: {.callout-note appearance="simple" icon="false" collapse="false"}

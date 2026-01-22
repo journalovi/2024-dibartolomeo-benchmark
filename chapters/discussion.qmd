@@ -18,7 +18,7 @@ There is a large number of interesting **follow-up questions** that could be tac
 //| fig-cap: "Date of publication of a dataset, compared to the dates of publications of papers using the dataset. A gray dot indicates the publication of the paper of the dataset, while a red dot indicates the publication of a paper that uses the dataset. Darker red dots mean more papers with the same datasets being published in the same year. Note that, in several instances, the paper presenting the dataset can be published after the dataset has already been used several times."
 {
     const svg = d3.create("svg")
-        .attr("viewBox", [0, 0, 500, 400])
+        .attr("viewBox", [0, 0, 500, 420])
 
     let xscale = d3.scaleLinear()
         .domain([1970, 2025])
@@ -26,7 +26,7 @@ There is a large number of interesting **follow-up questions** that could be tac
 
     // append xscale to the svg with a tick every 5 years, and format it as integers
     svg.append("g")
-        .attr("transform", "translate(0, 380)")
+        .attr("transform", "translate(0, 400)")
         .call(d3.axisBottom(xscale).ticks(5).tickFormat(d3.format("d")))
 
     let dataset_list = benchmark_datasets.filter(d => d.Name != "Chess Games" && d.Name != "Pajek" && d.Name != "World Bank Trade Data" && d.Name != "Scotch Graph Collection" && d.Name != "GION" && d.Name != "Network Repository" && d.Name != "Padia Stories" && d.Name != "Medical Patient Records" && d.Name != "Car Features" && d.Name != "Internet Mapping Project" && d.Name != "Autonomous System Network" && d.Name != "Tobler's Flow Mapper" && d.Name != "Protein Interactions (Publications)" && d.Name != "Neural Network" && d.Name != "Investment Interdependence" && d.Name != "SteinLib" && d.Name != "Control Flow Graphs" && d.Name != "Co-Phylogenetic Trees" && d.Name != "FM3" && d.Name != "Complete Graphs" && d.Name != "World Maps" && d.Name != "WebCompute" && d.Name != "KnownCR" && d.Name != "California" && d.Name != "Militarized Interstate Disputes (MID)" && d.Name != "World Greenhouse Gas Emissions" && d.Name != "Biological Pathways (KEGG)" && d.Name != "Business Processes" && d.Name != "Tree of Life" && d.Name != "Amazon" && d.Name != "Mathematics Genealogy" && d.Name != "RandDAG" && d.Name != "Pert DAG")
@@ -36,7 +36,7 @@ There is a large number of interesting **follow-up questions** that could be tac
         
         svg.append("text")
             .attr("x", 150)
-            .attr("y", i * 20 + 27)
+            .attr("y", i * 20 + 25)
             .attr("font-size", "x-small")
             .attr("text-anchor", "end")
             .text(dataset.Name)
