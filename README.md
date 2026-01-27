@@ -1,16 +1,6 @@
-```diff
-! This paper is under review on the experimental track of the Journal of Visualization and Interaction.
-Authors: @picorana
-OC: Chat Wacharamanotham
-AE: Lane Harrison
-R1: mjwybrow
-R2: eelir
-R3: gdrawing-anon-reviewer
-```
-
 # GLaDOS: Graph Layout algorithm Datasets for Open Science
 
-This paper is under submission to the the [experimental track](https://www.journalovi.org/submit.html#experimental) at JoVI.
+An interactive article in the [Journal of Visualization and Interaction (JoVI)](https://journalovi.org/).
 
 Papers for this track are written in [Quarto](https://quarto.org/) which is an open source publishing format that supports inline code, including languages like R, Python, Julia, and JavaScript (via Observable Notebook).
 
@@ -50,4 +40,14 @@ While you're editing, it is helpful to periodically delete the `_site` folder an
 
 ```bash
 rm -rf _site
+```
+
+```diff
+Authors: @picorana
+OC: Chat Wacharamanotham
+AE: Lane Harrison
+R1: @mjwybrow
+R2: @eelir
+R3: @gdrawing-anon-reviewer
+AY: @domoritz
 ```
